@@ -83,7 +83,7 @@ for bs in "${BOX_SSL[@]}"; do
 	# Remove older image files
 	DELETE_IMAGE_NAME="*$(echo ${!FREETZ_SSL_PATH} | awk -F'/' '{print $NF}').image"	# construct image filname filter
 	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}" -type f -mmin +$delete_images -delete 
-	DELETE_IMAGE_NAM_EXTE="*$(echo ${!FREETZ_SSL_PATH} | awk -F'/' '{print $NF}').external"	# construct image filname filter
+	DELETE_IMAGE_NAME_EXT="*$(echo ${!FREETZ_SSL_PATH} | awk -F'/' '{print $NF}').external"	# construct image filname filter
 	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME_EXT}" -type f -mmin +$delete_images -delete 
 	#find "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}.inmemory" -type f -mmin +$delete_images -delete  
 	
