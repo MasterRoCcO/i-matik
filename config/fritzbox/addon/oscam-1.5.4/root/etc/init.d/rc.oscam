@@ -1,0 +1,530 @@
+#!/bin/sh
+## DEB/NFR Freetz-Team OSCam Addon ##
+
+. /etc/init.d/modlibrc
+. /mod/etc/conf/oscam.cfg
+
+
+WATCHDOG_NAME="DEB/NFR OSCam-Watchdog"
+
+DAEMON=oscam
+WATCHDOG=OSCam-Watchdog
+PID_FILE=/var/run/oscam.pid
+USB_DIR=''
+INTERN_DIR=''
+
+
+if [ "$OSCAM_INTERN" = "no" ]; then
+    [ -e /var/tmp/intern ] && rm /var/tmp/intern >/dev/null
+    if [ -z "$OSCAM_PATH" ] || [ -z "$(df|grep "$OSCAM_PATH"|grep "/dev/sd")" ]; then OSCAM_PATH="$(df|grep "/dev/sda"|awk '{print $6}'|tail -1)"; fi
+#       usblist="$(df|grep "/dev/sda"|awk '{print $6}')"
+#       for OSCAM_PATH in $usblist; do
+#           if [ -d "$OSCAM_PATH/addon/oscam" ]; then break; fi
+#       done
+#   [ -z $OSCAM_PATH ] && OSCAM_PATH="$(df|grep "/dev/sda"|awk '{print $6}'|tail -1)"
+    USB_DIR="$OSCAM_PATH"
+else
+    >/var/tmp/intern
+    if [ "$(mount|grep "yaffs2")" ] || [ "$(mount|grep "ubifs")" ] || [ "$(mount|grep "ext4")" ] >/dev/null; then
+        INTERN_DIR=/var/media/ftp
+    else
+        INTERN_DIR=/data
+    fi
+    [ -d "$INTERN_DIR/tam" ] && rm -rf "$INTERN_DIR/tam"
+fi
+           
+
+[ -e /var/tmp/intern ] && OSCAM_PATH="$INTERN_DIR"
+WORKING_DIR="$OSCAM_PATH/addon/oscam"
+
+if [ ! -d "$WORKING_DIR" ]; then
+    /etc/init.d/./addon_install.sh >/dev/null
+    if [ $? -ne 0 ]; then
+        echo "$(lang de:"Fehler: Datei &quot;${WORKING_DIR}/oscam.conf&quot; nicht gefunden." en:"Error: Couldn't locate file &quot;${WORKING_DIR}/oscam.conf&quot;.")"
+        exit 1
+    fi
+fi
+
+#LOGFILE=$(grep -i "^logfile" "$WORKING_DIR/oscam.conf" | cut -d "=" -f2 | sed 's/^ //')
+
+WATCHDOG_LOG="$OSCAM_PATH/addon/watchdog/watchdog.log"
+
+CRONDAUTO="$(cat /mod/etc/conf/mod.cfg | grep MOD_CROND | cut -d "=" -f2 |cut -d "'" -f2)"
+
+#if [ "$OSCAM_CHECK_UDEV1" = "yes" -o "$OSCAM_CHECK_UDEV2" = "yes" -o "$OSCAM_CHECK_UDEV3" = "yes" -o "$OSCAM_CHECK_UDEV4" = "yes" -o "$OSCAM_CHECK_UDEV5" = "yes" ]; then
+#      if [ ! -e /tmp/flash/mod/udev-final.rules ]; then
+#            touch /tmp/flash/mod/udev-final.rules
+#      fi      
+#fi
+
+#if [  -e /tmp/flash/mod/udev-final.rules ]; then
+#	if [ "$OSCAM_CHECK_UDEV1" = "no" ]; then
+#		sed -i "/$OSCAM_TEXT_UDEV1/d" /tmp/flash/mod/udev-final.rules    
+#	fi
+
+#	if [ "$OSCAM_CHECK_UDEV2" = "no" ]; then
+#		sed -i "/$OSCAM_TEXT_UDEV2/d" /tmp/flash/mod/udev-final.rules    
+#	fi
+
+#	if [ "$OSCAM_CHECK_UDEV3" = "no" ]; then
+#		sed -i "/$OSCAM_TEXT_UDEV3/d" /tmp/flash/mod/udev-final.rules    
+#	fi
+
+#	if [ "$OSCAM_CHECK_UDEV4" = "no" ]; then
+#		sed -i "/$OSCAM_TEXT_UDEV4/d" /tmp/flash/mod/udev-final.rules    
+#	fi
+
+#	if [ "$OSCAM_CHECK_UDEV5" = "no" ]; then
+#		sed -i "/$OSCAM_TEXT_UDEV5/d" /tmp/flash/mod/udev-final.rules    
+#		fi     
+#modsave flash >/dev/null
+#fi
+
+#if [ "$OSCAM_CHECK_UDEV1" = "yes" ]; then
+#            echo 'SUBSYSTEMS=="usb", KERNEL=="ttyUSB*", ATTRS{serial}=="'$OSCAM_TEXT_UDEVREADER1'", SYMLINK+="'$OSCAM_TEXT_UDEV1'"' >>/tmp/flash/mod/udev-final.rules
+#fi
+
+#if [ "$OSCAM_CHECK_UDEV2" = "yes" ]; then
+#            echo 'SUBSYSTEMS=="usb", KERNEL=="ttyUSB*", ATTRS{serial}=="'$OSCAM_TEXT_UDEVREADER2'", SYMLINK+="'$OSCAM_TEXT_UDEV2'"' >>/tmp/flash/mod/udev-final.rules
+#fi
+
+#if [ "$OSCAM_CHECK_UDEV3" = "yes" ]; then
+#            echo 'SUBSYSTEMS=="usb", KERNEL=="ttyUSB*", ATTRS{serial}=="'$OSCAM_TEXT_UDEVREADER3'", SYMLINK+="'$OSCAM_TEXT_UDEV3'"' >>/tmp/flash/mod/udev-final.rules
+#fi
+
+#if [ "$OSCAM_CHECK_UDEV4" = "yes" ]; then
+#            echo 'SUBSYSTEMS=="usb", KERNEL=="ttyUSB*", ATTRS{serial}=="'$OSCAM_TEXT_UDEVREADER4'", SYMLINK+="'$OSCAM_TEXT_UDEV4'"' >>/tmp/flash/mod/udev-final.rules
+#fi
+
+#if [ "$OSCAM_CHECK_UDEV5" = "yes" ]; then
+#            echo 'SUBSYSTEMS=="usb", KERNEL=="ttyUSB*", ATTRS{serial}=="'$OSCAM_TEXT_UDEVREADER5'", SYMLINK+="'$OSCAM_TEXT_UDEV5'"' >>/tmp/flash/mod/udev-final.rules
+#fi
+
+get_logfile() {
+    LOGFILE=$(grep -i "^logfile" "$WORKING_DIR/oscam.conf" | cut -d "=" -f2 | sed 's/^ //')
+}
+
+ipcheck() {
+    HOSTIP=$(/usr/bin/get_ip)
+    DYNIP=$(ping -c 1 "$OSCAM_HOST" | sed -n 1p | sed -e 's/(//g' -e 's/)//g' | cut -d ' ' -f3 | cut -d ':' -f1)
+}
+
+cleanup() {
+	  if [ ! -e /tmp/flash/mod/crontab ]; then touch /tmp/flash/mod/crontab; fi
+    if [ -n "$(pidof crond)" ]; then
+        local RESTART_CROND='y'
+        killall crond
+    else
+        local RESTART_CROND='n'
+        if [ -e /var/spool/cron/crontabs/root ]; then
+        			if [ -e /tmp/flash/mod/crontab ]; then cp /tmp/flash/mod/crontab /var/spool/cron/crontabs/root; fi
+        fi				
+    fi
+
+    if [ -n "$CRONDAB -l 2>/dev/null | grep $WATCHDOG" ]; then
+	         sed -i "/rc.$DAEMON c/d" /tmp/flash/mod/crontab
+           sed -i "/$WATCHDOG/d" /tmp/flash/mod/crontab
+       if [ -e /var/spool/cron/crontabs/root ]; then cp /tmp/flash/mod/crontab /var/spool/cron/crontabs/root; fi
+          if [ -n "$CRONDAB -l 2>/dev/null" ]; then
+              if [ "$RESTART_CROND" = "y" ]; then
+                 if [ -z "$(pidof crond)" ]; then crond -b; fi
+              fi
+          fi
+    fi  
+   
+    if [ -e /tmp/flash/mod/rc.custom ]; then
+        if cat /tmp/flash/mod/rc.custom | grep $WATCHDOG >/dev/null; then
+              sed -i "/rc.oscam c_rb/d" /tmp/flash/mod/rc.custom
+	            sed -i "/$WATCHDOG/d" /tmp/flash/mod/rc.custom
+	            modsave flash >/dev/null
+        fi
+    fi     
+}
+
+udevsave() {
+if [  -e /tmp/flash/mod/udev-final.rules ]; then
+rm -rf /tmp/flash/mod/udev-final.rules
+fi
+sleep 1
+if [ "$OSCAM_CHECK_UDEV1" = "yes" ]; then
+            echo 'SUBSYSTEMS=="usb", KERNEL=="ttyUSB*", ATTRS{serial}=="'$OSCAM_TEXT_UDEVREADER1'", SYMLINK+="'$OSCAM_TEXT_UDEV1'"' >>/tmp/flash/mod/udev-final.rules
+fi
+
+if [ "$OSCAM_CHECK_UDEV2" = "yes" ]; then
+            echo 'SUBSYSTEMS=="usb", KERNEL=="ttyUSB*", ATTRS{serial}=="'$OSCAM_TEXT_UDEVREADER2'", SYMLINK+="'$OSCAM_TEXT_UDEV2'"' >>/tmp/flash/mod/udev-final.rules
+fi
+
+if [ "$OSCAM_CHECK_UDEV3" = "yes" ]; then
+            echo 'SUBSYSTEMS=="usb", KERNEL=="ttyUSB*", ATTRS{serial}=="'$OSCAM_TEXT_UDEVREADER3'", SYMLINK+="'$OSCAM_TEXT_UDEV3'"' >>/tmp/flash/mod/udev-final.rules
+fi
+
+if [ "$OSCAM_CHECK_UDEV4" = "yes" ]; then
+            echo 'SUBSYSTEMS=="usb", KERNEL=="ttyUSB*", ATTRS{serial}=="'$OSCAM_TEXT_UDEVREADER4'", SYMLINK+="'$OSCAM_TEXT_UDEV4'"' >>/tmp/flash/mod/udev-final.rules
+fi
+
+if [ "$OSCAM_CHECK_UDEV5" = "yes" ]; then
+            echo 'SUBSYSTEMS=="usb", KERNEL=="ttyUSB*", ATTRS{serial}=="'$OSCAM_TEXT_UDEVREADER5'", SYMLINK+="'$OSCAM_TEXT_UDEV5'"' >>/tmp/flash/mod/udev-final.rules
+fi   
+}
+
+start() {
+    if [ -e "$WORKING_DIR/$DAEMON" ]; then
+        [ ! -x "$WORKING_DIR/$DAEMON" ] && chmod 755 "$WORKING_DIR/$DAEMON" >/dev/null
+        export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/freetz
+        sleep 1
+        echo -n "$(lang de:"Starte $DAEMON ... " en:"Starting $DAEMON ... ")"
+        "$WORKING_DIR/$DAEMON" -b -c "$WORKING_DIR" & 2>/dev/null
+        sleep 1
+        if pidof $DAEMON >$PID_FILE; then
+            echo "$(lang de:"fertig." en:"done.")"
+        else
+            echo "$(lang de:"fehlgeschlagen." en:"failed.")"
+            [ -e "$PID_FILE" ] && rm "$PID_FILE" >/dev/null
+	fi
+    else
+        echo "$(lang de:"$DAEMON ... nicht gefunden." en:"$DAEMON ... not found.")"
+    fi
+
+    cleanup
+    
+    udevsave
+
+    echo "# BEGIN: $WATCHDOG" >>/tmp/flash/mod/rc.custom
+    echo "/etc/init.d/rc.$DAEMON c_rb" >>/tmp/flash/mod/rc.custom
+    echo "# END: $WATCHDOG" >>/tmp/flash/mod/rc.custom
+
+    modsave flash >/dev/null
+    if [ "$OSCAM_CHECK_CARDINIT" = "yes" -o "$OSCAM_CHECK_CAMRUN" = "yes" -o "$OSCAM_CHECK_BULKWRITE" = "yes" -o "$OSCAM_DYNCHK" = "yes" -o "$OSCAM_CHECK_CUSTOMERR" = "yes" ]; then
+        if [ -n "$(pidof crond)" ]; then killall crond; fi
+        if [ -e /tmp/flash/mod/crontab ]; then
+            echo "# BEGIN: $WATCHDOG" >>/tmp/flash/mod/crontab
+        else
+            echo "# BEGIN: $WATCHDOG" >/tmp/flash/mod/crontab
+        fi
+        if [ "$OSCAM_CHECK_CARDINIT" = "yes" ]; then
+            echo "*/$OSCAM_CHECKING_INTERVAL * * * * /etc/init.d/rc.$DAEMON c_ie" >>/tmp/flash/mod/crontab
+        fi
+        if [ "$OSCAM_CHECK_CAMRUN" = "yes" ]; then
+            echo "*/$OSCAM_CHECKING_INTERVAL * * * * /etc/init.d/rc.$DAEMON c_cr" >>/tmp/flash/mod/crontab
+        fi
+        if [ "$OSCAM_CHECK_BULKWRITE" = "yes" ]; then
+            echo "*/$OSCAM_CHECKING_INTERVAL * * * * /etc/init.d/rc.$DAEMON c_bw" >>/tmp/flash/mod/crontab
+        fi
+	if [ "$OSCAM_CHECK_CUSTOMERR" = "yes" ]; then
+            echo "*/$OSCAM_CHECKING_INTERVAL * * * * /etc/init.d/rc.$DAEMON c_ce" >>/tmp/flash/mod/crontab
+        fi
+        if [ "$OSCAM_DYNCHK" = "yes" ]; then
+            echo "*/$OSCAM_CHECKING_INTERVAL * * * * /etc/init.d/rc.$DAEMON c_dd" >>/tmp/flash/mod/crontab
+        fi
+        echo "# END: $WATCHDOG" >>/tmp/flash/mod/crontab
+        if [ -e /var/spool/cron/crontabs/root ]; then cp /tmp/flash/mod/crontab /var/spool/cron/crontabs/root; fi
+        if [ -z "$(pidof crond)" ]; then crond -b; fi
+    fi
+}
+
+stop() {
+    while pidof $DAEMON >/dev/null; do
+        echo -n "$(lang de:"Stoppe $DAEMON ... " en:"Stopping $DAEMON ... ")"
+        killall -q -9 $DAEMON >/dev/null && sleep 1
+        if pidof $DAEMON >/dev/null; then
+            echo "$(lang de:"fehlgeschlagen." en:"failed.")"
+            kill -9 `pidof $DAEMON` >/dev/null
+        fi
+        [ -e "$PID_FILE" ] && rm "$PID_FILE" >/dev/null
+        echo "$(lang de:"fertig." en:"done.")"
+    
+    cleanup
+    
+    udevsave
+    
+    if [ "$CRONDAUTO" = "yes" ]; then crond -b; fi
+    
+    done
+}
+
+loaddriver() {
+    if ([ "$OSCAM_COMCHK" = "yes" ] && [ "$OSCAM_DUECHK" = "no" ]); then modprobe $OSCAM_COMCHK_IF; sleep 1; fi
+    if [ "$OSCAM_DUECHK" = "yes" ]; then modprobe ftdi_sio; modprobe pl2303; sleep 2; fi
+    echo -n "$(lang de:"Lade USB-Serial Module ... " en:"Loading USB-Serial modules ... ")"
+    i=0; while [ $i -lt 8 ]; do
+        [ -f /dev/ttyUSB$i ] && rm /dev/ttyUSB$i >/dev/null
+        [ ! -e /dev/ttyUSB$i ] && mknod /dev/ttyUSB$i c 188 $i >/dev/null
+    let i=$i+1; done
+    sleep 1 && echo "$(lang de:"fertig." en:"done.")"
+    if [ "$OSCAM_SMUSBCHK" = "yes" ]; then modprobe -r ftdi_sio && sleep 2
+        echo -n "$(lang de:"USB-Smartmouse Konfiguration ... " en:"USB-Smartmouse configuration ... ")"
+        /usr/bin/smusbutil $OSCAM_SMUSBCHK_IF $OSCAM_SMMODE
+        modprobe ftdi_sio && sleep 1
+        echo "$(lang de:"fertig." en:"done.")"
+    fi
+}
+
+unloaddriver() {
+    if ([ "$OSCAM_COMCHK" = "yes" ] && [ "$OSCAM_DUECHK" = "no" ]); then
+        echo -n "$(lang de:"Entlade USB-Serial Module ... " en:"Unloading USB-Serial modules ... ")"
+        modprobe -r $OSCAM_COMCHK_IF
+        sleep 1
+        echo "$(lang de:"fertig." en:"done.")"
+    fi
+    if [ "$OSCAM_DUECHK" = "yes" ]; then
+        echo -n "$(lang de:"Entlade USB-Serial Module ... " en:"Unloading USB-Serial modules ... ")"
+        modprobe -r ftdi_sio
+        modprobe -r pl2303
+        sleep 2
+        echo "$(lang de:"fertig." en:"done.")"
+    fi
+}
+
+pcsc_start() {
+    echo -n "$(lang de:"Starte PCSCD ... " en:"Starting PCSCD ... ")"
+    /etc/init.d/./pcscd.sh start >/dev/null 2>&1 &
+    sleep 2
+    if pidof "pcscd" >/dev/null; then
+        echo "$(lang de:"fertig." en:"done.")"
+    else
+        echo "$(lang de:"fehlgeschlagen." en:"failed.")"
+    fi
+}
+
+pcsc_stop() {
+    echo -n "$(lang de:"Stoppe PCSCD ... " en:"Stopping PCSCD ... ")"
+    /etc/init.d/./pcscd.sh stop >/dev/null 2>&1 &
+    sleep 2
+    if ! pidof "pcscd" >/dev/null; then
+        echo "$(lang de:"fertig." en:"done.")"
+        rm /var/run/pcscd/pcscd.pid
+    else
+        echo "$(lang de:"fehlgeschlagen." en:"failed.")"
+    fi
+}
+
+transmit_mail() {
+    mailer -s "$WATCHDOG_NAME - $ERROR_MSG" -f $OSCAM_MAIL_FROM -t $OSCAM_MAIL_TO -m $OSCAM_MAIL_SERVER -a $OSCAM_MAIL_USER -w $OSCAM_MAIL_PASSWORD
+    echo "$(date) => $(lang de:"Mail gesendet an" en:"transmitted mail to") $OSCAM_MAIL_TO" >>$WATCHDOG_LOG
+}
+
+check_dyndns() {
+    ipcheck
+    if [ "$DYNIP" != "$HOSTIP" ] && [ -n "$OSCAM_HOST" ]; then
+        case "$OSCAM_DO_PROVIDER" in
+    	"dyndns")
+                UPDATE_URL="http://$OSCAM_HOST_USER:$OSCAM_HOST_PASS@members.dyndns.org/nic/update?hostname=$OSCAM_HOST"
+                ;;
+
+            "noip")
+                UPDATE_URL="http://$OSCAM_HOST_USER:$OSCAM_HOST_PASS@dynupdate.no-ip.com/nic/update?hostname=$OSCAM_HOST"
+                ;;
+
+           "dnsomatic")
+               UPDATE_URL="http://$OSCAM_HOST_USER:$OSCAM_HOST_PASS@updates.dnsomatic.com/nic/update?hostname=$OSCAM_HOST"
+               ;;
+
+           "dynserv")
+               UPDATE_URL="http://dynserv.ca/dyn/dynengine.cgi?name=$OSCAM_HOST_USER&pass=$OSCAM_HOST_PASS&func=set&domain=$OSCAM_HOST"
+               ;;
+
+           "twodns")
+               UPDATE_URL="http://$OSCAM_HOST_USER:$OSCAM_HOST_PASS@update.two-dns.de/update?hostname=$OSCAM_HOST"
+               ;;
+           "custom")
+               UPDATE_URL="$(echo "$OSCAM_HOST_UURL" | sed -e "s/<user>/$OSCAM_HOST_USER/" -e "s/<pass>/$OSCAM_HOST_PASS/" -e "s/<host>/$OSCAM_HOST/")"
+    	   ;;
+        esac
+
+	if [ -n "$UPDATE_URL" ]; then
+            wget -q -O - "$UPDATE_URL"
+            sleep 120
+            ipcheck
+	fi
+
+
+        if [ "$DYNIP" = "$HOSTIP" ]; then
+            ERROR_MSG="$(lang de:"IP-Aenderung: $OSCAM_HOST wurde erfolgreich aktualisiert!" en:"IP Change: $OSCAM_HOST was updated successfully!")"
+        else
+            ERROR_MSG="$(lang de:"IP-Aenderung: $OSCAM_HOST konnte nicht aktualisiert werden! Einstellungen pruefen." en:"IP Change: $OSCAM_HOST could not be updated! Check settings.")"
+        fi
+
+        echo "$(date) => $ERROR_MSG" >>$WATCHDOG_LOG
+        if [ "$OSCAM_SEND_DYNDNS" = "yes" ]; then transmit_mail; fi
+    fi
+}
+
+check_camrunning() {
+    if [ -e "$WORKING_DIR/$DAEMON" ] && [ "$(/etc/init.d/rc.$DAEMON status)" = "stopped" ]; then
+
+        if [ "$OSCAM_DO_CAMRUN" = "r" ]; then
+            local RESTART_OF="Router $(lang de:"Neustart" en:"reboot")"
+        else
+            local RESTART_OF="$OSCAM_NAME $(lang de:"Neustart" en:"restart")"
+        fi
+
+        ERROR_MSG="$RESTART_OF - $OSCAM_NAME $(lang de:"war gestoppt" en:"was stopped")"
+
+        if [ "$OSCAM_DO_CAMRUN" != "r" ]; then /etc/init.d/rc.$DAEMON restart; fi
+        echo "$(date) => $ERROR_MSG" >>$WATCHDOG_LOG
+        if [ "$OSCAM_SEND_CAMRUN" = "yes" ]; then transmit_mail; fi
+        if [ "$OSCAM_DO_CAMRUN" = "r" ]; then /sbin/reboot && exit 0; fi
+    fi
+}
+
+check_initerror() {
+    get_logfile
+    if [ -n "$(grep "card initializing error" $LOGFILE)" ]; then
+        if [ "$OSCAM_DO_CARDINIT" = "r" ]; then
+            local RESTART_OF="Router $(lang de:"Neustart" en:"reboot")"
+        else
+            local RESTART_OF="$OSCAM_NAME $(lang de:"Neustart" en:"restart")"
+        fi
+
+        ERROR_MSG="$RESTART_OF - $OSCAM_NAME $(lang de:"Karteninitialiserungsfehler" en:"card initializing error")"
+
+        /etc/init.d/rc.$DAEMON stop
+        echo "$(date) => $ERROR_MSG" >>$WATCHDOG_LOG
+        mv $LOGFILE $LOGFILE-prev
+        if [ "$OSCAM_SEND_CARDINIT" = "yes" ]; then transmit_mail; fi
+        if [ "$OSCAM_DO_CARDINIT" = "r" ]; then /sbin/reboot && exit 0; else /etc/init.d/rc.$DAEMON start; fi
+    fi
+}
+
+check_bulkwrite() {
+    get_logfile
+    if [ -n "$(grep "usb bulk write failed" $LOGFILE)" ]; then
+        if [ "$OSCAM_DO_BULKWRITE" = "r" ]; then
+            local RESTART_OF="Router $(lang de:"Neustart" en:"reboot")"
+        else
+            local RESTART_OF="$OSCAM_NAME $(lang de:"Neustart" en:"restart")"
+        fi
+
+        ERROR_MSG="$RESTART_OF - $OSCAM_NAME $(lang de:"USB Bulk Write fehlgeschlagen" en:"USB bulk write failed")"
+
+        /etc/init.d/rc.$DAEMON stop
+        echo "$(date) => $ERROR_MSG" >>$WATCHDOG_LOG
+        mv $LOGFILE $LOGFILE-prev
+        if [ "$OSCAM_SEND_BULKWRITE" = "yes" ]; then transmit_mail; fi
+        if [ "$OSCAM_DO_BULKWRITE" = "r" ]; then /sbin/reboot && exit 0; else /etc/init.d/rc.$DAEMON start; fi
+    fi
+}
+
+check_customerr() {
+    get_logfile
+    if [ -n "$OSCAM_TEXT_CUSTOMERR" ] && [ -n "$(grep "$OSCAM_TEXT_CUSTOMERR" $LOGFILE)" ]; then
+        if [ "$OSCAM_DO_CUSTOMERR" = "r" ]; then
+            local RESTART_OF="Router $(lang de:"Neustart" en:"reboot")"
+        else
+            local RESTART_OF="$OSCAM_NAME $(lang de:"Neustart" en:"restart")"
+        fi
+
+        ERROR_MSG="$RESTART_OF - $OSCAM_NAME $(lang de:"Benutzerdefinierter Fehler:" en:"Custom error:") $OSCAM_TEXT_CUSTOMERR"
+
+        /etc/init.d/rc.$DAEMON stop
+        echo "$(date) => $ERROR_MSG" >>$WATCHDOG_LOG
+        mv $LOGFILE $LOGFILE-prev
+        if [ "$OSCAM_SEND_CUSTOMERR" = "yes" ]; then transmit_mail; fi
+        if [ "$OSCAM_DO_CUSTOMERR" = "r" ]; then /sbin/reboot && exit 0; else /etc/init.d/rc.$DAEMON start; fi
+    fi
+}
+
+check_reboot() {
+    ERROR_MSG="Router $(lang de:"Neustart" en:"reboot")"
+    echo "$(date) => $ERROR_MSG" >>$WATCHDOG_LOG
+    if [ "$OSCAM_SEND_REBOOT" = "yes" ]; then transmit_mail; fi     		 
+}
+
+case "$1" in
+    ""|load)
+        modreg cgi $DAEMON $OSCAM_NAME
+        modreg daemon $DAEMON
+        modreg file $DAEMON oscamconf 'OSCam Config' 1 oscamconf
+        modreg file $DAEMON oscamserver 'OSCam Server' 1 oscamserver
+        modreg file $DAEMON oscamuser 'OSCam User' 1 oscamuser
+        modreg file $DAEMON oscamird 'OSCam IRD' 1 oscamird
+        modreg file $DAEMON oscamac 'OSCam AC' 1 oscamac
+        modreg file $DAEMON oscamcert 'OSCam Cert' 1 oscamcert
+        modreg file $DAEMON oscamdvbapi 'OSCam DVBAPI' 1 oscamdvbapi
+        modreg file $DAEMON oscamguess 'OSCam Guess' 1 oscamguess
+        modreg file $DAEMON oscamservices 'OSCam Services' 1 oscamservices
+        modreg file $DAEMON oscamsrvid 'OSCam SrvID' 1 oscamsrvid
+        modreg file $DAEMON oscamsrvid2 'OSCam SrvID2' 1 oscamsrvid2
+        modreg file $DAEMON oscamtiers 'OSCam Tiers' 1 oscamtiers
+        modreg file $DAEMON oscamprovid 'OSCam ProvID' 1 oscamprovid
+        modreg file $DAEMON oscamcacheex 'OSCam CacheEx' 1 oscamcacheex
+        modreg file $DAEMON oscamwhitelist 'OSCam Whitelist' 1 oscamwhitelist
+        modreg file $DAEMON softcamkey 'SoftCam.Key' 1 softcamkey
+#       modreg extra $DAEMON '$(lang de:"OSCam-Info" en:"OSCam info")' 2 oscamversion
+        modreg extra $DAEMON '$(lang de:"OSCam-Setup" en:"OSCam setup")' 2 oscamup
+        modreg extra $DAEMON '$(lang de:"OSCam-Tools" en:"OSCam tools")' 2 oscamtools
+        modreg extra $DAEMON '$(lang de:"OSCam-Watchdog" en:"OSCam watchdog")' 2 oscamwatchdog
+#       modreg extra $DAEMON '$(lang de:"Hilfe Intern-Modus" en:"OSCam internal mode help")' 2 internhilfe
+#       modreg extra $DAEMON '$(lang de:"Hilfe USB-Modus" en:"OSCam USB mode help")' 2 stickhilfe
+
+        if [ "$OSCAM_ENABLED" != "yes" ]; then
+            echo "OSCam is disabled" 1>&2
+            exit 1
+        fi
+        if [ "$OSCAM_PCSCDCHK" = "yes" ]; then pcsc_start; fi
+        if [ "$OSCAM_COMCHK" = "yes" ] || [ "$OSCAM_DUECHK" = "yes" ]; then loaddriver; fi
+        start
+        ;;
+
+    start)
+        if [ "$OSCAM_PCSCDCHK" = "yes" ]; then pcsc_start; fi
+        if [ "$OSCAM_COMCHK" = "yes" ] || [ "$OSCAM_DUECHK" = "yes" ]; then loaddriver; fi
+        start
+        ;;
+
+    stop)
+        stop
+        if [ "$OSCAM_PCSCDCHK" = "yes" ]; then pcsc_stop; fi
+        if [ "$OSCAM_RELOAD" = "yes" ]; then unloaddriver; fi
+        ;;
+
+    restart)
+        stop
+        if [ "$OSCAM_RELOAD" = "yes" ]; then unloaddriver; fi
+        if [ "$OSCAM_COMCHK" = "yes" ] || [ "$OSCAM_DUECHK" = "yes" ]; then loaddriver; fi
+        start
+        ;;
+
+    status)
+        if ! pidof $DAEMON >/dev/null; then
+            echo 'stopped'
+        else
+            echo 'running'
+        fi
+        ;;
+        
+    udev)
+				udevsave
+        ;;        
+
+    c_cr)
+	check_camrunning
+        ;;
+
+    c_ie)
+	check_initerror
+        ;;
+
+    c_bw)
+	check_bulkwrite
+        ;;
+
+    c_ce)
+	check_customerr
+        ;;
+
+    c_dd)
+	check_dyndns
+        ;;
+
+    c_rb)
+	check_reboot
+        ;;
+
+    *)
+        echo "Usage: $0 [start|stop|load|restart|status|udev]" 1>&2
+        exit 1
+        ;;
+esac
+
+exit 0

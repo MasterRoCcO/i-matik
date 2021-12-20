@@ -1,0 +1,19 @@
+CAPTION='OSCam Ird $(lang de:"Konfiguration" en:"configuration")'
+
+. /mod/etc/conf/oscam.cfg
+
+if [ -e /var/tmp/intern ]; then
+		if [ "$(mount|grep "yaffs2")" ] || [ "$(mount|grep "ubifs")" ] || [ "$(mount|grep "ext4")" ] >/dev/null; then
+        OSCAM_PATH=/var/media/ftp
+    else 
+        OSCAM_PATH=/data
+    fi
+else
+    if [ -z "$OSCAM_PATH" ] || [ -z "$(df|grep "$OSCAM_PATH"|grep "/dev/sd")" ]; then OSCAM_PATH="$(df|grep "/dev/sda"|awk '{print $6}'|tail -1)"; fi
+fi
+
+CONFIG_FILE="$OSCAM_PATH/addon/oscam/oscam.ird"
+CONFIG_SAVE='modsave flash; if pidof oscam > /dev/null; then echo ""; /mod/etc/init.d/rc.oscam restart; fi'
+CONFIG_TYPE='text'
+
+TEXT_ROWS=17
