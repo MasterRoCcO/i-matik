@@ -6,5 +6,3 @@ rm -rf oscam-1.5.4.tar.gz
 mkdir $I_MATIK_PATH/config/fritzbox/addon
 mv oscam-1.5.4 $I_MATIK_PATH/config/fritzbox/addon/oscam-1.5.4
 ln -s $I_MATIK_PATH/config/fritzbox/addon/oscam-1.5.4 $I_MATIK_PATH/config/fritzbox/MY_FILES/addon/oscam
-
-
