@@ -1,0 +1,11 @@
+#!/bin/bash
+I_MATIK_PATH=$(cd `dirname $0` && pwd)
+cd $I_MATIK_PATH/config/fritzbox
+#wget https://www.freetz.digital-eliteboard.com/vfm-admin/vfm-downloader.php?q=VGVhbXNlcnZlci9GcmVldHovQWRkb24vb3NjYW0lMjAxLjUueC8xLjUuNC9vc2NhbS0xLjUuNC50YXIuZ3o=&h=7bd0b03c1ace2711579c05635ed72774
+#mv vfm-downloader.php?q=VGVhbXNlcnZlci9GcmVldHovQWRkb24vb3NjYW0lMjAxLjUueC8xLjUuNC9vc2NhbS0xLjUuNC50YXIuZ3o= oscam-1.5.4.tar.gz
+#tar xfvz oscam-1.5.4.tar.gz
+chmod -v 755 oscam-1.5.4
+mv oscam-1.5.4 $I_MATIK_PATH/config/fritzbox/addon/oscam-1.5.4
+ln -s $I_MATIK_PATH/config/fritzbox/addon/oscam-1.5.4 $I_MATIK_PATH/config/fritzbox/MY_FILES/addon/oscam
+
+
