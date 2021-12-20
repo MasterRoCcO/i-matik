@@ -68,6 +68,12 @@ elif [[ $1 == '4060.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory
 elif [[ $1 == '4060.multi' ]]; then
 echo 'Zur Zeit noch deaktiviert für arm Boxen'
+elif [[ $1 == '7530ax.11' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory
+elif [[ $1 == '7530ax.30' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory
+elif [[ $1 == '7530ax.multi' ]]; then
+echo 'Zur Zeit noch deaktiviert für mips Boxen'
 #arm boxen no oscam
 elif [[ $1 == '1200.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_oscam
@@ -229,7 +235,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7490.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7490.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+source $I_MATIK_PATH/config/fritzbox/scripts/./mips_multi
 elif [[ $1 == '7560.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7560.30' ]]; then
@@ -347,12 +353,6 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory
 elif [[ $1 == '7360v2.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory
 elif [[ $1 == '7360v2.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
-elif [[ $1 == '7530ax.11' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory
-elif [[ $1 == '7530ax.30' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory
-elif [[ $1 == '7530ax.multi' ]]; then
 echo 'Zur Zeit noch deaktiviert für mips Boxen'
 #mips boxen no inmemory no oscam
 elif [[ $1 == 'DVB-C.10' ]]; then
