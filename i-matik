@@ -386,19 +386,19 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == '450E.multi' ]]; then
 echo 'Zur Zeit noch deaktiviert für mips Boxen'
 elif [[ $1 == '540E.10' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
+source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam_rp
 elif [[ $1 == '540E.11' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
+source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam_rp
 elif [[ $1 == '540E.30' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
+source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam_rp
 elif [[ $1 == '540E.multi' ]]; then
 echo 'Zur Zeit noch deaktiviert für mips Boxen'
 elif [[ $1 == '546E.10' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
+source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam_rp
 elif [[ $1 == '546E.11' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
+source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam_rp
 elif [[ $1 == '546E.30' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
+source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam_rp
 elif [[ $1 == '546E.multi' ]]; then
 echo 'Zur Zeit noch deaktiviert für mips Boxen'
 elif [[ $1 == '1240E.10' ]]; then
