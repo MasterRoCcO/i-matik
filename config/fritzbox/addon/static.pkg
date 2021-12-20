@@ -1,0 +1,15 @@
+# Static addons
+#
+#Extract the addon archive into this ./addon/ directory.
+#Example: ./addon/own-files-0.1/
+#
+#To enable an addon, add the name of the addon directory
+#to this file. Example: own-files-0.1
+#
+#You could also use seperate *.pkg files for each addon.
+#It's recommended to not include the version in the file
+#name, like 'own-files.pkg' with content 'own-files-0.1'.
+#
+
+# Addons:
+oscam
