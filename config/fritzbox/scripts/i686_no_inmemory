@@ -69,7 +69,6 @@ for bs in "${BOX_SSL[@]}"; do
 		umask 0022
 		git clone https://github.com/Freetz-NG/freetz-ng "$FREETZ_SSL_HOME_PATH"
 		rm -rf "$FREETZ_SSL_HOME_PATH/addon"
-		#rm -rf "$FREETZ_SSL_HOME_PATH/make/pcsc-lite/patches"
 		cp -ar /$MY_FILES_HOME_PATH/* "$FREETZ_SSL_HOME_PATH/"
 	elif [ ! -d "$FREETZ_SSL_HOME_PATH" ]; then
 		printf "${YELLOW}'$FREETZ_SSL_HOME_PATH' already exists but is not a directory${NC}" 1>&2
@@ -100,10 +99,6 @@ for bs in "${BOX_SSL[@]}"; do
 	# Loop through found config files
 	for conf in "${CONFIGS[@]}"; do
 		cp -f "$conf" .config	#copy box config to .config
-
-		#make kernel-dirclean
-		#make target-toolchain-clean
-		#echo "starte $MENUC $MENUC1" && sleep 2 #echo command 2 seconds for progress
 		if [ -z $PARAM_CONFIG ]; then
 			$MENUC $MENUC1 #run make menuconfig
 		else
