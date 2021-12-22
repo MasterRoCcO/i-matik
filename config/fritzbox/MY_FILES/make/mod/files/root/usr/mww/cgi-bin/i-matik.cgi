@@ -12,9 +12,12 @@ cat << EOF | sed -r 's/(.+[^>])$/\1<br>/g'
 
 <p>
 <h1>Supporters</h1>
-https://github.com/MasterRoCcO/i-matik
-
-https://www.digital-eliteboard.com/threads/mein-script-i-matik-was-eine-image-automatik-ist-plus-oscam-bau.507178/
+ <ul>
+        <li><a class="active" href="https://github.com/MasterRoCcO/i-matik" target="_blank">https://github.com/MasterRoCcO/i-matik</a></li>
+    </ul>
+ <ul>
+        <li><a class="active" href="https://www.digital-eliteboard.com/threads/mein-script-i-matik-was-eine-image-automatik-ist-plus-oscam-bau.507178/" target="_blank">https://www.digital-eliteboard.com/threads/mein-script-i-matik-was-eine-image-automatik-ist-plus-oscam-bau.507178/</a></li>
+    </ul>
 </p>
 
 </center>
