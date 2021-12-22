@@ -428,6 +428,9 @@ printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '4020' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
 
+elif [[ $1 == '7320.10' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
+
 elif [[ $1 == '7320-Alien7330.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
 elif [[ $1 == '7320-Alien7330.11' ]]; then
@@ -460,6 +463,12 @@ elif [[ $1 == '7330sl.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '7330sl' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+
+elif [[ $1 == '7340.10' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
+
+elif [[ $1 == '7360v1.10' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
 
 elif [[ $1 == '7390.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
@@ -597,6 +606,16 @@ elif [[ $1 == '2400.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '2400' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+
+#mipsel boxen no inmemory
+elif [[ $1 == '7240.10' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./mipsel_no_inmemory
+
+elif [[ $1 == '7270v2.10' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./mipsel_no_inmemory
+
+elif [[ $1 == '7270v3.10' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./mipsel_no_inmemory
 
 else
 # Generate list of supported devices
