@@ -661,7 +661,7 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf "  -c, --config\t\t\tshow not freetz-ng configuration dialog\n"
 	printf "  -s,--skip-image2memory\tdo not create inmemory image\n"
 	printf "  -no,--no-oscam\t\tIt won't create an oscam\n"
-	printf "  -push \t\t\tdo not create inmemory image\n\n"
+	printf "  -push \t\t\tpush image to Fritz!Box\n\n"
 	printf ${GREEN}"List of currently OpenSSL 1.0.x supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST_SSL_1_0}\n"
 	printf ${BLUE}"To build an OpenSSL 1.0.x image for Fritz!Box 3272 use this command:${NC}\n"
 	printf "$0 3272.10\n\n"
@@ -675,7 +675,7 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf ${BLUE}"To build an OpenSSL MULTI image for Fritz!Box 7490 use this command:${NC}\n"
 	printf "$0 7490.multi\n\n"
 	printf ${GREEN}"List of currently push supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST}\n"
-	printf ${BLUE}"To create an image for the Fritz! Box 7490 to push, use this command :${NC}\n"
+	printf ${BLUE}"To create an image for the Fritz!Box 7490 to push, use this command :${NC}\n"
 	printf "$0 7490 -push\n"
 	exit 0
 fi
