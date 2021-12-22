@@ -354,7 +354,7 @@ FREETZ_AVMDAEMON_DISABLE_TR069=y
 #
 # FREETZ_PACKAGE_CA_BUNDLE is not set
 # FREETZ_PACKAGE_CALLMONITOR is not set
-# FREETZ_PACKAGE_CCID is not set
+FREETZ_PACKAGE_CCID=y
 # FREETZ_PACKAGE_CHECKMAILD is not set
 # FREETZ_PACKAGE_CIFSMOUNT is not set
 # FREETZ_PACKAGE_CLASSPATH is not set
@@ -564,7 +564,7 @@ FREETZ_PACKAGE_MODCGI=y
 # P
 #
 # FREETZ_PACKAGE_P7ZIP is not set
-# FREETZ_PACKAGE_PCSC_LITE is not set
+FREETZ_PACKAGE_PCSC_LITE=y
 # FREETZ_PACKAGE_PHONEBOOK_TOOLS is not set
 # FREETZ_PACKAGE_PHP is not set
 # FREETZ_PACKAGE_PINGTUNNEL is not set
@@ -737,7 +737,7 @@ FREETZ_PACKAGE_IPTABLES_IS_SELECTABLE=y
 # Addhole (needs dnsmasq)
 #
 FREETZ_PACKAGE_AUTHORIZED_KEYS=y
-# FREETZ_PACKAGE_AVM_PORTFW is not set
+FREETZ_PACKAGE_AVM_PORTFW=y
 # FREETZ_PACKAGE_DNSD_CGI is not set
 # FREETZ_PACKAGE_DOWNLOADER is not set
 # FREETZ_PACKAGE_NFSD_CGI is not set
@@ -1096,7 +1096,7 @@ FREETZ_LIB_libuClibc=y
 # USB & FTDI
 #
 # FREETZ_LIB_libusb_0 is not set
-# FREETZ_LIB_libusb_1 is not set
+FREETZ_LIB_libusb_1=y
 # FREETZ_LIB_libftdi is not set
 # end of USB & FTDI
 
@@ -1131,7 +1131,7 @@ FREETZ_LIB_libuClibc=y
 # FREETZ_LIB_libffi is not set
 # FREETZ_LIB_libltdl is not set
 # FREETZ_LIB_liblua is not set
-# FREETZ_LIB_libpcsclite is not set
+FREETZ_LIB_libpcsclite=y
 # FREETZ_LIB_libpopt is not set
 # FREETZ_LIB_libprivatekeypassword is not set
 # FREETZ_LIB_libprotobuf_c is not set

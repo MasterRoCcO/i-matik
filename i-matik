@@ -474,9 +474,9 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
 
 #mips boxen no inmemory
 elif [[ $1 == '5530.11' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory
+source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == '5530.30' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory
+source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == '5530.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '5530' ]] && [[ $2 == '-push' ]]; then

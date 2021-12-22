@@ -1195,11 +1195,11 @@ FREETZ_MODULES_OWN=""
 # FREETZ_MODULE_ch341 is not set
 # FREETZ_MODULE_cp2101 is not set
 # FREETZ_MODULE_cp210x is not set
-FREETZ_MODULE_ftdi_sio=y
+# FREETZ_MODULE_ftdi_sio is not set
 # FREETZ_MODULE_ipaq is not set
 # FREETZ_MODULE_option is not set
-FREETZ_MODULE_pl2303=y
-FREETZ_MODULE_usbserial=y
+# FREETZ_MODULE_pl2303 is not set
+# FREETZ_MODULE_usbserial is not set
 # end of drivers
 
 #
