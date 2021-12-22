@@ -14,31 +14,46 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./arm
 elif [[ $1 == '68504g.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm
 elif [[ $1 == '68504g.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für arm Boxen\n"
+elif [[ $1 == '68504g' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '68505g.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm
 elif [[ $1 == '68505g.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm
 elif [[ $1 == '68505g.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für arm Boxen\n"
+elif [[ $1 == '68505g' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '7520.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm
 elif [[ $1 == '7520.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm
 elif [[ $1 == '7520.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für arm Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für arm Boxen\n"
+elif [[ $1 == '7520' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '7520-Alien7530.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm
 elif [[ $1 == '7520-Alien7530.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm
 elif [[ $1 == '7520-Alien7530.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für arm Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für arm Boxen\n"
+elif [[ $1 == '7520-Alien7530' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '7530.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm
 elif [[ $1 == '7530.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm
 elif [[ $1 == '7530.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für arm Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für arm Boxen\n"
+elif [[ $1 == '7530' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '7581.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm
 elif [[ $1 == '7581.11' ]]; then
@@ -46,7 +61,10 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./arm
 elif [[ $1 == '7581.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm
 elif [[ $1 == '7581.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für arm Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für arm Boxen\n"
+elif [[ $1 == '7581' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '7582.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm
 elif [[ $1 == '7582.11' ]]; then
@@ -54,58 +72,85 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./arm
 elif [[ $1 == '7582.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm
 elif [[ $1 == '7582.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für arm Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für arm Boxen\n"
+elif [[ $1 == '7582' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 #arm boxen no inmemory
 elif [[ $1 == '4040.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory
 elif [[ $1 == '4040.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory
 elif [[ $1 == '4040.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für arm Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für arm Boxen\n"
+elif [[ $1 == '4040' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '4060.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory
 elif [[ $1 == '4060.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory
 elif [[ $1 == '4060.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für arm Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für arm Boxen\n"
+elif [[ $1 == '4060' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '7530ax.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory
 elif [[ $1 == '7530ax.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory
 elif [[ $1 == '7530ax.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für arm Boxen\n"
+elif [[ $1 == '7530ax' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 #arm boxen no oscam
 elif [[ $1 == '1200.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_oscam
 elif [[ $1 == '1200.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_oscam
 elif [[ $1 == '1200.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für arm Boxen\n"
+elif [[ $1 == '1200' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '3000.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_oscam
 elif [[ $1 == '3000.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_oscam
 elif [[ $1 == '3000.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für arm Boxen\n"
+elif [[ $1 == '3000' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 #arm boxen no inmemory no oscam
 elif [[ $1 == '1260E.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory_no_oscam
 elif [[ $1 == '1260E.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory_no_oscam
 elif [[ $1 == '1260E.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für arm Boxen\n"
+elif [[ $1 == '1260E' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '1260v2.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory_no_oscam
 elif [[ $1 == '1260v2.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory_no_oscam
 elif [[ $1 == '1260v2.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für arm Boxen\n"
+elif [[ $1 == '1260v2' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '6000.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory_no_oscam
 elif [[ $1 == '6000.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory_no_oscam
 elif [[ $1 == '6000.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für arm Boxen\n"
+elif [[ $1 == '6000' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 #i686 boxen no inmemory
 elif [[ $1 == '6430.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i686_no_inmemory
@@ -114,7 +159,10 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i686_no_inmemory
 elif [[ $1 == '6430.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i686_no_inmemory
 elif [[ $1 == '6430.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für i686 Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für i686 Boxen\n"
+elif [[ $1 == '6430' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '6490.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i686_no_inmemory
 elif [[ $1 == '6490.11' ]]; then
@@ -122,7 +170,10 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i686_no_inmemory
 elif [[ $1 == '6490.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i686_no_inmemory
 elif [[ $1 == '6490.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für i686 Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für i686 Boxen\n"
+elif [[ $1 == '6490' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '6590.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i686_no_inmemory
 elif [[ $1 == '6590.11' ]]; then
@@ -130,19 +181,28 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i686_no_inmemory
 elif [[ $1 == '6590.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i686_no_inmemory
 elif [[ $1 == '6590.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für i686 Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für i686 Boxen\n"
+elif [[ $1 == '6590' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '6591.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i686_no_inmemory
 elif [[ $1 == '6591.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i686_no_inmemory
 elif [[ $1 == '6591.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für i686 Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für i686 Boxen\n"
+elif [[ $1 == '6590' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '6660.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i686_no_inmemory
 elif [[ $1 == '6660.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i686_no_inmemory
 elif [[ $1 == '6660.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für i686 Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für i686 Boxen\n"
+elif [[ $1 == '6660' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 #mips boxen
 elif [[ $1 == '3272.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
@@ -151,7 +211,10 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '3272.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '3272.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '3272' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '3370.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '3370.11' ]]; then
@@ -159,7 +222,10 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '3370.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '3370.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '3370' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '3390.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '3390.11' ]]; then
@@ -167,25 +233,37 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '3390.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '3390.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '3390' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '3490.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '3490.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '3490.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '3490' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '5490.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '5490.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '5490.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '5490' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '5491.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '5491.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '5491.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '5491' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '6840.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '6840.11' ]]; then
@@ -193,13 +271,19 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '6840.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '6840.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '6840' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '6890.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '6890.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '6890.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '6890' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '7272.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7272.11' ]]; then
@@ -207,7 +291,10 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7272.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7272.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '7272' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '7362.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7362.11' ]]; then
@@ -215,7 +302,10 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7362.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7362.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '7362' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '7412.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7412.11' ]]; then
@@ -223,73 +313,109 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7412.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7412.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '7412' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '7430.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7430.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7430.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '7430' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '7490.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7490.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7490.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./mips_multi
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '7490' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '7560.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7560.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7560.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '7560' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '7580.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7580.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7580.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '7580' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '7583.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7583.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7583.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '7583' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '7590.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7590.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7590.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '7590' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '6820v1.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '6820v1.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '6820v1.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '6820v1' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '6820v2.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '6820v2.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '6820v2.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '6820v2' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '6820v3.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '6820v3.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '6820v3.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '6820v3' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '7590ax.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7590ax.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7590ax.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '7590ax' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '7583vdsl.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7583vdsl.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7583vdsl.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '7583vdsl' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 #mips boxen external no inmemory
 elif [[ $1 == '4020.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
@@ -298,15 +424,21 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
 elif [[ $1 == '4020.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
 elif [[ $1 == '4020.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '4020' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '7320-Alien7330.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
 elif [[ $1 == '7320-Alien7330.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
 elif [[ $1 == '7320-Alien7330.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
-elif [[ $1 == '7320.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+elif [[ $1 == '7320-Alien7330.multi' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '7320-Alien7330' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '7330.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
 elif [[ $1 == '7330.11' ]]; then
@@ -314,7 +446,10 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
 elif [[ $1 == '7330.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
 elif [[ $1 == '7330.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '7330' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '7330sl.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
 elif [[ $1 == '7330sl.11' ]]; then
@@ -322,7 +457,10 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
 elif [[ $1 == '7330sl.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
 elif [[ $1 == '7330sl.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '7330sl' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '7390.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
 elif [[ $1 == '7390.11' ]]; then
@@ -330,14 +468,20 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
 elif [[ $1 == '7390.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
 elif [[ $1 == '7390.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '7390' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 #mips boxen no inmemory
 elif [[ $1 == '5530.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory
 elif [[ $1 == '5530.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory
 elif [[ $1 == '5530.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '5530' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '7312.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory
 elif [[ $1 == '7312.11' ]]; then
@@ -345,7 +489,10 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory
 elif [[ $1 == '7312.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory
 elif [[ $1 == '7312.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '7312' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '7360v2.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory
 elif [[ $1 == '7360v2.11' ]]; then
@@ -353,7 +500,10 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory
 elif [[ $1 == '7360v2.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory
 elif [[ $1 == '7360v2.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '7360v2' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 #mips boxen no inmemory no oscam
 elif [[ $1 == 'DVB-C.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
@@ -362,13 +512,19 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == 'DVB-C.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == 'DVB-c.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == 'DVB-C' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == 'DVB-c-Alien1750E.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == 'DVB-c-Alien1750E.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == 'DVB-c-Alien1750E.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == 'DVB-c-Alien1750E' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '300E.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == '300E.11' ]]; then
@@ -376,7 +532,10 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == '300E.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == '300E.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '300E' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '450E.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == '450E.11' ]]; then
@@ -384,7 +543,10 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == '450E.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == '450E.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '450E' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '540E.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam_rp
 elif [[ $1 == '540E.11' ]]; then
@@ -392,7 +554,10 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam_rp
 elif [[ $1 == '540E.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam_rp
 elif [[ $1 == '540E.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '540E' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '546E.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam_rp
 elif [[ $1 == '546E.11' ]]; then
@@ -400,7 +565,10 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam_rp
 elif [[ $1 == '546E.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam_rp
 elif [[ $1 == '546E.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '546E' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '1240E.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == '1240E.11' ]]; then
@@ -408,19 +576,28 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == '1240E.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == '1240E.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '1240E' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '1750E.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == '1750E.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == '1750E.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '1750E' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 elif [[ $1 == '2400.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == '2400.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == '2400.multi' ]]; then
-echo 'Zur Zeit noch deaktiviert für mips Boxen'
+printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+elif [[ $1 == '2400' ]] && [[ $2 == '-push' ]]; then
+printf ${RED}"Zur Zeit noch deaktiviert\n"
+
 else
 # Generate list of supported devices
 SUPPORTED_BOX_TYPE_LIST_SSL_1_0="$(find "$I_MATIK_PATH/config/" -name "config_fritz*openssl_1_0*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
@@ -457,6 +634,17 @@ SUPPORTED_BOX_TYPE_LIST_SSL_MULTI="$(echo $SUPPORTED_BOX_TYPE_LIST_SSL_MULTI | t
 # Generate list of supported ssl versions
 SUPPORTED_SSL_NUMBER_LIST_SSL_MULTI="$(find "$I_MATIK_PATH/config/" -name "openssl_multi*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
 SUPPORTED_SSL_NUMBER_LIST_SSL_MULTI="$(echo $SUPPORTED_SSL_NUMBER_LIST_SSL_MULTI | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
+
+# Generate list of supported devices
+SUPPORTED_BOX_TYPE_LIST="$(find "$I_MATIK_PATH/config/" -name "config_fritz*_*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
+SUPPORTED_BOX_TYPE_LIST="${SUPPORTED_BOX_TYPE_LIST//"fritz"/""}"
+SUPPORTED_BOX_TYPE_LIST="$(echo $SUPPORTED_BOX_TYPE_LIST | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
+
+# Generate list of supported ssl versions
+SUPPORTED_SSL_NUMBER_LIST="$(find "$I_MATIK_PATH/config/" -name "openssl_*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
+SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
+
+
 	printf "i-matik comes with ABSOLUTELY NO WARRANTY.  This is free software, and you\n"
 	printf "are welcome to redistribute it under certain conditions.  See the GNU\n"
 	printf "General Public Licence for details.\n\n"
@@ -470,20 +658,23 @@ SUPPORTED_SSL_NUMBER_LIST_SSL_MULTI="$(echo $SUPPORTED_SSL_NUMBER_LIST_SSL_MULTI
 	printf "  \t\t\t\t11 - OpenSSL 1.1.x\n"
 	printf "  \t\t\t\t30 - OpenSSL 3.0.x\n"
 	printf "  \t\t\t\tmulti - OpenSSL multiple Versions\n"
-	printf "  -c, --config\t\t\tshow freetz-ng configuration dialog\n"
+	printf "  -c, --config\t\t\tshow not freetz-ng configuration dialog\n"
 	printf "  -s,--skip-image2memory\tdo not create inmemory image\n"
 	printf "  -no,--no-oscam\t\tIt won't create an oscam\n\n"
-	printf ${GREEN}"List of currently OpenSSL 1.0.x supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST_SSL_1_0}\n\n"
+	printf ${GREEN}"List of currently OpenSSL 1.0.x supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST_SSL_1_0}\n"
 	printf ${BLUE}"To build an OpenSSL 1.0.x image for Fritz!Box 3272 use this command:${NC}\n"
 	printf "$0 3272.10\n\n"
-	printf ${GREEN}"List of currently OpenSSL 1.1.x supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST_SSL_1_1}\n\n"
+	printf ${GREEN}"List of currently OpenSSL 1.1.x supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST_SSL_1_1}\n"
 	printf ${BLUE}"To build an OpenSSL 3.0.x image for Fritz!Box 7490 use this command:${NC}\n"
 	printf "$0 7490.11\n\n"
-	printf ${GREEN}"List of currently OpenSSL 3.0.x supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST_SSL_3_0}\n\n"
+	printf ${GREEN}"List of currently OpenSSL 3.0.x supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST_SSL_3_0}\n"
 	printf ${BLUE}"To build an OpenSSL 3.0.x image for Fritz!Box 7490 use this command:${NC}\n"
 	printf "$0 7490.30\n\n"
-	printf ${GREEN}"List of currently OpenSSL MULTI supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST_SSL_MULTI}\n\n"
+	printf ${GREEN}"List of currently OpenSSL MULTI supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST_SSL_MULTI}\n"
 	printf ${BLUE}"To build an OpenSSL MULTI image for Fritz!Box 7490 use this command:${NC}\n"
 	printf "$0 7490.multi\n\n"
+	printf ${GREEN}"List of currently push supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST}\n"
+	printf ${BLUE}"To create an image for the Fritz! Box 7490 to push, use this command :${NC}\n"
+	printf "$0 7490 -push\n"
 	exit 0
 fi
