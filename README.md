@@ -18,9 +18,9 @@ Options
   -c, --config			show not freetz-ng configuration dialog
   -s,--skip-image2memory	do not create inmemory image
   -no,--no-oscam		It won't create an oscam
-  -push 			do not create inmemory image
+  -push 			push image to Fritz!Box
 
-List of currently OpenSSL 1.0.x supported devices (BOX_TYPE): 1240E 300E 3272 3370 3390 4020 450E 540E 546E 6430 6490 6590 6840 7272 7312 7320-Alien7330 7330 7330sl 7360v2 7362 7390 7412 7490 7581 7582 DVB-C 
+List of currently OpenSSL 1.0.x supported devices (BOX_TYPE): 1240E 300E 3272 3370 3390 4020 450E 540E 546E 6430 6490 6590 6840 7240 7270v2 7270v3 7272 7312 7320 7320-Alien7330 7330 7330sl 7340 7360v1 7360v2 7362 7390 7412 7490 7581 7582 7590 DVB-C 
 To build an OpenSSL 1.0.x image for Fritz!Box 3272 use this command:
 ./i-matik 3272.10
 
@@ -36,6 +36,6 @@ List of currently OpenSSL MULTI supported devices (BOX_TYPE): 7490
 To build an OpenSSL MULTI image for Fritz!Box 7490 use this command:
 ./i-matik 7490.multi
 
-List of currently push supported devices (BOX_TYPE): 1200 1240E 1260E 1260v2 1750E 2400 3000 300E 3272 3370 3390 3490 4020 4040 4060 450E 540E 546E 5490 5491 5530 6000 6430 6490 6590 6591 6660 6820v1 6820v2 6820v3 6840 68504g 68505g 6890 7272 7312 7320-Alien7330 7330 7330sl 7360v2 7362 7390 7412 7430 7490 7510 7520 7520-Alien7530 7530 7530ax 7560 7580 7581 7582 7583 7583vdsl 7590 7590ax DVB-C DVB-c-Alien1750E 
-To create an image for the Fritz! Box 7490 to push, use this command :
+List of currently push supported devices (BOX_TYPE): 1200 1240E 1260E 1260v2 1750E 2400 3000 300E 3272 3370 3390 3490 4020 4040 4060 450E 540E 546E 5490 5491 5530 6000 6430 6490 6590 6591 6660 6820v1 6820v2 6820v3 6840 68504g 68505g 6890 7240 7270v2 7270v3 7272 7312 7320 7320-Alien7330 7330 7330sl 7340 7360v1 7360v2 7362 7390 7412 7430 7490 7510 7520 7520-Alien7530 7530 7530ax 7560 7580 7581 7582 7583 7583vdsl 7590 7590ax DVB-C DVB-c-Alien1750E 
+To create an image for the Fritz!Box 7490 to push, use this command :
 ./i-matik 7490 -push
