@@ -13,11 +13,11 @@ if [[ ! -e $I_MATIK_PATH_OSCAM/oscam-svn ]]; then
 #    echo "$I_MATIK_PATH_OSCAM/oscam-svn existiert bereits, ist aber kein Verzeichnis" 1>&2
 fi
 
-if [[ ! -e $I_MATIK_PATH_OSCAM/support/toolchains/fritz74xxOS65_i686 ]]; then
-$I_MATIK_PATH_OSCAM/./s3 tcrepair fritz74xxOS65_i686
-rm -rf $I_MATIK_PATH_OSCAM/support/toolchains/fritz74xxOS65_i686
-#elif [[ ! -d $I_MATIK_PATH_OSCAM/support/toolchains/fritz74xxOS65_i686 ]]; then
-#    echo "$I_MATIK_PATH_OSCAM/support/toolchains/fritz74xxOS65_i686 existiert bereits, ist aber kein Verzeichnis " 1>&2
+if [[ ! -e $I_MATIK_PATH_OSCAM/support/toolchains/fritz_i686 ]]; then
+$I_MATIK_PATH_OSCAM/./s3 tcrepair fritz_i686
+rm -rf $I_MATIK_PATH_OSCAM/support/toolchains/fritz_i686
+#elif [[ ! -d $I_MATIK_PATH_OSCAM/support/toolchains/fritz_i686 ]]; then
+#    echo "$I_MATIK_PATH_OSCAM/support/toolchains/fritz_i686 existiert bereits, ist aber kein Verzeichnis " 1>&2
 fi
 
 cd $I_MATIK_PATH_OSCAM/oscam-svn && OSCAMVERSION_ALT="$(./config.sh -r)"
@@ -25,11 +25,11 @@ cd $I_MATIK_PATH_OSCAM/oscam-svn && svn up && OSCAMVERSION_NEU="$(./config.sh -r
 
 if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_${FUD_COMMENT_SSL}_i686_freetz-$I_MATIK_OSCAM_reader.upx ]]; then
 find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-svn$OSCAMVERSION_ALT-fritz${BOX_NAME}_${FUD_COMMENT_SSL}_i686_freetz-$I_MATIK_OSCAM_reader.upx" -type f -mmin +0 -delete 
-rm -rf $I_MATIK_PATH_OSCAM/support/toolchains/fritz74xxOS65_i686
-ln -s $FREETZ_SSL_HOME_PATH/toolchain/target $I_MATIK_PATH_OSCAM/support/toolchains/fritz74xxOS65_i686
+rm -rf $I_MATIK_PATH_OSCAM/support/toolchains/fritz_i686
+ln -s $FREETZ_SSL_HOME_PATH/toolchain/target $I_MATIK_PATH_OSCAM/support/toolchains/fritz_i686
 
-$I_MATIK_PATH_OSCAM/./s3 fritz74xxOS65_i686 -p=$I_MATIK_OSCAM_reader.profile
-mv $I_MATIK_PATH_OSCAM/support/binaries/oscam-svn$OSCAMVERSION_NEU-fritz74xxOS65_i686-$I_MATIK_OSCAM_reader-upx $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_${FUD_COMMENT_SSL}_i686_freetz-$I_MATIK_OSCAM_reader.upx
+$I_MATIK_PATH_OSCAM/./s3 fritz_i686 -p=$I_MATIK_OSCAM_reader.profile
+mv $I_MATIK_PATH_OSCAM/support/binaries/oscam-svn$OSCAMVERSION_NEU-fritz_i686-$I_MATIK_OSCAM_reader-upx $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_${FUD_COMMENT_SSL}_i686_freetz-$I_MATIK_OSCAM_reader.upx
 elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_${FUD_COMMENT_SSL}_i686_freetz-$I_MATIK_OSCAM_reader.upx ]]; then
     echo "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_${FUD_COMMENT_SSL}_i686_freetz-$I_MATIK_OSCAM_reader.upx already exists" 1>&2
 fi
