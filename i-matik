@@ -63,7 +63,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./arm
 elif [[ $1 == '7581.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für arm Boxen\n"
 elif [[ $1 == '7581' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == '7582.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm
@@ -74,7 +74,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./arm
 elif [[ $1 == '7582.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für arm Boxen\n"
 elif [[ $1 == '7582' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 #arm boxen no inmemory
 elif [[ $1 == '4040.11' ]]; then
@@ -161,7 +161,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i686_no_inmemory
 elif [[ $1 == '6430.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für i686 Boxen\n"
 elif [[ $1 == '6430' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == '6490.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i686_no_inmemory
@@ -172,7 +172,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i686_no_inmemory
 elif [[ $1 == '6490.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für i686 Boxen\n"
 elif [[ $1 == '6490' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == '6590.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i686_no_inmemory
@@ -183,7 +183,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i686_no_inmemory
 elif [[ $1 == '6590.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für i686 Boxen\n"
 elif [[ $1 == '6590' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == '6591.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i686_no_inmemory
@@ -213,7 +213,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '3272.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '3272' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == '3370.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
@@ -224,7 +224,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '3370.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '3370' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == '3390.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
@@ -235,7 +235,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '3390.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '3390' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == '3490.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
@@ -273,7 +273,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '6840.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '6840' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == '6890.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
@@ -293,7 +293,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7272.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '7272' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == '7362.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
@@ -304,7 +304,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7362.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '7362' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == '7412.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
@@ -315,7 +315,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7412.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '7412' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == '7430.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
@@ -426,7 +426,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
 elif [[ $1 == '4020.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '4020' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == '7320.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
@@ -440,7 +440,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
 elif [[ $1 == '7320-Alien7330.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '7320-Alien7330' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == '7330.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
@@ -451,7 +451,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
 elif [[ $1 == '7330.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '7330' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == '7330sl.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
@@ -462,7 +462,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
 elif [[ $1 == '7330sl.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '7330sl' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == '7340.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
@@ -479,7 +479,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
 elif [[ $1 == '7390.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '7390' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 #mips boxen no inmemory
 elif [[ $1 == '5530.11' ]]; then
@@ -500,7 +500,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory
 elif [[ $1 == '7312.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '7312' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == '7360v2.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory
@@ -511,7 +511,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory
 elif [[ $1 == '7360v2.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '7360v2' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 #mips boxen no inmemory no oscam
 elif [[ $1 == 'DVB-C.10' ]]; then
@@ -523,7 +523,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == 'DVB-c.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == 'DVB-C' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == 'DVB-c-Alien1750E.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
@@ -543,7 +543,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == '300E.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '300E' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == '450E.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
@@ -554,7 +554,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == '450E.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '450E' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == '540E.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam_rp
@@ -565,7 +565,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam_rp
 elif [[ $1 == '540E.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '540E' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == '546E.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam_rp
@@ -576,7 +576,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam_rp
 elif [[ $1 == '546E.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '546E' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == '1240E.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
@@ -587,7 +587,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == '1240E.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '1240E' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == '1750E.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
