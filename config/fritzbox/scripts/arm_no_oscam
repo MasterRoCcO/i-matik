@@ -12,8 +12,6 @@ while [ $# -ne 0 ];do
             ;;
         -s|--skip-image2memory)	PARAM_SKIP_I2M=1
             ;;
-        -no|--no-oscam)	        PARAM_SKIP_OSCAM=1
-            ;;
         -*|--*)			PARAM_BAD=1
             ;;
         *)				BOX_SSL+=( $1 )
