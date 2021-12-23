@@ -95,13 +95,13 @@ printf ${RED}"Zur Zeit noch deaktiviert für arm Boxen\n"
 elif [[ $1 == '4060' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
 
-elif [[ $1 == '7530ax.11' ]]; then
+elif [[ $1 == '7530AX.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory
-elif [[ $1 == '7530ax.30' ]]; then
+elif [[ $1 == '7530AX.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory
-elif [[ $1 == '7530ax.multi' ]]; then
+elif [[ $1 == '7530AX.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für arm Boxen\n"
-elif [[ $1 == '7530ax' ]] && [[ $2 == '-push' ]]; then
+elif [[ $1 == '7530AX' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
 
 #arm boxen no oscam
@@ -398,13 +398,13 @@ printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '6820v3' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
 
-elif [[ $1 == '7590ax.11' ]]; then
+elif [[ $1 == '7590AX.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
-elif [[ $1 == '7590ax.30' ]]; then
+elif [[ $1 == '7590AX.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
-elif [[ $1 == '7590ax.multi' ]]; then
+elif [[ $1 == '7590AX.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
-elif [[ $1 == '7590ax' ]] && [[ $2 == '-push' ]]; then
+elif [[ $1 == '7590AX' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
 
 elif [[ $1 == '7583vdsl.11' ]]; then
