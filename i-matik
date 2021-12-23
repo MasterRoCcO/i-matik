@@ -453,15 +453,15 @@ printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '7330' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
-elif [[ $1 == '7330sl.10' ]]; then
+elif [[ $1 == '7330SL.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
-elif [[ $1 == '7330sl.11' ]]; then
+elif [[ $1 == '7330SL.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
-elif [[ $1 == '7330sl.30' ]]; then
+elif [[ $1 == '7330SL.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
-elif [[ $1 == '7330sl.multi' ]]; then
+elif [[ $1 == '7330SL.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
-elif [[ $1 == '7330sl' ]] && [[ $2 == '-push' ]]; then
+elif [[ $1 == '7330SL' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == '7340.10' ]]; then
