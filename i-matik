@@ -470,6 +470,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
 elif [[ $1 == '7360v1.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
 
+
 elif [[ $1 == '7390.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_external_no_inmemory
 elif [[ $1 == '7390.11' ]]; then
@@ -490,6 +491,9 @@ elif [[ $1 == '5530.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '5530' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+
+elif [[ $1 == '6810.10' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory
 
 elif [[ $1 == '7312.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory
@@ -512,6 +516,9 @@ elif [[ $1 == '7360v2.multi' ]]; then
 printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
 elif [[ $1 == '7360v2' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
+
+elif [[ $1 == '7369.10' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory
 
 #mips boxen no inmemory no oscam
 elif [[ $1 == 'DVB-C.10' ]]; then
