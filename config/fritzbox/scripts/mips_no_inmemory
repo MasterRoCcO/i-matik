@@ -12,7 +12,7 @@ while [ $# -ne 0 ];do
             ;;
         -s|--skip-image2memory)	PARAM_SKIP_I2M=1
             ;;
-        -no|--no-oscam)	        PARAM_SKIP_OSCAM=1
+        -yo|--yes-oscam)	        PARAM_SKIP_OSCAM=1
             ;;
         -*|--*)			PARAM_BAD=1
             ;;
@@ -104,7 +104,10 @@ for bs in "${BOX_SSL[@]}"; do
 		else
 			$NOMENUC $NOMENUC1 #run make olddefconfig
 		fi
-		
+		if [ -z $PARAM_SKIP_OSCAM ]; then
+			mv $FREETZ_SSL_HOME_PATH/addon/oscam $FREETZ_SSL_HOME_PATH/addon/no_oscam
+			mkdir -p $FREETZ_SSL_HOME_PATH/addon/oscam/root 2>/dev/null	# create oscam folder
+		fi
 		#echo "starte make -j$MAX_CPUS" && sleep 2 #echo command 2 seconds for progress
 		make -j$MAX_CPUS #run make for freetz
 		
@@ -142,6 +145,10 @@ for bs in "${BOX_SSL[@]}"; do
 		#echo "mv .$configto to $config" && sleep 2 #echo command 2 seconds for progress
 		mv .config "$conf" #move back updated .config to box config
 		rm -f "$FREETZ_SSL_HOME_PATH/$END_IMAGE_PATH/"* # cleanup image folder
+		if [ -z $PARAM_SKIP_OSCAM ]; then
+		rm -r $FREETZ_SSL_HOME_PATH/addon/oscam
+		mv $FREETZ_SSL_HOME_PATH/addon/no_oscam $FREETZ_SSL_HOME_PATH/addon/oscam
+		fi
 	done; 
 
 	finish=$(date +"%s")	# build finished time
@@ -156,5 +163,7 @@ avg=$(($timediff / $COUNT))		# average time for box
 printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} box(es). ->  $(($avg / 60))m $(($avg % 60))s per box\n"
 $I_MATIK_VERSION	# show i-matik disclaimer
 if [ -z $PARAM_SKIP_OSCAM ]; then
+exit 1 #not oscam is created
+else
 source $I_MATIK_OSCAM_MIPS
 fi
