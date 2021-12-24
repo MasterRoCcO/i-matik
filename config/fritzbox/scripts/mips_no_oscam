@@ -49,7 +49,7 @@ for bs in "${BOX_SSL[@]}"; do
 		continue
 	fi
 	
-	BOX_HOME="${BOX_NAME:0:2}xE"	# set box home folder
+	BOX_HOME="${BOX_NAME:0:2}xx"	# set box home folder
 	FREETZ_SSL_PATH="FREETZ_PATH_SSL_${BOX_SSL^^}"	# dynamic variable
 	FREETZ_SSL_CONFIG_PATH="I_MATIK_CONFIG_FRITZBOX_PATH_openssl_${BOX_SSL,,}"	# dynamic variable
 
@@ -66,7 +66,7 @@ for bs in "${BOX_SSL[@]}"; do
 	if [ ! -e "$FREETZ_SSL_HOME_PATH" ]; then
 		umask 0022
 		git clone https://github.com/Freetz-NG/freetz-ng "$FREETZ_SSL_HOME_PATH"
-		#rm -rf "$FREETZ_SSL_HOME_PATH/addon"
+		rm -rf "$FREETZ_SSL_HOME_PATH/addon"
 		cp -ar /$MY_FILES_HOME_PATH/* "$FREETZ_SSL_HOME_PATH/"
 	elif [ ! -d "$FREETZ_SSL_HOME_PATH" ]; then
 		printf "${YELLOW}'$FREETZ_SSL_HOME_PATH' already exists but is not a directory${NC}" 1>&2
@@ -75,12 +75,12 @@ for bs in "${BOX_SSL[@]}"; do
 
 	# Create directory for saving built images
 	mkdir -p $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME 2>/dev/null	# create images folder
-	#[ -z $PARAM_SKIP_I2M ] && mkdir -p $FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME 2>/dev/null	# create inmemory folder, when it is not disabled
+	[ -z $PARAM_SKIP_I2M ] && mkdir -p $FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME 2>/dev/null	# create inmemory folder, when it is not disabled
 	
 	# Remove older image files
 	DELETE_IMAGE_NAME="*$(echo ${!FREETZ_SSL_PATH} | awk -F'/' '{print $NF}').image"	# construct image filname filter
 	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}" -type f -mmin +$delete_images -delete 
-	#find "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}.inmemory" -type f -mmin +$delete_images -delete  
+	find "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}.inmemory" -type f -mmin +$delete_images -delete  
 	
 	# update git working copy
 	cd "$FREETZ_SSL_HOME_PATH" && git pull
@@ -102,7 +102,10 @@ for bs in "${BOX_SSL[@]}"; do
 		else
 			$NOMENUC $NOMENUC1 #run make olddefconfig
 		fi
-		
+		if [ -z $PARAM_SKIP_OSCAM ]; then
+			mv $FREETZ_SSL_HOME_PATH/addon/oscam $FREETZ_SSL_HOME_PATH/addon/no_oscam
+			mkdir -p $FREETZ_SSL_HOME_PATH/addon/oscam/root 2>/dev/null	# create oscam folder
+		fi
 		#echo "starte make -j$MAX_CPUS" && sleep 2 #echo command 2 seconds for progress
 		make -j$MAX_CPUS #run make for freetz
 		
@@ -125,7 +128,7 @@ for bs in "${BOX_SSL[@]}"; do
 
 		#echo "starte image2inmemory" && sleep 2 #echo command 2 seconds for progress
 		if [ -z $PARAM_SKIP_I2M ]; then
-			#$FREETZ_SSL_HOME_PATH/tools/$IMAGE2MEMORY
+			$FREETZ_SSL_HOME_PATH/tools/$IMAGE2MEMORY
 
 			# Construct inmemory filename generated in freetz-ng (original)
 			#openssl_1_1_x_masterbox_7490_07.29.all_$FREETZNGVERSION-$FREETZNGVERSION1.image.inmemory
@@ -134,12 +137,16 @@ for bs in "${BOX_SSL[@]}"; do
 			# Construct inmemory filename for saving (renamed)
 			#7490_07.29.all_$FREETZNGVERSION-$FREETZNGVERSION1-masterbox_openssl_1_1_x.image.inmemory
 			IMAGE_RENAMED_FILENAME="${IMAGE_RENAMED_FILENAME}.inmemory"
-			#mv "$FREETZ_SSL_HOME_PATH/$END_IMAGE_PATH/$IMAGE_ORIGINAL_FILENAME" "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/$IMAGE_RENAMED_FILENAME" # move inmemory filename to renamed filename
+			mv "$FREETZ_SSL_HOME_PATH/$END_IMAGE_PATH/$IMAGE_ORIGINAL_FILENAME" "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/$IMAGE_RENAMED_FILENAME" # move inmemory filename to renamed filename
 		fi
 		
 		#echo "mv .$configto to $config" && sleep 2 #echo command 2 seconds for progress
 		mv .config "$conf" #move back updated .config to box config
 		rm -f "$FREETZ_SSL_HOME_PATH/$END_IMAGE_PATH/"* # cleanup image folder
+		if [ -z $PARAM_SKIP_OSCAM ]; then
+		rm -r $FREETZ_SSL_HOME_PATH/addon/oscam
+		mv $FREETZ_SSL_HOME_PATH/addon/no_oscam $FREETZ_SSL_HOME_PATH/addon/oscam
+		fi
 	done; 
 
 	finish=$(date +"%s")	# build finished time
