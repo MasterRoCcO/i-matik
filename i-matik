@@ -490,7 +490,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory
 elif [[ $1 == '7360v2.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory
 elif [[ $1 == '7360v2.multi' ]]; then
-printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7360v2_multi
 elif [[ $1 == '7360v2' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
