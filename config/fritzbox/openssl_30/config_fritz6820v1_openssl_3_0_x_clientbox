@@ -9,7 +9,7 @@ FREETZ_HAVE_DOT_CONFIG=y
 #
 
 #
-#  freetz-ng 18776MOA-c715ed811 master 2021-12-16
+#  freetz-ng 18783MOA-0261d3d88 master 2021-12-23
 #
 
 #
@@ -298,7 +298,7 @@ FREETZ_AVMDAEMON_DISABLE_TR069=y
 #
 # FREETZ_PACKAGE_CA_BUNDLE is not set
 # FREETZ_PACKAGE_CALLMONITOR is not set
-FREETZ_PACKAGE_CCID=y
+# FREETZ_PACKAGE_CCID is not set
 # FREETZ_PACKAGE_CHECKMAILD is not set
 # FREETZ_PACKAGE_CIFSMOUNT is not set
 # FREETZ_PACKAGE_CLASSPATH is not set
@@ -509,7 +509,7 @@ FREETZ_PACKAGE_MODCGI=y
 # P
 #
 # FREETZ_PACKAGE_P7ZIP is not set
-FREETZ_PACKAGE_PCSC_LITE=y
+# FREETZ_PACKAGE_PCSC_LITE is not set
 # FREETZ_PACKAGE_PHONEBOOK_TOOLS is not set
 # FREETZ_PACKAGE_PHP is not set
 # FREETZ_PACKAGE_PINGTUNNEL is not set
@@ -1153,11 +1153,11 @@ FREETZ_MODULES_OWN=""
 # FREETZ_MODULE_ch341 is not set
 # FREETZ_MODULE_cp2101 is not set
 # FREETZ_MODULE_cp210x is not set
-FREETZ_MODULE_ftdi_sio=y
+# FREETZ_MODULE_ftdi_sio is not set
 # FREETZ_MODULE_ipaq is not set
 # FREETZ_MODULE_option is not set
-FREETZ_MODULE_pl2303=y
-FREETZ_MODULE_usbserial=y
+# FREETZ_MODULE_pl2303 is not set
+# FREETZ_MODULE_usbserial is not set
 # end of drivers
 
 #
