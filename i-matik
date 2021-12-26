@@ -199,7 +199,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i686_no_inmemory
 elif [[ $1 == '6660.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i686_no_inmemory
 elif [[ $1 == '6660.multi' ]]; then
-printf ${RED}"Zur Zeit noch deaktiviert für i686 Boxen\n"
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./6660_multi
 elif [[ $1 == '6660' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
 
