@@ -311,7 +311,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7430.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
 elif [[ $1 == '7430.multi' ]]; then
-printf ${RED}"Zur Zeit noch deaktiviert für mips Boxen\n"
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7430_multi
 elif [[ $1 == '7430' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
 
