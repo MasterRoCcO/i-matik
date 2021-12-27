@@ -100,7 +100,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory
 elif [[ $1 == '7530AX.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory
 elif [[ $1 == '7530AX.multi' ]]; then
-printf ${RED}"Zur Zeit noch deaktiviert für arm Boxen\n"
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7530ax_multi
 elif [[ $1 == '7530AX' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
 
