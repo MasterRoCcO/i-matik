@@ -91,7 +91,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory
 elif [[ $1 == '4060.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory
 elif [[ $1 == '4060.multi' ]]; then
-printf ${RED}"Zur Zeit noch deaktiviert für arm Boxen\n"
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./4060_multi
 elif [[ $1 == '4060' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
 
