@@ -50,7 +50,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./arm
 elif [[ $1 == '7530.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm
 elif [[ $1 == '7530.multi' ]]; then
-printf ${RED}"Zur Zeit noch deaktiviert für arm Boxen\n"
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7530_multi
 elif [[ $1 == '7530' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
 
