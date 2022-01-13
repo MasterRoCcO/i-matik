@@ -9,7 +9,7 @@ FREETZ_HAVE_DOT_CONFIG=y
 #
 
 #
-#  freetz-ng 18783MOA-0261d3d88 master 2021-12-23
+#  freetz-ng 18819MOA-ec43e9f3d master 2022-01-11
 #
 
 #
@@ -600,8 +600,7 @@ FREETZ_BOX_CERTIFICATE_SUPPORT_AVAILABLE=y
 # FREETZ_PACKAGE_UMURMUR is not set
 # FREETZ_PACKAGE_UNBOUND is not set
 # FREETZ_PACKAGE_UNRAR is not set
-FREETZ_PACKAGE_USBIDS=y
-FREETZ_PACKAGE_USBIDS_FORCE_DOWNLOAD=y
+# FREETZ_PACKAGE_USBIDS is not set
 # end of U
 
 #
@@ -652,7 +651,7 @@ FREETZ_WGET=y
 # FREETZ_PACKAGE_NANO_SHELL is not set
 # FREETZ_PACKAGE_PCIUTILS is not set
 # FREETZ_PACKAGE_STRACE is not set
-FREETZ_PACKAGE_USBUTILS=y
+# FREETZ_PACKAGE_USBUTILS is not set
 # FREETZ_PACKAGE_VERMAGIC is not set
 # end of Debug helpers
 
@@ -1041,7 +1040,7 @@ FREETZ_LIB_libuClibc=y
 # USB & FTDI
 #
 # FREETZ_LIB_libusb_0 is not set
-FREETZ_LIB_libusb_1=y
+# FREETZ_LIB_libusb_1 is not set
 # FREETZ_LIB_libftdi is not set
 # end of USB & FTDI
 
@@ -1076,7 +1075,7 @@ FREETZ_LIB_libusb_1=y
 # FREETZ_LIB_libffi is not set
 # FREETZ_LIB_libltdl is not set
 # FREETZ_LIB_liblua is not set
-FREETZ_LIB_libpcsclite=y
+# FREETZ_LIB_libpcsclite is not set
 # FREETZ_LIB_libpopt is not set
 # FREETZ_LIB_libprivatekeypassword is not set
 # FREETZ_LIB_libprotobuf_c is not set
@@ -1229,8 +1228,8 @@ FREETZ_MODULES_OWN=""
 #
 # Busybox applets
 #
-# FREETZ_BUSYBOX__VERSION_V133 is not set
 FREETZ_BUSYBOX__VERSION_V134=y
+# FREETZ_BUSYBOX__VERSION_V135 is not set
 FREETZ_BUSYBOX__VERSION_STRING="1.34.1"
 FREETZ_BUSYBOX__RECOMMENDED=y
 FREETZ_BUSYBOX__MANDATORY=y
