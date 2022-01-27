@@ -95,6 +95,15 @@ source $I_MATIK_PATH/config/fritzbox/scripts_privat/./4060_multi
 elif [[ $1 == '4060' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
 
+#elif [[ $1 == '7510.11' ]]; then
+#source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory
+#elif [[ $1 == '7510.30' ]]; then
+#source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory
+#elif [[ $1 == '7510.multi' ]]; then
+#source $I_MATIK_PATH/config/fritzbox/scripts_privat/./4040_multi
+#elif [[ $1 == '7510' ]] && [[ $2 == '-push' ]]; then
+#source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+
 elif [[ $1 == '7530AX.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory
 elif [[ $1 == '7530AX.30' ]]; then
@@ -388,6 +397,17 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_oscam
 elif [[ $1 == '7412.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '7412' ]] && [[ $2 == '-push' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
+
+elif [[ $1 == '7412-Alien7430.10' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_oscam
+elif [[ $1 == '7412-Alien7430.11' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_oscam
+elif [[ $1 == '7412-Alien7430.30' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_oscam
+elif [[ $1 == '7412-Alien7430.multi' ]]; then
+printf ${RED}"No supported\n"
+elif [[ $1 == '7412-Alien7430' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
 
 elif [[ $1 == '6820v1.11' ]]; then
