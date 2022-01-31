@@ -388,6 +388,15 @@ elif [[ $1 == '7590AX' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
 
 #mips boxen no oscam
+elif [[ $1 == '3370-Alien3490.11' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_oscam
+elif [[ $1 == '3370-Alien3490.30' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_oscam
+elif [[ $1 == '3370-Alien3490.multi' ]]; then
+printf ${RED}"No supported\n"
+elif [[ $1 == '3370' ]] && [[ $2 == '-push' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+
 elif [[ $1 == '7412.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_oscam
 elif [[ $1 == '7412.11' ]]; then
