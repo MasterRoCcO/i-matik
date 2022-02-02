@@ -105,10 +105,6 @@ for bs in "${BOX_SSL[@]}"; do
 			$NOMENUC $NOMENUC1 #run make olddefconfig
 		fi
 		if [ -z $PARAM_SKIP_OSCAM ]; then
-			mv $FREETZ_SSL_HOME_PATH/addon/oscam $FREETZ_SSL_HOME_PATH/addon/no_oscam
-			mkdir -p $FREETZ_SSL_HOME_PATH/addon/oscam/root 2>/dev/null	# create oscam folder
-		fi
-		if [ -z $PARAM_SKIP_OSCAM ]; then
 		mv $FREETZ_SSL_HOME_PATH/addon/oscam $FREETZ_SSL_HOME_PATH/addon/no_oscam
 		mkdir -p $FREETZ_SSL_HOME_PATH/addon/oscam/root 2>/dev/null	# create oscam folder
 		#sed -i "s+oscam+# oscam+g" $FREETZ_SSL_HOME_PATH_addon/static.pkg
@@ -191,7 +187,6 @@ for bs in "${BOX_SSL[@]}"; do
 		mv .config "$conf" #move back updated .config to box config
 		rm -f "$FREETZ_SSL_HOME_PATH/$END_IMAGE_PATH/"* # cleanup image folder
 	done; 
-	
 
 	finish=$(date +"%s")	# build finished time
 	timediff=$(($finish-$beginbs))	# build time
@@ -207,5 +202,5 @@ $I_MATIK_VERSION	# show i-matik disclaimer
 if [ -z $PARAM_SKIP_OSCAM ]; then
 exit 1 #not oscam is created
 else
-source $I_MATIK_OSCAM_ARM
+source $I_MATIK_OSCAM_ARM #oscam is created
 fi
