@@ -109,15 +109,14 @@ for bs in "${BOX_SSL[@]}"; do
 			mkdir -p $FREETZ_SSL_HOME_PATH/addon/oscam/root 2>/dev/null	# create oscam folder
 		fi
 		if [ -z $PARAM_SKIP_OSCAM ]; then
-		#mv $FREETZ_SSL_HOME_PATH/addon/oscam $FREETZ_SSL_HOME_PATH/addon/no_oscam
-		#mkdir -p $FREETZ_SSL_HOME_PATH/addon/oscam/root 2>/dev/null	# create oscam folder
-		sed -i "s+oscam+# oscam+g" $FREETZ_SSL_HOME_PATH/addon/static.pkg
+		mv $FREETZ_SSL_HOME_PATH/addon/oscam $FREETZ_SSL_HOME_PATH/addon/no_oscam
+		mkdir -p $FREETZ_SSL_HOME_PATH/addon/oscam/root 2>/dev/null	# create oscam folder
+		#sed -i "s+oscam+# oscam+g" $FREETZ_SSL_HOME_PATH_addon/static.pkg
 		sed -i "s+FREETZ_PACKAGE_CCID=y+# FREETZ_PACKAGE_CCID is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_PACKAGE_PCSC_LITE=y+# FREETZ_PACKAGE_PCSC_LITE is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_LIB_libpcsclite=y+# FREETZ_LIB_libpcsclite is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_LIB_libusb_1=y+# FREETZ_LIB_libusb_1 is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_PACKAGE_USBIDS=y+# FREETZ_PACKAGE_USBIDS is not set+g" $FREETZ_SSL_HOME_PATH/.config
-		#sed -i "s+FREETZ_PACKAGE_UDPXY=y+# FREETZ_PACKAGE_UDPXY is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_PACKAGE_USBUTILS=y+# FREETZ_PACKAGE_USBUTILS is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_MODULE_ftdi_sio=y+# FREETZ_MODULE_ftdi_sio is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_MODULE_pl2303=y+# FREETZ_MODULE_pl2303 is not set+g" $FREETZ_SSL_HOME_PATH/.config
@@ -130,7 +129,6 @@ for bs in "${BOX_SSL[@]}"; do
 		sed -i "s+FREETZ_PACKAGE_AVM_PORTFW=y+# FREETZ_PACKAGE_AVM_PORTFW is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_PACKAGE_AVM_FIREWALL=y+# FREETZ_PACKAGE_AVM_FIREWALL is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_PACKAGE_AVM_FORWARDING=y+# FREETZ_PACKAGE_AVM_FORWARDING is not set+g" $FREETZ_SSL_HOME_PATH/.config
-
 		fi
 		#echo "starte make -j$MAX_CPUS" && sleep 2 #echo command 2 seconds for progress
 		make -j$MAX_CPUS #run make for freetz
@@ -165,17 +163,14 @@ for bs in "${BOX_SSL[@]}"; do
 			IMAGE_RENAMED_FILENAME="${IMAGE_RENAMED_FILENAME}.inmemory"
 			mv "$FREETZ_SSL_HOME_PATH/$END_IMAGE_PATH/$IMAGE_ORIGINAL_FILENAME" "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/$IMAGE_RENAMED_FILENAME" # move inmemory filename to renamed filename
 		fi
-	
+		
 		if [ -z $PARAM_SKIP_OSCAM ]; then
-		#rm -r $FREETZ_SSL_HOME_PATH/addon/oscam
-		#mv $FREETZ_SSL_HOME_PATH/addon/no_oscam $FREETZ_SSL_HOME_PATH/addon/oscam
-		sed -i "s+# oscam+oscam+g" $FREETZ_SSL_HOME_PATH/addon/static.pkg
+		#sed -i "s+# oscam+oscam+g" $FREETZ_SSL_HOME_PATH_addon/static.pkg
 		sed -i "s+# FREETZ_PACKAGE_CCID is not set+FREETZ_PACKAGE_CCID=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_PACKAGE_PCSC_LITE is not set+FREETZ_PACKAGE_PCSC_LITE=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_LIB_libpcsclite is not set+FREETZ_LIB_libpcsclite=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_LIB_libusb_1 is not set+FREETZ_LIB_libusb_1=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_PACKAGE_USBIDS is not set+# FREETZ_PACKAGE_USBIDS=y+g" $FREETZ_SSL_HOME_PATH/.config
-		#sed -i "s+# FREETZ_PACKAGE_UDPXY is not set+FREETZ_PACKAGE_UDPXY=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_PACKAGE_USBUTILS is not set+FREETZ_PACKAGE_USBUTILS=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_MODULE_ftdi_sio is not set+FREETZ_MODULE_ftdi_sio=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_MODULE_pl2303 is not set+FREETZ_MODULE_pl2303=y+g" $FREETZ_SSL_HOME_PATH/.config
@@ -188,11 +183,15 @@ for bs in "${BOX_SSL[@]}"; do
 		sed -i "s+# FREETZ_PACKAGE_AVM_PORTFW is not set+FREETZ_PACKAGE_AVM_PORTFW=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_PACKAGE_AVM_FIREWALL is not set+FREETZ_PACKAGE_AVM_FIREWALL=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_PACKAGE_AVM_FORWARDING is not set+FREETZ_PACKAGE_AVM_FORWARDING=y+g" $FREETZ_SSL_HOME_PATH/.config
+		rm -r $FREETZ_SSL_HOME_PATH/addon/oscam
+		mv $FREETZ_SSL_HOME_PATH/addon/no_oscam $FREETZ_SSL_HOME_PATH/addon/oscam
 		fi
+		
 		#echo "mv .$configto to $config" && sleep 2 #echo command 2 seconds for progress
 		mv .config "$conf" #move back updated .config to box config
 		rm -f "$FREETZ_SSL_HOME_PATH/$END_IMAGE_PATH/"* # cleanup image folder
 	done; 
+	
 
 	finish=$(date +"%s")	# build finished time
 	timediff=$(($finish-$beginbs))	# build time
