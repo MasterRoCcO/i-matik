@@ -101,15 +101,10 @@ for bs in "${BOX_SSL[@]}"; do
 	# Loop through found config files
 	for conf in "${CONFIGS[@]}"; do
 		cp -f "$conf" .config	#copy box config to .config
-		if [ -z $PARAM_CONFIG ]; then
-			$MENUC $MENUC1 #run make menuconfig
-		else
-			$NOMENUC $NOMENUC1 #run make olddefconfig
-		fi
 		if [ -z $PARAM_SKIP_OSCAM ]; then
 		mv $FREETZ_SSL_HOME_PATH/addon/oscam $FREETZ_SSL_HOME_PATH/addon/no_oscam
 		mkdir -p $FREETZ_SSL_HOME_PATH/addon/oscam/root 2>/dev/null	# create oscam folder
-		#sed -i "s+oscam+# oscam+g" $FREETZ_SSL_HOME_PATH_addon/static.pkg
+		sed -i "s+FREETZ_PACKAGE_OSCAM=y+# FREETZ_PACKAGE_OSCAM is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_PACKAGE_CCID=y+# FREETZ_PACKAGE_CCID is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_PACKAGE_PCSC_LITE=y+# FREETZ_PACKAGE_PCSC_LITE is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_LIB_libpcsclite=y+# FREETZ_LIB_libpcsclite is not set+g" $FREETZ_SSL_HOME_PATH/.config
@@ -128,6 +123,13 @@ for bs in "${BOX_SSL[@]}"; do
 		sed -i "s+FREETZ_PACKAGE_AVM_FIREWALL=y+# FREETZ_PACKAGE_AVM_FIREWALL is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_PACKAGE_AVM_FORWARDING=y+# FREETZ_PACKAGE_AVM_FORWARDING is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		fi
+		
+		if [ -z $PARAM_CONFIG ]; then
+			$MENUC $MENUC1 #run make menuconfig
+		else
+			$NOMENUC $NOMENUC1 #run make olddefconfig
+		fi
+
 		#echo "starte make -j$MAX_CPUS" && sleep 2 #echo command 2 seconds for progress
 		make -j$MAX_CPUS #run make for freetz
 		
@@ -169,7 +171,7 @@ for bs in "${BOX_SSL[@]}"; do
 		fi
 		
 		if [ -z $PARAM_SKIP_OSCAM ]; then
-		#sed -i "s+# oscam+oscam+g" $FREETZ_SSL_HOME_PATH_addon/static.pkg
+		sed -i "s+# FREETZ_PACKAGE_OSCAM is not set+FREETZ_PACKAGE_OSCAM=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_PACKAGE_CCID is not set+FREETZ_PACKAGE_CCID=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_PACKAGE_PCSC_LITE is not set+FREETZ_PACKAGE_PCSC_LITE=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_LIB_libpcsclite is not set+FREETZ_LIB_libpcsclite=y+g" $FREETZ_SSL_HOME_PATH/.config
