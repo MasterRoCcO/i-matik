@@ -40,5 +40,3 @@ List of currently push supported devices (BOX_TYPE): 1200 1240E 1260E 1260v2 175
 ```
 To create an image for the Fritz!Box 7490 to push, use this command :
 ./i-matik 7490 -push
-
-
