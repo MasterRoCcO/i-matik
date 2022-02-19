@@ -123,6 +123,15 @@ printf ${RED}"No supported\n"
 elif [[ $1 == '1200' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
 
+elif [[ $1 == '1200AX.11' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory_no_oscam
+elif [[ $1 == '1200AX.30' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory_no_oscam
+elif [[ $1 == '1200AX.multi' ]]; then
+printf ${RED}"No supported\n"
+elif [[ $1 == '1200AX' ]] && [[ $2 == '-push' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+
 elif [[ $1 == '3000.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_oscam
 elif [[ $1 == '3000.30' ]]; then
