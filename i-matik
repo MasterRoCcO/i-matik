@@ -95,6 +95,15 @@ source $I_MATIK_PATH/config/fritzbox/scripts_privat/./4060_multi
 elif [[ $1 == '4060' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
 
+elif [[ $1 == '5590.11' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory
+elif [[ $1 == '5590.30' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory
+elif [[ $1 == '5590.multi' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./5590_multi
+elif [[ $1 == '5590' ]] && [[ $2 == '-push' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+
 elif [[ $1 == '7510.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory
 elif [[ $1 == '7510.30' ]]; then
