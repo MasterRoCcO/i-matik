@@ -176,7 +176,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory_no_oscam
 elif [[ $1 == '6000.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '6000' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware_6000
 
 #i686 boxen no inmemory
 elif [[ $1 == '6430.10' ]]; then
