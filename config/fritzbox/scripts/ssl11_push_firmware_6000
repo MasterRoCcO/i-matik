@@ -1,5 +1,5 @@
 #!/bin/bash
-#sudo ifconfig $NETZWERK 192.168.178.32 netmask 255.255.255.0
+sudo ifconfig $NETZWERK 192.168.178.32 netmask 255.255.255.0
 FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' "$I_MATIK_PATH/config/fritzbox/openssl_11/config_fritz$1_openssl_1_1_x_masterbox" | awk -F'"' '{print $2}' | xargs)"
 FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' "$I_MATIK_PATH/config/fritzbox/openssl_11/config_fritz$1_openssl_1_1_x_repeater" | awk -F'"' '{print $2}' | xargs)"
 FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' "$I_MATIK_PATH/config/fritzbox/openssl_11/config_fritz$1_openssl_1_1_x_powerline" | awk -F'"' '{print $2}' | xargs)"
