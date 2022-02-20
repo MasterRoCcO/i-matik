@@ -97,6 +97,7 @@ for bs in "${BOX_SSL[@]}"; do
 	# Loop through found config files
 	for conf in "${CONFIGS[@]}"; do
 		cp -f "$conf" .config	#copy box config to .config
+		sed -i "s+FREETZ_JLEVEL=20+FREETZ_JLEVEL=$MAX_CPUS+g" $FREETZ_SSL_HOME_PATH/.config
 		if [ -z $PARAM_CONFIG ]; then
 			$MENUC $MENUC1 #run make menuconfig
 		else
@@ -139,6 +140,8 @@ for bs in "${BOX_SSL[@]}"; do
 			IMAGE_RENAMED_FILENAME="${IMAGE_RENAMED_FILENAME}.inmemory"
 			mv "$FREETZ_SSL_HOME_PATH/$END_IMAGE_PATH/$IMAGE_ORIGINAL_FILENAME" "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/$IMAGE_RENAMED_FILENAME" # move inmemory filename to renamed filename
 		fi
+
+		sed -i "s+FREETZ_JLEVEL=$MAX_CPUS+FREETZ_JLEVEL=20+g" $FREETZ_SSL_HOME_PATH/.config
 		
 		#echo "mv .$configto to $config" && sleep 2 #echo command 2 seconds for progress
 		mv .config "$conf" #move back updated .config to box config

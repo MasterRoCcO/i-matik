@@ -99,6 +99,7 @@ for bs in "${BOX_SSL[@]}"; do
 	# Loop through found config files
 	for conf in "${CONFIGS[@]}"; do
 		cp -f "$conf" .config	#copy box config to .config
+		sed -i "s+FREETZ_JLEVEL=20+FREETZ_JLEVEL=$MAX_CPUS+g" $FREETZ_SSL_HOME_PATH/.config
 		if [ -z $PARAM_SKIP_OSCAM ]; then
 		mv $FREETZ_SSL_HOME_PATH/addon/oscam $FREETZ_SSL_HOME_PATH/addon/no_oscam
 		mkdir -p $FREETZ_SSL_HOME_PATH/addon/oscam/root 2>/dev/null	# create oscam folder
@@ -161,6 +162,8 @@ for bs in "${BOX_SSL[@]}"; do
 			IMAGE_RENAMED_FILENAME="${IMAGE_RENAMED_FILENAME}.inmemory"
 			mv "$FREETZ_SSL_HOME_PATH/$END_IMAGE_PATH/$IMAGE_ORIGINAL_FILENAME" "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/$IMAGE_RENAMED_FILENAME" # move inmemory filename to renamed filename
 		fi
+
+		sed -i "s+FREETZ_JLEVEL=$MAX_CPUS+FREETZ_JLEVEL=20+g" $FREETZ_SSL_HOME_PATH/.config
 		
 		if [ -z $PARAM_SKIP_OSCAM ]; then
 		sed -i "s+# FREETZ_PACKAGE_OSCAM is not set+FREETZ_PACKAGE_OSCAM=y+g" $FREETZ_SSL_HOME_PATH/.config
