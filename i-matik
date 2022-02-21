@@ -63,7 +63,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./arm
 elif [[ $1 == '7581.multi' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7581_multi
 elif [[ $1 == '7581' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware_7581_7582
 
 elif [[ $1 == '7582.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm
@@ -74,7 +74,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./arm
 elif [[ $1 == '7582.multi' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7582_multi
 elif [[ $1 == '7582' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl10_push_firmware_7581_7582
 
 #arm boxen no inmemory
 elif [[ $1 == '4040.11' ]]; then
