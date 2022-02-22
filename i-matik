@@ -98,7 +98,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory
 elif [[ $1 == '7530AX.multi' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7530ax_multi
 elif [[ $1 == '7530AX' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware_7530AX
 
 #arm boxen no oscam
 elif [[ $1 == '1200.11' ]]; then
@@ -655,7 +655,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
 elif [[ $1 == '5530.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '5530' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware_5530
 
 elif [[ $1 == '6810.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips_no_inmemory_no_oscam
