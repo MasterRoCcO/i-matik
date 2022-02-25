@@ -191,13 +191,15 @@ for bs in "${BOX_SSL[@]}"; do
 		#echo "mv .$configto to $config" && sleep 2 #echo command 2 seconds for progress
 		mv .config "$conf" #move back updated .config to box config
 		rm -f "$FREETZ_SSL_HOME_PATH/$END_IMAGE_PATH/"* # cleanup image folder
-	done; 
+		done; 
 	
 
 	finish=$(date +"%s")	# build finished time
 	timediff=$(($finish-$beginbs))	# build time
 	[[ $COUNT > 1 ]] && printf "\n${GREEN}${BOX_NAME} SSL ${SSL_VERSION}${NC} build finished in $(($timediff / 60)) minutes and $(($timediff % 60)) seconds. ${YELLOW}<- end time $(date +"%Y-%m-%d %H:%M:%S")${NC}\n"
 done
+
+mv .config_backup .config # rename backup config to original config
 
 #end point this shows you how long it took him to create the images
 finish=$(date +"%s")	# script finished time
