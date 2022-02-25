@@ -157,7 +157,7 @@ for bs in "${BOX_SSL[@]}"; do
 	[[ $COUNT > 1 ]] && printf "\n${GREEN}${BOX_NAME} SSL ${SSL_VERSION}${NC} build finished in $(($timediff / 60)) minutes and $(($timediff % 60)) seconds. ${YELLOW}<- end time $(date +"%Y-%m-%d %H:%M:%S")${NC}\n"
 done
 
-mv .config_backup .config # rename backup config to original config
+[ -f .config_backup ] && mv .config_backup .config	# rename backup config to original config
 
 #end point this shows you how long it took him to create the images
 finish=$(date +"%s")	# script finished time
