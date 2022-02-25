@@ -191,7 +191,7 @@ for bs in "${BOX_SSL[@]}"; do
 		#echo "mv .$configto to $config" && sleep 2 #echo command 2 seconds for progress
 		mv .config "$conf" #move back updated .config to box config
 		rm -f "$FREETZ_SSL_HOME_PATH/$END_IMAGE_PATH/"* # cleanup image folder
-		done; 
+	done; 
 	
 
 	finish=$(date +"%s")	# build finished time
