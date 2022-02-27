@@ -15,6 +15,7 @@ Options
   -s,--skip-image2memory	do not create inmemory image
   -yo,--yes-oscam		The image is with oscam add-on and an oscam is created 
   -nc,--no-clientbox		No client box image is created 
+  -nm,--no-masterbox		No master box image is created 
   -push 			push image to Fritz!Box or Fritz!Repeater or Fritz!Powerline
 
 ```
