@@ -14,6 +14,8 @@ while [ $# -ne 0 ];do
             ;;
         -yo|--yes-oscam)	        PARAM_SKIP_OSCAM=1
             ;;
+        -nc|--no-clientbox)	        PARAM_SKIP_CLIENT=1
+            ;;
         -*|--*)			PARAM_BAD=1
             ;;
         *)				BOX_SSL+=( $1 )
@@ -91,6 +93,12 @@ for bs in "${BOX_SSL[@]}"; do
 	FREETZ_NAME="$(tools/freetz_revision 2>&1 | awk '{print $1}' | xargs)"	# freetz-ng name
 	FREETZ_VERSION="$(tools/freetz_revision 2>&1 | awk '{print $2}' | xargs)"	# freetz-ng version string
 
+	if [ -z $PARAM_SKIP_CLIENT ]; then
+	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox	
+	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox
+	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox
+	fi
+	
 	# Searching box specific config files and save them into a string array
 	CONFIGS=( $(find "$FREETZ_SSL_CONFIG_PATH/" -name "config_fritz${BOX_NAME}_*wunschimage") $(find "$FREETZ_SSL_CONFIG_PATH/" -name "config_fritz${BOX_NAME}_*masterbox") $(find "$FREETZ_SSL_CONFIG_PATH/" -name "config_fritz${BOX_NAME}_*clientbox") $(find "$FREETZ_SSL_CONFIG_PATH/" -name "config_fritz${BOX_NAME}_*powerline") $(find "$FREETZ_SSL_CONFIG_PATH/" -name "config_fritz${BOX_NAME}_*repeater") )
 	printf "\nFound ${FREETZ_NAME} config files for ${GREEN}${BOX_NAME} SSL ${SSL_VERSION}${NC}:\n"
@@ -197,8 +205,13 @@ for bs in "${BOX_SSL[@]}"; do
 	timediff=$(($finish-$beginbs))	# build time
 	[[ $COUNT > 1 ]] && printf "\n${GREEN}${BOX_NAME} SSL ${SSL_VERSION}${NC} build finished in $(($timediff / 60)) minutes and $(($timediff % 60)) seconds. ${YELLOW}<- end time $(date +"%Y-%m-%d %H:%M:%S")${NC}\n"
 done
-
-[ -f .config_backup ] && mv .config_backup .config	# rename backup config to original config
+	if [ -z $PARAM_SKIP_CLIENT ]; then
+	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox_no
+	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox_no
+	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox_no
+	fi
+	
+	[ -f .config_backup ] && mv .config_backup .config	# rename backup config to original config
 
 #end point this shows you how long it took him to create the images
 finish=$(date +"%s")	# script finished time
