@@ -112,7 +112,7 @@ for bs in "${BOX_SSL[@]}"; do
 			$NOMENUC $NOMENUC1 #run make olddefconfig
 		fi
 		if [ -z $PARAM_SKIP_OSCAM ]; then
-			mv $FREETZ_SSL_HOME_PATH/addon/oscam $FREETZ_SSL_HOME_PATH/addon/no_oscam
+			mv $FREETZ_SSL_HOME_PATH/addon/oscam $FREETZ_SSL_HOME_PATH/addon/no_oscam 2>/dev/null
 			mkdir -p $FREETZ_SSL_HOME_PATH/addon/oscam/root 2>/dev/null	# create oscam folder
 		fi
 		#echo "starte make -j$MAX_CPUS" && sleep 2 #echo command 2 seconds for progress
@@ -155,8 +155,8 @@ for bs in "${BOX_SSL[@]}"; do
 		mv .config "$conf" #move back updated .config to box config
 		rm -f "$FREETZ_SSL_HOME_PATH/$END_IMAGE_PATH/"* # cleanup image folder
 		if [ -z $PARAM_SKIP_OSCAM ]; then
-		rm -r $FREETZ_SSL_HOME_PATH/addon/oscam
-		mv $FREETZ_SSL_HOME_PATH/addon/no_oscam $FREETZ_SSL_HOME_PATH/addon/oscam
+		rm -r $FREETZ_SSL_HOME_PATH/addon/oscam 2>/dev/null
+		mv $FREETZ_SSL_HOME_PATH/addon/no_oscam $FREETZ_SSL_HOME_PATH/addon/oscam 2>/dev/null
 		fi
 	done;
 
