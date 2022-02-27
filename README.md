@@ -14,7 +14,9 @@ Options
   -c, --config			show not freetz-ng configuration dialog
   -s,--skip-image2memory	do not create inmemory image
   -yo,--yes-oscam		The image is with oscam add-on and an oscam is created 
+  -nc,--no-clientbox		No client box image is created 
   -push 			push image to Fritz!Box or Fritz!Repeater or Fritz!Powerline
+
 ```
 List of currently OpenSSL 1.0.x supported devices (BOX_TYPE): 1240E 300E 3272 3370 3390 3490 4020 4040 4060 450E 540E 546E 5490 5491 6430 6490 6590 6591 6660 6810 6840 68504g 68505g 6890 7240 7270v2 7270v3 7272 7312 7320 7320-Alien7330 7330 7330SL 7340 7360v1 7360v2 7362 7369 7390 7412 7412-Alien7430 7430 7490 7510 7520 7520-Alien7530 7530 7530AX 7560 7580 7581 7582 7583 7583vdsl 7590 7590AX DVB-C 
 ```
