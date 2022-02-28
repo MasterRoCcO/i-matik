@@ -205,7 +205,7 @@ for bs in "${BOX_SSL[@]}"; do
 		
 		if [ -z $PARAM_SKIP_OSCAM ]; then
 		sed -i "s+# EXTERNAL_ENABLED is not set+EXTERNAL_ENABLED=y+g" $FREETZ_SSL_HOME_PATH/.config
-		sed -i "s+FREETZ_PACKAGE_MC is not set+# FREETZ_PACKAGE_MC=y+g" $FREETZ_SSL_HOME_PATH/.config
+		sed -i "s+# FREETZ_PACKAGE_MC is not set+FREETZ_PACKAGE_MC=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_PACKAGE_OSCAM is not set+FREETZ_PACKAGE_OSCAM=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_PACKAGE_CCID is not set+FREETZ_PACKAGE_CCID=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_PACKAGE_PCSC_LITE is not set+FREETZ_PACKAGE_PCSC_LITE=y+g" $FREETZ_SSL_HOME_PATH/.config
