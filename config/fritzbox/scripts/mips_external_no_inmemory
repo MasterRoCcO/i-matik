@@ -121,6 +121,8 @@ for bs in "${BOX_SSL[@]}"; do
 		if [ -z $PARAM_SKIP_OSCAM ]; then
 		mv $FREETZ_SSL_HOME_PATH/addon/oscam $FREETZ_SSL_HOME_PATH/addon/no_oscam 2>/dev/null
 		mkdir -p $FREETZ_SSL_HOME_PATH/addon/oscam/root 2>/dev/null	# create oscam folder
+		sed -i "s+EXTERNAL_ENABLED=y+# EXTERNAL_ENABLED is not set+g" $FREETZ_SSL_HOME_PATH/.config
+		sed -i "s+FREETZ_PACKAGE_MC=y+# FREETZ_PACKAGE_MC is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_PACKAGE_OSCAM=y+# FREETZ_PACKAGE_OSCAM is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_PACKAGE_CCID=y+# FREETZ_PACKAGE_CCID is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_PACKAGE_PCSC_LITE=y+# FREETZ_PACKAGE_PCSC_LITE is not set+g" $FREETZ_SSL_HOME_PATH/.config
@@ -183,7 +185,7 @@ for bs in "${BOX_SSL[@]}"; do
 		IMAGE_RENAMED_FILENAME_EXT="${IMAGE_ORIGINAL_FILENAME_EXT/"${FUD_COMMENT}_"/""}"
 		IMAGE_RENAMED_FILENAME_EXT="${IMAGE_RENAMED_FILENAME_EXT/".external"/""}"
 		IMAGE_RENAMED_FILENAME_EXT="${IMAGE_RENAMED_FILENAME_EXT}-${FUD_COMMENT_BOX}_${FUD_COMMENT_SSL}.external"
-		cp -f "$FREETZ_SSL_HOME_PATH/$END_IMAGE_PATH/$IMAGE_ORIGINAL_FILENAME_EXT" "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/$IMAGE_RENAMED_FILENAME_EXT" # copy image filename to renamed filename
+		cp -f "$FREETZ_SSL_HOME_PATH/$END_IMAGE_PATH/$IMAGE_ORIGINAL_FILENAME_EXT" "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/$IMAGE_RENAMED_FILENAME_EXT"  2>/dev/null # copy image filename to renamed filename
 
 		#echo "starte image2inmemory" && sleep 2 #echo command 2 seconds for progress
 		if [ -z $PARAM_SKIP_I2M ]; then
@@ -202,6 +204,8 @@ for bs in "${BOX_SSL[@]}"; do
 		sed -i "s+FREETZ_JLEVEL=$MAX_CPUS+FREETZ_JLEVEL=20+g" $FREETZ_SSL_HOME_PATH/.config
 		
 		if [ -z $PARAM_SKIP_OSCAM ]; then
+		sed -i "s+# EXTERNAL_ENABLED is not set+EXTERNAL_ENABLED=y+g" $FREETZ_SSL_HOME_PATH/.config
+		sed -i "s+FREETZ_PACKAGE_MC is not set+# FREETZ_PACKAGE_MC=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_PACKAGE_OSCAM is not set+FREETZ_PACKAGE_OSCAM=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_PACKAGE_CCID is not set+FREETZ_PACKAGE_CCID=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_PACKAGE_PCSC_LITE is not set+FREETZ_PACKAGE_PCSC_LITE=y+g" $FREETZ_SSL_HOME_PATH/.config
