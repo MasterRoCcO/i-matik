@@ -99,12 +99,20 @@ for bs in "${BOX_SSL[@]}"; do
 	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox 2>/dev/null	
 	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox 2>/dev/null
 	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox 2>/dev/null
+	else
+	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox_no 2>/dev/null	
+	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox_no 2>/dev/null
+	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox_no 2>/dev/null
 	fi
 	
 	if [ -z $PARAM_SKIP_MASTER ]; then
 	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox 2>/dev/null	
 	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox 2>/dev/null
 	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbx 2>/dev/null
+	else
+	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox_no 2>/dev/null	
+	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox_no 2>/dev/null
+	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbx_no 2>/dev/null
 	fi
 	
 	# Searching box specific config files and save them into a string array
@@ -116,7 +124,7 @@ for bs in "${BOX_SSL[@]}"; do
 	for conf in "${CONFIGS[@]}"; do
 		cp -f "$conf" .config	#copy box config to .config
 		sed -i "s+FREETZ_JLEVEL=20+FREETZ_JLEVEL=$MAX_CPUS+g" $FREETZ_SSL_HOME_PATH/.config
-		if [ -z $PARAM_SKIP_OSCAM ]; then
+	if [ -z $PARAM_SKIP_OSCAM ]; then
 		mv $FREETZ_SSL_HOME_PATH/addon/oscam $FREETZ_SSL_HOME_PATH/addon/no_oscam 2>/dev/null
 		mkdir -p $FREETZ_SSL_HOME_PATH/addon/oscam/root 2>/dev/null	# create oscam folder
 		sed -i "s+FREETZ_PACKAGE_OSCAM=y+# FREETZ_PACKAGE_OSCAM is not set+g" $FREETZ_SSL_HOME_PATH/.config
@@ -137,18 +145,13 @@ for bs in "${BOX_SSL[@]}"; do
 		sed -i "s+FREETZ_PACKAGE_AVM_PORTFW=y+# FREETZ_PACKAGE_AVM_PORTFW is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_PACKAGE_AVM_FIREWALL=y+# FREETZ_PACKAGE_AVM_FIREWALL is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_PACKAGE_AVM_FORWARDING=y+# FREETZ_PACKAGE_AVM_FORWARDING is not set+g" $FREETZ_SSL_HOME_PATH/.config
-		sed -i "s+openssl_1_0_x_masterbox+openssl_1_0_x_masterbox_no-oscam+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+openssl_1_0_x_clientbox+openssl_1_0_x_clientbox_no-oscam+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+openssl_1_1_x_masterbox+openssl_1_1_x_masterbox_no-oscam+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+openssl_1_1_x_clientbox+openssl_1_1_x_clientbox_no-oscam+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+openssl_3_0_x_masterbox+openssl_3_0_x_masterbox_no-oscam+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+openssl_3_0_x_clientbox+openssl_3_0_x_clientbox_no-oscam+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+openssl_1_0_x_repeater+openssl_1_0_x_repeater_no-oscam+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+openssl_1_1_x_repeater+openssl_1_1_x_repeater_no-oscam+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+openssl_3_0_x_repeater+openssl_3_0_x_repeater_no-oscam+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+openssl_1_0_x_powerline+openssl_1_0_x_powerline_no-oscam+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+openssl_1_1_x_powerline+openssl_1_1_x_powerline_no-oscam+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+openssl_3_0_x_powerline+openssl_3_0_x_powerline_no-oscam+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		else
+		sed -i "s+openssl_1_0_x_masterbox+with_readerdriver_openssl_1_0_x_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+openssl_1_0_x_clientbox+with_readerdriver_openssl_1_0_x_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+openssl_1_1_x_masterbox+with_readerdriver_openssl_1_1_x_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+openssl_1_1_x_clientbox+with_readerdriver_openssl_1_1_x_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+openssl_3_0_x_masterbox+with_readerdriver_openssl_3_0_x_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+openssl_3_0_x_clientbox+with_readerdriver_openssl_3_0_x_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		fi
 		
 		if [ -z $PARAM_CONFIG ]; then
@@ -193,7 +196,7 @@ for bs in "${BOX_SSL[@]}"; do
 
 		sed -i "s+FREETZ_JLEVEL=$MAX_CPUS+FREETZ_JLEVEL=20+g" $FREETZ_SSL_HOME_PATH/.config
 		
-		if [ -z $PARAM_SKIP_OSCAM ]; then
+	if [ -z $PARAM_SKIP_OSCAM ]; then
 		sed -i "s+# FREETZ_PACKAGE_OSCAM is not set+FREETZ_PACKAGE_OSCAM=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_PACKAGE_CCID is not set+FREETZ_PACKAGE_CCID=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_PACKAGE_PCSC_LITE is not set+FREETZ_PACKAGE_PCSC_LITE=y+g" $FREETZ_SSL_HOME_PATH/.config
@@ -212,20 +215,19 @@ for bs in "${BOX_SSL[@]}"; do
 		sed -i "s+# FREETZ_PACKAGE_AVM_PORTFW is not set+FREETZ_PACKAGE_AVM_PORTFW=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_PACKAGE_AVM_FIREWALL is not set+FREETZ_PACKAGE_AVM_FIREWALL=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_PACKAGE_AVM_FORWARDING is not set+FREETZ_PACKAGE_AVM_FORWARDING=y+g" $FREETZ_SSL_HOME_PATH/.config
-		sed -i "s+openssl_1_0_x_masterbox_no-oscam+openssl_1_0_x_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+openssl_1_0_x_clientbox_no-oscam+openssl_1_0_x_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+openssl_1_1_x_masterbox_no-oscam+openssl_1_1_x_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+openssl_1_1_x_clientbox_no-oscam+openssl_1_1_x_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+openssl_3_0_x_masterbox_no-oscam+openssl_3_0_x_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+openssl_3_0_x_clientbox_no-oscam+openssl_3_0_x_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+openssl_1_0_x_repeater_no-oscam+openssl_1_0_x_repeater+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+openssl_1_1_x_repeater_no-oscam+openssl_1_1_x_repeater+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+openssl_3_0_x_repeater_no-oscam+openssl_3_0_x_repeater+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+openssl_1_0_x_powerline_no-oscam+openssl_1_0_x_powerline+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+openssl_1_1_x_powerline_no-oscam+openssl_1_1_x_powerline+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+openssl_3_0_x_powerline_no-oscam+openssl_3_0_x_powerline+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		rm -r $FREETZ_SSL_HOME_PATH/addon/oscam 2>/dev/null
 		mv $FREETZ_SSL_HOME_PATH/addon/no_oscam $FREETZ_SSL_HOME_PATH/addon/oscam 2>/dev/null
+		else
+		sed -i "s+with_readerdriver_openssl_1_0_x_masterbox+openssl_1_0_x_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+with_readerdriver_openssl_1_0_x_clientbox+openssl_1_0_x_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+with_readerdriver_openssl_1_1_x_masterbox+openssl_1_1_x_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+with_readerdriver_openssl_1_1_x_clientbox+openssl_1_1_x_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+with_readerdriver_openssl_3_0_x_masterbox+openssl_3_0_x_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+with_readerdriver_openssl_3_0_x_clientbox+openssl_3_0_x_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		# Get custom image file name part from .config
+		FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
+		FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
+		FUD_COMMENT_SSL="${FUD_COMMENT/"_${FUD_COMMENT_BOX}"/""}"
 		fi
 		
 		#echo "mv .$configto to $config" && sleep 2 #echo command 2 seconds for progress
@@ -242,12 +244,20 @@ done
 	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox_no 2>/dev/null
 	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox_no 2>/dev/null
 	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox_no 2>/dev/null
+	else
+	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox 2>/dev/null	
+	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox 2>/dev/null
+	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox 2>/dev/null
 	fi
 	
 	if [ -z $PARAM_SKIP_MASTER ]; then
 	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox_no 2>/dev/null
 	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox_no 2>/dev/null
 	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox_no 2>/dev/null
+	else
+	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox 2>/dev/null
+	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox 2>/dev/null
+	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox 2>/dev/null
 	fi
 	
 	[ -f .config_backup ] && mv .config_backup .config	# rename backup config to original config
