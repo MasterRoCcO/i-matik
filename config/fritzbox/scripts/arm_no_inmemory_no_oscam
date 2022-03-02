@@ -102,7 +102,7 @@ for bs in "${BOX_SSL[@]}"; do
 	if [ -z $PARAM_SKIP_MASTER ]; then
 	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox 2>/dev/null	
 	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox 2>/dev/null
-	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbx 2>/dev/null
+	mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox 2>/dev/null
 	fi
 	
 	# Searching box specific config files and save them into a string array
