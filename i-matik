@@ -683,39 +683,39 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mipsel_no_inmemory
 
 else
 # Generate list of supported devices
-SUPPORTED_BOX_TYPE_LIST_SSL_1_0="$(find "$I_MATIK_PATH/config/" -name "config_fritz*openssl_1_0*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
+SUPPORTED_BOX_TYPE_LIST_SSL_1_0="$(find "$I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10" -name "config_fritz*openssl_1_0*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
 SUPPORTED_BOX_TYPE_LIST_SSL_1_0="${SUPPORTED_BOX_TYPE_LIST_SSL_1_0//"fritz"/""}"
 SUPPORTED_BOX_TYPE_LIST_SSL_1_0="$(echo $SUPPORTED_BOX_TYPE_LIST_SSL_1_0 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
 # Generate list of supported ssl versions
-SUPPORTED_SSL_NUMBER_LIST_SSL_1_0="$(find "$I_MATIK_PATH/config/" -name "openssl_1_0*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
+SUPPORTED_SSL_NUMBER_LIST_SSL_1_0="$(find "$I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10" -name "openssl_1_0*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
 SUPPORTED_SSL_NUMBER_LIST_SSL_1_0="$(echo $SUPPORTED_SSL_NUMBER_LIST_SSL_1_0 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
 # Generate list of supported devices
-SUPPORTED_BOX_TYPE_LIST_SSL_1_1="$(find "$I_MATIK_PATH/config/" -name "config_fritz*openssl_1_1*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
+SUPPORTED_BOX_TYPE_LIST_SSL_1_1="$(find "$I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11" -name "config_fritz*openssl_1_1*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
 SUPPORTED_BOX_TYPE_LIST_SSL_1_1="${SUPPORTED_BOX_TYPE_LIST_SSL_1_1//"fritz"/""}"
 SUPPORTED_BOX_TYPE_LIST_SSL_1_1="$(echo $SUPPORTED_BOX_TYPE_LIST_SSL_1_1 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
 # Generate list of supported ssl versions
-SUPPORTED_SSL_NUMBER_LIST_SSL_1_1="$(find "$I_MATIK_PATH/config/" -name "openssl_1_1*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
+SUPPORTED_SSL_NUMBER_LIST_SSL_1_1="$(find "$I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11" -name "openssl_1_1*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
 SUPPORTED_SSL_NUMBER_LIST_SSL_1_1="$(echo $SUPPORTED_SSL_NUMBER_LIST_SSL_1_1 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
 # Generate list of supported devices
-SUPPORTED_BOX_TYPE_LIST_SSL_3_0="$(find "$I_MATIK_PATH/config/" -name "config_fritz*openssl_3_0*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
+SUPPORTED_BOX_TYPE_LIST_SSL_3_0="$(find "$I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30" -name "config_fritz*openssl_3_0*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
 SUPPORTED_BOX_TYPE_LIST_SSL_3_0="${SUPPORTED_BOX_TYPE_LIST_SSL_3_0//"fritz"/""}"
 SUPPORTED_BOX_TYPE_LIST_SSL_3_0="$(echo $SUPPORTED_BOX_TYPE_LIST_SSL_3_0 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
 # Generate list of supported ssl versions
-SUPPORTED_SSL_NUMBER_LIST_SSL_3_0="$(find "$I_MATIK_PATH/config/" -name "openssl_3_0*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
+SUPPORTED_SSL_NUMBER_LIST_SSL_3_0="$(find "$I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30" -name "openssl_3_0*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
 SUPPORTED_SSL_NUMBER_LIST_SSL_3_0="$(echo $SUPPORTED_SSL_NUMBER_LIST_SSL_3_0 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
 # Generate list of supported devices
-SUPPORTED_BOX_TYPE_LIST_SSL_MULTI="$(find "$I_MATIK_PATH/config/" -name "config_fritz*openssl_multi*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
+SUPPORTED_BOX_TYPE_LIST_SSL_MULTI="$(find "$I_MATIK_CONFIG_FRITZBOX_PATH_openssl_multi" -name "config_fritz*openssl_multi*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
 SUPPORTED_BOX_TYPE_LIST_SSL_MULTI="${SUPPORTED_BOX_TYPE_LIST_SSL_MULTI//"fritz"/""}"
 SUPPORTED_BOX_TYPE_LIST_SSL_MULTI="$(echo $SUPPORTED_BOX_TYPE_LIST_SSL_MULTI | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
 # Generate list of supported ssl versions
-SUPPORTED_SSL_NUMBER_LIST_SSL_MULTI="$(find "$I_MATIK_PATH/config/" -name "openssl_multi*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
+SUPPORTED_SSL_NUMBER_LIST_SSL_MULTI="$(find "$I_MATIK_CONFIG_FRITZBOX_PATH_openssl_multi" -name "openssl_multi*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
 SUPPORTED_SSL_NUMBER_LIST_SSL_MULTI="$(echo $SUPPORTED_SSL_NUMBER_LIST_SSL_MULTI | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
 # Generate list of supported devices
