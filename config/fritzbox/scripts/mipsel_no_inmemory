@@ -96,15 +96,19 @@ for bs in "${BOX_SSL[@]}"; do
 	FREETZ_VERSION="$(tools/freetz_revision 2>&1 | awk '{print $2}' | xargs)"	# freetz-ng version string
 
 	if [ -z $PARAM_SKIP_CLIENT ]; then
-		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox 2>/dev/null	
-		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox 2>/dev/null
-		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox 2>/dev/null
+		sleep 0
+	else
+		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox_no 2>/dev/null	
+		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox_no 2>/dev/null
+		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox_no 2>/dev/null
 	fi
 	
 	if [ -z $PARAM_SKIP_MASTER ]; then
-		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox 2>/dev/null	
-		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox 2>/dev/null
-		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox 2>/dev/null
+		sleep 0
+	else
+		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox_no 2>/dev/null	
+		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox_no 2>/dev/null
+		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox_no 2>/dev/null
 	fi
 	
 	# Searching box specific config files and save them into a string array
@@ -225,23 +229,28 @@ for bs in "${BOX_SSL[@]}"; do
 		#echo "mv .$configto to $config" && sleep 2 #echo command 2 seconds for progress
 		mv .config "$conf" #move back updated .config to box config
 		rm -f "$FREETZ_SSL_HOME_PATH/$END_IMAGE_PATH/"* # cleanup image folder
-	done; 
+	done;
 	
+	if [ -z $PARAM_SKIP_CLIENT ]; then
+	        sleep 0
+	else
+		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox 2>/dev/null
+		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox 2>/dev/null
+		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox 2>/dev/null
+	fi
+	
+	if [ -z $PARAM_SKIP_MASTER ]; then
+	        sleep 0
+	else
+		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox 2>/dev/null
+		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox 2>/dev/null
+		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox 2>/dev/null
+	fi
+
 	finish=$(date +"%s")	# build finished time
 	timediff=$(($finish-$beginbs))	# build time
 	[[ $COUNT > 1 ]] && printf "\n${GREEN}${BOX_NAME} SSL ${SSL_VERSION}${NC} build finished in $(($timediff / 60)) minutes and $(($timediff % 60)) seconds. ${YELLOW}<- end time $(date +"%Y-%m-%d %H:%M:%S")${NC}\n"
 done
-	if [ -z $PARAM_SKIP_CLIENT ]; then
-		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox_no 2>/dev/null
-		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox_no 2>/dev/null
-		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox_no 2>/dev/null
-	fi
-	
-	if [ -z $PARAM_SKIP_MASTER ]; then
-		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox_no 2>/dev/null
-		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox_no 2>/dev/null
-		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox_no 2>/dev/null
-	fi
 	
 	[ -f .config_backup ] && mv .config_backup .config	# rename backup config to original config
 
@@ -254,5 +263,5 @@ $I_MATIK_VERSION	# show i-matik disclaimer
 if [ -z $PARAM_SKIP_OSCAM ]; then
 exit 1 #not oscam is created
 else
-source $I_MATIK_OSCAM_MIPSEL
+source $I_MATIK_OSCAM_MIPSEL #oscam is created
 fi
