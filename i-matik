@@ -230,7 +230,6 @@ source $I_MATIK_PATH/config/fritzbox/scripts_privat/./6660_multi
 elif [[ $1 == '6660' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware
 
-
 #mips boxen
 elif [[ $1 == '3272.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mips
