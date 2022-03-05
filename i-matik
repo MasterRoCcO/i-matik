@@ -110,6 +110,15 @@ printf ${RED}"No supported\n"
 elif [[ $1 == '1200' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware_repeater
 
+elif [[ $1 == '1260v2.11' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_oscam
+elif [[ $1 == '1260v2.30' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_oscam
+elif [[ $1 == '1260v2.multi' ]]; then
+printf ${RED}"No supported\n"
+elif [[ $1 == '1260v2' ]] && [[ $2 == '-push' ]]; then
+source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware_powerline
+
 elif [[ $1 == '3000.11' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_oscam
 elif [[ $1 == '3000.30' ]]; then
@@ -158,15 +167,6 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory_no_oscam
 elif [[ $1 == '1260E.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '1260E' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware_powerline
-
-elif [[ $1 == '1260v2.11' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory_no_oscam
-elif [[ $1 == '1260v2.30' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts/./arm_no_inmemory_no_oscam
-elif [[ $1 == '1260v2.multi' ]]; then
-printf ${RED}"No supported\n"
-elif [[ $1 == '1260v2' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./ssl11_push_firmware_powerline
 
 elif [[ $1 == '6000.11' ]]; then
