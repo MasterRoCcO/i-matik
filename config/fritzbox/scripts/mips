@@ -121,6 +121,7 @@ for bs in "${BOX_SSL[@]}"; do
 	for conf in "${CONFIGS[@]}"; do
 		cp -f "$conf" .config	#copy box config to .config
 		sed -i "s+FREETZ_JLEVEL=20+FREETZ_JLEVEL=$MAX_CPUS+g" $FREETZ_SSL_HOME_PATH/.config
+
 	if [ -z $PARAM_SKIP_OSCAM ]; then
 	        sleep 0
 	else
