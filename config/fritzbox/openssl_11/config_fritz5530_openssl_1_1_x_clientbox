@@ -9,7 +9,7 @@ FREETZ_HAVE_DOT_CONFIG=y
 #
 
 #
-#  freetz-ng 18929MO-5c5a4d1d8 master 2022-02-25
+#  freetz-ng 18931MO-945e2861e master 2022-03-06
 #
 
 #
@@ -17,33 +17,11 @@ FREETZ_HAVE_DOT_CONFIG=y
 #
 # FREETZ_USER_LEVEL_BEGINNER is not set
 # FREETZ_USER_LEVEL_ADVANCED is not set
-# FREETZ_USER_LEVEL_EXPERT is not set
+FREETZ_USER_LEVEL_EXPERT=y
 # FREETZ_USER_LEVEL_APTGURU is not set
-FREETZ_USER_LEVEL_DEVELOPER=y
+# FREETZ_USER_LEVEL_DEVELOPER is not set
 FREETZ_SHOW_ADVANCED=y
 FREETZ_SHOW_EXPERT=y
-FREETZ_SHOW_APTGURU=y
-FREETZ_SHOW_DEVELOPER=y
-
-#
-#  x                                                        x
-#
-
-#
-#  x xxxxxxxxxxxxxxxxxxxxx  WARNING  xxxxxxxxxxxxxxxxxxxxxx x
-#
-
-#
-#  x                 DO NOT USE DEVELOPER!                  x
-#
-
-#
-#  x xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx x
-#
-
-#
-#  x                                                        x
-#
 
 #
 # Hardware/Firmware ----------------------------------------
@@ -247,7 +225,6 @@ FREETZ_REMOVE_LEFTOVER=y
 # FREETZ_REMOVE_DSLD is not set
 FREETZ_REMOVE_SHOWDSLDSTAT=y
 # FREETZ_REMOVE_ASSISTANT is not set
-# FREETZ_REMOVE_UNTRUSTEDD is not set
 # FREETZ_REMOVE_PLCD is not set
 # FREETZ_REMOVE_AHA is not set
 # FREETZ_REMOVE_MYFRITZ is not set
@@ -304,7 +281,6 @@ FREETZ_ENFORCE_FIRMWARE_VERSION_VIA_RCCONF=""
 # Misc patches ---------------------------------------------
 #
 # FREETZ_DISABLE_SERIAL_CONSOLE is not set
-# FREETZ_PATCH_DISABLE_AVM_WATCHDOG is not set
 FREETZ_RUN_TELEFON_IN_INHAUS_MODE=y
 
 #
@@ -719,8 +695,6 @@ FREETZ_WGET=y
 # FREETZ_PACKAGE_GPTFDISK is not set
 # FREETZ_PACKAGE_HPLIP is not set
 # FREETZ_PACKAGE_HP_UTILS is not set
-FREETZ_PACKAGE_IPTABLES_IS_SELECTABLE=y
-# FREETZ_PACKAGE_IPTABLES is not set
 # FREETZ_PACKAGE_MINI_FO is not set
 # FREETZ_PACKAGE_MYSQL is not set
 # FREETZ_PACKAGE_PERL is not set
@@ -2707,7 +2681,6 @@ FREETZ_BUSYBOX___V134_FEATURE_IPC_SYSLOG_BUFFER_SIZE=16
 # FREETZ_BACKUP_EXPORT is not set
 FREETZ_LANG_DE=y
 # FREETZ_LANG_EN is not set
-# FREETZ_LANG_XX is not set
 FREETZ_LANG_STRING="de"
 FREETZ_SECURITY_LEVEL=0
 FREETZ_STYLE_COLORED=y
@@ -2771,7 +2744,6 @@ FREETZ_DOT_CONFIG_STRIPPED=y
 #
 # Toolchain options
 #
-# FREETZ_DOWNLOAD_TOOLCHAIN is not set
 FREETZ_BUILD_TOOLCHAIN=y
 
 #
@@ -2828,11 +2800,7 @@ FREETZ_TARGET_UCLIBC_PROVIDES_SSP=y
 # Tools and toolchains options ------------------------
 #
 FREETZ_TOOLCHAIN_MINIMIZE_REQUIRED_GLIBC_VERSION=y
-# FREETZ_TOOLCHAIN_32BIT is not set
-# FREETZ_TOOLCHAIN_CCACHE is not set
-# FREETZ_ROOTEMU_FAKEROOT is not set
-FREETZ_ROOTEMU_PSEUDO=y
-# FREETZ_HOSTTOOLS_DOWNLOAD is not set
+FREETZ_ROOTEMU_FAKEROOT=y
 # end of Toolchain options
 
 #
@@ -2851,14 +2819,14 @@ FREETZ_CHECK_CHANGED=y
 #
 # FREETZ_FWMOD_SKIP_UNPACK is not set
 FREETZ_FWMOD_VALIDATE=y
-FREETZ_FWMOD_VALIDATE_METHOD_OG=y
-# FREETZ_FWMOD_VALIDATE_METHOD_SI is not set
+# FREETZ_FWMOD_VALIDATE_METHOD_OG is not set
+FREETZ_FWMOD_VALIDATE_METHOD_SI=y
 # FREETZ_FWMOD_SKIP_MODIFY is not set
 # FREETZ_FWMOD_SKIP_PACK is not set
 FREETZ_FWMOD_SIGN=y
 FREETZ_FWMOD_SIGN_PASSWORD="freetz"
-FREETZ_FWMOD_SIGN_METHOD_OG=y
-# FREETZ_FWMOD_SIGN_METHOD_SI is not set
+# FREETZ_FWMOD_SIGN_METHOD_OG is not set
+FREETZ_FWMOD_SIGN_METHOD_SI=y
 # end of Firmware packaging (fwmod) options
 
 #
