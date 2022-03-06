@@ -9,7 +9,7 @@ FREETZ_HAVE_DOT_CONFIG=y
 #
 
 #
-#  freetz-ng 18929MO-5c5a4d1d8 master 2022-02-25
+#  freetz-ng 18931MO-945e2861e master 2022-03-06
 #
 
 #
@@ -229,6 +229,7 @@ FREETZ_REMOVE_PUBKEY=y
 # FREETZ_REMOVE_UPNP is not set
 FREETZ_REMOVE_KIDS=y
 # FREETZ_REMOVE_QOS is not set
+# FREETZ_REMOVE_AVM_E2FSPROGS is not set
 # end of Removal patches
 
 #
@@ -252,26 +253,6 @@ FREETZ_PATCH_MODFS_BOOT_MANAGER=y
 # USB patches ----------------------------------------------
 #
 # FREETZ_PATCH_UDEVMOUNT is not set
-
-#
-# Intern NTFS
-#
-# FREETZ_UDEVMOUNT_FAT is not set
-
-#
-# Intern Ext2
-#
-
-#
-# Intern Ext3
-#
-
-#
-# Intern Ext4
-#
-# FREETZ_UDEVMOUNT_HFS is not set
-# FREETZ_UDEVMOUNT_HFS_PLUS is not set
-# FREETZ_UDEVMOUNT_REISER_FS is not set
 # FREETZ_PATCH_MAXDEVCOUNT is not set
 # FREETZ_CUSTOM_UDEV_RULES is not set
 # FREETZ_DROP_NOEXEC_EXTERNAL is not set
@@ -652,7 +633,6 @@ FREETZ_BOX_CERTIFICATE_SUPPORT_AVAILABLE=y
 # FREETZ_PACKAGE_UNBOUND is not set
 # FREETZ_PACKAGE_UNRAR is not set
 # FREETZ_PACKAGE_USBIDS is not set
-FREETZ_PACKAGE_USBIDS_FORCE_DOWNLOAD=y
 # end of U
 
 #
@@ -1098,7 +1078,6 @@ FREETZ_LIB_libuClibc=y
 #
 # FREETZ_LIB_libusb_0 is not set
 # FREETZ_LIB_libusb_1 is not set
-FREETZ_LIB_libusb_1_WITH_ABANDON=y
 # FREETZ_LIB_libftdi is not set
 # end of USB & FTDI
 
@@ -2802,14 +2781,14 @@ FREETZ_CHECK_CHANGED=y
 #
 # FREETZ_FWMOD_SKIP_UNPACK is not set
 FREETZ_FWMOD_VALIDATE=y
-FREETZ_FWMOD_VALIDATE_METHOD_OG=y
-# FREETZ_FWMOD_VALIDATE_METHOD_SI is not set
+# FREETZ_FWMOD_VALIDATE_METHOD_OG is not set
+FREETZ_FWMOD_VALIDATE_METHOD_SI=y
 # FREETZ_FWMOD_SKIP_MODIFY is not set
 # FREETZ_FWMOD_SKIP_PACK is not set
 FREETZ_FWMOD_SIGN=y
 FREETZ_FWMOD_SIGN_PASSWORD="freetz"
-FREETZ_FWMOD_SIGN_METHOD_OG=y
-# FREETZ_FWMOD_SIGN_METHOD_SI is not set
+# FREETZ_FWMOD_SIGN_METHOD_OG is not set
+FREETZ_FWMOD_SIGN_METHOD_SI=y
 # FREETZ_FWMOD_USBROOT is not set
 # FREETZ_FWMOD_NFSROOT is not set
 # end of Firmware packaging (fwmod) options
