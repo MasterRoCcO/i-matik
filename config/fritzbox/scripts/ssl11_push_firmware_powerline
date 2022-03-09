@@ -9,5 +9,5 @@ FREETZ_SSL_PATH="FREETZ_PATH_SSL_11"
 FREETZ_SSL_HOME_PATH="${!FREETZ_SSL_PATH}/$BOX_HOME"
 
 for PUSH_IMAGE_NAME in $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$1/${1}*${FUD_COMMENT_BOX}*${FUD_COMMENT_SSL}.image; do # Whitespace-safe but not recursive.
-$FREETZ_SSL_HOME_PATH/tools/./push_firmware $PUSH_IMAGE_NAME -cmd ncftp
+$FREETZ_SSL_HOME_PATH/tools/./push_firmware $PUSH_IMAGE_NAME -cmd ftp
 done
