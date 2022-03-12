@@ -689,6 +689,9 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./mipsel_no_inmemory
 elif [[ $1 == '7270v3.10' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./mipsel_no_inmemory
 
+elif [[ $1 == '-backup' ]]; then
+source $I_MATIK_PATH/config/scripts/./backup
+
 else
 # Generate list of supported devices
 SUPPORTED_BOX_TYPE_LIST_SSL_1_0="$(find "$I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10" -name "config_fritz*openssl_1_0*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
@@ -754,7 +757,8 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf "  -yo,--yes-oscam\t\tThe image is with oscam add-on and an oscam is created \n"
 	printf "  -nc,--no-clientbox\t\tNo client box image is created \n"
 	printf "  -nm,--no-masterbox\t\tNo master box image is created \n"
-	printf "  -push \t\t\tpush image to Fritz!Box or Fritz!Repeater or Fritz!Powerline\n\n"
+	printf "  -push \t\t\tpush image to Fritz!Box or Fritz!Repeater or Fritz!Powerline\n"
+	printf "  -backup \t\t\tmake a backup of your freetz-signature and freetz-dl\n\n"
 	printf ${GREEN}"List of currently OpenSSL 1.0.x supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST_SSL_1_0}\n"
 	printf ${BLUE}"To build an OpenSSL 1.0.x image for Fritz!Box 3272 use this command:${NC}\n"
 	printf "$0 3272.10\n\n"

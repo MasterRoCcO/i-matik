@@ -1,0 +1,6 @@
+#!/bin/bash
+cd $I_MATIK_PATH
+mkdir i-matik_Backup
+datum=$(date +%d.%m.%Y)
+tar cfvz $I_MATIK_PATH/i-matik_Backup/backup_$datum.tar.gz ~/.freetz-signature ~/.freetz-dl
+
