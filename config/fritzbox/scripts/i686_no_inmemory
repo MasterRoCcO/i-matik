@@ -142,7 +142,6 @@ for bs in "${BOX_SSL[@]}"; do
 		sed -i "s+# FREETZ_PACKAGE_AVM_PORTFW is not set+FREETZ_PACKAGE_AVM_PORTFW=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_PACKAGE_AVM_FIREWALL is not set+FREETZ_PACKAGE_AVM_FIREWALL=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_PACKAGE_AVM_FORWARDING is not set+FREETZ_PACKAGE_AVM_FORWARDING=y+g" $FREETZ_SSL_HOME_PATH/.config
-		sed -i "s+#oscam-1.5.4+oscam-1.5.4+g" $FREETZ_SSL_HOME_PATH/addon/static.pkg 2>/dev/null
 		sed -i "s+openssl_1_0_x_masterbox+with_readerdriver_openssl_1_0_x_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+openssl_1_0_x_clientbox+with_readerdriver_openssl_1_0_x_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+openssl_1_1_x_masterbox+with_readerdriver_openssl_1_1_x_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
@@ -214,7 +213,6 @@ for bs in "${BOX_SSL[@]}"; do
 		sed -i "s+FREETZ_PACKAGE_AVM_PORTFW=y+# FREETZ_PACKAGE_AVM_PORTFW is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_PACKAGE_AVM_FIREWALL=y+# FREETZ_PACKAGE_AVM_FIREWALL is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_PACKAGE_AVM_FORWARDING=y+# FREETZ_PACKAGE_AVM_FORWARDING is not set+g" $FREETZ_SSL_HOME_PATH/.config
-		sed -i "s+oscam-1.5.4+#oscam-1.5.4+g" $FREETZ_SSL_HOME_PATH/addon/static.pkg 2>/dev/null
 		sed -i "s+with_readerdriver_openssl_1_0_x_masterbox+openssl_1_0_x_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+with_readerdriver_openssl_1_0_x_clientbox+openssl_1_0_x_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+with_readerdriver_openssl_1_1_x_masterbox+openssl_1_1_x_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
