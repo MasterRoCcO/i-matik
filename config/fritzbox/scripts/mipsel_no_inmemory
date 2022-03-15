@@ -89,6 +89,17 @@ for bs in "${BOX_SSL[@]}"; do
 	#find "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}.inmemory" -type f -mmin +$delete_images -delete  
 	
 	# update git working copy
+	if [ -z $PARAM_SKIP_OSCAM ]; then
+	       sleep 0
+	else
+ed $FREETZ_SSL_HOME_PATH/addon/static.pkg <<EOF
+/# Addons:/a
+${I_MATIK_ADDON_VERSION}
+.
+wq
+EOF
+	fi
+	
 	cd "$FREETZ_SSL_HOME_PATH" && git pull
 	umask 0022
 	[ -f .config ] && mv .config .config_backup	# rename original config to backup config
@@ -213,6 +224,8 @@ for bs in "${BOX_SSL[@]}"; do
 		sed -i "s+FREETZ_PACKAGE_AVM_PORTFW=y+# FREETZ_PACKAGE_AVM_PORTFW is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_PACKAGE_AVM_FIREWALL=y+# FREETZ_PACKAGE_AVM_FIREWALL is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_PACKAGE_AVM_FORWARDING=y+# FREETZ_PACKAGE_AVM_FORWARDING is not set+g" $FREETZ_SSL_HOME_PATH/.config
+		grep -v ${I_MATIK_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei
+		mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
 		sed -i "s+with_readerdriver_openssl_1_0_x_masterbox+openssl_1_0_x_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+with_readerdriver_openssl_1_0_x_clientbox+openssl_1_0_x_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+with_readerdriver_openssl_1_1_x_masterbox+openssl_1_1_x_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
