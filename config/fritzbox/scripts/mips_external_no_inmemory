@@ -85,10 +85,10 @@ for bs in "${BOX_SSL[@]}"; do
 	
 	# Remove older image files
 	DELETE_IMAGE_NAME="*$(echo ${!FREETZ_SSL_PATH} | awk -F'/' '{print $NF}').image"	# construct image filname filter
-	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}" -type f -mmin +$delete_images -delete 
+	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}" -type f -mmin +$delete_images -delete 2>/dev/null
 	DELETE_IMAGE_NAME_EXT="*$(echo ${!FREETZ_SSL_PATH} | awk -F'/' '{print $NF}').external"	# construct image filname filter
-	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME_EXT}" -type f -mmin +$delete_images -delete 
-	#find "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}.inmemory" -type f -mmin +$delete_images -delete  
+	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME_EXT}" -type f -mmin +$delete_images -delete 2>/dev/null
+	#find "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}.inmemory" -type f -mmin +$delete_images -delete 2>/dev/null
 	
 	# update git working copy
 	if [ -z $PARAM_SKIP_OSCAM ]; then
