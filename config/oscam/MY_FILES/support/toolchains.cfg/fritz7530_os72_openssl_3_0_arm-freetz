@@ -1,0 +1,20 @@
+_toolchainname="fritz7530_os72_openssl_3_0_arm-freetz";
+default_use="USE_UTF8 USE_LIBCRYPTO";
+extra_use="";
+extra_cc="";
+extra_ld="-Wl,-dynamic-linker,/usr/lib/freetz/ld-uClibc.so.0";
+_description="FRITZ!Box 7530 OpenSSL 3.0 FritzOS V7.2x";
+_oscamconfdir_default="/etc/tuxbox/config";
+_oscamconfdir_custom="";
+_self_build="yes";
+_compiler="arm-linux-uclibcgnueabi-";
+_sysroot="usr";
+_libsearchdir="/usr/lib";
+_toolchainfilename="ZnJpdHo3NTMwX29zNzJfb3BlbnNzbF8zXzBfYXJtLWZyZWV0ei50YXIueHoK";
+_md5sum="0b8ea9dbccf7c3d223b52ce3799fdd00  Toolchain-fritz7530_os72_openssl_3_0_arm-freetz.tar.xz";
+_tc_info="\n
+!!! freetz-NG Toolchain !!!\n
+\n
+FRITZ!Box 7530 OpenSSL 3.0 FritzOS V7.2x\n
+arm armv7-a 32-bit LE, uClibc 1.0.39, gcc 5.5.0, linux 4.4.60\n";
+_tc_infolines="5";

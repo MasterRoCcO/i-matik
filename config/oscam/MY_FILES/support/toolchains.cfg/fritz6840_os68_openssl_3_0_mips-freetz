@@ -1,0 +1,20 @@
+_toolchainname="fritz6840_os68_openssl_3_0_mips-freetz";
+default_use="USE_UTF8 USE_LIBCRYPTO";
+extra_use="";
+extra_cc="";
+extra_ld="";
+_description="FRITZ!Box 6840 OpenSSL 3.0 FritzOS V6.8x";
+_oscamconfdir_default="/etc/tuxbox/config";
+_oscamconfdir_custom="";
+_self_build="yes";
+_compiler="mips-linux-uclibc-";
+_sysroot="usr";
+_libsearchdir="/usr/lib";
+_toolchainfilename="ZnJpdHo2ODQwX29zNjhfb3BlbnNzbF8zXzBfbWlwcy1mcmVldHoudGFyLnh6Cg==";
+_md5sum="c8b7da277ae5ce7b75af57cdf7e5004f  Toolchain-fritz6840_os68_openssl_3_0_mips-freetz.tar.xz";
+_tc_info="\n
+!!! freetz-NG Toolchain !!!\n
+\n
+FRITZ!Box 6840 OpenSSL 3.0 FritzOS V6.8x\n
+mips mips32r2 32-bit BE, uClibc 0.9.33.2, ., linux 3.10.73\n";
+_tc_infolines="5";

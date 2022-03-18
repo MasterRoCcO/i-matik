@@ -1,0 +1,20 @@
+_toolchainname="fritz4020_os70_openssl_1_0_mips-freetz";
+default_use="USE_UTF8 USE_LIBCRYPTO";
+extra_use="";
+extra_cc="";
+extra_ld="";
+_description="FRITZ!Box 4020 OpenSSL 1.0 FritzOS V7.0x";
+_oscamconfdir_default="/etc/tuxbox/config";
+_oscamconfdir_custom="";
+_self_build="yes";
+_compiler="mips-linux-uclibc-";
+_sysroot="usr";
+_libsearchdir="/usr/lib";
+_toolchainfilename="ZnJpdHo0MDIwX29zNzBfb3BlbnNzbF8xXzBfbWlwcy1mcmVldHoudGFyLnh6Cg==";
+_md5sum="18d5593db2adcb015ac9c877623019fe  Toolchain-fritz4020_os70_openssl_1_0_mips-freetz.tar.xz";
+_tc_info="\n
+!!! freetz-NG Toolchain !!!\n
+\n
+FRITZ!Box 4020 OpenSSL 1.0 FritzOS V7.0x\n
+mips mips32r2 32-bit BE, uClibc 1.0.14, gcc 5.5.0, linux 4.4.60\n";
+_tc_infolines="5";

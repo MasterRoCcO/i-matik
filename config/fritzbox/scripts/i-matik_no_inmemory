@@ -174,6 +174,8 @@ EOF
 		FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
 		FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
 		FUD_COMMENT_SSL="${FUD_COMMENT/"_${FUD_COMMENT_BOX}"/""}"
+		OSCAM_ARCH="$(grep '^FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=' .config | awk -F'"' '{print $2}' | xargs)"
+		FB_OS="$(grep '^FREETZ_TYPE_PREFIX_SERIES_SUBDIR=' .config | awk -F'"' '{print $2}' | xargs)"
 		
 		# Construct image filename generated in freetz-ng (original)
 		#openssl_1_1_x_masterbox_7490_07.29.all_$FREETZNGVERSION-$FREETZNGVERSION1.image
@@ -236,7 +238,6 @@ EOF
 		FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
 		FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
 		FUD_COMMENT_SSL="${FUD_COMMENT/"_${FUD_COMMENT_BOX}"/""}"
-		OSCAM_ARCH="$(grep '^FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=' .config | awk -F'"' '{print $2}' | xargs)"
 	fi
 		
 		#echo "mv .$configto to $config" && sleep 2 #echo command 2 seconds for progress

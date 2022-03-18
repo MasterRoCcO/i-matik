@@ -13,23 +13,24 @@ if [[ ! -e $I_MATIK_PATH_OSCAM/oscam-svn ]]; then
 #    echo "$I_MATIK_PATH_OSCAM/oscam-svn existiert bereits, ist aber kein Verzeichnis" 1>&2
 fi
 
-if [[ ! -e $I_MATIK_PATH_OSCAM/support/toolchains/fritz_${OSCAM_ARCH} ]]; then
-$I_MATIK_PATH_OSCAM/./s3 tcrepair fritz_${OSCAM_ARCH}
-rm -rf $I_MATIK_PATH_OSCAM/support/toolchains/fritz_${OSCAM_ARCH}
-#elif [[ ! -d $I_MATIK_PATH_OSCAM/support/toolchains/fritz_${OSCAM_ARCH} ]]; then
-#    echo "$I_MATIK_PATH_OSCAM/support/toolchains/fritz_${OSCAM_ARCH} existiert bereits, ist aber kein Verzeichnis " 1>&2
+if [[ ! -e $I_MATIK_PATH_OSCAM/support/toolchains/fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz ]]; then
+$I_MATIK_PATH_OSCAM/./s3 tcrepair fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz
+rm -rf $I_MATIK_PATH_OSCAM/support/toolchains/fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz && sleep 20 #echo command 2 seconds for progress
+#elif [[ ! -d $I_MATIK_PATH_OSCAM/support/toolchains/fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz ]]; then
+#    echo "$I_MATIK_PATH_OSCAM/support/toolchains/fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz existiert bereits, ist aber kein Verzeichnis " 1>&2
 fi
 
 cd $I_MATIK_PATH_OSCAM/oscam-svn && OSCAMVERSION_ALT="$(./config.sh -r)"
 cd $I_MATIK_PATH_OSCAM/oscam-svn && svn up && OSCAMVERSION_NEU="$(./config.sh -r)"
 
-if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_${FUD_COMMENT_SSL}_${OSCAM_ARCH}_freetz-$I_MATIK_OSCAM_reader.upx ]]; then
-find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-svn$OSCAMVERSION_ALT-fritz${BOX_NAME}_${FUD_COMMENT_SSL}_${OSCAM_ARCH}_freetz-$I_MATIK_OSCAM_reader.upx" -type f -mmin +0 -delete 
-rm -rf $I_MATIK_PATH_OSCAM/support/toolchains/fritz_${OSCAM_ARCH}
-ln -s $FREETZ_SSL_HOME_PATH/toolchain/target $I_MATIK_PATH_OSCAM/support/toolchains/fritz_${OSCAM_ARCH}
+if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx ]]; then
+find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-svn$OSCAMVERSION_ALT-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx" -type f -mmin +0 -delete 
+rm -rf $I_MATIK_PATH_OSCAM/support/toolchains/fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz
+ln -s $FREETZ_SSL_HOME_PATH/toolchain/target $I_MATIK_PATH_OSCAM/support/toolchains/fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz
 
-$I_MATIK_PATH_OSCAM/./s3 fritz_${OSCAM_ARCH} -p=$I_MATIK_OSCAM_reader.profile
-mv $I_MATIK_PATH_OSCAM/support/binaries/oscam-svn$OSCAMVERSION_NEU-fritz_${OSCAM_ARCH}-$I_MATIK_OSCAM_reader-upx $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_${FUD_COMMENT_SSL}_${OSCAM_ARCH}_freetz-$I_MATIK_OSCAM_reader.upx
-elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_${FUD_COMMENT_SSL}_${OSCAM_ARCH}_freetz-$I_MATIK_OSCAM_reader.upx ]]; then
-    echo "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_${FUD_COMMENT_SSL}_${OSCAM_ARCH}_freetz-$I_MATIK_OSCAM_reader.upx already exists" 1>&2
+$I_MATIK_PATH_OSCAM/./s3 fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz -p=$I_MATIK_OSCAM_reader.profile
+mv $I_MATIK_PATH_OSCAM/support/binaries/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader-upx $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx
+
+elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx ]]; then
+    echo "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx already exists" 1>&2
 fi

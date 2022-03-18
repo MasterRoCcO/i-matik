@@ -203,6 +203,7 @@ EOF
 		FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
 		FUD_COMMENT_SSL="${FUD_COMMENT/"_${FUD_COMMENT_BOX}"/""}"
 		OSCAM_ARCH="$(grep '^FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=' .config | awk -F'"' '{print $2}' | xargs)"
+		FB_OS="$(grep '^FREETZ_TYPE_PREFIX_SERIES_SUBDIR=' .config | awk -F'"' '{print $2}' | xargs)"
 		
 		# Construct image filename generated in freetz-ng (original)
 		#openssl_1_1_x_masterbox_7490_07.29.all_$FREETZNGVERSION-$FREETZNGVERSION1.image

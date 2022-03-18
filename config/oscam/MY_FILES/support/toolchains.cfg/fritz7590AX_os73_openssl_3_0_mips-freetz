@@ -1,0 +1,20 @@
+_toolchainname="fritz7590AX_os73_openssl_3_0_mips-freetz";
+default_use="USE_UTF8 USE_LIBCRYPTO";
+extra_use="";
+extra_cc="";
+extra_ld="-Wl,-dynamic-linker,/usr/lib/freetz/ld-uClibc.so.0";
+_description="FRITZ!Box 7590 AX OpenSSL 3.0 FritzOS V7.3x";
+_oscamconfdir_default="/etc/tuxbox/config";
+_oscamconfdir_custom="";
+_self_build="yes";
+_compiler="mips-linux-uclibc-";
+_sysroot="usr";
+_libsearchdir="/usr/lib";
+_toolchainfilename="ZnJpdHo3NTkwQVhfb3M3M19vcGVuc3NsXzNfMF9taXBzLWZyZWV0ei50YXIueHoK";
+_md5sum="bebddfd15666a7e7ae43031e2d985fc4  Toolchain-fritz7590AX_os73_openssl_3_0_mips-freetz.tar.xz";
+_tc_info="\n
+!!! freetz-NG Toolchain !!!\n
+\n
+FRITZ!Box 7590 AX OpenSSL 3.0 FritzOS V7.3x\n
+mips mips32r2 32-bit BE, uClibc 1.0.40, gcc 8.3.0, linux 4.9.198\n";
+_tc_infolines="5";

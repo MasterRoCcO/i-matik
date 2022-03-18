@@ -1,0 +1,20 @@
+_toolchainname="fritz7490_os72_openssl_1_1_mips-freetz";
+default_use="USE_UTF8 USE_LIBCRYPTO";
+extra_use="";
+extra_cc="";
+extra_ld="-Wl,-dynamic-linker,/usr/lib/freetz/ld-uClibc.so.0";
+_description="FRITZ!Box 7490 OpenSSL 1.1 FritzOS V7.2x";
+_oscamconfdir_default="/etc/tuxbox/config";
+_oscamconfdir_custom="";
+_self_build="yes";
+_compiler="mips-linux-uclibc-";
+_sysroot="usr";
+_libsearchdir="/usr/lib";
+_toolchainfilename="ZnJpdHo3NDkwX29zNzJfb3BlbnNzbF8xXzFfbWlwcy1mcmVldHoudGFyLnh6Cg==";
+_md5sum="4ad093b2156f780820b09a140fafc761  Toolchain-fritz7490_os72_openssl_1_1_mips-freetz.tar.xz";
+_tc_info="\n
+!!! freetz-NG Toolchain !!!\n
+\n
+FRITZ!Box 7490 OpenSSL 1.1 FritzOS V7.2x\n
+mips mips32r2 32-bit BE, uClibc 1.0.39, gcc 5.5.0, linux 3.10.107\n";
+_tc_infolines="5";

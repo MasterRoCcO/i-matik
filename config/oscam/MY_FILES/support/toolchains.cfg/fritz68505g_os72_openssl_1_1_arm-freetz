@@ -1,0 +1,20 @@
+_toolchainname="fritz68505g_os72_openssl_1_1_arm-freetz";
+default_use="USE_UTF8 USE_LIBCRYPTO";
+extra_use="";
+extra_cc="";
+extra_ld="-Wl,-dynamic-linker,/usr/lib/freetz/ld-uClibc.so.0";
+_description="FRITZ!Box 6850 5G OpenSSL 1.1 FritzOS V7.2x";
+_oscamconfdir_default="/etc/tuxbox/config";
+_oscamconfdir_custom="";
+_self_build="yes";
+_compiler="mips-linux-uclibc-";
+_sysroot="usr";
+_libsearchdir="/usr/lib";
+_toolchainfilename="ZnJpdHo2ODUwNWdfb3M3Ml9vcGVuc3NsXzFfMV9hcm0tZnJlZXR6LnRhci54ego=";
+_md5sum="96478f4c579e0b2132fd278f3c32eb30  Toolchain-fritz68505g_os72_openssl_1_1_arm-freetz.tar.xz";
+_tc_info="\n
+!!! freetz-NG Toolchain !!!\n
+\n
+FRITZ!Box 6850 5G OpenSSL 1.1 FritzOS V7.2x\n
+mips mips32r2 32-bit BE, uClibc 1.0.39, gcc 8.3.0, linux 4.9.198\n";
+_tc_infolines="5";
