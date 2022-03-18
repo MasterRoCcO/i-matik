@@ -81,12 +81,12 @@ for bs in "${BOX_SSL[@]}"; do
 
 	# Create directory for saving built images
 	mkdir -p $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME 2>/dev/null	# create images folder
-	#[ -z $PARAM_SKIP_I2M ] && mkdir -p $FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME 2>/dev/null	# create inmemory folder, when it is not disabled
+	[ -z $PARAM_SKIP_I2M ] && mkdir -p $FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME 2>/dev/null	# create inmemory folder, when it is not disabled
 	
 	# Remove older image files
 	DELETE_IMAGE_NAME="*$(echo ${!FREETZ_SSL_PATH} | awk -F'/' '{print $NF}').image"	# construct image filname filter
 	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}" -type f -mmin +$delete_images -delete 2>/dev/null
-	#find "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}.inmemory" -type f -mmin +$delete_images -delete 2>/dev/null
+	find "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}.inmemory" -type f -mmin +$delete_images -delete 2>/dev/null 
 	
 	# update git working copy
 	if [ -z $PARAM_SKIP_OSCAM ]; then
@@ -174,7 +174,7 @@ EOF
 		FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
 		FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
 		FUD_COMMENT_SSL="${FUD_COMMENT/"_${FUD_COMMENT_BOX}"/""}"
-		
+		OSCAM_ARCH="$(grep '^FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=' .config | awk -F'"' '{print $2}' | xargs)"
 		# Construct image filename generated in freetz-ng (original)
 		#openssl_1_1_x_masterbox_7490_07.29.all_$FREETZNGVERSION-$FREETZNGVERSION1.image
 		IMAGE_ORIGINAL_FILENAME="${FUD_COMMENT}_${BOX_NAME}_*_${FREETZ_NAME}-${FREETZ_VERSION}.image"
@@ -189,7 +189,7 @@ EOF
 
 		#echo "starte image2inmemory" && sleep 2 #echo command 2 seconds for progress
 	if [ -z $PARAM_SKIP_I2M ]; then
-			#$FREETZ_SSL_HOME_PATH/tools/$IMAGE2MEMORY
+			$FREETZ_SSL_HOME_PATH/tools/$IMAGE2MEMORY
 
 			# Construct inmemory filename generated in freetz-ng (original)
 			#openssl_1_1_x_masterbox_7490_07.29.all_$FREETZNGVERSION-$FREETZNGVERSION1.image.inmemory
@@ -198,7 +198,7 @@ EOF
 			# Construct inmemory filename for saving (renamed)
 			#7490_07.29.all_$FREETZNGVERSION-$FREETZNGVERSION1-masterbox_openssl_1_1_x.image.inmemory
 			IMAGE_RENAMED_FILENAME="${IMAGE_RENAMED_FILENAME}.inmemory"
-			#mv "$FREETZ_SSL_HOME_PATH/$END_IMAGE_PATH/$IMAGE_ORIGINAL_FILENAME" "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/$IMAGE_RENAMED_FILENAME" # move inmemory filename to renamed filename
+			mv "$FREETZ_SSL_HOME_PATH/$END_IMAGE_PATH/$IMAGE_ORIGINAL_FILENAME" "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/$IMAGE_RENAMED_FILENAME" # move inmemory filename to renamed filename
 	fi
 
 		sed -i "s+FREETZ_JLEVEL=$MAX_CPUS+FREETZ_JLEVEL=20+g" $FREETZ_SSL_HOME_PATH/.config
@@ -241,7 +241,7 @@ EOF
 		#echo "mv .$configto to $config" && sleep 2 #echo command 2 seconds for progress
 		mv .config "$conf" #move back updated .config to box config
 		rm -f "$FREETZ_SSL_HOME_PATH/$END_IMAGE_PATH/"* # cleanup image folder
-	done;
+	done; 
 	
 	if [ -z $PARAM_SKIP_CLIENT ]; then
 	        sleep 0
@@ -275,5 +275,5 @@ $I_MATIK_VERSION	# show i-matik disclaimer
 if [ -z $PARAM_SKIP_OSCAM ]; then
 exit 1 #not oscam is created
 else
-source $I_MATIK_OSCAM_I686 #oscam is created
+source $I_MATIK_OSCAM #oscam is created
 fi
