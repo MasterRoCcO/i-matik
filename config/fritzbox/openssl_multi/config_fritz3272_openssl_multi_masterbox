@@ -9,7 +9,7 @@ FREETZ_HAVE_DOT_CONFIG=y
 #
 
 #
-#  freetz-ng 18783MOA-0261d3d88 master 2021-12-23
+#  freetz-ng 19010MO-e5a51e191 master 2022-03-19
 #
 
 #
@@ -64,6 +64,7 @@ FREETZ_TYPE_3272=y
 #
 # FREETZ_TYPE_4020 is not set
 # FREETZ_TYPE_4040 is not set
+# FREETZ_TYPE_4060 is not set
 
 #
 # Fon
@@ -79,6 +80,8 @@ FREETZ_TYPE_3272=y
 #
 # FREETZ_TYPE_5490 is not set
 # FREETZ_TYPE_5491 is not set
+# FREETZ_TYPE_5530 is not set
+# FREETZ_TYPE_5590 is not set
 
 #
 # Cable
@@ -88,6 +91,7 @@ FREETZ_TYPE_3272=y
 # FREETZ_TYPE_6590 is not set
 # FREETZ_TYPE_6591 is not set
 # FREETZ_TYPE_6660 is not set
+# FREETZ_TYPE_6690 is not set
 
 #
 # LTE
@@ -99,6 +103,7 @@ FREETZ_TYPE_3272=y
 # FREETZ_TYPE_6840 is not set
 # FREETZ_TYPE_6842 is not set
 # FREETZ_TYPE_6850_4G is not set
+# FREETZ_TYPE_6850_5G is not set
 # FREETZ_TYPE_6890 is not set
 
 #
@@ -131,8 +136,10 @@ FREETZ_TYPE_3272=y
 # FREETZ_TYPE_7412 is not set
 # FREETZ_TYPE_7430 is not set
 # FREETZ_TYPE_7490 is not set
+# FREETZ_TYPE_7510 is not set
 # FREETZ_TYPE_7520 is not set
 # FREETZ_TYPE_7530 is not set
+# FREETZ_TYPE_7539 is not set
 # FREETZ_TYPE_7560 is not set
 # FREETZ_TYPE_7570 is not set
 # FREETZ_TYPE_7580 is not set
@@ -159,9 +166,11 @@ FREETZ_TYPE_3272=y
 # FREETZ_TYPE_0300 is not set
 # FREETZ_TYPE_0450 is not set
 # FREETZ_TYPE_1200 is not set
+# FREETZ_TYPE_1209 is not set
 # FREETZ_TYPE_1750 is not set
 # FREETZ_TYPE_2400 is not set
 # FREETZ_TYPE_3000 is not set
+# FREETZ_TYPE_6000 is not set
 FREETZ_TYPE_LANG_DE=y
 # FREETZ_TYPE_LANG_EN is not set
 FREETZ_TYPE_LANGUAGE="de"
@@ -240,6 +249,7 @@ FREETZ_MODIFY_COUNTER=y
 FREETZ_ENABLE_LED_DEACTIVATION=y
 FREETZ_PATCH_MODFS_ANNEX_SELECTION=y
 FREETZ_PATCH_MODFS_BOOT_MANAGER=y
+# FREETZ_PATCH_MODFS_BOOT_MANAGER__TESTTAG is not set
 
 #
 # USB patches ----------------------------------------------
@@ -863,6 +873,7 @@ FREETZ_OPENSSL_VERSION_3_MIN=y
 # Database
 #
 # FREETZ_LIB_libdb is not set
+# FREETZ_LIB_libmaxminddb is not set
 # FREETZ_LIB_libsqlite3 is not set
 # end of Database
 
@@ -1146,6 +1157,7 @@ FREETZ_LIB_libusb_1_WITH_ABANDON=y
 FREETZ_LIB_libctlmgr=y
 FREETZ_LIB_libctlmgr_WITH_RENAME=y
 # FREETZ_LIB_libmultid is not set
+# FREETZ_LIB_libnfsidmap is not set
 # FREETZ_LIB_libltdl is not set
 # FREETZ_LIB_liblua is not set
 FREETZ_LIB_libpcsclite=y
@@ -2798,18 +2810,27 @@ FREETZ_DL_VCS_REPO_FIRST=y
 FREETZ_DL_VCS_FROM_MIRRORS=y
 FREETZ_DL_TOOLCHAIN_SITE=""
 FREETZ_DL_KERNEL_TOOLCHAIN_VERSION="r18095"
-FREETZ_DL_KERNEL_TOOLCHAIN_MD5="6ddf5b2f2a45364636624668cd3555bb"
+FREETZ_DL_KERNEL_TOOLCHAIN_SHA256="07b009cb5531ef849f7aaa88bb7e7df4bb9ad9374c3271ebcca4015fdbd077c6"
 FREETZ_DL_TARGET_TOOLCHAIN_VERSION="r18095"
-FREETZ_DL_TARGET_TOOLCHAIN_MD5="X"
+FREETZ_DL_TARGET_TOOLCHAIN_SHA256="X"
 FREETZ_DL_TOOLCHAIN_SUFFIX="shared-glibc"
 # FREETZ_DL_OVERRIDE is not set
 FREETZ_DL_KERNEL_SITE=""
 FREETZ_DL_KERNEL_SOURCE_ID="7272_06.87"
 FREETZ_DL_KERNEL_SOURCE="${FREETZ_DL_KERNEL_SOURCE_ID}${FREETZ_SYSTEM_TYPE_CORE_SUFFIX}-release_kernel.tar.xz"
-FREETZ_DL_KERNEL_SOURCE_MD5="1390697d202eb9870a8734e06e066620"
+FREETZ_DL_KERNEL_SOURCE_SHA256="4ad249d6c785e40aa059f087a6d6559e9e6759461d8b1680b5b7edc2512bd320"
 FREETZ_DL_SITE="@AVM/{fritzbox-3272/deutschland/fritz.os,fritzbox.3272/firmware/deutsch}"
 FREETZ_DL_SOURCE="FRITZ.Box_3272-06.88.image"
 # end of Download options
+
+#
+# Developer options
+#
+# FREETZ_REAL_DEVELOPER_ONLY is not set
+# FREETZ_REAL_DEVELOPER_ONLY__UNUSABLE is not set
+# FREETZ_REAL_DEVELOPER_ONLY__SERIES is not set
+# FREETZ_REAL_DEVELOPER_ONLY__DLTC is not set
+# end of Developer options
 
 #
 # Custom Paket v0.80
