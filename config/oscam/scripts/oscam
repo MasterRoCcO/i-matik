@@ -25,7 +25,7 @@ cd $I_MATIK_PATH_OSCAM/oscam-svn && OSCAMVERSION_ALT="$(./config.sh -r)"
 cd $I_MATIK_PATH_OSCAM/oscam-svn && svn up && OSCAMVERSION_NEU="$(./config.sh -r)"
 
 if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx ]]; then
-find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-svn$OSCAMVERSION_ALT-$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx" -type f -mmin +0 -delete 
+find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -wholename "oscam-svn$OSCAMVERSION_ALT-$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx" -type f -mmin +0 -delete 
 rm -rf $I_MATIK_PATH_OSCAM/support/toolchains/fritz_${OSCAM_ARCH}_os${FB_OS:1:1}${FB_OS:3:1}
 ln -s $FREETZ_SSL_HOME_PATH/toolchain/target $I_MATIK_PATH_OSCAM/support/toolchains/fritz_${OSCAM_ARCH}_os${FB_OS:1:1}${FB_OS:3:1}
 
