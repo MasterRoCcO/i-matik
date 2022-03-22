@@ -15,7 +15,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '68504g.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '68504g.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./68504g_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '68504g' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -24,7 +24,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '68505g.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '68505g.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./68505g_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '68505g' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -33,7 +33,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7520.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7520.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7520_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '7520' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -42,7 +42,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7520-Alien7530.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7520-Alien7530.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7530_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '7520-Alien7530' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -51,7 +51,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7530.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7530.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7530_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '7530' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -61,7 +61,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '4040.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '4040.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./4040_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '4040' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -70,7 +70,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '4060.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '4060.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./4060_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '4060' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -79,7 +79,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '5590.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '5590.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./5590_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '5590' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -88,7 +88,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '7510.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '7510.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7510_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '7510' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -97,7 +97,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '7530AX.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '7530AX.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7530ax_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '7530AX' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -187,7 +187,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '6430.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '6430.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./6430_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl10_multi
 elif [[ $1 == '6430' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl10_push_firmware
 
@@ -198,7 +198,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '6490.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '6490.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./6490_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl10_multi
 elif [[ $1 == '6490' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl10_push_firmware
 
@@ -209,7 +209,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '6590.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '6590.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./6590_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl10_multi
 elif [[ $1 == '6590' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl10_push_firmware
 
@@ -218,7 +218,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '6591.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '6591.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./6591_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '6591' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -236,7 +236,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '6690.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '6690.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./6690_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '6690' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -248,7 +248,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '3272.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '3272.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./3272_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl10_multi
 elif [[ $1 == '3272' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl10_push_firmware
 
@@ -259,7 +259,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '3370.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '3370.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./3370_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl10_multi
 elif [[ $1 == '3370' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl10_push_firmware
 
@@ -270,7 +270,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '3390.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '3390.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./3390_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl10_multi
 elif [[ $1 == '3390' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl10_push_firmware
 
@@ -279,7 +279,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '3490.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '3490.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./3490_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '3490' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -288,7 +288,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '5490.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '5490.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./5490_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '5490' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -297,7 +297,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '5491.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '5491.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./5491_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '5491' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -308,7 +308,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '6840.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '6840.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./6840_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl10_multi
 elif [[ $1 == '6840' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl10_push_firmware
 
@@ -317,7 +317,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '6890.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '6890.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./6890_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '6890' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -328,7 +328,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7272.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7272.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7272_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl10_multi
 elif [[ $1 == '7272' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl10_push_firmware
 
@@ -339,7 +339,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7362.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7362.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7362_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl10_multi
 elif [[ $1 == '7362' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl10_push_firmware
 
@@ -348,7 +348,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7430.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7430.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7430_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '7430' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -357,7 +357,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7490.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7490.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7490_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '7490' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -366,7 +366,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7560.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7560.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7560_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '7560' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -375,7 +375,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7580.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7580.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7580_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '7580' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -384,7 +384,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7583.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7583.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7583_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '7583' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -393,7 +393,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7583vdsl.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7583vdsl.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7583vdsl_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '7583vdsl' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -402,7 +402,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7590.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7590.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7590_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '7590' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -411,7 +411,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7590AX.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik
 elif [[ $1 == '7590AX.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7590ax_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '7590AX' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
@@ -491,7 +491,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_external_no_inmemory
 elif [[ $1 == '4020.30' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '4020.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./4020_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl10_multi
 elif [[ $1 == '4020' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl10_push_firmware
 
@@ -505,7 +505,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_external_no_inmemory
 elif [[ $1 == '7320-Alien7330.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_external_no_inmemory
 elif [[ $1 == '7320-Alien7330.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7330_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl10_multi
 elif [[ $1 == '7320-Alien7330' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl10_push_firmware
 
@@ -516,7 +516,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_external_no_inmemory
 elif [[ $1 == '7330.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_external_no_inmemory
 elif [[ $1 == '7330.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7330_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl10_multi
 elif [[ $1 == '7330' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl10_push_firmware
 
@@ -527,7 +527,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_external_no_inmemory
 elif [[ $1 == '7330SL.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_external_no_inmemory
 elif [[ $1 == '7330SL.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7330sl_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl10_multi
 elif [[ $1 == '7330SL' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl10_push_firmware
 
@@ -544,7 +544,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_external_no_inmemory
 elif [[ $1 == '7390.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_external_no_inmemory
 elif [[ $1 == '7390.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7390_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl10_multi
 elif [[ $1 == '7390' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl10_push_firmware
 
@@ -556,7 +556,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '7360v2.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '7360v2.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./7360v2_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl10_multi
 elif [[ $1 == '7360v2' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl10_push_firmware
 
