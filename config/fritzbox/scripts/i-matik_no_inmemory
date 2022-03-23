@@ -143,7 +143,7 @@ EOF
 		sed -i "s+# FREETZ_PACKAGE_PCSC_LITE is not set+FREETZ_PACKAGE_PCSC_LITE=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_LIB_libpcsclite is not set+FREETZ_LIB_libpcsclite=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_LIB_libusb_1 is not set+FREETZ_LIB_libusb_1=y+g" $FREETZ_SSL_HOME_PATH/.config
-		sed -i "s+# FREETZ_PACKAGE_USBIDS is not set+# FREETZ_PACKAGE_USBIDS=y+g" $FREETZ_SSL_HOME_PATH/.config
+		sed -i "s+# FREETZ_PACKAGE_USBIDS is not set+FREETZ_PACKAGE_USBIDS=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_PACKAGE_USBUTILS is not set+FREETZ_PACKAGE_USBUTILS=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_MODULE_ftdi_sio is not set+FREETZ_MODULE_ftdi_sio=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_MODULE_pl2303 is not set+FREETZ_MODULE_pl2303=y+g" $FREETZ_SSL_HOME_PATH/.config
