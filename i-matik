@@ -2,7 +2,6 @@
 I_MATIK_PATH=$(cd `dirname $0` && pwd)
 source $I_MATIK_PATH/config/i-matik.config
 source $I_MATIK_PATH/config/i-matik_net.conf
-source $I_MATIK_PATH/config/i-matik_addon.config
 source $I_MATIK_INSTAL_CHECK
 git pull
 NC='\033[0m' 		# RESET color
