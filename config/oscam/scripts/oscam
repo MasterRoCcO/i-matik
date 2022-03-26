@@ -13,7 +13,10 @@ cp -ar /$MY_FILES_HOME_PATH_OSCAM/* $I_MATIK_PATH_OSCAM/
 #elif [[ ! -d $I_MATIK_PATH_OSCAM/oscam-svn ]]; then
 #    echo "$I_MATIK_PATH_OSCAM/oscam-svn existiert bereits, ist aber kein Verzeichnis" 1>&2
 fi
-
+# Remove older oscam files
+DELETE_OSCAM_NAME="*$(echo ${!FREETZ_SSL_PATH} | awk -F'/' '{print $NF}').upx"	# construct image filname filter
+find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "${DELETE_OSCAM_NAME}" -type f -mmin +$delete_oscam -delete 2>/dev/null
+	
 if [[ ! -e $I_MATIK_PATH_OSCAM/support/toolchains/fritz_${OSCAM_ARCH}_os${FB_OS:1:1}${FB_OS:3:1} ]]; then
 $I_MATIK_PATH_OSCAM/./s3 tcrepair fritz_${OSCAM_ARCH}_os${FB_OS:1:1}${FB_OS:3:1}
 rm -rf $I_MATIK_PATH_OSCAM/support/toolchains/fritz_${OSCAM_ARCH}_os${FB_OS:1:1}${FB_OS:3:1}
