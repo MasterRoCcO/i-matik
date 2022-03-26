@@ -14,6 +14,8 @@ while [ $# -ne 0 ];do
             ;;
         -yo|--yes-oscam)	        PARAM_OSCAM=1
             ;;
+        -do|--del-oscam)	        PARAM_DEL_OSCAM=1
+            ;;
         -nc|--no-clientbox)	        PARAM_SKIP_CLIENT=1
             ;;        
         -nm|--no-masterbox)	        PARAM_SKIP_MASTER=1
@@ -91,7 +93,7 @@ for bs in "${BOX_SSL[@]}"; do
 	if [ -z $PARAM_OSCAM ]; then
 	       sleep 0
 	else
-source $I_MATIK_PATH/config/i-matik_addon.config
+source $I_MATIK_PATH/config/i-matik/i-matik_addon.config
 ed $FREETZ_SSL_HOME_PATH/addon/static.pkg <<EOF
 /# Addons:/a
 ${I_MATIK_ADDON_VERSION}
@@ -297,8 +299,13 @@ timediff=$(($finish-$begin))	# script time
 avg=$(($timediff / $COUNT))		# average time for box
 printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} box(es). ->  $(($avg / 60))m $(($avg % 60))s per box\n"
 $I_MATIK_VERSION	# show i-matik disclaimer
-if [ -z $PARAM_OSCAM ]; then
-exit 1 #not oscam is created
-else
-source $I_MATIK_OSCAM #oscam is created
-fi
+	if [ -z $PARAM_DEL_OSCAM ]; then
+	        sleep 0
+	else
+		rm $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn*-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx
+	fi
+	if [ -z $PARAM_OSCAM ]; then
+		exit 1 #not oscam is created
+	else
+		source $I_MATIK_OSCAM
+	fi
