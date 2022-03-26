@@ -104,7 +104,7 @@ EOF
 	
 	cd "$FREETZ_SSL_HOME_PATH" && git pull
 	umask 0022
-	cp -ar /$MY_FILES_HOME_PATH/make/* "$FREETZ_SSL_HOME_PATH/"
+	cp -ar /$MY_FILES_HOME_PATH/make/* "$FREETZ_SSL_HOME_PATH/make/"
 	[ -f .config ] && mv .config .config_backup	# rename original config to backup config
 	FREETZ_NAME="$(tools/freetz_revision 2>&1 | awk '{print $1}' | xargs)"	# freetz-ng name
 	FREETZ_VERSION="$(tools/freetz_revision 2>&1 | awk '{print $2}' | xargs)"	# freetz-ng version string
