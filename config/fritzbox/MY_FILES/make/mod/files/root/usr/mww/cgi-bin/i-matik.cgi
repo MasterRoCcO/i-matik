@@ -15,8 +15,8 @@ cat << EOF | sed -r 's/(.+[^>])$/\1<br>/g'
  <ul>
         <li><a class="active" href="https://github.com/MasterRoCcO/i-matik" target="_blank">https://github.com/MasterRoCcO/i-matik</a></li>
     </ul>
-  <ul>
-        <li><a class="active" https://www.digital-eliteboard.com/threads/mein-script-i-matik-was-eine-image-automatik-ist-plus-oscam-bau.507178/" target="_blank">https://www.digital-eliteboard.com/threads/mein-script-i-matik-was-eine-image-automatik-ist-plus-oscam-bau.507178/</a></li>
+ <ul>
+        <li><a class="active" href="https://www.digital-eliteboard.com/threads/mein-script-i-matik-was-eine-image-automatik-ist-plus-oscam-bau.507178/" target="_blank">https://www.digital-eliteboard.com/threads/mein-script-i-matik-was-eine-image-automatik-ist-plus-oscam-bau.507178/</a></li>
     </ul>
  <ul>
         <li><a class="active" href="https://www.ip-phone-forum.de/threads/vorstellung-meines-scripts-namens-i-matik.312640/" target="_blank">https://www.ip-phone-forum.de/threads/vorstellung-meines-scripts-namens-i-matik.312640/</a></li>
