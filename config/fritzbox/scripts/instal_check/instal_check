@@ -10,9 +10,10 @@ if ! dpkg -s $PACKAGES >/dev/null 2>&1; then
 	printf "${YELLOW}Installing prerequisite packages...\n${NC}"
 	sudo dpkg --add-architecture i386
 	sudo apt-get install $PACKAGES
-	sudo apt-get update && sudo apt-get -y upgrade
+	sudo apt-get update && sudo apt-get -y upgrade && sudo apt dist-upgrade && sudo apt autoclean && sudo apt autoremove
 fi
 else
        echo "Non-compatible version"
        echo "read here https://freetz-ng.github.io/freetz-ng/PREREQUISITES"
+       exit
 fi
