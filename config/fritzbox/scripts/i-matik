@@ -142,7 +142,7 @@ EOF
 if [ -d "${I_MATIK_ADDON}" ];then 
           sleep 0
 else 
-     echo -e ${RED}"Unfortunately the ${I_MATIK_ADDON} is not available, please download it and paste it under $FREETZ_SSL_HOME_PATH/addon/."${NC}
+     echo -e ${RED}"Unfortunately the ${I_MATIK_ADDON} is not available, please download it and paste it under $FREETZ_SSL_HOME_PATH/addon/ and $MY_FILES_HOME_PATH/addon/."${NC}
      grep -v ${I_MATIK_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei
      mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
       exit
