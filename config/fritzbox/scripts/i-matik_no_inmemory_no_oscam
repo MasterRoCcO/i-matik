@@ -59,9 +59,6 @@ for bs in "${BOX_SSL[@]}"; do
 	FREETZ_SSL_PATH="FREETZ_PATH_SSL_${BOX_SSL^^}"	# dynamic variable
 	FREETZ_SSL_CONFIG_PATH="I_MATIK_CONFIG_FRITZBOX_PATH_openssl_${BOX_SSL,,}"	# dynamic variable
 
-	source $I_MATIK_PATH/config/i-matik.config	# read config file
-	$I_MATIK_INSTAL_CHECK	# check and install prerequisite packages
-
 	FREETZ_SSL_HOME_PATH="${!FREETZ_SSL_PATH}/$BOX_HOME"	# evaluate dynamic variable
 	FREETZ_SSL_CONFIG_PATH="${!FREETZ_SSL_CONFIG_PATH}"		# evaluate dynamic variable
 
