@@ -4,7 +4,8 @@ if [[ $(lsb_release -rs) == "20.04" ]] || [[ $(lsb_release -rs) == "21.10" ]] ||
 PACKAGES="  pv rsync kmod execstack sqlite3 flex tofrodos gettext pkg-config ecj fastjar perl ruby gawk python2 python-is-python3 net-tools ncftp libxml2-dev"
 PACKAGES+=" bzip2 unar inkscape imagemagick subversion git bc wget curl sudo ccache unzip intltool patchutils"
 PACKAGES+=" gcc g++ gcc-multilib binutils autoconf automake autopoint libtool-bin make bison patch texinfo"
-PACKAGES+=" libsqlite3-dev libzstd-dev libzstd-dev:i386 lib32z1-dev libncurses5-dev libreadline-dev zlib1g-dev libacl1-dev libcap-dev libc6-dev-i386 lib32ncurses-dev lib32stdc++6 libglib2.0-dev libstring-crc32-perl libusb-dev"
+PACKAGES+=" libsqlite3-dev libzstd-dev lib32z1-dev libncurses5-dev libreadline-dev zlib1g-dev libacl1-dev libcap-dev libc6-dev-i386 lib32ncurses-dev lib32stdc++6 libglib2.0-dev libstring-crc32-perl libusb-dev"
+#PACKAGES+=" libzstd-dev:i386"
 	
 if ! dpkg -s $PACKAGES >/dev/null 2>&1; then
 	printf "${YELLOW}Installing prerequisite packages...\n${NC}"
