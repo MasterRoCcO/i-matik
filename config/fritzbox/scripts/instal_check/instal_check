@@ -1,5 +1,5 @@
 #!/bin/bash
-if [[ $(lsb_release -rs) == "20.04" ]]; then # replace 20.04 by the number of release you want
+if [[ $(lsb_release -rs) == "20.04" ]] || [[ $(lsb_release -rs) == "21.10" ]] || [[ $(lsb_release -rs) == "22.04" ]]; then # replace 20.04 by the number of release you want
 
 PACKAGES="  pv rsync kmod execstack sqlite3 flex tofrodos gettext pkg-config ecj fastjar perl ruby gawk python2 python-is-python3 net-tools ncftp libxml2-dev"
 PACKAGES+=" bzip2 unar inkscape imagemagick subversion git bc wget curl sudo ccache unzip intltool patchutils"
@@ -17,3 +17,4 @@ else
        echo "read here https://freetz-ng.github.io/freetz-ng/PREREQUISITES"
        exit
 fi
+
