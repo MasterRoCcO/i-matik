@@ -1,4 +1,10 @@
 #!/bin/bash
+NC='\033[0m' 		# RESET color
+RED='\033[0;31m'	# RED color
+GREEN='\033[0;32m'	# GREEN color
+BLUE='\033[0;34m'	# BLUE color
+YELLOW='\033[0;33m'	# YELLOW color
+
 if [[ ! -e $I_MATIK_PATH_OSCAM ]]; then
 umask 0022
     git clone https://github.com/gorgone/s3_releases $I_MATIK_PATH_OSCAM
@@ -17,7 +23,7 @@ fi
 DELETE_OSCAM_NAME="*$(echo ${!FREETZ_SSL_PATH} | awk -F'/' '{print $NF}').upx"	# construct image filname filter
 find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "${DELETE_OSCAM_NAME}" -type f -mmin +$delete_oscam -delete 2>/dev/null
 find $I_MATIK_PATH_OSCAM/support/logs -name "*.log" -type f -mmin +$delete_images -delete
-	
+ 	
 if [[ ! -e $I_MATIK_PATH_OSCAM/support/toolchains/fritz_${OSCAM_ARCH}_os${FB_OS:1:1}${FB_OS:3:1} ]]; then
 $I_MATIK_PATH_OSCAM/./s3 tcrepair fritz_${OSCAM_ARCH}_os${FB_OS:1:1}${FB_OS:3:1}
 rm -rf $I_MATIK_PATH_OSCAM/support/toolchains/fritz_${OSCAM_ARCH}_os${FB_OS:1:1}${FB_OS:3:1}
@@ -38,5 +44,5 @@ ln -s $FREETZ_SSL_HOME_PATH/toolchain/target $I_MATIK_PATH_OSCAM/support/toolcha
 $I_MATIK_PATH_OSCAM/./s3 fritz_${OSCAM_ARCH}_os${FB_OS:1:1}${FB_OS:3:1} -p=$I_MATIK_OSCAM_reader.profile
 mv $I_MATIK_PATH_OSCAM/support/binaries/oscam-svn$OSCAMVERSION_NEU-fritz_${OSCAM_ARCH}_os${FB_OS:1:1}${FB_OS:3:1}-$I_MATIK_OSCAM_reader-upx $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx
 elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx ]]; then
-    echo "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx already exists" 1>&2
+    echo -e "${GREEN}$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx already exists${NC}" 1>&2
 fi
