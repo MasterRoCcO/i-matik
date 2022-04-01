@@ -18,7 +18,7 @@ Options
   -deloscam			delete all oscams
   -nc,--no-clientbox		No client box image is created
   -nm,--no-masterbox		No master box image is created
-  -push			push image to Fritz!Box or Fritz!Repeater or Fritz!Powerline
+  -push					push image to Fritz!Box or Fritz!Repeater or Fritz!Powerline
   -backup			make a backup of your freetz-signature and freetz-dl
   -us				user application 
 ```
