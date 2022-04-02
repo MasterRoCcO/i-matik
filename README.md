@@ -18,9 +18,10 @@ Options
   -deloscam			delete all oscams
   -nc,--no-clientbox		No client box image is created
   -nm,--no-masterbox		No master box image is created
-  -push				push image to Fritz!Box or Fritz!Repeater or Fritz!Powerline
+  -rr,--rrdstats		RRDstats for RRDtool
+  -push			push image to Fritz!Box or Fritz!Repeater or Fritz!Powerline
   -backup			make a backup of your freetz-signature and freetz-dl
-  -us				user application 
+  -us,--user-application	user application 
 ```
 List of currently OpenSSL 1.0.x supported devices (BOX_TYPE): 1240E 300E 3272 3370 3390 4020 450E 540E 546E 6430 6490 6590 6810 6840 7240 7270v2 7270v3 7272 7312 7320 7320-Alien7330 7330 7330SL 7340 7360v1 7360v2 7362 7369 7390 7412 7412-Alien7430 7581 7582 DVB-C
 ```
