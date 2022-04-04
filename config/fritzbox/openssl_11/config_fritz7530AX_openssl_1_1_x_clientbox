@@ -9,7 +9,7 @@ FREETZ_HAVE_DOT_CONFIG=y
 #
 
 #
-#  freetz-ng 19056MO-1b3703b8a master 2022-04-01
+#  freetz-ng 19068MO-914670a29 master 2022-04-03
 #
 
 #
@@ -1126,17 +1126,16 @@ FREETZ_LIB_libuClibc=y
 
 # FREETZ_LIB_libattr is not set
 # FREETZ_LIB_libcap is not set
-# FREETZ_LIB_libdbus is not set
 # FREETZ_LIB_libconfig is not set
 # FREETZ_LIB_libdaemon is not set
+# FREETZ_LIB_libdbus is not set
 # FREETZ_LIB_libdevmapper is not set
 # FREETZ_LIB_libelf is not set
 # FREETZ_LIB_libev is not set
 # FREETZ_LIB_libevent is not set
 # FREETZ_LIB_libffi is not set
-# FREETZ_LIB_libnfsidmap is not set
-# FREETZ_LIB_libltdl is not set
 # FREETZ_LIB_liblua is not set
+# FREETZ_LIB_libnfsidmap is not set
 # FREETZ_LIB_libpcsclite is not set
 # FREETZ_LIB_libpopt is not set
 # FREETZ_LIB_libprivatekeypassword is not set
@@ -1146,6 +1145,8 @@ FREETZ_LIB_libuClibc=y
 # FREETZ_LIB_libslang is not set
 # FREETZ_LIB_libsynce is not set
 # FREETZ_LIB_libsysfs is not set
+# FREETZ_LIB_libltdl is not set
+# FREETZ_LIB_libuv is not set
 # FREETZ_LIB_libyaml is not set
 # end of Shared libraries
 
