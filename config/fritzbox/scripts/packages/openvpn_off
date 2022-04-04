@@ -1,0 +1,5 @@
+#!/bin/bash
+sed -i "s+FREETZ_PACKAGE_OPENVPN=y+# FREETZ_PACKAGE_OPENVPN is not set+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+FREETZ_LIB_liblzo2=y+# FREETZ_LIB_liblzo2 is not set+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+FREETZ_MODULE_tun=y+# FREETZ_MODULE_tun is not set+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+FREETZ_PACKAGE_OPENVPN_CGI+# FREETZ_PACKAGE_OPENVPN_CGI is not set+g" $FREETZ_SSL_HOME_PATH/.config
