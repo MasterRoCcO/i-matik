@@ -22,7 +22,7 @@ while [ $# -ne 0 ];do
             ;;   
         -rr|--rrdstats)	        PARAM_RR=1
             ;;      
-        -us|--user-application)	PARAM_USER_SCRIPTS=1
+        -ua|--user-application)	PARAM_USER_SCRIPTS=1
             ;;
         -*|--*)			PARAM_BAD=1
             ;;
