@@ -1,0 +1,8 @@
+#!/bin/bash
+source $I_MATIK_PATH/config/i-matik/i-matik_addon.config	
+ed $FREETZ_SSL_HOME_PATH/addon/static.pkg <<EOF
+/# Addons:/a
+${I_MATIK_ADDON_VERSION}
+.
+wq
+EOF

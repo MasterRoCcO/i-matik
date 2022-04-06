@@ -766,6 +766,7 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf "  -rr,--rrdstats\t\tRRDstats for RRDtool\n"
 	printf "  -push\t\t\t\tpush image to Fritz!Box or Fritz!Repeater or Fritz!Powerline\n"
 	printf "  -backup\t\t\tmake a backup of your freetz-signature and freetz-dl\n"
+	printf "  -us,--user-skins\t\tuser skins\n"
 	printf "  -ua,--user-application\\tuser application \n\n"
 	printf ${GREEN}"List of currently OpenSSL 1.0.x supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST_SSL_1_0}\n"
 	printf ${BLUE}"To build an OpenSSL 1.0.x image for Fritz!Box 3272 use this command:${NC}\n"

@@ -21,7 +21,9 @@ while [ $# -ne 0 ];do
         -nm|--no-masterbox)	        PARAM_SKIP_MASTER=1
             ;;   
         -rr|--rrdstats)	        PARAM_RR=1
-            ;;      
+            ;;   
+        -us|--user-skins)		PARAM_SKINS=1
+            ;;   
         -ua|--user-application)	PARAM_USER_SCRIPTS=1
             ;;
         -*|--*)			PARAM_BAD=1
@@ -91,21 +93,23 @@ for bs in "${BOX_SSL[@]}"; do
 	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}" -type f -mmin +$delete_images -delete 2>/dev/null
 	DELETE_IMAGE_NAME_EXT="*$(echo ${!FREETZ_SSL_PATH} | awk -F'/' '{print $NF}').external"	# construct image filname filter
 	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME_EXT}" -type f -mmin +$delete_images -delete 2>/dev/null
-	#find "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}.inmemory" -type f -mmin +$delete_images -delete 2>/dev/null
+	#find "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}.inmemory" -type f -mmin +$delete_images -delete 2>/dev/null 
 
-	# update git working copy
+	# oscam to static.pkg
 	if [ -z $PARAM_OSCAM ]; then
 	       sleep 0
 	else
-source $I_MATIK_PATH/config/i-matik/i-matik_addon.config
-ed $FREETZ_SSL_HOME_PATH/addon/static.pkg <<EOF
-/# Addons:/a
-${I_MATIK_ADDON_VERSION}
-.
-wq
-EOF
+	       source $I_MATIK_PATH/config/fritzbox/scripts/packages/oscam_addon_on
 	fi
 	
+	# skins to static.pkg
+	if [ -z $PARAM_SKINS ]; then
+	       sleep 0
+	else
+	       source $I_MATIK_PATH/config/fritzbox/scripts/packages/skins_on
+	fi
+	
+	# update git working copy
 	cd "$FREETZ_SSL_HOME_PATH" && git pull
 	umask 0022
 	cp -ar /$MY_FILES_HOME_PATH/make/* "$FREETZ_SSL_HOME_PATH/make/"
@@ -246,6 +250,13 @@ EOF
 	       sleep 0
 	else
 		source $I_MATIK_PATH/config/fritzbox/scripts/packages/oscam_off
+	fi
+	
+	# skins to static.pkg
+	if [ -z $PARAM_SKINS ]; then
+	       sleep 0
+	else
+	       source $I_MATIK_PATH/config/fritzbox/scripts/packages/skins_off
 	fi
 	
 	if [ -z $PARAM_RR ]; then

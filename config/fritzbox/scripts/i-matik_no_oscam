@@ -18,6 +18,8 @@ while [ $# -ne 0 ];do
             ;;
         -rr|--rrdstats)	        PARAM_RR=1
             ;;
+        -us|--user-skins)		PARAM_SKINS=1
+            ;;
         -ua|--user-application)	PARAM_USER_SCRIPTS=1
             ;;
         -*|--*)			PARAM_BAD=1
@@ -86,6 +88,13 @@ for bs in "${BOX_SSL[@]}"; do
 	DELETE_IMAGE_NAME="*$(echo ${!FREETZ_SSL_PATH} | awk -F'/' '{print $NF}').image"	# construct image filname filter
 	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}" -type f -mmin +$delete_images -delete 2>/dev/null
 	find "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}.inmemory" -type f -mmin +$delete_images -delete 2>/dev/null
+	
+	# skins to static.pkg
+	if [ -z $PARAM_SKINS ]; then
+	       sleep 0
+	else
+	       source $I_MATIK_PATH/config/fritzbox/scripts/packages/skins_on
+	fi
 	
 	# update git working copy
 	cd "$FREETZ_SSL_HOME_PATH" && git pull
@@ -175,6 +184,13 @@ for bs in "${BOX_SSL[@]}"; do
 	fi
 
 		sed -i "s+FREETZ_JLEVEL=$MAX_CPUS+FREETZ_JLEVEL=20+g" $FREETZ_SSL_HOME_PATH/.config
+	
+	# skins to static.pkg
+	if [ -z $PARAM_SKINS ]; then
+	       sleep 0
+	else
+	       source $I_MATIK_PATH/config/fritzbox/scripts/packages/skins_off
+	fi
 	
 	if [ -z $PARAM_RR ]; then
 	        sleep 0
