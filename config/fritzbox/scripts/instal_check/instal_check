@@ -18,4 +18,3 @@ else
        echo "read here https://freetz-ng.github.io/freetz-ng/PREREQUISITES"
        exit
 fi
-
