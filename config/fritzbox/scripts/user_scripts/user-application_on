@@ -1,5 +1,5 @@
 #!/bin/bash
 # Cifsmount
-source $I_MATIK_PATH/config/fritzbox/scripts/packages/cifsmount_on
+#source $I_MATIK_PATH/config/fritzbox/scripts/packages/cifsmount_on
 # OpenVPN
-source $I_MATIK_PATH/config/fritzbox/scripts/packages/openvpn_on
+#source $I_MATIK_PATH/config/fritzbox/scripts/packages/openvpn_on

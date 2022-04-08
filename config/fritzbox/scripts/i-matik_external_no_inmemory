@@ -17,13 +17,15 @@ while [ $# -ne 0 ];do
         -do|--del-oscam)	        PARAM_DEL_OSCAM=1
             ;;
         -nc|--no-clientbox)	        PARAM_SKIP_CLIENT=1
-            ;;        
+            ;;
         -nm|--no-masterbox)	        PARAM_SKIP_MASTER=1
-            ;;   
+            ;;
+        -cm|--callmonitor)	        PARAM_CM=1
+            ;;
         -rr|--rrdstats)	        PARAM_RR=1
-            ;;   
+            ;;
         -us|--user-skins)		PARAM_SKINS=1
-            ;;   
+            ;;
         -ua|--user-application)	PARAM_USER_SCRIPTS=1
             ;;
         -*|--*)			PARAM_BAD=1
@@ -184,6 +186,12 @@ EOF
 		source $I_MATIK_PATH/config/fritzbox/scripts/packages/oscam_on
 	fi
 	
+	if [ -z $PARAM_CM ]; then
+	        sleep 0
+	else
+		source $I_MATIK_PATH/config/fritzbox/scripts/packages/callmonitor_on
+	fi
+	
 	if [ -z $PARAM_RR ]; then
 	        sleep 0
 	else
@@ -257,6 +265,12 @@ EOF
 	       sleep 0
 	else
 	       source $I_MATIK_PATH/config/fritzbox/scripts/packages/skins_off
+	fi
+	
+	if [ -z $PARAM_CM ]; then
+	        sleep 0
+	else
+		source $I_MATIK_PATH/config/fritzbox/scripts/packages/callmonitor_off
 	fi
 	
 	if [ -z $PARAM_RR ]; then

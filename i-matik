@@ -763,6 +763,7 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf "  -deloscam\t\t\tdelete all oscams\n"
 	printf "  -nc,--no-clientbox\t\tNo client box image is created\n"
 	printf "  -nm,--no-masterbox\t\tNo master box image is created\n"
+	printf "  -cm,--callmonitor\t\tCallmonitor\n"
 	printf "  -rr,--rrdstats\t\tRRDstats for RRDtool\n"
 	printf "  -push\t\t\t\tpush image to Fritz!Box or Fritz!Repeater or Fritz!Powerline\n"
 	printf "  -backup\t\t\tmake a backup of your freetz-signature and freetz-dl\n"
