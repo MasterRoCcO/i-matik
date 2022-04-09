@@ -80,7 +80,9 @@ for bs in "${BOX_SSL[@]}"; do
 		umask 0022
 		git clone https://github.com/Freetz-NG/freetz-ng "$FREETZ_SSL_HOME_PATH"
 		rm -rf "$FREETZ_SSL_HOME_PATH/addon"
-		cp -ar /$MY_FILES_HOME_PATH/* "$FREETZ_SSL_HOME_PATH/"
+		cp -ar /$MY_FILES_HOME_PATH/make/* "$FREETZ_SSL_HOME_PATH/make/"
+		cp -ar /$MY_FILES_HOME_PATH/config/* "$FREETZ_SSL_HOME_PATH/config/" 2>/dev/null
+		ln -s /$MY_FILES_HOME_PATH/addon $FREETZ_SSL_HOME_PATH/addon
 	elif [ ! -d "$FREETZ_SSL_HOME_PATH" ]; then
 		printf "${YELLOW}'$FREETZ_SSL_HOME_PATH' already exists but is not a directory${NC}" 1>&2
 		exit 1
@@ -151,7 +153,7 @@ for bs in "${BOX_SSL[@]}"; do
 if [ -d "${I_MATIK_ADDON}" ];then 
           sleep 0
 else 
-     echo -e ${RED}"Unfortunately the ${I_MATIK_ADDON} is not available, please download it and paste it under $FREETZ_SSL_HOME_PATH/addon/ and $MY_FILES_HOME_PATH/addon/."${NC}
+     echo -e ${RED}"Unfortunately the ${I_MATIK_ADDON} is not available, please download it and paste it under $MY_FILES_HOME_PATH/addon/."${NC}
      grep -v ${I_MATIK_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei
      mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
      exit
