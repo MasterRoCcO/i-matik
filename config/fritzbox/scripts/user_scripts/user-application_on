@@ -1,5 +1,11 @@
 #!/bin/bash
+# ACME.sh (letsencrypt)
+#source $I_MATIK_PATH/config/fritzbox/scripts/packages/acme_on
+# Callmonitor
+#source $I_MATIK_PATH/config/fritzbox/scripts/packages/callmonitor_on
 # Cifsmount
 #source $I_MATIK_PATH/config/fritzbox/scripts/packages/cifsmount_on
 # OpenVPN
 #source $I_MATIK_PATH/config/fritzbox/scripts/packages/openvpn_on
+# RRDstats for RRDtool
+#source $I_MATIK_PATH/config/fritzbox/scripts/packages/rrdstats_on

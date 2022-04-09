@@ -1,3 +1,2 @@
 #!/bin/bash
 sed -i "s+# FREETZ_PACKAGE_CALLMONITOR is not set+FREETZ_PACKAGE_CALLMONITOR=y+g" $FREETZ_SSL_HOME_PATH/.config
-
