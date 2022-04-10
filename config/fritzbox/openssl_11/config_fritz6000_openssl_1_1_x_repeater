@@ -9,7 +9,7 @@ FREETZ_HAVE_DOT_CONFIG=y
 #
 
 #
-#  freetz-ng 18931MO-945e2861e master 2022-03-06
+#  freetz-ng 19080MO-a25f77bce master 2022-04-07
 #
 
 #
@@ -91,6 +91,7 @@ FREETZ_SERIES_ALL=y
 # FREETZ_TYPE_6590 is not set
 # FREETZ_TYPE_6591 is not set
 # FREETZ_TYPE_6660 is not set
+# FREETZ_TYPE_6690 is not set
 
 #
 # LTE
@@ -221,6 +222,8 @@ FREETZ_REMOVE_SUPPORT=y
 # Web menu patches -----------------------------------------
 #
 FREETZ_PATCH_SIGNED=y
+FREETZ_PATCH_MODFS_BOOT_MANAGER=y
+FREETZ_PATCH_MODFS_BOOT_MANAGER__TESTTAG=y
 
 #
 # Replacement patches --------------------------------------
@@ -769,8 +772,9 @@ FREETZ_OPENSSL_VERSION_2_MAX=y
 # FREETZ_LIB_libpolarssl13 is not set
 
 #
-# SSH ------------------------------------
+# Misc -----------------------------------
 #
+# FREETZ_LIB_libgsasl is not set
 # FREETZ_LIB_libssh2 is not set
 # end of Crypto & SSL
 
@@ -787,6 +791,7 @@ FREETZ_OPENSSL_VERSION_2_MAX=y
 # Database
 #
 # FREETZ_LIB_libdb is not set
+# FREETZ_LIB_libmaxminddb is not set
 # FREETZ_LIB_libsqlite3 is not set
 # end of Database
 
@@ -974,6 +979,7 @@ FREETZ_LIB_libncursesw=y
 # FREETZ_LIB_libspandsp is not set
 # FREETZ_LIB_libsrtp is not set
 # FREETZ_LIB_libtirpc is not set
+# FREETZ_LIB_libudns is not set
 # end of Networking
 
 #
@@ -1012,6 +1018,8 @@ FREETZ_LIB_libncursesw=y
 # FREETZ_LIB_libonig is not set
 FREETZ_LIB_libpcre=y
 # FREETZ_LIB_libpcreposix is not set
+# FREETZ_LIB_libpcre2 is not set
+# FREETZ_LIB_libpcre2_posix is not set
 # end of Regular expressions
 
 #
@@ -1035,6 +1043,7 @@ FREETZ_LIB_libuClibc=y
 # Web and WebDAV
 #
 # FREETZ_LIB_libcurl is not set
+# FREETZ_LIB_libidn is not set
 # FREETZ_LIB_libjansson is not set
 # FREETZ_LIB_libjs is not set
 # FREETZ_LIB_libneon is not set
@@ -1052,17 +1061,16 @@ FREETZ_LIB_libuClibc=y
 
 # FREETZ_LIB_libattr is not set
 # FREETZ_LIB_libcap is not set
-# FREETZ_LIB_libdbus is not set
 # FREETZ_LIB_libconfig is not set
 # FREETZ_LIB_libdaemon is not set
+# FREETZ_LIB_libdbus is not set
 # FREETZ_LIB_libdevmapper is not set
 # FREETZ_LIB_libelf is not set
 # FREETZ_LIB_libev is not set
 # FREETZ_LIB_libevent is not set
 # FREETZ_LIB_libffi is not set
-# FREETZ_LIB_libnfsidmap is not set
-# FREETZ_LIB_libltdl is not set
 # FREETZ_LIB_liblua is not set
+# FREETZ_LIB_libnfsidmap is not set
 # FREETZ_LIB_libpcsclite is not set
 # FREETZ_LIB_libpopt is not set
 # FREETZ_LIB_libprivatekeypassword is not set
@@ -1072,6 +1080,8 @@ FREETZ_LIB_libuClibc=y
 # FREETZ_LIB_libslang is not set
 # FREETZ_LIB_libsynce is not set
 # FREETZ_LIB_libsysfs is not set
+# FREETZ_LIB_libltdl is not set
+# FREETZ_LIB_libuv is not set
 # FREETZ_LIB_libyaml is not set
 # end of Shared libraries
 
@@ -1097,7 +1107,7 @@ FREETZ_MODULES_OWN=""
 # FREETZ_MODULE_dummy is not set
 # FREETZ_MODULE_dm_mod is not set
 # FREETZ_MODULE_dm_crypt is not set
-# FREETZ_MODULE_loop is not set
+FREETZ_MODULE_loop=y
 # FREETZ_MODULE_musb_hdrc is not set
 # FREETZ_MODULE_nbd is not set
 # FREETZ_MODULE_sd_mod is not set
@@ -1190,6 +1200,7 @@ FREETZ_MODULES_OWN=""
 #
 # Busybox applets
 #
+# FREETZ_BUSYBOX__VERSION_V127 is not set
 FREETZ_BUSYBOX__VERSION_V134=y
 # FREETZ_BUSYBOX__VERSION_V135 is not set
 FREETZ_BUSYBOX__VERSION_STRING="1.34.1"
@@ -2828,18 +2839,23 @@ FREETZ_DL_VCS_REPO_FIRST=y
 FREETZ_DL_VCS_FROM_MIRRORS=y
 FREETZ_DL_TOOLCHAIN_SITE=""
 FREETZ_DL_KERNEL_TOOLCHAIN_VERSION="r18095"
-FREETZ_DL_KERNEL_TOOLCHAIN_MD5="2915b3b0b4e94c3b0105256ece2b1c85"
+FREETZ_DL_KERNEL_TOOLCHAIN_SHA256="96f2c16bdee36e7a4a83bb2f06b1fb382221978e676c221f4de1df5d78c14fec"
 FREETZ_DL_TARGET_TOOLCHAIN_VERSION="r18877"
-FREETZ_DL_TARGET_TOOLCHAIN_MD5="14e79d2f941e6d3c4db38748c3fe1351"
+FREETZ_DL_TARGET_TOOLCHAIN_SHA256="4bbbf743cd1521914d09ce3b2947498f92286f6c08a363b68b5da38cec448fec"
 FREETZ_DL_TOOLCHAIN_SUFFIX="shared-glibc"
 # FREETZ_DL_OVERRIDE is not set
 FREETZ_DL_KERNEL_SITE=""
 FREETZ_DL_KERNEL_SOURCE_ID="6000_07.27"
 FREETZ_DL_KERNEL_SOURCE="${FREETZ_DL_KERNEL_SOURCE_ID}${FREETZ_SYSTEM_TYPE_CORE_SUFFIX}-release_kernel.tar.xz"
-FREETZ_DL_KERNEL_SOURCE_MD5="7a504cc6fc26e29f09ab2db21f6b3c30"
+FREETZ_DL_KERNEL_SOURCE_SHA256="c652927dbfde2d5f17231a3c1268d50938be29a259d653c62a36da0ec01decb0"
 FREETZ_DL_SITE="@AVM/fritzwlan/fritzrepeater-6000/deutschland/fritz.os"
 FREETZ_DL_SOURCE="FRITZ.Repeater_6000-07.29.image"
 # end of Download options
+
+#
+# Developer options
+#
+# end of Developer options
 
 #
 # Custom Paket v0.80
