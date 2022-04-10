@@ -150,13 +150,20 @@ for bs in "${BOX_SSL[@]}"; do
 	        sleep 0
 	else
 
-if [ -d "${I_MATIK_ADDON}" ];then 
-          sleep 0
-else 
-     echo -e ${RED}"Unfortunately the ${I_MATIK_ADDON} is not available, please download it and paste it under $MY_FILES_HOME_PATH/addon/."${NC}
-     grep -v ${I_MATIK_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei
-     mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
-     exit
+	if [ -d "${I_MATIK_ADDON}" ];then 
+	        sleep 0
+	else 
+	        echo -e ${YELLOW}"Unfortunately the ${I_MATIK_ADDON} is not available, so an automatic download is now started."${NC}
+	        grep -v ${I_MATIK_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei
+	        mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+	        cd ${FREETZ_SSL_HOME_PATH}/addon
+	        wget https://www.freetz.digital-eliteboard.com/Teamserver/Freetz/Addon/oscam%20${I_MATIK_ADDON_VERSION:6:4}x/${I_MATIK_ADDON_VERSION:6:5}/${I_MATIK_ADDON_VERSION}.tar.gz
+	        tar xfvz ${I_MATIK_ADDON_VERSION}.tar.gz
+	        chmod -v 755 ${I_MATIK_ADDON_VERSION}
+	        rm ${I_MATIK_ADDON_VERSION}.tar.gz
+	        echo -e ${GREEN}"among others, rolu2 from the DEB forum is responsible for supporting the script. I have only built in one way that it is equally available for everyone in i-matik."${NC}
+	        echo -e ${RED}"Please start again, because the oscam addon script of rolu2 from the DEB Forum was not under addon."${NC}
+	        exit
 	fi
 		source $I_MATIK_PATH/config/fritzbox/scripts/packages/oscam_on
 	fi
