@@ -1,11 +1,13 @@
 #!/bin/bash
-# ACME.sh (letsencrypt)
+# ACME.sh (letsencrypt)https://freetz-ng.github.io/freetz-ng/make/acme.html
 source $I_MATIK_PATH/config/fritzbox/scripts/packages/acme_off
-# Callmonitor
+# Apache HTTP Server https://freetz-ng.github.io/freetz-ng/make/apache2.html
+source $I_MATIK_PATH/config/fritzbox/scripts/packages/apache2_off
+# Callmonitor https://freetz-ng.github.io/freetz-ng/make/callmonitor.html
 source $I_MATIK_PATH/config/fritzbox/scripts/packages/callmonitor_off
-# Cifsmount
+# Cifsmount https://freetz-ng.github.io/freetz-ng/make/cifsmount.html
 source $I_MATIK_PATH/config/fritzbox/scripts/packages/cifsmount_off
-# OpenVPN
+# OpenVPN https://freetz-ng.github.io/freetz-ng/make/openvpn.html
 source $I_MATIK_PATH/config/fritzbox/scripts/packages/openvpn_off
-# RRDstats for RRDtool
+# RRDstats for RRDtool https://freetz-ng.github.io/freetz-ng/make/rrdstats.html
 source $I_MATIK_PATH/config/fritzbox/scripts/packages/rrdstats_off
