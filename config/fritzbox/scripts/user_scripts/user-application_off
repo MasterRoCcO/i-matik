@@ -3,6 +3,8 @@
 source $I_MATIK_PATH/config/fritzbox/scripts/packages/acme_off
 # Apache HTTP Server https://freetz-ng.github.io/freetz-ng/make/apache2.html
 source $I_MATIK_PATH/config/fritzbox/scripts/packages/apache2_off
+# atop The program atop is an interactive monitor to view the load on a Linux system. It shows the occupation of the most critical hardware resources (from a performance point of view) on system level, i.e. cpu, memory, disk and network.
+source $I_MATIK_PATH/config/fritzbox/scripts/packages/atop_off
 # Callmonitor https://freetz-ng.github.io/freetz-ng/make/callmonitor.html
 source $I_MATIK_PATH/config/fritzbox/scripts/packages/callmonitor_off
 # Cifsmount https://freetz-ng.github.io/freetz-ng/make/cifsmount.html
