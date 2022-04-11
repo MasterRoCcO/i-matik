@@ -25,6 +25,12 @@ sed -i "s+with_readerdriver_openssl_1_1_x_masterbox+openssl_1_1_x_masterbox+g" $
 sed -i "s+with_readerdriver_openssl_1_1_x_clientbox+openssl_1_1_x_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 sed -i "s+with_readerdriver_openssl_3_0_x_masterbox+openssl_3_0_x_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 sed -i "s+with_readerdriver_openssl_3_0_x_clientbox+openssl_3_0_x_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+grep -v FREETZ_UDEVMOUNT_HFS $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei
+mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+grep -v FREETZ_UDEVMOUNT_HFS_PLUS $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei
+mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+grep -v FREETZ_UDEVMOUNT_REISER_FS $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei
+mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
 grep -v FREETZ_PACKAGE_USBIDS_FORCE_DOWNLOAD $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei
 mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
 # Get custom image file name part from .config
