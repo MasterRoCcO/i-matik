@@ -23,3 +23,8 @@ sed -i "s+openssl_1_1_x_masterbox+with_readerdriver_openssl_1_1_x_masterbox+g" $
 sed -i "s+openssl_1_1_x_clientbox+with_readerdriver_openssl_1_1_x_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 sed -i "s+openssl_3_0_x_masterbox+with_readerdriver_openssl_3_0_x_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 sed -i "s+openssl_3_0_x_clientbox+with_readerdriver_openssl_3_0_x_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+SYSTEM_TYPE="$(grep '^FREETZ_AVM_SOURCE_FOR_SYSTEM_TYPE_' .config | awk -F'=y' '{print $1}' | xargs | tr '[:upper:]' '[:lower:]')"
+SOURCE_ID="$(grep '^FREETZ_AVM_SOURCE_ID=' .config | awk -F'"' '{print $2}' | xargs)"
+sed -i "s+# CONFIG_USB_SERIAL is not set+CONFIG_USB_SERIAL=m+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}-${SOURCE_ID}
+sed -i "s+# CONFIG_USB_SERIAL_FTDI_SIO is not set+CONFIG_USB_SERIAL_FTDI_SIO=m+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}-${SOURCE_ID}
+sed -i "s+# CONFIG_USB_SERIAL_PL2303 is not set+CONFIG_USB_SERIAL_PL2303=m+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}-${SOURCE_ID}

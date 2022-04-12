@@ -10,3 +10,7 @@ FREETZ_MODULE_md4=y
 .
 wq
 EOF
+SYSTEM_TYPE="$(grep '^FREETZ_AVM_SOURCE_FOR_SYSTEM_TYPE_' .config | awk -F'=y' '{print $1}' | xargs | tr '[:upper:]' '[:lower:]')"
+SOURCE_ID="$(grep '^FREETZ_AVM_SOURCE_ID=' .config | awk -F'"' '{print $2}' | xargs)"
+sed -i "s+# CONFIG_CIFS is not set+CONFIG_CIFS=m+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}-${SOURCE_ID}
+sed -i "s+# CONFIG_CIFS_DEBUG is not set+CONFIG_CIFS_DEBUG=y+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}-${SOURCE_ID}
