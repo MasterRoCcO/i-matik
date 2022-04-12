@@ -1,5 +1,5 @@
 #!/bin/bash
-# ACME.sh (letsencrypt)https://freetz-ng.github.io/freetz-ng/make/acme.html
+# ACME.sh (letsencrypt) https://freetz-ng.github.io/freetz-ng/make/acme.html
 #source $I_MATIK_PATH/config/fritzbox/scripts/packages/acme_on
 # Apache HTTP Server https://freetz-ng.github.io/freetz-ng/make/apache2.html
 #source $I_MATIK_PATH/config/fritzbox/scripts/packages/apache2_on
@@ -13,3 +13,7 @@
 #source $I_MATIK_PATH/config/fritzbox/scripts/packages/openvpn_on
 # RRDstats for RRDtool https://freetz-ng.github.io/freetz-ng/make/rrdstats.html
 #source $I_MATIK_PATH/config/fritzbox/scripts/packages/rrdstats_on
+# Cabelmodem Supplement to RRDstats for RRDtool
+#source $I_MATIK_PATH/config/fritzbox/scripts/packages/rrdstatsc_on
+# DigiTemp Supplement to RRDstats for RRDtool
+#source $I_MATIK_PATH/config/fritzbox/scripts/packages/rrdstatsd_on
