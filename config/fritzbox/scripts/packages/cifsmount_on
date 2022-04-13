@@ -2,6 +2,7 @@
 sed -i "s+# FREETZ_PACKAGE_CIFSMOUNT is not set+FREETZ_PACKAGE_CIFSMOUNT=y+g" $FREETZ_SSL_HOME_PATH/.config
 sed -i "s+# FREETZ_MODULE_arc4 is not set+FREETZ_MODULE_arc4=y+g" $FREETZ_SSL_HOME_PATH/.config
 sed -i "s+# FREETZ_MODULE_cifs is not set+FREETZ_MODULE_cifs=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_REPLACE_KERNEL is not set+# FREETZ_REPLACE_KERNEL=y is not set+g" $FREETZ_SSL_HOME_PATH/.config
 ed $FREETZ_SSL_HOME_PATH/.config <<EOF
 /FREETZ_MODULE_cifs=y/a
 FREETZ_MODULE_cmac=y
@@ -13,6 +14,5 @@ EOF
 SYSTEM_TYPE="$(grep '^FREETZ_AVM_SOURCE_FOR_SYSTEM_TYPE_' .config | awk -F'=y' '{print $1}' | xargs | tr '[:upper:]' '[:lower:]')"
 SOURCE_ID="$(grep '^FREETZ_AVM_SOURCE_ID=' .config | awk -F'"' '{print $2}' | xargs)"
 CORE_SUFFIX="$(grep '^FREETZ_SYSTEM_TYPE_CORE_SUFFIX=' .config | awk -F'"' '{print $2}' | xargs)"
-sed -i "s+# CONFIG_USB_SERIAL is not set+CONFIG_USB_SERIAL=m+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
-sed -i "s+# CONFIG_USB_SERIAL_FTDI_SIO is not set+CONFIG_USB_SERIAL_FTDI_SIO=m+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
-sed -i "s+# CONFIG_USB_SERIAL_PL2303 is not set+CONFIG_USB_SERIAL_PL2303=m+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
+sed -i "s+# CONFIG_CIFS is not set+CONFIG_CIFS=m+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}-${SOURCE_ID}
+sed -i "s+# CONFIG_CIFS_DEBUG is not set+CONFIG_CIFS_DEBUG=y+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}-${SOURCE_ID}
