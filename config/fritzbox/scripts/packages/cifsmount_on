@@ -14,6 +14,48 @@ EOF
 SYSTEM_TYPE="$(grep '^FREETZ_AVM_SOURCE_FOR_SYSTEM_TYPE_' .config | awk -F'=y' '{print $1}' | xargs | tr '[:upper:]' '[:lower:]')"
 SOURCE_ID="$(grep '^FREETZ_AVM_SOURCE_ID=' .config | awk -F'"' '{print $2}' | xargs)"
 CORE_SUFFIX="$(grep '^FREETZ_SYSTEM_TYPE_CORE_SUFFIX=' .config | awk -F'"' '{print $2}' | xargs)"
+
+ed $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} <<EOF
+/# CONFIG_NETWORK_FILESYSTEMS is not set/a
+CONFIG_NFS_FS=m
+CONFIG_NFS_V2=m
+CONFIG_NFS_V3=m
+# CONFIG_NFS_V3_ACL is not set
+# CONFIG_NFS_V4 is not set
+# CONFIG_NFS_SWAP is not set
+CONFIG_NFSD=m
+CONFIG_NFSD_V3=y
+# CONFIG_NFSD_V3_ACL is not set
+# CONFIG_NFSD_V4 is not set
+CONFIG_GRACE_PERIOD=m
+CONFIG_LOCKD=m
+CONFIG_LOCKD_V4=y
+CONFIG_NFS_COMMON=y
+CONFIG_SUNRPC=m
+# CONFIG_SUNRPC_DEBUG is not set
+# CONFIG_CEPH_FS is not set
+CONFIG_CIFS=m
+CONFIG_CIFS_STATS=y
+# CONFIG_CIFS_STATS2 is not set
+# CONFIG_CIFS_WEAK_PW_HASH is not set
+# CONFIG_CIFS_XATTR is not set
+CONFIG_CIFS_DEBUG=y
+# CONFIG_CIFS_DEBUG2 is not set
+# CONFIG_CIFS_SMB2 is not set
+# CONFIG_NCP_FS is not set
+# CONFIG_CODA_FS is not set
+# CONFIG_AFS_FS is not set
+.
+wq
+EOF
+ed $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} <<EOF
+/# CONFIG_CIFS_STATS is not set/a
+# CONFIG_CIFS_STATS2 is not set
+.
+wq
+EOF
+
+sed -i "s+# CONFIG_NETWORK_FILESYSTEMS is not set+CONFIG_NETWORK_FILESYSTEMS=y+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
 sed -i "s+# CONFIG_CIFS is not set+CONFIG_CIFS=m+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
 sed -i "s+# CONFIG_CIFS_STATS is not set+CONFIG_CIFS_STATS=y+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
 sed -i "s+# CONFIG_CIFS_DEBUG is not set+CONFIG_CIFS_DEBUG=y+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}

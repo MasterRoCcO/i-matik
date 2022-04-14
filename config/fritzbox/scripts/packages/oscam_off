@@ -17,22 +17,17 @@ sed -i "s+FREETZ_PATCH_FREETZMOUNT=y+# FREETZ_PATCH_FREETZMOUNT is not set+g" $F
 sed -i "s+FREETZ_PACKAGE_AVM_PORTFW=y+# FREETZ_PACKAGE_AVM_PORTFW is not set+g" $FREETZ_SSL_HOME_PATH/.config
 sed -i "s+FREETZ_PACKAGE_AVM_FIREWALL=y+# FREETZ_PACKAGE_AVM_FIREWALL is not set+g" $FREETZ_SSL_HOME_PATH/.config
 sed -i "s+FREETZ_PACKAGE_AVM_FORWARDING=y+# FREETZ_PACKAGE_AVM_FORWARDING is not set+g" $FREETZ_SSL_HOME_PATH/.config
-grep -v ${I_MATIK_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei
-mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+grep -v ${I_MATIK_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
 sed -i "s+with_readerdriver_openssl_1_0_x_masterbox+openssl_1_0_x_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 sed -i "s+with_readerdriver_openssl_1_0_x_clientbox+openssl_1_0_x_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 sed -i "s+with_readerdriver_openssl_1_1_x_masterbox+openssl_1_1_x_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 sed -i "s+with_readerdriver_openssl_1_1_x_clientbox+openssl_1_1_x_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 sed -i "s+with_readerdriver_openssl_3_0_x_masterbox+openssl_3_0_x_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 sed -i "s+with_readerdriver_openssl_3_0_x_clientbox+openssl_3_0_x_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-grep -v FREETZ_UDEVMOUNT_HFS $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei
-mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
-grep -v FREETZ_UDEVMOUNT_HFS_PLUS $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei
-mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
-grep -v FREETZ_UDEVMOUNT_REISER_FS $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei
-mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
-grep -v FREETZ_PACKAGE_USBIDS_FORCE_DOWNLOAD $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei
-mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+grep -v FREETZ_UDEVMOUNT_HFS $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+grep -v FREETZ_UDEVMOUNT_HFS_PLUS $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+grep -v FREETZ_UDEVMOUNT_REISER_FS $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+grep -v FREETZ_PACKAGE_USBIDS_FORCE_DOWNLOAD $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
 # Get custom image file name part from .config
 FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
 FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
