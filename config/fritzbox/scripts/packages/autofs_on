@@ -20,6 +20,7 @@ ed $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${
 CONFIG_NFS_FS=m
 CONFIG_NFS_V2=m
 CONFIG_NFS_V3=m
+CONFIG_NFS_V3=y
 # CONFIG_NFS_V3_ACL is not set
 # CONFIG_NFS_V4 is not set
 # CONFIG_NFS_SWAP is not set
@@ -45,6 +46,7 @@ CONFIG_CIFS_STATS=y
 CONFIG_CIFS_DEBUG=y
 # CONFIG_CIFS_DEBUG2 is not set
 # CONFIG_CIFS_DFS_UPCALL is not set
+# CONFIG_CIFS_EXPERIMENTAL is not set
 # CONFIG_CIFS_SMB2 is not set
 # CONFIG_NCP_FS is not set
 # CONFIG_CODA_FS is not set
@@ -52,9 +54,31 @@ CONFIG_CIFS_DEBUG=y
 .
 wq
 EOF
+
 ed $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} <<EOF
-/# CONFIG_CIFS is not set/a
-# CONFIG_CIFS_STATS is not set
+/CONFIG_NETWORK_FILESYSTEMS=y/a
+CONFIG_NFS_FS=m
+CONFIG_NFS_V2=m
+CONFIG_NFS_V3=m
+CONFIG_NFS_V3=y
+# CONFIG_NFS_V3_ACL is not set
+# CONFIG_NFS_V4 is not set
+# CONFIG_NFS_SWAP is not set
+CONFIG_ROOT_NFS=y
+CONFIG_NFSD=m
+# CONFIG_NFSD_DEPRECATED is not set
+CONFIG_NFSD_V3=y
+# CONFIG_NFSD_V3_ACL is not set
+# CONFIG_NFSD_V4 is not set
+CONFIG_GRACE_PERIOD=m
+CONFIG_LOCKD=m
+CONFIG_LOCKD_V4=y
+CONFIG_NFS_COMMON=y
+CONFIG_SUNRPC=m
+# CONFIG_SUNRPC_DEBUG is not set
+# CONFIG_CEPH_FS is not set
+CONFIG_CIFS=m
+CONFIG_CIFS_STATS=y
 # CONFIG_CIFS_STATS2 is not set
 # CONFIG_CIFS_WEAK_PW_HASH is not set
 # CONFIG_CIFS_UPCALL is not set
@@ -62,86 +86,24 @@ ed $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${
 CONFIG_CIFS_DEBUG=y
 # CONFIG_CIFS_DEBUG2 is not set
 # CONFIG_CIFS_DFS_UPCALL is not set
+# CONFIG_CIFS_EXPERIMENTAL is not set
 # CONFIG_CIFS_SMB2 is not set
-.
-wq
-EOF
-ed $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} <<EOF
-/# CONFIG_CIFS_STATS is not set/a
-# CONFIG_CIFS_STATS2 is not set
-.
-wq
-EOF
-ed $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} <<EOF
-/# CONFIG_CIFS_WEAK_PW_HASH is not set/a
-# CONFIG_CIFS_UPCALL is not set
-.
-wq
-EOF
-ed $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} <<EOF
-/# CONFIG_CIFS_DEBUG2 is not set/a
-# CONFIG_CIFS_DFS_UPCALL is not set
-.
-wq
-EOF
-ed $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} <<EOF
-/# CONFIG_NFS_SWAP is not set/a
-CONFIG_NFSD=m
-CONFIG_NFSD_V3=y
-# CONFIG_NFSD_V3_ACL is not set
-# CONFIG_NFSD_V4 is not set
-.
-wq
-EOF
-ed $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} <<EOF
-/# CONFIG_NFS_V4 is not set/a
-CONFIG_NFSD=m
-# CONFIG_NFSD_DEPRECATED is not set
-CONFIG_NFSD_V3=y
-# CONFIG_NFSD_V3_ACL is not set
-# CONFIG_NFSD_V4 is not set
-.
-wq
-EOF
-ed $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} <<EOF
-/CONFIG_ROOT_NFS=y/a
-CONFIG_NFSD=m
-CONFIG_NFSD_V3=y
-# CONFIG_NFSD_V3_ACL is not set
-# CONFIG_NFSD_V4 is not set
+# CONFIG_NCP_FS is not set
+# CONFIG_CODA_FS is not set
+# CONFIG_AFS_FS is not set
 .
 wq
 EOF
 sed -i "s+# CONFIG_AUTOFS4_FS is not set+CONFIG_AUTOFS4_FS=m+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
-ed $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} <<EOF
-/CONFIG_AUTOFS4_FS=m/a
-# CONFIG_CUSE is not set
-.
-wq
-EOF
-ed $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} <<EOF
-/CONFIG_AUTOFS4_FS=y/a
-# CONFIG_CUSE is not set
-.
-wq
-EOF
 ed $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} <<EOF
 /CONFIG_FUSE_FS=y/a
 # CONFIG_CUSE is not set
 .
 wq
 EOF
-sed -i "s+# CONFIG_FUSE_FS is not set+CONFIG_FUSE_FS=m+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
-sed -i "s+# CONFIG_NETWORK_FILESYSTEMS is not set+CONFIG_NETWORK_FILESYSTEMS=y+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
-sed -i "s+# CONFIG_NFS_FS is not set+CONFIG_NFS_FS=m+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
-sed -i "s+# CONFIG_NFS_V2 is not set+CONFIG_NFS_V2=m+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
-sed -i "s+# CONFIG_NFS_V3 is not set+CONFIG_NFS_V3=m+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
-sed -i "s+# CONFIG_NFSD is not set+CONFIG_NFSD=m+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
-sed -i "s+# CONFIG_GRACE_PERIOD is not set+CONFIG_GRACE_PERIOD=m+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
-sed -i "s+# CONFIG_LOCKD is not set+CONFIG_LOCKD=m+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
-sed -i "s+# CONFIG_LOCKD_V4 is not set+CONFIG_LOCKD_V4=y+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
-sed -i "s+# CONFIG_NFS_COMMON is not set+CONFIG_NFS_COMMON=y+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
-sed -i "s+# CONFIG_SUNRPC is not set+CONFIG_SUNRPC=m+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
-sed -i "s+# CONFIG_CIFS is not set+CONFIG_CIFS=m+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
-sed -i "s+# CONFIG_CIFS_STATS is not set+CONFIG_CIFS_STATS=y+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
-sed -i "s+# CONFIG_CIFS_DEBUG is not set+CONFIG_CIFS_DEBUG=y+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
+#ed $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} <<EOF
+#/# CONFIG_QUOTACTL is not set/a
+#CONFIG_AUTOFS4_FS=m
+#.
+#wq
+#EOF
