@@ -9,7 +9,7 @@ FREETZ_HAVE_DOT_CONFIG=y
 #
 
 #
-#  freetz-ng 19080MO-a25f77bce master 2022-04-07
+#  freetz-ng 19188MO-5ad3ae0b9 master 2022-04-19
 #
 
 #
@@ -223,7 +223,7 @@ FREETZ_REMOVE_SUPPORT=y
 #
 FREETZ_PATCH_SIGNED=y
 FREETZ_PATCH_MODFS_BOOT_MANAGER=y
-FREETZ_PATCH_MODFS_BOOT_MANAGER__TESTTAG=y
+# FREETZ_PATCH_MODFS_BOOT_MANAGER__TESTTAG is not set
 
 #
 # Replacement patches --------------------------------------
@@ -709,6 +709,7 @@ FREETZ_PACKAGE_SYSLOGD_CGI=y
 #
 # FREETZ_LIB_libiconv is not set
 # FREETZ_LIB_libintl is not set
+# FREETZ_LIB_libutf8proc is not set
 # end of Charsets & Internationalization
 
 #
@@ -1107,7 +1108,7 @@ FREETZ_MODULES_OWN=""
 # FREETZ_MODULE_dummy is not set
 # FREETZ_MODULE_dm_mod is not set
 # FREETZ_MODULE_dm_crypt is not set
-FREETZ_MODULE_loop=y
+# FREETZ_MODULE_loop is not set
 # FREETZ_MODULE_musb_hdrc is not set
 # FREETZ_MODULE_nbd is not set
 # FREETZ_MODULE_sd_mod is not set
