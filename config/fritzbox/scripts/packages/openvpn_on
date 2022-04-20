@@ -1,2 +1,0 @@
-#!/bin/bash
-sed -i "s+# FREETZ_PACKAGE_OPENVPN is not set+FREETZ_PACKAGE_OPENVPN=y+g" $FREETZ_SSL_HOME_PATH/.config
