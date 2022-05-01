@@ -226,7 +226,7 @@ source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '6660.30' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/./i-matik_no_inmemory
 elif [[ $1 == '6660.multi' ]]; then
-source $I_MATIK_PATH/config/fritzbox/scripts_privat/./6660_multi
+source $I_MATIK_PATH/config/fritzbox/scripts_privat/./ssl11_multi
 elif [[ $1 == '6660' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/config/fritzbox/scripts/push/./ssl11_push_firmware
 
