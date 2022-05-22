@@ -81,6 +81,7 @@ for bs in "${BOX_SSL[@]}"; do
 		git clone https://github.com/Freetz-NG/freetz-ng "$FREETZ_SSL_HOME_PATH"
 		rm -rf "$FREETZ_SSL_HOME_PATH/addon"
 		cp -ar /$MY_FILES_HOME_PATH/make/* "$FREETZ_SSL_HOME_PATH/make/"
+		cp -ar /$MY_FILES_HOME_PATH/tools/* "$FREETZ_SSL_HOME_PATH/tools/"
 		cp -ar /$MY_FILES_HOME_PATH/config/* "$FREETZ_SSL_HOME_PATH/config/" 2>/dev/null
 		ln -s /$MY_FILES_HOME_PATH/addon $FREETZ_SSL_HOME_PATH/addon
 	elif [ ! -d "$FREETZ_SSL_HOME_PATH" ]; then
@@ -117,6 +118,7 @@ for bs in "${BOX_SSL[@]}"; do
 	cd "$FREETZ_SSL_HOME_PATH" && git pull
 	umask 0022
 	cp -ar /$MY_FILES_HOME_PATH/make/* "$FREETZ_SSL_HOME_PATH/make/"
+	cp -ar /$MY_FILES_HOME_PATH/tools/* "$FREETZ_SSL_HOME_PATH/tools/"
 	cp -ar /$MY_FILES_HOME_PATH/config/* "$FREETZ_SSL_HOME_PATH/config/" 2>/dev/null
 	[ -f .config ] && mv .config .config_backup	# rename original config to backup config
 	FREETZ_NAME="$(tools/freetz_revision 2>&1 | awk '{print $1}' | xargs)"	# freetz-ng name
@@ -294,6 +296,22 @@ EOF
 	else
 		source $USER_APPLICATION_OFF
 	fi
+	
+	sed -i "s+EXTERNAL_ENABLED=y+# EXTERNAL_ENABLED is not setg" $FREETZ_SSL_HOME_PATH/.config
+	grep -v EXTERNAL_UDEVM $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+	grep -v EXTERNAL_NOEXEC $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+	grep -v EXTERNAL_SUBDIRS $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+	grep -v EXTERNAL_DYNAMIC $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+	grep -v EXTERNAL_DYNAMIC_SCRIPTS $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+	grep -v EXTERNAL_CREATEPAK $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+	grep -v EXTERNAL_OWN_FILES $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+	grep -v EXTERNAL_FREETZ_PACKAGE_DROPBEAR $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+	grep -v EXTERNAL_FREETZ_PACKAGE_MC $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+	grep -v EXTERNAL_LINKS  $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+	grep -v EXTERNAL_CREATEPAK_DYNAMIC $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+	grep -v EXTERNAL_FREETZ_PACKAGE_PCSC_LITE $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+	grep -v EXTERNAL_FREETZ_PACKAGE_USBIDS $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+	grep -v EXTERNAL_FREETZ_PACKAGE_USBUTILS $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
 		
 		#echo "mv .$configto to $config" && sleep 2 #echo command 2 seconds for progress
 		mv .config "$conf" #move back updated .config to box config
