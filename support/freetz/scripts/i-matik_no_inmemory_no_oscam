@@ -96,7 +96,7 @@ for bs in "${BOX_SSL[@]}"; do
 	if [ -z $PARAM_SKINS ]; then
 	       sleep 0
 	else
-	       source $I_MATIK_PATH/support/fritzbox/scripts/packages/skins_on
+	       source $I_MATIK_PATH/support/freetz/scripts/packages/skins_on
 	fi
 	
 	# update git working copy
@@ -136,14 +136,14 @@ for bs in "${BOX_SSL[@]}"; do
 	if [ -z $PARAM_CM ]; then
 	        sleep 0
 	else
-		source $I_MATIK_PATH/support/fritzbox/scripts/packages/callmonitor_on
+		source $I_MATIK_PATH/support/freetz/scripts/packages/callmonitor_on
 	fi
 	
 	if [ -z $PARAM_RR ]; then
 	        sleep 0
 	else
-		source $I_MATIK_PATH/support/fritzbox/scripts/packages/rrdstats_on
-		source $I_MATIK_PATH/support/fritzbox/scripts/packages/cifsmount_on
+		source $I_MATIK_PATH/support/freetz/scripts/packages/rrdstats_on
+		source $I_MATIK_PATH/support/freetz/scripts/packages/cifsmount_on
 	fi
 	
 	if [ -z $PARAM_USER_SCRIPTS ]; then
@@ -200,20 +200,20 @@ for bs in "${BOX_SSL[@]}"; do
 	if [ -z $PARAM_SKINS ]; then
 	       sleep 0
 	else
-	       source $I_MATIK_PATH/support/fritzbox/scripts/packages/skins_off
+	       source $I_MATIK_PATH/support/freetz/scripts/packages/skins_off
 	fi
 	
 	if [ -z $PARAM_CM ]; then
 	        sleep 0
 	else
-		source $I_MATIK_PATH/support/fritzbox/scripts/packages/callmonitor_off
+		source $I_MATIK_PATH/support/freetz/scripts/packages/callmonitor_off
 	fi
 	
 	if [ -z $PARAM_RR ]; then
 	        sleep 0
 	else
-		source $I_MATIK_PATH/support/fritzbox/scripts/packages/rrdstats_off
-		source $I_MATIK_PATH/support/fritzbox/scripts/packages/cifsmount_off
+		source $I_MATIK_PATH/support/freetz/scripts/packages/rrdstats_off
+		source $I_MATIK_PATH/support/freetz/scripts/packages/cifsmount_off
 	fi
 	
 	if [ -z $PARAM_USER_SCRIPTS ]; then

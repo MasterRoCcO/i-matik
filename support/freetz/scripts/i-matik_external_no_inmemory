@@ -101,14 +101,14 @@ for bs in "${BOX_SSL[@]}"; do
 	if [ -z $PARAM_OSCAM ]; then
 	       sleep 0
 	else
-	       source $I_MATIK_PATH/support/fritzbox/scripts/packages/oscam_addon_on
+	       source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_addon_on
 	fi
 	
 	# skins to static.pkg
 	if [ -z $PARAM_SKINS ]; then
 	       sleep 0
 	else
-	       source $I_MATIK_PATH/support/fritzbox/scripts/packages/skins_on
+	       source $I_MATIK_PATH/support/freetz/scripts/packages/skins_on
 	fi
 	
 	# update git working copy
@@ -188,20 +188,20 @@ EXTERNAL_FREETZ_PACKAGE_PCSC_LITE=y
 .
 wq
 EOF
-		source $I_MATIK_PATH/support/fritzbox/scripts/packages/oscam_on
+		source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_on
 	fi
 	
 	if [ -z $PARAM_CM ]; then
 	        sleep 0
 	else
-		source $I_MATIK_PATH/support/fritzbox/scripts/packages/callmonitor_on
+		source $I_MATIK_PATH/support/freetz/scripts/packages/callmonitor_on
 	fi
 	
 	if [ -z $PARAM_RR ]; then
 	        sleep 0
 	else
-		source $I_MATIK_PATH/support/fritzbox/scripts/packages/rrdstats_on
-		source $I_MATIK_PATH/support/fritzbox/scripts/packages/cifsmount_on
+		source $I_MATIK_PATH/support/freetz/scripts/packages/rrdstats_on
+		source $I_MATIK_PATH/support/freetz/scripts/packages/cifsmount_on
 	fi
 	
 	if [ -z $PARAM_USER_SCRIPTS ]; then
@@ -265,27 +265,27 @@ EOF
 	if [ -z $PARAM_OSCAM ]; then
 	       sleep 0
 	else
-		source $I_MATIK_PATH/support/fritzbox/scripts/packages/oscam_off
+		source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_off
 	fi
 	
 	# skins to static.pkg
 	if [ -z $PARAM_SKINS ]; then
 	       sleep 0
 	else
-	       source $I_MATIK_PATH/support/fritzbox/scripts/packages/skins_off
+	       source $I_MATIK_PATH/support/freetz/scripts/packages/skins_off
 	fi
 	
 	if [ -z $PARAM_CM ]; then
 	        sleep 0
 	else
-		source $I_MATIK_PATH/support/fritzbox/scripts/packages/callmonitor_off
+		source $I_MATIK_PATH/support/freetz/scripts/packages/callmonitor_off
 	fi
 	
 	if [ -z $PARAM_RR ]; then
 	        sleep 0
 	else
-		source $I_MATIK_PATH/support/fritzbox/scripts/packages/rrdstats_off
-		source $I_MATIK_PATH/support/fritzbox/scripts/packages/cifsmount_off
+		source $I_MATIK_PATH/support/freetz/scripts/packages/rrdstats_off
+		source $I_MATIK_PATH/support/freetz/scripts/packages/cifsmount_off
 	fi
 	
 	if [ -z $PARAM_USER_SCRIPTS ]; then
