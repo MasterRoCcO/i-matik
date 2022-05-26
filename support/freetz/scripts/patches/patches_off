@@ -1,9 +1,5 @@
 #!/bin/bash
-#FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
-#FUD_COMMENT_SSL="${FUD_COMMENT/"_${FUD_COMMENT_BOX}"/""}"
-
-BOX_HOME="${BOX_NAME:0:2}xx"
-#FREETZ_SSL_PATH="FREETZ_PATH_SSL_${BOX_SSL^^}"	# dynamic variable
+BOX_HOME="${1:0:2}xx"	# set box home folder
 FREETZ_SSL_PATH10="FREETZ_PATH_SSL_10"
 FREETZ_SSL_HOME_PATH10="${!FREETZ_SSL_PATH10}/$BOX_HOME"
 
@@ -13,32 +9,20 @@ FREETZ_SSL_HOME_PATH11="${!FREETZ_SSL_PATH11}/$BOX_HOME"
 FREETZ_SSL_PATH30="FREETZ_PATH_SSL_30"
 FREETZ_SSL_HOME_PATH30="${!FREETZ_SSL_PATH30}/$BOX_HOME"
 
-#rm -f $FREETZ_SSL_HOME_PATH10/make/busybox/Config.in 2>/dev/null
 rm -f $FREETZ_SSL_HOME_PATH10/make/mod/files/root/etc/default.mod/motd 2>/dev/null
 rm -f $FREETZ_SSL_HOME_PATH10/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh 2>/dev/null
-#rm -f $FREETZ_SSL_HOME_PATH10/config/ui/patches.in  2>/dev/null
 
-#mv $FREETZ_SSL_HOME_PATH10/make/busybox/Config.in.orig $FREETZ_SSL_HOME_PATH10/make/busybox/Config.in 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH10/make/mod/files/root/etc/default.mod/motd.orig $FREETZ_SSL_HOME_PATH10/make/mod/files/root/etc/default.mod/motd 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH10/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh.orig $FREETZ_SSL_HOME_PATH10/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh 2>/dev/null
-#mv $FREETZ_SSL_HOME_PATH10/config/ui/patches.in.orig $FREETZ_SSL_HOME_PATH10/config/ui/patches.in 2>/dev/null
 
-#rm -f $FREETZ_SSL_HOME_PATH11/make/busybox/Config.in 2>/dev/null
 rm -f $FREETZ_SSL_HOME_PATH11/make/mod/files/root/etc/default.mod/motd 2>/dev/null
 rm -f $FREETZ_SSL_HOME_PATH11/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh 2>/dev/null
-#rm -f $FREETZ_SSL_HOME_PATH11/config/ui/patches.in 2>/dev/null
 
-#mv $FREETZ_SSL_HOME_PATH11/make/busybox/Config.in.orig $FREETZ_SSL_HOME_PATH11/make/busybox/Config.in 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH11/make/mod/files/root/etc/default.mod/motd.orig $FREETZ_SSL_HOME_PATH11/make/mod/files/root/etc/default.mod/motd 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH11/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh.orig $FREETZ_SSL_HOME_PATH11/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh 2>/dev/null
-#mv $FREETZ_SSL_HOME_PATH11/config/ui/patches.in.orig $FREETZ_SSL_HOME_PATH11/config/ui/patches.in 2>/dev/null
 
-#rm -f $FREETZ_SSL_HOME_PATH30/make/busybox/Config.in 2>/dev/null
 rm -f $FREETZ_SSL_HOME_PATH30/make/mod/files/root/etc/default.mod/motd 2>/dev/null
 rm -f $FREETZ_SSL_HOME_PATH30/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh 2>/dev/null
-#rm -f $FREETZ_SSL_HOME_PATH30/config/ui/patches.in 2>/dev/null
 
-#mv $FREETZ_SSL_HOME_PATH30/make/busybox/Config.in.orig $FREETZ_SSL_HOME_PATH30/make/busybox/Config.in 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH30/make/mod/files/root/etc/default.mod/motd.orig $FREETZ_SSL_HOME_PATH30/make/mod/files/root/etc/default.mod/motd 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH30/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh.orig $FREETZ_SSL_HOME_PATH30/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh 2>/dev/null
-#mv $FREETZ_SSL_HOME_PATH30/config/ui/patches.in.orig $FREETZ_SSL_HOME_PATH30/config/ui/patches.in 2>/dev/null
