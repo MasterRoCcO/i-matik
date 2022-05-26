@@ -81,6 +81,7 @@ for bs in "${BOX_SSL[@]}"; do
 		git clone https://github.com/Freetz-NG/freetz-ng "$FREETZ_SSL_HOME_PATH"
 		rm -rf "$FREETZ_SSL_HOME_PATH/addon"
 		ln -s /$MY_FILES_HOME_PATH/addon $FREETZ_SSL_HOME_PATH/addon
+		source $I_MATIK_PATH/support/freetz/scripts/patches/patches_on
 	elif [ ! -d "$FREETZ_SSL_HOME_PATH" ]; then
 		printf "${YELLOW}'$FREETZ_SSL_HOME_PATH' already exists but is not a directory${NC}" 1>&2
 		exit 1
@@ -210,8 +211,6 @@ EOF
 	        ln -s $USER_APPLICATION_ON $I_MATIK_PATH/user-application_please_edit_me 2>/dev/null
 		source $USER_APPLICATION_ON
 	fi
-
-		source $I_MATIK_PATH/support/freetz/scripts/patches/patches_on
 			
 	if [ -z $PARAM_CONFIG ]; then
 			$MENUC $MENUC1 #run make menuconfig
@@ -330,8 +329,6 @@ EOF
 		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox 2>/dev/null
 		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox 2>/dev/null
 	fi
-	
-	source $I_MATIK_PATH/support/freetz/scripts/patches/patches_off
 	
 	finish=$(date +"%s")	# build finished time
 	timediff=$(($finish-$beginbs))	# build time
