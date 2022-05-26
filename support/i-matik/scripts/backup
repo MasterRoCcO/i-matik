@@ -1,0 +1,8 @@
+#!/bin/bash
+cd ~/Ubuntu/tools/
+datum=$(date +%d.%m.%Y)
+tar cfvz ~/Backup/i-matik_Backup/backup_$datum.tar.gz ~/Ubuntu/tools/i-matik ~/Ubuntu/tools/wichtig/addon ~/Ubuntu/tools/wichtig/custom.in ~/Ubuntu/tools/wichtig/freetz-dl ~/Ubuntu/tools/backup.sh ~/.freetz-signature ~/.freetz-dl ~/Ubuntu/treiber ~/Ubuntu/tools/i-matik.git ~/.ssh
+# Löschen von allen alten Dateien die älter als 1 Tage sind
+cd ~/Backup/i-matik_Backup/
+find . -name "backup_*.tar.gz" -mtime +10 -delete
+

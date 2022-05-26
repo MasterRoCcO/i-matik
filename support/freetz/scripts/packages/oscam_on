@@ -1,0 +1,31 @@
+#!/bin/bash
+sed -i "s+# FREETZ_PACKAGE_OSCAM is not set+FREETZ_PACKAGE_OSCAM=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_PACKAGE_CCID is not set+FREETZ_PACKAGE_CCID=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_PACKAGE_PCSC_LITE is not set+FREETZ_PACKAGE_PCSC_LITE=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_LIB_libpcsclite is not set+FREETZ_LIB_libpcsclite=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_LIB_libusb_1 is not set+FREETZ_LIB_libusb_1=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_PACKAGE_USBIDS is not set+FREETZ_PACKAGE_USBIDS=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_PACKAGE_USBUTILS is not set+FREETZ_PACKAGE_USBUTILS=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_MODULE_ftdi_sio is not set+FREETZ_MODULE_ftdi_sio=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_MODULE_pl2303 is not set+FREETZ_MODULE_pl2303=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_MODULE_usbserial is not set+FREETZ_MODULE_usbserial=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_PATCH_UDEVMOUNT is not set+FREETZ_PATCH_UDEVMOUNT=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_PATCH_MAXDEVCOUNT is not set+FREETZ_PATCH_MAXDEVCOUNT=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_CUSTOM_UDEV_RULES is not set+FREETZ_CUSTOM_UDEV_RULES=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_DROP_NOEXEC_EXTERNAL is not set+FREETZ_DROP_NOEXEC_EXTERNAL=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_PATCH_FREETZMOUNT is not set+FREETZ_PATCH_FREETZMOUNT=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_PACKAGE_AVM_PORTFW is not set+FREETZ_PACKAGE_AVM_PORTFW=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_PACKAGE_AVM_FIREWALL is not set+FREETZ_PACKAGE_AVM_FIREWALL=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_PACKAGE_AVM_FORWARDING is not set+FREETZ_PACKAGE_AVM_FORWARDING=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+openssl_1_0_x_masterbox+with_readerdriver_openssl_1_0_x_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+openssl_1_0_x_clientbox+with_readerdriver_openssl_1_0_x_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+openssl_1_1_x_masterbox+with_readerdriver_openssl_1_1_x_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+openssl_1_1_x_clientbox+with_readerdriver_openssl_1_1_x_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+openssl_3_0_x_masterbox+with_readerdriver_openssl_3_0_x_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+openssl_3_0_x_clientbox+with_readerdriver_openssl_3_0_x_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+SYSTEM_TYPE="$(grep '^FREETZ_AVM_SOURCE_FOR_SYSTEM_TYPE_' .config | awk -F'=y' '{print $1}' | xargs | tr '[:upper:]' '[:lower:]')"
+SOURCE_ID="$(grep '^FREETZ_AVM_SOURCE_ID=' .config | awk -F'"' '{print $2}' | xargs)"
+CORE_SUFFIX="$(grep '^FREETZ_SYSTEM_TYPE_CORE_SUFFIX=' .config | awk -F'"' '{print $2}' | xargs)"
+sed -i "s+# CONFIG_USB_SERIAL is not set+CONFIG_USB_SERIAL=m+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
+sed -i "s+# CONFIG_USB_SERIAL_FTDI_SIO is not set+CONFIG_USB_SERIAL_FTDI_SIO=m+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
+sed -i "s+# CONFIG_USB_SERIAL_PL2303 is not set+CONFIG_USB_SERIAL_PL2303=m+g" $FREETZ_SSL_HOME_PATH/make/linux/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}
