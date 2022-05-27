@@ -17,6 +17,10 @@ elif [[ $1 == '68504g.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '68504g' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '68504g' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '68504g' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '68505g.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
@@ -26,6 +30,10 @@ elif [[ $1 == '68505g.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '68505g' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '68505g' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '68505g' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7520.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
@@ -35,6 +43,10 @@ elif [[ $1 == '7520.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '7520' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '7520' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7520' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7520-Alien7530.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
@@ -44,6 +56,10 @@ elif [[ $1 == '7520-Alien7530.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '7520-Alien7530' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '7520-Alien7530' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7520-Alien7530' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7530.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
@@ -53,6 +69,10 @@ elif [[ $1 == '7530.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '7530' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '7530' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7530' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 #arm boxen no inmemory
 elif [[ $1 == '4040.11' ]]; then
@@ -63,6 +83,10 @@ elif [[ $1 == '4040.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '4040' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '4040' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '4040' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '4060.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
@@ -72,6 +96,10 @@ elif [[ $1 == '4060.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '4060' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '4060' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '4060' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '5590.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
@@ -81,6 +109,10 @@ elif [[ $1 == '5590.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '5590' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '5590' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '5590' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7510.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
@@ -90,6 +122,10 @@ elif [[ $1 == '7510.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '7510' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '7510' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7510' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7530AX.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
@@ -99,6 +135,10 @@ elif [[ $1 == '7530AX.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '7530AX' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '7530AX' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7530AX' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 #arm boxen no oscam
 elif [[ $1 == '1200.11' ]]; then
@@ -109,6 +149,10 @@ elif [[ $1 == '1200.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '1200' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware_repeater
+elif [[ $1 == '1200' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '1200' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '1260v2.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
@@ -118,6 +162,10 @@ elif [[ $1 == '1260v2.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '1260v2' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware_powerline
+elif [[ $1 == '1260v2' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '1260v2' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '3000.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
@@ -127,6 +175,10 @@ elif [[ $1 == '3000.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '3000' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware_repeater
+elif [[ $1 == '3000' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '3000' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7581.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
@@ -138,6 +190,10 @@ elif [[ $1 == '7581.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '7581' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+elif [[ $1 == '7581' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7581' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7582.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
@@ -149,6 +205,10 @@ elif [[ $1 == '7582.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '7582' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+elif [[ $1 == '7582' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7582' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 #arm boxen no inmemory no oscam
 elif [[ $1 == '1200AX.11' ]]; then
@@ -159,6 +219,10 @@ elif [[ $1 == '1200AX.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '1200AX' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '1200AX' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '1200AX' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '1260E.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
@@ -168,6 +232,10 @@ elif [[ $1 == '1260E.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '1260E' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware_powerline
+elif [[ $1 == '1260E' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '1260E' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '6000.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
@@ -177,6 +245,10 @@ elif [[ $1 == '6000.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '6000' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware_repeater
+elif [[ $1 == '6000' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '6000' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 #i686 boxen no inmemory
 elif [[ $1 == '6430.10' ]]; then
@@ -189,6 +261,10 @@ elif [[ $1 == '6430.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
 elif [[ $1 == '6430' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+elif [[ $1 == '6430' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '6430' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '6490.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
@@ -200,6 +276,10 @@ elif [[ $1 == '6490.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
 elif [[ $1 == '6490' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+elif [[ $1 == '6490' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '6490' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '6590.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
@@ -211,6 +291,10 @@ elif [[ $1 == '6590.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
 elif [[ $1 == '6590' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+elif [[ $1 == '6590' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '6590' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '6591.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
@@ -220,6 +304,10 @@ elif [[ $1 == '6591.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '6591' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '6591' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '6591' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '6660.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
@@ -229,6 +317,10 @@ elif [[ $1 == '6660.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '6660' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '6660' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '6660' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '6690.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
@@ -238,6 +330,10 @@ elif [[ $1 == '6690.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '6690' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '6690' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '6690' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 #mips boxen
 elif [[ $1 == '3272.10' ]]; then
@@ -250,6 +346,10 @@ elif [[ $1 == '3272.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
 elif [[ $1 == '3272' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+elif [[ $1 == '3272' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '3272' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '3370.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
@@ -261,6 +361,10 @@ elif [[ $1 == '3370.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
 elif [[ $1 == '3370' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+elif [[ $1 == '3370' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '3370' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '3390.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
@@ -272,6 +376,10 @@ elif [[ $1 == '3390.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
 elif [[ $1 == '3390' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+elif [[ $1 == '3390' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '3390' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '3490.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
@@ -281,6 +389,10 @@ elif [[ $1 == '3490.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '3490' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '3490' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '3490' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '5490.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
@@ -290,6 +402,10 @@ elif [[ $1 == '5490.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '5490' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '5490' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '5490' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '5491.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
@@ -299,6 +415,10 @@ elif [[ $1 == '5491.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '5491' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '5491' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '5491' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '6840.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
@@ -310,6 +430,10 @@ elif [[ $1 == '6840.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
 elif [[ $1 == '6840' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+elif [[ $1 == '6840' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '6840' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '6890.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
@@ -319,6 +443,10 @@ elif [[ $1 == '6890.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '6890' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '6890' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '6890' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7272.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
@@ -330,6 +458,10 @@ elif [[ $1 == '7272.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
 elif [[ $1 == '7272' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+elif [[ $1 == '7272' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7272' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7362.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
@@ -341,6 +473,10 @@ elif [[ $1 == '7362.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
 elif [[ $1 == '7362' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+elif [[ $1 == '7362' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7362' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7430.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
@@ -350,6 +486,10 @@ elif [[ $1 == '7430.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '7430' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '7430' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7430' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7490.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
@@ -359,6 +499,10 @@ elif [[ $1 == '7490.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '7490' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '7490' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7490' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7560.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
@@ -368,6 +512,10 @@ elif [[ $1 == '7560.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '7560' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '7560' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7560' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7580.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
@@ -377,6 +525,10 @@ elif [[ $1 == '7580.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '7580' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '7580' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7580' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7583.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
@@ -386,6 +538,10 @@ elif [[ $1 == '7583.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '7583' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '7583' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7583' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7583vdsl.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
@@ -395,6 +551,10 @@ elif [[ $1 == '7583vdsl.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '7583vdsl' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '7583vdsl' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7583vdsl' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7590.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
@@ -404,6 +564,10 @@ elif [[ $1 == '7590.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '7590' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '7590' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7590' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7590AX.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
@@ -413,6 +577,10 @@ elif [[ $1 == '7590AX.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '7590AX' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '7590AX' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7590AX' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 #mips boxen no oscam
 elif [[ $1 == '3370-Alien3490.11' ]]; then
@@ -423,6 +591,10 @@ elif [[ $1 == '3370-Alien3490.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '3370' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '3370' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '3370' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '3390-Alien3490.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
@@ -432,6 +604,10 @@ elif [[ $1 == '3390-Alien3490.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '3390' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '3390' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '3390' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '6820v1.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
@@ -441,6 +617,10 @@ elif [[ $1 == '6820v1.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '6820v1' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '6820v1' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '6820v1' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '6820v2.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
@@ -450,6 +630,10 @@ elif [[ $1 == '6820v2.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '6820v2' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '6820v2' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '6820v2' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '6820v3.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
@@ -459,6 +643,10 @@ elif [[ $1 == '6820v3.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '6820v3' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '6820v3' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '6820v3' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7412.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
@@ -470,6 +658,10 @@ elif [[ $1 == '7412.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '7412' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+elif [[ $1 == '7412' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7412' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7412-Alien7430.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
@@ -481,6 +673,10 @@ elif [[ $1 == '7412-Alien7430.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '7412-Alien7430' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+elif [[ $1 == '7412-Alien7430' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7412-Alien7430' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 #mips boxen external no inmemory
 elif [[ $1 == '4020.10' ]]; then
@@ -493,9 +689,17 @@ elif [[ $1 == '4020.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
 elif [[ $1 == '4020' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+elif [[ $1 == '4020' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '4020' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7320.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
+elif [[ $1 == '7320' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7320' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7320-Alien7330.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
@@ -507,6 +711,10 @@ elif [[ $1 == '7320-Alien7330.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
 elif [[ $1 == '7320-Alien7330' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+elif [[ $1 == '7320-Alien7330' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7320-Alien7330' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7330.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
@@ -518,6 +726,10 @@ elif [[ $1 == '7330.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
 elif [[ $1 == '7330' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+elif [[ $1 == '7330' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7330' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7330SL.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
@@ -529,12 +741,24 @@ elif [[ $1 == '7330SL.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
 elif [[ $1 == '7330SL' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+elif [[ $1 == '7330SL' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7330SL' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7340.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
+elif [[ $1 == '7340' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7340' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7360v1.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
+elif [[ $1 == '7360v1' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7360v1' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7390.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
@@ -546,6 +770,10 @@ elif [[ $1 == '7390.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
 elif [[ $1 == '7390' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+elif [[ $1 == '7390' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7390' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 #mips boxen no inmemory
 elif [[ $1 == '7360v2.10' ]]; then
@@ -558,9 +786,17 @@ elif [[ $1 == '7360v2.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
 elif [[ $1 == '7360v2' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+elif [[ $1 == '7360v2' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7360v2' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7369.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+elif [[ $1 == '7369' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7369' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 #mips boxen no inmemory no oscam
 elif [[ $1 == 'DVB-C.10' ]]; then
@@ -573,6 +809,10 @@ elif [[ $1 == 'DVB-c.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == 'DVB-C' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware_repeater
+elif [[ $1 == 'DVB-C' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == 'DVB-C' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == 'DVB-c-Alien1750E.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
@@ -582,6 +822,10 @@ elif [[ $1 == 'DVB-c-Alien1750E.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == 'DVB-c-Alien1750E' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware_repeater
+elif [[ $1 == 'DVB-c-Alien1750E' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == 'DVB-c-Alien1750E' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '300E.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
@@ -593,6 +837,10 @@ elif [[ $1 == '300E.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '300E' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware_repeater
+elif [[ $1 == '300E' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '300E' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '450E.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
@@ -604,6 +852,10 @@ elif [[ $1 == '450E.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '450E' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware_repeater
+elif [[ $1 == '450E' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '450E' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '540E.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
@@ -615,6 +867,10 @@ elif [[ $1 == '540E.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '540E' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware_powerline
+elif [[ $1 == '540E' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '540E' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '546E.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
@@ -626,6 +882,10 @@ elif [[ $1 == '546E.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '546E' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware_powerline
+elif [[ $1 == '546E' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '546E' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '1240E.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
@@ -637,6 +897,10 @@ elif [[ $1 == '1240E.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '1240E' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware_powerline
+elif [[ $1 == '1240E' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '1240E' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '1750E.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
@@ -646,6 +910,10 @@ elif [[ $1 == '1750E.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '1750E' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware_repeater
+elif [[ $1 == '1750E' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '1750E' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '2400.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
@@ -655,6 +923,10 @@ elif [[ $1 == '2400.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '2400' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware_repeater
+elif [[ $1 == '2400' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '2400' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '5530.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
@@ -664,9 +936,17 @@ elif [[ $1 == '5530.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '5530' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+elif [[ $1 == '5530' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '5530' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '6810.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+elif [[ $1 == '6810' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '6810' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7312.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
@@ -678,16 +958,32 @@ elif [[ $1 == '7312.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '7312' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+elif [[ $1 == '7312' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7312' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 #mipsel boxen no inmemory
 elif [[ $1 == '7240.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+elif [[ $1 == '7240' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7240' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7270v2.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+elif [[ $1 == '7270v2' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7270v2' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '7270v3.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+elif [[ $1 == '7270v3' ]] && [[ $2 == '-patch_undo' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_off
+elif [[ $1 == '7270v3' ]] && [[ $2 == '-patch' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/patches/./patches_on
 
 elif [[ $1 == '-backup' ]]; then
 source $I_MATIK_PATH/support/i-matik/scripts/./backup
