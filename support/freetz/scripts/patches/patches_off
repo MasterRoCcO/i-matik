@@ -9,20 +9,56 @@ FREETZ_SSL_HOME_PATH11="${!FREETZ_SSL_PATH11}/$BOX_HOME"
 FREETZ_SSL_PATH30="FREETZ_PATH_SSL_30"
 FREETZ_SSL_HOME_PATH30="${!FREETZ_SSL_PATH30}/$BOX_HOME"
 
+#rm -f $FREETZ_SSL_HOME_PATH10/make/busybox/Config.in 2>/dev/null
 rm -f $FREETZ_SSL_HOME_PATH10/make/mod/files/root/etc/default.mod/motd 2>/dev/null
 rm -f $FREETZ_SSL_HOME_PATH10/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH10/config/ui/patches.in  2>/dev/null
+#rm -f $FREETZ_SSL_HOME_PATH10/docs/CHANGELOG.md 2>/dev/null
+#rm -f $FREETZ_SSL_HOME_PATH10/make/haserl/patches/100-lualib_inc.patch 2>/dev/null
+#rm -f $FREETZ_SSL_HOME_PATH10/make/haserl/Config.in 2>/dev/null
+#rm -f $FREETZ_SSL_HOME_PATH10/make/haserl/haserl.mk 2>/dev/null
 
+#mv $FREETZ_SSL_HOME_PATH10/make/busybox/Config.in.orig $FREETZ_SSL_HOME_PATH10/make/busybox/Config.in 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH10/make/mod/files/root/etc/default.mod/motd.orig $FREETZ_SSL_HOME_PATH10/make/mod/files/root/etc/default.mod/motd 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH10/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh.orig $FREETZ_SSL_HOME_PATH10/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH10/config/ui/patches.in.orig $FREETZ_SSL_HOME_PATH10/config/ui/patches.in 2>/dev/null
+#mv $FREETZ_SSL_HOME_PATH10/docs/CHANGELOG.md.orig $FREETZ_SSL_HOME_PATH10/docs/CHANGELOG.md 2>/dev/null
+#mv $FREETZ_SSL_HOME_PATH10/make/haserl/patches/100-lualib_inc.patch.orig $FREETZ_SSL_HOME_PATH10/make/haserl/patches/100-lualib_inc.patch 2>/dev/null
+#mv $FREETZ_SSL_HOME_PATH10/make/haserl/Config.in.orig $FREETZ_SSL_HOME_PATH10/make/haserl/Config.in 2>/dev/null
+#mv $FREETZ_SSL_HOME_PATH10/make/haserl/haserl.mk.orig $FREETZ_SSL_HOME_PATH10/make/haserl/haserl.mk 2>/dev/null
 
+#rm -f $FREETZ_SSL_HOME_PATH11/make/busybox/Config.in 2>/dev/null
 rm -f $FREETZ_SSL_HOME_PATH11/make/mod/files/root/etc/default.mod/motd 2>/dev/null
 rm -f $FREETZ_SSL_HOME_PATH11/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH11/config/ui/patches.in 2>/dev/null
+#rm -f $FREETZ_SSL_HOME_PATH11/docs/CHANGELOG.md 2>/dev/null
+#rm -f $FREETZ_SSL_HOME_PATH11/make/haserl/patches/100-lualib_inc.patch 2>/dev/null
+#rm -f $FREETZ_SSL_HOME_PATH11/make/haserl/Config.in 2>/dev/null
+#rm -f $FREETZ_SSL_HOME_PATH11/make/haserl/haserl.mk 2>/dev/null
 
+#mv $FREETZ_SSL_HOME_PATH11/make/busybox/Config.in.orig $FREETZ_SSL_HOME_PATH11/make/busybox/Config.in 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH11/make/mod/files/root/etc/default.mod/motd.orig $FREETZ_SSL_HOME_PATH11/make/mod/files/root/etc/default.mod/motd 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH11/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh.orig $FREETZ_SSL_HOME_PATH11/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH11/config/ui/patches.in.orig $FREETZ_SSL_HOME_PATH11/config/ui/patches.in 2>/dev/null
+#mv $FREETZ_SSL_HOME_PATH11/docs/CHANGELOG.md.orig $FREETZ_SSL_HOME_PATH11/docs/CHANGELOG.md 2>/dev/null
+#mv $FREETZ_SSL_HOME_PATH11/make/haserl/patches/100-lualib_inc.patch.orig $FREETZ_SSL_HOME_PATH11/make/haserl/patches/100-lualib_inc.patch 2>/dev/null
+#mv $FREETZ_SSL_HOME_PATH11/make/haserl/Config.in.orig $FREETZ_SSL_HOME_PATH11/make/haserl/Config.in 2>/dev/null
+#mv $FREETZ_SSL_HOME_PATH11/make/haserl/haserl.mk.orig $FREETZ_SSL_HOME_PATH11/make/haserl/haserl.mk 2>/dev/null
 
+#rm -f $FREETZ_SSL_HOME_PATH30/make/busybox/Config.in 2>/dev/null
 rm -f $FREETZ_SSL_HOME_PATH30/make/mod/files/root/etc/default.mod/motd 2>/dev/null
 rm -f $FREETZ_SSL_HOME_PATH30/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH30/config/ui/patches.in 2>/dev/null
+#rm -f $FREETZ_SSL_HOME_PATH30/docs/CHANGELOG.md 2>/dev/null
+#rm -f $FREETZ_SSL_HOME_PATH30/make/haserl/patches/100-lualib_inc.patch 2>/dev/null
+#rm -f $FREETZ_SSL_HOME_PATH30/make/haserl/Config.in 2>/dev/null
+#rm -f $FREETZ_SSL_HOME_PATH30/make/haserl/haserl.mk 2>/dev/null
 
+#mv $FREETZ_SSL_HOME_PATH30/make/busybox/Config.in.orig $FREETZ_SSL_HOME_PATH30/make/busybox/Config.in 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH30/make/mod/files/root/etc/default.mod/motd.orig $FREETZ_SSL_HOME_PATH30/make/mod/files/root/etc/default.mod/motd 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH30/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh.orig $FREETZ_SSL_HOME_PATH30/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH30/config/ui/patches.in.orig $FREETZ_SSL_HOME_PATH30/config/ui/patches.in 2>/dev/null
+#mv $FREETZ_SSL_HOME_PATH30/docs/CHANGELOG.md.orig $FREETZ_SSL_HOME_PATH30/docs/CHANGELOG.md 2>/dev/null
+#mv $FREETZ_SSL_HOME_PATH30/make/haserl/patches/100-lualib_inc.patch.orig $FREETZ_SSL_HOME_PATH30/make/haserl/patches/100-lualib_inc.patch 2>/dev/null
+#mv $FREETZ_SSL_HOME_PATH30/make/haserl/Config.in.orig $FREETZ_SSL_HOME_PATH30/make/haserl/Config.in 2>/dev/null
+#mv $FREETZ_SSL_HOME_PATH30/make/haserl/haserl.mk.orig $FREETZ_SSL_HOME_PATH30/make/haserl/haserl.mk 2>/dev/null
