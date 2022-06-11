@@ -78,8 +78,7 @@ for bs in "${BOX_SSL[@]}"; do
 		rm -rf "$FREETZ_SSL_HOME_PATH/addon"
 		cp -ar /$MY_FILES_HOME_PATH/make/* "$FREETZ_SSL_HOME_PATH/make/"
 		ln -s /$MY_FILES_HOME_PATH/addon $FREETZ_SSL_HOME_PATH/addon
-		source $I_MATIK_PATH/support/freetz/scripts/patches/patches_on
-	elif [ ! -d "$FREETZ_SSL_HOME_PATH" ]; then
+		elif [ ! -d "$FREETZ_SSL_HOME_PATH" ]; then
 		printf "${YELLOW}'$FREETZ_SSL_HOME_PATH' already exists but is not a directory${NC}" 1>&2
 		exit 1
 	fi
@@ -104,6 +103,7 @@ for bs in "${BOX_SSL[@]}"; do
 	cd "$FREETZ_SSL_HOME_PATH" && git pull
 	umask 0022
 	cp -ar /$MY_FILES_HOME_PATH/make/* "$FREETZ_SSL_HOME_PATH/make/"
+	source $I_MATIK_PATH/support/freetz/scripts/patches/patches_on
 	[ -f .config ] && mv .config .config_backup	# rename original config to backup config
 	FREETZ_NAME="$(tools/freetz_revision 2>&1 | awk '{print $1}' | xargs)"	# freetz-ng name
 	FREETZ_VERSION="$(tools/freetz_revision 2>&1 | awk '{print $2}' | xargs)"	# freetz-ng version string
@@ -194,6 +194,7 @@ for bs in "${BOX_SSL[@]}"; do
 	fi
 
 		sed -i "s+FREETZ_JLEVEL=$MAX_CPUS+FREETZ_JLEVEL=20+g" $FREETZ_SSL_HOME_PATH/.config
+		source $I_MATIK_PATH/support/freetz/scripts/patches/patches_off
 	
 	# skins to static.pkg
 	if [ -z $PARAM_SKINS ]; then
