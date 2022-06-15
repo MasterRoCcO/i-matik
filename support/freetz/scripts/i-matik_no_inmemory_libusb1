@@ -230,8 +230,6 @@ for bs in "${BOX_SSL[@]}"; do
 	fi
 
 		sed -i "s+FREETZ_JLEVEL=$MAX_CPUS+FREETZ_JLEVEL=20+g" $FREETZ_SSL_HOME_PATH/.config
-		source $I_MATIK_PATH/support/freetz/scripts/patches/patches_off_libusb1
-		source $I_MATIK_PATH/support/freetz/scripts/patches/patches_off
 		
 	if [ -z $PARAM_OSCAM ]; then
 	       sleep 0
@@ -285,6 +283,8 @@ for bs in "${BOX_SSL[@]}"; do
 		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox 2>/dev/null
 		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox 2>/dev/null
 	fi
+		source $I_MATIK_PATH/support/freetz/scripts/patches/patches_off
+		source $I_MATIK_PATH/support/freetz/scripts/patches/patches_off_libusb1
 	
 	finish=$(date +"%s")	# build finished time
 	timediff=$(($finish-$beginbs))	# build time
