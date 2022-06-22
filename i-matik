@@ -247,7 +247,7 @@ source $I_MATIK_PATH/support/freetz/scripts/./i-matik
 elif [[ $1 == '3272.30' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
 elif [[ $1 == '3272.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi_openssl3
+source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
 elif [[ $1 == '3272' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
 
@@ -327,7 +327,7 @@ source $I_MATIK_PATH/support/freetz/scripts/./i-matik
 elif [[ $1 == '7272.30' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
 elif [[ $1 == '7272.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi_openssl3
+source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
 elif [[ $1 == '7272' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
 
@@ -515,7 +515,7 @@ source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
 elif [[ $1 == '7330.30' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
 elif [[ $1 == '7330.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi_openssl3
+source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
 elif [[ $1 == '7330' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
 
@@ -526,7 +526,7 @@ source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
 elif [[ $1 == '7330SL.30' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
 elif [[ $1 == '7330SL.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi_openssl3
+source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
 elif [[ $1 == '7330SL' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
 
@@ -543,7 +543,7 @@ source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
 elif [[ $1 == '7390.30' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
 elif [[ $1 == '7390.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi_openssl3
+source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
 elif [[ $1 == '7390' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
 
