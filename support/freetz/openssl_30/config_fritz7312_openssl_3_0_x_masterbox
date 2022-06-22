@@ -182,7 +182,7 @@ FREETZ_TYPE_FIRMWARE_FINAL=y
 # Original components --------------------------------------
 #
 FREETZ_TARGET_IPV6_SUPPORT=y
-# FREETZ_REPLACE_KERNEL is not set
+FREETZ_REPLACE_KERNEL=y
 
 #
 # Removal patches
