@@ -98,7 +98,7 @@ source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_libusb1
 elif [[ $1 == '7530AX.multi' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '7530AX' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware_libusb1
+source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
 
 #arm boxen no oscam
 elif [[ $1 == '1200.11' ]]; then
