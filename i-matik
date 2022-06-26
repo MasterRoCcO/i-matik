@@ -695,6 +695,9 @@ source $I_MATIK_PATH/support/i-matik/scripts/./backup
 elif [[ $1 == '-deloscam' ]]; then
 rm $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/*/oscam-svn*.upx
 
+elif [[ $1 == 'test.11' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_test
+
 else
 # Generate list of supported devices
 SUPPORTED_BOX_TYPE_LIST_SSL_1_0="$(find "$I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10" -name "config_fritz*openssl_1_0*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
