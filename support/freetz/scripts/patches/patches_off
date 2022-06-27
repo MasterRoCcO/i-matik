@@ -2,8 +2,6 @@
 
 rm -f $FREETZ_SSL_HOME_PATH/make/mod/files/root/etc/default.mod/motd 2>/dev/null
 rm -f $FREETZ_SSL_HOME_PATH/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/tools/make/yf-bootmanager-host/yf-bootmanager-host.mk 2>/dev/null
 
 mv $FREETZ_SSL_HOME_PATH/make/mod/files/root/etc/default.mod/motd.orig $FREETZ_SSL_HOME_PATH/make/mod/files/root/etc/default.mod/motd 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh.orig $FREETZ_SSL_HOME_PATH/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/tools/make/yf-bootmanager-host/yf-bootmanager-host.mk.orig $FREETZ_SSL_HOME_PATH/tools/make/yf-bootmanager-host/yf-bootmanager-host.mk 2>/dev/null

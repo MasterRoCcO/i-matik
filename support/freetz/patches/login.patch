@@ -1,13 +1,6 @@
---- make/mod/files/root/etc/default.mod/motd	2022-05-25 17:09:49.953587560 +0200
-+++ make/mod/files/root/etc/default.mod/motd	2022-05-25 18:20:10.559474354 +0200
-@@ -1,5 +1,6 @@
- echo -n 'Welcome at '
- hostname
-+uname -a
- echo
- cat << EOX
-    _____              _            _   _  ____
-@@ -7,5 +8,17 @@
+--- make/mod/files/root/etc/default.mod/motd	2022-06-27 20:48:34.817796000 +0200
++++ make/mod/files/root/etc/default.mod/motd	2022-06-27 21:01:47.289982749 +0200
+@@ -8,5 +8,17 @@
    | |_ | '__/ _ \/ _ \ __|_  /____|  \| | |  _
    |  _|| | |  __/  __/ |_ / /_____| |\  | |_| |
    |_|  |_|  \___|\___|\__/___|    |_| \_|\____|
