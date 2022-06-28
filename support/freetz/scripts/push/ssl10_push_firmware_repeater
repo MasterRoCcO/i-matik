@@ -1,6 +1,6 @@
 #!/bin/bash
-source $I_MATIK_PATH/config/i-matik/i-matik_net.conf
-#sudo ifconfig $NETZWERK 192.168.178.32 netmask 255.255.255.0
+source $I_MATIK_PATH/support/i-matik/i-matik_net.conf
+sudo ifconfig $NETZWERK 192.168.178.50 netmask 255.255.255.0
 FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' "$I_MATIK_PATH/config/fritzbox/openssl_10/config_fritz$1_openssl_1_0_x_repeater" | awk -F'"' '{print $2}' | xargs)"
 FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
 FUD_COMMENT_SSL="${FUD_COMMENT/"_${FUD_COMMENT_BOX}"/""}"
