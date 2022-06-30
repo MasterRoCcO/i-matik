@@ -36,6 +36,15 @@ source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
 elif [[ $1 == '7520' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
 
+elif [[ $1 == '7520B.11' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+elif [[ $1 == '7520B.30' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+elif [[ $1 == '7520B.multi' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+elif [[ $1 == '7520B' ]] && [[ $2 == '-push' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+
 elif [[ $1 == '7520-Alien7530.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik
 elif [[ $1 == '7520-Alien7530.30' ]]; then
