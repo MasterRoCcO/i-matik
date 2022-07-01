@@ -200,18 +200,6 @@ for bs in "${BOX_SSL[@]}"; do
 		else
 			make $NOMENUC #run make olddefconfig
 	fi
-	
-	if [ -z $PARAM_KERNEL ]; then
-	        sleep 0
-	else
-		make $KERNEL #run make kernel-precompiled
-	fi
-	
-	if [ -z $PARAM_TOOLCHAIN ]; then
-	        sleep 0
-	else
-		make $TOOLCHAIN #run make toolchain
-	fi
 
 		#echo "starte make -j$MAX_CPUS" && sleep 2 #echo command 2 seconds for progress
 		make -j$MAX_CPUS #run make for freetz
@@ -247,6 +235,18 @@ for bs in "${BOX_SSL[@]}"; do
 			#7490_07.29.all_$FREETZNGVERSION-$FREETZNGVERSION1-masterbox_openssl_1_1_x.image.inmemory
 			IMAGE_RENAMED_FILENAME="${IMAGE_RENAMED_FILENAME}.inmemory"
 			#mv "$FREETZ_SSL_HOME_PATH/$END_IMAGE_PATH/$IMAGE_ORIGINAL_FILENAME" "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/$IMAGE_RENAMED_FILENAME" # move inmemory filename to renamed filename
+	fi
+	
+	if [ -z $PARAM_KERNEL ]; then
+	        sleep 0
+	else
+		make $KERNEL #run make kernel-precompiled
+	fi
+	
+	if [ -z $PARAM_TOOLCHAIN ]; then
+	        sleep 0
+	else
+		make $TOOLCHAIN #run make toolchain
 	fi
 
 		sed -i "s+FREETZ_JLEVEL=$MAX_CPUS+FREETZ_JLEVEL=20+g" $FREETZ_SSL_HOME_PATH/.config
