@@ -50,3 +50,4 @@ finish=$(date +"%s")	# script finished time
 timediff=$(($finish-$begin))	# script time
 avg=$(($timediff / $COUNT))		# average time for box
 printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} box(es). ->  $(($avg / 60))m $(($avg % 60))s per box\n"
+$I_MATIK_VERSION	# show i-matik disclaimer
