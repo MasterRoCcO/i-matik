@@ -592,14 +592,14 @@ printf ${RED}"No supported\n"
 elif [[ $1 == 'DVB-C' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware_repeater
 
-#elif [[ $1 == 'DVB-c-Alien1750E.11' ]]; then
-#source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
-#elif [[ $1 == 'DVB-c-Alien1750E.30' ]]; then
-#source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
-#elif [[ $1 == 'DVB-c-Alien1750E.multi' ]]; then
-#printf ${RED}"No supported\n"
-#elif [[ $1 == 'DVB-c-Alien1750E' ]] && [[ $2 == '-push' ]]; then
-#source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware_repeater
+elif [[ $1 == 'DVB-c-Alien1750E.11' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+elif [[ $1 == 'DVB-c-Alien1750E.30' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+elif [[ $1 == 'DVB-c-Alien1750E.multi' ]]; then
+printf ${RED}"No supported\n"
+elif [[ $1 == 'DVB-c-Alien1750E' ]] && [[ $2 == '-push' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware_repeater
 
 elif [[ $1 == '300E.10' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
