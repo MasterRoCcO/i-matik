@@ -69,8 +69,10 @@ for bs in "${BOX_SSL[@]}"; do
 		continue
 	fi
 	
-	BOX_HOME="${BOX_NAME:0:2}xx"	# set box home folder
+	BOX_ARCH="$(grep '^FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=' $I_MATIK_BOX_ARCH_PATH/${BOX_NAME} | awk -F'"' '{print $2}' | xargs)" 2>/dev/null
+	BOX_HOME="${BOX_ARCH}"	# set box home folder
 	FREETZ_SSL_PATH="FREETZ_PATH_SSL_${BOX_SSL^^}"	# dynamic variable
+	rm -rf ${!FREETZ_SSL_PATH}/${BOX_NAME:0:2}xx 2>/dev/null # del old box dir
 	FREETZ_SSL_CONFIG_PATH="I_MATIK_CONFIG_FRITZBOX_PATH_openssl_${BOX_SSL,,}"	# dynamic variable
 
 	FREETZ_SSL_HOME_PATH="${!FREETZ_SSL_PATH}/$BOX_HOME"	# evaluate dynamic variable
