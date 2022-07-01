@@ -18,7 +18,8 @@ Options
   -deloscam			delete all oscams
   -nc,--no-clientbox		No client box image is created
   -nm,--no-masterbox		No master box image is created
-  -kp--kernel-precompiled)      
+  -kp--kernel-precompiled)      Make kernel-precompiled
+  -t|--toolchain)               Make toolchain
   -cm,--callmonitor		Callmonitor
   -rr,--rrdstats		RRDstats for RRDtool
   -push				push image to Fritz!Box or Fritz!Repeater or Fritz!Powerline
