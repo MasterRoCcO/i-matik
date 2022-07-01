@@ -11,15 +11,15 @@ Options
   				11 - OpenSSL 1.1.x
   				30 - OpenSSL 3.0.x
   				multi - OpenSSL multiple Versions
-  -c, --config			show not freetz-ng configuration dialog
+  -c,--config			show not freetz-ng configuration dialog
   -s,--skip-image2memory	do not create inmemory image
   -yo,--yes-oscam		The image is with oscam add-on and an oscam is created
   -do,--del-oscam		delete the old oscam and build a new one
   -deloscam			delete all oscams
   -nc,--no-clientbox		No client box image is created
   -nm,--no-masterbox		No master box image is created
-  -kp--kernel-precompiled)      Make kernel-precompiled
-  -t|--toolchain)               Make toolchain
+  -kp,--kernel-precompiled      Make kernel-precompiled
+  -t,--toolchain)               Make toolchain
   -cm,--callmonitor		Callmonitor
   -rr,--rrdstats		RRDstats for RRDtool
   -push				push image to Fritz!Box or Fritz!Repeater or Fritz!Powerline
