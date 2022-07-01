@@ -8,23 +8,29 @@ YELLOW='\033[0;33m'	# YELLOW color
 # Evaluate commandline parameter
 while [ $# -ne 0 ];do
     case "$1" in
-        -c|--config)	PARAM_CONFIG=1
+        -c|--config)	                PARAM_CONFIG=1
             ;;
-        -s|--skip-image2memory)	PARAM_SKIP_I2M=1
+        -s|--skip-image2memory)         PARAM_SKIP_I2M=1
+            ;;
+        -yo|--yes-oscam)	        PARAM_OSCAM=1
+            ;;
+        -do|--del-oscam)	        PARAM_DEL_OSCAM=1
             ;;
         -nc|--no-clientbox)	        PARAM_SKIP_CLIENT=1
             ;;
         -nm|--no-masterbox)	        PARAM_SKIP_MASTER=1
             ;;
+        -kp|--kernel-precompiled)       PARAM_KERNEL=1
+            ;;
         -cm|--callmonitor)	        PARAM_CM=1
             ;;
-        -rr|--rrdstats)	        PARAM_RR=1
+        -rr|--rrdstats)	                PARAM_RR=1
             ;;
         -us|--user-skins)		PARAM_SKINS=1
             ;;
-        -ua|--user-application)	PARAM_USER_SCRIPTS=1
+        -ua|--user-application)	        PARAM_USER_SCRIPTS=1
             ;;
-        -*|--*)			PARAM_BAD=1
+        -*|--*)			        PARAM_BAD=1
             ;;
         *)				BOX_SSL+=( $1 )
             ;;
@@ -155,10 +161,17 @@ for bs in "${BOX_SSL[@]}"; do
 	fi
 			
 	if [ -z $PARAM_CONFIG ]; then
-			$MENUC $MENUC1 #run make menuconfig
+			make $MENUC #run make menuconfig
 		else
-			$NOMENUC $NOMENUC1 #run make olddefconfig
+			make $NOMENUC #run make olddefconfig
 	fi
+	
+	if [ -z $PARAM_KERNEL ]; then
+	        sleep 0
+	else
+		make $KERNEL #run make kernel-precompiled
+	fi
+
 		#echo "starte make -j$MAX_CPUS" && sleep 2 #echo command 2 seconds for progress
 		make -j$MAX_CPUS #run make for freetz
 		
