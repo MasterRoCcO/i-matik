@@ -192,6 +192,13 @@ for bs in "${BOX_SSL[@]}"; do
 	        ln -s $USER_APPLICATION_ON $I_MATIK_PATH/user-application_please_edit_me 2>/dev/null
 		source $USER_APPLICATION_ON
 	fi
+	
+	if [ -z $PARAM_TOOLCHAIN ]; then
+	        sleep 0
+	else
+		sed -i "s+# FREETZ_USER_LEVEL_EXPERT is not set+FREETZ_USER_LEVEL_EXPERT=y+g" $FREETZ_SSL_HOME_PATH/.config
+		sed -i "s+FREETZ_USER_LEVEL_APTGURU=y+# FREETZ_USER_LEVEL_APTGURU is not set+g" $FREETZ_SSL_HOME_PATH/.config
+	fi
 			
 	if [ -z $PARAM_CONFIG ]; then
 			make $MENUC #run make menuconfig
