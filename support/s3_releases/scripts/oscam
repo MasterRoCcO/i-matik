@@ -56,5 +56,5 @@ timediff=$(($finish-$beginbs))	# build time
 finish_oscam=$(date +"%s")	         # script finished time
 timediff=$(($finish_oscam-$begin_oscam)) # script time
 avg=$(($timediff / $COUNT))		 # average time for box
-printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} box(es). ->  $(($avg / 60))m $(($avg % 60))s per oscam\n"
+printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} oscam(es). ->  $(($avg / 60))m $(($avg % 60))s per oscam\n"
 $I_MATIK_VERSION	# show i-matik disclaimer
