@@ -333,6 +333,17 @@ for bs in "${BOX_SSL[@]}"; do
 	finish=$(date +"%s")	# build finished time
 	timediff=$(($finish-$beginbs))	# build time
 	[[ $COUNT > 1 ]] && printf "\n${GREEN}${BOX_NAME} SSL ${SSL_VERSION}${NC} build finished in $(($timediff / 60)) minutes and $(($timediff % 60)) seconds. ${YELLOW}<- end time $(date +"%Y-%m-%d %H:%M:%S")${NC}\n"
+	
+	if [ -z $PARAM_DEL_OSCAM ]; then
+	        sleep 0
+	else
+		rm $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn*-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx
+	fi
+	if [ -z $PARAM_OSCAM ]; then
+		sleep 0 #not oscam is created
+	else
+		source $I_MATIK_OSCAM
+	fi
 done
 	
 	[ -f .config_backup ] && mv .config_backup .config	# rename backup config to original config
@@ -343,15 +354,3 @@ timediff=$(($finish-$begin))	# script time
 avg=$(($timediff / $COUNT))		# average time for box
 printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} box(es). ->  $(($avg / 60))m $(($avg % 60))s per box\n"
 $I_MATIK_VERSION	# show i-matik disclaimer
-	if [ -z $PARAM_DEL_OSCAM ]; then
-	        sleep 0
-	else
-		rm $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn*-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx
-	fi
-	if [ -z $PARAM_OSCAM ]; then
-		#exit 1 #not oscam is created
-		source $I_MATIK_OSCAM
-	else
-		source $I_MATIK_OSCAM
-	fi
-

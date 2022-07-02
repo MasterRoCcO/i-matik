@@ -46,6 +46,11 @@ mv $I_MATIK_PATH_OSCAM/support/binaries/oscam-svn$OSCAMVERSION_NEU-fritz_${OSCAM
 elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx ]]; then
     echo -e "${GREEN}$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx already exists${NC}" 1>&2
 fi
+	
+finish=$(date +"%s")	# build finished time
+timediff=$(($finish-$beginbs))	# build time
+[[ $COUNT > 1 ]] && printf "\n${GREEN}${BOX_NAME} SSL ${SSL_VERSION}${NC} build finished in $(($timediff / 60)) minutes and $(($timediff % 60)) seconds. ${YELLOW}<- end time $(date +"%Y-%m-%d %H:%M:%S")${NC}\n"
+
 finish=$(date +"%s")	# script finished time
 timediff=$(($finish-$begin))	# script time
 avg=$(($timediff / $COUNT))		# average time for box
