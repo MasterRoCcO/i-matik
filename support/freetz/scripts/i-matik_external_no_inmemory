@@ -22,7 +22,11 @@ while [ $# -ne 0 ];do
             ;;
         -kp|--kernel-precompiled)       PARAM_KERNEL=1
             ;;
-        -t|--toolchain)                 PARAM_TOOLCHAIN=1
+        -tc|--toolchain-construction)   PARAM_TOOLCHAIN_CONSTRUCTION=1
+            ;;
+        -ta|--toolchain-activate)       PARAM_TOOLCHAIN_ACTIVATE=1
+            ;;
+        -td|--toolchain-disable)        PARAM_TOOLCHAIN_DISABLE=1
             ;;
         -cm|--callmonitor)	        PARAM_CM=1
             ;;
@@ -220,7 +224,21 @@ EOF
 		source $USER_APPLICATION_ON
 	fi
 	
-	if [ -z $PARAM_TOOLCHAIN ]; then
+	if [ -z $PARAM_TOOLCHAIN_CONSTRUCTION ]; then
+	        sleep 0
+	else
+		sed -i "s+# FREETZ_USER_LEVEL_EXPERT is not set+FREETZ_USER_LEVEL_EXPERT=y+g" $FREETZ_SSL_HOME_PATH/.config
+		sed -i "s+FREETZ_USER_LEVEL_APTGURU=y+# FREETZ_USER_LEVEL_APTGURU is not set+g" $FREETZ_SSL_HOME_PATH/.config
+	fi
+	
+	if [ -z $PARAM_TOOLCHAIN_ACTIVATE ]; then
+	        sleep 0
+	else
+		sed -i "s+FREETZ_USER_LEVEL_EXPERT=y+# FREETZ_USER_LEVEL_EXPERT is not set+g" $FREETZ_SSL_HOME_PATH/.config
+		sed -i "s+# FREETZ_USER_LEVEL_APTGURU is not set+FREETZ_USER_LEVEL_APTGURU=y+g" $FREETZ_SSL_HOME_PATH/.config
+	fi
+	
+	if [ -z $PARAM_TOOLCHAIN_DISABLE ]; then
 	        sleep 0
 	else
 		sed -i "s+# FREETZ_USER_LEVEL_EXPERT is not set+FREETZ_USER_LEVEL_EXPERT=y+g" $FREETZ_SSL_HOME_PATH/.config
@@ -280,7 +298,7 @@ EOF
 		make $KERNEL #run make kernel-precompiled
 	fi
 	
-	if [ -z $PARAM_TOOLCHAIN ]; then
+	if [ -z $PARAM_TOOLCHAIN_CONSTRUCTION ]; then
 	        sleep 0
 	else
 		make $TOOLCHAIN #run make toolchain
