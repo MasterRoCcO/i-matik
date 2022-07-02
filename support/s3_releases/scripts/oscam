@@ -4,6 +4,8 @@ RED='\033[0;31m'	# RED color
 GREEN='\033[0;32m'	# GREEN color
 BLUE='\033[0;34m'	# BLUE color
 YELLOW='\033[0;33m'	# YELLOW color
+#start point this shows you how long it took him to create the images
+begin_oscam=$(date +"%s")
 
 if [[ ! -e $I_MATIK_PATH_OSCAM ]]; then
 umask 0022
@@ -51,8 +53,8 @@ finish=$(date +"%s")	# build finished time
 timediff=$(($finish-$beginbs))	# build time
 [[ $COUNT > 1 ]] && printf "\n${GREEN}${BOX_NAME} SSL ${SSL_VERSION}${NC} build finished in $(($timediff / 60)) minutes and $(($timediff % 60)) seconds. ${YELLOW}<- end time $(date +"%Y-%m-%d %H:%M:%S")${NC}\n"
 
-finish=$(date +"%s")	# script finished time
-timediff=$(($finish-$begin))	# script time
-avg=$(($timediff / $COUNT))		# average time for box
-printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} box(es). ->  $(($avg / 60))m $(($avg % 60))s per box and oscam\n"
+finish_oscam=$(date +"%s")	         # script finished time
+timediff=$(($finish_oscam-$begin_oscam)) # script time
+avg=$(($timediff / $COUNT))		 # average time for box
+printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} box(es). ->  $(($avg / 60))m $(($avg % 60))s per oscam\n"
 $I_MATIK_VERSION	# show i-matik disclaimer
