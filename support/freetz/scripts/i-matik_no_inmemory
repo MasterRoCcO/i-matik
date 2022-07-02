@@ -209,7 +209,24 @@ for bs in "${BOX_SSL[@]}"; do
 	else
 		sed -i "s+FREETZ_USER_LEVEL_EXPERT=y+# FREETZ_USER_LEVEL_EXPERT is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_USER_LEVEL_APTGURU is not set+FREETZ_USER_LEVEL_APTGURU=y+g" $FREETZ_SSL_HOME_PATH/.config
+ed $FREETZ_SSL_HOME_PATH/.config <<EOF
+/FREETZ_BUILD_TOOLCHAIN=y/a
+# FREETZ_TOOLCHAIN_32BIT is not set
+# FREETZ_TOOLCHAIN_CCACHE is not set
+.
+wq
+EOF
+
 		sed -i "s+# FREETZ_UBOOT_STATIC is not set+FREETZ_UBOOT_STATIC=y+g" $FREETZ_SSL_HOME_PATH/.config
+
+ed $FREETZ_SSL_HOME_PATH/.config <<EOF
+/FREETZ_ROOTEMU_FAKEROOT=y/a
+FREETZ_ROOTEMU_PSEUDO=y
+# FREETZ_HOSTTOOLS_DOWNLOAD is not set
+.
+wq
+EOF
+		sed -i "s+FREETZ_ROOTEMU_FAKEROOT=y+# FREETZ_ROOTEMU_FAKEROOT is not set+g" $FREETZ_SSL_HOME_PATH/.config
 	fi
 	
 	if [ -z $PARAM_TOOLCHAIN_DISABLE ]; then
@@ -270,12 +287,28 @@ for bs in "${BOX_SSL[@]}"; do
 	if [ -z $PARAM_TOOLCHAIN_CONSTRUCTION ]; then
 	        sleep 0
 	else
-		make $TOOLCHAIN #run make toolchain
 		sed -i "s+FREETZ_USER_LEVEL_EXPERT=y+# FREETZ_USER_LEVEL_EXPERT is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_USER_LEVEL_APTGURU is not set+FREETZ_USER_LEVEL_APTGURU=y+g" $FREETZ_SSL_HOME_PATH/.config
-		sed -i "s+# FREETZ_UBOOT_STATIC is not set+FREETZ_UBOOT_STATIC=y+g" $FREETZ_SSL_HOME_PATH/.config
-	fi
+ed $FREETZ_SSL_HOME_PATH/.config <<EOF
+/FREETZ_BUILD_TOOLCHAIN=y/a
+# FREETZ_TOOLCHAIN_32BIT is not set
+# FREETZ_TOOLCHAIN_CCACHE is not set
+.
+wq
+EOF
 
+		sed -i "s+# FREETZ_UBOOT_STATIC is not set+FREETZ_UBOOT_STATIC=y+g" $FREETZ_SSL_HOME_PATH/.config
+
+ed $FREETZ_SSL_HOME_PATH/.config <<EOF
+/FREETZ_ROOTEMU_FAKEROOT=y/a
+FREETZ_ROOTEMU_PSEUDO=y
+# FREETZ_HOSTTOOLS_DOWNLOAD is not set
+.
+wq
+EOF
+		sed -i "s+FREETZ_ROOTEMU_FAKEROOT=y+# FREETZ_ROOTEMU_FAKEROOT is not set+g" $FREETZ_SSL_HOME_PATH/.config
+		make $TOOLCHAIN #run make toolchain		
+	fi
 		sed -i "s+FREETZ_JLEVEL=$MAX_CPUS+FREETZ_JLEVEL=20+g" $FREETZ_SSL_HOME_PATH/.config
 		
 	if [ -z $PARAM_OSCAM ]; then
