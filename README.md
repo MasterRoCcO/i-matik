@@ -19,7 +19,6 @@ Options
   -nc,--no-clientbox		No client box image is created
   -nm,--no-masterbox		No master box image is created
   -kp,--kernel-precompiled      Make kernel-precompiled
-  -tc,--toolchain-construction  Make toolchain
   -ta,--toolchain-activate      Activate toolchain
   -td,--toolchain-disable       Disable toolchain
   -cm,--callmonitor		Callmonitor

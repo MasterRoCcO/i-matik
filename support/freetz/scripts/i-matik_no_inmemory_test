@@ -22,8 +22,6 @@ while [ $# -ne 0 ];do
             ;;
         -kp|--kernel-precompiled)       PARAM_KERNEL=1
             ;;
-        -tc|--toolchain-construction)   PARAM_TOOLCHAIN_CONSTRUCTION=1
-            ;;
         -ta|--toolchain-activate)       PARAM_TOOLCHAIN_ACTIVATE=1
             ;;
         -td|--toolchain-disable)        PARAM_TOOLCHAIN_DISABLE=1
@@ -199,36 +197,12 @@ for bs in "${BOX_SSL[@]}"; do
 		source $USER_APPLICATION_ON
 	fi
 	
-	if [ -z $PARAM_TOOLCHAIN_CONSTRUCTION ]; then
-	        sleep 0
-	else
-		sed -i "s+# FREETZ_USER_LEVEL_EXPERT is not set+FREETZ_USER_LEVEL_EXPERT=y+g" $FREETZ_SSL_HOME_PATH/.config
-		sed -i "s+FREETZ_USER_LEVEL_APTGURU=y+# FREETZ_USER_LEVEL_APTGURU is not set+g" $FREETZ_SSL_HOME_PATH/.config
-	fi
-	
 	if [ -z $PARAM_TOOLCHAIN_ACTIVATE ]; then
 	        sleep 0
 	else
 		sed -i "s+FREETZ_USER_LEVEL_EXPERT=y+# FREETZ_USER_LEVEL_EXPERT is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_USER_LEVEL_APTGURU is not set+FREETZ_USER_LEVEL_APTGURU=y+g" $FREETZ_SSL_HOME_PATH/.config
-ed $FREETZ_SSL_HOME_PATH/.config <<EOF
-/FREETZ_BUILD_TOOLCHAIN=y/a
-# FREETZ_TOOLCHAIN_32BIT is not set
-# FREETZ_TOOLCHAIN_CCACHE is not set
-.
-wq
-EOF
 
-		sed -i "s+# FREETZ_UBOOT_STATIC is not set+FREETZ_UBOOT_STATIC=y+g" $FREETZ_SSL_HOME_PATH/.config
-
-ed $FREETZ_SSL_HOME_PATH/.config <<EOF
-/FREETZ_ROOTEMU_FAKEROOT=y/a
-FREETZ_ROOTEMU_PSEUDO=y
-# FREETZ_HOSTTOOLS_DOWNLOAD is not set
-.
-wq
-EOF
-		sed -i "s+FREETZ_ROOTEMU_FAKEROOT=y+# FREETZ_ROOTEMU_FAKEROOT is not set+g" $FREETZ_SSL_HOME_PATH/.config
 	fi
 	
 	if [ -z $PARAM_TOOLCHAIN_DISABLE ]; then
@@ -286,31 +260,6 @@ EOF
 		make $KERNEL #run make kernel-precompiled
 	fi
 	
-	if [ -z $PARAM_TOOLCHAIN_CONSTRUCTION ]; then
-	        sleep 0
-	else
-		sed -i "s+FREETZ_USER_LEVEL_EXPERT=y+# FREETZ_USER_LEVEL_EXPERT is not set+g" $FREETZ_SSL_HOME_PATH/.config
-		sed -i "s+# FREETZ_USER_LEVEL_APTGURU is not set+FREETZ_USER_LEVEL_APTGURU=y+g" $FREETZ_SSL_HOME_PATH/.config
-ed $FREETZ_SSL_HOME_PATH/.config <<EOF
-/FREETZ_BUILD_TOOLCHAIN=y/a
-# FREETZ_TOOLCHAIN_32BIT is not set
-# FREETZ_TOOLCHAIN_CCACHE is not set
-.
-wq
-EOF
-
-		sed -i "s+# FREETZ_UBOOT_STATIC is not set+FREETZ_UBOOT_STATIC=y+g" $FREETZ_SSL_HOME_PATH/.config
-
-ed $FREETZ_SSL_HOME_PATH/.config <<EOF
-/FREETZ_ROOTEMU_FAKEROOT=y/a
-FREETZ_ROOTEMU_PSEUDO=y
-# FREETZ_HOSTTOOLS_DOWNLOAD is not set
-.
-wq
-EOF
-		sed -i "s+FREETZ_ROOTEMU_FAKEROOT=y+# FREETZ_ROOTEMU_FAKEROOT is not set+g" $FREETZ_SSL_HOME_PATH/.config
-		make $TOOLCHAIN #run make toolchain		
-	fi
 		sed -i "s+FREETZ_JLEVEL=$MAX_CPUS+FREETZ_JLEVEL=20+g" $FREETZ_SSL_HOME_PATH/.config
 		
 	if [ -z $PARAM_OSCAM ]; then

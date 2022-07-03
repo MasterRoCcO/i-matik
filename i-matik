@@ -3,7 +3,7 @@ I_MATIK_PATH=$(cd `dirname $0` && pwd)
 git pull
 source $I_MATIK_PATH/support/i-matik/i-matik.config
 source $I_MATIK_INSTAL_CHECK
-VERSIONS_NR=0.56
+VERSIONS_NR=0.57
 NC='\033[0m' 		# RESET color
 RED='\033[0;31m'	# RED color
 GREEN='\033[0;32m'	# GREEN color
@@ -717,6 +717,9 @@ rm $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/*/oscam-svn*.upx
 elif [[ $1 == 'test.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_test
 
+elif [[ $1 == 'toolchain.11' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts_privat/./i-matik_toolchain
+
 else
 # Generate list of supported devices
 SUPPORTED_BOX_TYPE_LIST_SSL_1_0="$(find "$I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10" -name "config_fritz*openssl_1_0*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
@@ -785,7 +788,6 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf "  -nc,--no-clientbox\t\tNo client box image is created\n"
 	printf "  -nm,--no-masterbox\t\tNo master box image is created\n"
 	printf "  -kp,--kernel-precompiled\tMake kernel-precompiled\n"
-	printf "  -tc,--toolchain-construction\tMake toolchain\n"
 	printf "  -ta,--toolchain-activate\tActivate toolchain\n"
 	printf "  -td,--toolchain-disable\tDisable toolchain\n"
 	printf "  -cm,--callmonitor\t\tCallmonitor\n"
