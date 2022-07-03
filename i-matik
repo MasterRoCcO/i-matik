@@ -3,7 +3,7 @@ I_MATIK_PATH=$(cd `dirname $0` && pwd)
 git pull
 source $I_MATIK_PATH/support/i-matik/i-matik.config
 source $I_MATIK_INSTAL_CHECK
-VERSIONS_NR=0.57
+VERSIONS_NR=0.57.1
 NC='\033[0m' 		# RESET color
 RED='\033[0;31m'	# RED color
 GREEN='\033[0;32m'	# GREEN color
