@@ -259,7 +259,6 @@ for bs in "${BOX_SSL[@]}"; do
 	else
 		make $KERNEL #run make kernel-precompiled
 	fi
-	
 		sed -i "s+FREETZ_JLEVEL=$MAX_CPUS+FREETZ_JLEVEL=20+g" $FREETZ_SSL_HOME_PATH/.config
 	
 	if [ -z $PARAM_OSCAM ]; then
