@@ -783,6 +783,7 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf "  -c,--config\t\t\tshow not freetz-ng configuration dialog\n"
 	printf "  -s,--skip-image2memory\tdo not create inmemory image\n"
 	printf "  -yo,--yes-oscam\t\tThe image is with oscam add-on and an oscam is created\n"
+	printf "  -to,--tool-oscam\t\toscam ToolChain\n"
 	printf "  -do,--del-oscam\t\tdelete the old oscam and build a new one\n"
 	printf "  -deloscam\t\t\tdelete all oscams\n"
 	printf "  -nc,--no-clientbox\t\tNo client box image is created\n"

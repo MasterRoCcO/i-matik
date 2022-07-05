@@ -14,6 +14,8 @@ while [ $# -ne 0 ];do
             ;;
         -yo|--yes-oscam)	        PARAM_OSCAM=1
             ;;
+        -to|--tool-oscam)	        PARAM_OSCAM_TOOL=1
+            ;;
         -do|--del-oscam)	        PARAM_DEL_OSCAM=1
             ;;
         -nc|--no-clientbox)	        PARAM_SKIP_CLIENT=1
@@ -111,6 +113,12 @@ for bs in "${BOX_SSL[@]}"; do
 	       source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_addon_on
 	fi
 	
+	if [ -z $PARAM_OSCAM_TOOL ]; then
+	       sleep 0
+	else
+	       source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_addon_on
+	fi
+	
 	# skins to static.pkg
 	if [ -z $PARAM_SKINS ]; then
 	       sleep 0
@@ -179,6 +187,29 @@ for bs in "${BOX_SSL[@]}"; do
 		source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_on
 	fi
 	
+	if [ -z $PARAM_OSCAM_TOOL ]; then
+	        sleep 0
+	else
+
+	if [ -d "${I_MATIK_ADDON}" ];then 
+	        sleep 0
+	else 
+	        echo -e ${YELLOW}"Unfortunately the ${I_MATIK_ADDON} is not available, so an automatic download is now started."${NC}
+	        grep -v ${I_MATIK_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+	        cd ${FREETZ_SSL_HOME_PATH}/addon
+	        wget https://www.freetz.digital-eliteboard.com/Teamserver/Freetz/Addon/oscam%20${I_MATIK_ADDON_VERSION:6:4}x/${I_MATIK_ADDON_VERSION:6:5}/${I_MATIK_ADDON_VERSION}.tar.gz 2>/dev/null
+	        tar xfvz ${I_MATIK_ADDON_VERSION}.tar.gz
+	        chmod -v 755 ${I_MATIK_ADDON_VERSION}
+	        rm ${I_MATIK_ADDON_VERSION}.tar.gz
+	        echo -e ${GREEN}"rolu2 from the DEB forum is responsible for maintaining the oscam add-on. I have only developed one way that it is equally available to everyone in i-matik. Therefore, I will not give support for the Oscam add-on."${NC}
+	        echo -e ${RED}"Please start again, because the oscam Add-on of rolu2 from the DEB Forum was not under Add-on."${NC}
+	        source $I_MATIK_PATH/support/freetz/scripts/patches/patches_off
+		source $I_MATIK_PATH/support/freetz/scripts/patches/patches_off_libusb1
+	        exit
+	fi
+		source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_on
+	fi
+		
 	if [ -z $PARAM_CM ]; then
 	        sleep 0
 	else
@@ -277,6 +308,12 @@ for bs in "${BOX_SSL[@]}"; do
 		source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_off
 	fi
 	
+	if [ -z $PARAM_OSCAM_TOOL ]; then
+	       sleep 0
+	else
+		source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_off
+	fi
+	
 	# skins to static.pkg
 	if [ -z $PARAM_SKINS ]; then
 	       sleep 0
@@ -339,6 +376,12 @@ for bs in "${BOX_SSL[@]}"; do
 		sleep 0 #not oscam is created
 	else
 		source $I_MATIK_OSCAM
+	fi
+	
+	if [ -z $PARAM_OSCAM_TOOL ]; then
+		sleep 0 #not oscam is created
+	else
+		source $I_MATIK_OSCAM_TOOLCHAIN
 	fi
 done
 	
