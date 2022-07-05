@@ -229,6 +229,10 @@ EOF
 		sed -i "s+FREETZ_USER_LEVEL_APTGURU=y+# FREETZ_USER_LEVEL_APTGURU is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		make clean
 	fi
+	
+		sed -i "s+# FREETZ_UBOOT_STATIC is not set+# FREETZ_UBOOT_STATIC=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_ROOTEMU_FAKEROOT=y+# FREETZ_ROOTEMU_FAKEROOT is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+# FREETZ_ROOTEMU_PSEUDO is not set+FREETZ_ROOTEMU_PSEUDO=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 			
 	if [ -z $PARAM_CONFIG ]; then
 			make $MENUC #run make menuconfig
