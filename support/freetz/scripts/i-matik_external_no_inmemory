@@ -333,7 +333,7 @@ EOF
 		source $USER_APPLICATION_OFF
 	fi
 	
-	sed -i "s+EXTERNAL_ENABLED=y+# EXTERNAL_ENABLED is not setg" $FREETZ_SSL_HOME_PATH/.config
+	sed -i "s+EXTERNAL_ENABLED=y+# EXTERNAL_ENABLED is not set+g" $FREETZ_SSL_HOME_PATH/.config
 	grep -v EXTERNAL_UDEVM $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
 	grep -v EXTERNAL_NOEXEC $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
 	grep -v EXTERNAL_SUBDIRS $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
@@ -380,6 +380,7 @@ EOF
 	else
 		rm $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn*-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx
 	fi
+	
 	if [ -z $PARAM_OSCAM ]; then
 		sleep 0 #not oscam is created
 	else
