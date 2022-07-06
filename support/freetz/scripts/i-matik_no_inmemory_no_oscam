@@ -167,7 +167,7 @@ for bs in "${BOX_SSL[@]}"; do
 	        ln -s $USER_APPLICATION_ON $I_MATIK_PATH/user-application_please_edit_me 2>/dev/null
 		source $USER_APPLICATION_ON
 	fi
-		sed -i "s+# FREETZ_UBOOT_STATIC is not set+# FREETZ_UBOOT_STATIC=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+# FREETZ_UBOOT_STATIC is not set+FREETZ_UBOOT_STATIC=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_ROOTEMU_FAKEROOT=y+# FREETZ_ROOTEMU_FAKEROOT is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+# FREETZ_ROOTEMU_PSEUDO is not set+FREETZ_ROOTEMU_PSEUDO=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_TOOLCHAIN_CCACHE=y+# FREETZ_TOOLCHAIN_CCACHE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
