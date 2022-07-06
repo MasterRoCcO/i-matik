@@ -15,3 +15,6 @@ sed -i '$a# FREETZ_HOSTTOOLS_DOWNLOAD is not set' $I_MATIK_PATH/support/freetz/o
 termin=$(date +"%s")
 difftimelps=$(($termin-$begin))
 echo "$(($difftimelps / 60)) minutes and $(($difftimelps % 60)) seconds elapsed for Script Execution."
+
+
+### read https://www.digital-eliteboard.com/threads/laberthread-fuer-i-matik.507656/post-4042163
