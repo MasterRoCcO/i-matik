@@ -179,10 +179,10 @@ for bs in "${BOX_SSL[@]}"; do
 	        sleep 0
 	else
 	        sed -i "s+FREETZ_BUILD_TOOLCHAIN=y+# FREETZ_BUILD_TOOLCHAIN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+# FREETZ_TOOLCHAIN_CCACHE is not set+FREETZ_TOOLCHAIN_CCACHE=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+# FREETZ_DOWNLOAD_TOOLCHAIN is not set+FREETZ_DOWNLOAD_TOOLCHAIN=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+# FREETZ_HOSTTOOLS_DOWNLOAD is not set+FREETZ_HOSTTOOLS_DOWNLOAD=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		make clean
-
+		
 	fi
 	
 	if [ -z $PARAM_TOOLCHAIN_DISABLE ]; then
@@ -190,6 +190,7 @@ for bs in "${BOX_SSL[@]}"; do
 	else
 	        sed -i "s+# FREETZ_BUILD_TOOLCHAIN=y+FREETZ_BUILD_TOOLCHAIN=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_DOWNLOAD_TOOLCHAIN=y+# FREETZ_DOWNLOAD_TOOLCHAIN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_TOOLCHAIN_CCACHE=y+# FREETZ_TOOLCHAIN_CCACHE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_HOSTTOOLS_DOWNLOAD=y+# FREETZ_HOSTTOOLS_DOWNLOAD is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		make clean
 	fi
