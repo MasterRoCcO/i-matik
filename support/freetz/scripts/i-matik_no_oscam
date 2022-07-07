@@ -114,7 +114,8 @@ for bs in "${BOX_SSL[@]}"; do
 	# update git working copy
 	cd "$FREETZ_SSL_HOME_PATH" && git pull
 	umask 0022
-	cp -ar /$MY_FILES_HOME_PATH/make/* "$FREETZ_SSL_HOME_PATH/make/"
+	cp -ar /$MY_FILES_HOME_PATH/make/* "$FREETZ_SSL_HOME_PATH/make/" 2>/dev/null
+	cp -ar /$MY_FILES_HOME_PATH/toolchain/* "$FREETZ_SSL_HOME_PATH/toolchain/" 2>/dev/null
 	source $I_MATIK_PATH/support/freetz/scripts/patches/patches_on
 	sed -i "s+The installed version on this device is currently xxxx+The installed version on this device is currently ${VERSIONS_NR}+g" $FREETZ_SSL_HOME_PATH/make/mod/files/root/usr/mww/cgi-bin/i-matik.cgi
 	sed -i "s+Version xxx+Version ${VERSIONS_NR}+g" $FREETZ_SSL_HOME_PATH/make/mod/files/root/etc/default.mod/motd
@@ -167,11 +168,11 @@ for bs in "${BOX_SSL[@]}"; do
 	        ln -s $USER_APPLICATION_ON $I_MATIK_PATH/user-application_please_edit_me 2>/dev/null
 		source $USER_APPLICATION_ON
 	fi
-		
+		sed -i "s+FREETZ_DOWNLOAD_TOOLCHAIN=y+# FREETZ_DOWNLOAD_TOOLCHAIN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_TOOLCHAIN_CCACHE=y+# FREETZ_TOOLCHAIN_CCACHE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+# FREETZ_UBOOT_STATIC is not set+FREETZ_UBOOT_STATIC=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_ROOTEMU_FAKEROOT=y+# FREETZ_ROOTEMU_FAKEROOT is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+# FREETZ_ROOTEMU_PSEUDO is not set+FREETZ_ROOTEMU_PSEUDO=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_TOOLCHAIN_CCACHE=y+# FREETZ_TOOLCHAIN_CCACHE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_HOSTTOOLS_DOWNLOAD=y+# FREETZ_HOSTTOOLS_DOWNLOAD is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		
 	if [ -z $PARAM_TOOLCHAIN_ACTIVATE ]; then
@@ -180,6 +181,7 @@ for bs in "${BOX_SSL[@]}"; do
 	        sed -i "s+FREETZ_BUILD_TOOLCHAIN=y+# FREETZ_BUILD_TOOLCHAIN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+# FREETZ_DOWNLOAD_TOOLCHAIN is not set+FREETZ_DOWNLOAD_TOOLCHAIN=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+# FREETZ_HOSTTOOLS_DOWNLOAD is not set+FREETZ_HOSTTOOLS_DOWNLOAD=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		make clean
 
 	fi
 	
