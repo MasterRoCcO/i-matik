@@ -73,7 +73,7 @@ for bs in "${BOX_SSL[@]}"; do
 		continue
 	fi
 	
-	BOX_ARCH="$(grep '^FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=' $I_MATIK_BOX_ARCH_PATH/${BOX_NAME} | awk -F'"' '{print $2}' | xargs)" 2>/dev/null
+	BOX_ARCH="$(grep "${BOX_NAME}_FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=" $I_MATIK_BOX_ARCH | awk -F'"' '{print $2}' | xargs)" 2>/dev/null
 	BOX_HOME="${BOX_ARCH}"	# set box home folder
 	FREETZ_SSL_PATH="FREETZ_PATH_SSL_${BOX_SSL^^}"	# dynamic variable
 	rm -rf ${!FREETZ_SSL_PATH}/${BOX_NAME:0:2}xx 2>/dev/null # del old box dir
@@ -238,7 +238,7 @@ for bs in "${BOX_SSL[@]}"; do
 		sleep 0
 	else
 		sed -i "s+FREETZ_BUILD_TOOLCHAIN=y+# FREETZ_BUILD_TOOLCHAIN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+# FREETZ_TOOLCHAIN_CCACHE is not set+FREETZ_TOOLCHAIN_CCACHE=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+# FREETZ_TOOLCHAIN_CCACHE is not set+FREETZ_TOOLCHAIN_CCACHE=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+# FREETZ_DOWNLOAD_TOOLCHAIN is not set+FREETZ_DOWNLOAD_TOOLCHAIN=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+# FREETZ_HOSTTOOLS_DOWNLOAD is not set+FREETZ_HOSTTOOLS_DOWNLOAD=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		

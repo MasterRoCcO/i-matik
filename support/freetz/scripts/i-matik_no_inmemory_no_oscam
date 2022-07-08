@@ -12,10 +12,6 @@ while [ $# -ne 0 ];do
 	    ;;
 	-s|--skip-image2memory)	 	PARAM_SKIP_I2M=1
 	    ;;
-	-yo|--yes-oscam)		PARAM_OSCAM=1
-	    ;;
-	-do|--del-oscam)		PARAM_DEL_OSCAM=1
-	    ;;
 	-nc|--no-clientbox)		PARAM_SKIP_CLIENT=1
 	    ;;
 	-nm|--no-masterbox)		PARAM_SKIP_MASTER=1
@@ -71,7 +67,7 @@ for bs in "${BOX_SSL[@]}"; do
 		continue
 	fi
 	
-	BOX_ARCH="$(grep '^FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=' $I_MATIK_BOX_ARCH_PATH/${BOX_NAME} | awk -F'"' '{print $2}' | xargs)" 2>/dev/null
+	BOX_ARCH="$(grep "${BOX_NAME}_FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=" $I_MATIK_BOX_ARCH | awk -F'"' '{print $2}' | xargs)" 2>/dev/null
 	BOX_HOME="${BOX_ARCH}"	# set box home folder
 	FREETZ_SSL_PATH="FREETZ_PATH_SSL_${BOX_SSL^^}"	# dynamic variable
 	rm -rf ${!FREETZ_SSL_PATH}/${BOX_NAME:0:2}xx 2>/dev/null # del old box dir
