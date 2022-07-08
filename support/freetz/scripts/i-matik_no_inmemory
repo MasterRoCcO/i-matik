@@ -73,7 +73,7 @@ for bs in "${BOX_SSL[@]}"; do
 		continue
 	fi
 	
-	BOX_ARCH="$(grep "${BOX_NAME}_FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=" $I_MATIK_BOX_ARCH | awk -F'"' '{print $2}' | xargs)" 2>/dev/null
+	BOX_ARCH="$(grep '^FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=' $I_MATIK_BOX_ARCH_PATH/${BOX_NAME} | awk -F'"' '{print $2}' | xargs)" 2>/dev/null
 	BOX_HOME="${BOX_ARCH}"	# set box home folder
 	FREETZ_SSL_PATH="FREETZ_PATH_SSL_${BOX_SSL^^}"	# dynamic variable
 	rm -rf ${!FREETZ_SSL_PATH}/${BOX_NAME:0:2}xx 2>/dev/null # del old box dir
@@ -163,7 +163,33 @@ for bs in "${BOX_SSL[@]}"; do
 	for conf in "${CONFIGS[@]}"; do
 		cp -f "$conf" .config	#copy box config to .config
 		sed -i "s+FREETZ_JLEVEL=20+FREETZ_JLEVEL=$MAX_CPUS+g" $FREETZ_SSL_HOME_PATH/.config
-
+		sed -i "s+FREETZ_DOWNLOAD_TOOLCHAIN=y+# FREETZ_DOWNLOAD_TOOLCHAIN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_TOOLCHAIN_CCACHE=y+# FREETZ_TOOLCHAIN_CCACHE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+# FREETZ_UBOOT_STATIC is not set+FREETZ_UBOOT_STATIC=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_ROOTEMU_FAKEROOT=y+# FREETZ_ROOTEMU_FAKEROOT is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+# FREETZ_ROOTEMU_PSEUDO is not set+FREETZ_ROOTEMU_PSEUDO=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_HOSTTOOLS_DOWNLOAD=y+# FREETZ_HOSTTOOLS_DOWNLOAD is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		
+	if [ -z $PARAM_TOOLCHAIN_ACTIVATE ]; then
+		sleep 0
+	else
+		sed -i "s+FREETZ_BUILD_TOOLCHAIN=y+# FREETZ_BUILD_TOOLCHAIN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+# FREETZ_TOOLCHAIN_CCACHE is not set+FREETZ_TOOLCHAIN_CCACHE=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+# FREETZ_DOWNLOAD_TOOLCHAIN is not set+FREETZ_DOWNLOAD_TOOLCHAIN=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+# FREETZ_HOSTTOOLS_DOWNLOAD is not set+FREETZ_HOSTTOOLS_DOWNLOAD=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		
+	fi
+	
+	if [ -z $PARAM_TOOLCHAIN_DISABLE ]; then
+		sleep 0
+	else
+		sed -i "s+# FREETZ_BUILD_TOOLCHAIN is not set+FREETZ_BUILD_TOOLCHAIN=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_DOWNLOAD_TOOLCHAIN=y+# FREETZ_DOWNLOAD_TOOLCHAIN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_TOOLCHAIN_CCACHE=y+# FREETZ_TOOLCHAIN_CCACHE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_HOSTTOOLS_DOWNLOAD=y+# FREETZ_HOSTTOOLS_DOWNLOAD is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		make clean
+	fi
+			
 	if [ -z $PARAM_OSCAM ]; then
 		sleep 0
 	else
@@ -172,7 +198,7 @@ for bs in "${BOX_SSL[@]}"; do
 		sleep 0
 	else 
 		echo -e ${YELLOW}"Unfortunately the ${I_MATIK_ADDON} is not available, so an automatic download is now started."${NC}
-		grep -v ${I_MATIK_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+		grep -v ${I_MATIK_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei &&  mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
 		cd ${FREETZ_SSL_HOME_PATH}/addon
 		wget https://www.freetz.digital-eliteboard.com/Teamserver/Freetz/Addon/oscam%20${I_MATIK_ADDON_VERSION:6:4}x/${I_MATIK_ADDON_VERSION:6:5}/${I_MATIK_ADDON_VERSION}.tar.gz 2>/dev/null
 		tar xfvz ${I_MATIK_ADDON_VERSION}.tar.gz
@@ -184,6 +210,7 @@ for bs in "${BOX_SSL[@]}"; do
 		exit
 	fi
 		source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_on
+		sed -i "s+FREETZ_TOOLCHAIN_CCACHE=y+# FREETZ_TOOLCHAIN_CCACHE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 	fi
 	
 	if [ -z $PARAM_OSCAM_TOOL ]; then
@@ -206,6 +233,7 @@ for bs in "${BOX_SSL[@]}"; do
 		exit
 	fi
 		source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_on
+		sed -i "s+FREETZ_TOOLCHAIN_CCACHE=y+# FREETZ_TOOLCHAIN_CCACHE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 	fi
 		
 	if [ -z $PARAM_CM ]; then
@@ -227,33 +255,7 @@ for bs in "${BOX_SSL[@]}"; do
 		ln -s $USER_APPLICATION_ON $I_MATIK_PATH/user-application_please_edit_me 2>/dev/null
 		source $USER_APPLICATION_ON
 	fi
-		sed -i "s+FREETZ_DOWNLOAD_TOOLCHAIN=y+# FREETZ_DOWNLOAD_TOOLCHAIN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_TOOLCHAIN_CCACHE=y+# FREETZ_TOOLCHAIN_CCACHE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+# FREETZ_UBOOT_STATIC is not set+FREETZ_UBOOT_STATIC=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_ROOTEMU_FAKEROOT=y+# FREETZ_ROOTEMU_FAKEROOT is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+# FREETZ_ROOTEMU_PSEUDO is not set+FREETZ_ROOTEMU_PSEUDO=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_HOSTTOOLS_DOWNLOAD=y+# FREETZ_HOSTTOOLS_DOWNLOAD is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		
-	if [ -z $PARAM_TOOLCHAIN_ACTIVATE ]; then
-		sleep 0
-	else
-		sed -i "s+FREETZ_BUILD_TOOLCHAIN=y+# FREETZ_BUILD_TOOLCHAIN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-#		sed -i "s+# FREETZ_TOOLCHAIN_CCACHE is not set+FREETZ_TOOLCHAIN_CCACHE=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+# FREETZ_DOWNLOAD_TOOLCHAIN is not set+FREETZ_DOWNLOAD_TOOLCHAIN=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+# FREETZ_HOSTTOOLS_DOWNLOAD is not set+FREETZ_HOSTTOOLS_DOWNLOAD=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		
-	fi
-	
-	if [ -z $PARAM_TOOLCHAIN_DISABLE ]; then
-		sleep 0
-	else
-		sed -i "s+# FREETZ_BUILD_TOOLCHAIN is not set+FREETZ_BUILD_TOOLCHAIN=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_DOWNLOAD_TOOLCHAIN=y+# FREETZ_DOWNLOAD_TOOLCHAIN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_TOOLCHAIN_CCACHE=y+# FREETZ_TOOLCHAIN_CCACHE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_HOSTTOOLS_DOWNLOAD=y+# FREETZ_HOSTTOOLS_DOWNLOAD is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		make clean
-	fi
-			
 	if [ -z $PARAM_CONFIG ]; then
 			make $MENUC #run make menuconfig
 		else
