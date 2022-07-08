@@ -8,38 +8,38 @@ YELLOW='\033[0;33m'	# YELLOW color
 # Evaluate commandline parameter
 while [ $# -ne 0 ];do
     case "$1" in
-        -c|--config)	                PARAM_CONFIG=1
-            ;;
-        -s|--skip-image2memory)         PARAM_SKIP_I2M=1
-            ;;
-        -yo|--yes-oscam)	        PARAM_OSCAM=1
-            ;;
-        -to|--tool-oscam)	        PARAM_OSCAM_TOOL=1
-            ;;
-        -do|--del-oscam)	        PARAM_DEL_OSCAM=1
-            ;;
-        -nc|--no-clientbox)	        PARAM_SKIP_CLIENT=1
-            ;;
-        -nm|--no-masterbox)	        PARAM_SKIP_MASTER=1
-            ;;
-        -kp|--kernel-precompiled)       PARAM_KERNEL=1
-            ;;
-        -ta|--toolchain-activate)       PARAM_TOOLCHAIN_ACTIVATE=1
-            ;;
-        -td|--toolchain-disable)        PARAM_TOOLCHAIN_DISABLE=1
-            ;;
-        -cm|--callmonitor)	        PARAM_CM=1
-            ;;
-        -rr|--rrdstats)	                PARAM_RR=1
-            ;;
-        -us|--user-skins)		PARAM_SKINS=1
-            ;;
-        -ua|--user-application)	        PARAM_USER_SCRIPTS=1
-            ;;
-        -*|--*)			        PARAM_BAD=1
-            ;;
-        *)				BOX_SSL+=( $1 )
-            ;;
+	-c|--config)			PARAM_CONFIG=1
+	    ;;
+	-s|--skip-image2memory)	 	PARAM_SKIP_I2M=1
+	    ;;
+	-yo|--yes-oscam)		PARAM_OSCAM=1
+	    ;;
+	-to|--tool-oscam)		PARAM_OSCAM_TOOL=1
+	    ;;
+	-do|--del-oscam)		PARAM_DEL_OSCAM=1
+	    ;;
+	-nc|--no-clientbox)		PARAM_SKIP_CLIENT=1
+	    ;;
+	-nm|--no-masterbox)		PARAM_SKIP_MASTER=1
+	    ;;
+	-kp|--kernel-precompiled)       PARAM_KERNEL=1
+	    ;;
+	-ta|--toolchain-activate)       PARAM_TOOLCHAIN_ACTIVATE=1
+	    ;;
+	-td|--toolchain-disable)	PARAM_TOOLCHAIN_DISABLE=1
+	    ;;
+	-cm|--callmonitor)		PARAM_CM=1
+	    ;;
+	-rr|--rrdstats)			PARAM_RR=1
+	    ;;
+	-us|--user-skins)		PARAM_SKINS=1
+	    ;;
+	-ua|--user-application)		PARAM_USER_SCRIPTS=1
+	    ;;
+	-*|--*)				PARAM_BAD=1
+	    ;;
+	*)				BOX_SSL+=( $1 )
+	    ;;
     esac
     shift
 done
@@ -110,22 +110,22 @@ for bs in "${BOX_SSL[@]}"; do
 
 	# oscam to static.pkg
 	if [ -z $PARAM_OSCAM ]; then
-	       sleep 0
+		sleep 0
 	else
-	       source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_addon_on
+		source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_addon_on
 	fi
 	
 	if [ -z $PARAM_OSCAM_TOOL ]; then
-	       sleep 0
+		sleep 0
 	else
-	       source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_addon_on
+		source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_addon_on
 	fi
 	
 	# skins to static.pkg
 	if [ -z $PARAM_SKINS ]; then
-	       sleep 0
+		sleep 0
 	else
-	       source $I_MATIK_PATH/support/freetz/scripts/packages/skins_on
+		source $I_MATIK_PATH/support/freetz/scripts/packages/skins_on
 	fi
 	
 	# update git working copy
@@ -167,43 +167,43 @@ for bs in "${BOX_SSL[@]}"; do
 		sed -i "s+FREETZ_JLEVEL=20+FREETZ_JLEVEL=$MAX_CPUS+g" $FREETZ_SSL_HOME_PATH/.config
 
 	if [ -z $PARAM_OSCAM ]; then
-	        sleep 0
+		sleep 0
 	else
 
 	if [ -d "${I_MATIK_ADDON}" ];then 
-	        sleep 0
+		sleep 0
 	else 
-	        echo -e ${YELLOW}"Unfortunately the ${I_MATIK_ADDON} is not available, so an automatic download is now started."${NC}
-	        grep -v ${I_MATIK_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
-	        cd ${FREETZ_SSL_HOME_PATH}/addon
-	        wget https://www.freetz.digital-eliteboard.com/Teamserver/Freetz/Addon/oscam%20${I_MATIK_ADDON_VERSION:6:4}x/${I_MATIK_ADDON_VERSION:6:5}/${I_MATIK_ADDON_VERSION}.tar.gz 2>/dev/null
-	        tar xfvz ${I_MATIK_ADDON_VERSION}.tar.gz
-	        chmod -v 755 ${I_MATIK_ADDON_VERSION}
-	        rm ${I_MATIK_ADDON_VERSION}.tar.gz
-	        echo -e ${GREEN}"rolu2 from the DEB forum is responsible for maintaining the oscam add-on. I have only developed one way that it is equally available to everyone in i-matik. Therefore, I will not give support for the Oscam add-on."${NC}
-	        echo -e ${RED}"Please start again, because the oscam Add-on of rolu2 from the DEB Forum was not under Add-on."${NC}
-	        source $I_MATIK_PATH/support/freetz/scripts/patches/patches_off
-	        exit
+		echo -e ${YELLOW}"Unfortunately the ${I_MATIK_ADDON} is not available, so an automatic download is now started."${NC}
+		grep -v ${I_MATIK_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+		cd ${FREETZ_SSL_HOME_PATH}/addon
+		wget https://www.freetz.digital-eliteboard.com/Teamserver/Freetz/Addon/oscam%20${I_MATIK_ADDON_VERSION:6:4}x/${I_MATIK_ADDON_VERSION:6:5}/${I_MATIK_ADDON_VERSION}.tar.gz 2>/dev/null
+		tar xfvz ${I_MATIK_ADDON_VERSION}.tar.gz
+		chmod -v 755 ${I_MATIK_ADDON_VERSION}
+		rm ${I_MATIK_ADDON_VERSION}.tar.gz
+		echo -e ${GREEN}"rolu2 from the DEB forum is responsible for maintaining the oscam add-on. I have only developed one way that it is equally available to everyone in i-matik. Therefore, I will not give support for the Oscam add-on."${NC}
+		echo -e ${RED}"Please start again, because the oscam Add-on of rolu2 from the DEB Forum was not under Add-on."${NC}
+		source $I_MATIK_PATH/support/freetz/scripts/patches/patches_off
+		exit
 	fi
 	
 	if [ -z $PARAM_OSCAM_TOOL ]; then
-	        sleep 0
+		sleep 0
 	else
 
 	if [ -d "${I_MATIK_ADDON}" ];then 
-	        sleep 0
+		sleep 0
 	else 
-	        echo -e ${YELLOW}"Unfortunately the ${I_MATIK_ADDON} is not available, so an automatic download is now started."${NC}
-	        grep -v ${I_MATIK_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
-	        cd ${FREETZ_SSL_HOME_PATH}/addon
-	        wget https://www.freetz.digital-eliteboard.com/Teamserver/Freetz/Addon/oscam%20${I_MATIK_ADDON_VERSION:6:4}x/${I_MATIK_ADDON_VERSION:6:5}/${I_MATIK_ADDON_VERSION}.tar.gz 2>/dev/null
-	        tar xfvz ${I_MATIK_ADDON_VERSION}.tar.gz
-	        chmod -v 755 ${I_MATIK_ADDON_VERSION}
-	        rm ${I_MATIK_ADDON_VERSION}.tar.gz
-	        echo -e ${GREEN}"rolu2 from the DEB forum is responsible for maintaining the oscam add-on. I have only developed one way that it is equally available to everyone in i-matik. Therefore, I will not give support for the Oscam add-on."${NC}
-	        echo -e ${RED}"Please start again, because the oscam Add-on of rolu2 from the DEB Forum was not under Add-on."${NC}
-	        source $I_MATIK_PATH/support/freetz/scripts/patches/patches_off
-	        exit
+		echo -e ${YELLOW}"Unfortunately the ${I_MATIK_ADDON} is not available, so an automatic download is now started."${NC}
+		grep -v ${I_MATIK_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+		cd ${FREETZ_SSL_HOME_PATH}/addon
+		wget https://www.freetz.digital-eliteboard.com/Teamserver/Freetz/Addon/oscam%20${I_MATIK_ADDON_VERSION:6:4}x/${I_MATIK_ADDON_VERSION:6:5}/${I_MATIK_ADDON_VERSION}.tar.gz 2>/dev/null
+		tar xfvz ${I_MATIK_ADDON_VERSION}.tar.gz
+		chmod -v 755 ${I_MATIK_ADDON_VERSION}
+		rm ${I_MATIK_ADDON_VERSION}.tar.gz
+		echo -e ${GREEN}"rolu2 from the DEB forum is responsible for maintaining the oscam add-on. I have only developed one way that it is equally available to everyone in i-matik. Therefore, I will not give support for the Oscam add-on."${NC}
+		echo -e ${RED}"Please start again, because the oscam Add-on of rolu2 from the DEB Forum was not under Add-on."${NC}
+		source $I_MATIK_PATH/support/freetz/scripts/patches/patches_off
+		exit
 	fi
 		source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_on
 	fi
@@ -237,22 +237,22 @@ EOF
 	fi
 	
 	if [ -z $PARAM_CM ]; then
-	        sleep 0
+		sleep 0
 	else
 		source $I_MATIK_PATH/support/freetz/scripts/packages/callmonitor_on
 	fi
 	
 	if [ -z $PARAM_RR ]; then
-	        sleep 0
+		sleep 0
 	else
 		source $I_MATIK_PATH/support/freetz/scripts/packages/rrdstats_on
 		source $I_MATIK_PATH/support/freetz/scripts/packages/cifsmount_on
 	fi
 	
 	if [ -z $PARAM_USER_SCRIPTS ]; then
-	        sleep 0
+		sleep 0
 	else
-	        ln -s $USER_APPLICATION_ON $I_MATIK_PATH/user-application_please_edit_me 2>/dev/null
+		ln -s $USER_APPLICATION_ON $I_MATIK_PATH/user-application_please_edit_me 2>/dev/null
 		source $USER_APPLICATION_ON
 	fi
 		sed -i "s+FREETZ_DOWNLOAD_TOOLCHAIN=y+# FREETZ_DOWNLOAD_TOOLCHAIN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
@@ -263,9 +263,9 @@ EOF
 		sed -i "s+FREETZ_HOSTTOOLS_DOWNLOAD=y+# FREETZ_HOSTTOOLS_DOWNLOAD is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		
 		if [ -z $PARAM_TOOLCHAIN_ACTIVATE ]; then
-	        sleep 0
+		sleep 0
 	else
-	        sed -i "s+FREETZ_BUILD_TOOLCHAIN=y+# FREETZ_BUILD_TOOLCHAIN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_BUILD_TOOLCHAIN=y+# FREETZ_BUILD_TOOLCHAIN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+# FREETZ_TOOLCHAIN_CCACHE is not set+FREETZ_TOOLCHAIN_CCACHE=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+# FREETZ_DOWNLOAD_TOOLCHAIN is not set+FREETZ_DOWNLOAD_TOOLCHAIN=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+# FREETZ_HOSTTOOLS_DOWNLOAD is not set+FREETZ_HOSTTOOLS_DOWNLOAD=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
@@ -273,9 +273,9 @@ EOF
 	fi
 	
 	if [ -z $PARAM_TOOLCHAIN_DISABLE ]; then
-	        sleep 0
+		sleep 0
 	else
-	        sed -i "s+# FREETZ_BUILD_TOOLCHAIN is not set+FREETZ_BUILD_TOOLCHAIN=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+# FREETZ_BUILD_TOOLCHAIN is not set+FREETZ_BUILD_TOOLCHAIN=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_DOWNLOAD_TOOLCHAIN=y+# FREETZ_DOWNLOAD_TOOLCHAIN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_TOOLCHAIN_CCACHE=y+# FREETZ_TOOLCHAIN_CCACHE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_HOSTTOOLS_DOWNLOAD=y+# FREETZ_HOSTTOOLS_DOWNLOAD is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
@@ -330,46 +330,46 @@ EOF
 		fi
 	
 	if [ -z $PARAM_KERNEL ]; then
-	        sleep 0
+		sleep 0
 	else
 		make $KERNEL #run make kernel-precompiled
 	fi
 		sed -i "s+FREETZ_JLEVEL=$MAX_CPUS+FREETZ_JLEVEL=20+g" $FREETZ_SSL_HOME_PATH/.config
 		
 	if [ -z $PARAM_OSCAM ]; then
-	       sleep 0
+		sleep 0
 	else
 		source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_off
 	fi
 	
 	if [ -z $PARAM_OSCAM_TOOL ]; then
-	       sleep 0
+		sleep 0
 	else
 		source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_off
 	fi
 	
 	# skins to static.pkg
 	if [ -z $PARAM_SKINS ]; then
-	       sleep 0
+		sleep 0
 	else
-	       source $I_MATIK_PATH/support/freetz/scripts/packages/skins_off
+		source $I_MATIK_PATH/support/freetz/scripts/packages/skins_off
 	fi
 	
 	if [ -z $PARAM_CM ]; then
-	        sleep 0
+		sleep 0
 	else
 		source $I_MATIK_PATH/support/freetz/scripts/packages/callmonitor_off
 	fi
 	
 	if [ -z $PARAM_RR ]; then
-	        sleep 0
+		sleep 0
 	else
 		source $I_MATIK_PATH/support/freetz/scripts/packages/rrdstats_off
 		source $I_MATIK_PATH/support/freetz/scripts/packages/cifsmount_off
 	fi
 	
 	if [ -z $PARAM_USER_SCRIPTS ]; then
-	        sleep 0
+		sleep 0
 	else
 		source $USER_APPLICATION_OFF
 	fi
@@ -396,7 +396,7 @@ EOF
 	done; 
 
 	if [ -z $PARAM_SKIP_CLIENT ]; then
-	        sleep 0
+		sleep 0
 	else
 		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox 2>/dev/null
 		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox 2>/dev/null
@@ -404,7 +404,7 @@ EOF
 	fi
 	
 	if [ -z $PARAM_SKIP_MASTER ]; then
-	        sleep 0
+		sleep 0
 	else
 		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox 2>/dev/null
 		mv -f $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox_no $I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox 2>/dev/null
@@ -417,7 +417,7 @@ EOF
 	[[ $COUNT > 1 ]] && printf "\n${GREEN}${BOX_NAME} SSL ${SSL_VERSION}${NC} build finished in $(($timediff / 60)) minutes and $(($timediff % 60)) seconds. ${YELLOW}<- end time $(date +"%Y-%m-%d %H:%M:%S")${NC}\n"
 	
 	if [ -z $PARAM_DEL_OSCAM ]; then
-	        sleep 0
+		sleep 0
 	else
 		rm $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn*-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx
 	fi
