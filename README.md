@@ -20,7 +20,7 @@ Options
   -nc,--no-clientbox		No client box image is created
   -nm,--no-masterbox		No master box image is created
   -kp,--kernel-precompiled      Make kernel-precompiled
-  -kp,--kernel-clean            Make kernel-precompiled
+  -kc,--kernel-clean            Make kernel-clean
   -ta,--toolchain-activate      Activate toolchain
   -td,--toolchain-disable       Disable toolchain
   -cm,--callmonitor		Callmonitor
