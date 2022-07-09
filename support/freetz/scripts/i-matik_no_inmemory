@@ -24,6 +24,8 @@ while [ $# -ne 0 ];do
 	    ;;
 	-kp|--kernel-precompiled)       PARAM_KERNEL=1
 	    ;;
+	-kc|--kernel-clean)		PARAM_KERNEL_CLEAN=1
+	    ;;
 	-ta|--toolchain-activate)       PARAM_TOOLCHAIN_ACTIVATE=1
 	    ;;
 	-td|--toolchain-disable)	PARAM_TOOLCHAIN_DISABLE=1
@@ -235,6 +237,18 @@ for bs in "${BOX_SSL[@]}"; do
 		source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_on
 		sed -i "s+FREETZ_TOOLCHAIN_CCACHE=y+# FREETZ_TOOLCHAIN_CCACHE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 	fi
+	
+	if [ -z $PARAM_KERNEL ]; then
+		sleep 0
+	else
+		make kernel-precompiled #run make kernel-precompiled
+	fi
+	
+	if [ -z $PARAM_KERNEL_CLEAN ]; then
+		sleep 0
+	else
+		make kernel-dirclean #run make kernel-dirclean
+	fi
 		
 	if [ -z $PARAM_CM ]; then
 		sleep 0
@@ -297,12 +311,6 @@ for bs in "${BOX_SSL[@]}"; do
 			IMAGE_RENAMED_FILENAME="${IMAGE_RENAMED_FILENAME}.inmemory"
 			#mv "$FREETZ_SSL_HOME_PATH/$END_IMAGE_PATH/$IMAGE_ORIGINAL_FILENAME" "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/$IMAGE_RENAMED_FILENAME" # move inmemory filename to renamed filename
 	fi
-	
-	if [ -z $PARAM_KERNEL ]; then
-		sleep 0
-	else
-		make $KERNEL #run make kernel-precompiled
-	fi	
 	
 		sed -i "s+FREETZ_JLEVEL=$MAX_CPUS+FREETZ_JLEVEL=20+g" $FREETZ_SSL_HOME_PATH/.config
 	

@@ -12,11 +12,19 @@ while [ $# -ne 0 ];do
 	    ;;
 	-s|--skip-image2memory)	 	PARAM_SKIP_I2M=1
 	    ;;
+	-yo|--yes-oscam)		PARAM_OSCAM=1
+	    ;;
+	-to|--tool-oscam)		PARAM_OSCAM_TOOL=1
+	    ;;
+	-do|--del-oscam)		PARAM_DEL_OSCAM=1
+	    ;;
 	-nc|--no-clientbox)		PARAM_SKIP_CLIENT=1
 	    ;;
 	-nm|--no-masterbox)		PARAM_SKIP_MASTER=1
 	    ;;
 	-kp|--kernel-precompiled)       PARAM_KERNEL=1
+	    ;;
+	-kc|--kernel-clean)		PARAM_KERNEL_CLEAN=1
 	    ;;
 	-ta|--toolchain-activate)       PARAM_TOOLCHAIN_ACTIVATE=1
 	    ;;
@@ -145,6 +153,18 @@ for bs in "${BOX_SSL[@]}"; do
 		cp -f "$conf" .config	#copy box config to .config
 		sed -i "s+FREETZ_JLEVEL=20+FREETZ_JLEVEL=$MAX_CPUS+g" $FREETZ_SSL_HOME_PATH/.config
 	
+	if [ -z $PARAM_KERNEL ]; then
+		sleep 0
+	else
+		make kernel-precompiled #run make kernel-precompiled
+	fi
+	
+	if [ -z $PARAM_KERNEL_CLEAN ]; then
+		sleep 0
+	else
+		make kernel-dirclean #run make kernel-dirclean
+	fi
+		
 	if [ -z $PARAM_CM ]; then
 		sleep 0
 	else
@@ -231,11 +251,6 @@ for bs in "${BOX_SSL[@]}"; do
 			#mv "$FREETZ_SSL_HOME_PATH/$END_IMAGE_PATH/$IMAGE_ORIGINAL_FILENAME" "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/$IMAGE_RENAMED_FILENAME" # move inmemory filename to renamed filename
 	fi
 	
-	if [ -z $PARAM_KERNEL ]; then
-		sleep 0
-	else
-		make $KERNEL #run make kernel-precompiled
-	fi
 		sed -i "s+FREETZ_JLEVEL=$MAX_CPUS+FREETZ_JLEVEL=20+g" $FREETZ_SSL_HOME_PATH/.config
 	
 	# skins to static.pkg
