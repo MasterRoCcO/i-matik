@@ -58,3 +58,5 @@ To create an image for the Fritz!Box 7490 to push, use this command :
 ./i-matik toolchain.11 
 ```
 Create your own toolchains
+```
+./i-matik create
