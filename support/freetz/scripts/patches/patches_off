@@ -1,5 +1,4 @@
 #!/bin/bash
-
 rm -f $FREETZ_SSL_HOME_PATH/make/mod/files/root/etc/default.mod/motd 2>/dev/null
 rm -f $FREETZ_SSL_HOME_PATH/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh 2>/dev/null
 

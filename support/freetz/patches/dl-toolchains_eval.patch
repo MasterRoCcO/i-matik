@@ -1,0 +1,11 @@
+--- tools/dl-toolchains_eval	2022-07-07 14:25:38.776030170 +0200
++++ tools/dl-toolchains_eval	2022-07-07 15:02:23.487531012 +0200
+@@ -3,7 +3,7 @@
+ #Arg $1: <VERSION>
+ #Arg $2: <new|old|all>
+ 
+-DLTCIN='config/mod/dl-toolchain.in'
++DLTCIN='config/mod/dl-toolchain.in_neu'
+ VERSION="$(tools/freetz_revision short)"
+ VERSION="${1:-r${VERSION%-*}}"
+ [ "$1" == "own" ] && VERSION="rLOCAL"

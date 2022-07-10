@@ -1,8 +1,10 @@
 #!/bin/bash
 cp -ar $I_MATIK_PATH/support/freetz/patches/login.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/menu-new.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+
 cd $FREETZ_SSL_HOME_PATH
 patch -p0 -b < login.patch
 patch -p0 -b < menu-new.patch
+
 rm -rf "$FREETZ_SSL_HOME_PATH/login.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/menu-new.patch" 2>/dev/null
