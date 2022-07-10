@@ -137,4 +137,3 @@ finish=$(date +"%s")	# build finished time
 timediff=$(($finish-$beginbs))	# build time
 [[ $COUNT > 1 ]] && printf "\n${GREEN}${BOX_NAME} SSL ${SSL_VERSION}${NC} build finished in $(($timediff / 60)) minutes and $(($timediff % 60)) seconds. ${YELLOW}<- end time $(date +"%Y-%m-%d %H:%M:%S")${NC}\n"
 $I_MATIK_VERSION	# show i-matik disclaimer
-

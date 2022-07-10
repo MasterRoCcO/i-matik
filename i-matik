@@ -886,6 +886,8 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf ${GREEN}"List of currently push supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST}\n"
 	printf ${BLUE}"To create an image for the Fritz!Box 7490 to push, use this command :${NC}\n"
 	printf "$0 7490 -push\n"
-	printf "$0 toolchain.11 ${GREEN}Create your own toolchains${NC}\n"
+	printf "${GREEN}push to box${NC}\n"
+	printf "$0 toolchain.11 \n"
+	printf "${GREEN}Create your own toolchains${NC}\n"
 	exit 0
 fi
