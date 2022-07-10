@@ -108,7 +108,7 @@ else
 fi
 # create oscam toolchain end
 
-if [ $COUNT -eq 0 -o ! -z $PARAM_BAD ]; then
+if [ ! -z $PARAM_BAD ]; then
 	printf "  -my\t\t\t\tCreate an image for My Boxes\n"
 	printf "  -my-multi\t\t\tCreate an image for My Boxes in Multie\n"
 	printf "  -my-os74\t\t\tCreate an image for My Boxes with the os74\n"
