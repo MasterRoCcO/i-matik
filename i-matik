@@ -4,6 +4,31 @@ git pull
 source $I_MATIK_PATH/support/i-matik/i-matik.config
 source $I_MATIK_INSTAL_CHECK
 VERSIONS_NR=0.58.4
+while [ $# -ne 0 ];do
+    case "$1" in
+	-my)				PARAM_MY_BOXES=1
+	    ;;
+	-my-multi)			PARAM_MY_BOXES_MULTI=1
+	    ;;
+	-my-os74)			PARAM_MY_OS74=1
+	    ;;	
+	-all)				PARAM_ALL=1
+	    ;;     
+	-without-multi)			PARAM_WITHOUT_MULTI=1
+	    ;;   
+	-only-multi)			PARAM_ONLY_MULTI=1
+	    ;;   
+	-all-toolchain)			PARAM_ALL_TOOLCHAIN=1
+	    ;;   
+	-without-multi-toolchain)	PARAM_WITHOUT_MULTI_TOOLCHAIN=1
+	    ;;   
+	-only-multi-toolchain)		PARAM_ONLY_MULTI_TOOLCHAIN=1
+	    ;;
+	-*|--*)				PARAM_BAD=1
+	    ;;
+    esac
+    shift
+done
 NC='\033[0m' 		# RESET color
 RED='\033[0;31m'	# RED color
 GREEN='\033[0;32m'	# GREEN color
@@ -843,7 +868,6 @@ SUPPORTED_BOX_TYPE_LIST="$(echo $SUPPORTED_BOX_TYPE_LIST | tr ' ' '\n' | sort | 
 SUPPORTED_SSL_NUMBER_LIST="$(find "$I_MATIK_PATH/support/" -name "openssl_*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
 SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
-
 	printf "i-matik comes with ABSOLUTELY NO WARRANTY.  This is free software, and you\n"
 	printf "are welcome to redistribute it under certain conditions.  See the GNU\n"
 	printf "General Public Licence for details.\n\n"
@@ -891,7 +915,17 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf ${BLUE}"To create an image for the Fritz!Box 7490 to push, use this command :${NC}\n"
 	printf "$0 7490 -push\n"
 	printf "${GREEN}push to box${NC}\n"
-	printf "$0 toolchain.11 \n"
 	printf "${GREEN}Create your own toolchains${NC}\n"
+	printf "$0 toolchain.11\n"
+	printf "${GREEN}Create your own Images${NC}\n"
+	printf "$0 create -my\t\t\t\tCreate an image for My Boxes\n"
+	printf "$0 create -my-multi\t\t\tCreate an image for My Boxes in Multie\n"
+	printf "$0 create -my-os74\t\t\tCreate an image for My Boxes with the os74\n"
+	printf "$0 create -all\t\t\t\tCreate all images\n"
+	printf "$0 create -without-multi\t\tCreate all images without Multi\n"
+	printf "$0 create -only-multi\t\t\tCreate all images only him Multi\n"
+	printf "$0 create -all-toolchain\t\tCreate all Toolchains for oscam\n"
+	printf "$0 create -without-multi-toolchain\tCreate all Toolchains without Multi for oscam\n"
+	printf "$0 create -only-multi-toolchain\t\tCreate all Toolchains only him Multi for oscam\n"
 	exit 0
 fi
