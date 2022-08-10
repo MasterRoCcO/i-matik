@@ -13,6 +13,10 @@ if ! dpkg -s $PACKAGES >/dev/null 2>&1; then
 #	sudo dpkg --add-architecture i386
 	sudo apt-get install $PACKAGES
 #	sudo apt-get update && sudo apt-get -y upgrade && sudo apt dist-upgrade && sudo apt autoclean && sudo apt autoremove
+	cd /tmp
+	wget http://mirrors.kernel.org/ubuntu/pool/universe/u/upx-ucl/upx-ucl_3.95-2build1_amd64.deb
+	sudo apt install /tmp/upx-ucl_3.95-2build1_amd64.deb
+	echo upx-ucl hold | sudo dpkg --set-selections
 fi
 else
        echo "Non-compatible version"
