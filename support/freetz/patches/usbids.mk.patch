@@ -1,0 +1,9 @@
+--- make/usbids/usbids.mk	2022-08-17 09:18:28.494824000 +0200
++++ make/usbids/usbids.mk	2022-08-17 09:50:11.864151468 +0200
+@@ -1,5 +1,6 @@
+ $(call PKG_INIT_BIN, 0.0)
+ $(PKG)_SOURCE:=usb.ids
++$(PKG)_HASH:=0343132c1f0850547ada9b357a7e8babe0c4ec7e936c945f4262fac5412c2f9f
+ $(PKG)_SITE:=http://linux-usb.sourceforge.net
+ 
+ $(PKG)_TARGET_PATH:=/usr/share/usb.ids
