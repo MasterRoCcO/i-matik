@@ -724,79 +724,6 @@ source $I_MATIK_PATH/support/freetz/scripts_toolchain/./i-matik_toolchain
 elif [[ $1 == 'create' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/packages/create_boxes
 
-###### inhaus and labor
-elif [[ $1 == '2400os74.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
-
-elif [[ $1 == '3000os74.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
-
-elif [[ $1 == '3000AXos74.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
-
-elif [[ $1 == '4060os74.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
-elif [[ $1 == '4060os74.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
-
-elif [[ $1 == '5530os74.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
-
-elif [[ $1 == '6591os74.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
-elif [[ $1 == '6591os74.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
-
-elif [[ $1 == '6660os74.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
-elif [[ $1 == '6660os74.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
-
-elif [[ $1 == '6690os74.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
-elif [[ $1 == '6690os74.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
-
-elif [[ $1 == '68504gos74.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
-elif [[ $1 == '68504gos74.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
-
-elif [[ $1 == '68505gos74.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
-elif [[ $1 == '68505gos74.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
-
-elif [[ $1 == '6890os74.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
-elif [[ $1 == '6890os74.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
-
-elif [[ $1 == '7490os74.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
-elif [[ $1 == '7490os74.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
-
-elif [[ $1 == '7530os74.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
-elif [[ $1 == '7530os74.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
-
-elif [[ $1 == '7530AXos74.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_libusb1
-elif [[ $1 == '7530AXos74.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
-
-elif [[ $1 == '7590os74.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
-elif [[ $1 == '7590os74.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
-
-elif [[ $1 == '7590AXos74.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
-elif [[ $1 == '7590AXos74.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
-
 else
 # Generate list of supported devices
 SUPPORTED_BOX_TYPE_LIST_SSL_1_0="$(find "$I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10" -name "config_fritz*openssl_1_0*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
@@ -895,7 +822,6 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf "${GREEN}Create your own Images${NC}\n"
 	printf "$0 create -my\t\t\t\tCreate an image for My Boxes\n"
 	printf "$0 create -my-multi\t\t\tCreate an image for My Boxes in Multie\n"
-	printf "$0 create -my-os74\t\t\tCreate an image for My Boxes with the os74\n"
 	printf "$0 create -all\t\t\t\tCreate all images\n"
 	printf "$0 create -without-multi\t\tCreate all images without Multi\n"
 	printf "$0 create -only-multi\t\t\tCreate all images only him Multi\n"
