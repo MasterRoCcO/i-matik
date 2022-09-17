@@ -1,0 +1,22 @@
+--- make/cifsmount/cifsmount.mk	2022-09-17 20:13:16.957299643 +0200
++++ make/cifsmount/cifsmount.mk	2022-09-17 20:12:06.938753664 +0200
+@@ -1,6 +1,6 @@
+-$(call PKG_INIT_BIN, 6.15)
++$(call PKG_INIT_BIN, 7.0)
+ $(PKG)_SOURCE:=cifs-utils-$($(PKG)_VERSION).tar.bz2
+-$(PKG)_HASH:=a7b6940e93250c1676a6fa66b6ead91b78cd43a5fee99cc462459c8b9cf1e6f4
++$(PKG)_HASH:=0defaab85bd3ea46ffc45ab41fb0d0ad54d05ae2cfaa7e503de86d4f12bc8161
+ $(PKG)_SITE:=@SAMBA/linux-cifs/cifs-utils
+ ### WEBSITE:=https://wiki.samba.org/index.php/LinuxCIFS_utils
+ ### CHANGES:=https://wiki.samba.org/index.php/LinuxCIFS_utils#News
+--- make/cifsmount/Config.in	2022-08-17 10:14:09.959990000 +0200
++++ make/cifsmount/Config.in	2022-09-17 20:08:51.094804384 +0200
+@@ -2,7 +2,7 @@
+ 	depends on !(FREETZ_AVM_HAS_CIFS_BUILTIN || FREETZ_REPLACE_MODULE_AVAILABLE)
+ 
+ config FREETZ_PACKAGE_CIFSMOUNT
+-	bool "Cifsmount 6.15"
++	bool "Cifsmount 7.0"
+ 	depends on FREETZ_AVM_HAS_CIFS_BUILTIN || FREETZ_REPLACE_MODULE_AVAILABLE
+ 	select FREETZ_MODULE_cifs if !FREETZ_AVM_HAS_CIFS_BUILTIN
+ 	default n
