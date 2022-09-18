@@ -1,0 +1,228 @@
+--- make/pcsc-lite/Config.in	2022-08-17 10:14:10.087988000 +0200
++++ make/pcsc-lite/Config.in	2022-09-14 20:03:09.158580565 +0200
+@@ -1,5 +1,5 @@
+ config FREETZ_PACKAGE_PCSC_LITE
+-	bool "PCSC-lite 1.9.8 (binary only)"
++	bool "PCSC-lite 1.9.9 (binary only)"
+ 	select FREETZ_LIB_libdl       if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
+ 	select FREETZ_LIB_libpthread  if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
+ 	select FREETZ_LIB_librt       if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
+--- make/pcsc-lite/pcsc-lite.mk	2022-08-17 10:14:10.087988000 +0200
++++ make/pcsc-lite/pcsc-lite.mk	2022-09-14 20:06:23.934252898 +0200
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_BIN, 1.9.8)
++$(call PKG_INIT_BIN, 1.9.9)
+ $(PKG)_LIB_VERSION:=1.0.0
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.bz2
+-$(PKG)_HASH:=502d80c557ecbee285eb99fe8703eeb667bcfe067577467b50efe3420d1b2289
++$(PKG)_HASH:=cbcc3b34c61f53291cecc0d831423c94d437b188eb2b97b7febc08de1c914e8a
+ $(PKG)_SITE:=https://pcsclite.apdu.fr/files
+ ### WEBSITE:=https://pcsclite.apdu.fr/
+ ### MANPAGE:=https://salsa.debian.org/rousseau/PCSC/blob/master/README
+--- make/cifsmount/cifsmount.mk	2022-09-17 20:13:16.957299643 +0200
++++ make/cifsmount/cifsmount.mk	2022-09-17 20:12:06.938753664 +0200
+@@ -1,6 +1,6 @@
+-$(call PKG_INIT_BIN, 6.15)
++$(call PKG_INIT_BIN, 7.0)
+ $(PKG)_SOURCE:=cifs-utils-$($(PKG)_VERSION).tar.bz2
+-$(PKG)_HASH:=a7b6940e93250c1676a6fa66b6ead91b78cd43a5fee99cc462459c8b9cf1e6f4
++$(PKG)_HASH:=0defaab85bd3ea46ffc45ab41fb0d0ad54d05ae2cfaa7e503de86d4f12bc8161
+ $(PKG)_SITE:=@SAMBA/linux-cifs/cifs-utils
+ ### WEBSITE:=https://wiki.samba.org/index.php/LinuxCIFS_utils
+ ### CHANGES:=https://wiki.samba.org/index.php/LinuxCIFS_utils#News
+--- make/cifsmount/Config.in	2022-08-17 10:14:09.959990000 +0200
++++ make/cifsmount/Config.in	2022-09-17 20:08:51.094804384 +0200
+@@ -2,7 +2,7 @@
+ 	depends on !(FREETZ_AVM_HAS_CIFS_BUILTIN || FREETZ_REPLACE_MODULE_AVAILABLE)
+ 
+ config FREETZ_PACKAGE_CIFSMOUNT
+-	bool "Cifsmount 6.15"
++	bool "Cifsmount 7.0"
+ 	depends on FREETZ_AVM_HAS_CIFS_BUILTIN || FREETZ_REPLACE_MODULE_AVAILABLE
+ 	select FREETZ_MODULE_cifs if !FREETZ_AVM_HAS_CIFS_BUILTIN
+ 	default n
+--- make/imagemagick/Config.in	2022-09-18 09:29:13.343138420 +0200
++++ make/imagemagick/Config.in	2022-09-18 10:21:03.317815259 +0200
+@@ -1,5 +1,5 @@
+ menuconfig FREETZ_PACKAGE_IMAGEMAGICK
+-	bool "ImageMagick 7.0.10-10 (binary only)"
++	bool "ImageMagick 7.1.0-48 (binary only)"
+ 	select FREETZ_LIB_libpthread  if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
+ 	select FREETZ_LIB_libm        if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
+ 	default n
+@@ -39,7 +39,7 @@
+ config FREETZ_PACKAGE_IMAGEMAGICK_png
+ 	bool "Support png"
+ 	default y
+-	select FREETZ_LIB_libpng12
++	select FREETZ_LIB_libpng16
+ 
+ config FREETZ_PACKAGE_IMAGEMAGICK_xml
+ 	bool "Support xml"
+--- make/imagemagick/external.files	2022-09-18 09:29:13.343138000 +0200
++++ make/imagemagick/external.files	2022-09-18 10:19:37.523708711 +0200
+@@ -1,6 +1,6 @@
+ if [ "$EXTERNAL_FREETZ_PACKAGE_IMAGEMAGICK" ]; then
+ 	[ "$FREETZ_PACKAGE_IMAGEMAGICK"        == "y" ] && EXTERNAL_FILES+=" /usr/bin/magick"
+-	[ "$FREETZ_PACKAGE_IMAGEMAGICK_STATIC" != "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libMagickCore-7-Q16.so.7.0.0"
+-	[ "$FREETZ_PACKAGE_IMAGEMAGICK_STATIC" != "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libMagickWand-7-Q16.so.7.0.0"
++	[ "$FREETZ_PACKAGE_IMAGEMAGICK_STATIC" != "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libMagickCore-7-Q16.so.10"
++	[ "$FREETZ_PACKAGE_IMAGEMAGICK_STATIC" != "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libMagickWand-7-Q16.so.10"
+ 	[ "$FREETZ_PACKAGE_IMAGEMAGICK_xml"    == "y" ] && EXTERNAL_FILES+=" /etc/ImageMagick-7"
+ fi
+--- make/imagemagick/external.in	2022-09-18 09:29:13.343138000 +0200
++++ make/imagemagick/external.in	2022-09-18 10:19:58.095248620 +0200
+@@ -5,7 +5,7 @@
+ 	help
+ 		externals the following file(s):
+ 		 /usr/bin/magick
+-		 ${FREETZ_LIBRARY_DIR}/libMagickWand-7-Q16.so.7.0.0
+-		 ${FREETZ_LIBRARY_DIR}/libMagickCore-7-Q16.so.7.0.0
++		 ${FREETZ_LIBRARY_DIR}/libMagickWand-7-Q16.so.10
++		 ${FREETZ_LIBRARY_DIR}/libMagickCore-7-Q16.so.10
+ 		 /etc/ImageMagick-7
+ 
+--- make/imagemagick/imagemagick.mk	2022-09-18 09:29:13.343138000 +0200
++++ make/imagemagick/imagemagick.mk	2022-09-18 10:17:42.090371767 +0200
+@@ -1,9 +1,9 @@
+-$(call PKG_INIT_BIN, 7.0.10-10)
++$(call PKG_INIT_BIN, 7.1.0-48)
+ $(PKG)_MAJOR_VERSION:=$(call GET_MAJOR_VERSION,$($(PKG)_VERSION),1)
+ $(PKG)_ABI_SUFFIX:=Q16
+ $(PKG)_SOURCE:=ImageMagick-$($(PKG)_VERSION).tar.xz
+-$(PKG)_HASH:=df1a37b73aa49423abb422c2150a0e1436920ba50dfc4377c6a3793f9826e5f1
+-$(PKG)_SITE:=@SF/$(pkg),http://www.imagemagick.org/download
++$(PKG)_HASH:=eb2d4dc3cc9fd3d4686aa64562177ca5067b1d40bcb6ec75fa1003eaf8c37f4e
++$(PKG)_SITE:=@SF/$(pkg),https://mirror.dogado.de/imagemagick,http://www.imagemagick.org/download
+ 
+ $(PKG)_BINARY := magick
+ $(PKG)_BINARY_BUILD_DIR := $($(PKG)_BINARY:%=$($(PKG)_DIR)/utilities/$(if $(FREETZ_PACKAGE_IMAGEMAGICK_STATIC),,.libs/)%)
+@@ -12,11 +12,11 @@
+ $(PKG)_SYMLINKS := animate compare composite conjure convert display identify import magick-script mogrify montage stream
+ $(PKG)_SYMLINKS_TARGET_DIR := $($(PKG)_SYMLINKS:%=$($(PKG)_DEST_DIR)/usr/bin/%)
+ 
+-$(PKG)_LIB_CORE := libMagickCore-$($(PKG)_MAJOR_VERSION)-$($(PKG)_ABI_SUFFIX).so.7.0.0
++$(PKG)_LIB_CORE := libMagickCore-$($(PKG)_MAJOR_VERSION)-$($(PKG)_ABI_SUFFIX).so.10
+ $(PKG)_LIB_CORE_BUILD_DIR := $($(PKG)_LIB_CORE:%=$($(PKG)_DIR)/MagickCore/.libs/%)
+ $(PKG)_LIB_CORE_TARGET_DIR := $($(PKG)_LIB_CORE:%=$($(PKG)_DEST_LIBDIR)/%)
+ 
+-$(PKG)_LIB_WAND := libMagickWand-$($(PKG)_MAJOR_VERSION)-$($(PKG)_ABI_SUFFIX).so.7.0.0
++$(PKG)_LIB_WAND := libMagickWand-$($(PKG)_MAJOR_VERSION)-$($(PKG)_ABI_SUFFIX).so.10
+ $(PKG)_LIB_WAND_BUILD_DIR := $($(PKG)_LIB_WAND:%=$($(PKG)_DIR)/MagickWand/.libs/%)
+ $(PKG)_LIB_WAND_TARGET_DIR := $($(PKG)_LIB_WAND:%=$($(PKG)_DEST_LIBDIR)/%)
+ 
+--- make/libs/leptonica/leptonica.mk	2022-09-18 09:29:13.503136000 +0200
++++ make/libs/leptonica/leptonica.mk	2022-09-18 11:07:30.720885006 +0200
+@@ -1,8 +1,8 @@
+-$(call PKG_INIT_LIB, 1.69)
+-$(PKG)_LIB_VERSION:=3.0.0
+-$(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.bz2
+-$(PKG)_HASH:=e8a4e327f0402073c967bf2da976dc914b9086b6bd2b48558307c928a0960b6d
+-$(PKG)_SITE:=http://leptonica.googlecode.com/files
++$(call PKG_INIT_LIB, 1.82.0)
++$(PKG)_LIB_VERSION:=5
++$(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
++$(PKG)_HASH:=155302ee914668c27b6fe3ca9ff2da63b245f6d62f3061c8f27563774b8ae2d6
++$(PKG)_SITE:=https://github.com/DanBloomberg/leptonica/releases/download/$($(PKG)_VERSION)
+ 
+ $(PKG)_BINARY:=$($(PKG)_DIR)/src/.libs/liblept.so.$($(PKG)_LIB_VERSION)
+ $(PKG)_STAGING_BINARY:=$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/lib/liblept.so.$($(PKG)_LIB_VERSION)
+--- make/libs/leptonica/patches/010-enforce-libpng12.leptonica.patch	2022-09-18 09:29:13.507135000 +0200
++++ make/libs/leptonica/patches/010-enforce-libpng12.leptonica.patch	2022-09-18 11:13:03.342545193 +0200
+@@ -1,28 +1,11 @@
+ --- configure
+ +++ configure
+-@@ -11402,13 +11402,13 @@
+- fi
++@@ -13603,7 +13603,7 @@
+  
+- if test "x$with_libpng" != xno; then :
+--  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for png_read_png in -lpng" >&5
+--$as_echo_n "checking for png_read_png in -lpng... " >&6; }
+-+  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for png_read_png in -lpng12" >&5
+-+$as_echo_n "checking for png_read_png in -lpng12... " >&6; }
+- if test "${ac_cv_lib_png_png_read_png+set}" = set; then :
+-   $as_echo_n "(cached) " >&6
+- else
+-   ac_check_lib_save_LIBS=$LIBS
+--LIBS="-lpng  $LIBS"
+-+LIBS="-lpng12  $LIBS"
+- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+- /* end confdefs.h.  */
+- 
+-@@ -11441,7 +11441,7 @@
+- if test "x$ac_cv_lib_png_png_read_png" = x""yes; then :
+  
+  $as_echo "#define HAVE_LIBPNG 1" >>confdefs.h
+ - LIBPNG_LIBS=-lpng
+-+ LIBPNG_LIBS=-lpng12
+++ LIBPNG_LIBS=-lpng16
++ 
+  
+  else
+-   if test "x$with_libpng" = xyes; then :
+--- make/libs/leptonica/Config.in	2022-08-17 09:18:28.378826000 +0200
++++ make/libs/leptonica/Config.in	2022-09-17 18:12:53.845947247 +0200
+@@ -2,7 +2,7 @@
+ 	bool "leptonica (liblept.so)"
+ 	select FREETZ_LIB_libm if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
+ 	select FREETZ_LIB_libjpeg
+-	select FREETZ_LIB_libpng12
++	select FREETZ_LIB_libpng16
+ 	select FREETZ_LIB_libtiff
+ 	select FREETZ_LIB_libz
+ 	default n
+--- make/libs/leptonica/external.files	2022-09-18 09:29:13.503136000 +0200
++++ make/libs/leptonica/external.files	2022-09-18 11:30:16.908848605 +0200
+@@ -1 +1 @@
+-[ "$EXTERNAL_FREETZ_LIB_liblept" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/liblept.so.3.0.0"
++[ "$EXTERNAL_FREETZ_LIB_liblept" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/liblept.so.5"
+--- make/libs/leptonica/external.in	2022-09-18 09:29:13.503136000 +0200
++++ make/libs/leptonica/external.in	2022-09-18 11:30:30.696566918 +0200
+@@ -4,5 +4,5 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/liblept.so.3.0.0
++		 ${FREETZ_LIBRARY_DIR}/liblept.so.5
+ 
+--- make/tiff/tiff.mk	2022-09-18 09:29:14.411122000 +0200
++++ make/tiff/tiff.mk	2022-09-18 11:52:18.874578471 +0200
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_BIN, 4.0.7)
+-$(PKG)_LIB_VERSION:=5.2.5
++$(call PKG_INIT_BIN, 4.4.0)
++$(PKG)_LIB_VERSION:=5
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
+-$(PKG)_HASH:=9f43a2cfb9589e5cecaa66e16bf87f814c945f22df7ba600d63aac4632c4f019
++$(PKG)_HASH:=917223b37538959aca3b790d2d73aa6e626b688e02dcda272aec24c2f498abed
+ $(PKG)_SITE:=http://download.osgeo.org/libtiff
+ 
+ $(PKG)_BINARIES_ALL := fax2ps fax2tiff ppm2tiff raw2tiff tiff2bw tiff2pdf tiff2ps tiffinfo tiffsplit
+--- make/tiff/external.in.libs	2022-09-18 09:29:14.411122000 +0200
++++ make/tiff/external.in.libs	2022-09-18 12:12:32.138004111 +0200
+@@ -4,7 +4,7 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libtiff.so.5.2.5
++		 ${FREETZ_LIBRARY_DIR}/libtiff.so.5
+ 
+ config EXTERNAL_FREETZ_LIB_libtiffxx
+ 	depends on EXTERNAL_ENABLED && FREETZ_LIB_libtiffxx
+@@ -12,5 +12,5 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libtiffxx.so.5.2.5
++		 ${FREETZ_LIBRARY_DIR}/libtiffxx.so.5
+ 
+--- make/tiff/Config.in	2022-09-18 09:29:14.411122000 +0200
++++ make/tiff/Config.in	2022-09-18 11:48:37.346982147 +0200
+@@ -1,5 +1,5 @@
+ config FREETZ_PACKAGE_TIFF
+-	bool "TIFF utils 4.0.7 (binary only)"
++	bool "TIFF utils 4.4.0 (binary only)"
+ 	default n
+ 	help
+ 		Various utilities to manupulate/convert images to/from TIFF format.
