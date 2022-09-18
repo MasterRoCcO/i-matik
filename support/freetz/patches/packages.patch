@@ -55,7 +55,7 @@
  	bool "Support png"
  	default y
 -	select FREETZ_LIB_libpng12
-+	select FREETZ_LIB_libpng16
++	select FREETZ_LIB_libpng12
  
  config FREETZ_PACKAGE_IMAGEMAGICK_xml
  	bool "Support xml"
@@ -156,7 +156,7 @@
   $as_echo "#define HAVE_LIBPNG 1" >>confdefs.h
  - LIBPNG_LIBS=-lpng
 -+ LIBPNG_LIBS=-lpng12
-++ LIBPNG_LIBS=-lpng16
+++ LIBPNG_LIBS=-lpng12
 + 
   
   else
@@ -168,7 +168,7 @@
  	select FREETZ_LIB_libm if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
  	select FREETZ_LIB_libjpeg
 -	select FREETZ_LIB_libpng12
-+	select FREETZ_LIB_libpng16
++	select FREETZ_LIB_libpng12
  	select FREETZ_LIB_libtiff
  	select FREETZ_LIB_libz
  	default n
