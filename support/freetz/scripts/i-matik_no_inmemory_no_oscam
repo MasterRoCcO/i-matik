@@ -122,6 +122,7 @@ for bs in "${BOX_SSL[@]}"; do
 	cp -ar /$MY_FILES_HOME_PATH/toolchain/* "$FREETZ_SSL_HOME_PATH/toolchain/" 2>/dev/null
 	source $I_MATIK_PATH/support/freetz/scripts/patches/patches_on
 	sed -i "s+The installed version on this device is currently xxxx+The installed version on this device is currently ${VERSIONS_NR}+g" $FREETZ_SSL_HOME_PATH/make/mod/files/root/usr/mww/cgi-bin/i-matik.cgi
+	sed -i "s+xxxx+${VERSIONS_NR}+g" $FREETZ_SSL_HOME_PATH/make/mod/files/root/usr/lib/cgi-bin/mod/info.cgi
 	sed -i "s+Version xxx+Version ${VERSIONS_NR}+g" $FREETZ_SSL_HOME_PATH/make/mod/files/root/etc/default.mod/motd
 	[ -f .config ] && mv .config .config_backup	# rename original config to backup config
 	FREETZ_NAME="$(tools/freetz_revision 2>&1 | awk '{print $1}' | xargs)"	# freetz-ng name
