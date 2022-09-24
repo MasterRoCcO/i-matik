@@ -1,0 +1,357 @@
+--- make/libs/freetype/freetype.mk	2022-08-11 17:31:33.555017000 +0200
++++ make/libs/freetype/freetype.mk	2022-08-12 07:05:32.487502455 +0200
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_LIB, 2.10.1)
+-$(PKG)_LIB_VERSION:=6.17.1
++$(call PKG_INIT_LIB, 2.12.1)
++$(PKG)_LIB_VERSION:=6
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.xz
+-$(PKG)_HASH:=16dbfa488a21fe827dc27eaf708f42f7aa3bb997d745d31a19781628c36ba26f
++$(PKG)_HASH:=4766f20157cc4cf0cd292f80bf917f92d1c439b243ac3018debf6b9140c41a7f
+ $(PKG)_SITE:=@SF/freetype
+ 
+ $(PKG)_BINARY:=$($(PKG)_DIR)/objs/.libs/libfreetype.so.$($(PKG)_LIB_VERSION)
+--- make/libs/libpng/libpng.mk	2022-08-11 17:31:33.559017000 +0200
++++ make/libs/libpng/libpng.mk	2022-08-12 07:26:05.533833994 +0200
+@@ -1,12 +1,12 @@
+-$(call PKG_INIT_LIB, 1.2.59)
+-$(PKG)_LIB_VERSION:=0.59.0
++$(call PKG_INIT_LIB, 1.6.38)
++$(PKG)_LIB_VERSION:=16.38.0
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.xz
+-$(PKG)_HASH:=b4635f15b8adccc8ad0934eea485ef59cc4cae24d0f0300a9a941e51974ffcc7
++$(PKG)_HASH:=b3683e8b8111ebf6f1ac004ebb6b0c975cd310ec469d98364388e9cedbfa68be
+ $(PKG)_SITE:=@SF/libpng
+ 
+-$(PKG)_BINARY:=$($(PKG)_DIR)/.libs/libpng12.so.$($(PKG)_LIB_VERSION)
+-$(PKG)_STAGING_BINARY:=$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/lib/libpng12.so.$($(PKG)_LIB_VERSION)
+-$(PKG)_TARGET_BINARY:=$($(PKG)_TARGET_DIR)/libpng12.so.$($(PKG)_LIB_VERSION)
++$(PKG)_BINARY:=$($(PKG)_DIR)/.libs/libpng16.so.$($(PKG)_LIB_VERSION)
++$(PKG)_STAGING_BINARY:=$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/lib/libpng16.so.$($(PKG)_LIB_VERSION)
++$(PKG)_TARGET_BINARY:=$($(PKG)_TARGET_DIR)/libpng16.so.$($(PKG)_LIB_VERSION)
+ 
+ $(PKG)_DEPENDS_ON += zlib
+ 
+@@ -31,9 +31,9 @@
+ 		DESTDIR="$(TARGET_TOOLCHAIN_STAGING_DIR)" \
+ 		install
+ 	$(PKG_FIX_LIBTOOL_LA) \
+-		$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/lib/libpng12.la \
+-		$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/lib/pkgconfig/libpng12.pc \
+-		$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/bin/libpng12-config
++		$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/lib/libpng16.la \
++		$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/lib/pkgconfig/libpng16.pc \
++		$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/bin/libpng16-config
+ 
+ $($(PKG)_TARGET_BINARY): $($(PKG)_STAGING_BINARY)
+ 	$(INSTALL_LIBRARY_STRIP)
+@@ -48,7 +48,7 @@
+ 		$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/lib/pkgconfig/libpng*.pc \
+ 		$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/bin/libpng*-config \
+ 		$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/include/png*.h \
+-		$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/include/libpng12 \
++		$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/include/libpng16 \
+ 		$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/share/man/man3/libpng*.3 \
+ 		$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/share/man/man5/png.5
+ 
+--- make/libs/libpng/Config.in	2022-08-11 17:31:33.559017000 +0200
++++ make/libs/libpng/Config.in	2022-08-12 07:26:42.833464754 +0200
+@@ -1,4 +1,4 @@
+-config FREETZ_LIB_libpng12
++config FREETZ_LIB_libpng16
+ 	bool "PNG library (libpng.so)"
+ 	select FREETZ_LIB_libm if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
+ 	select FREETZ_LIB_libz
+--- make/libs/libpng/external.files	2022-08-11 17:31:33.559017000 +0200
++++ make/libs/libpng/external.files	2022-08-12 07:26:21.585674663 +0200
+@@ -1 +1 @@
+-[ "$EXTERNAL_FREETZ_LIB_libpng12" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libpng12.so.0.59.0"
++[ "$EXTERNAL_FREETZ_LIB_libpng16" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libpng16.so.16.37.0"
+--- make/libs/libpng/external.in	2022-08-11 17:31:33.559017000 +0200
++++ make/libs/libpng/external.in	2022-08-12 07:27:37.500929503 +0200
+@@ -1,8 +1,8 @@
+-config EXTERNAL_FREETZ_LIB_libpng12
+-	depends on EXTERNAL_ENABLED && FREETZ_LIB_libpng12
+-	bool "libpng12"
++config EXTERNAL_FREETZ_LIB_libpng16
++	depends on EXTERNAL_ENABLED && FREETZ_LIB_libpng16
++	bool "libpng16"
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libpng12.so.0.59.0
++		 ${FREETZ_LIBRARY_DIR}/libpng16.so.16.37.0
+ 
+--- make/libs/libpng/Makefile.in	2022-08-11 17:31:33.559017000 +0200
++++ make/libs/libpng/Makefile.in	2022-08-12 07:28:45.428273299 +0200
+@@ -1,3 +1,3 @@
+-ifeq ($(strip $(FREETZ_LIB_libpng12)),y)
++ifeq ($(strip $(FREETZ_LIB_libpng16)),y)
+ LIBS+=libpng
+ endif
+--- make/rrdtool/Config.in.libs	2022-08-11 17:31:33.651015000 +0200
++++ make/rrdtool/Config.in.libs	2022-08-12 07:29:57.087590412 +0200
+@@ -3,7 +3,7 @@
+ 	select FREETZ_LIB_libart_lgpl_2
+ 	select FREETZ_LIB_libfreetype
+ 	select FREETZ_LIB_libm        if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
+-	select FREETZ_LIB_libpng12
++	select FREETZ_LIB_libpng16
+ 	select FREETZ_LIB_libz
+ 	default n
+ 	help
+@@ -15,7 +15,7 @@
+ 	select FREETZ_LIB_libart_lgpl_2
+ 	select FREETZ_LIB_libfreetype
+ 	select FREETZ_LIB_libm        if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
+-	select FREETZ_LIB_libpng12
++	select FREETZ_LIB_libpng16
+ 	select FREETZ_LIB_libz
+ 	default n
+ 	help
+--- make/netpbm/Config.in	2022-08-11 17:31:33.631015000 +0200
++++ make/netpbm/Config.in	2022-08-12 07:53:14.675042981 +0200
+@@ -30,7 +30,7 @@
+ config FREETZ_PACKAGE_NETPBM_PNGTOPNM
+ 	bool "Include pngtopnm"
+ 	depends on FREETZ_PACKAGE_NETPBM
+-	select FREETZ_LIB_libpng12
++	select FREETZ_LIB_libpng16
+ 	select FREETZ_LIB_libz
+ 	default y
+ 	help
+@@ -47,7 +47,7 @@
+ config FREETZ_PACKAGE_NETPBM_PNMTOPNG
+ 	bool "Include pnmtopng"
+ 	depends on FREETZ_PACKAGE_NETPBM
+-	select FREETZ_LIB_libpng12
++	select FREETZ_LIB_libpng16
+ 	select FREETZ_LIB_libz
+ 	default y
+ 	help
+--- make/libs/libgd/Config.in	2022-09-18 09:29:13.551135000 +0200
++++ make/libs/libgd/Config.in	2022-09-18 09:35:49.544850868 +0200
+@@ -3,7 +3,7 @@
+ 	default n
+ 	select FREETZ_LIB_libjpeg
+ 	select FREETZ_LIB_libfreetype
+-	select FREETZ_LIB_libpng12
++	select FREETZ_LIB_libpng16
+ 	select FREETZ_LIB_libz
+ 	help
+ 		GD is an open source code library for the dynamic creation of images by
+--- make/libs/libffi/libffi.mk	2022-09-18 13:06:37.101155000 +0200
++++ make/libs/libffi/libffi.mk	2022-09-21 19:18:55.078241188 +0200
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_LIB, 3.2.1)
+-$(PKG)_LIB_VERSION:=6.0.4
++$(call PKG_INIT_LIB, 3.4.3)
++$(PKG)_LIB_VERSION:=8
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
+-$(PKG)_HASH:=d06ebb8e1d9a22d19e38d63fdb83954253f39bedc5d46232a05645685722ca37
++$(PKG)_HASH:=4416dd92b6ae8fcb5b10421e711c4d3cb31203d77521a77d85d0102311e6c3b8
+ $(PKG)_SITE:=ftp://sourceware.org/pub/libffi
+ 
+ $(PKG)_BINARY:=$($(PKG)_DIR)/$(TARGET_GNU_TRIPLET)/.libs/libffi.so.$($(PKG)_LIB_VERSION)
+--- make/libs/libffi/external.in	2022-09-18 13:06:37.101155000 +0200
++++ make/libs/libffi/external.in	2022-09-21 19:27:14.836040918 +0200
+@@ -4,5 +4,5 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libffi.so.6.0.4
++		 ${FREETZ_LIBRARY_DIR}/libffi.so.8
+ 
+--- make/libs/libffi/external.files	2022-09-18 13:06:37.101155000 +0200
++++ make/libs/libffi/external.files	2022-09-21 19:26:58.136371614 +0200
+@@ -1 +1 @@
+-[ "$EXTERNAL_FREETZ_LIB_libffi" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libffi.so.6.0.4"
++[ "$EXTERNAL_FREETZ_LIB_libffi" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libffi.so.8"
+--- make/libs/libffi/patches/010-no-tests-no-docs.libffi.patch	2022-09-18 13:06:37.101155000 +0200
++++ make/libs/libffi/patches/010-no-tests-no-docs.libffi.patch	2022-09-21 19:04:03.451910963 +0200
+@@ -1,20 +1,11 @@
+ --- Makefile.in
+ +++ Makefile.in
+-@@ -606,7 +606,7 @@
++@@ -526,7 +526,7 @@
+  top_srcdir = @top_srcdir@
+  AUTOMAKE_OPTIONS = foreign subdir-objects
+  ACLOCAL_AMFLAGS = -I m4
+--SUBDIRS = include testsuite man
+-+SUBDIRS = include
+- EXTRA_DIST = LICENSE ChangeLog.v1 ChangeLog.libgcj			\
+- 	 src/aarch64/ffi.c src/aarch64/ffitarget.h src/aarch64/sysv.S	\
+- 	 src/alpha/ffi.c src/alpha/osf.S			\
+-@@ -1998,7 +1998,7 @@
+- 
+- info-am: $(INFO_DEPS)
+- 
+--install-data-am: install-info-am install-pkgconfigDATA
+-+install-data-am: install-pkgconfigDATA
+- 
+- install-dvi: install-dvi-recursive
+- 
++-SUBDIRS = include testsuite man $(am__append_1)
+++SUBDIRS = include $(am__append_1)
++ EXTRA_DIST = LICENSE ChangeLog.old					\
++ 	m4/libtool.m4 m4/lt~obsolete.m4					\
++ 	 m4/ltoptions.m4 m4/ltsugar.m4 m4/ltversion.m4			\
+--- make/libs/libffi/patches/020-includedir.libffi.patch	2022-09-18 13:06:37.101155000 +0200
++++ make/libs/libffi/patches/020-includedir.libffi.patch	2022-09-21 19:17:23.844202409 +0200
+@@ -1,24 +1,6 @@
+---- include/Makefile.in
+-+++ include/Makefile.in
+-@@ -314,7 +314,7 @@
+- AUTOMAKE_OPTIONS = foreign
+- DISTCLEANFILES = ffitarget.h
+- EXTRA_DIST = ffi.h.in ffi_common.h
+--includesdir = $(libdir)/@PACKAGE_NAME@-@PACKAGE_VERSION@/include
+-+includesdir = @includedir@
+- nodist_includes_HEADERS = ffi.h ffitarget.h
+- all: all-am
+- 
+ --- libffi.pc.in
+ +++ libffi.pc.in
+-@@ -1,11 +1,10 @@
+- prefix=@prefix@
+- exec_prefix=@exec_prefix@
+- libdir=@libdir@
+--toolexeclibdir=@toolexeclibdir@
+--includedir=${libdir}/@PACKAGE_NAME@-@PACKAGE_VERSION@/include
+-+includedir=@includedir@
+- 
++@@ -7,5 +7,5 @@
+  Name: @PACKAGE_NAME@
+  Description: Library supporting Foreign Function Interfaces
+  Version: @PACKAGE_VERSION@
+--- make/libs/bluez-libs/bluez-libs.mk	2022-09-22 19:57:32.295197000 +0200
++++ make/libs/bluez-libs/bluez-libs.mk	2022-09-23 16:22:24.928804000 +0200
+@@ -1,8 +1,8 @@
+-$(call PKG_INIT_LIB, 2.25)
+-$(PKG)_LIB_VERSION:=1.0.25
++$(call PKG_INIT_LIB, 3.36)
++$(PKG)_LIB_VERSION:=2
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
+-$(PKG)_HASH:=0acce2bac854588d2597cbcdb60a6ec4de5fe3e16d224bdfab8f2dd96ad242fb
+-$(PKG)_SITE:=@SF/bluez
++$(PKG)_HASH:=692f994d8479143c18e781f9afa6c8265770a5affbf2e6147edc70b78aa3bfae
++$(PKG)_SITE:=http://bluez.sf.net/download/
+ 
+ $(PKG)_BINARY:=$($(PKG)_DIR)/src/.libs/libbluetooth.so.$($(PKG)_LIB_VERSION)
+ $(PKG)_STAGING_BINARY:=$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/lib/libbluetooth.so.$($(PKG)_LIB_VERSION)
+@@ -43,4 +43,4 @@
+ $(pkg)-uninstall:
+ 	$(RM) $(BLUEZ_LIBS_TARGET_DIR)/libbluetooth*.so*
+ 
+-$(PKG_FINISH)
+\ Kein Zeilenumbruch am Dateiende.
++$(PKG_FINISH)
+--- make/libs/bluez-libs/external.in	2022-09-22 19:57:32.295197000 +0200
++++ make/libs/bluez-libs/external.in	2022-09-23 16:28:04.701545495 +0200
+@@ -4,5 +4,5 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libbluetooth.so.1.0.25
++		 ${FREETZ_LIBRARY_DIR}/libbluetooth.so.2
+ 
+--- make/libs/bluez-libs/external.files 2022-09-22 19:57:32.295197000 +0200
++++ make/libs/bluez-libs/external.files	2022-09-23 16:27:59.009632745 +0200
+@@ -1 +1 @@
+-[ "$EXTERNAL_FREETZ_LIB_libbluetooth" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libbluetooth.so.1.0.25"
++[ "$EXTERNAL_FREETZ_LIB_libbluetooth" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libbluetooth.so.2"
+--- make/libs/gettext/gettext.mk	2022-09-22 19:57:32.295197000 +0200
++++ make/libs/gettext/gettext.mk	2022-09-23 18:25:51.787222797 +0200
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_LIB, 0.18.1.1)
+-$(PKG)_LIB_VERSION:=8.1.1
+-$(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
+-$(PKG)_HASH:=93ac71a7afa5b70c1b1032516663658c51e653087f42a3fc8044752c026443e9
++$(call PKG_INIT_LIB, 0.21)
++$(PKG)_LIB_VERSION:=8
++$(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.xz
++$(PKG)_HASH:=d20fcbb537e02dcf1383197ba05bd0734ef7bf5db06bdb241eb69b7d16b73192
+ $(PKG)_SITE:=@GNU/$(pkg)
+ 
+ # we only want libintl
+--- make/libs/gettext/external.in	2022-09-22 19:57:32.295197000 +0200
++++ make/libs/gettext/external.in	2022-09-23 18:31:28.995560008 +0200
+@@ -4,5 +4,5 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libintl.so.8.1.1
++		 ${FREETZ_LIBRARY_DIR}/libintl.so.8
+ 
+--- make/libs/gettext/external.files	2022-09-22 19:57:32.295197000 +0200
++++ make/libs/gettext/external.files	2022-09-23 18:31:17.919679827 +0200
+@@ -1 +1 @@
+-[ "$EXTERNAL_FREETZ_LIB_libintl" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libintl.so.8.1.1"
++[ "$EXTERNAL_FREETZ_LIB_libintl" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libintl.so.8"
+--- make/libs/gsasl/gsasl.mk	2022-09-22 19:57:32.295197000 +0200
++++ make/libs/gsasl/gsasl.mk	2022-09-24 09:11:48.720060864 +0200
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_LIB, 1.10.0)
+-$(PKG)_LIB_VERSION:=7.10.0
++$(call PKG_INIT_LIB, 2.2.0)
++$(PKG)_LIB_VERSION:=18
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
+-$(PKG)_HASH:=85bcbd8ee6095ade7870263a28ebcb8832f541ea7393975494926015c07568d3
++$(PKG)_HASH:=79b868e3b9976dc484d59b29ca0ae8897be96ce4d36d32aed5d935a7a3307759
+ $(PKG)_SITE:=@GNU/$(pkg)
+ 
+ $(PKG)_LIBNAME_SHORT := lib$(pkg)
+--- make/libs/jpeg/jpeg.mk	2022-09-22 19:57:32.295197000 +0200
++++ make/libs/jpeg/jpeg.mk	2022-09-24 09:26:10.757851640 +0200
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_LIB, 9d)
+-$(PKG)_LIB_VERSION:=9.4.0
++$(call PKG_INIT_LIB, 9e)
++$(PKG)_LIB_VERSION:=9
+ $(PKG)_SOURCE:=jpegsrc.v$($(PKG)_VERSION).tar.gz
+-$(PKG)_HASH:=6c434a3be59f8f62425b2e3c077e785c9ce30ee5874ea1c270e843f273ba71ee
++$(PKG)_HASH:=4077d6a6a75aeb01884f708919d25934c93305e49f7e3f36db9129320e6f4f3d
+ $(PKG)_SITE:=http://ijg.org/files
+ 
+ $(PKG)_BINARY:=$($(PKG)_DIR)/.libs/libjpeg.so.$($(PKG)_LIB_VERSION)
+--- make/libs/jpeg/external.in	2022-09-22 19:57:32.295197000 +0200
++++ make/libs/jpeg/external.in	2022-09-24 09:27:45.155536259 +0200
+@@ -4,5 +4,5 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libjpeg.so.9.4.0
++		 ${FREETZ_LIBRARY_DIR}/libjpeg.so.9
+ 
+--- make/libs/jpeg/external.files	2022-09-22 19:57:32.295197000 +0200
++++ make/libs/jpeg/external.files	2022-09-24 09:27:55.467292907 +0200
+@@ -1 +1 @@
+-[ "$EXTERNAL_FREETZ_LIB_libjpeg" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libjpeg.so.9.4.0"
++[ "$EXTERNAL_FREETZ_LIB_libjpeg" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libjpeg.so.9"
+--- make/libs/ldns/ldns.mk	2022-09-22 19:57:32.295197000 +0200
++++ make/libs/ldns/ldns.mk	2022-09-24 09:58:08.599736270 +0200
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_LIB, 1.7.1)
+-$(PKG)_LIB_VERSION:=3.0.0
++$(call PKG_INIT_LIB, 1.8.3)
++$(PKG)_LIB_VERSION:=3
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
+-$(PKG)_HASH:=8ac84c16bdca60e710eea75782356f3ac3b55680d40e1530d7cea474ac208229
++$(PKG)_HASH:=c3f72dd1036b2907e3a56e6acf9dfb2e551256b3c1bbd9787942deeeb70e7860
+ $(PKG)_SITE:=https://www.nlnetlabs.nl/downloads/$(pkg)/
+ $(PKG)_BINARY:=$($(PKG)_DIR)/.libs/lib$(pkg).so.$($(PKG)_LIB_VERSION)
+ $(PKG)_STAGING_BINARY:=$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/lib/lib$(pkg).so.$($(PKG)_LIB_VERSION)
+ --- make/libs/ldns/external.in	2022-09-22 19:57:32.295197000 +0200
++++ make/libs/ldns/external.in	2022-09-24 09:59:10.734783847 +0200
+@@ -4,5 +4,5 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libldns.so.3.0.0
++		 ${FREETZ_LIBRARY_DIR}/libldns.so.3
+ 
+--- make/libs/ldns/external.files	2022-09-22 19:57:32.295197000 +0200
++++ make/libs/ldns/external.files	2022-09-24 09:59:03.882888795 +0200
+@@ -1,2 +1,2 @@
+-[ "$EXTERNAL_FREETZ_LIB_libldns" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libldns.so.3.0.0"
++[ "$EXTERNAL_FREETZ_LIB_libldns" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libldns.so.3"
