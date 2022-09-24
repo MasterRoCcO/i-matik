@@ -1,13 +1,18 @@
 #!/bin/bash
 # i-matik
+echo -e ${GREEN}"Freetz files patch for i-matik."${NC}
 cp -ar $I_MATIK_PATH/support/freetz/patches/i-matik.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < i-matik.patch
 rm -rf "$FREETZ_SSL_HOME_PATH/i-matik.patch" 2>/dev/null
 
 # packages
+echo -e ${GREEN}"Freetz files patch for packages."${NC}
 cp -ar $I_MATIK_PATH/support/freetz/patches/packages.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < packages.patch
 mv $FREETZ_SSL_HOME_PATH/make/imagemagick/patches/010-extra_flags.patch $FREETZ_SSL_HOME_PATH/make/imagemagick/patches/010-extra_flags.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/020-no_xtractprotos.leptonica.patch $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/020-no_xtractprotos.leptonica.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/030-no_demo_code_in_lib.leptonica.patch $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/030-no_demo_code_in_lib.leptonica.patch.orig 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/packages.patch" 2>/dev/null
+
+# privat
+echo -e ${GREEN}"Freetz files patch for privat."${NC}
