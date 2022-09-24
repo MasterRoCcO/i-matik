@@ -15,4 +15,4 @@ mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/030-no_demo_code_in_lib.lep
 rm -rf "$FREETZ_SSL_HOME_PATH/packages.patch" 2>/dev/null
 
 # privat
-echo -e ${GREEN}"Freetz files patch for privat."${NC}
+echo -e ${GREEN}"Freetz files patch for privat or tests."${NC}
