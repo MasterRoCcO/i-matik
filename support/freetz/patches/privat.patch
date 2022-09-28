@@ -341,7 +341,7 @@
  $(PKG)_SITE:=https://www.nlnetlabs.nl/downloads/$(pkg)/
  $(PKG)_BINARY:=$($(PKG)_DIR)/.libs/lib$(pkg).so.$($(PKG)_LIB_VERSION)
  $(PKG)_STAGING_BINARY:=$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/lib/lib$(pkg).so.$($(PKG)_LIB_VERSION)
- --- make/libs/ldns/external.in	2022-09-22 19:57:32.295197000 +0200
+--- make/libs/ldns/external.in	2022-09-22 19:57:32.295197000 +0200
 +++ make/libs/ldns/external.in	2022-09-24 09:59:10.734783847 +0200
 @@ -4,5 +4,5 @@
  	default n
@@ -355,3 +355,52 @@
 @@ -1,2 +1,2 @@
 -[ "$EXTERNAL_FREETZ_LIB_libldns" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libldns.so.3.0.0"
 +[ "$EXTERNAL_FREETZ_LIB_libldns" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libldns.so.3"
+
+--- make/libs/db/db.mk	2022-09-24 19:44:27.155340000 +0200
++++ make/libs/db/db.mk	2022-09-28 18:17:34.283845106 +0200
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_LIB, 4.8.30)
+-$(PKG)_LIB_VERSION:=4.8
++$(call PKG_INIT_LIB, 18.1.40)
++$(PKG)_LIB_VERSION:=18.1
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
+-$(PKG)_HASH:=e0491a07cdb21fb9aa82773bbbedaeb7639cbd0e7f96147ab46141e0045db72a
++$(PKG)_HASH:=0cecb2ef0c67b166de93732769abdeba0555086d51de1090df325e18ee8da9c8
+ $(PKG)_SITE:=http://download.oracle.com/berkeley-db
+ 
+ $(PKG)_LIBNAME:=lib$(pkg)-$($(PKG)_LIB_VERSION).so
+--- make/libs/db/external.files	2022-09-24 19:44:27.155340000 +0200
++++ make/libs/db/external.files	2022-09-28 18:17:28.019957180 +0200
+@@ -1 +1 @@
+-[ "$EXTERNAL_FREETZ_LIB_libdb" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libdb-4.8.so"
++[ "$EXTERNAL_FREETZ_LIB_libdb" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libdb-18.1.so"
+--- make/libs/db/external.in	2022-09-24 19:44:27.155340000 +0200
++++ make/libs/db/external.in	2022-09-28 18:17:50.043563252 +0200
+@@ -4,5 +4,5 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libdb-4.8.so
++		 ${FREETZ_LIBRARY_DIR}/libdb-18.1.so
+ 
+--- make/libs/db/patches/100-no_docs.db.patch	2022-09-24 19:44:27.155340000 +0200
++++ make/libs/db/patches/100-no_docs.db.patch	2022-09-28 18:14:16.331403337 +0200
+@@ -1,13 +1,13 @@
+---- dist/Makefile.in	2009-12-18 23:26:01.000000000 +0100
+-+++ dist/Makefile.in	2010-01-16 22:46:48.000000000 +0100
+-@@ -925,9 +925,9 @@
++--- dist/Makefile.in
+++++ dist/Makefile.in
++@@ -1215,9 +1215,9 @@
+  # Library and standard utilities install.
+  ##################################################
+  library_install: install_setup
+--library_install: install_include install_lib install_utilities install_docs
++-library_install: install_include install_lib install_utilities @ADDITIONAL_INSTALL@ install_docs
+ +library_install: install_include install_lib
+  
+--uninstall: uninstall_include uninstall_lib uninstall_utilities uninstall_docs
++-uninstall: uninstall_include uninstall_lib uninstall_utilities @ADDITIONAL_UNINSTALL@ uninstall_docs
+ +uninstall: uninstall_include uninstall_lib
+  
+  install_setup:

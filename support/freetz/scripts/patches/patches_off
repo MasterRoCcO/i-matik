@@ -6,6 +6,9 @@ mv $FREETZ_SSL_HOME_PATH/make/mod/files/root/etc/default.mod/motd.orig $FREETZ_S
 rm -f $FREETZ_SSL_HOME_PATH/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh.orig $FREETZ_SSL_HOME_PATH/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh 2>/dev/null
 
+rm -f $FREETZ_SSL_HOME_PATH/make/mod/files/root/usr/lib/cgi-bin/mod/info.cgi 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/mod/files/root/usr/lib/cgi-bin/mod/info.cgi.orig $FREETZ_SSL_HOME_PATH/make/mod/files/root/usr/lib/cgi-bin/mod/info.cgi 2>/dev/null
+
 # packages
 rm -f $FREETZ_SSL_HOME_PATH/make/pcsc-lite/pcsc-lite.mk 2>/dev/null
 rm -f $FREETZ_SSL_HOME_PATH/make/pcsc-lite/Config.in 2>/dev/null
@@ -72,6 +75,12 @@ mv $FREETZ_SSL_HOME_PATH/make/dbus/patches/010-link_all_deplibs.patch.orig $FREE
 mv $FREETZ_SSL_HOME_PATH/make/dbus/patches/020-drop_backtrace_dependency.patch.orig $FREETZ_SSL_HOME_PATH/make/dbus/patches/020-drop_backtrace_dependency.patch 2>/dev/null
 
 # privat
+rm -f $FREETZ_SSL_HOME_PATH/config/ui/toolchain.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/config/ui/toolchain.in.orig $FREETZ_SSL_HOME_PATH/config/ui/toolchain.in 2>/dev/null
+
+rm -f $FREETZ_SSL_HOME_PATH/toolchain/make/target/binutils/binutils.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/toolchain/make/target/binutils/binutils.mk.orig $FREETZ_SSL_HOME_PATH/toolchain/make/target/binutils/binutils.mk 2>/dev/null
+
 rm -f $FREETZ_SSL_HOME_PATH/make/libs/freetype/freetype.mk 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/freetype/freetype.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/freetype/freetype.mk 2>/dev/null
 
@@ -94,6 +103,13 @@ mv $FREETZ_SSL_HOME_PATH/make/netpbm/Config.in.orig $FREETZ_SSL_HOME_PATH/make/n
 
 rm -f $FREETZ_SSL_HOME_PATH/make/libs/libgd/Config.in 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/libgd/Config.in.orig $FREETZ_SSL_HOME_PATH/make/libs/libgd/Config.in 2>/dev/null
+
+rm -f $FREETZ_SSL_HOME_PATH/config/mod/source.in 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/config/mod/dl-firmware.in 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/config/avm/availability.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/config/mod/dl-firmware.in.orig $FREETZ_SSL_HOME_PATH/config/mod/dl-firmware.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/config/mod/source.in.orig $FREETZ_SSL_HOME_PATH/config/mod/source.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/config/avm/availability.in.orig $FREETZ_SSL_HOME_PATH/config/avm/availability.in 2>/dev/null
 
 rm -f $FREETZ_SSL_HOME_PATH/make/libs/libffi/libffi.mk 2>/dev/null
 rm -f $FREETZ_SSL_HOME_PATH/make/libs/libffi/external.in 2>/dev/null
@@ -138,3 +154,13 @@ rm -f $FREETZ_SSL_HOME_PATH/make/libs/ldns/external.files 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/ldns/ldns.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/ldns/ldns.mk 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/ldns/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/ldns/external.in 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/ldns/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/ldns/external.files 2>/dev/null
+
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/db/db.mk 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/db/external.files 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/db/external.in 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/db/patches/100-no_docs.db.patchs 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/db/db.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/db/db.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/db/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/db/external.files 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/db/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/db/external.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/db/patches/100-no_docs.db.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/db/patches/100-no_docs.db.patch 2>/dev/null
+

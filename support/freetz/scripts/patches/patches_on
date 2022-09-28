@@ -14,9 +14,11 @@ mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/020-no_xtractprotos.leptoni
 mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/030-no_demo_code_in_lib.leptonica.patch $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/030-no_demo_code_in_lib.leptonica.patch.orig 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/packages.patch" 2>/dev/null
 
+# privat
 echo -e ${GREEN}"Freetz files patch for privat or tests."${NC}
 cp -ar $I_MATIK_PATH/support/freetz/patches/privat.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < privat.patch
 mv $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/030-mips_softfloat.patch $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/030-no_demo_code_in_lib.leptonica.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/gettext/patches/010-disable_GLIBC_specific_code.patch $FREETZ_SSL_HOME_PATH/make/libs/gettext/patches/010-disable_GLIBC_specific_code.patch.orig 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/db/patches/020-drop_backtrace_dependency.db.patch $FREETZ_SSL_HOME_PATH/make/libs/db/patches/020-drop_backtrace_dependency.db.patch.orig 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/privat.patch" 2>/dev/null
