@@ -404,3 +404,30 @@
  +uninstall: uninstall_include uninstall_lib
   
   install_setup:
+--- make/libs/jansson/jansson.mk	2022-09-24 19:44:27.159340000 +0200
++++ make/libs/jansson/jansson.mk	2022-09-29 16:36:39.757383588 +0200
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_LIB, 2.7)
+-$(PKG)_LIB_VERSION:=4.7.0
++$(call PKG_INIT_LIB, 2.13)
++$(PKG)_LIB_VERSION:=4
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
+-$(PKG)_HASH:=7905e6590fb316c0ff943df3dc6a21cd81a59cff7a6d12514054c359d04d78d7
++$(PKG)_HASH:=02c31bc16e702b30feb06d18bbfe086c0d8c938e906950980af7adcdb324541b
+ $(PKG)_SITE:=http://www.digip.org/jansson/releases
+ 
+ $(PKG)_LIBNAME:=lib$(pkg).so.$($(PKG)_LIB_VERSION)
+--- make/libs/jansson/external.in	2022-09-24 19:44:27.159340000 +0200
++++ make/libs/jansson/external.in	2022-09-29 16:37:41.968117808 +0200
+@@ -4,5 +4,5 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libjansson.so.4.7.0
++		 ${FREETZ_LIBRARY_DIR}/libjansson.so.4
+ 
+--- make/libs/jansson/external.files	2022-09-24 19:44:27.159340000 +0200
++++ make/libs/jansson/external.files	2022-09-29 16:37:34.024274252 +0200
+@@ -1 +1 @@
+-[ "$EXTERNAL_FREETZ_LIB_libjansson" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libjansson.so.4.7.0"
++[ "$EXTERNAL_FREETZ_LIB_libjansson" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libjansson.so.4"
