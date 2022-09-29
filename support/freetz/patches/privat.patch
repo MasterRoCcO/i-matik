@@ -454,3 +454,61 @@
 +[ "FREETZ_AVM_GCC_4_MAX" == "y" ] && ELIBVER="2.49" || ELIBVER="2.66"
  
  [ "$EXTERNAL_FREETZ_LIB_libcap" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libcap.so.$ELIBVER"
+--- make/libs/libev/libev.mk	2022-09-24 19:44:27.159340000 +0200
++++ make/libs/libev/libev.mk	2022-09-29 17:45:10.288375120 +0200
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_LIB, 4.15)
++$(call PKG_INIT_LIB, 4.33)
+ $(PKG)_SHLIB_VERSION:=4.0.0
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
+-$(PKG)_HASH:=b2dd43a073556f5350cbed05b6ef444dcc4b563f4e0b1009d7bf448261606feb
++$(PKG)_HASH:=507eb7b8d1015fbec5b935f34ebed15bf346bed04a11ab82b8eee848c4205aea
+ $(PKG)_SITE:=http://dist.schmorp.de/libev
+ 
+ $(PKG)_LIBNAME=$(pkg).so.$($(PKG)_SHLIB_VERSION)
+--- make/libs/libev/patches/010-no_man.libev.patch	2022-09-22 19:44:02.398094000 +0200
++++ make/libs/libev/patches/010-no_man.libev.patch	2022-09-29 17:31:25.130036899 +0200
+@@ -1,6 +1,6 @@
+ --- Makefile.in
+ +++ Makefile.in
+-@@ -751,7 +751,7 @@
++@@ -849,7 +849,7 @@
+  
+  info-am:
+  
+--- make/libs/libev/patches/020-no_libevent_compat_header.libev.patch	2022-09-22 19:44:02.398094000 +0200
++++ make/libs/libev/patches/020-no_libevent_compat_header.libev.patch	2022-09-29 17:31:25.146036495 +0200
+@@ -1,6 +1,6 @@
+ --- Makefile.in
+ +++ Makefile.in
+-@@ -267,7 +267,7 @@
++@@ -357,7 +357,7 @@
+  	     ev.3 ev.pod Symbols.ev Symbols.event
+  
+  man_MANS = ev.3
+--- make/libs/libev/patches/030-verbose_backend.libev.patch	2022-09-22 19:44:02.398094000 +0200
++++ make/libs/libev/patches/030-verbose_backend.libev.patch	2022-09-29 17:38:07.880820458 +0200
+@@ -1,6 +1,6 @@
+ --- ev.c
+ +++ ev.c
+-@@ -2381,21 +2381,27 @@
++@@ -3078,15 +3078,19 @@
+  /*****************************************************************************/
+  
+  #if EV_USE_IOCP
+@@ -19,6 +19,10 @@
+ +# warning using "ev_epoll.c"
+  # include "ev_epoll.c"
+  #endif
++ #if EV_USE_LINUXAIO
++@@ -3096,9 +3100,11 @@
++ # include "ev_iouring.c"
++ #endif
+  #if EV_USE_POLL
+ +# warning using "ev_poll.c"
+  # include "ev_poll.c"
+@@ -27,4 +31,3 @@
+ +# warning using "ev_select.c"
+  # include "ev_select.c"
+  #endif
+- 
