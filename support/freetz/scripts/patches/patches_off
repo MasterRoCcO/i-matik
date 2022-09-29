@@ -184,3 +184,12 @@ mv $FREETZ_SSL_HOME_PATH/make/libs/libev/libev.mk.orig $FREETZ_SSL_HOME_PATH/mak
 mv $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/010-no_man.libev.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/010-no_man.libev.patch 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/020-no_libevent_compat_header.libev.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/020-no_libevent_compat_header.libev.patch 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/030-verbose_backend.libev.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/030-verbose_backend.libev.patch 2>/dev/null
+
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libgsm/libgsm.mk 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libgsm/patches/030-missing_includes.libgsm.patch 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libgsm/patches/102-cplusplus.debian.libgsm.patch 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libgsm/patches/105-compiler_warnings.debian.libgsm.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libgsm/libgsm.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/libgsm/libgsm.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libgsm/patches/030-missing_includes.libgsm.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libgsm/patches/030-missing_includes.libgsm.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libgsm/patches/102-cplusplus.debian.libgsm.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libgsm/patches/102-cplusplus.debian.libgsm.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libgsm/patches/105-compiler_warnings.debian.libgsm.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libgsm/patches/105-compiler_warnings.debian.libgsm.patch 2>/dev/null
