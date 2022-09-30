@@ -75,12 +75,6 @@ mv $FREETZ_SSL_HOME_PATH/make/dbus/patches/010-link_all_deplibs.patch.orig $FREE
 mv $FREETZ_SSL_HOME_PATH/make/dbus/patches/020-drop_backtrace_dependency.patch.orig $FREETZ_SSL_HOME_PATH/make/dbus/patches/020-drop_backtrace_dependency.patch 2>/dev/null
 
 # privat
-rm -f $FREETZ_SSL_HOME_PATH/config/ui/toolchain.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/config/ui/toolchain.in.orig $FREETZ_SSL_HOME_PATH/config/ui/toolchain.in 2>/dev/null
-
-rm -f $FREETZ_SSL_HOME_PATH/toolchain/make/target/binutils/binutils.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/toolchain/make/target/binutils/binutils.mk.orig $FREETZ_SSL_HOME_PATH/toolchain/make/target/binutils/binutils.mk 2>/dev/null
-
 rm -f $FREETZ_SSL_HOME_PATH/make/libs/freetype/freetype.mk 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/freetype/freetype.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/freetype/freetype.mk 2>/dev/null
 
