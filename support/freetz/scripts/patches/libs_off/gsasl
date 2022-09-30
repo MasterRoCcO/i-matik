@@ -1,0 +1,4 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/gsasl/gsasl.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/gsasl/gsasl.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/gsasl/gsasl.mk 2>/dev/null
+

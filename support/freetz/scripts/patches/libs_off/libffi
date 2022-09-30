@@ -1,0 +1,12 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libffi/libffi.mk 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libffi/external.in 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libffi/external.files 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/010-no-tests-no-docs.libffi.patch 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/020-includedir.libffi.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libffi/libffi.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/libffi/libffi.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libffi/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/libffi/external.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libffi/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/libffi/external.files 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/010-no-tests-no-docs.libffi.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/010-no-tests-no-docs.libffi.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/020-includedir.libffi.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/020-includedir.libffi.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/030-mips_softfloat.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/030-mips_softfloat.patch 2>/dev/null

@@ -1,0 +1,5 @@
+#!/bin/bash
+# i-matik
+rm -f $FREETZ_SSL_HOME_PATH/make/mod/files/root/etc/default.mod/motd 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/mod/files/root/etc/default.mod/motd.orig $FREETZ_SSL_HOME_PATH/make/mod/files/root/etc/default.mod/motd 2>/dev/null
+

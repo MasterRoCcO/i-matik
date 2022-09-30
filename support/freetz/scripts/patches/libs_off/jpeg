@@ -1,0 +1,7 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/jpeg/jpeg.mk 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/jpeg/external.in 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/jpeg/external.files 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/jpeg/jpeg.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/jpeg/jpeg.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/jpeg/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/jpeg/external.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/jpeg/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/jpeg/external.files 2>/dev/null

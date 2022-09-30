@@ -1,24 +1,81 @@
 #!/bin/bash
 # i-matik
 echo -e ${GREEN}"Freetz files patch for i-matik."${NC}
-cp -ar $I_MATIK_PATH/support/freetz/patches/i-matik.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/i-matik/i-matik.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < i-matik.patch
 rm -rf "$FREETZ_SSL_HOME_PATH/i-matik.patch" 2>/dev/null
 
-# packages
-echo -e ${GREEN}"Freetz files patch for packages."${NC}
-cp -ar $I_MATIK_PATH/support/freetz/patches/packages.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-patch -p0 -b < packages.patch
-mv $FREETZ_SSL_HOME_PATH/make/imagemagick/patches/010-extra_flags.patch $FREETZ_SSL_HOME_PATH/make/imagemagick/patches/010-extra_flags.patch.orig 2>/dev/null
+# libs
+echo -e ${GREEN}"Freetz files patch for libs."${NC}
+cp -ar $I_MATIK_PATH/support/freetz/patches/libs/bluez-libs.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/libs/db.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/libs/freetype.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/libs/gettext.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/libs/gsasl.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/libs/jansson.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/libs/jpeg.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/libs/ldns.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/libs/leptonica.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libcap.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libev.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libffi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libgsm.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libpng.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libxml2.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < bluez-libs.patch
+patch -p0 -b < db.patch
+patch -p0 -b < freetype.patch
+patch -p0 -b < gettext.patch
+patch -p0 -b < gsasl.patch
+patch -p0 -b < jansson.patch
+patch -p0 -b < jpeg.patch
+patch -p0 -b < ldns.patch
+patch -p0 -b < leptonica.patch
+patch -p0 -b < libcap.patch
+patch -p0 -b < libev.patch
+patch -p0 -b < libffi.patch
+patch -p0 -b < libgsm.patch
+patch -p0 -b < libpng.patch
+patch -p0 -b < libxml2.patch
+mv $FREETZ_SSL_HOME_PATH/make/libs/db/patches/020-drop_backtrace_dependency.db.patch $FREETZ_SSL_HOME_PATH/make/libs/db/patches/020-drop_backtrace_dependency.db.patch.orig 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/gettext/patches/010-disable_GLIBC_specific_code.patch $FREETZ_SSL_HOME_PATH/make/libs/gettext/patches/010-disable_GLIBC_specific_code.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/020-no_xtractprotos.leptonica.patch $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/020-no_xtractprotos.leptonica.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/030-no_demo_code_in_lib.leptonica.patch $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/030-no_demo_code_in_lib.leptonica.patch.orig 2>/dev/null
-rm -rf "$FREETZ_SSL_HOME_PATH/packages.patch" 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/030-mips_softfloat.patch $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/030-mips_softfloat.patch.orig 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/bluez-libs.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/db.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/freetype.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/gettext.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/gsasl.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/jansson.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/jpeg.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/ldns.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/leptonica.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/libcap.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/libev.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/libffi.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/libgsm.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/libpng.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/libxml2.patch" 2>/dev/null
+
+# packages
+echo -e ${GREEN}"Freetz files patch for packages."${NC}
+cp -ar $I_MATIK_PATH/support/freetz/patches/packages/cifsmount.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/packages/dbus.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/packages/imagemagick.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/packages/pcsc-lite.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/packages/tiff.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < cifsmount.patch
+patch -p0 -b < dbus.patch
+patch -p0 -b < imagemagick.patch
+patch -p0 -b < pcsc-lite.patch
+patch -p0 -b < tiff.patch
+mv $FREETZ_SSL_HOME_PATH/make/imagemagick/patches/010-extra_flags.patch $FREETZ_SSL_HOME_PATH/make/imagemagick/patches/010-extra_flags.patch.orig 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/cifsmount.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/dbus.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/imagemagick.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/pcsc-lite.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/tiff.patch" 2>/dev/null
 
 # privat
-echo -e ${GREEN}"Freetz files patch for privat or tests."${NC}
-cp -ar $I_MATIK_PATH/support/freetz/patches/privat.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-patch -p0 -b < privat.patch
-mv $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/030-mips_softfloat.patch $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/030-no_demo_code_in_lib.leptonica.patch.orig 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/gettext/patches/010-disable_GLIBC_specific_code.patch $FREETZ_SSL_HOME_PATH/make/libs/gettext/patches/010-disable_GLIBC_specific_code.patch.orig 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/db/patches/020-drop_backtrace_dependency.db.patch $FREETZ_SSL_HOME_PATH/make/libs/db/patches/020-drop_backtrace_dependency.db.patch.orig 2>/dev/null
-rm -rf "$FREETZ_SSL_HOME_PATH/privat.patch" 2>/dev/null
+echo -e ${GREEN}"Freetz files patch for privat."${NC}

@@ -1,189 +1,32 @@
 #!/bin/bash
 # i-matik
-rm -f $FREETZ_SSL_HOME_PATH/make/mod/files/root/etc/default.mod/motd 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/mod/files/root/etc/default.mod/motd.orig $FREETZ_SSL_HOME_PATH/make/mod/files/root/etc/default.mod/motd 2>/dev/null
 
-rm -f $FREETZ_SSL_HOME_PATH/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh.orig $FREETZ_SSL_HOME_PATH/make/mod/files/root/usr/lib/mww/cgi/menu-new.sh 2>/dev/null
+source $I_MATIK_PATH/support/freetz/scripts/patches/i-matik_off/info.cgi
+source $I_MATIK_PATH/support/freetz/scripts/patches/i-matik_off/menu-new.sh
+source $I_MATIK_PATH/support/freetz/scripts/patches/i-matik_off/motd
 
-rm -f $FREETZ_SSL_HOME_PATH/make/mod/files/root/usr/lib/cgi-bin/mod/info.cgi 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/mod/files/root/usr/lib/cgi-bin/mod/info.cgi.orig $FREETZ_SSL_HOME_PATH/make/mod/files/root/usr/lib/cgi-bin/mod/info.cgi 2>/dev/null
+# libs
+source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/bluez-libs
+source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/db
+source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/freetype
+source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/gettext
+source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/gsasl
+source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/jansson
+source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/jpeg
+source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/ldns
+source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/leptonica
+source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libcap
+source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libev
+source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libffi
+source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libgsm
+source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libpng
+source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libxml2
 
 # packages
-rm -f $FREETZ_SSL_HOME_PATH/make/pcsc-lite/pcsc-lite.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/pcsc-lite/Config.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/pcsc-lite/pcsc-lite.mk.orig $FREETZ_SSL_HOME_PATH/make/pcsc-lite/pcsc-lite.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/pcsc-lite/Config.in.orig $FREETZ_SSL_HOME_PATH/make/pcsc-lite/Config.in 2>/dev/null
-
-rm -f $FREETZ_SSL_HOME_PATH/make/cifsmount/cifsmount.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/cifsmount/Config.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/cifsmount/cifsmount.mk.orig $FREETZ_SSL_HOME_PATH/make/cifsmount/cifsmount.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/cifsmount/Config.in.orig $FREETZ_SSL_HOME_PATH/make/cifsmount/Config.in 2>/dev/null
-
-rm -f $FREETZ_SSL_HOME_PATH/make/imagemagick/Config.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/imagemagick/external.files 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/imagemagick/imagemagick.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/imagemagick/external.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/imagemagick/Config.in.orig $FREETZ_SSL_HOME_PATH/make/imagemagick/Config.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/imagemagick/external.files.orig $FREETZ_SSL_HOME_PATH/make/imagemagick/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/imagemagick/imagemagick.mk.orig $FREETZ_SSL_HOME_PATH/make/imagemagick/imagemagick.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/imagemagick/external.in.orig $FREETZ_SSL_HOME_PATH/make/imagemagick/external.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/imagemagick/patches/010-extra_flags.patch.orig $FREETZ_SSL_HOME_PATH/make/imagemagick/patches/010-extra_flags.patch 2>/dev/null
-
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/leptonica/leptonica.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/leptonica/Config.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/leptonica/external.files 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/leptonica/external.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/010-enforce-libpng12.leptonica.patch 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/leptonica.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/leptonica/leptonica.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/Config.in.orig $FREETZ_SSL_HOME_PATH/make/libs/leptonica/Config.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/leptonica/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/leptonica/external.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/010-enforce-libpng12.leptonica.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/010-enforce-libpng12.leptonica.patch 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/020-no_xtractprotos.leptonica.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/020-no_xtractprotos.leptonica.patch 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/030-no_demo_code_in_lib.leptonica.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/030-no_demo_code_in_lib.leptonica.patch 2>/dev/null
-
-rm -f $FREETZ_SSL_HOME_PATH/make/tiff/tiff.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/tiff/external.in.libs 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/tiff/Config.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/tiff/tiff.mk.orig $FREETZ_SSL_HOME_PATH/make/tiff/tiff.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/tiff/external.in.libs.orig $FREETZ_SSL_HOME_PATH/make/tiff/external.in.libs 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/tiff/Config.in.orig $FREETZ_SSL_HOME_PATH/make/tiff/Config.in 2>/dev/null
-
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libxml2/libxml2.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libxml2/external.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libxml2/external.files 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libxml2/patches/100-no_docs_examples_tests.libxml2.patch 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libxml2/patches/110-pthread_fixes.libxml2.patch 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libxml2/libxml2.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/libxml2/libxml2.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libxml2/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/libxml2/external.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libxml2/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/libxml2/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libxml2/patches/100-no_docs_examples_tests.libxml2.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libxml2/patches/100-no_docs_examples_tests.libxml2.patch 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libxml2/patches/110-pthread_fixes.libxml2.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libxml2/patches/110-pthread_fixes.libxml2.patch 2>/dev/null
-
-rm -f $FREETZ_SSL_HOME_PATH/make/dbus/dbus.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/dbus/Config.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/dbus/external.files 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/dbus/external.in.libs 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/dbus/patches/010-link_all_deplibs.patch 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/dbus/patches/020-drop_backtrace_dependency.patch 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/dbus/dbus.mk.orig $FREETZ_SSL_HOME_PATH/make/dbus/dbus.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/dbus/Config.in.orig $FREETZ_SSL_HOME_PATH/make/dbus/Config.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/dbus/external.files.orig $FREETZ_SSL_HOME_PATH/make/dbus/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/dbus/external.in.libs.orig $FREETZ_SSL_HOME_PATH/make/dbus/external.in.libs 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/dbus/patches/010-link_all_deplibs.patch.orig $FREETZ_SSL_HOME_PATH/make/dbus/patches/010-link_all_deplibs.patch 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/dbus/patches/020-drop_backtrace_dependency.patch.orig $FREETZ_SSL_HOME_PATH/make/dbus/patches/020-drop_backtrace_dependency.patch 2>/dev/null
+source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/cifsmount
+source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/dbus
+source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/imagemagick
+source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/pcsc-lite
+source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/tiff
 
 # privat
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/freetype/freetype.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/freetype/freetype.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/freetype/freetype.mk 2>/dev/null
-
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libpng/libpng.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libpng/Config.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libpng/external.files 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libpng/external.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libpng/Makefile.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libpng/libpng.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/libpng/libpng.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libpng/Config.in.orig $FREETZ_SSL_HOME_PATH/make/libs/libpng/Config.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libpng/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/libpng/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libpng/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/libpng/external.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libpng/Makefile.in.orig $FREETZ_SSL_HOME_PATH/make/libs/libpng/Makefile.in 2>/dev/null
-
-rm -f $FREETZ_SSL_HOME_PATH/make/rrdtool/Config.in.libs 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/rrdtool/Config.in.libs.orig $FREETZ_SSL_HOME_PATH/make/rrdtool/Config.in.libs 2>/dev/null
-
-rm -f $FREETZ_SSL_HOME_PATH/make/netpbm/Config.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/netpbm/Config.in.orig $FREETZ_SSL_HOME_PATH/make/netpbm/Config.in 2>/dev/null
-
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libgd/Config.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libgd/Config.in.orig $FREETZ_SSL_HOME_PATH/make/libs/libgd/Config.in 2>/dev/null
-
-rm -f $FREETZ_SSL_HOME_PATH/config/mod/source.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/config/mod/dl-firmware.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/config/avm/availability.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/config/mod/dl-firmware.in.orig $FREETZ_SSL_HOME_PATH/config/mod/dl-firmware.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/config/mod/source.in.orig $FREETZ_SSL_HOME_PATH/config/mod/source.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/config/avm/availability.in.orig $FREETZ_SSL_HOME_PATH/config/avm/availability.in 2>/dev/null
-
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libffi/libffi.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libffi/external.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libffi/external.files 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/010-no-tests-no-docs.libffi.patch 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/020-includedir.libffi.patch 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libffi/libffi.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/libffi/libffi.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libffi/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/libffi/external.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libffi/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/libffi/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/010-no-tests-no-docs.libffi.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/010-no-tests-no-docs.libffi.patch 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/020-includedir.libffi.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/020-includedir.libffi.patch 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/030-mips_softfloat.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/030-no_demo_code_in_lib.leptonica.patch 2>/dev/null
-
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/bluez-libs/bluez-libs.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/bluez-libs/external.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/bluez-libs/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/bluez-libs/bluez-libs.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/bluez-libs/bluez-libs.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/bluez-libs/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/bluez-libs/external.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/bluez-libs/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/bluez-libs/external.files 2>/dev/null
-
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/gettext/gettext.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/gettext/external.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/gettext/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/gettext/gettext.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/gettext/gettext.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/gettext/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/gettext/external.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/gettext/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/gettext/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/gettext/patches/010-disable_GLIBC_specific_code.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/gettext/patches/010-disable_GLIBC_specific_code.patch 2>/dev/null
-
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/gsasl/gsasl.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/gsasl/gsasl.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/gsasl/gsasl.mk 2>/dev/null
-
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/jpeg/jpeg.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/jpeg/external.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/jpeg/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/jpeg/jpeg.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/jpeg/jpeg.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/jpeg/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/jpeg/external.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/jpeg/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/jpeg/external.files 2>/dev/null
-
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/ldns/ldns.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/ldns/external.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/ldns/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/ldns/ldns.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/ldns/ldns.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/ldns/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/ldns/external.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/ldns/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/ldns/external.files 2>/dev/null
-
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/db/db.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/db/external.files 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/db/external.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/db/patches/100-no_docs.db.patchs 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/db/db.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/db/db.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/db/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/db/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/db/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/db/external.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/db/patches/100-no_docs.db.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/db/patches/100-no_docs.db.patch 2>/dev/null
-
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/jansson/jansson.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/jansson/external.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/jansson/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/jansson/jansson.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/jansson/jansson.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/jansson/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/jansson/external.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/jansson/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/jansson/external.files 2>/dev/null
-
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libcap/libcap.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libcap/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libcap/libcap.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/libcap/libcap.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libcap/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/libcap/external.files 2>/dev/null
-
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libev/libev.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/010-no_man.libev.patch 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/020-no_libevent_compat_header.libev.patch 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/030-verbose_backend.libev.patch 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libev/libev.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/libev/libev.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/010-no_man.libev.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/010-no_man.libev.patch 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/020-no_libevent_compat_header.libev.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/020-no_libevent_compat_header.libev.patch 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/030-verbose_backend.libev.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/030-verbose_backend.libev.patch 2>/dev/null
-
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libgsm/libgsm.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libgsm/patches/030-missing_includes.libgsm.patch 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libgsm/patches/102-cplusplus.debian.libgsm.patch 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libgsm/patches/105-compiler_warnings.debian.libgsm.patch 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libgsm/libgsm.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/libgsm/libgsm.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libgsm/patches/030-missing_includes.libgsm.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libgsm/patches/030-missing_includes.libgsm.patch 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libgsm/patches/102-cplusplus.debian.libgsm.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libgsm/patches/102-cplusplus.debian.libgsm.patch 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libgsm/patches/105-compiler_warnings.debian.libgsm.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libgsm/patches/105-compiler_warnings.debian.libgsm.patch 2>/dev/null

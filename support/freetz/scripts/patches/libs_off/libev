@@ -1,0 +1,9 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libev/libev.mk 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/010-no_man.libev.patch 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/020-no_libevent_compat_header.libev.patch 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/030-verbose_backend.libev.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libev/libev.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/libev/libev.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/010-no_man.libev.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/010-no_man.libev.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/020-no_libevent_compat_header.libev.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/020-no_libevent_compat_header.libev.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/030-verbose_backend.libev.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libev/patches/030-verbose_backend.libev.patch 2>/dev/null

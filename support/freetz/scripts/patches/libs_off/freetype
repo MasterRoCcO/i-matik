@@ -1,0 +1,3 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/freetype/freetype.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/freetype/freetype.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/freetype/freetype.mk 2>/dev/null

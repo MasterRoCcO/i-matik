@@ -1,0 +1,75 @@
+--- make/libs/leptonica/leptonica.mk	2022-09-18 09:29:13.503136000 +0200
++++ make/libs/leptonica/leptonica.mk	2022-09-18 11:07:30.720885006 +0200
+@@ -1,8 +1,8 @@
+-$(call PKG_INIT_LIB, 1.69)
+-$(PKG)_LIB_VERSION:=3.0.0
+-$(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.bz2
+-$(PKG)_HASH:=e8a4e327f0402073c967bf2da976dc914b9086b6bd2b48558307c928a0960b6d
+-$(PKG)_SITE:=http://leptonica.googlecode.com/files
++$(call PKG_INIT_LIB, 1.82.0)
++$(PKG)_LIB_VERSION:=5
++$(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
++$(PKG)_HASH:=155302ee914668c27b6fe3ca9ff2da63b245f6d62f3061c8f27563774b8ae2d6
++$(PKG)_SITE:=https://github.com/DanBloomberg/leptonica/releases/download/$($(PKG)_VERSION)
+ 
+ $(PKG)_BINARY:=$($(PKG)_DIR)/src/.libs/liblept.so.$($(PKG)_LIB_VERSION)
+ $(PKG)_STAGING_BINARY:=$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/lib/liblept.so.$($(PKG)_LIB_VERSION)
+--- make/libs/leptonica/patches/010-enforce-libpng12.leptonica.patch	2022-09-18 09:29:13.507135000 +0200
++++ make/libs/leptonica/patches/010-enforce-libpng12.leptonica.patch	2022-09-18 11:13:03.342545193 +0200
+@@ -1,28 +1,11 @@
+ --- configure
+ +++ configure
+-@@ -11402,13 +11402,13 @@
+- fi
++@@ -13603,7 +13603,7 @@
+  
+- if test "x$with_libpng" != xno; then :
+--  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for png_read_png in -lpng" >&5
+--$as_echo_n "checking for png_read_png in -lpng... " >&6; }
+-+  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for png_read_png in -lpng12" >&5
+-+$as_echo_n "checking for png_read_png in -lpng12... " >&6; }
+- if test "${ac_cv_lib_png_png_read_png+set}" = set; then :
+-   $as_echo_n "(cached) " >&6
+- else
+-   ac_check_lib_save_LIBS=$LIBS
+--LIBS="-lpng  $LIBS"
+-+LIBS="-lpng12  $LIBS"
+- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+- /* end confdefs.h.  */
+- 
+-@@ -11441,7 +11441,7 @@
+- if test "x$ac_cv_lib_png_png_read_png" = x""yes; then :
+  
+  $as_echo "#define HAVE_LIBPNG 1" >>confdefs.h
+ - LIBPNG_LIBS=-lpng
+-+ LIBPNG_LIBS=-lpng12
+++ LIBPNG_LIBS=-lpng16
++ 
+  
+  else
+-   if test "x$with_libpng" = xyes; then :
+--- make/libs/leptonica/Config.in	2022-08-17 09:18:28.378826000 +0200
++++ make/libs/leptonica/Config.in	2022-09-17 18:12:53.845947247 +0200
+@@ -2,7 +2,7 @@
+ 	bool "leptonica (liblept.so)"
+ 	select FREETZ_LIB_libm if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
+ 	select FREETZ_LIB_libjpeg
+-	select FREETZ_LIB_libpng12
++	select FREETZ_LIB_libpng16
+ 	select FREETZ_LIB_libtiff
+ 	select FREETZ_LIB_libz
+ 	default n
+--- make/libs/leptonica/external.files	2022-09-18 09:29:13.503136000 +0200
++++ make/libs/leptonica/external.files	2022-09-18 11:30:16.908848605 +0200
+@@ -1 +1 @@
+-[ "$EXTERNAL_FREETZ_LIB_liblept" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/liblept.so.3.0.0"
++[ "$EXTERNAL_FREETZ_LIB_liblept" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/liblept.so.5"
+--- make/libs/leptonica/external.in	2022-09-18 09:29:13.503136000 +0200
++++ make/libs/leptonica/external.in	2022-09-18 11:30:30.696566918 +0200
+@@ -4,5 +4,5 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/liblept.so.3.0.0
++		 ${FREETZ_LIBRARY_DIR}/liblept.so.5
+ 

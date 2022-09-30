@@ -1,0 +1,20 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libpng/libpng.mk 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libpng/Config.in 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libpng/external.files 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libpng/external.in 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libpng/Makefile.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libpng/libpng.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/libpng/libpng.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libpng/Config.in.orig $FREETZ_SSL_HOME_PATH/make/libs/libpng/Config.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libpng/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/libpng/external.files 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libpng/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/libpng/external.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libpng/Makefile.in.orig $FREETZ_SSL_HOME_PATH/make/libs/libpng/Makefile.in 2>/dev/null
+
+rm -f $FREETZ_SSL_HOME_PATH/make/rrdtool/Config.in.libs 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/rrdtool/Config.in.libs.orig $FREETZ_SSL_HOME_PATH/make/rrdtool/Config.in.libs 2>/dev/null
+
+rm -f $FREETZ_SSL_HOME_PATH/make/netpbm/Config.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/netpbm/Config.in.orig $FREETZ_SSL_HOME_PATH/make/netpbm/Config.in 2>/dev/null
+
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libgd/Config.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libgd/Config.in.orig $FREETZ_SSL_HOME_PATH/make/libs/libgd/Config.in 2>/dev/null

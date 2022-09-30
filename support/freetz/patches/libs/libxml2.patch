@@ -1,0 +1,142 @@
+--- make/libs/libxml2/libxml2.mk	2022-09-18 13:06:37.109155000 +0200
++++ make/libs/libxml2/libxml2.mk	2022-09-20 16:52:21.627075328 +0200
+@@ -1,8 +1,8 @@
+-$(call PKG_INIT_LIB, 2.9.14)
++$(call PKG_INIT_LIB, 2.10.2)
+ $(PKG)_LIB_VERSION:=$($(PKG)_VERSION)
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.xz
+-$(PKG)_HASH:=60d74a257d1ccec0475e749cba2f21559e48139efba6ff28224357c7c798dfee
+-$(PKG)_SITE:=https://download.gnome.org/sources/libxml2/2.9
++$(PKG)_HASH:=d240abe6da9c65cb1900dd9bf3a3501ccf88b3c2a1cb98317d03f272dda5b265
++$(PKG)_SITE:=https://download.gnome.org/sources/libxml2/2.10
+ ### WEBSITE:=http://www.xmlsoft.org
+ ### MANPAGE:=https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home#html-documentation
+ ### CHANGES:=https://gitlab.gnome.org/GNOME/libxml2/-/releases
+--- make/libs/libxml2/external.in	2022-09-18 13:06:37.109155000 +0200
++++ make/libs/libxml2/external.in	2022-09-20 18:01:53.411597559 +0200
+@@ -4,5 +4,5 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libxml2.so.2.9.14
++		 ${FREETZ_LIBRARY_DIR}/libxml2.so.2.10.2
+ 
+--- make/libs/libxml2/external.files	2022-09-18 13:06:37.109155000 +0200
++++ make/libs/libxml2/external.files	2022-09-20 18:01:03.336585336 +0200
+@@ -1 +1 @@
+-[ "$EXTERNAL_FREETZ_LIB_libxml2" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libxml2.so.2.9.14"
++[ "$EXTERNAL_FREETZ_LIB_libxml2" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libxml2.so.2.10.2"
+--- make/libs/libxml2/patches/100-no_docs_examples_tests.libxml2.patch	2022-09-20 18:34:32.297662535 +0200
++++ make/libs/libxml2/patches/100-no_docs_examples_tests.libxml2.patch	2022-09-20 18:37:23.150133937 +0200
+@@ -1,49 +1,47 @@
+---- Makefile.in
+-+++ Makefile.in
+-@@ -411,7 +411,7 @@
+- man3dir = $(mandir)/man3
+- NROFF = nroff
+- MANS = $(man_MANS)
+--DATA = $(cmake_DATA) $(confexec_DATA) $(m4data_DATA) $(pkgconfig_DATA)
+-+DATA =                                               $(pkgconfig_DATA)
++--- Makefile.in	2022-08-29 15:20:52.000000000 +0200
+++++ Makefile.in	2022-09-20 17:55:12.299851931 +0200
++@@ -373,7 +373,7 @@
++     n|no|NO) false;; \
++     *) (install-info --version) >/dev/null 2>&1;; \
++   esac
++-DATA = $(cmake_DATA) $(examples_DATA) $(m4data_DATA) \
+++DATA = $(cmake_DATA) \
++ 	$(nodist_pkgconfig_DATA)
+  RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
+    distclean-recursive maintainer-clean-recursive
+- am__recursive_targets = \
+-@@ -724,7 +724,7 @@
++@@ -677,7 +677,7 @@
+  top_builddir = @top_builddir@
+  top_srcdir = @top_srcdir@
+  ACLOCAL_AMFLAGS = -I m4
+--SUBDIRS = include . doc example fuzz xstc $(PYTHON_SUBDIR)
+-+SUBDIRS = include .                  xstc $(PYTHON_SUBDIR)
++-SUBDIRS = include . doc example fuzz xstc $(am__append_1)
+++SUBDIRS = include .                  xstc $(am__append_1)
+  DIST_SUBDIRS = include . doc example fuzz python xstc
+- AM_CPPFLAGS = -I$(top_builddir)/include -I$(srcdir)/include
+- AM_CFLAGS = $(EXTRA_CFLAGS) $(THREAD_CFLAGS) $(Z_CFLAGS) $(LZMA_CFLAGS)
+-@@ -1769,7 +1769,7 @@
++ AM_CPPFLAGS = -I$(top_builddir)/include -I$(srcdir)/include -DSYSCONFDIR='"$(sysconfdir)"'
++ AM_CFLAGS = $(EXTRA_CFLAGS)
++@@ -1906,7 +1906,7 @@
+  	$(MAKE) $(AM_MAKEFLAGS) $(check_PROGRAMS)
+- check: $(BUILT_SOURCES)
+- 	$(MAKE) $(AM_MAKEFLAGS) check-recursive
+--all-am: Makefile $(PROGRAMS) $(LTLIBRARIES) $(SCRIPTS) $(MANS) $(DATA) \
+-+all-am: Makefile             $(LTLIBRARIES)            $(MANS) $(DATA) \
++ 	$(MAKE) $(AM_MAKEFLAGS) check-local
++ check: check-recursive
++-all-am: Makefile $(PROGRAMS) $(LTLIBRARIES) $(SCRIPTS) $(DATA) \
+++all-am: Makefile             $(LTLIBRARIES)            $(DATA) \
+  		config.h
+  install-binPROGRAMS: install-libLTLIBRARIES
+  
+-@@ -1906,15 +1906,15 @@
++@@ -2033,14 +2033,14 @@
+  
+  info-am:
+  
+--install-data-am: install-cmakeDATA install-data-local \
+--	install-m4dataDATA install-man install-pkgconfigDATA
+-+install-data-am: \
+-+	install-pkgconfigDATA
++-install-data-am: install-cmakeDATA install-examplesDATA \
++-	install-m4dataDATA install-nodist_pkgconfigDATA
+++install-data-am:  \
+++	install-nodist_pkgconfigDATA
+  
+  install-dvi: install-dvi-recursive
+  
+  install-dvi-am:
+  
+--install-exec-am: install-binPROGRAMS install-binSCRIPTS \
+--	install-confexecDATA install-libLTLIBRARIES
+-+install-exec-am: install-binSCRIPTS \
+-+	install-libLTLIBRARIES
++-install-exec-am: install-binPROGRAMS install-libLTLIBRARIES \
+++install-exec-am: install-binPROGRAMS \
++ 	install-nodist_binSCRIPTS
+  
+  install-html: install-html-recursive
+- 
+--- make/libs/libxml2/patches/110-pthread_fixes.libxml2.patch	2022-09-18 13:06:37.109155551 +0200
++++ make/libs/libxml2/patches/110-pthread_fixes.libxml2.patch	2022-09-21 17:02:11.312986847 +0200
+@@ -1,6 +1,6 @@
+ --- configure
+ +++ configure
+-@@ -15439,12 +15439,12 @@
++@@ -15994,12 +15994,12 @@
+  	       if test "${THREAD_LIBS}" = "-lpthread" ; then
+  	           if expr ${GCC_MEDIUM} \> 2 \& ${GCC_MAJOR} = 3 > /dev/null
+  		   then
+@@ -21,18 +21,18 @@
+  Version: @VERSION@
+  Description: libXML library version2.
+  Requires:
+--Libs: -L${libdir} -lxml2
+--Libs.private: @ICU_LIBS@ @THREAD_LIBS@ @Z_LIBS@ @LZMA_LIBS@ @ICONV_LIBS@ @M_LIBS@ @WIN32_EXTRA_LIBADD@ @LIBS@
++-Libs: -L${libdir} @XML_LIBS@
++-Libs.private: @XML_PRIVATE_LIBS@ @LIBS@
+ -Cflags: @XML_INCLUDEDIR@ @XML_CFLAGS@
+ +Libs: -L${libdir} -lxml2 @ICU_LIBS@ @Z_LIBS@ @LZMA_LIBS@ @ICONV_LIBS@ @THREAD_LIBS@ @M_LIBS@ @WIN32_EXTRA_LIBADD@ @LIBS@
+ +Cflags: @THREAD_CFLAGS@ @XML_INCLUDEDIR@ @XML_CFLAGS@
+ --- libxml-2.0-uninstalled.pc.in
+ +++ libxml-2.0-uninstalled.pc.in
+-@@ -9,4 +9,4 @@
+- Description: libXML library version2.
++@@ -10,4 +10,4 @@
+  Requires:
+- Libs: -L${libdir} -lxml2 @ICU_LIBS@ @THREAD_LIBS@ @Z_LIBS@ @LZMA_LIBS@ @ICONV_LIBS@ @M_LIBS@ @LIBS@
+--Cflags: -I${includedir} @XML_INCLUDEDIR@ @XML_CFLAGS@
++ Libs: -L${libdir} @XML_LIBS@
++ Libs.private: @XML_PRIVATE_LIBS@ @LIBS@
++-Cflags: @XML_INCLUDEDIR@ @XML_CFLAGS@
+ +Cflags: -I${includedir} @THREAD_CFLAGS@ @XML_INCLUDEDIR@ @XML_CFLAGS@
+ --- xml2-config.in
+ +++ xml2-config.in

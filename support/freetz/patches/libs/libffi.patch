@@ -1,0 +1,84 @@
+--- make/libs/libffi/libffi.mk	2022-09-18 13:06:37.101155000 +0200
++++ make/libs/libffi/libffi.mk	2022-09-21 19:18:55.078241188 +0200
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_LIB, 3.2.1)
+-$(PKG)_LIB_VERSION:=6.0.4
++$(call PKG_INIT_LIB, 3.4.3)
++$(PKG)_LIB_VERSION:=8
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
+-$(PKG)_HASH:=d06ebb8e1d9a22d19e38d63fdb83954253f39bedc5d46232a05645685722ca37
++$(PKG)_HASH:=4416dd92b6ae8fcb5b10421e711c4d3cb31203d77521a77d85d0102311e6c3b8
+ $(PKG)_SITE:=ftp://sourceware.org/pub/libffi
+ 
+ $(PKG)_BINARY:=$($(PKG)_DIR)/$(TARGET_GNU_TRIPLET)/.libs/libffi.so.$($(PKG)_LIB_VERSION)
+--- make/libs/libffi/external.in	2022-09-18 13:06:37.101155000 +0200
++++ make/libs/libffi/external.in	2022-09-21 19:27:14.836040918 +0200
+@@ -4,5 +4,5 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libffi.so.6.0.4
++		 ${FREETZ_LIBRARY_DIR}/libffi.so.8
+ 
+--- make/libs/libffi/external.files	2022-09-18 13:06:37.101155000 +0200
++++ make/libs/libffi/external.files	2022-09-21 19:26:58.136371614 +0200
+@@ -1 +1 @@
+-[ "$EXTERNAL_FREETZ_LIB_libffi" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libffi.so.6.0.4"
++[ "$EXTERNAL_FREETZ_LIB_libffi" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libffi.so.8"
+--- make/libs/libffi/patches/010-no-tests-no-docs.libffi.patch	2022-09-18 13:06:37.101155000 +0200
++++ make/libs/libffi/patches/010-no-tests-no-docs.libffi.patch	2022-09-21 19:04:03.451910963 +0200
+@@ -1,20 +1,11 @@
+ --- Makefile.in
+ +++ Makefile.in
+-@@ -606,7 +606,7 @@
++@@ -526,7 +526,7 @@
+  top_srcdir = @top_srcdir@
+  AUTOMAKE_OPTIONS = foreign subdir-objects
+  ACLOCAL_AMFLAGS = -I m4
+--SUBDIRS = include testsuite man
+-+SUBDIRS = include
+- EXTRA_DIST = LICENSE ChangeLog.v1 ChangeLog.libgcj			\
+- 	 src/aarch64/ffi.c src/aarch64/ffitarget.h src/aarch64/sysv.S	\
+- 	 src/alpha/ffi.c src/alpha/osf.S			\
+-@@ -1998,7 +1998,7 @@
+- 
+- info-am: $(INFO_DEPS)
+- 
+--install-data-am: install-info-am install-pkgconfigDATA
+-+install-data-am: install-pkgconfigDATA
+- 
+- install-dvi: install-dvi-recursive
+- 
++-SUBDIRS = include testsuite man $(am__append_1)
+++SUBDIRS = include $(am__append_1)
++ EXTRA_DIST = LICENSE ChangeLog.old					\
++ 	m4/libtool.m4 m4/lt~obsolete.m4					\
++ 	 m4/ltoptions.m4 m4/ltsugar.m4 m4/ltversion.m4			\
+--- make/libs/libffi/patches/020-includedir.libffi.patch	2022-09-18 13:06:37.101155000 +0200
++++ make/libs/libffi/patches/020-includedir.libffi.patch	2022-09-21 19:17:23.844202409 +0200
+@@ -1,24 +1,6 @@
+---- include/Makefile.in
+-+++ include/Makefile.in
+-@@ -314,7 +314,7 @@
+- AUTOMAKE_OPTIONS = foreign
+- DISTCLEANFILES = ffitarget.h
+- EXTRA_DIST = ffi.h.in ffi_common.h
+--includesdir = $(libdir)/@PACKAGE_NAME@-@PACKAGE_VERSION@/include
+-+includesdir = @includedir@
+- nodist_includes_HEADERS = ffi.h ffitarget.h
+- all: all-am
+- 
+ --- libffi.pc.in
+ +++ libffi.pc.in
+-@@ -1,11 +1,10 @@
+- prefix=@prefix@
+- exec_prefix=@exec_prefix@
+- libdir=@libdir@
+--toolexeclibdir=@toolexeclibdir@
+--includedir=${libdir}/@PACKAGE_NAME@-@PACKAGE_VERSION@/include
+-+includedir=@includedir@
+- 
++@@ -7,5 +7,5 @@
+  Name: @PACKAGE_NAME@
+  Description: Library supporting Foreign Function Interfaces
+  Version: @PACKAGE_VERSION@

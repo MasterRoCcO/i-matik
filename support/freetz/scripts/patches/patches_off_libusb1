@@ -1,4 +1,2 @@
 #!/bin/bash
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libusb1/libusb1.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libusb1/libusb1.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/libusb1/libusb1.mk 2>/dev/null
-
+source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libusb1

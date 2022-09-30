@@ -1,0 +1,79 @@
+--- make/dbus/dbus.mk	2022-09-18 13:06:37.073156000 +0200
++++ make/dbus/dbus.mk	2022-09-22 18:40:34.516891063 +0200
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_BIN, 1.13.18)
+-$(PKG)_LIB_VERSION:=3.29.0
++$(call PKG_INIT_BIN, 1.15.0)
++$(PKG)_LIB_VERSION:=3
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.xz
+-$(PKG)_HASH:=8078f5c25e34ab907ce06905d969dc8ef0ccbec367e1e1707c7ecf8460f4254e
++$(PKG)_HASH:=5073c8cb9ad20226647bb38f4965182b762a6e1f595ccdc8e59411014bfd640a
+ $(PKG)_SITE:=http://$(pkg).freedesktop.org/releases/$(pkg)
+ 
+ $(PKG)_STARTLEVEL=90 # before avahi
+--- make/dbus/Config.in	2022-09-18 13:06:37.073156000 +0200
++++ make/dbus/Config.in	2022-09-22 18:47:29.891799209 +0200
+@@ -1,5 +1,5 @@
+ config FREETZ_PACKAGE_DBUS
+-	bool "D-Bus 1.13.18"
++	bool "D-Bus 1.15.0"
+ 	default n
+ 	select FREETZ_LIB_libexpat
+ 	select FREETZ_LIB_libpthread if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
+--- make/dbus/external.files	2022-09-18 13:06:37.073156000 +0200
++++ make/dbus/external.files	2022-09-22 18:41:49.503484030 +0200
+@@ -2,4 +2,4 @@
+ [ "$EXTERNAL_FREETZ_PACKAGE_DBUS_monitor" == "y" ] && EXTERNAL_FILES+=" /usr/bin/dbus-monitor"
+ [ "$EXTERNAL_FREETZ_PACKAGE_DBUS_send" == "y" ] && EXTERNAL_FILES+=" /usr/bin/dbus-send"
+ [ "$EXTERNAL_FREETZ_PACKAGE_DBUS_uuidgen" == "y" ] && EXTERNAL_FILES+=" /usr/bin/dbus-uuidgen"
+-[ "$EXTERNAL_FREETZ_LIB_libdbus" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libdbus-1.so.3.29.0"
++[ "$EXTERNAL_FREETZ_LIB_libdbus" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libdbus-1.so.3"
+--- make/dbus/external.in.libs	2022-09-18 13:06:37.073156000 +0200
++++ make/dbus/external.in.libs	2022-09-22 18:42:22.146871970 +0200
+@@ -4,5 +4,5 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libdbus.so.3.29.0
++		 ${FREETZ_LIBRARY_DIR}/libdbus.so.3
+ 
+--- make/dbus/patches/010-link_all_deplibs.patch	2022-09-18 13:06:37.073156000 +0200
++++ make/dbus/patches/010-link_all_deplibs.patch	2022-09-22 18:27:58.735225455 +0200
+@@ -1,7 +1,7 @@
+ revert Debian-2.4.2-1.2 changes
+ --- configure
+ +++ configure
+-@@ -10941,7 +10941,7 @@
++@@ -11849,7 +11849,7 @@
+      with_gnu_ld=no
+      ;;
+    linux* | k*bsd*-gnu | gnu*)
+--- make/dbus/patches/020-drop_backtrace_dependency.patch	2022-09-18 13:06:37.073156000 +0200
++++ make/dbus/patches/020-drop_backtrace_dependency.patch	2022-09-22 18:50:54.831051803 +0200
+@@ -1,18 +1,18 @@
+---- configure
+-+++ configure
+-@@ -19812,6 +19812,7 @@
+- 	fi
++--- configure	2022-09-22 18:31:21.515339000 +0200
+++++ configure	2022-09-22 18:34:33.747688511 +0200
++@@ -20731,6 +20731,7 @@
++ 
+  fi
+  
+ +if false; then
+- for ac_header in execinfo.h
++        for ac_header in execinfo.h
+  do :
+-   ac_fn_c_check_header_mongrel "$LINENO" "execinfo.h" "ac_cv_header_execinfo_h" "$ac_includes_default"
+-@@ -19880,6 +19881,7 @@
++   ac_fn_c_check_header_compile "$LINENO" "execinfo.h" "ac_cv_header_execinfo_h" "$ac_includes_default"
++@@ -20801,6 +20802,8 @@
+  fi
+  
+  done
+ +fi
+- 
+++
+  
+  # Add -D_POSIX_PTHREAD_SEMANTICS if on Solaris

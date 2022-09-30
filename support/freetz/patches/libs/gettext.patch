@@ -1,0 +1,28 @@
+--- make/libs/gettext/gettext.mk	2022-09-22 19:57:32.295197000 +0200
++++ make/libs/gettext/gettext.mk	2022-09-23 18:25:51.787222797 +0200
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_LIB, 0.18.1.1)
+-$(PKG)_LIB_VERSION:=8.1.1
+-$(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
+-$(PKG)_HASH:=93ac71a7afa5b70c1b1032516663658c51e653087f42a3fc8044752c026443e9
++$(call PKG_INIT_LIB, 0.21)
++$(PKG)_LIB_VERSION:=8
++$(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.xz
++$(PKG)_HASH:=d20fcbb537e02dcf1383197ba05bd0734ef7bf5db06bdb241eb69b7d16b73192
+ $(PKG)_SITE:=@GNU/$(pkg)
+ 
+ # we only want libintl
+--- make/libs/gettext/external.in	2022-09-22 19:57:32.295197000 +0200
++++ make/libs/gettext/external.in	2022-09-23 18:31:28.995560008 +0200
+@@ -4,5 +4,5 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libintl.so.8.1.1
++		 ${FREETZ_LIBRARY_DIR}/libintl.so.8
+ 
+--- make/libs/gettext/external.files	2022-09-22 19:57:32.295197000 +0200
++++ make/libs/gettext/external.files	2022-09-23 18:31:17.919679827 +0200
+@@ -1 +1 @@
+-[ "$EXTERNAL_FREETZ_LIB_libintl" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libintl.so.8.1.1"
++[ "$EXTERNAL_FREETZ_LIB_libintl" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libintl.so.8"

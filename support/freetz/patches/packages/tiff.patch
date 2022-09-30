@@ -1,0 +1,40 @@
+--- make/tiff/tiff.mk	2022-09-18 09:29:14.411122000 +0200
++++ make/tiff/tiff.mk	2022-09-18 11:52:18.874578471 +0200
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_BIN, 4.0.7)
+-$(PKG)_LIB_VERSION:=5.2.5
++$(call PKG_INIT_BIN, 4.4.0)
++$(PKG)_LIB_VERSION:=5
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
+-$(PKG)_HASH:=9f43a2cfb9589e5cecaa66e16bf87f814c945f22df7ba600d63aac4632c4f019
++$(PKG)_HASH:=917223b37538959aca3b790d2d73aa6e626b688e02dcda272aec24c2f498abed
+ $(PKG)_SITE:=http://download.osgeo.org/libtiff
+ 
+ $(PKG)_BINARIES_ALL := fax2ps fax2tiff ppm2tiff raw2tiff tiff2bw tiff2pdf tiff2ps tiffinfo tiffsplit
+--- make/tiff/external.in.libs	2022-09-18 09:29:14.411122000 +0200
++++ make/tiff/external.in.libs	2022-09-18 12:12:32.138004111 +0200
+@@ -4,7 +4,7 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libtiff.so.5.2.5
++		 ${FREETZ_LIBRARY_DIR}/libtiff.so.5
+ 
+ config EXTERNAL_FREETZ_LIB_libtiffxx
+ 	depends on EXTERNAL_ENABLED && FREETZ_LIB_libtiffxx
+@@ -12,5 +12,5 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libtiffxx.so.5.2.5
++		 ${FREETZ_LIBRARY_DIR}/libtiffxx.so.5
+ 
+--- make/tiff/Config.in	2022-09-18 09:29:14.411122000 +0200
++++ make/tiff/Config.in	2022-09-18 11:48:37.346982147 +0200
+@@ -1,5 +1,5 @@
+ config FREETZ_PACKAGE_TIFF
+-	bool "TIFF utils 4.0.7 (binary only)"
++	bool "TIFF utils 4.4.0 (binary only)"
+ 	default n
+ 	help
+ 		Various utilities to manupulate/convert images to/from TIFF format.
