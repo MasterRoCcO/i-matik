@@ -22,6 +22,7 @@ source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libidn
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libmnl
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libnet
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libogg
+source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libonig
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libpng
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libxml2
 
