@@ -1,0 +1,11 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libogg/libogg.mk 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libogg/external.in 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libogg/external.files 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libogg/patches/100-no_docs.libogg.patch 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libogg/patches/110-no_opt_cflags.libogg.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libogg/libogg.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/libogg/libogg.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libogg/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/libogg/external.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libogg/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/libogg/external.files 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libogg/patches/100-no_docs.libogg.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libogg/patches/100-no_docs.libogg.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libogg/patches/110-no_opt_cflags.libogg.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libogg/patches/110-no_opt_cflags.libogg.patch 2>/dev/null
