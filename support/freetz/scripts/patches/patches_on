@@ -13,11 +13,11 @@ rm -rf "$FREETZ_SSL_HOME_PATH/i-matik.patch" 2>/dev/null
 echo -e ${GREEN}"Freetz files patch for libs."${NC}
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/bluez-libs.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/db.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $I_MATIK_PATH/support/freetz/patches/libs/freetype.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $I_MATIK_PATH/support/freetz/patches/libs/freetype.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/gettext.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/gsasl.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/jansson.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $I_MATIK_PATH/support/freetz/patches/libs/jpeg.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $I_MATIK_PATH/support/freetz/patches/libs/jpeg.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/ldns.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/leptonica.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libcap.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
@@ -28,11 +28,11 @@ cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libpng.patch "$FREETZ_SSL_HOME_
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libxml2.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < bluez-libs.patch
 patch -p0 -b < db.patch
-patch -p0 -b < freetype.patch
+#patch -p0 -b < freetype.patch
 patch -p0 -b < gettext.patch
 patch -p0 -b < gsasl.patch
 patch -p0 -b < jansson.patch
-patch -p0 -b < jpeg.patch
+#patch -p0 -b < jpeg.patch
 patch -p0 -b < ldns.patch
 patch -p0 -b < leptonica.patch
 patch -p0 -b < libcap.patch
@@ -48,11 +48,11 @@ mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/030-no_demo_code_in_lib.lep
 mv $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/030-mips_softfloat.patch $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/030-mips_softfloat.patch.orig 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/bluez-libs.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/db.patch" 2>/dev/null
-rm -rf "$FREETZ_SSL_HOME_PATH/freetype.patch" 2>/dev/null
+#rm -rf "$FREETZ_SSL_HOME_PATH/freetype.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/gettext.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/gsasl.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/jansson.patch" 2>/dev/null
-rm -rf "$FREETZ_SSL_HOME_PATH/jpeg.patch" 2>/dev/null
+#rm -rf "$FREETZ_SSL_HOME_PATH/jpeg.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/ldns.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/leptonica.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/libcap.patch" 2>/dev/null

@@ -1,6 +1,5 @@
 #!/bin/bash
 # i-matik
-
 source $I_MATIK_PATH/support/freetz/scripts/patches/i-matik_off/info.cgi
 source $I_MATIK_PATH/support/freetz/scripts/patches/i-matik_off/menu-new.sh
 source $I_MATIK_PATH/support/freetz/scripts/patches/i-matik_off/motd
@@ -8,11 +7,11 @@ source $I_MATIK_PATH/support/freetz/scripts/patches/i-matik_off/motd
 # libs
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/bluez-libs
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/db
-source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/freetype
+#source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/freetype
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/gettext
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/gsasl
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/jansson
-source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/jpeg
+#source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/jpeg
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/ldns
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/leptonica
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libcap
