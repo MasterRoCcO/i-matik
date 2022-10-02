@@ -1,0 +1,27 @@
+--- make/libs/libmnl/libmnl.mk	2022-10-02 09:28:13.079561000 +0200
++++ make/libs/libmnl/libmnl.mk	2022-10-02 13:23:41.553728960 +0200
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_LIB, 1.0.4)
+-$(PKG)_LIB_VERSION:=0.2.0
++$(call PKG_INIT_LIB, 1.0.5)
++$(PKG)_LIB_VERSION:=0.2.1
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.bz2
+-$(PKG)_HASH:=171f89699f286a5854b72b91d06e8f8e3683064c5901fb09d954a9ab6f551f81
++$(PKG)_HASH:=274b9b919ef3152bfb3da3a13c950dd60d6e2bcd54230ffeca298d03b40d0525
+ $(PKG)_SITE:=https://www.netfilter.org/projects/libmnl/files
+ 
+ $(PKG)_BINARY:=$($(PKG)_DIR)/src/.libs/$(pkg).so.$($(PKG)_LIB_VERSION)
+--- make/libs/libmnl/external.in	2022-10-02 09:28:13.079561000 +0200
++++ make/libs/libmnl/external.in	2022-10-02 13:24:41.472937830 +0200
+@@ -4,5 +4,5 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libmnl.so.0.2.0
++		 ${FREETZ_LIBRARY_DIR}/libmnl.so.0.2.1
+ 
+--- make/libs/libmnl/external.files	2022-10-02 09:28:13.079561000 +0200
++++ make/libs/libmnl/external.files	2022-10-02 13:24:48.472847626 +0200
+@@ -1 +1 @@
+-[ "$EXTERNAL_FREETZ_LIB_libmnl" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libmnl.so.0.2.0"
++[ "$EXTERNAL_FREETZ_LIB_libmnl" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libmnl.so.0.2.1"
