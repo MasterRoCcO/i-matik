@@ -1,0 +1,25 @@
+--- make/libs/libidn/libidn.mk	2022-09-30 20:32:25.265321000 +0200
++++ make/libs/libidn/libidn.mk	2022-10-02 09:14:05.486232414 +0200
+@@ -1,14 +1,14 @@
+-$(call PKG_INIT_LIB, 1.38)
+-$(PKG)_LIB_VERSION:=12.6.3
+-$(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
+-$(PKG)_HASH:=de00b840f757cd3bb14dd9a20d5936473235ddcba06d4bc2da804654b8bbf0f6
++$(call PKG_INIT_LIB, 2.3.3)
++$(PKG)_LIB_VERSION:=0.3.8
++$(PKG)_SOURCE:=$(pkg)2-$($(PKG)_VERSION).tar.gz
++$(PKG)_HASH:=f3ac987522c00d33d44b323cae424e2cffcb4c63c6aa6cd1376edacbf1c36eb0
+ $(PKG)_SITE:=@GNU/$(pkg)
+ 
+-$(PKG)_BINARY:=$($(PKG)_DIR)/$(pkg).so.$($(PKG)_LIB_VERSION)
+-$(PKG)_STAGING_BINARY:=$(TARGET_TOOLCHAIN_STAGING_DIR)/lib/$(pkg).so.$($(PKG)_LIB_VERSION)
+-$(PKG)_TARGET_BINARY:=$($(PKG)_DEST_LIB)/$(pkg).so.$($(PKG)_LIB_VERSION)
++$(PKG)_BINARY:=$($(PKG)_DIR)/$(pkg)2.so.$($(PKG)_LIB_VERSION)
++$(PKG)_STAGING_BINARY:=$(TARGET_TOOLCHAIN_STAGING_DIR)/lib/$(pkg)2.so.$($(PKG)_LIB_VERSION)
++$(PKG)_TARGET_BINARY:=$($(PKG)_DEST_LIB)/$(pkg)2.so.$($(PKG)_LIB_VERSION)
+ 
+-$(PKG)_LIBNAME_SHORT := $(pkg)
++$(PKG)_LIBNAME_SHORT := $(pkg)2
+ 
+ $(PKG_SOURCE_DOWNLOAD)
+ $(PKG_UNPACKED)
