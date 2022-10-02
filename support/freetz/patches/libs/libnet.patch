@@ -1,0 +1,27 @@
+--- make/libs/libnet/libnet.mk	2022-10-02 09:28:13.079561000 +0200
++++ make/libs/libnet/libnet.mk	2022-10-02 13:53:55.208173904 +0200
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_LIB, 1.1.4)
+-$(PKG)_LIB_VERSION:=1.5.0
++$(call PKG_INIT_LIB, 1.1.6)
++$(PKG)_LIB_VERSION:=1.7.0
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
+-$(PKG)_HASH:=de98229d9eca00b66c26cb368e582901cf768456321703bc38235e3b347b512d
++$(PKG)_HASH:=d392bb5825c4b6b672fc93a0268433c86dc964e1500c279dc6d0711ea6ec467a
+ $(PKG)_SITE:=@SF/$(pkg)-dev
+ 
+ $(PKG)_BINARY:=$($(PKG)_DIR)/src/.libs/$(pkg).so.$($(PKG)_LIB_VERSION)
+--- make/libs/libnet/external.in	2022-10-02 09:28:13.079561000 +0200
++++ make/libs/libnet/external.in	2022-10-02 13:55:11.971530638 +0200
+@@ -4,5 +4,5 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libnet.so.1.5.0
++		 ${FREETZ_LIBRARY_DIR}/libnet.so.1.7.0
+ 
+--- make/libs/libnet/external.files	2022-10-02 09:28:13.079561000 +0200
++++ make/libs/libnet/external.files	2022-10-02 13:55:04.255595218 +0200
+@@ -1 +1 @@
+-[ "$EXTERNAL_FREETZ_LIB_libnet" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libnet.so.1.5.0"
++[ "$EXTERNAL_FREETZ_LIB_libnet" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libnet.so.1.7.0"
