@@ -1,0 +1,64 @@
+--- make/libs/libtasn1/libtasn1.mk	2022-10-02 09:28:13.083561000 +0200
++++ make/libs/libtasn1/libtasn1.mk	2022-10-03 04:27:13.284141204 +0200
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_LIB, 4.13)
+-$(PKG)_LIB_VERSION:=6.5.5
++$(call PKG_INIT_LIB, 4.19.0)
++$(PKG)_LIB_VERSION:=6.6.3
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
+-$(PKG)_HASH:=7e528e8c317ddd156230c4e31d082cd13e7ddeb7a54824be82632209550c8cca
++$(PKG)_HASH:=1613f0ac1cf484d6ec0ce3b8c06d56263cc7242f1c23b30d82d23de345a63f7a
+ $(PKG)_SITE:=@GNU/$(pkg)
+ 
+ $(PKG)_BINARY:=$($(PKG)_DIR)/lib/.libs/$(pkg).so.$($(PKG)_LIB_VERSION)
+--- make/libs/libtasn1/external.in	2022-10-02 09:28:13.083561000 +0200
++++ make/libs/libtasn1/external.in	2022-10-03 04:28:57.052874599 +0200
+@@ -4,5 +4,5 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libtasn1.so.6.5.5
++		 ${FREETZ_LIBRARY_DIR}/libtasn1.so.6.6.3
+ 
+--- make/libs/libtasn1/external.files	2022-10-02 09:28:13.083561000 +0200
++++ make/libs/libtasn1/external.files	2022-10-03 04:28:48.389136819 +0200
+@@ -1 +1 @@
+-[ "$EXTERNAL_FREETZ_LIB_libtasn1" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libtasn1.so.6.5.5"
++[ "$EXTERNAL_FREETZ_LIB_libtasn1" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libtasn1.so.6.6.3"
+--- make/libs/libtasn1/patches/100-build_lib_only.libtasn1.patch	2022-10-02 09:28:13.083561000 +0200
++++ make/libs/libtasn1/patches/100-build_lib_only.libtasn1.patch	2022-10-03 04:26:25.989730181 +0200
+@@ -1,22 +1,22 @@
+ --- Makefile.am
+ +++ Makefile.am
+-@@ -26,7 +26,7 @@
+- 	windows/test-parser/test-parser.vcproj				\
++@@ -28,7 +28,7 @@
+  	windows/test-tree/test-tree.vcproj windows/libtasn14win.mk
++ EXTRA_DIST += cfg.mk maint.mk CONTRIBUTING.md README.md
+  
+--SUBDIRS = gl lib src tests
+-+SUBDIRS = gl lib
++-SUBDIRS = lib src fuzz tests
+++SUBDIRS = lib
+  
+  if ENABLE_DOC
+  SUBDIRS += doc examples
+ --- Makefile.in
+ +++ Makefile.in
+-@@ -949,7 +949,7 @@
+- 	windows/test-parser/test-parser.vcproj \
++@@ -1483,7 +1483,7 @@
+  	windows/test-tree/test-tree.vcproj windows/libtasn14win.mk \
+- 	cfg.mk maint.mk .clcopying
+--SUBDIRS = gl lib src tests $(am__append_1)
+-+SUBDIRS = gl lib           $(am__append_1)
+- ACLOCAL_AMFLAGS = -I m4 -I gl/m4 -I lib/glm4
+- TMPFILE = "abi-temp.xml"
+- all: config.h
++ 	cfg.mk maint.mk CONTRIBUTING.md README.md \
++ 	$(top_srcdir)/.version
++-SUBDIRS = lib src fuzz tests $(am__append_1)
+++SUBDIRS = lib                $(am__append_1)
++ @CODE_COVERAGE_ENABLED_TRUE@GITIGNOREFILES := $(GITIGNOREFILES) $(CODE_COVERAGE_OUTPUT_FILE) $(CODE_COVERAGE_OUTPUT_DIRECTORY)
++ @CODE_COVERAGE_ENABLED_TRUE@code_coverage_v_lcov_cap = $(code_coverage_v_lcov_cap_$(V))
++ @CODE_COVERAGE_ENABLED_TRUE@code_coverage_v_lcov_cap_ = $(code_coverage_v_lcov_cap_$(AM_DEFAULT_VERBOSITY))

@@ -34,6 +34,7 @@ cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libonig.patch "$FREETZ_SSL_HOME
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/liboping.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libosip2.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libpng.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libtasn1.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libxml2.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < bluez-libs.patch
 patch -p0 -b < db.patch
@@ -56,6 +57,7 @@ patch -p0 -b < libonig.patch
 patch -p0 -b < liboping.patch
 patch -p0 -b < libosip2.patch
 patch -p0 -b < libpng.patch
+patch -p0 -b < libtasn1.patch
 patch -p0 -b < libxml2.patch
 mv $FREETZ_SSL_HOME_PATH/make/libs/db/patches/020-drop_backtrace_dependency.db.patch $FREETZ_SSL_HOME_PATH/make/libs/db/patches/020-drop_backtrace_dependency.db.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/gettext/patches/010-disable_GLIBC_specific_code.patch $FREETZ_SSL_HOME_PATH/make/libs/gettext/patches/010-disable_GLIBC_specific_code.patch.orig 2>/dev/null
@@ -88,6 +90,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/libonig.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/liboping.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/libosip2.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/libpng.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/libtasn1.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/libxml2.patch" 2>/dev/null
 
 # packages
