@@ -30,7 +30,7 @@ source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libtasn1
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libxml2
 
 # packages
-source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/cifsmount
+#source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/cifsmount
 source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/dbus
 source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/imagemagick
 source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/pcsc-lite
