@@ -32,6 +32,7 @@ cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libnet.patch "$FREETZ_SSL_HOME_
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libogg.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libonig.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/liboping.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libosip2.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libpng.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libxml2.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < bluez-libs.patch
@@ -53,6 +54,7 @@ patch -p0 -b < libnet.patch
 patch -p0 -b < libogg.patch
 patch -p0 -b < libonig.patch
 patch -p0 -b < liboping.patch
+patch -p0 -b < libosip2.patch
 patch -p0 -b < libpng.patch
 patch -p0 -b < libxml2.patch
 mv $FREETZ_SSL_HOME_PATH/make/libs/db/patches/020-drop_backtrace_dependency.db.patch $FREETZ_SSL_HOME_PATH/make/libs/db/patches/020-drop_backtrace_dependency.db.patch.orig 2>/dev/null
@@ -64,6 +66,7 @@ mv $FREETZ_SSL_HOME_PATH/make/libs/libnet/patches/100-cross-compilation.libnet.p
 mv $FREETZ_SSL_HOME_PATH/make/libs/libonig/patches/102-no_include_dir.patch $FREETZ_SSL_HOME_PATH/make/libs/libonig/patches/102-no_include_dir.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/liboping/patches/110-IPv6_defines.liboping.patch $FREETZ_SSL_HOME_PATH/make/libs/liboping/patches/110-IPv6_defines.liboping.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/liboping/patches/120-IPv6_structs.liboping.patch $FREETZ_SSL_HOME_PATH/make/libs/liboping/patches/120-IPv6_structs.liboping.patch.orig 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libosip2/patches/010-multiple_CFLAGS.libosip2.patch $FREETZ_SSL_HOME_PATH/make/libs/libosip2/patches/010-multiple_CFLAGS.libosip2.patch.orig 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/bluez-libs.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/db.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/freetype.patch" 2>/dev/null
@@ -83,6 +86,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/libnet.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/libogg.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/libonig.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/liboping.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/libosip2.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/libpng.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/libxml2.patch" 2>/dev/null
 

@@ -24,6 +24,7 @@ source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libnet
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libogg
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libonig
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/liboping
+source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libosip2
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libpng
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libxml2
 
