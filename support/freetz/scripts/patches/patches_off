@@ -14,7 +14,7 @@ source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/jansson
 #source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/jpeg
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/ldns
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/leptonica
-source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libcap
+#source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libcap
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libev
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libffi
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libgsm

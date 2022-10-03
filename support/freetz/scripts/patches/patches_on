@@ -22,7 +22,7 @@ cp -ar $I_MATIK_PATH/support/freetz/patches/libs/jansson.patch "$FREETZ_SSL_HOME
 #cp -ar $I_MATIK_PATH/support/freetz/patches/libs/jpeg.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/ldns.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/leptonica.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libcap.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libcap.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libev.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libffi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libgsm.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
@@ -45,7 +45,7 @@ patch -p0 -b < jansson.patch
 #patch -p0 -b < jpeg.patch
 patch -p0 -b < ldns.patch
 patch -p0 -b < leptonica.patch
-patch -p0 -b < libcap.patch
+#patch -p0 -b < libcap.patch
 patch -p0 -b < libev.patch
 patch -p0 -b < libffi.patch
 patch -p0 -b < libgsm.patch
@@ -78,7 +78,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/jansson.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/jpeg.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/ldns.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/leptonica.patch" 2>/dev/null
-rm -rf "$FREETZ_SSL_HOME_PATH/libcap.patch" 2>/dev/null
+#rm -rf "$FREETZ_SSL_HOME_PATH/libcap.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/libev.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/libffi.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/libgsm.patch" 2>/dev/null
