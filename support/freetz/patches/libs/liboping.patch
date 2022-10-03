@@ -1,0 +1,37 @@
+--- make/libs/liboping/liboping.mk	2022-10-02 09:28:13.083561000 +0200
++++ make/libs/liboping/liboping.mk	2022-10-03 03:26:14.629404250 +0200
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_LIB, 1.6.1)
+-$(PKG)_LIB_VERSION:=0.2.7
++$(call PKG_INIT_LIB, 1.10.0)
++$(PKG)_LIB_VERSION:=0.3.0
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.bz2
+-$(PKG)_HASH:=cf5c9ac217ddc653543785de50fae6b2595393efa9d73e2e1acb63dc48fb3983
++$(PKG)_HASH:=eb38aa93f93e8ab282d97e2582fbaea88b3f889a08cbc9dbf20059c3779d5cd8
+ $(PKG)_SITE:=http://verplant.org/liboping/files
+ 
+ $(PKG)_BINARY:=$($(PKG)_DIR)/src/.libs/$(pkg).so.$($(PKG)_LIB_VERSION)
+--- make/libs/liboping/external.in	2022-10-02 09:28:13.083561000 +0200
++++ make/libs/liboping/external.in	2022-10-03 03:27:43.814968232 +0200
+@@ -4,5 +4,5 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/liboping.so.0.2.7
++		 ${FREETZ_LIBRARY_DIR}/liboping.so.0.3.0
+ 
+--- make/libs/liboping/external.files	2022-10-02 09:28:13.083561000 +0200
++++ make/libs/liboping/external.files	2022-10-03 03:27:34.787175780 +0200
+@@ -1 +1 @@
+-[ "$EXTERNAL_FREETZ_LIB_liboping" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/liboping.so.0.2.7"
++[ "$EXTERNAL_FREETZ_LIB_liboping" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/liboping.so.0.3.0"
+--- make/libs/liboping/patches/100-no-Werror.liboping.patch	2022-10-02 09:28:13.083561000 +0200
++++ make/libs/liboping/patches/100-no-Werror.liboping.patch	2022-10-03 03:24:27.810788741 +0200
+@@ -1,6 +1,6 @@
+ --- src/Makefile.in
+ +++ src/Makefile.in
+-@@ -274,7 +274,7 @@
++@@ -388,7 +388,7 @@
+  top_srcdir = @top_srcdir@
+  AUTOMAKE_OPTIONS = foreign no-dependencies
+  SUBDIRS = mans
