@@ -1,0 +1,5 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/make/dtach/dtach.mk 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/dtach/Config.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/dtach/dtach.mk.orig $FREETZ_SSL_HOME_PATH/make/dtach/dtach.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/dtach/Config.in.orig $FREETZ_SSL_HOME_PATH/make/dtach/Config.in 2>/dev/null
