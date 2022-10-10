@@ -1,0 +1,13 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/make/bird/bird.mk 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/bird/Config.in 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/bird/patches/002-missing_includes.patch 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/bird/patches/003-birdc_fix_buffer_overflow.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/bird/bird.mk.orig $FREETZ_SSL_HOME_PATH/make/bird/bird.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/bird/Config.in.orig $FREETZ_SSL_HOME_PATH/make/bird/Config.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/bird/patches/002-missing_includes.patch.orig $FREETZ_SSL_HOME_PATH/make/bird/patches/002-missing_includes.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/bird/patches/003-birdc_fix_buffer_overflow.patch.orig $FREETZ_SSL_HOME_PATH/make/bird/patches/003-birdc_fix_buffer_overflow.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/bird/patches/100-fix_debugging_paths.patch.orig $FREETZ_SSL_HOME_PATH/make/bird/patches/100-fix_debugging_paths.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/bird/patches/101-disable_default_debug.patch.orig $FREETZ_SSL_HOME_PATH/make/bird/patches/101-disable_default_debug.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/bird/patches/102-CPPFLAGS.patch.orig $FREETZ_SSL_HOME_PATH/make/bird/patches/102-CPPFLAGS.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/bird/patches/103-AR.patch.orig $FREETZ_SSL_HOME_PATH/make/bird/patches/103-AR.patch 2>/dev/null
