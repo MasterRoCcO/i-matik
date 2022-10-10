@@ -31,6 +31,7 @@ source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libxml2
 
 # packages
 source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/bird
+source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/bridge-utils
 #source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/cifsmount
 source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/dbus
 source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/dtach

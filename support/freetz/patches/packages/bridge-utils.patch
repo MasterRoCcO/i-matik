@@ -1,0 +1,70 @@
+--- make/bridge-utils/bridge-utils.mk	2022-10-07 16:13:40.649736000 +0200
++++ make/bridge-utils/bridge-utils.mk	2022-10-10 18:10:42.942551754 +0200
+@@ -1,9 +1,10 @@
+-$(call PKG_INIT_BIN,1.4)
++$(call PKG_INIT_BIN,1.5)
+ $(PKG)_SOURCE:=bridge-utils-$($(PKG)_VERSION).tar.gz
+-$(PKG)_HASH:=876975e9bcc302aa8b829161ea3348b12b9b879f1db0dc98feaed8d0e5dd5933
++$(PKG)_HASH:=42f9e5fb8f6c52e63a98a43b81bd281c227c529f194913e1c51ec48a393b6688
+ $(PKG)_SITE:=@SF/bridge
+ $(PKG)_BINARY:=$($(PKG)_DIR)/brctl/brctl
+ $(PKG)_TARGET_BINARY:=$($(PKG)_DEST_DIR)/sbin/brctl
++### WEBSITE:=https://sourceforge.net/projects/bridge/files/bridge/
+ 
+ $(PKG)_CONFIGURE_PRE_CMDS += ln -sf configure.in configure.ac;
+ $(PKG)_CONFIGURE_PRE_CMDS += autoconf > /dev/null 2>&1;
+--- make/bridge-utils/Config.in	2022-10-07 16:13:40.649736000 +0200
++++ make/bridge-utils/Config.in	2022-10-10 18:09:39.079779222 +0200
+@@ -1,5 +1,5 @@
+ config FREETZ_PACKAGE_BRIDGE_UTILS
+-	bool "bridge-utils 1.4 (binary only)"
++	bool "bridge-utils 1.5 (binary only)"
+ 	default n
+ 	help
+ 		This package contains utilities for configuring the Linux ethernet
+--- make/bridge-utils/patches/100-Makefile.patch	2022-10-07 16:13:40.649736000 +0200
++++ make/bridge-utils/patches/100-Makefile.patch	2022-10-10 18:06:11.735790310 +0200
+@@ -1,5 +1,5 @@
+---- libbridge/Makefile.in	2006-09-09 07:30:31.000000000 +0200
+-+++ libbridge/Makefile.in	2007-09-25 13:27:29.000000000 +0200
++--- libbridge/Makefile.in
+++++ libbridge/Makefile.in
+ @@ -1,11 +1,13 @@
+  
+ -KERNEL_HEADERS=-I@KERNEL_HEADERS@
+@@ -16,7 +16,7 @@
+  
+  prefix=@prefix@
+  exec_prefix=@exec_prefix@
+-@@ -37,8 +39,5 @@
++@@ -34,8 +36,5 @@
+  	$(RANLIB) $@
+  
+  %.o: %.c libbridge.h libbridge_private.h
+@@ -26,8 +26,8 @@
+ -	$(CC) $(CFLAGS) -c libbridge_compat.c
+ -
+ diff
+---- brctl/Makefile.in	2006-09-09 07:30:31.000000000 +0200
+-+++ brctl/Makefile.in	2007-09-25 13:28:46.000000000 +0200
++--- brctl/Makefile.in
+++++ brctl/Makefile.in
+ @@ -1,10 +1,11 @@
+  
+ -KERNEL_HEADERS=-I@KERNEL_HEADERS@
+@@ -52,8 +52,8 @@
+  clean:
+  	rm -f *.o brctl core
+ diff
+---- Makefile.in	2006-09-09 07:30:31.000000000 +0200
+-+++ Makefile.in	2007-09-25 16:19:09.000000000 +0200
++--- Makefile.in
+++++ Makefile.in
+ @@ -14,10 +14,10 @@
+  SUBDIRS=libbridge brctl doc
+  
+@@ -67,4 +67,3 @@
+  
+  distclean:	clean
+  	rm -f config.log
+-diff
