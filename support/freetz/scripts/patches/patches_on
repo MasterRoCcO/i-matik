@@ -97,6 +97,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/libxml2.patch" 2>/dev/null
 echo -e ${GREEN}"Freetz files patch for packages."${NC}
 cp -ar $I_MATIK_PATH/support/freetz/patches/packages/bird.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/packages/bridge-utils.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/packages/ca-bundle.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $I_MATIK_PATH/support/freetz/patches/packages/cifsmount.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/packages/dbus.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/packages/dtach.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
@@ -105,6 +106,7 @@ cp -ar $I_MATIK_PATH/support/freetz/patches/packages/pcsc-lite.patch "$FREETZ_SS
 cp -ar $I_MATIK_PATH/support/freetz/patches/packages/tiff.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < bird.patch
 patch -p0 -b < bridge-utils.patch
+patch -p0 -b < ca-bundle.patch
 #patch -p0 -b < cifsmount.patch
 patch -p0 -b < dbus.patch
 patch -p0 -b < dtach.patch
@@ -118,6 +120,7 @@ mv $FREETZ_SSL_HOME_PATH/make/bird/patches/103-AR.patch $FREETZ_SSL_HOME_PATH/ma
 mv $FREETZ_SSL_HOME_PATH/make/imagemagick/patches/010-extra_flags.patch $FREETZ_SSL_HOME_PATH/make/imagemagick/patches/010-extra_flags.patch.orig 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/bird.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/bridge-utils.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/ca-bundle.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/cifsmount.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/dbus.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/dtach.patch" 2>/dev/null

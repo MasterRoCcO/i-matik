@@ -1,0 +1,20 @@
+--- make/ca-bundle/ca-bundle.mk	2022-10-07 16:13:40.797733000 +0200
++++ make/ca-bundle/ca-bundle.mk	2022-10-11 16:58:30.557221466 +0200
+@@ -1,6 +1,6 @@
+-$(call PKG_INIT_BIN, 2022-07-19)
++$(call PKG_INIT_BIN, 2022-10-11)
+ $(PKG)_SOURCE:=cacert-$($(PKG)_VERSION).pem
+-$(PKG)_HASH:=6ed95025fba2aef0ce7b647607225745624497f876d74ef6ec22b26e73e9de77
++$(PKG)_HASH:=2cff03f9efdaf52626bd1b451d700605dc1ea000c5da56bd0fc59f8f43071040
+ $(PKG)_SITE:=https://www.curl.se/ca,https://curl.haxx.se/ca
+ ### WEBSITE:=https://www.curl.se/ca
+ 
+--- make/ca-bundle/Config.in	2022-10-07 16:13:40.797733000 +0200
++++ make/ca-bundle/Config.in	2022-10-11 17:01:30.558052859 +0200
+@@ -1,5 +1,5 @@
+ config FREETZ_PACKAGE_CA_BUNDLE
+-	bool "CA-bundle 2022-07-19"
++	bool "CA-bundle 2022-10-11"
+ 	default n
+ 	help
+ 		The Mozilla CA certificate store in PEM format,
