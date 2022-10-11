@@ -11,6 +11,12 @@ rm -rf "$FREETZ_SSL_HOME_PATH/info.cgi.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/menu-new.sh.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/motd.patch" 2>/dev/null
 
+# dl-firmware
+echo -e ${GREEN}"Freetz files patch for dl-firmware."${NC}
+cp -ar $I_MATIK_PATH/support/freetz/patches/dl-firmware/dl-firmware.in.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < dl-firmware.in.patch
+rm -rf "$FREETZ_SSL_HOME_PATH/dl-firmware.in.patch" 2>/dev/null
+
 # libs
 echo -e ${GREEN}"Freetz files patch for libs."${NC}
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/bluez-libs.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null

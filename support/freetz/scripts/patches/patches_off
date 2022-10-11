@@ -4,6 +4,9 @@ source $I_MATIK_PATH/support/freetz/scripts/patches/i-matik_off/info.cgi
 source $I_MATIK_PATH/support/freetz/scripts/patches/i-matik_off/menu-new.sh
 source $I_MATIK_PATH/support/freetz/scripts/patches/i-matik_off/motd
 
+# dl-firmware
+source $I_MATIK_PATH/support/freetz/scripts/patches/dl-firmware_off/dl-firmware.in
+
 # libs
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/bluez-libs
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/db
