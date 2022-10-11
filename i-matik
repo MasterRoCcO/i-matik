@@ -3,7 +3,7 @@ I_MATIK_PATH=$(cd `dirname $0` && pwd)
 git pull
 source $I_MATIK_PATH/support/i-matik/i-matik.config
 source $I_MATIK_INSTAL_CHECK
-VERSIONS_NR=0.59.8
+VERSIONS_NR=0.59.9
 NC='\033[0m' 		# RESET color
 RED='\033[0;31m'	# RED color
 GREEN='\033[0;32m'	# GREEN color
@@ -491,8 +491,8 @@ printf ${RED}"No supported\n"
 elif [[ $1 == '7412' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
 
-elif [[ $1 == '7412-Alien7430.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+#elif [[ $1 == '7412-Alien7430.10' ]]; then
+#source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
 elif [[ $1 == '7412-Alien7430.11' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
 elif [[ $1 == '7412-Alien7430.30' ]]; then
@@ -500,7 +500,7 @@ source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
 elif [[ $1 == '7412-Alien7430.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '7412-Alien7430' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
 
 #mips boxen external no inmemory
 elif [[ $1 == '4020.10' ]]; then
