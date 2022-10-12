@@ -8,4 +8,3 @@ mv $FREETZ_SSL_HOME_PATH/make/imagemagick/external.files.orig $FREETZ_SSL_HOME_P
 mv $FREETZ_SSL_HOME_PATH/make/imagemagick/imagemagick.mk.orig $FREETZ_SSL_HOME_PATH/make/imagemagick/imagemagick.mk 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/imagemagick/external.in.orig $FREETZ_SSL_HOME_PATH/make/imagemagick/external.in 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/imagemagick/patches/010-extra_flags.patch.orig $FREETZ_SSL_HOME_PATH/make/imagemagick/patches/010-extra_flags.patch 2>/dev/null
-

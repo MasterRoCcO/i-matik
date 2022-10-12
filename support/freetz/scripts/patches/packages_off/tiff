@@ -5,4 +5,3 @@ rm -f $FREETZ_SSL_HOME_PATH/make/tiff/Config.in 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/tiff/tiff.mk.orig $FREETZ_SSL_HOME_PATH/make/tiff/tiff.mk 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/tiff/external.in.libs.orig $FREETZ_SSL_HOME_PATH/make/tiff/external.in.libs 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/tiff/Config.in.orig $FREETZ_SSL_HOME_PATH/make/tiff/Config.in 2>/dev/null
-

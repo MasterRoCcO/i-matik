@@ -11,4 +11,3 @@ mv $FREETZ_SSL_HOME_PATH/make/dbus/external.files.orig $FREETZ_SSL_HOME_PATH/mak
 mv $FREETZ_SSL_HOME_PATH/make/dbus/external.in.libs.orig $FREETZ_SSL_HOME_PATH/make/dbus/external.in.libs 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/dbus/patches/010-link_all_deplibs.patch.orig $FREETZ_SSL_HOME_PATH/make/dbus/patches/010-link_all_deplibs.patch 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/dbus/patches/020-drop_backtrace_dependency.patch.orig $FREETZ_SSL_HOME_PATH/make/dbus/patches/020-drop_backtrace_dependency.patch 2>/dev/null
-
