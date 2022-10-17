@@ -11,7 +11,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/info.cgi.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/menu-new.sh.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/motd.patch" 2>/dev/null
 
-## dl-firmware
+# dl-firmware
 #echo -e ${GREEN}"Freetz files patch for dl-firmware."${NC}
 #cp -ar $I_MATIK_PATH/support/freetz/patches/dl-firmware/dl-firmware.in.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #patch -p0 -b < dl-firmware.in.patch
@@ -42,6 +42,7 @@ cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libosip2.patch "$FREETZ_SSL_HOM
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libpng.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libtasn1.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libxml2.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/libs/yaml.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < bluez-libs.patch
 patch -p0 -b < db.patch
 #patch -p0 -b < freetype.patch
@@ -65,6 +66,7 @@ patch -p0 -b < libosip2.patch
 patch -p0 -b < libpng.patch
 #patch -p0 -b < libtasn1.patch
 patch -p0 -b < libxml2.patch
+patch -p0 -b < yaml.patch
 mv $FREETZ_SSL_HOME_PATH/make/libs/db/patches/020-drop_backtrace_dependency.db.patch $FREETZ_SSL_HOME_PATH/make/libs/db/patches/020-drop_backtrace_dependency.db.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/gettext/patches/010-disable_GLIBC_specific_code.patch $FREETZ_SSL_HOME_PATH/make/libs/gettext/patches/010-disable_GLIBC_specific_code.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/020-no_xtractprotos.leptonica.patch $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/020-no_xtractprotos.leptonica.patch.orig 2>/dev/null
@@ -98,6 +100,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/libosip2.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/libpng.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/libtasn1.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/libxml2.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/yaml.patch" 2>/dev/null
 
 # packages
 echo -e ${GREEN}"Freetz files patch for packages."${NC}
@@ -110,6 +113,7 @@ cp -ar $I_MATIK_PATH/support/freetz/patches/packages/dtach.patch "$FREETZ_SSL_HO
 cp -ar $I_MATIK_PATH/support/freetz/patches/packages/imagemagick.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/packages/pcsc-lite.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/packages/tiff.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $I_MATIK_PATH/support/freetz/patches/packages/zabbix.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < bird.patch
 patch -p0 -b < bridge-utils.patch
 #patch -p0 -b < ca-bundle.patch
@@ -119,11 +123,14 @@ patch -p0 -b < dtach.patch
 patch -p0 -b < imagemagick.patch
 patch -p0 -b < pcsc-lite.patch
 patch -p0 -b < tiff.patch
+#patch -p0 -b < zabbix.patch
 mv $FREETZ_SSL_HOME_PATH/make/bird/patches/100-fix_debugging_paths.patch $FREETZ_SSL_HOME_PATH/make/bird/patches/100-fix_debugging_paths.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/bird/patches/101-disable_default_debug.patch $FREETZ_SSL_HOME_PATH/make/bird/patches/101-disable_default_debug.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/bird/patches/102-CPPFLAGS.patch $FREETZ_SSL_HOME_PATH/make/bird/patches/102-CPPFLAGS.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/bird/patches/103-AR.patch $FREETZ_SSL_HOME_PATH/make/bird/patches/103-AR.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/imagemagick/patches/010-extra_flags.patch $FREETZ_SSL_HOME_PATH/make/imagemagick/patches/010-extra_flags.patch.orig 2>/dev/null
+#mv $FREETZ_SSL_HOME_PATH/make/zabbix/patches/060-no-res_send-in-uclibc.patch $FREETZ_SSL_HOME_PATH/make/zabbix/patches/060-no-res_send-in-uclibc.patch.orig
+#mv $FREETZ_SSL_HOME_PATH/make/zabbix/patches/070-drop_backtrace_dependency.patch $FREETZ_SSL_HOME_PATH/make/zabbix/patches/070-drop_backtrace_dependency.patch.orig
 rm -rf "$FREETZ_SSL_HOME_PATH/bird.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/bridge-utils.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/ca-bundle.patch" 2>/dev/null
@@ -133,6 +140,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/dtach.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/imagemagick.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/pcsc-lite.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/tiff.patch" 2>/dev/null
+#rm -rf "$FREETZ_SSL_HOME_PATH/zabbix.patch" 2>/dev/null
 
 # privat
 echo -e ${GREEN}"Freetz files patch for privat."${NC}
