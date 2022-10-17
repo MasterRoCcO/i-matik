@@ -1,0 +1,7 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/opus/opus.mk 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/opus/external.in 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/opus/external.files 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/opus/opus.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/opus/opus.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/opus/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/opus/external.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/opus/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/opus/external.files 2>/dev/null
