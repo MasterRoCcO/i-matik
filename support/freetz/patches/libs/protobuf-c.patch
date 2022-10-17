@@ -1,0 +1,12 @@
+--- make/libs/protobuf-c/protobuf-c.mk	2022-10-11 21:19:39.740180000 +0200
++++ make/libs/protobuf-c/protobuf-c.mk	2022-10-17 21:48:43.381798557 +0200
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_LIB, 1.1.0)
++$(call PKG_INIT_LIB, 1.4.1)
+ $(PKG)_LIB_VERSION:=1.0.0
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
+-$(PKG)_HASH:=9a973fc04aac003f9cf2b5a90ac4b8fa294cacb4e3f0796d3b5a789a5ad46c07
++$(PKG)_HASH:=4cc4facd508172f3e0a4d3a8736225d472418aee35b4ad053384b137b220339f
+ $(PKG)_SITE:=https://github.com/$(pkg)/$(pkg)/releases/download/v$($(PKG)_VERSION)
+ 
+ $(PKG)_BINARY:=$($(PKG)_DIR)/protobuf-c/.libs/libprotobuf-c.so.$($(PKG)_LIB_VERSION)
