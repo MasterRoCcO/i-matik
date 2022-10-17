@@ -1,5 +1,5 @@
---- make/pcsc-lite/Config.in	2022-08-17 10:14:10.087988000 +0200
-+++ make/pcsc-lite/Config.in	2022-09-14 20:03:09.158580565 +0200
+--- make/pkgs/pcsc-lite/Config.in	2022-08-17 10:14:10.087988000 +0200
++++ make/pkgs/pcsc-lite/Config.in	2022-09-14 20:03:09.158580565 +0200
 @@ -1,5 +1,5 @@
  config FREETZ_PACKAGE_PCSC_LITE
 -	bool "PCSC-lite 1.9.8 (binary only)"
@@ -7,8 +7,8 @@
  	select FREETZ_LIB_libdl       if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
  	select FREETZ_LIB_libpthread  if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
  	select FREETZ_LIB_librt       if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
---- make/pcsc-lite/pcsc-lite.mk	2022-08-17 10:14:10.087988000 +0200
-+++ make/pcsc-lite/pcsc-lite.mk	2022-09-14 20:06:23.934252898 +0200
+--- make/pkgs/pcsc-lite/pcsc-lite.mk	2022-08-17 10:14:10.087988000 +0200
++++ make/pkgs/pcsc-lite/pcsc-lite.mk	2022-09-14 20:06:23.934252898 +0200
 @@ -1,7 +1,7 @@
 -$(call PKG_INIT_BIN, 1.9.8)
 +$(call PKG_INIT_BIN, 1.9.9)

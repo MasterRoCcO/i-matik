@@ -1,5 +1,5 @@
---- make/bird/bird.mk	2022-10-07 16:13:40.633737000 +0200
-+++ make/bird/bird.mk	2022-10-10 17:11:37.754237194 +0200
+--- make/pkgs/bird/bird.mk	2022-10-07 16:13:40.633737000 +0200
++++ make/pkgs/bird/bird.mk	2022-10-10 17:11:37.754237194 +0200
 @@ -1,6 +1,6 @@
 -$(call PKG_INIT_BIN, 1.6.4)
 +$(call PKG_INIT_BIN, 2.0.10)
@@ -9,8 +9,8 @@
  $(PKG)_SITE:=ftp://bird.network.cz/pub/bird
  $(PKG)_STARTLEVEL=82
  
---- make/bird/Config.in	2022-10-07 16:13:40.633737000 +0200
-+++ make/bird/Config.in	2022-10-10 17:19:23.797244923 +0200
+--- make/pkgs/bird/Config.in	2022-10-07 16:13:40.633737000 +0200
++++ make/pkgs/bird/Config.in	2022-10-10 17:19:23.797244923 +0200
 @@ -1,5 +1,5 @@
  config FREETZ_PACKAGE_BIRD
 -	bool "Bird 1.6.4"
@@ -18,8 +18,8 @@
  	default n
  	help
  		The BIRD Internet Routing Daemon
---- make/bird/patches/002-missing_includes.patch	2022-10-07 16:13:40.637736000 +0200
-+++ make/bird/patches/002-missing_includes.patch	2022-10-10 17:11:40.882132876 +0200
+--- make/pkgs/bird/patches/002-missing_includes.patch	2022-10-07 16:13:40.637736000 +0200
++++ make/pkgs/bird/patches/002-missing_includes.patch	2022-10-10 17:11:40.882132876 +0200
 @@ -22,9 +22,9 @@
   #else
  --- lib/resource.h
@@ -33,8 +33,8 @@
   #else
  +#include <stdlib.h> /* free */
   /*
---- make/bird/patches/003-birdc_fix_buffer_overflow.patch	2022-10-07 16:13:40.637736000 +0200
-+++ make/bird/patches/003-birdc_fix_buffer_overflow.patch	2022-10-10 17:11:40.898132343 +0200
+--- make/pkgs/bird/patches/003-birdc_fix_buffer_overflow.patch	2022-10-07 16:13:40.637736000 +0200
++++ make/pkgs/bird/patches/003-birdc_fix_buffer_overflow.patch	2022-10-10 17:11:40.898132343 +0200
 @@ -1,6 +1,6 @@
  --- client/client.c
  +++ client/client.c

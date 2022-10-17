@@ -1,7 +1,7 @@
 #!/bin/bash
-rm -f $FREETZ_SSL_HOME_PATH/make/bridge-utils/bridge-utils.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/bridge-utils/Config.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/bridge-utils/patches/100-Makefile.patch2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/bridge-utils/bridge-utils.mk.orig $FREETZ_SSL_HOME_PATH/make/bridge-utils/bridge-utils.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/bridge-utils/Config.in.orig $FREETZ_SSL_HOME_PATH/make/bridge-utils/Config.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/bridge-utils/patches/100-Makefile.patch.orig $FREETZ_SSL_HOME_PATH/make/bridge-utils/patches/100-Makefile.patch 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/bridge-utils/bridge-utils.mk 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/bridge-utils/Config.in 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/bridge-utils/patches/100-Makefile.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/pkgs/bridge-utils/bridge-utils.mk.orig $FREETZ_SSL_HOME_PATH/make/pkgs/bridge-utils/bridge-utils.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/pkgs/bridge-utils/Config.in.orig $FREETZ_SSL_HOME_PATH/make/pkgs/bridge-utils/Config.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/pkgs/bridge-utils/patches/100-Makefile.patch.orig $FREETZ_SSL_HOME_PATH/make/pkgs/bridge-utils/patches/100-Makefile.patch 2>/dev/null

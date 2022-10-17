@@ -1,5 +1,5 @@
---- make/tiff/tiff.mk	2022-09-18 09:29:14.411122000 +0200
-+++ make/tiff/tiff.mk	2022-09-18 11:52:18.874578471 +0200
+--- make/pkgs/tiff/tiff.mk	2022-09-18 09:29:14.411122000 +0200
++++ make/pkgs/tiff/tiff.mk	2022-09-18 11:52:18.874578471 +0200
 @@ -1,7 +1,7 @@
 -$(call PKG_INIT_BIN, 4.0.7)
 -$(PKG)_LIB_VERSION:=5.2.5
@@ -11,8 +11,8 @@
  $(PKG)_SITE:=http://download.osgeo.org/libtiff
  
  $(PKG)_BINARIES_ALL := fax2ps fax2tiff ppm2tiff raw2tiff tiff2bw tiff2pdf tiff2ps tiffinfo tiffsplit
---- make/tiff/external.in.libs	2022-09-18 09:29:14.411122000 +0200
-+++ make/tiff/external.in.libs	2022-09-18 12:12:32.138004111 +0200
+--- make/pkgs/tiff/external.in.libs	2022-09-18 09:29:14.411122000 +0200
++++ make/pkgs/tiff/external.in.libs	2022-09-18 12:12:32.138004111 +0200
 @@ -4,7 +4,7 @@
  	default n
  	help
@@ -29,8 +29,8 @@
 -		 ${FREETZ_LIBRARY_DIR}/libtiffxx.so.5.2.5
 +		 ${FREETZ_LIBRARY_DIR}/libtiffxx.so.5
  
---- make/tiff/Config.in	2022-09-18 09:29:14.411122000 +0200
-+++ make/tiff/Config.in	2022-09-18 11:48:37.346982147 +0200
+--- make/pkgs/tiff/Config.in	2022-09-18 09:29:14.411122000 +0200
++++ make/pkgs/tiff/Config.in	2022-09-18 11:48:37.346982147 +0200
 @@ -1,5 +1,5 @@
  config FREETZ_PACKAGE_TIFF
 -	bool "TIFF utils 4.0.7 (binary only)"

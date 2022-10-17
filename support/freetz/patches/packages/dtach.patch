@@ -1,5 +1,5 @@
---- make/dtach/dtach.mk	2022-10-03 09:31:31.347349000 +0200
-+++ make/dtach/dtach.mk	2022-10-06 17:13:17.112491383 +0200
+--- make/pkgs/dtach/dtach.mk	2022-10-03 09:31:31.347349000 +0200
++++ make/pkgs/dtach/dtach.mk	2022-10-06 17:13:17.112491383 +0200
 @@ -1,9 +1,10 @@
 -$(call PKG_INIT_BIN,0.8)
 +$(call PKG_INIT_BIN,0.9)
@@ -13,8 +13,8 @@
  
  $(PKG_SOURCE_DOWNLOAD)
  $(PKG_UNPACKED)
---- make/dtach/Config.in	2022-10-03 09:31:31.347349000 +0200
-+++ make/dtach/Config.in	2022-10-06 17:15:39.163028969 +0200
+--- make/pkgs/dtach/Config.in	2022-10-03 09:31:31.347349000 +0200
++++ make/pkgs/dtach/Config.in	2022-10-06 17:15:39.163028969 +0200
 @@ -1,5 +1,5 @@
  config FREETZ_PACKAGE_DTACH
 -	bool "dtach 0.8 (binary only)"

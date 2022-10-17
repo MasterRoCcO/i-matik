@@ -1,5 +1,5 @@
---- make/dbus/dbus.mk	2022-09-18 13:06:37.073156000 +0200
-+++ make/dbus/dbus.mk	2022-09-22 18:40:34.516891063 +0200
+--- make/pkgs/dbus/dbus.mk	2022-09-18 13:06:37.073156000 +0200
++++ make/pkgs/dbus/dbus.mk	2022-09-22 18:40:34.516891063 +0200
 @@ -1,7 +1,7 @@
 -$(call PKG_INIT_BIN, 1.13.18)
 -$(PKG)_LIB_VERSION:=3.29.0
@@ -11,8 +11,8 @@
  $(PKG)_SITE:=http://$(pkg).freedesktop.org/releases/$(pkg)
  
  $(PKG)_STARTLEVEL=90 # before avahi
---- make/dbus/Config.in	2022-09-18 13:06:37.073156000 +0200
-+++ make/dbus/Config.in	2022-09-22 18:47:29.891799209 +0200
+--- make/pkgs/dbus/Config.in	2022-09-18 13:06:37.073156000 +0200
++++ make/pkgs/dbus/Config.in	2022-09-22 18:47:29.891799209 +0200
 @@ -1,5 +1,5 @@
  config FREETZ_PACKAGE_DBUS
 -	bool "D-Bus 1.13.18"
@@ -20,16 +20,16 @@
  	default n
  	select FREETZ_LIB_libexpat
  	select FREETZ_LIB_libpthread if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
---- make/dbus/external.files	2022-09-18 13:06:37.073156000 +0200
-+++ make/dbus/external.files	2022-09-22 18:41:49.503484030 +0200
+--- make/pkgs/dbus/external.files	2022-09-18 13:06:37.073156000 +0200
++++ make/pkgs/dbus/external.files	2022-09-22 18:41:49.503484030 +0200
 @@ -2,4 +2,4 @@
  [ "$EXTERNAL_FREETZ_PACKAGE_DBUS_monitor" == "y" ] && EXTERNAL_FILES+=" /usr/bin/dbus-monitor"
  [ "$EXTERNAL_FREETZ_PACKAGE_DBUS_send" == "y" ] && EXTERNAL_FILES+=" /usr/bin/dbus-send"
  [ "$EXTERNAL_FREETZ_PACKAGE_DBUS_uuidgen" == "y" ] && EXTERNAL_FILES+=" /usr/bin/dbus-uuidgen"
 -[ "$EXTERNAL_FREETZ_LIB_libdbus" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libdbus-1.so.3.29.0"
 +[ "$EXTERNAL_FREETZ_LIB_libdbus" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libdbus-1.so.3"
---- make/dbus/external.in.libs	2022-09-18 13:06:37.073156000 +0200
-+++ make/dbus/external.in.libs	2022-09-22 18:42:22.146871970 +0200
+--- make/pkgs/dbus/external.in.libs	2022-09-18 13:06:37.073156000 +0200
++++ make/pkgs/dbus/external.in.libs	2022-09-22 18:42:22.146871970 +0200
 @@ -4,5 +4,5 @@
  	default n
  	help
@@ -37,8 +37,8 @@
 -		 ${FREETZ_LIBRARY_DIR}/libdbus.so.3.29.0
 +		 ${FREETZ_LIBRARY_DIR}/libdbus.so.3
  
---- make/dbus/patches/010-link_all_deplibs.patch	2022-09-18 13:06:37.073156000 +0200
-+++ make/dbus/patches/010-link_all_deplibs.patch	2022-09-22 18:27:58.735225455 +0200
+--- make/pkgs/dbus/patches/010-link_all_deplibs.patch	2022-09-18 13:06:37.073156000 +0200
++++ make/pkgs/dbus/patches/010-link_all_deplibs.patch	2022-09-22 18:27:58.735225455 +0200
 @@ -1,7 +1,7 @@
  revert Debian-2.4.2-1.2 changes
  --- configure
@@ -48,8 +48,8 @@
       with_gnu_ld=no
       ;;
     linux* | k*bsd*-gnu | gnu*)
---- make/dbus/patches/020-drop_backtrace_dependency.patch	2022-09-18 13:06:37.073156000 +0200
-+++ make/dbus/patches/020-drop_backtrace_dependency.patch	2022-09-22 18:50:54.831051803 +0200
+--- make/pkgs/dbus/patches/020-drop_backtrace_dependency.patch	2022-09-18 13:06:37.073156000 +0200
++++ make/pkgs/dbus/patches/020-drop_backtrace_dependency.patch	2022-09-22 18:50:54.831051803 +0200
 @@ -1,18 +1,18 @@
 ---- configure
 -+++ configure

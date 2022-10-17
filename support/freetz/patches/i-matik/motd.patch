@@ -1,5 +1,5 @@
---- make/mod/files/root/etc/default.mod/motd	2022-06-27 20:48:34.817796000 +0200
-+++ make/mod/files/root/etc/default.mod/motd	2022-06-27 21:01:47.289982749 +0200
+--- make/pkgs/mod/files/root/etc/default.mod/motd	2022-06-27 20:48:34.817796000 +0200
++++ make/pkgs/mod/files/root/etc/default.mod/motd	2022-06-27 21:01:47.289982749 +0200
 @@ -8,5 +8,18 @@
    | |_ | '__/ _ \/ _ \ __|_  /____|  \| | |  _
    |  _|| | |  __/  __/ |_ / /_____| |\  | |_| |

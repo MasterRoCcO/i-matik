@@ -76,8 +76,8 @@
 +ifeq ($(strip $(FREETZ_LIB_libpng16)),y)
  LIBS+=libpng
  endif
---- make/rrdtool/Config.in.libs	2022-08-11 17:31:33.651015000 +0200
-+++ make/rrdtool/Config.in.libs	2022-08-12 07:29:57.087590412 +0200
+--- make/pkgs/rrdtool/Config.in.libs	2022-08-11 17:31:33.651015000 +0200
++++ make/pkgs/rrdtool/Config.in.libs	2022-08-12 07:29:57.087590412 +0200
 @@ -3,7 +3,7 @@
  	select FREETZ_LIB_libart_lgpl_2
  	select FREETZ_LIB_libfreetype
@@ -96,8 +96,8 @@
  	select FREETZ_LIB_libz
  	default n
  	help
---- make/netpbm/Config.in	2022-08-11 17:31:33.631015000 +0200
-+++ make/netpbm/Config.in	2022-08-12 07:53:14.675042981 +0200
+--- make/pkgs/netpbm/Config.in	2022-08-11 17:31:33.631015000 +0200
++++ make/pkgs/netpbm/Config.in	2022-08-12 07:53:14.675042981 +0200
 @@ -30,7 +30,7 @@
  config FREETZ_PACKAGE_NETPBM_PNGTOPNM
  	bool "Include pngtopnm"

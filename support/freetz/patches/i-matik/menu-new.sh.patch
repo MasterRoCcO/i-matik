@@ -1,5 +1,5 @@
---- make/mod/files/root/usr/lib/mww/cgi/menu-new.sh	2022-06-13 18:38:11.470319488 +0200
-+++ make/mod/files/root/usr/lib/mww/cgi/menu-new.sh	2022-06-13 18:46:28.568103025 +0200
+--- make/pkgs/mod/files/root/usr/lib/mww/cgi/menu-new.sh	2022-06-13 18:38:11.470319488 +0200
++++ make/pkgs/mod/files/root/usr/lib/mww/cgi/menu-new.sh	2022-06-13 18:46:28.568103025 +0200
 @@ -12,7 +12,7 @@
  	local id=$1
  	case $id in

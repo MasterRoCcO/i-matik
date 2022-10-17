@@ -1,5 +1,5 @@
---- make/imagemagick/Config.in	2022-09-18 09:29:13.343138420 +0200
-+++ make/imagemagick/Config.in	2022-09-18 10:21:03.317815259 +0200
+--- make/pkgs/imagemagick/Config.in	2022-09-18 09:29:13.343138420 +0200
++++ make/pkgs/imagemagick/Config.in	2022-09-18 10:21:03.317815259 +0200
 @@ -1,5 +1,5 @@
  menuconfig FREETZ_PACKAGE_IMAGEMAGICK
 -	bool "ImageMagick 7.0.10-10 (binary only)"
@@ -16,8 +16,8 @@
  
  config FREETZ_PACKAGE_IMAGEMAGICK_xml
  	bool "Support xml"
---- make/imagemagick/external.files	2022-09-18 09:29:13.343138000 +0200
-+++ make/imagemagick/external.files	2022-09-18 10:19:37.523708711 +0200
+--- make/pkgs/imagemagick/external.files	2022-09-18 09:29:13.343138000 +0200
++++ make/pkgs/imagemagick/external.files	2022-09-18 10:19:37.523708711 +0200
 @@ -1,6 +1,6 @@
  if [ "$EXTERNAL_FREETZ_PACKAGE_IMAGEMAGICK" ]; then
  	[ "$FREETZ_PACKAGE_IMAGEMAGICK"        == "y" ] && EXTERNAL_FILES+=" /usr/bin/magick"
@@ -27,8 +27,8 @@
 +	[ "$FREETZ_PACKAGE_IMAGEMAGICK_STATIC" != "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libMagickWand-7-Q16.so.10"
  	[ "$FREETZ_PACKAGE_IMAGEMAGICK_xml"    == "y" ] && EXTERNAL_FILES+=" /etc/ImageMagick-7"
  fi
---- make/imagemagick/external.in	2022-09-18 09:29:13.343138000 +0200
-+++ make/imagemagick/external.in	2022-09-18 10:19:58.095248620 +0200
+--- make/pkgs/imagemagick/external.in	2022-09-18 09:29:13.343138000 +0200
++++ make/pkgs/imagemagick/external.in	2022-09-18 10:19:58.095248620 +0200
 @@ -5,7 +5,7 @@
  	help
  		externals the following file(s):
@@ -39,8 +39,8 @@
 +		 ${FREETZ_LIBRARY_DIR}/libMagickCore-7-Q16.so.10
  		 /etc/ImageMagick-7
  
---- make/imagemagick/imagemagick.mk	2022-09-18 09:29:13.343138000 +0200
-+++ make/imagemagick/imagemagick.mk	2022-09-18 10:17:42.090371767 +0200
+--- make/pkgs/imagemagick/imagemagick.mk	2022-09-18 09:29:13.343138000 +0200
++++ make/pkgs/imagemagick/imagemagick.mk	2022-09-18 10:17:42.090371767 +0200
 @@ -1,9 +1,9 @@
 -$(call PKG_INIT_BIN, 7.0.10-10)
 +$(call PKG_INIT_BIN, 7.1.0-48)

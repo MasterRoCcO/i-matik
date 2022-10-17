@@ -30,7 +30,7 @@ source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/liboping
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libosip2
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libpng
 #source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libtasn1
-source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libxml2
+#source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libxml2
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/speex
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/srtp
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/yaml
@@ -48,3 +48,8 @@ source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/tiff
 #source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/zabbix
 
 # privat
+source $I_MATIK_PATH/support/freetz/scripts/patches/privat_off/availability
+source $I_MATIK_PATH/support/freetz/scripts/patches/privat_off/binutils
+#source $I_MATIK_PATH/support/freetz/scripts/patches/privat_off/dl-firmware
+source $I_MATIK_PATH/support/freetz/scripts/patches/privat_off/source
+source $I_MATIK_PATH/support/freetz/scripts/patches/privat_off/toolchain
