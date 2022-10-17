@@ -120,7 +120,9 @@ for bs in "${BOX_SSL[@]}"; do
 	umask 0022
 	cp -ar /$MY_FILES_HOME_PATH/make/* "$FREETZ_SSL_HOME_PATH/make/" 2>/dev/null
 	cp -ar /$MY_FILES_HOME_PATH/toolchain/* "$FREETZ_SSL_HOME_PATH/toolchain/" 2>/dev/null
-	rm -rf "$FREETZ_SSL_HOME_PATH/make/pkgs/dtc/patches"
+	rm -rf "$FREETZ_SSL_HOME_PATH/make/mod" 2>/dev/null
+	rm -rf "$FREETZ_SSL_HOME_PATH/make/oscam" 2>/dev/null
+	rm -rf "$FREETZ_SSL_HOME_PATH/make/pkgs/dtc/patches" 2>/dev/null
 	ln -s $FREETZ_SSL_HOME_PATH/make/host-tools/dtc-host/patches $FREETZ_SSL_HOME_PATH/make/pkgs/dtc/patches
 	source $I_MATIK_PATH/support/freetz/scripts/patches/patches_on
 	sed -i "s+The installed version on this device is currently xxxx+The installed version on this device is currently ${VERSIONS_NR}+g" $FREETZ_SSL_HOME_PATH/make/pkgs/mod/files/root/usr/mww/cgi-bin/i-matik.cgi
