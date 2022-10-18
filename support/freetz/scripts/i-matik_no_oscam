@@ -124,6 +124,8 @@ for bs in "${BOX_SSL[@]}"; do
 	rm -rf "$FREETZ_SSL_HOME_PATH/make/oscam" 2>/dev/null
 	rm -rf "$FREETZ_SSL_HOME_PATH/make/pkgs/dtc/patches" 2>/dev/null
 	ln -s $FREETZ_SSL_HOME_PATH/make/host-tools/dtc-host/patches $FREETZ_SSL_HOME_PATH/make/pkgs/dtc/patches
+	rm -rf "$FREETZ_SSL_HOME_PATH/make/pkgs/juis_check/src/juis_check.sh" 2>/dev/null
+	ln -s $FREETZ_SSL_HOME_PATH/tools/juis_check $FREETZ_SSL_HOME_PATH/make/pkgs/juis_check/src/juis_check.sh
 	source $I_MATIK_PATH/support/freetz/scripts/patches/patches_on
 	sed -i "s+The installed version on this device is currently xxxx+The installed version on this device is currently ${VERSIONS_NR}+g" $FREETZ_SSL_HOME_PATH/make/pkgs/mod/files/root/usr/mww/cgi-bin/i-matik.cgi
 	sed -i "s+xxxx+${VERSIONS_NR}+g" $FREETZ_SSL_HOME_PATH/make/pkgs/mod/files/root/usr/lib/cgi-bin/mod/info.cgi
