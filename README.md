@@ -1,4 +1,12 @@
-# i-matik
+# Welcome to i-matik
+```
+      ___      __  __    _  _____ ___ _  __
+     |_ _|    |  \/  |  / \|_   _|_ _| |/ /
+      | |_____| |\/| | / _ \ | |  | || ' / 
+      | |_____| |  | |/ ___ \| |  | || . \ 
+     |___|    |_|  |_/_/   \_\_| |___|_|\_\
+```
+
 i-matik is a collection of helper scripts capable of efficient building
 freetz-ng images for Fritz!Box or Fritz!Repeater or Fritz!Powerline.
 ```
