@@ -1,11 +1,4 @@
 # Welcome to i-matik for freetz-ng
-```
- ___      __  __    _  _____ ___ _  __   __              _____              _            _   _  ____ 
-|_ _|    |  \/  |  / \|_   _|_ _| |/ /  / _| ___  _ __  |  ___| __ ___  ___| |_ ____    | \ | |/ ___|
- | |_____| |\/| | / _ \ | |  | || ' /  | |_ / _ \| '__| | |_ | '__/ _ \/ _ \ __|_  /____|  \| | |  _ 
- | |_____| |  | |/ ___ \| |  | || . \  |  _| (_) | |    |  _|| | |  __/  __/ |_ / /_____| |\  | |_| |
-|___|    |_|  |_/_/   \_\_| |___|_|\_\ |_|  \___/|_|    |_|  |_|  \___|\___|\__/___|    |_| \_|\____|
-```
 
 i-matik is a collection of helper scripts capable of efficient building
 freetz-ng images for Fritz!Box or Fritz!Repeater or Fritz!Powerline.
