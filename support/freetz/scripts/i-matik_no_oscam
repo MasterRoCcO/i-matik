@@ -124,6 +124,7 @@ for bs in "${BOX_SSL[@]}"; do
 	sed -i "s+The installed version on this device is currently xxxx+The installed version on this device is currently ${VERSIONS_NR}+g" $FREETZ_SSL_HOME_PATH/make/pkgs/mod/files/root/usr/mww/cgi-bin/i-matik.cgi
 	sed -i "s+xxxx+${VERSIONS_NR}+g" $FREETZ_SSL_HOME_PATH/make/pkgs/mod/files/root/usr/lib/cgi-bin/mod/info.cgi
 	sed -i "s+Version xxx+Version ${VERSIONS_NR}+g" $FREETZ_SSL_HOME_PATH/make/pkgs/mod/files/root/etc/default.mod/motd
+	sed -i "s+i-matik: xxx+i-matik: ${VERSIONS_NR}+g" $FREETZ_SSL_HOME_PATH/make/pkgs/mod/files/root/usr/mww/cgi-bin/status.d/10-box.sh
 	[ -f .config ] && mv .config .config_backup	# rename original config to backup config
 	FREETZ_NAME="$(tools/freetz_revision 2>&1 | awk '{print $1}' | xargs)"	# freetz-ng name
 	FREETZ_VERSION="$(tools/freetz_revision 2>&1 | awk '{print $2}' | xargs)"	# freetz-ng version string

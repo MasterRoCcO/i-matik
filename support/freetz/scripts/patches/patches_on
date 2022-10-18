@@ -1,6 +1,7 @@
 #!/bin/bash
 # i-matik
 echo -e ${GREEN}"Freetz files patch for i-matik."${NC}
+cp -ar $I_MATIK_PATH/support/freetz/patches/i-matik/10-box.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/i-matik/info.cgi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/i-matik/menu-new.sh.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/i-matik/motd.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null

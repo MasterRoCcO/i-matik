@@ -1,5 +1,6 @@
 #!/bin/bash
 # i-matik
+source $I_MATIK_PATH/support/freetz/scripts/patches/i-matik_off/10-box
 source $I_MATIK_PATH/support/freetz/scripts/patches/i-matik_off/info.cgi
 source $I_MATIK_PATH/support/freetz/scripts/patches/i-matik_off/menu-new.sh
 source $I_MATIK_PATH/support/freetz/scripts/patches/i-matik_off/motd
