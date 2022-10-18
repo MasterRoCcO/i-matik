@@ -178,6 +178,8 @@ rm -rf "$FREETZ_SSL_HOME_PATH/make/pkgs/squashfs3/patches" 2>/dev/null
 ln -s $FREETZ_SSL_HOME_PATH/make/host-tools/squashfs3-host/patches $FREETZ_SSL_HOME_PATH/make/pkgs/squashfs3/patches
 rm -rf "$FREETZ_SSL_HOME_PATH/make/pkgs/squashfs4-be/patches" 2>/dev/null
 ln -s $FREETZ_SSL_HOME_PATH/make/host-tools/make/squashfs4-be-host/patches $FREETZ_SSL_HOME_PATH/make/pkgs/squashfs4-be/patches
+rm -rf "$FREETZ_SSL_HOME_PATH/make/pkgs/squashfs4-le/patches" 2>/dev/null
+ln -s $FREETZ_SSL_HOME_PATH/make/host-tools/make/squashfs4-le-host/patches $FREETZ_SSL_HOME_PATH/make/pkgs/squashfs4-le/patches
 
 # privat
 echo -e ${GREEN}"Freetz files patch for privat."${NC}
