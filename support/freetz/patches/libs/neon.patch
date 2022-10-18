@@ -1,0 +1,25 @@
+--- make/libs/neon/neon.mk	2022-10-18 06:48:42.136219000 +0200
++++ make/libs/neon/neon.mk	2022-10-18 09:40:21.451932935 +0200
+@@ -1,11 +1,11 @@
+-$(call PKG_INIT_LIB, $(if $(FREETZ_KERNEL_VERSION_2_MAX),0.30.2,0.32.2))
+-$(PKG)_LIB_VERSION:=$(if $(FREETZ_KERNEL_VERSION_2_MAX),27.3.2,27.5.2)
++$(call PKG_INIT_LIB, $(if $(FREETZ_KERNEL_VERSION_2_MAX),0.30.2,0.32.4))
++$(PKG)_LIB_VERSION:=$(if $(FREETZ_KERNEL_VERSION_2_MAX),27.3.2,27.5.4)
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
+ $(PKG)_HASH_ABANDON:=db0bd8cdec329b48f53a6f00199c92d5ba40b0f015b153718d1b15d3d967fbca
+-$(PKG)_HASH_CURRENT:=986566468c6295fc5d0fb141a5981e31c9f82ee38e938374abed8471ef2fb286
++$(PKG)_HASH_CURRENT:=b1e2120e4ae07df952c4a858731619733115c5f438965de4fab41d6bf7e7a508
+ $(PKG)_HASH:=$($(PKG)_HASH_$(if $(FREETZ_KERNEL_VERSION_2_MAX),ABANDON,CURRENT))
+ $(PKG)_SITE:=https://notroj.github.io/neon,http://www.webdav.org/neon
+-### VERSION:=0.30.2/0.32.2
++### VERSION:=0.30.2/0.32.4
+ ### WEBSITE:=https://notroj.github.io/neon/
+ ### MANPAGE:=https://github.com/notroj/neon#readme
+ ### CHANGES:=https://notroj.github.io/neon/
+--- make/libs/neon/external.files	2022-10-18 06:48:42.136219000 +0200
++++ make/libs/neon/external.files	2022-10-18 09:36:06.654769046 +0200
+@@ -1,3 +1,3 @@
+-[ "FREETZ_KERNEL_VERSION_2_MAX" == "y" ] && ELIBVER="27.3.2" || ELIBVER="27.5.2"
++[ "FREETZ_KERNEL_VERSION_2_MAX" == "y" ] && ELIBVER="27.3.2" || ELIBVER="27.5.4"
+ 
+ [ "$EXTERNAL_FREETZ_LIB_libneon" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libneon.so.$ELIBVER"
