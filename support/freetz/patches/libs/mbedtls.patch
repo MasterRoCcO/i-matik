@@ -1,0 +1,104 @@
+--- make/libs/mbedtls/mbedtls.mk	2022-10-18 06:48:42.136219000 +0200
++++ make/libs/mbedtls/mbedtls.mk	2022-10-18 10:07:15.751384532 +0200
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_LIB, $(if $(FREETZ_AVM_GCC_4_MAX),2.7.19,2.28.1))
++$(call PKG_INIT_LIB, $(if $(FREETZ_AVM_GCC_4_MAX),2.7.19,3.2.1))
+ $(PKG)_SOURCE:=mbedtls-$($(PKG)_VERSION).tar.gz
+ $(PKG)_HASH_ABANDON:=3da12b1cebe1a25da8365d5349f67db514aefcaa75e26082d7cb2fa3ce9608aa
+-$(PKG)_HASH_CURRENT:=82ff5fda18ecbdee9053bdbeed6059c89e487f3024227131657d4c4536735ed1
++$(PKG)_HASH_CURRENT:=5850089672560eeaca03dc36678ee8573bb48ef6e38c94f5ce349af60c16da33
+ $(PKG)_HASH:=$($(PKG)_HASH_$(if $(FREETZ_AVM_GCC_4_MAX),ABANDON,CURRENT))
+ $(PKG)_SITE:=https://github.com/ARMmbed/mbedtls/archive,https://tls.mbed.org/download
+ ### VERSION:=2.7.19/2.28.1
+@@ -37,8 +37,8 @@
+ $(PKG)_FEATURES_TO_DISABLE += $(if $(FREETZ_LIB_libmbedcrypto_WITH_BLOWFISH),,MBEDTLS_BLOWFISH_C)
+ $(PKG)_FEATURES_TO_DISABLE += $(if $(FREETZ_LIB_libmbedcrypto_WITH_GENRSA),,MBEDTLS_GENPRIME)
+ 
+-# Don't use -D/-U to define/undefine required symbols, patch config.h instead. The installed headers must contain properly defined symbols.
+-$(PKG)_PATCH_POST_CMDS += $(SED) -ri $(foreach f,$(MBEDTLS_FEATURES_TO_DISABLE),-e 's|^([ \t]*$(_hash)define[ \t]+$(f)[ \t]*)$$$$|/* \1 */|') include/mbedtls/config.h;
++# Don't use -D/-U to define/undefine required symbols, patch mbedtls_config.hinstead. The installed headers must contain properly defined symbols.
++$(PKG)_PATCH_POST_CMDS += $(SED) -ri $(foreach f,$(MBEDTLS_FEATURES_TO_DISABLE),-e 's|^([ \t]*$(_hash)define[ \t]+$(f)[ \t]*)$$$$|/* \1 */|') include/mbedtls/mbedtls_config.h;
+ 
+ 
+ $(PKG_SOURCE_DOWNLOAD)
+--- make/libs/mbedtls/external.in	2022-10-18 06:48:42.136219000 +0200
++++ make/libs/mbedtls/external.in	2022-10-18 10:12:53.857745877 +0200
+@@ -4,7 +4,7 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libmbedcrypto.so.2.x.x
++		 ${FREETZ_LIBRARY_DIR}/libmbedcrypto.so.3.x.x
+ 
+ config EXTERNAL_FREETZ_LIB_libmbedtls
+ 	depends on EXTERNAL_ENABLED && FREETZ_LIB_libmbedtls
+@@ -12,7 +12,7 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libmbedtls.so.2.x.x
++		 ${FREETZ_LIBRARY_DIR}/libmbedtls.so.3.x.x
+ 
+ config EXTERNAL_FREETZ_LIB_libmbedx509
+ 	depends on EXTERNAL_ENABLED && FREETZ_LIB_libmbedx509
+@@ -20,5 +20,5 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libmbedx509.so.2.x.x
++		 ${FREETZ_LIBRARY_DIR}/libmbedx509.so.3.x.x
+ 
+--- make/libs/mbedtls/external.files	2022-10-18 06:48:42.136219000 +0200
++++ make/libs/mbedtls/external.files	2022-10-18 10:12:38.177970868 +0200
+@@ -1,4 +1,4 @@
+-[ "FREETZ_AVM_GCC_4_MAX" == "y" ] && ELIBVER="2.7.19" || ELIBVER="2.28.1"
++[ "FREETZ_AVM_GCC_4_MAX" == "y" ] && ELIBVER="2.7.19" || ELIBVER="3.2.1"
+ 
+ [ "$EXTERNAL_FREETZ_LIB_libmbedcrypto" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libmbedcrypto.so.$ELIBVER"
+ [ "$EXTERNAL_FREETZ_LIB_libmbedtls"    == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libmbedtls.so.$ELIBVER"
+--- make/libs/mbedtls/patches/current/010-versioned_so.patch	2022-10-18 06:48:42.136219000 +0200
++++ make/libs/mbedtls/patches/current/010-versioned_so.patch	2022-10-18 10:04:35.358844397 +0200
+@@ -1,12 +1,12 @@
+ --- library/Makefile
+ +++ library/Makefile
+-@@ -39,9 +39,17 @@
++@@ -47,9 +47,17 @@
+  endif
+  endif
+  
+--SOEXT_TLS=so.14
+--SOEXT_X509=so.1
+--SOEXT_CRYPTO=so.7
++-SOEXT_TLS=so.18
++-SOEXT_X509=so.4
++-SOEXT_CRYPTO=so.12
+ +VERSION=0.0.0
+ +VERSION_MAJOR=$(word 1,$(subst ., ,$(VERSION)))
+ +VERSION_MINOR=$(word 2,$(subst ., ,$(VERSION)))
+@@ -21,7 +21,7 @@
+  
+  # Set AR_DASH= (empty string) to use an ar implementation that does not accept
+  # the - prefix for command line options (e.g. llvm-ar)
+-@@ -211,9 +219,11 @@
++@@ -216,9 +224,11 @@
+  
+  libmbedtls.$(SOEXT_TLS): $(OBJS_TLS) libmbedx509.so
+  	echo "  LD    $@"
+@@ -34,7 +34,7 @@
+  	echo "  LN    $@ -> $<"
+  	ln -sf $< $@
+  
+-@@ -238,9 +248,11 @@
++@@ -243,9 +253,11 @@
+  
+  libmbedx509.$(SOEXT_X509): $(OBJS_X509) libmbedcrypto.so
+  	echo "  LD    $@"
+@@ -47,7 +47,7 @@
+  	echo "  LN    $@ -> $<"
+  	ln -sf $< $@
+  
+-@@ -265,9 +277,11 @@
++@@ -270,9 +282,11 @@
+  
+  libmbedcrypto.$(SOEXT_CRYPTO): $(OBJS_CRYPTO)
+  	echo "  LD    $@"

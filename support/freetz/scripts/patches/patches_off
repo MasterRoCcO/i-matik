@@ -31,6 +31,7 @@ source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libosip2
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libpng
 #source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libtasn1
 #source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libxml2
+source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/mbedtls
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/neon
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/opus
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/protobuf-c
