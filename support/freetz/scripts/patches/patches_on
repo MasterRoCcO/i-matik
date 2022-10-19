@@ -5,11 +5,14 @@ cp -ar $I_MATIK_PATH/support/freetz/patches/i-matik/10-box.patch "$FREETZ_SSL_HO
 cp -ar $I_MATIK_PATH/support/freetz/patches/i-matik/info.cgi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/i-matik/menu-new.sh.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/i-matik/motd.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < 10-box.patch
 patch -p0 -b < info.cgi.patch
 patch -p0 -b < menu-new.sh.patch
 patch -p0 -b < motd.patch
+rm -rf "$FREETZ_SSL_HOME_PATH/10-box.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/info.cgi.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/menu-new.sh.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/motd.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/motd.patch" 2>/dev/null
 
 # dl-firmware
@@ -43,6 +46,7 @@ cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libosip2.patch "$FREETZ_SSL_HOM
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libpng.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libtasn1.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libxml2.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libvorbis.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/mbedtls.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/neon.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/opus.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
@@ -73,6 +77,7 @@ patch -p0 -b < libosip2.patch
 patch -p0 -b < libpng.patch
 #patch -p0 -b < libtasn1.patch
 #patch -p0 -b < libxml2.patch
+patch -p0 -b < libvorbis.patch
 patch -p0 -b < mbedtls.patch
 patch -p0 -b < neon.patch
 patch -p0 -b < opus.patch
@@ -116,6 +121,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/libosip2.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/libpng.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/libtasn1.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/libxml2.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/libvorbis.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/mbedtls.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/neon.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/opus.patch" 2>/dev/null
@@ -151,8 +157,8 @@ mv $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/101-disable_default_debug.patch 
 mv $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/102-CPPFLAGS.patch $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/102-CPPFLAGS.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/103-AR.patch $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/103-AR.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/pkgs/imagemagick/patches/010-extra_flags.patch $FREETZ_SSL_HOME_PATH/make/pkgs/imagemagick/patches/010-extra_flags.patch.orig 2>/dev/null
-#mv $FREETZ_SSL_HOME_PATH/make/pkgs/zabbix/patches/060-no-res_send-in-uclibc.patch $FREETZ_SSL_HOME_PATH/make/pkgs/zabbix/patches/060-no-res_send-in-uclibc.patch.orig
-#mv $FREETZ_SSL_HOME_PATH/make/pkgs/zabbix/patches/070-drop_backtrace_dependency.patch $FREETZ_SSL_HOME_PATH/make/pkgs/zabbix/patches/070-drop_backtrace_dependency.patch.orig
+#mv $FREETZ_SSL_HOME_PATH/make/pkgs/zabbix/patches/060-no-res_send-in-uclibc.patch $FREETZ_SSL_HOME_PATH/make/pkgs/zabbix/patches/060-no-res_send-in-uclibc.patch.orig 2>/dev/null
+#mv $FREETZ_SSL_HOME_PATH/make/pkgs/zabbix/patches/070-drop_backtrace_dependency.patch $FREETZ_SSL_HOME_PATH/make/pkgs/zabbix/patches/070-drop_backtrace_dependency.patch.orig 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/bird.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/bridge-utils.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/ca-bundle.patch" 2>/dev/null

@@ -1,0 +1,11 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libvorbis/libvorbis.mk 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libvorbis/external.in 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libvorbis/external.files 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libvorbis/patches/100-no_docs.libvorbis.patch 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libvorbis/patches/200-remove51.libvorbis.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libvorbis/libvorbis.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/libvorbis/libvorbis.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libvorbis/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/libvorbis/external.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libvorbis/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/libvorbis/external.files 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libvorbis/patches/100-no_docs.libvorbis.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libvorbis/patches/100-no_docs.libvorbis.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libvorbis/patches/200-remove51.libvorbis.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libvorbis/patches/200-remove51.libvorbis.patch 2>/dev/null
