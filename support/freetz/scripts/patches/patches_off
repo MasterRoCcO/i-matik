@@ -21,6 +21,7 @@ source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/leptonica
 #source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libcap
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libev
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libffi
+source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libgpg-error
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libgsm
 #source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libidn
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/libmnl

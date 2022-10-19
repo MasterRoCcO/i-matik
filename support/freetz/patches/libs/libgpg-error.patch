@@ -1,0 +1,65 @@
+--- make/libs/libgpg-error/libgpg-error.mk	2022-10-19 15:43:21.296340000 +0200
++++ make/libs/libgpg-error/libgpg-error.mk	2022-10-19 18:00:14.387908378 +0200
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_LIB, 1.45)
+-$(PKG)_LIB_VERSION:=0.33.0
++$(call PKG_INIT_LIB, 1.46)
++$(PKG)_LIB_VERSION:=0.33.1
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.bz2
+-$(PKG)_HASH:=570f8ee4fb4bff7b7495cff920c275002aea2147e9a1d220c068213267f80a26
++$(PKG)_HASH:=b7e11a64246bbe5ef37748de43b245abd72cfcd53c9ae5e7fc5ca59f1c81268d
+ $(PKG)_SITE:=https://gnupg.org/ftp/gcrypt/libgpg-error,ftp://ftp.gnupg.org/gcrypt/libgpg-error
+ ### WEBSITE:=https://gnupg.org/software/libgpg-error/
+ ### CHANGES:=https://git.gnupg.org/cgi-bin/gitweb.cgi?p=libgpg-error.git;a=blob;f=NEWS
+@@ -30,7 +30,7 @@
+ 		install
+ 	$(PKG_FIX_LIBTOOL_LA) \
+ 		$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/lib/libgpg-error.la \
+-		$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/bin/gpg-error-config
++		$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/bin/gpg-error
+ 
+ $($(PKG)_TARGET_BINARY): $($(PKG)_STAGING_BINARY)
+ 	$(INSTALL_LIBRARY_STRIP)
+--- make/libs/libgpg-error/external.in	2022-10-19 15:43:21.296340000 +0200
++++ make/libs/libgpg-error/external.in	2022-10-19 18:01:21.162517731 +0200
+@@ -4,5 +4,5 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libgpg-error.so.0.33.0
++		 ${FREETZ_LIBRARY_DIR}/libgpg-error.so.0.33.1
+ 
+--- make/libs/libgpg-error/external.files	2022-10-19 15:43:21.296340000 +0200
++++ make/libs/libgpg-error/external.files	2022-10-19 18:01:14.490656510 +0200
+@@ -1 +1 @@
+-[ "$EXTERNAL_FREETZ_LIB_libgpg_error" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libgpg-error.so.0.33.0"
++[ "$EXTERNAL_FREETZ_LIB_libgpg_error" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libgpg-error.so.0.33.1"
+--- make/libs/libgpg-error/patches/100-libtool.libgpg-error.patch	2022-10-19 15:43:21.296340000 +0200
++++ make/libs/libgpg-error/patches/100-libtool.libgpg-error.patch	2022-10-19 17:56:46.120275091 +0200
+@@ -1,6 +1,6 @@
+ --- configure
+ +++ configure
+-@@ -13590,6 +13590,7 @@
++@@ -13604,6 +13604,7 @@
+  fi
+  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $acl_cv_rpath" >&5
+  $as_echo "$acl_cv_rpath" >&6; }
+@@ -8,7 +8,7 @@
+    wl="$acl_cv_wl"
+    acl_libext="$acl_cv_libext"
+    acl_shlibext="$acl_cv_shlibext"
+-@@ -13599,6 +13600,7 @@
++@@ -13613,6 +13614,7 @@
+    acl_hardcode_libdir_separator="$acl_cv_hardcode_libdir_separator"
+    acl_hardcode_direct="$acl_cv_hardcode_direct"
+    acl_hardcode_minus_L="$acl_cv_hardcode_minus_L"
+--- make/libs/libgpg-error/patches/110-gnu_source__reentrant.libgpg-error.patch	2022-10-19 15:43:21.296340000 +0200
++++ make/libs/libgpg-error/patches/110-gnu_source__reentrant.libgpg-error.patch	2022-10-19 17:56:46.140274670 +0200
+@@ -1,6 +1,6 @@
+ --- configure
+ +++ configure
+-@@ -2610,6 +2610,23 @@
++@@ -2613,6 +2613,23 @@
+  ## -------------------- ##
+  ## Main body of script. ##
+  ## -------------------- ##

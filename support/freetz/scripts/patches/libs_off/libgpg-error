@@ -1,0 +1,11 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libgpg-error/libgpg-error.mk 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libgpg-error/external.in 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libgpg-error/external.files 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libgpg-error/patches/100-libtool.libgpg-error.patch 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/libgpg-error/patches/110-gnu_source__reentrant.libgpg-error.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libgpg-error/libgpg-error.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/libgpg-error/libgpg-error.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libgpg-error/external.inorig $FREETZ_SSL_HOME_PATH/make/libs/libgpg-error/external.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libgpg-error/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/libgpg-error/external.files 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libgpg-error/patches/100-libtool.libgpg-error.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libgpg-error/patches/100-libtool.libgpg-error.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/libgpg-error/patches/110-gnu_source__reentrant.libgpg-error.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libgpg-error/patches/110-gnu_source__reentrant.libgpg-error.patch 2>/dev/null
