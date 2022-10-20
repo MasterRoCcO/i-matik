@@ -178,8 +178,8 @@ rm -rf "$FREETZ_SSL_HOME_PATH/tiff.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/make/oscam" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/make/pkgs/dtc/patches" 2>/dev/null
 #ln -s $FREETZ_SSL_HOME_PATH/make/host-tools/dtc-host/patches $FREETZ_SSL_HOME_PATH/make/pkgs/dtc/patches 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/pkgs/juis_check/src/juis_check.sh $FREETZ_SSL_HOME_PATH/make/pkgs/juis_check/src/juis_check.sh.orig 2>/dev/null
-ln -s $FREETZ_SSL_HOME_PATH/tools/juis_check $FREETZ_SSL_HOME_PATH/make/pkgs/juis_check/src/juis_check.sh 2>/dev/null
+#mv $FREETZ_SSL_HOME_PATH/make/pkgs/juis_check/src/juis_check.sh $FREETZ_SSL_HOME_PATH/make/pkgs/juis_check/src/juis_check.sh.orig 2>/dev/null
+#ln -s $FREETZ_SSL_HOME_PATH/tools/juis_check $FREETZ_SSL_HOME_PATH/make/pkgs/juis_check/src/juis_check.sh 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/make/libs/lzma1/patches" 2>/dev/null
 #ln -s $FREETZ_SSL_HOME_PATH/make/host-tools/lzma1-host/patches $FREETZ_SSL_HOME_PATH/make/libs/lzma1/patches 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/make/pkgs/sfk/patches" 2>/dev/null
