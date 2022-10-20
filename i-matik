@@ -491,16 +491,16 @@ printf ${RED}"No supported\n"
 elif [[ $1 == '7412' ]] && [[ $2 == '-push' ]]; then
 source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
 
-#elif [[ $1 == '7412-Alien7430.10' ]]; then
+elif [[ $1 == '7412-Alien7430.10' ]]; then
+source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+#elif [[ $1 == '7412-Alien7430.11' ]]; then
 #source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
-elif [[ $1 == '7412-Alien7430.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
-elif [[ $1 == '7412-Alien7430.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+#elif [[ $1 == '7412-Alien7430.30' ]]; then
+#source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
 elif [[ $1 == '7412-Alien7430.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '7412-Alien7430' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
 
 #mips boxen external no inmemory
 elif [[ $1 == '4020.10' ]]; then
