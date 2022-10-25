@@ -6,7 +6,6 @@ source $I_MATIK_PATH/support/freetz/scripts/patches/i-matik_off/menu-new.sh
 source $I_MATIK_PATH/support/freetz/scripts/patches/i-matik_off/motd
 
 # dl-firmware
-#source $I_MATIK_PATH/support/freetz/scripts/patches/dl-firmware_off/dl-firmware.in
 
 # libs
 source $I_MATIK_PATH/support/freetz/scripts/patches/libs_off/bluez-libs
@@ -50,12 +49,11 @@ source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/bridge-utils
 source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/dbus
 source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/dtach
 source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/imagemagick
+source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/minisatip
 source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/pcsc-lite
 source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/tiff
 #source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/zabbix
 
 # fix for freetz-ng
-#rm -rf "$FREETZ_SSL_HOME_PATH/make/pkgs/juis_check/src/juis_check.sh" 2>/dev/null
-#mv $FREETZ_SSL_HOME_PATH/make/pkgs/juis_check/src/juis_check.sh.orig $FREETZ_SSL_HOME_PATH/make/pkgs/juis_check/src/juis_check.sh
 
 # privat
