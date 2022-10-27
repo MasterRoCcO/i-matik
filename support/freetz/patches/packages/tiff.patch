@@ -4,7 +4,7 @@
 -$(call PKG_INIT_BIN, 4.0.7)
 -$(PKG)_LIB_VERSION:=5.2.5
 +$(call PKG_INIT_BIN, 4.4.0)
-+$(PKG)_LIB_VERSION:=5
++$(PKG)_LIB_VERSION:=5.8.0
  $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
 -$(PKG)_HASH:=9f43a2cfb9589e5cecaa66e16bf87f814c945f22df7ba600d63aac4632c4f019
 +$(PKG)_HASH:=917223b37538959aca3b790d2d73aa6e626b688e02dcda272aec24c2f498abed
@@ -18,7 +18,7 @@
  	help
  		externals the following file(s):
 -		 ${FREETZ_LIBRARY_DIR}/libtiff.so.5.2.5
-+		 ${FREETZ_LIBRARY_DIR}/libtiff.so.5
++		 ${FREETZ_LIBRARY_DIR}/libtiff.so.5.8.0
  
  config EXTERNAL_FREETZ_LIB_libtiffxx
  	depends on EXTERNAL_ENABLED && FREETZ_LIB_libtiffxx
@@ -27,7 +27,7 @@
  	help
  		externals the following file(s):
 -		 ${FREETZ_LIBRARY_DIR}/libtiffxx.so.5.2.5
-+		 ${FREETZ_LIBRARY_DIR}/libtiffxx.so.5
++		 ${FREETZ_LIBRARY_DIR}/libtiffxx.so.5.8.0
  
 --- make/pkgs/tiff/Config.in	2022-09-18 09:29:14.411122000 +0200
 +++ make/pkgs/tiff/Config.in	2022-09-18 11:48:37.346982147 +0200
