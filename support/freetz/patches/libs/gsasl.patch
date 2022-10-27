@@ -1,13 +1,14 @@
 --- make/libs/gsasl/gsasl.mk	2022-09-22 19:57:32.295197000 +0200
 +++ make/libs/gsasl/gsasl.mk	2022-09-24 09:11:48.720060864 +0200
-@@ -1,7 +1,7 @@
+@@ -1,7 +1,8 @@
 -$(call PKG_INIT_LIB, 1.10.0)
 -$(PKG)_LIB_VERSION:=7.10.0
 +$(call PKG_INIT_LIB, 2.2.0)
-+$(PKG)_LIB_VERSION:=18
++$(PKG)_LIB_VERSION:=18.0.0
  $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
 -$(PKG)_HASH:=85bcbd8ee6095ade7870263a28ebcb8832f541ea7393975494926015c07568d3
 +$(PKG)_HASH:=79b868e3b9976dc484d59b29ca0ae8897be96ce4d36d32aed5d935a7a3307759
++### WEBSITE:=https://ftp.gnu.org/gnu/gsasl/?C=M;O=D
  $(PKG)_SITE:=@GNU/$(pkg)
  
  $(PKG)_LIBNAME_SHORT := lib$(pkg)
