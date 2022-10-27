@@ -158,7 +158,6 @@ mv $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/100-fix_debugging_paths.patch $F
 mv $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/101-disable_default_debug.patch $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/101-disable_default_debug.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/102-CPPFLAGS.patch $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/102-CPPFLAGS.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/103-AR.patch $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/103-AR.patch.orig 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/pkgs/imagemagick/patches/010-extra_flags.patch $FREETZ_SSL_HOME_PATH/make/pkgs/imagemagick/patches/010-extra_flags.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/pkgs/minisatip/patches $FREETZ_SSL_HOME_PATH/make/pkgs/minisatip/patches.orig 2>/dev/null
 #mv $FREETZ_SSL_HOME_PATH/make/pkgs/zabbix/patches/060-no-res_send-in-uclibc.patch $FREETZ_SSL_HOME_PATH/make/pkgs/zabbix/patches/060-no-res_send-in-uclibc.patch.orig 2>/dev/null
 #mv $FREETZ_SSL_HOME_PATH/make/pkgs/zabbix/patches/070-drop_backtrace_dependency.patch $FREETZ_SSL_HOME_PATH/make/pkgs/zabbix/patches/070-drop_backtrace_dependency.patch.orig 2>/dev/null
