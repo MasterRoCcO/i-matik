@@ -4,7 +4,7 @@
 -$(call PKG_INIT_LIB, 3.2.1)
 -$(PKG)_LIB_VERSION:=6.0.4
 +$(call PKG_INIT_LIB, 3.4.3)
-+$(PKG)_LIB_VERSION:=8
++$(PKG)_LIB_VERSION:=8.1.1
  $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
 -$(PKG)_HASH:=d06ebb8e1d9a22d19e38d63fdb83954253f39bedc5d46232a05645685722ca37
 +$(PKG)_HASH:=4416dd92b6ae8fcb5b10421e711c4d3cb31203d77521a77d85d0102311e6c3b8
@@ -18,13 +18,13 @@
  	help
  		externals the following file(s):
 -		 ${FREETZ_LIBRARY_DIR}/libffi.so.6.0.4
-+		 ${FREETZ_LIBRARY_DIR}/libffi.so.8
++		 ${FREETZ_LIBRARY_DIR}/libffi.so.8.1.1
  
 --- make/libs/libffi/external.files	2022-09-18 13:06:37.101155000 +0200
 +++ make/libs/libffi/external.files	2022-09-21 19:26:58.136371614 +0200
 @@ -1 +1 @@
 -[ "$EXTERNAL_FREETZ_LIB_libffi" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libffi.so.6.0.4"
-+[ "$EXTERNAL_FREETZ_LIB_libffi" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libffi.so.8"
++[ "$EXTERNAL_FREETZ_LIB_libffi" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libffi.so.8.1.1"
 --- make/libs/libffi/patches/010-no-tests-no-docs.libffi.patch	2022-09-18 13:06:37.101155000 +0200
 +++ make/libs/libffi/patches/010-no-tests-no-docs.libffi.patch	2022-09-21 19:04:03.451910963 +0200
 @@ -1,20 +1,11 @@
