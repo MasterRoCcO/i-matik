@@ -7,7 +7,7 @@
 -$(PKG)_HASH:=e8a4e327f0402073c967bf2da976dc914b9086b6bd2b48558307c928a0960b6d
 -$(PKG)_SITE:=http://leptonica.googlecode.com/files
 +$(call PKG_INIT_LIB, 1.82.0)
-+$(PKG)_LIB_VERSION:=5
++$(PKG)_LIB_VERSION:=5.0.4
 +$(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
 +$(PKG)_HASH:=155302ee914668c27b6fe3ca9ff2da63b245f6d62f3061c8f27563774b8ae2d6
 +$(PKG)_SITE:=https://github.com/DanBloomberg/leptonica/releases/download/$($(PKG)_VERSION)
@@ -63,7 +63,7 @@
 +++ make/libs/leptonica/external.files	2022-09-18 11:30:16.908848605 +0200
 @@ -1 +1 @@
 -[ "$EXTERNAL_FREETZ_LIB_liblept" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/liblept.so.3.0.0"
-+[ "$EXTERNAL_FREETZ_LIB_liblept" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/liblept.so.5"
++[ "$EXTERNAL_FREETZ_LIB_liblept" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/liblept.so.5.0.4"
 --- make/libs/leptonica/external.in	2022-09-18 09:29:13.503136000 +0200
 +++ make/libs/leptonica/external.in	2022-09-18 11:30:30.696566918 +0200
 @@ -4,5 +4,5 @@
@@ -71,5 +71,5 @@
  	help
  		externals the following file(s):
 -		 ${FREETZ_LIBRARY_DIR}/liblept.so.3.0.0
-+		 ${FREETZ_LIBRARY_DIR}/liblept.so.5
++		 ${FREETZ_LIBRARY_DIR}/liblept.so.5.0.4
  
