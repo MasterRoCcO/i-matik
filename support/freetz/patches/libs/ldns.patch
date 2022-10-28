@@ -4,7 +4,7 @@
 -$(call PKG_INIT_LIB, 1.7.1)
 -$(PKG)_LIB_VERSION:=3.0.0
 +$(call PKG_INIT_LIB, 1.8.3)
-+$(PKG)_LIB_VERSION:=3
++$(PKG)_LIB_VERSION:=3.5.0
  $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
 -$(PKG)_HASH:=8ac84c16bdca60e710eea75782356f3ac3b55680d40e1530d7cea474ac208229
 +$(PKG)_HASH:=c3f72dd1036b2907e3a56e6acf9dfb2e551256b3c1bbd9787942deeeb70e7860
@@ -18,10 +18,10 @@
  	help
  		externals the following file(s):
 -		 ${FREETZ_LIBRARY_DIR}/libldns.so.3.0.0
-+		 ${FREETZ_LIBRARY_DIR}/libldns.so.3
++		 ${FREETZ_LIBRARY_DIR}/libldns.so.3.5.0
  
 --- make/libs/ldns/external.files	2022-09-22 19:57:32.295197000 +0200
 +++ make/libs/ldns/external.files	2022-09-24 09:59:03.882888795 +0200
 @@ -1,2 +1,2 @@
 -[ "$EXTERNAL_FREETZ_LIB_libldns" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libldns.so.3.0.0"
-+[ "$EXTERNAL_FREETZ_LIB_libldns" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libldns.so.3"
++[ "$EXTERNAL_FREETZ_LIB_libldns" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libldns.so.3.5.0"
