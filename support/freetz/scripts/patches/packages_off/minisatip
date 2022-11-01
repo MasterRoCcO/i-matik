@@ -3,4 +3,4 @@ rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/minisatip/minisatip.mk 2>/dev/null
 rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/minisatip/Config.in 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/pkgs/minisatip/minisatip.mk.orig $FREETZ_SSL_HOME_PATH/make/pkgs/minisatip/minisatip.mk 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/pkgs/minisatip/Config.in.orig $FREETZ_SSL_HOME_PATH/make/pkgs/minisatip/Config.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/pkgs/minisatip/patche.origs $FREETZ_SSL_HOME_PATH/make/pkgs/make/pkgs/minisatip/patches 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/pkgs/minisatip/patches.orig $FREETZ_SSL_HOME_PATH/make/pkgs/minisatip/patches 2>/dev/null
