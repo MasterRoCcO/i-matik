@@ -276,6 +276,7 @@ EXTERNAL_FREETZ_PACKAGE_MC=y
 EXTERNAL_FREETZ_PACKAGE_PCSC_LITE=y
 # EXTERNAL_FREETZ_PACKAGE_USBIDS is not set
 # EXTERNAL_FREETZ_PACKAGE_USBUTILS is not set
+EXTERNAL_FREETZ_PACKAGE_STRACE
 .
 wq
 EOF
@@ -403,6 +404,7 @@ EOF
 		grep -v EXTERNAL_FREETZ_PACKAGE_PCSC_LITE $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
 		grep -v EXTERNAL_FREETZ_PACKAGE_USBIDS $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
 		grep -v EXTERNAL_FREETZ_PACKAGE_USBUTILS $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+		grep -v EXTERNAL_FREETZ_PACKAGE_STRACE $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
 		
 		#echo "mv .$configto to $config" && sleep 2 #echo command 2 seconds for progress
 		mv .config "$conf" #move back updated .config to box config
