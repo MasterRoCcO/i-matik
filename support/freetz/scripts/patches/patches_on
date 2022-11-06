@@ -149,6 +149,7 @@ cp -ar $I_MATIK_PATH/support/freetz/patches/packages/imagemagick.patch "$FREETZ_
 cp -ar $I_MATIK_PATH/support/freetz/patches/packages/minisatip.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/packages/pcsc-lite.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/packages/tiff.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/packages/tree.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $I_MATIK_PATH/support/freetz/patches/packages/zabbix.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < avahi.patch
 patch -p0 -b < axtlswrap.patch
@@ -164,6 +165,7 @@ patch -p0 -b < imagemagick.patch
 patch -p0 -b < minisatip.patch
 patch -p0 -b < pcsc-lite.patch
 patch -p0 -b < tiff.patch
+patch -p0 -b < tree.patch
 #patch -p0 -b < zabbix.patch
 mv $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/100-fix_debugging_paths.patch $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/100-fix_debugging_paths.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/101-disable_default_debug.patch $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/101-disable_default_debug.patch.orig 2>/dev/null
@@ -187,6 +189,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/imagemagick.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/minisatip.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/pcsc-lite.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/tiff.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/tree.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/zabbix.patch" 2>/dev/null
 
 # fix for freetz-ng

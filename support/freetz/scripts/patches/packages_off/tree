@@ -1,0 +1,7 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/tree/tree.mk 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/tree/Config.in 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/tree/patches/100-makefile.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/pkgs/tree/tree.mk.orig $FREETZ_SSL_HOME_PATH/make/pkgs/tree/tree.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/pkgs/tree/Config.in.orig $FREETZ_SSL_HOME_PATH/make/pkgs/tree/Config.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/pkgs/tree/patches/100-makefile.patch.orig $FREETZ_SSL_HOME_PATH/make/pkgs/tree/patches/100-makefile.patch 2>/dev/null
