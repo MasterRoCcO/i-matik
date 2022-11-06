@@ -146,6 +146,7 @@ cp -ar $I_MATIK_PATH/support/freetz/patches/packages/bridge-utils.patch "$FREETZ
 cp -ar $I_MATIK_PATH/support/freetz/patches/packages/dbus.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/packages/dtach.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/packages/imagemagick.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATH/support/freetz/patches/packages/knock.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/packages/minisatip.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/packages/pcsc-lite.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/packages/tiff.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
@@ -162,6 +163,7 @@ patch -p0 -b < bridge-utils.patch
 patch -p0 -b < dbus.patch
 patch -p0 -b < dtach.patch
 patch -p0 -b < imagemagick.patch
+patch -p0 -b < knock.patch
 patch -p0 -b < minisatip.patch
 patch -p0 -b < pcsc-lite.patch
 patch -p0 -b < tiff.patch
@@ -172,6 +174,7 @@ mv $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/101-disable_default_debug.patch 
 mv $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/102-CPPFLAGS.patch $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/102-CPPFLAGS.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/103-AR.patch $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/103-AR.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/pkgs/bittwist/patches/110-Makefile.patch $FREETZ_SSL_HOME_PATH/make/pkgs/bittwist/patches/110-Makefile.patch.orig 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/pkgs/knock/patches/100-debian-reap_child_procs.patch $FREETZ_SSL_HOME_PATH/make/pkgs/knock/patches/100-debian-reap_child_procs.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/pkgs/minisatip/patches $FREETZ_SSL_HOME_PATH/make/pkgs/minisatip/patches.orig 2>/dev/null
 #mv $FREETZ_SSL_HOME_PATH/make/pkgs/zabbix/patches/060-no-res_send-in-uclibc.patch $FREETZ_SSL_HOME_PATH/make/pkgs/zabbix/patches/060-no-res_send-in-uclibc.patch.orig 2>/dev/null
 #mv $FREETZ_SSL_HOME_PATH/make/pkgs/zabbix/patches/070-drop_backtrace_dependency.patch $FREETZ_SSL_HOME_PATH/make/pkgs/zabbix/patches/070-drop_backtrace_dependency.patch.orig 2>/dev/null
@@ -186,6 +189,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/bridge-utils.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/dbus.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/dtach.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/imagemagick.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/knock.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/minisatip.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/pcsc-lite.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/tiff.patch" 2>/dev/null

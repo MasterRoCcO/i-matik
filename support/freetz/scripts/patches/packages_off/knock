@@ -1,0 +1,8 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/knock/knock.mk2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/knock/Config.in 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/knock/patches/101-smaller_snaplen.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/pkgs/knock/knock.mk.orig $FREETZ_SSL_HOME_PATH/make/pkgs/knock/knock.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/pkgs/knock/Config.in.orig $FREETZ_SSL_HOME_PATH/make/pkgs/knock/Config.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/pkgs/knock/patches/100-debian-reap_child_procs.patch.orig $FREETZ_SSL_HOME_PATH/make/pkgs/knock/patches/100-debian-reap_child_procs.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/pkgs/knock/patches/101-smaller_snaplen.patch.orig $FREETZ_SSL_HOME_PATH/make/pkgs/knock/patches/101-smaller_snaplen.patch 2>/dev/null
