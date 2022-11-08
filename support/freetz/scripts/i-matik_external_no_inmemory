@@ -30,6 +30,8 @@ while [ $# -ne 0 ];do
 	    ;;
 	-td|--toolchain-disable)	PARAM_TOOLCHAIN_DISABLE=1
 	    ;;
+	-tc|--toolchain-clean)		PARAM_TOOLCHAIN_CLEAN=1
+	    ;;
 	-cm|--callmonitor)		PARAM_CM=1
 	    ;;
 	-rr|--rrdstats)			PARAM_RR=1
@@ -252,6 +254,12 @@ for bs in "${BOX_SSL[@]}"; do
 		sleep 0
 	else
 		make kernel-dirclean #run make kernel-dirclean
+	fi
+	
+	if [ -z $PARAM_TOOLCHAIN_CLEAN ]; then
+		sleep 0
+	else
+		make target-toolchain-clean  #run target-toolchain-clean
 	fi
 		
 		sed -i "s+# EXTERNAL_ENABLED is not set+EXTERNAL_ENABLED=y+g" $FREETZ_SSL_HOME_PATH/.config
