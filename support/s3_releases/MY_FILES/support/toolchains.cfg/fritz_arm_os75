@@ -1,4 +1,4 @@
-_toolchainname="fritz_arm_os74";
+_toolchainname="fritz_arm_os75";
 default_use="USE_UTF8 USE_LIBCRYPTO";
 extra_use="";
 extra_cc="";
