@@ -280,6 +280,8 @@ for bs in "${BOX_SSL[@]}"; do
 		source $USER_APPLICATION_ON
 	fi
 	
+		source $I_MATIK_PATH/support/freetz/scripts/kernel/kernel_on
+		
 	if [ -z $PARAM_CONFIG ]; then
 			make $MENUC #run make menuconfig
 		else
@@ -322,6 +324,7 @@ for bs in "${BOX_SSL[@]}"; do
 			mv "$FREETZ_SSL_HOME_PATH/$END_IMAGE_PATH/$IMAGE_ORIGINAL_FILENAME" "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/$IMAGE_RENAMED_FILENAME" # move inmemory filename to renamed filename
 	fi
 		sed -i "s+FREETZ_JLEVEL=$MAX_CPUS+FREETZ_JLEVEL=20+g" $FREETZ_SSL_HOME_PATH/.config
+		source $I_MATIK_PATH/support/freetz/scripts/kernel/kernel_off
 		
 	if [ -z $PARAM_OSCAM ]; then
 		sleep 0
