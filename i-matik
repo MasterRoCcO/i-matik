@@ -3,7 +3,7 @@ I_MATIK_PATH=$(cd `dirname $0` && pwd)
 git pull
 source $I_MATIK_PATH/support/i-matik/i-matik.config
 source $I_MATIK_INSTAL_CHECK
-VERSIONS_NR=0.60.6
+VERSIONS_NR=0.60.8
 NC='\033[0m' 		# RESET color
 RED='\033[0;31m'	# RED color
 GREEN='\033[0;32m'	# GREEN color
@@ -786,6 +786,7 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf "  -c,--config\t\t\tshow not freetz-ng configuration dialog\n"
 	printf "  -s,--skip-image2memory\tdo not create inmemory image\n"
 	printf "  -yo,--yes-oscam\t\tThe image is with oscam add-on and an oscam is created\n"
+	printf "  -yoe,--yes-oscam\t\tThe image is with oscam_emu add-on and an oscam is created\n"
 	printf "  -to,--tool-oscam\t\toscam ToolChain\n"
 	printf "  -do,--del-oscam\t\tdelete the old oscam and build a new one\n"
 	printf "  -deloscam\t\t\tdelete all oscams\n"
