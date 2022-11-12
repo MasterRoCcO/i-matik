@@ -385,7 +385,7 @@ for bs in "${BOX_SSL[@]}"; do
 	
 		sed -i "s+FREETZ_JLEVEL=$MAX_CPUS+FREETZ_JLEVEL=20+g" $FREETZ_SSL_HOME_PATH/.config
 		source $I_MATIK_PATH/support/freetz/scripts/kernel/kernel_off
-	
+		
 	if [ -z $PARAM_OSCAM ]; then
 		sleep 0
 	else
@@ -398,18 +398,12 @@ for bs in "${BOX_SSL[@]}"; do
 		source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_off
 	fi
 	
-	if [ -z $PARAM_OSCAM_EMU ]; then
-		sleep 0 #not oscam is created
-	else
-		source $I_MATIK_OSCAM_EMU
-	fi
-	
 	if [ -z $PARAM_OSCAM_TOOL ]; then
 		sleep 0
 	else
 		source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_off
 	fi
-	
+		
 	# skins to static.pkg
 	if [ -z $PARAM_SKINS ]; then
 		sleep 0
