@@ -15,6 +15,7 @@ Options
   -c,--config			show not freetz-ng configuration dialog
   -s,--skip-image2memory	do not create inmemory image
   -yo,--yes-oscam		The image is with oscam add-on and an oscam is created
+  -yoe,--yes-oscam		The image is with oscam_emu add-on and an oscam is created
   -to,--tool-oscam              oscam ToolChain
   -do,--del-oscam		delete the old oscam and build a new one
   -deloscam			delete all oscams
