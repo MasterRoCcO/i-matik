@@ -15,3 +15,6 @@
 #source $I_MATIK_PATH/config/fritzbox/scripts/packages/openvpn_off
 # RRDstats for RRDtool https://freetz-ng.github.io/freetz-ng/make/rrdstats.html
 #source $I_MATIK_PATH/config/fritzbox/scripts/packages/rrdstats_off
+
+# Tor The Onion Router Anonymous Internet communication system. https://freetz-ng.github.io/freetz-ng/make/tor.html
+#source $I_MATIK_PATH/config/fritzbox/scripts/packages/tor_off

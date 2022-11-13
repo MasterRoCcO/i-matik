@@ -19,3 +19,6 @@
 #source $I_MATIK_PATH/config/fritzbox/scripts/packages/rrdstatsc_on
 # DigiTemp Supplement to RRDstats for RRDtool
 #source $I_MATIK_PATH/config/fritzbox/scripts/packages/rrdstatsd_on
+
+# Tor The Onion Router Anonymous Internet communication system. https://freetz-ng.github.io/freetz-ng/make/tor.html
+#source $I_MATIK_PATH/config/fritzbox/scripts/packages/tor_on
