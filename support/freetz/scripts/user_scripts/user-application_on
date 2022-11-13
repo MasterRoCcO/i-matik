@@ -1,24 +1,24 @@
 #!/bin/bash
 # ACME.sh (letsencrypt) https://freetz-ng.github.io/freetz-ng/make/acme.html
-#source $I_MATIK_PATH/config/fritzbox/scripts/packages/acme_on
+#source $I_MATIK_PATH/support/freetz/scripts/packages/acme_on
 # Apache HTTP Server https://freetz-ng.github.io/freetz-ng/make/apache2.html
-#source $I_MATIK_PATH/config/fritzbox/scripts/packages/apache2_on
+#source $I_MATIK_PATH/support/freetz/scripts/packages/apache2_on
 # atop The program atop is an interactive monitor to view the load on a Linux system. It shows the occupation of the most critical hardware resources (from a performance point of view) on system level, i.e. cpu, memory, disk and network.
-#source $I_MATIK_PATH/config/fritzbox/scripts/packages/atop_on
+#source $I_MATIK_PATH/support/freetz/scripts/packages/atop_on
 # AutoFS https://freetz-ng.github.io/freetz-ng/make/autofs.html
-# source $I_MATIK_PATH/config/fritzbox/scripts/packages/autofs_on
+# source $I_MATIK_PATH/support/freetz/scripts/packages/autofs_on
 # Callmonitor https://freetz-ng.github.io/freetz-ng/make/callmonitor.html
-#source $I_MATIK_PATH/config/fritzbox/scripts/packages/callmonitor_on
+#source $I_MATIK_PATH/support/freetz/scripts/packages/callmonitor_on
 # Cifsmount https://freetz-ng.github.io/freetz-ng/make/cifsmount.html
-#source $I_MATIK_PATH/config/fritzbox/scripts/packages/cifsmount_on
+#source $I_MATIK_PATH/support/freetz/scripts/packages/cifsmount_on
 # OpenVPN https://freetz-ng.github.io/freetz-ng/make/openvpn.html
-#source $I_MATIK_PATH/config/fritzbox/scripts/packages/openvpn_on
+#source $I_MATIK_PATH/support/freetz/scripts/packages/openvpn_on
 # RRDstats for RRDtool https://freetz-ng.github.io/freetz-ng/make/rrdstats.html
-#source $I_MATIK_PATH/config/fritzbox/scripts/packages/rrdstats_on
+#source $I_MATIK_PATH/support/freetz/scripts/packages/rrdstats_on
 # Cabelmodem Supplement to RRDstats for RRDtool
-#source $I_MATIK_PATH/config/fritzbox/scripts/packages/rrdstatsc_on
+#source $I_MATIK_PATH/support/freetz/scripts/packages/rrdstatsc_on
 # DigiTemp Supplement to RRDstats for RRDtool
-#source $I_MATIK_PATH/config/fritzbox/scripts/packages/rrdstatsd_on
+#source $I_MATIK_PATH/support/freetz/scripts/packages/rrdstatsd_on
 
 # Tor The Onion Router Anonymous Internet communication system. https://freetz-ng.github.io/freetz-ng/make/tor.html
-#source $I_MATIK_PATH/config/fritzbox/scripts/packages/tor_on
+#source $I_MATIK_PATH/support/freetz/scripts/packages/tor_on
