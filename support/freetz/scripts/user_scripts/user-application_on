@@ -1,4 +1,5 @@
 #!/bin/bash
+#### A ####
 # ACME.sh (letsencrypt) https://freetz-ng.github.io/freetz-ng/make/acme.html
 #source $I_MATIK_PATH/support/freetz/scripts/packages/acme_on
 # Apache HTTP Server https://freetz-ng.github.io/freetz-ng/make/apache2.html
@@ -7,12 +8,22 @@
 #source $I_MATIK_PATH/support/freetz/scripts/packages/atop_on
 # AutoFS https://freetz-ng.github.io/freetz-ng/make/autofs.html
 # source $I_MATIK_PATH/support/freetz/scripts/packages/autofs_on
+
+#### C ####
 # Callmonitor https://freetz-ng.github.io/freetz-ng/make/callmonitor.html
 #source $I_MATIK_PATH/support/freetz/scripts/packages/callmonitor_on
 # Cifsmount https://freetz-ng.github.io/freetz-ng/make/cifsmount.html
 #source $I_MATIK_PATH/support/freetz/scripts/packages/cifsmount_on
+
+#### I ####
+# ImageMagick (binary only)
+source $I_MATIK_PATH/support/freetz/scripts/packages/imagemagick_on
+
+#### O ####
 # OpenVPN https://freetz-ng.github.io/freetz-ng/make/openvpn.html
 #source $I_MATIK_PATH/support/freetz/scripts/packages/openvpn_on
+
+#### R ####
 # RRDstats for RRDtool https://freetz-ng.github.io/freetz-ng/make/rrdstats.html
 #source $I_MATIK_PATH/support/freetz/scripts/packages/rrdstats_on
 # Cabelmodem Supplement to RRDstats for RRDtool
@@ -20,5 +31,7 @@
 # DigiTemp Supplement to RRDstats for RRDtool
 #source $I_MATIK_PATH/support/freetz/scripts/packages/rrdstatsd_on
 
+
+#### T ####
 # Tor The Onion Router Anonymous Internet communication system. https://freetz-ng.github.io/freetz-ng/make/tor.html
 #source $I_MATIK_PATH/support/freetz/scripts/packages/tor_on
