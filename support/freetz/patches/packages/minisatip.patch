@@ -9,9 +9,9 @@
 +$(PKG)_SOURCE:=v$($(PKG)_VERSION).tar.gz
 +$(PKG)_HASH:=e78bd05d0d8c0de19018fc02b1b87eef2860420b534ff46503f34284681fc01a
 +$(PKG)_SITE:=https://github.com/catalinii/minisatip/archive/refs/tags/
- 
- $(PKG)_BINARY:=$($(PKG)_DIR)/$(pkg)
- $(PKG)_TARGET_BINARY:=$($(PKG)_DEST_DIR)/usr/bin/$(pkg)
+ ### WEBSITE:=https://minisatip.org
+ ### MANPAGE:=https://github.com/catalinii/minisatip/wiki
+ ### CHANGES:=https://github.com/catalinii/minisatip/releases
 --- make/pkgs/minisatip/Config.in	2022-10-25 17:05:21.652062000 +0200
 +++ make/pkgs/minisatip/Config.in	2022-10-25 17:48:44.639778435 +0200
 @@ -1,5 +1,5 @@
