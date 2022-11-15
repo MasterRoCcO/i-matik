@@ -1,7 +1,0 @@
-#!/bin/bash
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/neon/neon.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/neon/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/neon/neon.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/neon/neon.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/neon/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/neon/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/neon/patches/current/110-no_libintl.neon.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/neon/patches/current/110-no_libintl.neon.patch 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/neon/patches/current/120-dont-cache-openssl-version-dependent-values.neon.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/neon/patches/current/120-dont-cache-openssl-version-dependent-values.neon.patch 2>/dev/null

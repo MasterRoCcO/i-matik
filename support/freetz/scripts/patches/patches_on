@@ -49,7 +49,7 @@ cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libpng.patch "$FREETZ_SSL_HOME_
 #cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libxml2.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/libvorbis.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/mbedtls.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $I_MATIK_PATH/support/freetz/patches/libs/neon.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $I_MATIK_PATH/support/freetz/patches/libs/neon.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/opus.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/protobuf-c.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/libs/speex.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
@@ -81,7 +81,7 @@ patch -p0 -b < libpng.patch
 #patch -p0 -b < libxml2.patch
 patch -p0 -b < libvorbis.patch
 patch -p0 -b < mbedtls.patch
-patch -p0 -b < neon.patch
+#patch -p0 -b < neon.patch
 patch -p0 -b < opus.patch
 patch -p0 -b < protobuf-c.patch
 patch -p0 -b < speex.patch
@@ -97,8 +97,8 @@ mv $FREETZ_SSL_HOME_PATH/make/libs/libonig/patches/102-no_include_dir.patch $FRE
 mv $FREETZ_SSL_HOME_PATH/make/libs/liboping/patches/110-IPv6_defines.liboping.patch $FREETZ_SSL_HOME_PATH/make/libs/liboping/patches/110-IPv6_defines.liboping.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/liboping/patches/120-IPv6_structs.liboping.patch $FREETZ_SSL_HOME_PATH/make/libs/liboping/patches/120-IPv6_structs.liboping.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/libosip2/patches/010-multiple_CFLAGS.libosip2.patch $FREETZ_SSL_HOME_PATH/make/libs/libosip2/patches/010-multiple_CFLAGS.libosip2.patch.orig 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/neon/patches/current/110-no_libintl.neon.patch $FREETZ_SSL_HOME_PATH/make/libs/neon/patches/current/110-no_libintl.neon.patch.orig 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/neon/patches/current/120-dont-cache-openssl-version-dependent-values.neon.patch $FREETZ_SSL_HOME_PATH/make/libs/neon/patches/current/120-dont-cache-openssl-version-dependent-values.neon.patch.orig 2>/dev/null
+#mv $FREETZ_SSL_HOME_PATH/make/libs/neon/patches/current/110-no_libintl.neon.patch $FREETZ_SSL_HOME_PATH/make/libs/neon/patches/current/110-no_libintl.neon.patch.orig 2>/dev/null
+#mv $FREETZ_SSL_HOME_PATH/make/libs/neon/patches/current/120-dont-cache-openssl-version-dependent-values.neon.patch $FREETZ_SSL_HOME_PATH/make/libs/neon/patches/current/120-dont-cache-openssl-version-dependent-values.neon.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/speex/patches $FREETZ_SSL_HOME_PATH/make/libs/speex/patches.orig 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/bluez-libs.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/db.patch" 2>/dev/null
@@ -126,7 +126,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/libpng.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/libxml2.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/libvorbis.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/mbedtls.patch" 2>/dev/null
-rm -rf "$FREETZ_SSL_HOME_PATH/neon.patch" 2>/dev/null
+#rm -rf "$FREETZ_SSL_HOME_PATH/neon.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/opus.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/protobuf-c.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/speex.patch" 2>/dev/null
