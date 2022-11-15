@@ -3,7 +3,7 @@
 @@ -1,5 +1,5 @@
  menuconfig FREETZ_PACKAGE_IMAGEMAGICK
 -	bool "ImageMagick 7.0.10-10 (binary only)"
-+	bool "ImageMagick 7.1.0-51 (binary only)"
++	bool "ImageMagick 7.1.0-52 (binary only)"
  	select FREETZ_LIB_libpthread  if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
  	select FREETZ_LIB_libm        if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
  	default n
@@ -43,13 +43,13 @@
 +++ make/pkgs/imagemagick/imagemagick.mk	2022-09-18 10:17:42.090371767 +0200
 @@ -1,9 +1,9 @@
 -$(call PKG_INIT_BIN, 7.0.10-10)
-+$(call PKG_INIT_BIN, 7.1.0-51)
++$(call PKG_INIT_BIN, 7.1.0-52)
  $(PKG)_MAJOR_VERSION:=$(call GET_MAJOR_VERSION,$($(PKG)_VERSION),1)
  $(PKG)_ABI_SUFFIX:=Q16
  $(PKG)_SOURCE:=ImageMagick-$($(PKG)_VERSION).tar.xz
 -$(PKG)_HASH:=df1a37b73aa49423abb422c2150a0e1436920ba50dfc4377c6a3793f9826e5f1
 -$(PKG)_SITE:=@SF/$(pkg),http://www.imagemagick.org/download
-+$(PKG)_HASH:=d1976c829c10aadfd52549d59934db4e9ea5d1f457a167445b37883ee751a0f9
++$(PKG)_HASH:=49acbe467ae83488f65ce4fc023dd4d545ec52297e4d653b0f64683aaef30586
 +$(PKG)_SITE:=@SF/$(pkg),https://mirror.dogado.de/imagemagick,http://www.imagemagick.org/download
  
  $(PKG)_BINARY := magick
