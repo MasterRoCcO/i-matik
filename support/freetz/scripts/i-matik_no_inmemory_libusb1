@@ -222,6 +222,7 @@ for bs in "${BOX_SSL[@]}"; do
 		echo -e ${GREEN}"rolu2 from the DEB forum is responsible for maintaining the oscam add-on. I have only developed one way that it is equally available to everyone in i-matik. Therefore, I will not give support for the Oscam add-on."${NC}
 		echo -e ${RED}"Please start again, because the oscam Add-on of rolu2 from the DEB Forum was not under Add-on."${NC}
 		source $I_MATIK_PATH/support/freetz/scripts/patches/patches_off
+		source $I_MATIK_PATH/support/freetz/scripts/patches/patches_off_libusb1
 		exit
 	fi
 		source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_on
@@ -245,6 +246,7 @@ for bs in "${BOX_SSL[@]}"; do
 		echo -e ${GREEN}"rolu2 from the DEB forum is responsible for maintaining the oscam add-on. I have only developed one way that it is equally available to everyone in i-matik. Therefore, I will not give support for the Oscam add-on."${NC}
 		echo -e ${RED}"Please start again, because the oscam Add-on of rolu2 from the DEB Forum was not under Add-on."${NC}
 		source $I_MATIK_PATH/support/freetz/scripts/patches/patches_off
+		source $I_MATIK_PATH/support/freetz/scripts/patches/patches_off_libusb1
 		exit
 	fi
 		source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_on
@@ -268,6 +270,7 @@ for bs in "${BOX_SSL[@]}"; do
 		echo -e ${GREEN}"rolu2 from the DEB forum is responsible for maintaining the oscam add-on. I have only developed one way that it is equally available to everyone in i-matik. Therefore, I will not give support for the Oscam add-on."${NC}
 		echo -e ${RED}"Please start again, because the oscam Add-on of rolu2 from the DEB Forum was not under Add-on."${NC}
 		source $I_MATIK_PATH/support/freetz/scripts/patches/patches_off
+		source $I_MATIK_PATH/support/freetz/scripts/patches/patches_off_libusb1
 		exit
 	fi
 		source $I_MATIK_PATH/support/freetz/scripts/packages/oscam_on
