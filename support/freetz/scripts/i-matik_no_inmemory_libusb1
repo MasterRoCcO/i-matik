@@ -204,7 +204,7 @@ for bs in "${BOX_SSL[@]}"; do
 		sed -i "s+FREETZ_HOSTTOOLS_DOWNLOAD=y+# FREETZ_HOSTTOOLS_DOWNLOAD is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		make clean
 	fi
-			
+	
 	if [ -z $PARAM_OSCAM ]; then
 		sleep 0
 	else
@@ -322,7 +322,9 @@ for bs in "${BOX_SSL[@]}"; do
 		else
 			make $NOMENUC #run make olddefconfig
 	fi
-
+	
+		source $I_MATIK_PATH/support/freetz/scripts/kernel/bad_kernel_1
+		
 		#echo "starte make -j$MAX_CPUS" && sleep 2 #echo command 2 seconds for progress
 		make -j$MAX_CPUS #run make for freetz
 		
@@ -438,6 +440,7 @@ for bs in "${BOX_SSL[@]}"; do
 	else
 		rm $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn*-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx
 	fi
+		source $I_MATIK_PATH/support/freetz/scripts/kernel/bad_kernel_2
 	
 	if [ -z $PARAM_OSCAM ]; then
 		sleep 0 #not oscam is created
