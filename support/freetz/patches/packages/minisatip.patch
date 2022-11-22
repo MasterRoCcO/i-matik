@@ -5,9 +5,9 @@
 -$(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.xz
 -$(PKG)_HASH:=X
 -$(PKG)_SITE:=git@https://github.com/catalinii/minisatip
-+$(call PKG_INIT_BIN, 1.2.44)
++$(call PKG_INIT_BIN, 1.2.45)
 +$(PKG)_SOURCE:=v$($(PKG)_VERSION).tar.gz
-+$(PKG)_HASH:=e78bd05d0d8c0de19018fc02b1b87eef2860420b534ff46503f34284681fc01a
++$(PKG)_HASH:=36412a246a987b7ab07556e5ae32ed841531d7843e3002902b9c1d579be27d24
 +$(PKG)_SITE:=https://github.com/catalinii/minisatip/archive/refs/tags/
  ### WEBSITE:=https://minisatip.org
  ### MANPAGE:=https://github.com/catalinii/minisatip/wiki
@@ -17,7 +17,7 @@
 @@ -1,5 +1,5 @@
  config FREETZ_PACKAGE_MINISATIP
 -	bool "minisatip 1.0.4 (binary only)"
-+	bool "minisatip 1.2.44 (binary only)"
++	bool "minisatip 1.2.45 (binary only)"
  	default n
  	select FREETZ_LIB_libpthread     if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
  	select FREETZ_LIB_librt          if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
