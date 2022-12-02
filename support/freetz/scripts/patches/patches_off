@@ -57,7 +57,7 @@ source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/dtach
 source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/imagemagick
 #source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/knock
 source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/minisatip
-source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/pcsc-lite
+#source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/pcsc-lite
 source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/tiff
 #source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/tor
 source $I_MATIK_PATH/support/freetz/scripts/patches/packages_off/tree

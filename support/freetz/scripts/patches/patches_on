@@ -149,7 +149,7 @@ cp -ar $I_MATIK_PATH/support/freetz/patches/packages/dtach.patch "$FREETZ_SSL_HO
 cp -ar $I_MATIK_PATH/support/freetz/patches/packages/imagemagick.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $I_MATIK_PATH/support/freetz/patches/packages/knock.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/packages/minisatip.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $I_MATIK_PATH/support/freetz/patches/packages/pcsc-lite.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $I_MATIK_PATH/support/freetz/patches/packages/pcsc-lite.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/packages/tiff.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $I_MATIK_PATH/support/freetz/patches/packages/tor.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATH/support/freetz/patches/packages/tree.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
@@ -168,7 +168,7 @@ patch -p0 -b < dtach.patch
 patch -p0 -b < imagemagick.patch
 #patch -p0 -b < knock.patch
 patch -p0 -b < minisatip.patch
-patch -p0 -b < pcsc-lite.patch
+#patch -p0 -b < pcsc-lite.patch
 patch -p0 -b < tiff.patch
 #patch -p0 -b < tor.patch
 patch -p0 -b < tree.patch
@@ -196,7 +196,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/dtach.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/imagemagick.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/knock.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/minisatip.patch" 2>/dev/null
-rm -rf "$FREETZ_SSL_HOME_PATH/pcsc-lite.patch" 2>/dev/null
+#rm -rf "$FREETZ_SSL_HOME_PATH/pcsc-lite.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/tiff.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/tor.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/tree.patch" 2>/dev/null
