@@ -1,0 +1,92 @@
+#!/bin/bash
+NC='\033[0m' 		# RESET color
+RED='\033[0;31m'	# RED color
+GREEN='\033[0;32m'	# GREEN color
+BLUE='\033[0;34m'	# BLUE color
+YELLOW='\033[0;33m'	# YELLOW color
+#start point this shows you how long it took him to create the images
+begin_oscam=$(date +"%s")
+
+if [[ ! -e "$OSCAM_PATH" ]]; then
+	umask 0022
+	git clone https://github.com/gorgone/s3_releases "$OSCAM_PATH"
+	cp -ar /$MY_FILES_HOME_PATH_OSCAM/* "$OSCAM_PATH/" 2>/dev/null
+	cp -ar /$PRIVAT_MY_FILES_HOME_PATH_OSCAM/* "$OSCAM_PATH/" 2>/dev/null
+	cp -ar /$USER_OSCAM_TOOLCHAINS/* "$OSCAM_PATH/support" 2>/dev/null
+elif [ ! -d "$OSCAM_PATH" ]; then
+#	printf "${YELLOW}'$OSCAM_PATH' already exists but is not a directory${NC}" 1>&2
+	exit 1
+fi
+
+if [[ ! -e "$OSCAM_PATH/oscam-svn" ]]; then
+	svn checkout https://svn.streamboard.tv/oscam/trunk $OSCAM_PATH/oscam-svn
+elif [ ! -d "$OSCAM_PATH/oscam-svn" ]; then
+#	printf "${YELLOW}'$OSCAM_PATH/oscam-svn' already exists but is not a directory${NC}" 1>&2
+	exit 1
+fi
+
+if [[ ! -e "$USER_OSCAM_TOOLCHAINS" ]]; then
+	mkdir -p $USER_OSCAM_TOOLCHAINS/{toolchains.cfg,downloads}
+	ln -s /$USER_OSCAM_TOOLCHAINS "$I_MATIK_PATH/USER_OSCAM_TOOLCHAINS"
+elif [ ! -d "$USER_OSCAM_TOOLCHAINS" ]; then
+#	printf "${YELLOW}'$USER_OSCAM_TOOLCHAINS' already exists but is not a directory${NC}" 1>&2
+	exit 1
+fi
+
+	cd "$OSCAM_PATH" && git pull
+	cp -ar /$MY_FILES_HOME_PATH_OSCAM/* "$OSCAM_PATH/" 2>/dev/null
+	cp -ar /$PRIVAT_MY_FILES_HOME_PATH_OSCAM/support/i-matik.cfg "$OSCAM_PATH/support/" 2>/dev/null
+	cp -ar /$USER_OSCAM_TOOLCHAINS/* "$OSCAM_PATH/support" 2>/dev/null
+	mv $OSCAM_PATH/support/toolchains.cfg $OSCAM_PATH/support/toolchains.cfg.orig
+	mv $OSCAM_PATH/support/i-matik.cfg $OSCAM_PATH/support/toolchains.cfg
+
+	rm $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn*-fritz${FB_TYPE}*.upx
+
+	#Remove older oscam files
+	DELETE_OSCAM_NAME="*$(echo ${!FREETZ_SSL_PATH} | awk -F'/' '{print $NF}').upx"	# construct image filname filter
+	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "${DELETE_OSCAM_NAME}" -type f -mmin +$DELETE_OSCAM -delete 2>/dev/null
+	find $OSCAM_PATH/support/logs -name "*.log" -type f -mmin +$DELETE_OSCAM_LOG -delete
+
+if [[ ! -e $OSCAM_PATH/support/toolchains/fritz${FB_TYPE}-freetz ]]; then
+	$OSCAM_PATH/./s3 tcrepair fritz${FB_TYPE}-freetz
+	rm -rf $OSCAM_PATH/support/toolchains/fritz${FB_TYPE}-freetz
+#elif [[ ! -d $OSCAM_PATH/support/toolchains/fritz${FB_TYPE}-freetz ]]; then
+	#echo "$OSCAM_PATH/support/toolchains/fritz${FB_TYPE}-freetz existiert bereits, ist aber kein Verzeichnis " 1>&2
+fi
+
+	cd $OSCAM_PATH/oscam-svn && OSCAMVERSION_ALT="$(./config.sh -r)"
+	cd $OSCAM_PATH/oscam-svn && svn up && OSCAMVERSION_NEU="$(./config.sh -r)"
+
+if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx ]]; then
+	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-svn$OSCAMVERSION_ALT-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx" -type f -mmin +0 -delete 
+	rm -rf $OSCAM_PATH/support/toolchains/fritz${FB_TYPE}-freetz
+	ln -s $FREETZ_SSL_HOME_PATH/toolchain/target $OSCAM_PATH/support/toolchains/fritz${FB_TYPE}-freetz
+
+	$OSCAM_PATH/./s3 tcupdate fritz${FB_TYPE}-freetz LIB_CCID
+	$OSCAM_PATH/./s3 fritz${FB_TYPE}-freetz -p=$OSCAM_READER.profile
+
+	mv $OSCAM_PATH/support/binaries/oscam-svn$OSCAMVERSION_NEU-fritz${FB_TYPE}-freetz-$OSCAM_READER-upx $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx
+
+elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx ]]; then
+	echo -e "${GREEN}$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx already exists${NC}" 1>&2
+fi
+
+$OSCAM_PATH/./s3 tcupdate -b fritz${FB_TYPE}-freetz
+	rm -rf $OSCAM_PATH/support/toolchains/fritz${FB_TYPE}-freetz
+$OSCAM_PATH/./s3 tcrepair fritz${FB_TYPE}-freetz
+	grep -v _sysroot= $OSCAM_PATH/support/toolchains.cfg/fritz${FB_TYPE}-freetz > tempdatei && mv tempdatei $OSCAM_PATH/support/toolchains.cfg/fritz${FB_TYPE}-freetz
+
+	cp $OSCAM_PATH/support/toolchains.cfg/fritz${FB_TYPE}-freetz $USER_OSCAM_TOOLCHAINS/toolchains.cfg/ 2>/dev/null
+	cp $OSCAM_PATH/support/toolchains.cfg/fritz${FB_TYPE}-freetz $OSCAM_PATH/support/toolchains.cfg.orig/ 2>/dev/null
+	cp $OSCAM_PATH/support/downloads/Toolchain-fritz${FB_TYPE}-freetz.tar.xz $USER_OSCAM_TOOLCHAINS/downloads/ 2>/dev/null
+	rm -rf "$OSCAM_PATH/support/toolchains.cfg"
+	mv $OSCAM_PATH/support/toolchains.cfg.orig $OSCAM_PATH/support/toolchains.cfg
+
+finish=$(date +"%s")	# build finished time
+timediff=$(($finish-$beginbs))	# build time
+[[ $COUNT > 1 ]] && printf "\n${GREEN}${BOX_NAME} SSL ${SSL_VERSION}${NC} build finished in $(($timediff / 60)) minutes and $(($timediff % 60)) seconds. ${YELLOW}<- end time $(date +"%Y-%m-%d %H:%M:%S")${NC}\n"
+
+finish_oscam=$(date +"%s")	         # script finished time
+timediff=$(($finish_oscam-$begin_oscam)) # script time
+avg=$(($timediff / $COUNT))		 # average time for box
+printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} oscam(es). ->  $(($avg / 60))m $(($avg % 60))s per oscam\n"

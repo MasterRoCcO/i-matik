@@ -1,0 +1,21 @@
+#!/bin/bash
+	if [ -z $PARAM_CM ]; then
+		sleep 0
+	else
+		source $PKGS_PATH_ON_OFF/callmonitor_off
+	fi
+	
+	if [ -z $PARAM_RR ]; then
+		sleep 0
+	else
+		source $PKGS_PATH_ON_OFF/rrdstats_off
+		source $PKGS_PATH_ON_OFF/cifsmount_off
+	fi
+	
+	if [ -z $PARAM_USER_SCRIPTS ]; then
+		sleep 0
+	else
+		source $USER_APPLICATION_OFF
+	fi
+	
+		

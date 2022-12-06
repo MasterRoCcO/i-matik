@@ -22,12 +22,12 @@ done
 COUNT="${#BOX_SSL[@]}"	# parameter count
 
 # Generate list of supported devices
-SUPPORTED_BOX_TYPE_LIST="$(find "$I_MATIK_PATH/support/" -name "config_fritz*_*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
+SUPPORTED_BOX_TYPE_LIST="$(find "$CONFIG_FRITZBOX_PATH" -name "config_fritz*_*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
 SUPPORTED_BOX_TYPE_LIST="${SUPPORTED_BOX_TYPE_LIST//"fritz"/""}"
 SUPPORTED_BOX_TYPE_LIST="$(echo $SUPPORTED_BOX_TYPE_LIST | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
 # Generate list of supported ssl versions
-SUPPORTED_SSL_NUMBER_LIST="$(find "$I_MATIK_PATH/support/" -name "openssl_*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
+SUPPORTED_SSL_NUMBER_LIST="$(find "$CONFIG_FRITZBOX_PATH" -name "ssl_*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
 SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
 begin=$(date +"%s")	# script start time
@@ -45,22 +45,22 @@ for bs in "${BOX_SSL[@]}"; do
 	if [ -z "$MATCH_BOX" -o -z "$MATCH_SSL" ]; then
 		[ -z "$MATCH_BOX" ] && COLOR_BOX="${RED}" || COLOR_BOX="${YELLOW}"
 		[ -z "$MATCH_SSL" ] && COLOR_SSL="${RED}" || COLOR_SSL="${YELLOW}"
-		#printf "\n${COLOR_BOX}${BOX_NAME}${NC} ${COLOR_SSL}SSL ${SSL_VERSION}${NC} ${YELLOW}currently not supported!${NC}\n"
+		printf "\n${COLOR_BOX}${BOX_NAME}${NC} ${COLOR_SSL}SSL ${SSL_VERSION}${NC} ${YELLOW}currently not supported!${NC}\n"
 		continue
 	fi
-	
-	BOX_ARCH="$(grep '^FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=' $I_MATIK_BOX_ARCH_PATH/${BOX_NAME} | awk -F'"' '{print $2}' | xargs)" 2>/dev/null
+
+	BOX_ARCH="$(grep '^FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=' $BOX_ARCH_PATH/${BOX_NAME} | awk -F'"' '{print $2}' | xargs)" 2>/dev/null
 	BOX_HOME="${BOX_ARCH}"	# set box home folder
 	FREETZ_SSL_PATH="FREETZ_PATH_SSL_${BOX_SSL^^}"	# dynamic variable
-	FREETZ_SSL_CONFIG_PATH="I_MATIK_CONFIG_FRITZBOX_PATH_openssl_${BOX_SSL,,}"	# dynamic variable
+	FREETZ_SSL_CONFIG_PATH="CONFIG_FRITZBOX_PATH_SSL_${BOX_SSL,,}"	# dynamic variable
 
 	FREETZ_SSL_HOME_PATH="${!FREETZ_SSL_PATH}/$BOX_HOME"	# evaluate dynamic variable
 	FREETZ_SSL_CONFIG_PATH="${!FREETZ_SSL_CONFIG_PATH}"		# evaluate dynamic variable
 
 	let COUNTER++	# counter variable + 1
 	beginbs=$(date +"%s")	# build start time
-	printf "\n Building ${GREEN}${BOX_NAME} for freetz-ng, please wait ... ${YELLOW}-> start time $(date +"%Y-%m-%d %H:%M:%S")${NC}\n\n"
-	
+	printf "\n${COUNTER}/${COUNT}: Building ${GREEN}${BOX_NAME} SSL ${SSL_VERSION}${NC} freetz-ng image, please wait ... ${YELLOW}-> start time $(date +"%Y-%m-%d %H:%M:%S")${NC}\n\n"
+
 	if [ ! -e "$FREETZ_SSL_HOME_PATH" ]; then
 		umask 0022
 		git clone https://github.com/Freetz-NG/freetz-ng "$FREETZ_SSL_HOME_PATH"
@@ -68,10 +68,12 @@ for bs in "${BOX_SSL[@]}"; do
 		printf "${YELLOW}'$FREETZ_SSL_HOME_PATH' already exists but is not a directory${NC}" 1>&2
 		exit 1
 	fi
-	
+
 	# update git working copy
 	cd "$FREETZ_SSL_HOME_PATH" && git pull
 	umask 0022
+#	sed -i "s+xxxxx+${VERSIONS_NR}+g" $VERSION
+	[ -f .config ] && mv .config .config_backup	# rename original config to backup config
 	FREETZ_NAME="$(tools/freetz_revision 2>&1 | awk '{print $1}' | xargs)"	# freetz-ng name
 	FREETZ_VERSION="$(tools/freetz_revision 2>&1 | awk '{print $2}' | xargs)"	# freetz-ng version string
 	
@@ -79,17 +81,16 @@ for bs in "${BOX_SSL[@]}"; do
 	CONFIGS=( $(find "$FREETZ_SSL_CONFIG_PATH/" -name "config_fritz${BOX_NAME}_*wunschimage") $(find "$FREETZ_SSL_CONFIG_PATH/" -name "config_fritz${BOX_NAME}_*masterbox") $(find "$FREETZ_SSL_CONFIG_PATH/" -name "config_fritz${BOX_NAME}_*clientbox") $(find "$FREETZ_SSL_CONFIG_PATH/" -name "config_fritz${BOX_NAME}_*powerline") $(find "$FREETZ_SSL_CONFIG_PATH/" -name "config_fritz${BOX_NAME}_*repeater") )
 	printf "\nFound ${FREETZ_NAME} config files for ${GREEN}${BOX_NAME} SSL ${SSL_VERSION}${NC}:\n"
 	echo "${CONFIGS[@]}" | tr ' ' '\n' && printf "\n" && sleep 1 
-
 	
-	cp -ar $I_MATIK_PATH/support/freetz/patches/dl-toolchains_make.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+	cp -ar $I_MATIK_PATH/support/freetz/scripts_toolchain/patches/dl-toolchains_make.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 	patch -p0 -b < dl-toolchains_make.patch
 	rm -rf "$FREETZ_SSL_HOME_PATH/dl-toolchains_make.patch" 2>/dev/null
 		
-	cp -ar $I_MATIK_PATH/support/freetz/patches/download-toolchain.mk.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+	cp -ar $I_MATIK_PATH/support/freetz/scripts_toolchain/patches/download-toolchain.mk.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 	patch -p0 -b < download-toolchain.mk.patch
 	rm -rf "$FREETZ_SSL_HOME_PATH/download-toolchain.mk.patch" 2>/dev/null
 		
-	cp -ar $I_MATIK_PATH/support/freetz/patches/dl-toolchains_eval.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+	cp -ar $I_MATIK_PATH/support/freetz/scripts_toolchain/patches/dl-toolchains_eval.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 	patch -p0 -b < dl-toolchains_eval.patch
 	rm -rf "$FREETZ_SSL_HOME_PATH/dl-toolchains_eval.patch" 2>/dev/null
 
@@ -134,6 +135,6 @@ for bs in "${BOX_SSL[@]}"; do
 	done;			
 #end point this shows you how long it took him to create the images	    
 finish=$(date +"%s")	# build finished time
-timediff=$(($finish-$beginbs))	# build time
+timediff=$(($finish-$begin))	# build time
 [[ $COUNT > 1 ]] && printf "\n${GREEN}${BOX_NAME} SSL ${SSL_VERSION}${NC} build finished in $(($timediff / 60)) minutes and $(($timediff % 60)) seconds. ${YELLOW}<- end time $(date +"%Y-%m-%d %H:%M:%S")${NC}\n"
 $I_MATIK_VERSION	# show i-matik disclaimer

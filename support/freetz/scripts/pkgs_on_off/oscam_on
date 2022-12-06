@@ -1,0 +1,26 @@
+#!/bin/bash
+sed -i "s+# FREETZ_PACKAGE_OSCAM is not set+FREETZ_PACKAGE_OSCAM=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+# FREETZ_PACKAGE_CCID is not set+FREETZ_PACKAGE_CCID=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+# FREETZ_PACKAGE_PCSC_LITE is not set+FREETZ_PACKAGE_PCSC_LITE=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+# FREETZ_LIB_libpcsclite is not set+FREETZ_LIB_libpcsclite=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+# FREETZ_LIB_libusb_1 is not set+FREETZ_LIB_libusb_1=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+# FREETZ_PACKAGE_USBIDS is not set+FREETZ_PACKAGE_USBIDS=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+# FREETZ_PACKAGE_USBUTILS is not set+FREETZ_PACKAGE_USBUTILS=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+# FREETZ_MODULE_ftdi_sio is not set+FREETZ_MODULE_ftdi_sio=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+# FREETZ_MODULE_pl2303 is not set+FREETZ_MODULE_pl2303=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+# FREETZ_MODULE_usbserial is not set+FREETZ_MODULE_usbserial=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+# FREETZ_PATCH_UDEVMOUNT is not set+FREETZ_PATCH_UDEVMOUNT=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+# FREETZ_PATCH_MAXDEVCOUNT is not set+FREETZ_PATCH_MAXDEVCOUNT=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+# FREETZ_CUSTOM_UDEV_RULES is not set+FREETZ_CUSTOM_UDEV_RULES=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+# FREETZ_DROP_NOEXEC_EXTERNAL is not set+FREETZ_DROP_NOEXEC_EXTERNAL=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+# FREETZ_PATCH_FREETZMOUNT is not set+FREETZ_PATCH_FREETZMOUNT=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+# FREETZ_PACKAGE_AVM_PORTFW is not set+FREETZ_PACKAGE_AVM_PORTFW=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+# FREETZ_PACKAGE_AVM_FIREWALL is not set+FREETZ_PACKAGE_AVM_FIREWALL=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+# FREETZ_PACKAGE_AVM_FORWARDING is not set+FREETZ_PACKAGE_AVM_FORWARDING=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+# FREETZ_PACKAGE_STRACE is not set+FREETZ_PACKAGE_STRACE=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+# FREETZ_REPLACE_KERNEL is not set+FREETZ_REPLACE_KERNEL=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+$MASTERBOX_NEU+with_readerdriver_$MASTERBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+$CLIENTBOX_NEU+with_readerdriver_$CLIENTBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+$WUNSCHIMAGE_NEU+with_readerdriver_$WUNSCHIMAGE_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+openssl_multi_masterbox+with_readerdriver_openssl_multi_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+openssl_multi_clientbox+with_readerdriver_openssl_multi_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null

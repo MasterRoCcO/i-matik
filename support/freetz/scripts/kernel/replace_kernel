@@ -1,0 +1,2 @@
+#!/bin/bash
+sed -i "s+# FREETZ_REPLACE_KERNEL is not set+FREETZ_REPLACE_KERNEL=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null

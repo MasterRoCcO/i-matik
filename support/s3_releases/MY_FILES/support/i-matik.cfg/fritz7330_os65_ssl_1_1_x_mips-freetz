@@ -1,0 +1,20 @@
+_toolchainname="fritz7330_os65_ssl_1_1_x_mips-freetz";
+default_use="USE_UTF8 USE_LIBCRYPTO";
+extra_use="";
+extra_cc="";
+extra_ld="";
+_description="FRITZ!Box 7330 SSL 1.1 FritzOS V6.5x";
+_oscamconfdir_default="/etc/tuxbox/config";
+_oscamconfdir_custom="";
+_self_build="yes";
+_compiler="mips-linux-uclibc-";
+_sysroot="usr";
+_libsearchdir="/usr/lib";
+_toolchainfilename="ZnJpdHo3MzMwX29zNjVfc3NsXzFfMF94X21pcHMtZnJlZXR6LnRhci54ego=";
+_md5sum="349667f9cc0f78c932defeedf38e0352  Toolchain-fritz7330_os65_ssl_1_1_x_mips-freetz.tar.xz";
+_tc_info="\n
+!!! freetz-NG Toolchain per i-matik !!!\n
+\n
+FRITZ!Box 7330 SSL 1.1 FritzOS V6.5x\n
+mips mips32r2 32-bit BE, uClibc 0.9.33.2, ., linux 2.6.32.61\n";
+_tc_infolines="5";

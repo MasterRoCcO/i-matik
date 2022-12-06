@@ -7,46 +7,61 @@ YELLOW='\033[0;33m'	# YELLOW color
 #start point this shows you how long it took him to create the images
 begin_oscam=$(date +"%s")
 
-	if [[ ! -e $I_MATIK_PATH_OSCAM ]]; then
-		umask 0022
-		git clone https://github.com/gorgone/s3_releases $I_MATIK_PATH_OSCAM
-		cp -ar /$MY_FILES_HOME_PATH_OSCAM/* $I_MATIK_PATH_OSCAM/
-	#elif [[ ! -d $I_MATIK_PATH_OSCAM ]]; then
-		#echo "$I_MATIK_PATH_OSCAM existiert bereits, ist aber kein Verzeichnis" 1>&2
-	fi
+if [[ ! -e "$OSCAM_PATH" ]]; then
+	umask 0022
+	git clone https://github.com/gorgone/s3_releases "$OSCAM_PATH"
+	cp -ar /$MY_FILES_HOME_PATH_OSCAM/* "$OSCAM_PATH/" 2>/dev/null
+	cp -ar /$PRIVAT_MY_FILES_HOME_PATH_OSCAM/* "$OSCAM_PATH/" 2>/dev/null
+	cp -ar /$USER_OSCAM_TOOLCHAINS/* "$OSCAM_PATH/support" 2>/dev/null
+elif [ ! -d "$OSCAM_PATH" ]; then
+#	printf "${YELLOW}'$OSCAM_PATH' already exists but is not a directory${NC}" 1>&2
+	exit 1
+fi
 
-	if [[ ! -e $I_MATIK_PATH_OSCAM/oscam-svn ]]; then
-		cp -ar /$MY_FILES_HOME_PATH_OSCAM/* $I_MATIK_PATH_OSCAM/
-		svn checkout https://svn.streamboard.tv/oscam/trunk $I_MATIK_PATH_OSCAM/oscam-svn
-	#elif [[ ! -d $I_MATIK_PATH_OSCAM/oscam-svn ]]; then
-		#echo "$I_MATIK_PATH_OSCAM/oscam-svn existiert bereits, ist aber kein Verzeichnis" 1>&2
-	fi
-# Remove older oscam files
+if [[ ! -e "$OSCAM_PATH/oscam-svn" ]]; then
+	svn checkout https://svn.streamboard.tv/oscam/trunk $OSCAM_PATH/oscam-svn
+elif [ ! -d "$OSCAM_PATH/oscam-svn" ]; then
+#	printf "${YELLOW}'$OSCAM_PATH/oscam-svn' already exists but is not a directory${NC}" 1>&2
+	exit 1
+fi
+
+	cd "$OSCAM_PATH" && git pull
+	cp -ar /$MY_FILES_HOME_PATH_OSCAM/* "$OSCAM_PATH/" 2>/dev/null
+	cp -ar /$PRIVAT_MY_FILES_HOME_PATH_OSCAM/support/i-matik.cfg "$OSCAM_PATH/support/" 2>/dev/null
+	cp -ar /$USER_OSCAM_TOOLCHAINS/* "$OSCAM_PATH/support" 2>/dev/null
+	mv $OSCAM_PATH/support/toolchains.cfg $OSCAM_PATH/support/toolchains.cfg.orig
+	mv $OSCAM_PATH/support/i-matik.cfg $OSCAM_PATH/support/toolchains.cfg
+
+	#Remove older oscam files
 	DELETE_OSCAM_NAME="*$(echo ${!FREETZ_SSL_PATH} | awk -F'/' '{print $NF}').upx"	# construct image filname filter
-	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "${DELETE_OSCAM_NAME}" -type f -mmin +$delete_oscam -delete 2>/dev/null
-	find $I_MATIK_PATH_OSCAM/support/logs -name "*.log" -type f -mmin +$delete_images -delete
+	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "${DELETE_OSCAM_NAME}" -type f -mmin +$DELETE_OSCAM -delete 2>/dev/null
+	find $OSCAM_PATH/support/logs -name "*.log" -type f -mmin +$DELETE_OSCAM_LOG -delete
  	
-	if [[ ! -e $I_MATIK_PATH_OSCAM/support/toolchains/fritz_${OSCAM_ARCH}_os${FB_OS:1:1}${FB_OS:3:1} ]]; then
-		$I_MATIK_PATH_OSCAM/./s3 tcrepair fritz_${OSCAM_ARCH}_os${FB_OS:1:1}${FB_OS:3:1}
-	#elif [[ ! -d $I_MATIK_PATH_OSCAM/support/toolchains/fritz_${OSCAM_ARCH}_os${FB_OS:1:1}${FB_OS:3:1} ]]; then
-		#echo "$I_MATIK_PATH_OSCAM/support/toolchains/fritz_${OSCAM_ARCH}_os${FB_OS:1:1}${FB_OS:3:1} existiert bereits, ist aber kein Verzeichnis " 1>&2
-	fi
-		cp -ar /$MY_FILES_HOME_PATH_OSCAM/* $I_MATIK_PATH_OSCAM/
-		cd $I_MATIK_PATH_OSCAM/oscam-svn && OSCAMVERSION_ALT="$(./config.sh -r)"
-		cd $I_MATIK_PATH_OSCAM/oscam-svn && svn up && OSCAMVERSION_NEU="$(./config.sh -r)"
+if [[ ! -e $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS} ]]; then
+	$OSCAM_PATH/./s3 tcrepair fritz_${FB_ARCH}_${FB_OS}
+#elif [[ ! -d $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS} ]]; then
+#	echo "$OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS} existiert bereits, ist aber kein Verzeichnis " 1>&2
+fi
+	cd $OSCAM_PATH/oscam-svn && OSCAMVERSION_ALT="$(./config.sh -r)"
+	cd $OSCAM_PATH/oscam-svn && svn up && OSCAMVERSION_NEU="$(./config.sh -r)"
 
-	if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx ]]; then
-		find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-svn$OSCAMVERSION_ALT-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx" -type f -mmin +0 -delete
+if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx ]]; then
+	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-svn$OSCAMVERSION_ALT-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx" -type f -mmin +0 -delete
 
-		rm -rf $I_MATIK_PATH_OSCAM/support/toolchains/fritz_${OSCAM_ARCH}_os${FB_OS:1:1}${FB_OS:3:1}
-		ln -s $FREETZ_SSL_HOME_PATH/toolchain/target $I_MATIK_PATH_OSCAM/support/toolchains/fritz_${OSCAM_ARCH}_os${FB_OS:1:1}${FB_OS:3:1}
+	rm -rf $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
+	ln -s $FREETZ_SSL_HOME_PATH/toolchain/target $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
 
-	$I_MATIK_PATH_OSCAM/./s3 fritz_${OSCAM_ARCH}_os${FB_OS:1:1}${FB_OS:3:1} -p=$I_MATIK_OSCAM_reader.profile
-		mv $I_MATIK_PATH_OSCAM/support/binaries/oscam-svn$OSCAMVERSION_NEU-fritz_${OSCAM_ARCH}_os${FB_OS:1:1}${FB_OS:3:1}-$I_MATIK_OSCAM_reader-upx $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx
-	elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx ]]; then
-		echo -e "${GREEN}$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${BOX_NAME}_os${FB_OS:1:1}${FB_OS:3:1}_${FUD_COMMENT_SSL:0:11}_${OSCAM_ARCH}-freetz-$I_MATIK_OSCAM_reader.upx already exists${NC}" 1>&2
-	fi
-	#rm -rf $I_MATIK_PATH_OSCAM/support/toolchains/fritz_${OSCAM_ARCH}_os${FB_OS:1:1}${FB_OS:3:1}
+	$OSCAM_PATH/./s3 fritz_${FB_ARCH}_${FB_OS} -p=$OSCAM_READER.profile
+	
+	mv $OSCAM_PATH/support/binaries/oscam-svn$OSCAMVERSION_NEU-fritz_${FB_ARCH}_${FB_OS}-$OSCAM_READER-upx $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx
+
+elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx ]]; then
+	echo -e "${GREEN}$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn$OSCAMVERSION_NEU-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx already exists${NC}" 1>&2
+fi
+	rm -rf "$OSCAM_PATH/support/toolchains.cfg"
+	mv $OSCAM_PATH/support/toolchains.cfg.orig $OSCAM_PATH/support/toolchains.cfg
+
+#	rm -rf $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
 		
 finish=$(date +"%s")	# build finished time
 timediff=$(($finish-$beginbs))	# build time
@@ -56,4 +71,3 @@ finish_oscam=$(date +"%s")		# script finished time
 timediff=$(($finish_oscam-$begin_oscam)) # script time
 avg=$(($timediff / $COUNT))		# average time for box
 printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} oscam(es). -> $(($avg / 60))m $(($avg % 60))s per oscam\n"
-$I_MATIK_VERSION			# show i-matik disclaimer

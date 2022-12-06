@@ -1,0 +1,20 @@
+_toolchainname="fritz_mips_os62";
+default_use="USE_UTF8 USE_LIBCRYPTO";
+extra_use="";
+extra_cc="";
+extra_ld="";
+_description="FRITZ!Box mips";
+_oscamconfdir_default="/etc/tuxbox/config";
+_oscamconfdir_custom="";
+_self_build="yes";
+_compiler="mips-linux-uclibc-";
+_sysroot="usr";
+_libsearchdir="/usr/lib";
+_toolchainfilename="ZnJpdHo3NHh41T1M2NV9pNjg2LnRhci54ego=";
+_md5sum="2d74d011ef7df14d15fb1e244065b6c63  Toolchain1-fritz74xxOS65_mips.tar.xz";
+_tc_info="\n
+!!! freetz-NG Toolchain per i-matik !!!\n
+\n
+FRITZ!Box mips\n
+mips 32-bit LE, uClibc 1.0.14, gcc 5.5.0, linux 2.6.39.3\n";
+_tc_infolines="5";

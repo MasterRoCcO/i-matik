@@ -1,7 +1,0 @@
-#!/bin/bash
-sed -i "s+FREETZ_PACKAGE_IMAGEMAGICK=y+# FREETZ_PACKAGE_IMAGEMAGICK is not set+g" $FREETZ_SSL_HOME_PATH/.config
-sed -i "s+FREETZ_PACKAGE_GHOSTSCRIPT_FONTS=y+# FREETZ_PACKAGE_GHOSTSCRIPT_FONTS is not set+g" $FREETZ_SSL_HOME_PATH/.config
-sed -i "s+FREETZ_LIB_libfreetype=y+# FREETZ_LIB_libfreetype is not set+g" $FREETZ_SSL_HOME_PATH/.config
-sed -i "s+FREETZ_LIB_libjpeg=y+# FREETZ_LIB_libjpeg is not set+g" $FREETZ_SSL_HOME_PATH/.config
-sed -i "s+FREETZ_LIB_libxml2=y+# FREETZ_LIB_libxml2 is not set+g" $FREETZ_SSL_HOME_PATH/.config
-

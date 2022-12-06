@@ -1,0 +1,23 @@
+#!/bin/bash
+cd ..
+cd ..
+cd ..
+I_MATIK_PATH=$(cd `dirname $0` && pwd)
+source $I_MATIK_PATH/support/i-matik/config/i-matik
+sed -i "s+$MASTERBOX_ALT+$MASTERBOX_NEU+g" $CONFIG_FRITZBOX_PATH_SSL_10/config_fritz* 2>/dev/null
+sed -i "s+$CLIENTBOX_ALT+$CLIENTBOX_NEU+g" $CONFIG_FRITZBOX_PATH_SSL_10/config_fritz* 2>/dev/null
+sed -i "s+$POWERLINE_ALT+$POWERLINE_NEU+g" $CONFIG_FRITZBOX_PATH_SSL_10/config_fritz* 2>/dev/null
+sed -i "s+$REPEATER_ALT+$REPEATER_NEU+g" $CONFIG_FRITZBOX_PATH_SSL_10/config_fritz* 2>/dev/null
+sed -i "s+$WUNSCHIMAGE_ALT+$WUNSCHIMAGE_NEU+g" $CONFIG_FRITZBOX_PATH_SSL_10/config_fritz* 2>/dev/null
+
+sed -i "s+$MASTERBOX_ALT+$MASTERBOX_NEU+g" $CONFIG_FRITZBOX_PATH_SSL_11/config_fritz* 2>/dev/null
+sed -i "s+$CLIENTBOX_ALT+$CLIENTBOX_NEU+g" $CONFIG_FRITZBOX_PATH_SSL_11/config_fritz* 2>/dev/null
+sed -i "s+$POWERLINE_ALT+$POWERLINE_NEU+g" $CONFIG_FRITZBOX_PATH_SSL_11/config_fritz* 2>/dev/null
+sed -i "s+$REPEATER_ALT+$REPEATER_NEU+g" $CONFIG_FRITZBOX_PATH_SSL_11/config_fritz* 2>/dev/null
+sed -i "s+$WUNSCHIMAGE_ALT+$WUNSCHIMAGE_NEU+g" $CONFIG_FRITZBOX_PATH_SSL_11/config_fritz* 2>/dev/null
+
+sed -i "s+$MASTERBOX_ALT+$MASTERBOX_NEU+g" $CONFIG_FRITZBOX_PATH_SSL_30/config_fritz* 2>/dev/null
+sed -i "s+$CLIENTBOX_ALT+$CLIENTBOX_NEU+g" $CONFIG_FRITZBOX_PATH_SSL_30/config_fritz* 2>/dev/null
+sed -i "s+$POWERLINE_ALT+$POWERLINE_NEU+g" $CONFIG_FRITZBOX_PATH_SSL_30/config_fritz* 2>/dev/null
+sed -i "s+$REPEATER_ALT+$REPEATER_NEU+g" $CONFIG_FRITZBOX_PATH_SSL_30/config_fritz* 2>/dev/null
+sed -i "s+$WUNSCHIMAGE_ALT+$WUNSCHIMAGE_NEU+g" $CONFIG_FRITZBOX_PATH_SSL_30/config_fritz* 2>/dev/null

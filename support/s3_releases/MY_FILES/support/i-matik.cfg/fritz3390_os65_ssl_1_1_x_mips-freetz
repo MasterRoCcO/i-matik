@@ -1,0 +1,20 @@
+_toolchainname="fritz3390_os65_ssl_1_1_x_mips-freetz";
+default_use="USE_UTF8 USE_LIBCRYPTO";
+extra_use="";
+extra_cc="";
+extra_ld="";
+_description="FRITZ!Box 3390 SSL 1.1 FritzOS V6.5x";
+_oscamconfdir_default="/etc/tuxbox/config";
+_oscamconfdir_custom="";
+_self_build="yes";
+_compiler="mips-linux-uclibc-";
+_sysroot="usr";
+_libsearchdir="/usr/lib";
+_toolchainfilename="ZnJpdHozMzkwX29zNjVfc3NsXzFfMF94X21pcHMtZnJlZXR6LnRhci54ego=";
+_md5sum="212d0d7de10d26380ce71cda87c9fb9a  Toolchain-fritz3390_os65_ssl_1_1_x_mips-freetz.tar.xz";
+_tc_info="\n
+!!! freetz-NG Toolchain per i-matik !!!\n
+\n
+FRITZ!Box 3390 SSL 1.1 FritzOS V6.5x\n
+mips mips32r2 32-bit BE, uClibc 0.9.33.2, ., linux 3.10.73\n";
+_tc_infolines="5";

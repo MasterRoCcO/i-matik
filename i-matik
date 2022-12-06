@@ -1,713 +1,715 @@
 #!/bin/bash
-I_MATIK_PATH=$(cd `dirname $0` && pwd)
-git pull
-source $I_MATIK_PATH/support/i-matik/i-matik.config
-source $I_MATIK_INSTAL_CHECK
-VERSIONS_NR=0.61.0
 NC='\033[0m' 		# RESET color
 RED='\033[0;31m'	# RED color
 GREEN='\033[0;32m'	# GREEN color
 BLUE='\033[0;34m'	# BLUE color
 YELLOW='\033[0;33m'	# YELLOW color
-ln -s $I_MATIK_PATH/support/freetz/scripts/packages/create_boxes $I_MATIK_PATH/my-boxes_please_edit_me 2>/dev/null
+
+I_MATIK_PATH=$(cd `dirname $0` && pwd)
+git pull
+source $I_MATIK_PATH/support/i-matik/config/i-matik
+source $INSTAL_CHECK
+VERSIONS_NR="0.65.9"
+ln -s $CREATE_BOXES $I_MATIK_PATH/my-boxes_please_edit_me 2>/dev/null
+
 #arm boxen
 if [[ $1 == '68504g.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '68504g.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '68504g.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '68504g' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '68505g.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '68505g.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '68505g.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '68505g' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '7520.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7520.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7520.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '7520' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '7520B.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7520B.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7520B.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '7520B' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '7520-Alien7530.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $NO_OSCAM
 elif [[ $1 == '7520-Alien7530.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $NO_OSCAM
 elif [[ $1 == '7520-Alien7530.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $NO_OSCAM
 elif [[ $1 == '7520-Alien7530' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '7530.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7530.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7530.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '7530' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 #arm boxen no inmemory
 elif [[ $1 == '4040.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '4040.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '4040.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '4040' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '4060.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '4060.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '4060.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '4060' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '5590.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '5590.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '5590.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '5590' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '7510.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '7510.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '7510.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '7510' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '7530AX.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_libusb1
+source $NO_INMEMORY_7530AX
 elif [[ $1 == '7530AX.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_libusb1
+source $NO_INMEMORY_7530AX
 elif [[ $1 == '7530AX.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11_7530AX
 elif [[ $1 == '7530AX' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 #arm boxen no oscam
 elif [[ $1 == '1200.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_OSCAM
 elif [[ $1 == '1200.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_OSCAM
 elif [[ $1 == '1200.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '1200' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware_repeater
+source $SSL11_PUSH_REPEATER
 
 elif [[ $1 == '1260v2.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_OSCAM
 elif [[ $1 == '1260v2.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_OSCAM
 elif [[ $1 == '1260v2.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '1260v2' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware_powerline
+source $SSL11_PUSH_POWERLINE
 
 elif [[ $1 == '3000.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_OSCAM
 elif [[ $1 == '3000.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_OSCAM
 elif [[ $1 == '3000.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '3000' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware_repeater
+source $SSL11_PUSH_REPEATER
 
 elif [[ $1 == '7581.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_KERNEL_FILES
 elif [[ $1 == '7581.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_KERNEL_FILES
 elif [[ $1 == '7581.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_KERNEL_FILES
 elif [[ $1 == '7581.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '7581' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+source $SSL10_PUSH
 
 elif [[ $1 == '7582.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_KERNEL_FILES
 elif [[ $1 == '7582.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_KERNEL_FILES
 elif [[ $1 == '7582.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_KERNEL_FILES
 elif [[ $1 == '7582.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '7582' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+source $SSL10_PUSH
 
 #arm boxen no inmemory no oscam
 elif [[ $1 == '1200AX.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '1200AX.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '1200AX.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '1200AX' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '1260E.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '1260E.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '1260E.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '1260E' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware_powerline
+source $SSL11_PUSH_POWERLINE
 
 elif [[ $1 == '3000AX.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '3000AX.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '3000AX.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '3000AX' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware_repeater
+source $SSL11_PUSH_REPEATER
 
 elif [[ $1 == '6000.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '6000.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '6000.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '6000' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware_repeater
+source $SSL11_PUSH_REPEATER
 
 #i686 boxen no inmemory
 elif [[ $1 == '6430.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '6430.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '6430.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '6430.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
+source $SSL10
 elif [[ $1 == '6430' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+source $SSL10_PUSH
 
 elif [[ $1 == '6490.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '6490.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '6490.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '6490.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
+source $SSL10
 elif [[ $1 == '6490' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+source $SSL10_PUSH
 
 elif [[ $1 == '6590.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '6590.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '6590.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '6590.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
+source $SSL10
 elif [[ $1 == '6590' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+source $SSL10_PUSH
 
 elif [[ $1 == '6591.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '6591.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '6591.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '6591' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '6660.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '6660.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '6660.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '6660' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '6690.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '6690.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '6690.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '6690' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 #mips boxen
 elif [[ $1 == '3272.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '3272.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '3272.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '3272.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
+source $SSL10
 elif [[ $1 == '3272' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+source $SSL10_PUSH
 
 elif [[ $1 == '3370.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '3370.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '3370.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '3370.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
+source $SSL10
 elif [[ $1 == '3370' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+source $SSL10_PUSH
 
 elif [[ $1 == '3390.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '3390.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '3390.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '3390.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
+source $SSL10
 elif [[ $1 == '3390' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+source $SSL10_PUSH
 
 elif [[ $1 == '3490.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '3490.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '3490.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '3490' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '5490.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '5490.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '5490.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '5490' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '5491.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '5491.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '5491.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '5491' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '6840.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '6840.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '6840.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '6840.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
+source $SSL10
 elif [[ $1 == '6840' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+source $SSL10_PUSH
 
 elif [[ $1 == '6890.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '6890.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '6890.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '6890' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '7272.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7272.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7272.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7272.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
+source $SSL10
 elif [[ $1 == '7272' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+source $SSL10_PUSH
 
 elif [[ $1 == '7362.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7362.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7362.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7362.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
+source $SSL10
 elif [[ $1 == '7362' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+source $SSL10_PUSH
 
 elif [[ $1 == '7430.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7430.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7430.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '7430' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '7490.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7490.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7490.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '7490' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '7560.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7560.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7560.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '7560' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '7580.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7580.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7580.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '7580' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '7583.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7583.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7583.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '7583' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '7583vdsl.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7583vdsl.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7583vdsl.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '7583vdsl' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '7590.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7590.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7590.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '7590' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '7590AX.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7590AX.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik
+source $I_MATIK
 elif [[ $1 == '7590AX.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl11_multi
+source $SSL11
 elif [[ $1 == '7590AX' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 #mips boxen no oscam
 elif [[ $1 == '3370-Alien3490.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_OSCAM
 elif [[ $1 == '3370-Alien3490.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_OSCAM
 elif [[ $1 == '3370-Alien3490.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '3370' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '3390-Alien3490.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_OSCAM
 elif [[ $1 == '3390-Alien3490.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_OSCAM
 elif [[ $1 == '3390-Alien3490.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '3390' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '6820v1.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_OSCAM
 elif [[ $1 == '6820v1.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_OSCAM
 elif [[ $1 == '6820v1.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '6820v1' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '6820v2.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_OSCAM
 elif [[ $1 == '6820v2.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_OSCAM
 elif [[ $1 == '6820v2.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '6820v2' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '6820v3.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_OSCAM
 elif [[ $1 == '6820v3.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_OSCAM
 elif [[ $1 == '6820v3.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '6820v3' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '7412.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_OSCAM
 elif [[ $1 == '7412.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_OSCAM
 elif [[ $1 == '7412.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_OSCAM
 elif [[ $1 == '7412.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '7412' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+source $SSL10_PUSH
 
 #elif [[ $1 == '7412-Alien7430.10' ]]; then
-#source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+#source $NO_OSCAM
 elif [[ $1 == '7412-Alien7430.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_OSCAM
 elif [[ $1 == '7412-Alien7430.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_oscam
+source $NO_OSCAM
 elif [[ $1 == '7412-Alien7430.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '7412-Alien7430' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 #mips boxen external no inmemory
 elif [[ $1 == '4020.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
+source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '4020.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
+source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '4020.30' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '4020.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
+source $SSL10
 elif [[ $1 == '4020' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+source $SSL10_PUSH
 
 elif [[ $1 == '7320.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
+source $EXTERNAL_NO_INMEMORY
 
 elif [[ $1 == '7320-Alien7330.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
+source $EXTERNAL_NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '7320-Alien7330.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
+source $EXTERNAL_NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '7320-Alien7330.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
+source $EXTERNAL_NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '7320-Alien7330.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
+source $SSL10
 elif [[ $1 == '7320-Alien7330' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+source $SSL10_PUSH
 
 elif [[ $1 == '7330.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
+source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '7330.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
+source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '7330.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
+source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '7330.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
+source $SSL10
 elif [[ $1 == '7330' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+source $SSL10_PUSH
 
 elif [[ $1 == '7330SL.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
+source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '7330SL.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
+source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '7330SL.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
+source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '7330SL.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
+source $SSL10
 elif [[ $1 == '7330SL' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+source $SSL10_PUSH
 
 elif [[ $1 == '7340.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
+source $EXTERNAL_NO_INMEMORY
 
 elif [[ $1 == '7360v1.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
+source $EXTERNAL_NO_INMEMORY
 
 elif [[ $1 == '7390.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
+source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '7390.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
+source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '7390.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_external_no_inmemory
+source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '7390.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
+source $SSL10
 elif [[ $1 == '7390' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+source $SSL10_PUSH
 
 #mips boxen no inmemory
 elif [[ $1 == '7360v2.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '7360v2.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '7360v2.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '7360v2.multi' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_privat/./ssl10_multi
+source $SSL10
 elif [[ $1 == '7360v2' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+source $SSL10_PUSH
 
 elif [[ $1 == '7369.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 
 #mips boxen no inmemory no oscam
 elif [[ $1 == 'DVB-C.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == 'DVB-C.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == 'DVB-C.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == 'DVB-c.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == 'DVB-C' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware_repeater
+source $SSL10_PUSH_REPEATER
 
 elif [[ $1 == 'DVB-c-Alien1750E.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == 'DVB-c-Alien1750E.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == 'DVB-c-Alien1750E.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == 'DVB-c-Alien1750E' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware_repeater
+source $SSL11_PUSH_REPEATER
 
 elif [[ $1 == '300E.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '300E.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '300E.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '300E.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '300E' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware_repeater
+source $SSL10_PUSH_REPEATER
 
 elif [[ $1 == '450E.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '450E.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '450E.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '450E.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '450E' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware_repeater
+source $SSL10_PUSH_REPEATER
 
 elif [[ $1 == '540E.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '540E.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '540E.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '540E.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '540E' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware_powerline
+source $SSL10_PUSH_POWERLINE
 
 elif [[ $1 == '546E.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '546E.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '546E.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '546E.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '546E' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware_powerline
+source $SSL10_PUSH_POWERLINE
 
 elif [[ $1 == '1240E.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '1240E.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '1240E.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '1240E.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '1240E' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware_powerline
+source $SSL10_PUSH_POWERLINE
 
 elif [[ $1 == '1750E.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '1750E.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '1750E.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '1750E' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware_repeater
+source $SSL11_PUSH_REPEATER
 
 elif [[ $1 == '2400.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '2400.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '2400.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '2400' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware_repeater
+source $SSL11_PUSH_REPEATER
 
 elif [[ $1 == '5530.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '5530.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '5530.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '5530' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl11_push_firmware
+source $SSL11_PUSH
 
 elif [[ $1 == '6810.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 
 elif [[ $1 == '7312.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '7312.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory_no_oscam
+source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '7312.30' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 elif [[ $1 == '7312.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '7312' ]] && [[ $2 == '-push' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/push/./ssl10_push_firmware
+source $SSL10_PUSH
 
 #mipsel boxen no inmemory
 elif [[ $1 == '7240.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 
 elif [[ $1 == '7270v2.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 
 elif [[ $1 == '7270v3.10' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 
 elif [[ $1 == '-backup' ]]; then
 source $I_MATIK_PATH/support/i-matik/scripts/./backup
@@ -716,49 +718,52 @@ elif [[ $1 == '-deloscam' ]]; then
 rm $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/*/oscam-svn*.upx
 
 elif [[ $1 == 'test.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/./i-matik_no_inmemory
+source $NO_INMEMORY
 
 elif [[ $1 == 'toolchain.11' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts_toolchain/./i-matik_toolchain
+source $I_MATIK_TOOLCHAN
 
 elif [[ $1 == 'create' ]]; then
-source $I_MATIK_PATH/support/freetz/scripts/packages/create_boxes
+source $CREATE_BOXES
+
+elif [[ $1 == 'oscam_tcupdate' ]]; then
+source $OSCAM_TCUPDATE
 
 else
 # Generate list of supported devices
-SUPPORTED_BOX_TYPE_LIST_SSL_1_0="$(find "$I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10" -name "config_fritz*openssl_1_0*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
+SUPPORTED_BOX_TYPE_LIST_SSL_1_0="$(find "$CONFIG_FRITZBOX_PATH_SSL_10" -name "config_fritz*ssl_1_0*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
 SUPPORTED_BOX_TYPE_LIST_SSL_1_0="${SUPPORTED_BOX_TYPE_LIST_SSL_1_0//"fritz"/""}"
 SUPPORTED_BOX_TYPE_LIST_SSL_1_0="$(echo $SUPPORTED_BOX_TYPE_LIST_SSL_1_0 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
 # Generate list of supported ssl versions
-SUPPORTED_SSL_NUMBER_LIST_SSL_1_0="$(find "$I_MATIK_CONFIG_FRITZBOX_PATH_openssl_10" -name "openssl_1_0*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
+SUPPORTED_SSL_NUMBER_LIST_SSL_1_0="$(find "$CONFIG_FRITZBOX_PATH_SSL_10" -name "ssl_1_0*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
 SUPPORTED_SSL_NUMBER_LIST_SSL_1_0="$(echo $SUPPORTED_SSL_NUMBER_LIST_SSL_1_0 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
 # Generate list of supported devices
-SUPPORTED_BOX_TYPE_LIST_SSL_1_1="$(find "$I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11" -name "config_fritz*openssl_1_1*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
+SUPPORTED_BOX_TYPE_LIST_SSL_1_1="$(find "$CONFIG_FRITZBOX_PATH_SSL_11" -name "config_fritz*ssl_1_1*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
 SUPPORTED_BOX_TYPE_LIST_SSL_1_1="${SUPPORTED_BOX_TYPE_LIST_SSL_1_1//"fritz"/""}"
 SUPPORTED_BOX_TYPE_LIST_SSL_1_1="$(echo $SUPPORTED_BOX_TYPE_LIST_SSL_1_1 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
 # Generate list of supported ssl versions
-SUPPORTED_SSL_NUMBER_LIST_SSL_1_1="$(find "$I_MATIK_CONFIG_FRITZBOX_PATH_openssl_11" -name "openssl_1_1*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
+SUPPORTED_SSL_NUMBER_LIST_SSL_1_1="$(find "$CONFIG_FRITZBOX_PATH_SSL_11" -name "ssl_1_1*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
 SUPPORTED_SSL_NUMBER_LIST_SSL_1_1="$(echo $SUPPORTED_SSL_NUMBER_LIST_SSL_1_1 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
 # Generate list of supported devices
-SUPPORTED_BOX_TYPE_LIST_SSL_3_0="$(find "$I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30" -name "config_fritz*openssl_3_0*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
+SUPPORTED_BOX_TYPE_LIST_SSL_3_0="$(find "$CONFIG_FRITZBOX_PATH_SSL_30" -name "config_fritz*ssl_3_0*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
 SUPPORTED_BOX_TYPE_LIST_SSL_3_0="${SUPPORTED_BOX_TYPE_LIST_SSL_3_0//"fritz"/""}"
 SUPPORTED_BOX_TYPE_LIST_SSL_3_0="$(echo $SUPPORTED_BOX_TYPE_LIST_SSL_3_0 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
 # Generate list of supported ssl versions
-SUPPORTED_SSL_NUMBER_LIST_SSL_3_0="$(find "$I_MATIK_CONFIG_FRITZBOX_PATH_openssl_30" -name "openssl_3_0*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
+SUPPORTED_SSL_NUMBER_LIST_SSL_3_0="$(find "$CONFIG_FRITZBOX_PATH_SSL_30" -name "ssl_3_0*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
 SUPPORTED_SSL_NUMBER_LIST_SSL_3_0="$(echo $SUPPORTED_SSL_NUMBER_LIST_SSL_3_0 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
 # Generate list of supported devices
-SUPPORTED_BOX_TYPE_LIST_SSL_MULTI="$(find "$I_MATIK_CONFIG_FRITZBOX_PATH_openssl_multi" -name "config_fritz*openssl_multi*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
+SUPPORTED_BOX_TYPE_LIST_SSL_MULTI="$(find "$CONFIG_FRITZBOX_PATH_SSL_multi" -name "config_fritz*ssl_multi*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
 SUPPORTED_BOX_TYPE_LIST_SSL_MULTI="${SUPPORTED_BOX_TYPE_LIST_SSL_MULTI//"fritz"/""}"
 SUPPORTED_BOX_TYPE_LIST_SSL_MULTI="$(echo $SUPPORTED_BOX_TYPE_LIST_SSL_MULTI | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
 # Generate list of supported ssl versions
-SUPPORTED_SSL_NUMBER_LIST_SSL_MULTI="$(find "$I_MATIK_CONFIG_FRITZBOX_PATH_openssl_multi" -name "openssl_multi*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
+SUPPORTED_SSL_NUMBER_LIST_SSL_MULTI="$(find "$CONFIG_FRITZBOX_PATH_SSL_multi" -name "ssl_multi*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
 SUPPORTED_SSL_NUMBER_LIST_SSL_MULTI="$(echo $SUPPORTED_SSL_NUMBER_LIST_SSL_MULTI | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
 # Generate list of supported devices
@@ -767,11 +772,10 @@ SUPPORTED_BOX_TYPE_LIST="${SUPPORTED_BOX_TYPE_LIST//"fritz"/""}"
 SUPPORTED_BOX_TYPE_LIST="$(echo $SUPPORTED_BOX_TYPE_LIST | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
 # Generate list of supported ssl versions
-SUPPORTED_SSL_NUMBER_LIST="$(find "$I_MATIK_PATH/support/" -name "openssl_*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
+SUPPORTED_SSL_NUMBER_LIST="$(find "$I_MATIK_PATH/support/" -name "ssl_*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
 SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
-
 	printf "i-matik comes with ABSOLUTELY NO WARRANTY.  This is free software, and you\n"
-	printf "are welcome to redistribute it under certain conditions.  See the GNU\n"
+	printf "are welcome to redistribute it under certain conditions. See the GNU\n"
 	printf "General Public Licence for details.\n\n"
 	printf "i-matik is a collection of helper scripts capable of efficient building\n"
 	printf "freetz-ng images for Fritz!Box or Fritz!Repeater or Fritz!Powerline.\n\n"
@@ -796,7 +800,7 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf "  -kc,--kernel-clean\t\tMake kernel-precompiled\n"
 	printf "  -ta,--toolchain-activate\tActivate toolchain\n"
 	printf "  -td,--toolchain-disable\tDisable toolchain\n"
-	printf "  -tc,--toolchain-clean\tClean toolchain\n"
+	printf "  -tc,--toolchain-clean\t\tClean toolchain\n"
 	printf "  -cm,--callmonitor\t\tCallmonitor\n"
 	printf "  -rr,--rrdstats\t\tRRDstats for RRDtool\n"
 	printf "  -push\t\t\t\tpush image to Fritz!Box or Fritz!Repeater or Fritz!Powerline\n"
@@ -816,19 +820,29 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf ${BLUE}"To build an OpenSSL MULTI image for Fritz!Box 7490 use this command:${NC}\n"
 	printf "$0 7490.multi\n\n"
 	printf ${GREEN}"List of currently push supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST}\n"
-	printf ${BLUE}"To create an image for the Fritz!Box 7490 to push, use this command :${NC}\n"
+	printf ${BLUE}"Push the create image to the Fritz!Box 7490, use this command:${NC}\n"
 	printf "$0 7490 -push\n"
 	printf "${GREEN}push to box${NC}\n"
 	printf "${GREEN}Create your own toolchains${NC}\n"
 	printf "$0 toolchain.11\n"
+	printf "${GREEN}Update s3${NC}\n"
+	printf "$0 oscam_tcupdate \t\t\t./s3 tcupdate --reset\n"
 	printf "${GREEN}Create your own Images${NC}\n"
 	printf "$0 create -my\t\t\t\tCreate an image for My Boxes\n"
 	printf "$0 create -my-multi\t\t\tCreate an image for My Boxes in Multie\n"
 	printf "$0 create -all\t\t\t\tCreate all images\n"
-	printf "$0 create -without-multi\t\tCreate all images without Multi\n"
+	printf "$0 create -without-multi\t\t\tCreate all images without Multi\n"
 	printf "$0 create -only-multi\t\t\tCreate all images only him Multi\n"
-	printf "$0 create -all-toolchain\t\tCreate all Toolchains for oscam\n"
+	printf "$0 create -all-toolchain\t\t\tCreate all Toolchains for oscam\n"
 	printf "$0 create -without-multi-toolchain\tCreate all Toolchains without Multi for oscam\n"
-	printf "$0 create -only-multi-toolchain\t\tCreate all Toolchains only him Multi for oscam\n"
+	printf "$0 create -only-multi-toolchain\t\tCreate all Toolchains only him Multi for oscam"
+printf "\n\x1b[0;33m\033[1m\033[5m\t    ___      __  __    _  _____ ___ _  __\n"
+printf "\t   |_ _|    |  \/  |  / \|_   _|_ _| |/ /\n"
+printf "\t    | |_____| |\/| | / _ \ | |  | || ' /\n" 
+printf "\t    | |_____| |  | |/ ___ \| |  | || . \ \n" 
+printf "\t   |___|    |_|  |_/_/   \_\_| |___|_|\_\ \033[0m\n"
+printf "\t        for freetz-ng and s3_releases\n"
+printf "\t   https://github.com/MasterRoCcO/i-matik\n"
+printf "\t               Version $VERSIONS_NR\n"
 	exit 0
 fi

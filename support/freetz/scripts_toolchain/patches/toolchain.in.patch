@@ -1,0 +1,11 @@
+--- config/ui/toolchain.in	2022-07-11 20:02:45.559170611 +0200
++++ config/ui/toolchain.in	2022-07-11 19:54:42.649169000 +0200
+@@ -38,7 +38,7 @@
+ 	bool
+ 	depends on FREETZ_AVM_GCC_3_4_MAX
+ 	default y
+-config FREETZ_KERNEL_BINUTILS_2_22_DEFAULT
++config FREETZ_KERNEL_BINUTILS_2_24_DEFAULT
+ 	bool
+ 	depends on FREETZ_AVM_GCC_4_6_MIN && FREETZ_AVM_VERSION_06_9X_MAX && FREETZ_KERNEL_VERSION_2_6_39_MAX
+ 	default y

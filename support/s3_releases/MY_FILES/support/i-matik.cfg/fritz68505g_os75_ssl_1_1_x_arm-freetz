@@ -1,0 +1,20 @@
+_toolchainname="fritz68505g_os75_ssl_1_1_x_arm-freetz";
+default_use="USE_UTF8 USE_LIBCRYPTO";
+extra_use="";
+extra_cc="";
+extra_ld="-Wl,-dynamic-linker,/usr/lib/freetz/ld-uClibc.so.0";
+_description="FRITZ!Box 68505g SSL 1.1 FritzOS V7.5x";
+_oscamconfdir_default="/etc/tuxbox/config";
+_oscamconfdir_custom="";
+_self_build="yes";
+_compiler="arm-linux-uclibcgnueabi-";
+_sysroot="usr";
+_libsearchdir="/usr/lib";
+_toolchainfilename="ZnJpdHo2ODUwNWdfb3M3NF9vcGVuc3NsXzFfMV9hcm0tZnJlZXR6LnRhci54ego=";
+_md5sum="07c1eb0d539a89bb7684883494bca679  Toolchain-fritz68505g_os75_ssl_1_1_x_arm-freetz.tar.xz";
+_tc_info="\n
+!!! freetz-NG Toolchain per i-matik !!!\n
+\n
+FRITZ!Box 68505g SSL 1.1 FritzOS V7.2x\n
+arm armv7-a 32-bit LE, uClibc 1.0.41, gcc 5.5.0, linux 4.4.271\n";
+_tc_infolines="5";

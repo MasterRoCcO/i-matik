@@ -1,0 +1,9 @@
+#!/bin/bash
+printf "\n\x1b[0;33m\033[1m\033[5m\t    ___      __  __    _  _____ ___ _  __\n"
+printf "\t   |_ _|    |  \/  |  / \|_   _|_ _| |/ /\n"
+printf "\t    | |_____| |\/| | / _ \ | |  | || ' /\n" 
+printf "\t    | |_____| |  | |/ ___ \| |  | || . \ \n" 
+printf "\t   |___|    |_|  |_/_/   \_\_| |___|_|\_\ \033[0m\n"
+printf "\t        for freetz-ng and s3_releases\n"
+printf "\t   https://github.com/MasterRoCcO/i-matik\n"
+printf "\t               Version xxxxx\n\n"

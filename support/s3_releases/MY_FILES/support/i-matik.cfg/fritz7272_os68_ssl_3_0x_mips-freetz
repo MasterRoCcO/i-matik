@@ -1,0 +1,20 @@
+_toolchainname="fritz7272_os68_ssl_3_0_x_mips-freetz";
+default_use="USE_UTF8 USE_LIBCRYPTO";
+extra_use="";
+extra_cc="";
+extra_ld="";
+_description="FRITZ!Box 7272 SSL 3.0 FritzOS V6.8x";
+_oscamconfdir_default="/etc/tuxbox/config";
+_oscamconfdir_custom="";
+_self_build="yes";
+_compiler="mips-linux-uclibc-";
+_sysroot="usr";
+_libsearchdir="/usr/lib";
+_toolchainfilename="ZnJpdHo3MjcyX29zNjhfc3NsXzFfMF94X21pcHMtZnJlZXR6LnRhci54ego=";
+_md5sum="35f35020e555acb71d02d0422aed71e4  Toolchain-fritz7272_os68_ssl_3_0_x_mips-freetz.tar.xz";
+_tc_info="\n
+!!! freetz-NG Toolchain per i-matik !!!\n
+\n
+FRITZ!Box 7272 SSL 3.0 FritzOS V6.8x\n
+mips mips32r2 32-bit BE, uClibc 0.9.33.2, ., linux 2.6.32.61\n";
+_tc_infolines="5";

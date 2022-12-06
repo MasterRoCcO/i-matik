@@ -1,0 +1,11 @@
+--- tools/make/tools-host/tools-host.mk	2022-07-11 19:57:27.353684497 +0200
++++ tools/make/tools-host/tools-host.mk	2022-07-11 19:58:14.808697314 +0200
+@@ -1,6 +1,6 @@
+-$(call TOOLS_INIT, 2022-06-27)
++$(call TOOLS_INIT, r20061)
+ $(PKG)_SOURCE:=tools-$($(PKG)_VERSION).tar.xz
+-$(PKG)_HASH:=6dc5409e00a344184e91dbe423d7d3361b3f5539edd4486477f67beec0cccc11
++$(PKG)_HASH:=
+ $(PKG)_SITE:=@MIRROR/
+ 
+ $(PKG)_DEPENDS_ON:=kconfig-host

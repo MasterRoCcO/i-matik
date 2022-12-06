@@ -1,0 +1,16 @@
+#!/bin/bash
+KERNEL="$(grep '^FREETZ_KERNEL_VERSION=' .config | awk -F'"' '{print $2}' | xargs)"
+
+if [ $KERNEL = $BAD_KERNEL1 ]
+	then
+		source $OSCAM_OFF
+elif [ $KERNEL = $BAD_KERNEL2 ]
+	then
+		source $OSCAM_OFF
+elif [ $KERNEL = $BAD_KERNEL3 ]
+	then
+		source $OSCAM_OFF
+elif [ $KERNEL = $BAD_KERNEL4 ]
+	then
+		source $OSCAM_OFF
+fi

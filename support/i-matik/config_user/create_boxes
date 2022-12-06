@@ -1,0 +1,140 @@
+#!/bin/bash
+# Evaluate commandline parameter
+while [ $# -ne 0 ];do
+    case "$1" in
+	-my)				PARAM_MY_BOXES=1
+	    ;;
+	-my-multi)			PARAM_MY_BOXES_MULTI=1
+	    ;;
+	-my-os75)			PARAM_MY_os75=1
+	    ;;	
+	-all)				PARAM_ALL=1
+	    ;;     
+	-without-multi)			PARAM_WITHOUT_MULTI=1
+	    ;;   
+	-only-multi)			PARAM_ONLY_MULTI=1
+	    ;;   
+	-all-toolchain)			PARAM_ALL_TOOLCHAIN=1
+	    ;;   
+	-without-multi-toolchain)	PARAM_WITHOUT_MULTI_TOOLCHAIN=1
+	    ;;   
+	-only-multi-toolchain)		PARAM_ONLY_MULTI_TOOLCHAIN=1
+	    ;;
+	-*|--*)				PARAM_BAD=1
+	    ;;
+    esac
+    shift
+done
+begin1=$(date +"%s")
+# my area start
+if [ -z $PARAM_MY_BOXES ]; then
+	sleep 0
+else
+#start point this shows you how long it took him to create the images
+
+#end point this shows you how long it yook him yo create the images
+termin1=$(date +"%s")
+difftimelps1=$(($termin1-$begin1))
+echo "$(($difftimelps1 / 60)) minutes and $(($difftimelps1 % 60)) seconds elapsed for Script Execution."
+
+fi
+
+if [ -z $PARAM_MY_BOXES_MULTI ]; then
+	sleep 0
+else
+#start point this shows you how long it took him to create the images
+	sleep 0	
+fi
+
+if [ -z $PARAM_MY_os75 ]; then
+	sleep 0
+else
+#start point this shows you how long it took him to create the images
+
+#end point this shows you how long it yook him yo create the images
+termin1=$(date +"%s")
+difftimelps1=$(($termin1-$begin1))
+echo "$(($difftimelps1 / 60)) minutes and $(($difftimelps1 % 60)) seconds elapsed for Script Execution."	
+
+fi
+# my area end
+
+
+if [ -z $PARAM_ALL ]; then
+	sleep 0
+else
+#start point this shows you how long it took him to create the images
+
+#end point this shows you how long it yook him yo create the images
+termin1=$(date +"%s")
+difftimelps1=$(($termin1-$begin1))
+echo "$(($difftimelps1 / 60)) minutes and $(($difftimelps1 % 60)) seconds elapsed for Script Execution."
+
+fi
+
+if [ -z $PARAM_WITHOUT_MULTI ]; then
+	sleep 0
+else
+#start point this shows you how long it took him to create the images
+
+#end point this shows you how long it yook him yo create the images
+termin1=$(date +"%s")
+difftimelps1=$(($termin1-$begin1))
+echo "$(($difftimelps1 / 60)) minutes and $(($difftimelps1 % 60)) seconds elapsed for Script Execution."
+fi
+
+if [ -z $PARAM_ONLY_MULTI ]; then
+	sleep 0
+else
+#start point this shows you how long it took him to create the images
+
+#end point this shows you how long it yook him yo create the images
+termin1=$(date +"%s")
+difftimelps1=$(($termin1-$begin1))
+echo "$(($difftimelps1 / 60)) minutes and $(($difftimelps1 % 60)) seconds elapsed for Script Execution."
+fi
+
+if [ -z $PARAM_ALL_TOOLCHAIN ]; then
+	sleep 0
+else
+#start point this shows you how long it took him to create the images
+
+#end point this shows you how long it yook him yo create the images
+termin1=$(date +"%s")
+difftimelps1=$(($termin1-$begin1))
+echo "$(($difftimelps1 / 60)) minutes and $(($difftimelps1 % 60)) seconds elapsed for Script Execution."
+fi
+
+if [ -z $PARAM_WITHOUT_MULTI_TOOLCHAIN ]; then
+	sleep 0
+else
+#start point this shows you how long it took him to create the images
+
+#end point this shows you how long it yook him yo create the images
+termin1=$(date +"%s")
+difftimelps1=$(($termin1-$begin1))
+echo "$(($difftimelps1 / 60)) minutes and $(($difftimelps1 % 60)) seconds elapsed for Script Execution."
+fi
+
+if [ -z $PARAM_ONLY_MULTI_TOOLCHAIN ]; then
+	sleep 0
+else
+#start point this shows you how long it took him to create the images
+
+#end point this shows you how long it yook him yo create the images
+termin1=$(date +"%s")
+difftimelps1=$(($termin1-$begin1))
+echo "$(($difftimelps1 / 60)) minutes and $(($difftimelps1 % 60)) seconds elapsed for Script Execution."
+fi
+if [ ! -z $PARAM_BAD ]; then
+	printf "  -my\t\t\t\tCreate an image for My Boxes\n"
+	printf "  -my-multi\t\t\tCreate an image for My Boxes in Multie\n"
+	printf "  -my-os75\t\t\tCreate an image for My Boxes with the os75\n"
+	printf "  -all\t\t\t\tCreate all images\n"
+	printf "  -without-multi\t\tCreate all images without Multi\n"
+	printf "  -only-multi\t\t\tCreate all images only him Multi\n"
+	printf "  -all-toolchain\t\tCreate all Toolchains for oscam\n"
+	printf "  -without-multi-toolchain\tCreate all Toolchains without Multi for oscam\n"
+	printf "  -only-multi-toolchain\t\tCreate all Toolchains only him Multi for oscam\n"
+	exit 0
+fi
