@@ -218,15 +218,10 @@ for bs in "${BOX_SSL[@]}"; do
 		#FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
 		FUD_COMMENT_BOX="$(echo $FUD_COMMENT)"
 		FUD_COMMENT_SSL="${FUD_COMMENT/"_${FUD_COMMENT_BOX}"/""}"
-		FB_OS_COMMENT="$(grep '^FREETZ_TYPE_PREFIX_SERIES_SUBDIR=' .config | awk -F'"' '{print $2}' | xargs)"
-		FB_OS="os${FB_OS_COMMENT:1:1}${FB_OS_COMMENT:3:1}"
-		FB_OS_DEL="${FB_OS_COMMENT:1:1}.${FB_OS_COMMENT:3:1}*"
 		FB_SSL="ssl_${BOX_SSL:0:1}_${BOX_SSL:1:1}_x"
-		FB_ARCH="$(grep '^FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=' .config | awk -F'"' '{print $2}' | xargs)"
-		FB_TYPE="${BOX_NAME}_${FB_OS}_${FB_SSL}_${FB_ARCH}"
 		
 		# Remove older image files
-		DELETE_IMAGE_NAME="*$(echo ${FB_OS_DEL}*${FB_SSL}_${FUD_COMMENT}).image"	# construct image filname filter
+		DELETE_IMAGE_NAME="*$(echo ${FB_SSL}_${FUD_COMMENT}).image"	# construct image filname filter
 		find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}" -type f -mmin +$DELETE_IMAGES -delete 2>/dev/null
 		#find "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}.inmemory" -type f -mmin +$DELETE_IMAGES -delete 2>/dev/null 
 		
