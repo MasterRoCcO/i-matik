@@ -1,7 +1,7 @@
 #!/bin/bash
 #sudo ifconfig $NETZWERK 192.168.178.32 netmask 255.255.255.0
 FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' "$CONFIG_FRITZBOX_PATH/ssl_11/config_fritz$1_ssl_1_1_x_masterbox" | awk -F'"' '{print $2}' | xargs)"
-FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
+#FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
 FUD_COMMENT_SSL="${FUD_COMMENT/"_${FUD_COMMENT_BOX}"/""}"
 
 BOX_ARCH="$(grep '^FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=' "${BOX_ARCH_PATH}/$1"| awk -F'"' '{print $2}' | xargs)" 2>/dev/null
