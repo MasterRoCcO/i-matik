@@ -559,27 +559,7 @@ FREETZ_PACKAGE_MODCGI=y
 # FREETZ_PACKAGE_OPENCONNECT is not set
 # FREETZ_PACKAGE_OPENDD is not set
 # FREETZ_PACKAGE_OPENNTPD is not set
-FREETZ_PACKAGE_OPENSSH=y
-FREETZ_PACKAGE_OPENSSH_AUTHORIZED_KEYS=y
-# FREETZ_PACKAGE_OPENSSH_sshd is not set
-
-#
-# SSH client (ssh) (not available, provided by dropbear)
-#
-
-#
-# Secure copy (scp) (not available, provided by dropbear)
-#
-# FREETZ_PACKAGE_OPENSSH_CLIENTUTILS is not set
-# FREETZ_PACKAGE_OPENSSH_KEYUTILS is not set
-# FREETZ_PACKAGE_OPENSSH_sftp is not set
-# FREETZ_PACKAGE_OPENSSH_sftp_server is not set
-
-#
-# Configuration ---
-#
-# FREETZ_PACKAGE_OPENSSH_INTERNAL_CRYPTO is not set
-# FREETZ_PACKAGE_OPENSSH_STATIC is not set
+# FREETZ_PACKAGE_OPENSSH is not set
 # FREETZ_PACKAGE_OPENSSL is not set
 # FREETZ_PACKAGE_OPENVPN is not set
 # FREETZ_PACKAGE_OWFS is not set
@@ -849,7 +829,7 @@ FREETZ_OPENSSL_VERSION_1=y
 #
 FREETZ_OPENSSL_SHLIB_VERSION="1.0.0"
 FREETZ_OPENSSL_LIBCRYPTO_EXTRA_LIBS="-ldl"
-FREETZ_LIB_libcrypto_WITH_EC=y
+# FREETZ_LIB_libcrypto_WITH_EC is not set
 # FREETZ_LIB_libcrypto_WITH_RC4 is not set
 # FREETZ_LIB_libcrypto_WITH_ZLIB is not set
 FREETZ_OPENSSL_SMALL_FOOTPRINT=y
@@ -879,7 +859,7 @@ FREETZ_OPENSSL_VERSION_2_MAX=y
 # FREETZ_LIB_liblz4 is not set
 # FREETZ_LIB_liblzma is not set
 # FREETZ_LIB_liblzo2 is not set
-FREETZ_LIB_libz=y
+# FREETZ_LIB_libz is not set
 # end of Data compression
 
 #
