@@ -111,7 +111,7 @@ for bs in "${BOX_SSL[@]}"; do
 	umask 0022
 	cp -ar /$MY_FILES_HOME_PATH/make/* "$FREETZ_SSL_HOME_PATH/make/" 2>/dev/null
 	source $PRIVAT_MY_FILES_SCRIPT 2>/dev/null
-	source $PATCH_ON
+	source $PATCH_ON 2>/dev/null
 	source $PRIVAT_PATCH_ON 2>/dev/null
 	sed -i "s+The installed version on this device is currently xxxx+The installed version on this device is currently ${VERSIONS_NR}+g" $FREETZ_SSL_HOME_PATH/make/pkgs/mod/files/root/usr/mww/cgi-bin/i-matik.cgi
 	sed -i "s+xxxx+${VERSIONS_NR}+g" $FREETZ_SSL_HOME_PATH/make/pkgs/mod/files/root/usr/lib/cgi-bin/mod/info.cgi
@@ -203,6 +203,12 @@ for bs in "${BOX_SSL[@]}"; do
 
 		source $NO_KERNEL
 		source $NO_REPLACE_KERNEL
+		
+		INT_REGION_COMMENT="$(grep '^FREETZ_TYPE_LANG_EN=' .config | awk -F'"' '{print $1}' | xargs)"
+		if [ ${INT_REGION_COMMENT:20:1} = $INT_REGION ] 2>/dev/null
+			then
+		sed -i "s+$MASTERBOX_NEU+int_$MASTERBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		fi
 
 		#echo "starte make -j$MAX_CPUS" && sleep 2 #echo command 2 seconds for progress
 		make -j$MAX_CPUS #run make for freetz
@@ -212,16 +218,10 @@ for bs in "${BOX_SSL[@]}"; do
 		#FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
 		FUD_COMMENT_BOX="$(echo $FUD_COMMENT)"
 		FUD_COMMENT_SSL="${FUD_COMMENT/"_${FUD_COMMENT_BOX}"/""}"
-		FB_OS_COMMENT="$(grep '^FREETZ_TYPE_PREFIX_SERIES_SUBDIR=' .config | awk -F'"' '{print $2}' | xargs)"
-		FB_OS="os${FB_OS_COMMENT:1:1}${FB_OS_COMMENT:3:1}"
-		FB_OS_DEL_COMMENT="$(grep '^FREETZ_AVM_SOURCE_ID' .config | awk -F'"' '{print $2}' | xargs)"
-		FB_OS_DEL="${FB_OS_DEL_COMMENT:5:5}"
 		FB_SSL="ssl_${BOX_SSL:0:1}_${BOX_SSL:1:1}_x"
-		FB_ARCH="$(grep '^FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=' .config | awk -F'"' '{print $2}' | xargs)"
-		FB_TYPE="${BOX_NAME}_${FB_OS}_${FB_SSL}_${FB_ARCH}"
 		
 		# Remove older image files
-		DELETE_IMAGE_NAME="*$(echo ${FB_OS_DEL}*${FB_SSL}_${FUD_COMMENT}).image"	# construct image filname filter
+		DELETE_IMAGE_NAME="*$(echo ${FB_SSL}_${FUD_COMMENT}).image"	# construct image filname filter
 		find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}" -type f -mmin +$DELETE_IMAGES -delete 2>/dev/null
 		find "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}.inmemory" -type f -mmin +$DELETE_IMAGES -delete 2>/dev/null 
 		
@@ -255,6 +255,11 @@ for bs in "${BOX_SSL[@]}"; do
 
 		source $KERNEL_OFF
 
+		if [ ${INT_REGION_COMMENT:20:1} = $INT_REGION ] 2>/dev/null
+		then
+		sed -i "s+int_$MASTERBOX_NEU+$MASTERBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		fi
+		
 	# skins to static.pkg
 	if [ -z $PARAM_SKINS ]; then
 		sleep 0
@@ -286,7 +291,7 @@ for bs in "${BOX_SSL[@]}"; do
 		mv -f $CONFIG_FRITZBOX_PATH_SSL_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox_no $CONFIG_FRITZBOX_PATH_SSL_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox 2>/dev/null
 		mv -f $CONFIG_FRITZBOX_PATH_SSL_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox_no $CONFIG_FRITZBOX_PATH_SSL_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox 2>/dev/null
 	fi
-		source $PATCH_OFF
+		source $PATCH_OFF 2>/dev/null
 		source $PRIVAT_PATCH_OFF 2>/dev/null
 
 	finish=$(date +"%s")	# build finished time
@@ -304,3 +309,4 @@ avg=$(($timediff / $COUNT))		# average time for box
 printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} box(es). ->  $(($avg / 60))m $(($avg % 60))s per box\n"
 $VERSION	# show i-matik disclaimer
 sed -i "s+${VERSIONS_NR}+xxxxx+g" $VERSION
+

@@ -99,6 +99,9 @@ BAD_KERNEL3="4.9.218"
 BAD_KERNEL4="4.19.183"
 BAD_OS="07_5X"
 
+#define int region an os
+INT_REGION="y"
+
 #oscam addone and on of
 OSCAM_ADDON_CONFIG="$I_MATIK_PATH/support/i-matik/config/addon"
 OSCAM_ADDON="$I_MATIK_PATH/support/freetz/scripts/addon/oscam_addon"
