@@ -20,6 +20,12 @@ fi
 
 if [[ ! -e "$OSCAM_PATH/oscam-svn" ]]; then
 	svn checkout https://svn.streamboard.tv/oscam/trunk $OSCAM_PATH/oscam-svn
+ed $OSCAM_PATH/oscam-svn/oscam.c <<EOF
+/", CS_TARGET);/a
+	fprintf(fp, "Built by:       %s\n", "i-matik");
+.
+wq
+EOF
 elif [ ! -d "$OSCAM_PATH/oscam-svn" ]; then
 #	printf "${YELLOW}'$OSCAM_PATH/oscam-svn' already exists but is not a directory${NC}" 1>&2
 	exit 1
