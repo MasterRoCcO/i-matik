@@ -207,7 +207,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/tree.patch" 2>/dev/null
 # fix for freetz-ng
 
 # host-tools
-echo -e ${GREEN}"Freetz files patch for host-tools."${NC}
-cp $HOST_TOOLS_PATCH_PATH_ON/yf-bootmanager-host.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-patch -p0 -b < yf-bootmanager-host.patch
-rm -rf "$FREETZ_SSL_HOME_PATH/yf-bootmanager-host.patch" 2>/dev/null
+#echo -e ${GREEN}"Freetz files patch for host-tools."${NC}
+#cp $HOST_TOOLS_PATCH_PATH_ON/yf-bootmanager-host.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#patch -p0 -b < yf-bootmanager-host.patch
+#rm -rf "$FREETZ_SSL_HOME_PATH/yf-bootmanager-host.patch" 2>/dev/null

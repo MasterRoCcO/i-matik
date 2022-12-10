@@ -1,3 +1,0 @@
-#!/bin/bash
-rm -f $FREETZ_SSL_HOME_PATH/make/host-tools/yf-bootmanager-host/yf-bootmanager-host.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/host-tools/yf-bootmanager-host/yf-bootmanager-host.mk.orig $FREETZ_SSL_HOME_PATH/make/host-tools/yf-bootmanager-host/yf-bootmanager-host.mk 2>/dev/null

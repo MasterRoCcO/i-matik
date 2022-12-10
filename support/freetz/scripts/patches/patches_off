@@ -67,4 +67,4 @@ source $PKGS_PATCH_PATH_OFF/tree
 # fix for freetz-ng
 
 # host-tools
-source $HOST_TOOLS_PATCH_PATH_OFF/yf-bootmanager-host
+#source $HOST_TOOLS_PATCH_PATH_OFF/yf-bootmanager-host
