@@ -239,7 +239,6 @@ wq
 EOF
 
 		source $PKGS_ON
-		source $KERNEL_ON
 
 	if [ -z $PARAM_CONFIG ]; then
 			make $MENUC #run make menuconfig
@@ -247,6 +246,7 @@ EOF
 			make $NOMENUC #run make olddefconfig
 	fi
 
+		source $KERNEL_ON
 		source $NO_KERNEL
 		source $NO_REPLACE_KERNEL
 		

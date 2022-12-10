@@ -213,7 +213,6 @@ for bs in "${BOX_SSL[@]}"; do
 	fi
 
 		source $PKGS_ON
-		source $KERNEL_ON
 		
 	if [ -z $PARAM_CONFIG ]; then
 			make $MENUC #run make menuconfig
@@ -221,6 +220,7 @@ for bs in "${BOX_SSL[@]}"; do
 			make $NOMENUC #run make olddefconfig
 	fi
 
+		source $KERNEL_ON
 		source $NO_KERNEL
 		source $NO_REPLACE_KERNEL
 		
