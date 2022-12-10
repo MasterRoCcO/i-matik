@@ -11,6 +11,7 @@ PACKAGES+=" uuid-dev libssl-dev libgnutls28-dev u-boot-tools device-tree-compile
 if ! dpkg -s $PACKAGES >/dev/null 2>&1; then
 	printf "${YELLOW}Installing prerequisite packages...\n${NC}"
 #	sudo dpkg --add-architecture i386
+	sudo add-apt-repository ppa:git-core/ppa
 	sudo apt-get install $PACKAGES
 	cd /tmp
 	wget http://mirrors.kernel.org/ubuntu/pool/universe/u/upx-ucl/upx-ucl_3.95-2build1_amd64.deb
