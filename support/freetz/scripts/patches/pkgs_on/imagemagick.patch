@@ -3,7 +3,7 @@
 @@ -1,5 +1,5 @@
  menuconfig FREETZ_PACKAGE_IMAGEMAGICK
 -	bool "ImageMagick 7.0.10-10 (binary only)"
-+	bool "ImageMagick 7.1.0-52 (binary only)"
++	bool "ImageMagick 7.1.0-54 (binary only)"
  	select FREETZ_LIB_libpthread  if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
  	select FREETZ_LIB_libm        if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
  	default n
