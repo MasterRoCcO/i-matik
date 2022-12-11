@@ -43,13 +43,13 @@
 +++ make/pkgs/imagemagick/imagemagick.mk	2022-09-18 10:17:42.090371767 +0200
 @@ -1,9 +1,9 @@
 -$(call PKG_INIT_BIN, 7.0.10-10)
-+$(call PKG_INIT_BIN, 7.1.0-52)
++$(call PKG_INIT_BIN, 7.1.0-54)
  $(PKG)_MAJOR_VERSION:=$(call GET_MAJOR_VERSION,$($(PKG)_VERSION),1)
  $(PKG)_ABI_SUFFIX:=Q16
  $(PKG)_SOURCE:=ImageMagick-$($(PKG)_VERSION).tar.xz
 -$(PKG)_HASH:=df1a37b73aa49423abb422c2150a0e1436920ba50dfc4377c6a3793f9826e5f1
 -$(PKG)_SITE:=@SF/$(pkg),http://www.imagemagick.org/download
-+$(PKG)_HASH:=49acbe467ae83488f65ce4fc023dd4d545ec52297e4d653b0f64683aaef30586
++$(PKG)_HASH:=6d0d952000217b677276a342a4c609776386d0daf2ccf354b6ed8dbc07d22ef7
 +$(PKG)_SITE:=@SF/$(pkg),https://mirror.dogado.de/imagemagick,http://www.imagemagick.org/download
  
  $(PKG)_BINARY := magick
