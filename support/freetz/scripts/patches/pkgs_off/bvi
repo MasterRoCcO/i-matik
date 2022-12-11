@@ -1,0 +1,5 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/bvi/bvi.mk 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/bvi/Config.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/pkgs/bvi/bvi.mk.orig $FREETZ_SSL_HOME_PATH/make/pkgs/bvi/bvi.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/pkgs/bvi/Config.in.orig $FREETZ_SSL_HOME_PATH/make/pkgs/bvi/Config.in 2>/dev/null

@@ -143,6 +143,7 @@ cp -ar $PKGS_PATCH_PATH_ON/bridge-utils.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/nu
 #cp -ar $PKGS_PATCH_PATH_ON/ca-bundle.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $PKGS_PATCH_PATH_ON/ccid.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $PKGS_PATCH_PATH_ON/cifsmount.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $PKGS_PATCH_PATH_ON/bvi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $PKGS_PATCH_PATH_ON/dbus.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $PKGS_PATCH_PATH_ON/dtach.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $PKGS_PATCH_PATH_ON/imagemagick.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
@@ -163,6 +164,7 @@ patch -p0 -b < bridge-utils.patch
 #patch -p0 -b < ca-bundle.patch
 #patch -p0 -b < ccid.patch
 #patch -p0 -b < cifsmount.patch
+patch -p0 -b < bvi.patch
 patch -p0 -b < dbus.patch
 patch -p0 -b < dtach.patch
 patch -p0 -b < imagemagick.patch
@@ -192,6 +194,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/bridge-utils.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/ca-bundle.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/ccid.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/cifsmount.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/bvi.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/dbus.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/dtach.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/imagemagick.patch" 2>/dev/null
