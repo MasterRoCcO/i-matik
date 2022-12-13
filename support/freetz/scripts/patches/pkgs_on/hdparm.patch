@@ -1,0 +1,22 @@
+--- make/pkgs/hdparm/hdparm.mk	2022-12-11 12:16:40.775585000 +0100
++++ make/pkgs/hdparm/hdparm.mk	2022-12-13 17:20:05.370158431 +0100
+@@ -1,7 +1,8 @@
+-$(call PKG_INIT_BIN, 9.58)
++$(call PKG_INIT_BIN, 9.65)
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
+-$(PKG)_HASH:=9ae78e883f3ce071d32ee0f1b9a2845a634fc4dd94a434e653fdbef551c5e10f
++$(PKG)_HASH:=d14929f910d060932e717e9382425d47c2e7144235a53713d55a94f7de535a4b
+ $(PKG)_SITE:=@SF/$(pkg)
++### WEBSITE:=https://sourceforge.net/projects/hdparm/files/hdparm/
+ 
+ $(PKG)_BINARY:=$($(PKG)_DIR)/hdparm
+ $(PKG)_TARGET_BINARY:=$($(PKG)_DEST_DIR)/usr/bin/hdparm
+--- make/pkgs/hdparm/Config.in	2022-12-11 12:16:40.775585000 +0100
++++ make/pkgs/hdparm/Config.in	2022-12-13 17:17:45.010167125 +0100
+@@ -1,5 +1,5 @@
+ config FREETZ_PACKAGE_HDPARM
+-	bool "hdparm 9.58 (binary only)"
++	bool "hdparm 9.65 (binary only)"
+ 	default n
+ 	depends on FREETZ_AVM_HAS_USB_HOST
+ 	help

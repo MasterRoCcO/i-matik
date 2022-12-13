@@ -1,0 +1,5 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/hdparm/hdparm.mk 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/hdparm/Config.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/pkgs/hdparm/hdparm.mk.orig $FREETZ_SSL_HOME_PATH/make/pkgs/hdparm/hdparm.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/pkgs/hdparm/Config.in.orig $FREETZ_SSL_HOME_PATH/make/pkgs/hdparm/Config.in 2>/dev/null
