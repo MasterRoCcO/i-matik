@@ -1,0 +1,7 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/xz/xz.mk 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/xz/Config.in 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/xz/patches/020-extra_flags.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/pkgs/xz/xz.mk.orig $FREETZ_SSL_HOME_PATH/make/pkgs/xz/xz.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/pkgs/xz/Config.in.orig $FREETZ_SSL_HOME_PATH/make/pkgs/xz/Config.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/pkgs/xz/patches/020-extra_flags.patch.orig $FREETZ_SSL_HOME_PATH/make/pkgs/xz/patches/020-extra_flags.patch 2>/dev/null

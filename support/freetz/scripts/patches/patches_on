@@ -155,6 +155,7 @@ cp -ar $PKGS_PATCH_PATH_ON/minisatip.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $PKGS_PATCH_PATH_ON/tiff.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $PKGS_PATCH_PATH_ON/tor.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $PKGS_PATCH_PATH_ON/tree.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $PKGS_PATCH_PATH_ON/xz.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $PKGS_PATCH_PATH_ON/zabbix.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < avahi.patch
 patch -p0 -b < axtlswrap.patch
@@ -177,6 +178,7 @@ patch -p0 -b < minisatip.patch
 patch -p0 -b < tiff.patch
 patch -p0 -b < tor.patch
 patch -p0 -b < tree.patch
+patch -p0 -b < xz.patch
 #patch -p0 -b < zabbix.patch
 mv $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/100-fix_debugging_paths.patch $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/100-fix_debugging_paths.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/101-disable_default_debug.patch $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/101-disable_default_debug.patch.orig 2>/dev/null
@@ -208,6 +210,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/minisatip.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/tiff.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/tor.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/tree.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/xz.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/zabbix.patch" 2>/dev/null
 
 # fix for freetz-ng

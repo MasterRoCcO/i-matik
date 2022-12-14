@@ -64,6 +64,7 @@ source $PKGS_PATCH_PATH_OFF/minisatip
 source $PKGS_PATCH_PATH_OFF/tiff
 source $PKGS_PATCH_PATH_OFF/tor
 source $PKGS_PATCH_PATH_OFF/tree
+source $PKGS_PATCH_PATH_OFF/xz
 #source $PKGS_PATCH_PATH_OFF/zabbix
 
 # fix for freetz-ng
