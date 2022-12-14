@@ -6,8 +6,7 @@ EXTERNAL_NO_INMEMORY="$I_MATIK_PATH/support/freetz/scripts/make/external_no_inme
 EXTERNAL_NO_INMEMORY_NO_OSCAM="$I_MATIK_PATH/support/freetz/scripts/make/external_no_inmemory_no_oscam"
 I_MATIK="$I_MATIK_PATH/support/freetz/scripts/make/i-matik"
 NO_INMEMORY="$I_MATIK_PATH/support/freetz/scripts/make/no_inmemory"
-#NO_INMEMORY_7530AX="$I_MATIK_PATH/support/freetz/scripts/make/no_inmemory_7530ax"
-NO_INMEMORY_7530AX="$I_MATIK_PATH/support/freetz/scripts/make/no_inmemory"
+NO_INMEMORY_7530AX="$I_MATIK_PATH/support/freetz/scripts/make/no_inmemory_7530ax"
 NO_INMEMORY_NO_OSCAM="$I_MATIK_PATH/support/freetz/scripts/make/no_inmemory_no_oscam"
 NO_OSCAM="$I_MATIK_PATH/support/freetz/scripts/make/no_oscam"
 NO_KERNEL_FILES="$I_MATIK_PATH/support/freetz/scripts/make/no_kernel_files"
@@ -95,7 +94,7 @@ IMAGE2MEMORY=./image2inmemory
 #define bad kernels an os
 BAD_KERNEL1="4.1.38"
 BAD_KERNEL2="4.4.271"
-BAD_KERNEL3="4.9.218"
+BAD_KERNEL3="4.9.2181"
 BAD_KERNEL4="4.19.183"
 BAD_OS="07_5X"
 
