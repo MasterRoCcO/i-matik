@@ -2,7 +2,7 @@
 if [[ $(lsb_release -rs) == "20.04" ]] || [[ $(lsb_release -rs) == "21.10" ]] || [[ $(lsb_release -rs) == "22.04" ]] || [[ $(lsb_release -rs) == "10" ]] || [[ $(lsb_release -rs) == "11" ]]; then # replace 20.04 by the number of release you want
 
 PACKAGES="  cpio pv rsync kmod execstack sqlite3 libsqlite3-dev flex tofrodos gettext pkg-config ecj fastjar perl ruby gawk python2 python-is-python3 net-tools ncftp libxml2-dev"
-PACKAGES+=" bzip2 unar inkscape imagemagick graphicsmagick subversion git bc wget curl sudo cmake ccache unzip intltool patchutils gcc-multilib"
+PACKAGES+=" bzip2 unar inkscape imagemagick graphicsmagick subversion git bc wget curl sudo cmake ccache unzip intltool patchutils gcc-multilib sharutils"
 PACKAGES+=" gcc g++ gcc-multilib binutils autoconf automake autopoint libtool-bin make bison patch texinfo lib32ncurses-dev libcap-dev bsdmainutils"
 PACKAGES+=" libzstd-dev libc6-dev netcat lib32z1-dev libncurses5-dev libreadline-dev zlib1g-dev libacl1-dev lib32stdc++6 libglib2.0-dev libstring-crc32-perl libusb-dev"
 PACKAGES+=" uuid-dev libssl-dev libgnutls28-dev u-boot-tools device-tree-compiler liblzma-dev" # for FIT-Image
