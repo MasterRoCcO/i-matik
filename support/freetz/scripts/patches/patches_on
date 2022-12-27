@@ -47,7 +47,7 @@ cp -ar $LIBS_PATCH_PATH_ON/libpng.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $LIBS_PATCH_PATH_ON/libtasn1.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $LIBS_PATCH_PATH_ON/libxml2.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH_ON/libvorbis.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $LIBS_PATCH_PATH_ON/mbedtls.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $LIBS_PATCH_PATH_ON/mbedtls.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $LIBS_PATCH_PATH_ON/neon.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH_ON/opus.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH_ON/protobuf-c.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
@@ -79,7 +79,7 @@ patch -p0 -b < libpng.patch
 #patch -p0 -b < libtasn1.patch
 #patch -p0 -b < libxml2.patch
 patch -p0 -b < libvorbis.patch
-patch -p0 -b < mbedtls.patch
+#patch -p0 -b < mbedtls.patch
 #patch -p0 -b < neon.patch
 patch -p0 -b < opus.patch
 patch -p0 -b < protobuf-c.patch
@@ -124,7 +124,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/libpng.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/libtasn1.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/libxml2.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/libvorbis.patch" 2>/dev/null
-rm -rf "$FREETZ_SSL_HOME_PATH/mbedtls.patch" 2>/dev/null
+#rm -rf "$FREETZ_SSL_HOME_PATH/mbedtls.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/neon.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/opus.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/protobuf-c.patch" 2>/dev/null

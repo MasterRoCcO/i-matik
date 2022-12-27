@@ -34,7 +34,7 @@ source $LIBS_PATCH_PATH_OFF/libpng
 #source $LIBS_PATCH_PATH_OFF/libtasn1
 #source $LIBS_PATCH_PATH_OFF/libxml2
 source $LIBS_PATCH_PATH_OFF/libvorbis
-source $LIBS_PATCH_PATH_OFF/mbedtls
+#source $LIBS_PATCH_PATH_OFF/mbedtls
 #source $LIBS_PATCH_PATH_OFF/neon
 source $LIBS_PATCH_PATH_OFF/opus
 source $LIBS_PATCH_PATH_OFF/protobuf-c

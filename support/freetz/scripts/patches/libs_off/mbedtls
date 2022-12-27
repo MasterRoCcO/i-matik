@@ -1,9 +1,0 @@
-#!/bin/bash
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/mbedtls/mbedtls.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/mbedtls/external.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/mbedtls/external.files 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/mbedtls/patches/current/010-versioned_so.patch 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/mbedtls/mbedtls.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/mbedtls/mbedtls.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/mbedtls/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/mbedtls/external.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/mbedtls/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/mbedtls/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/mbedtls/patches/current/010-versioned_so.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/mbedtls/patches/current/010-versioned_so.patch 2>/dev/null
