@@ -16,6 +16,7 @@ sed -i "s+# CONFIG_CRYPTO_CMAC is not set+CONFIG_CRYPTO_CMAC=m+g" $FREETZ_SSL_HO
 sed -i "s+# CONFIG_CRYPTO_HMAC is not set+CONFIG_CRYPTO_HMAC=m+g" $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
 sed -i "s+# CONFIG_PPP is not set+CONFIG_PPP=m+g" $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
 sed -i "s+# CONFIG_CRYPTO_SHA1 is not set+CONFIG_CRYPTO_SHA1=m+g" $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
+sed -i "s+# CONFIG_TUN is not set+CONFIG_TUN=m+g" $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
 
 grep -v CONFIG_NFS_FS $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}  > $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/tempdatei && mv $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/tempdatei $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
 grep -v CONFIG_NFS_V2 $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}  > $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/tempdatei && mv $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/tempdatei $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
