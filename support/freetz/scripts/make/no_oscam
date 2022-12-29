@@ -94,6 +94,15 @@ for bs in "${BOX_SSL[@]}"; do
 		printf "${YELLOW}'$FREETZ_SSL_HOME_PATH' already exists but is not a directory${NC}" 1>&2
 		exit 1
 	fi
+	
+	if [ ! -f $FREETZ_SSL_HOME_PATH/make/pkgs/mod/files/root/usr/mww/cgi-bin/status.d/10-box.sh.orig ]; then
+		sleep 0
+	else
+		source $PATCH_OFF 2>/dev/null
+		source $PRIVAT_PATCH_OFF 2>/dev/null
+		source $I_MATIK_PATH/support/freetz/scripts/pkgs_on_off/skins_off
+		sed -i "s+${VERSIONS_NR}+xxxxx+g" $VERSION
+	fi
 
 	# Create directory for saving built images
 	mkdir -p $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME 2>/dev/null	# create images folder
@@ -146,6 +155,16 @@ for bs in "${BOX_SSL[@]}"; do
 	# Loop through found config files
 	for conf in "${CONFIGS[@]}"; do
 		cp -f "$conf" .config	#copy box config to .config
+	SYSTEM_TYPE="$(grep '^FREETZ_AVM_SOURCE_FOR_SYSTEM_TYPE_' .config | awk -F'=y' '{print $1}' | xargs | tr '[:upper:]' '[:lower:]')"
+	SOURCE_ID="$(grep '^FREETZ_AVM_SOURCE_ID=' .config | awk -F'"' '{print $2}' | xargs)"
+	CORE_SUFFIX="$(grep '^FREETZ_SYSTEM_TYPE_CORE_SUFFIX=' .config | awk -F'"' '{print $2}' | xargs)"
+	if [ ! -f $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}.orig ]; then
+			sleep 0
+	else
+			rm -f $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
+			mv $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}.orig $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
+			rm -f $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/tempdatei 2>/dev/null
+	fi
 		sed -i "s+FREETZ_JLEVEL=20+FREETZ_JLEVEL=$MAX_CPUS+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_PACKAGE_OSCAM=y+# FREETZ_PACKAGE_OSCAM is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_DOWNLOAD_TOOLCHAIN=y+# FREETZ_DOWNLOAD_TOOLCHAIN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
@@ -309,4 +328,3 @@ avg=$(($timediff / $COUNT))		# average time for box
 printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} box(es). ->  $(($avg / 60))m $(($avg % 60))s per box\n"
 $VERSION	# show i-matik disclaimer
 sed -i "s+${VERSIONS_NR}+xxxxx+g" $VERSION
-
