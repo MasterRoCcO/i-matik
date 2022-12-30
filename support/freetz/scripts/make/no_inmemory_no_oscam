@@ -100,7 +100,8 @@ for bs in "${BOX_SSL[@]}"; do
 	else
 		source $PATCH_OFF 2>/dev/null
 		source $PRIVAT_PATCH_OFF 2>/dev/null
-		source $I_MATIK_PATH/support/freetz/scripts/pkgs_on_off/skins_off
+		grep -v oscam $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+		source $I_MATIK_PATH/support/freetz/scripts/pkgs_on_off/skins_off 2>/dev/null
 		sed -i "s+${VERSIONS_NR}+xxxxx+g" $VERSION
 	fi
 
@@ -161,9 +162,7 @@ for bs in "${BOX_SSL[@]}"; do
 	if [ ! -f $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}.orig ]; then
 			sleep 0
 	else
-			rm -f $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
-			mv $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}.orig $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
-			rm -f $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/tempdatei 2>/dev/null
+			source $KERNEL_OFF
 	fi
 		sed -i "s+FREETZ_JLEVEL=20+FREETZ_JLEVEL=$MAX_CPUS+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_PACKAGE_OSCAM=y+# FREETZ_PACKAGE_OSCAM is not set+g" $FREETZ_SSL_HOME_PATH/.config
