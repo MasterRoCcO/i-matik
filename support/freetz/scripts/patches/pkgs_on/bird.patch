@@ -2,10 +2,10 @@
 +++ make/pkgs/bird/bird.mk	2022-10-10 17:11:37.754237194 +0200
 @@ -1,6 +1,6 @@
 -$(call PKG_INIT_BIN, 1.6.4)
-+$(call PKG_INIT_BIN, 2.0.10)
++$(call PKG_INIT_BIN, 2.0.11)
  $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
 -$(PKG)_HASH:=c26b8caae988dba81a9dbbee93502463d4326d1b749d728d62aa5529c605afc0
-+$(PKG)_HASH:=7ed341ddd8dc87fa9736586b3515447a8436fec442d65f4022155ab9de1ffd5a
++$(PKG)_HASH:=60a7b83b67b9d089d2a745a11fddd12461f631abc7b645b6c085adf90b3f55d6
  $(PKG)_SITE:=ftp://bird.network.cz/pub/bird
  $(PKG)_STARTLEVEL=82
  
@@ -14,7 +14,7 @@
 @@ -1,5 +1,5 @@
  config FREETZ_PACKAGE_BIRD
 -	bool "Bird 1.6.4"
-+	bool "Bird 2.0.10"
++	bool "Bird 2.0.11"
  	default n
  	help
  		The BIRD Internet Routing Daemon
@@ -27,7 +27,7 @@
 -@@ -93,6 +93,7 @@
 - #define xrealloc(size) _xrealloc_leap(__FILE__, __LINE__, size)
 - #define xfree(ptr) _xfree_leap(__FILE__, __LINE__, ptr)
-+@@ -122,6 +122,7 @@
++@@ -130,6 +130,7 @@
 +   dmalloc_free(__FILE__, __LINE__, (ptr), DMALLOC_FUNC_FREE)
 + 
   #else
