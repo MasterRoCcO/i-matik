@@ -23,13 +23,21 @@
  		Tree is a recursive directory listing program
 --- make/pkgs/tree/patches/100-makefile.patch	2022-11-06 08:45:13.314864575 +0100
 +++ make/pkgs/tree/patches/100-makefile.patch	2022-11-06 08:45:24.086729261 +0100
-@@ -34,7 +34,8 @@
- # Linux defaults:
- #CFLAGS+=-ggdb -std=c11 -pedantic -Wall -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
- CFLAGS+=-O3 -std=c11 -pedantic -Wall -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
--#LDFLAGS+=-s
-+LDFLAGS=
-+OBJS+=strverscmp.o
- 
- # Uncomment for FreeBSD:
- #CC=cc
+@@ -1,12 +1,12 @@
+ --- Makefile
+ +++ Makefile
+-@@ -32,7 +32,8 @@
++@@ -34,7 +34,8 @@
+  # Linux defaults:
+- CFLAGS=-ggdb -pedantic -Wall -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+- #CFLAGS=-O4 -Wall  -DLINUX -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+--#LDFLAGS=-s
++ #CFLAGS+=-ggdb -std=c11 -pedantic -Wall -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
++ CFLAGS+=-O3 -std=c11 -pedantic -Wall -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
++-#LDFLAGS+=-s
+ +LDFLAGS=
+ +OBJS+=strverscmp.o
+  
+  # Uncomment for FreeBSD:
+- #CFLAGS=-O2 -Wall -fomit-frame-pointer
++ #CC=cc
