@@ -46,7 +46,7 @@ source $LIBS_PATCH_PATH_OFF/yaml
 source $PKGS_PATCH_PATH_OFF/avahi
 source $PKGS_PATCH_PATH_OFF/axtlswrap
 #source $PKGS_PATCH_PATH_OFF/bind
-source $PKGS_PATCH_PATH_OFF/bird
+#source $PKGS_PATCH_PATH_OFF/bird
 source $PKGS_PATCH_PATH_OFF/bittwist
 source $PKGS_PATCH_PATH_OFF/bridge-utils
 #source $PKGS_PATCH_PATH_OFF/ca-bundle

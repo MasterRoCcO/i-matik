@@ -137,7 +137,7 @@ echo -e ${GREEN}"Freetz files patch for packages."${NC}
 cp -ar $PKGS_PATCH_PATH_ON/avahi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $PKGS_PATCH_PATH_ON/axtlswrap.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $PKGS_PATCH_PATH_ON/bind.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $PKGS_PATCH_PATH_ON/bird.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $PKGS_PATCH_PATH_ON/bird.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $PKGS_PATCH_PATH_ON/bittwist.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $PKGS_PATCH_PATH_ON/bridge-utils.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $PKGS_PATCH_PATH_ON/ca-bundle.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
@@ -180,10 +180,10 @@ patch -p0 -b < tiff.patch
 patch -p0 -b < tree.patch
 #patch -p0 -b < xz.patch
 #patch -p0 -b < zabbix.patch
-mv $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/100-fix_debugging_paths.patch $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/100-fix_debugging_paths.patch.orig 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/101-disable_default_debug.patch $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/101-disable_default_debug.patch.orig 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/102-CPPFLAGS.patch $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/102-CPPFLAGS.patch.orig 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/103-AR.patch $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/103-AR.patch.orig 2>/dev/null
+#mv $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/100-fix_debugging_paths.patch $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/100-fix_debugging_paths.patch.orig 2>/dev/null
+#mv $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/101-disable_default_debug.patch $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/101-disable_default_debug.patch.orig 2>/dev/null
+#mv $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/102-CPPFLAGS.patch $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/102-CPPFLAGS.patch.orig 2>/dev/null
+#mv $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/103-AR.patch $FREETZ_SSL_HOME_PATH/make/pkgs/bird/patches/103-AR.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/pkgs/bittwist/patches/110-Makefile.patch $FREETZ_SSL_HOME_PATH/make/pkgs/bittwist/patches/110-Makefile.patch.orig 2>/dev/null
 #mv $FREETZ_SSL_HOME_PATH/make/pkgs/knock/patches/100-debian-reap_child_procs.patch $FREETZ_SSL_HOME_PATH/make/pkgs/knock/patches/100-debian-reap_child_procs.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/pkgs/minisatip/patches $FREETZ_SSL_HOME_PATH/make/pkgs/minisatip/patches.orig 2>/dev/null
@@ -192,7 +192,7 @@ mv $FREETZ_SSL_HOME_PATH/make/pkgs/minisatip/patches $FREETZ_SSL_HOME_PATH/make/
 rm -rf "$FREETZ_SSL_HOME_PATH/avahi.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/axtlswrap.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/bind.patch" 2>/dev/null
-rm -rf "$FREETZ_SSL_HOME_PATH/bird.patch" 2>/dev/null
+#rm -rf "$FREETZ_SSL_HOME_PATH/bird.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/bittwist.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/bridge-utils.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/ca-bundle.patch" 2>/dev/null
