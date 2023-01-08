@@ -19,7 +19,7 @@ source $LIBS_PATCH_PATH_OFF/jansson
 source $LIBS_PATCH_PATH_OFF/ldns
 source $LIBS_PATCH_PATH_OFF/leptonica
 #source $LIBS_PATCH_PATH_OFF/libcap
-source $LIBS_PATCH_PATH_OFF/libev
+#source $LIBS_PATCH_PATH_OFF/libev
 source $LIBS_PATCH_PATH_OFF/libffi
 #source $LIBS_PATCH_PATH_OFF/libgpg-error
 source $LIBS_PATCH_PATH_OFF/libgsm
