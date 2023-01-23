@@ -12,7 +12,7 @@ source $DL_FIRMWARE_PATCH_PATH_OFF/dl-firmware.in
 source $LIBS_PATCH_PATH_OFF/bluez-libs
 source $LIBS_PATCH_PATH_OFF/db
 #source $LIBS_PATCH_PATH_OFF/freetype
-source $LIBS_PATCH_PATH_OFF/gettext
+#source $LIBS_PATCH_PATH_OFF/gettext
 source $LIBS_PATCH_PATH_OFF/gsasl
 source $LIBS_PATCH_PATH_OFF/jansson
 #source $LIBS_PATCH_PATH_OFF/jpeg
@@ -20,7 +20,7 @@ source $LIBS_PATCH_PATH_OFF/ldns
 source $LIBS_PATCH_PATH_OFF/leptonica
 #source $LIBS_PATCH_PATH_OFF/libcap
 #source $LIBS_PATCH_PATH_OFF/libev
-source $LIBS_PATCH_PATH_OFF/libffi
+#source $LIBS_PATCH_PATH_OFF/libffi
 #source $LIBS_PATCH_PATH_OFF/libgpg-error
 source $LIBS_PATCH_PATH_OFF/libgsm
 #source $LIBS_PATCH_PATH_OFF/libidn
@@ -30,7 +30,7 @@ source $LIBS_PATCH_PATH_OFF/libogg
 source $LIBS_PATCH_PATH_OFF/libonig
 source $LIBS_PATCH_PATH_OFF/liboping
 source $LIBS_PATCH_PATH_OFF/libosip2
-source $LIBS_PATCH_PATH_OFF/libpng
+#source $LIBS_PATCH_PATH_OFF/libpng
 #source $LIBS_PATCH_PATH_OFF/libtasn1
 #source $LIBS_PATCH_PATH_OFF/libxml2
 source $LIBS_PATCH_PATH_OFF/libvorbis

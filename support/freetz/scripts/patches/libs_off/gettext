@@ -1,8 +1,0 @@
-#!/bin/bash
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/gettext/gettext.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/gettext/external.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/gettext/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/gettext/gettext.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/gettext/gettext.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/gettext/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/gettext/external.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/gettext/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/gettext/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/gettext/patches/010-disable_GLIBC_specific_code.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/gettext/patches/010-disable_GLIBC_specific_code.patch 2>/dev/null

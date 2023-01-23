@@ -25,7 +25,7 @@ echo -e ${GREEN}"Freetz files patch for libs."${NC}
 cp -ar $LIBS_PATCH_PATH_ON/bluez-libs.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH_ON/db.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $LIBS_PATCH_PATH_ON/freetype.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $LIBS_PATCH_PATH_ON/gettext.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $LIBS_PATCH_PATH_ON/gettext.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH_ON/gsasl.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH_ON/jansson.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $LIBS_PATCH_PATH_ON/jpeg.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
@@ -33,7 +33,7 @@ cp -ar $LIBS_PATCH_PATH_ON/ldns.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH_ON/leptonica.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $LIBS_PATCH_PATH_ON/libcap.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $LIBS_PATCH_PATH_ON/libev.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $LIBS_PATCH_PATH_ON/libffi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $LIBS_PATCH_PATH_ON/libffi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $LIBS_PATCH_PATH_ON/libgpg-error.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH_ON/libgsm.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $LIBS_PATCH_PATH_ON/libidn.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
@@ -43,7 +43,7 @@ cp -ar $LIBS_PATCH_PATH_ON/libogg.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH_ON/libonig.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH_ON/liboping.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH_ON/libosip2.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $LIBS_PATCH_PATH_ON/libpng.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $LIBS_PATCH_PATH_ON/libpng.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $LIBS_PATCH_PATH_ON/libtasn1.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $LIBS_PATCH_PATH_ON/libxml2.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH_ON/libvorbis.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
@@ -57,7 +57,7 @@ cp -ar $LIBS_PATCH_PATH_ON/yaml.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < bluez-libs.patch
 patch -p0 -b < db.patch
 #patch -p0 -b < freetype.patch
-patch -p0 -b < gettext.patch
+#patch -p0 -b < gettext.patch
 patch -p0 -b < gsasl.patch
 patch -p0 -b < jansson.patch
 #patch -p0 -b < jpeg.patch
@@ -65,7 +65,7 @@ patch -p0 -b < ldns.patch
 patch -p0 -b < leptonica.patch
 #patch -p0 -b < libcap.patch
 #patch -p0 -b < libev.patch
-patch -p0 -b < libffi.patch
+#patch -p0 -b < libffi.patch
 #patch -p0 -b < libgpg-error.patch
 patch -p0 -b < libgsm.patch
 #patch -p0 -b < libidn.patch
@@ -75,7 +75,7 @@ patch -p0 -b < libogg.patch
 patch -p0 -b < libonig.patch
 patch -p0 -b < liboping.patch
 patch -p0 -b < libosip2.patch
-patch -p0 -b < libpng.patch
+#patch -p0 -b < libpng.patch
 #patch -p0 -b < libtasn1.patch
 #patch -p0 -b < libxml2.patch
 patch -p0 -b < libvorbis.patch
@@ -87,10 +87,10 @@ patch -p0 -b < speex.patch
 patch -p0 -b < srtp.patch
 patch -p0 -b < yaml.patch
 mv $FREETZ_SSL_HOME_PATH/make/libs/db/patches/020-drop_backtrace_dependency.db.patch $FREETZ_SSL_HOME_PATH/make/libs/db/patches/020-drop_backtrace_dependency.db.patch.orig 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/gettext/patches/010-disable_GLIBC_specific_code.patch $FREETZ_SSL_HOME_PATH/make/libs/gettext/patches/010-disable_GLIBC_specific_code.patch.orig 2>/dev/null
+#mv $FREETZ_SSL_HOME_PATH/make/libs/gettext/patches/010-disable_GLIBC_specific_code.patch $FREETZ_SSL_HOME_PATH/make/libs/gettext/patches/010-disable_GLIBC_specific_code.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/020-no_xtractprotos.leptonica.patch $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/020-no_xtractprotos.leptonica.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/030-no_demo_code_in_lib.leptonica.patch $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/030-no_demo_code_in_lib.leptonica.patch.orig 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/030-mips_softfloat.patch $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/030-mips_softfloat.patch.orig 2>/dev/null
+#mv $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/030-mips_softfloat.patch $FREETZ_SSL_HOME_PATH/make/libs/libffi/patches/030-mips_softfloat.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/libnet/patches/100-cross-compilation.libnet.patch $FREETZ_SSL_HOME_PATH/make/libs/libnet/patches/100-cross-compilation.libnet.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/libonig/patches/102-no_include_dir.patch $FREETZ_SSL_HOME_PATH/make/libs/libonig/patches/102-no_include_dir.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/liboping/patches/110-IPv6_defines.liboping.patch $FREETZ_SSL_HOME_PATH/make/libs/liboping/patches/110-IPv6_defines.liboping.patch.orig 2>/dev/null
@@ -102,7 +102,7 @@ mv $FREETZ_SSL_HOME_PATH/make/libs/speex/patches $FREETZ_SSL_HOME_PATH/make/libs
 rm -rf "$FREETZ_SSL_HOME_PATH/bluez-libs.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/db.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/freetype.patch" 2>/dev/null
-rm -rf "$FREETZ_SSL_HOME_PATH/gettext.patch" 2>/dev/null
+#rm -rf "$FREETZ_SSL_HOME_PATH/gettext.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/gsasl.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/jansson.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/jpeg.patch" 2>/dev/null
@@ -110,7 +110,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/ldns.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/leptonica.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/libcap.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/libev.patch" 2>/dev/null
-rm -rf "$FREETZ_SSL_HOME_PATH/libffi.patch" 2>/dev/null
+#rm -rf "$FREETZ_SSL_HOME_PATH/libffi.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/libgpg-error.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/libgsm.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/libidn.patch" 2>/dev/null
@@ -120,7 +120,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/libogg.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/libonig.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/liboping.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/libosip2.patch" 2>/dev/null
-rm -rf "$FREETZ_SSL_HOME_PATH/libpng.patch" 2>/dev/null
+#rm -rf "$FREETZ_SSL_HOME_PATH/libpng.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/libtasn1.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/libxml2.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/libvorbis.patch" 2>/dev/null

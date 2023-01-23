@@ -48,17 +48,6 @@
   
   else
 -   if test "x$with_libpng" = xyes; then :
---- make/libs/leptonica/Config.in	2022-08-17 09:18:28.378826000 +0200
-+++ make/libs/leptonica/Config.in	2022-09-17 18:12:53.845947247 +0200
-@@ -2,7 +2,7 @@
- 	bool "leptonica (liblept.so)"
- 	select FREETZ_LIB_libm if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
- 	select FREETZ_LIB_libjpeg
--	select FREETZ_LIB_libpng12
-+	select FREETZ_LIB_libpng16
- 	select FREETZ_LIB_libtiff
- 	select FREETZ_LIB_libz
- 	default n
 --- make/libs/leptonica/external.files	2022-09-18 09:29:13.503136000 +0200
 +++ make/libs/leptonica/external.files	2022-09-18 11:30:16.908848605 +0200
 @@ -1 +1 @@
