@@ -3,7 +3,7 @@ if [[ $(lsb_release -rs) == "20.04" ]] || [[ $(lsb_release -rs) == "21.10" ]] ||
 
 PACKAGES="  cpio pv rsync kmod java-wrappers execstack sqlite3 libsqlite3-dev flex tofrodos gettext pkg-config ecj perl gawk python2 python-is-python3 net-tools ncftp libxml2-dev"
 PACKAGES+=" bzip2 unar inkscape imagemagick graphicsmagick subversion git bc wget curl sudo cmake ccache unzip intltool patchutils gcc-multilib sharutils openjdk-8-jdk-headless"
-PACKAGES+=" gcc g++ gcc-multilib binutils autoconf automake autopoint libtool-bin make bison patch texinfo lib32ncurses-dev libcap-dev bsdmainutils"
+PACKAGES+=" gcc g++ gcc-multilib binutils autoconf automake autopoint libtool-bin make bison patch texinfo lib32ncurses-dev libcap-dev bsdmainutils meson ninja-build"
 PACKAGES+=" libzstd-dev libc6-dev netcat lib32z1-dev libncurses5-dev libreadline-dev zlib1g-dev libacl1-dev lib32stdc++6 libglib2.0-dev libstring-crc32-perl libusb-dev gperf"
 PACKAGES+=" uuid-dev libssl-dev libgnutls28-dev u-boot-tools device-tree-compiler liblzma-dev libelf-dev " # for FIT-Image
 #PACKAGES+=" libzstd-dev:i386 libc6-dev-i386"
