@@ -39,7 +39,7 @@ elif [ ! -d "$USER_OSCAM_TOOLCHAINS" ]; then
 	exit 1
 fi
 
-	cd "$OSCAM_PATH" && git pull
+	cd "$OSCAM_PATH" && git pull && chmod 755 s3
 	cp -ar /$MY_FILES_HOME_PATH_OSCAM/* "$OSCAM_PATH/" 2>/dev/null
 	cp -ar /$PRIVAT_MY_FILES_HOME_PATH_OSCAM/support/i-matik.cfg "$OSCAM_PATH/support/" 2>/dev/null
 	cp -ar /$USER_OSCAM_TOOLCHAINS/* "$OSCAM_PATH/support" 2>/dev/null
