@@ -6,6 +6,7 @@ sed -i "s+FREETZ_LIB_libfreetype=y+# FREETZ_LIB_libfreetype is not set+g" $FREET
 sed -i "s+FREETZ_LIB_libart_lgpl_2=y+# FREETZ_LIB_libart_lgpl_2 is not set+g" $FREETZ_SSL_HOME_PATH/.config
 sed -i "s+FREETZ_LIB_libpng12=y+# FREETZ_LIB_libpng12 is not set+g" $FREETZ_SSL_HOME_PATH/.config
 sed -i "s+FREETZ_LIB_librrd=y+# FREETZ_LIB_librrd is not set+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+FREETZ_LIB_libglib_2=y+# FREETZ_LIB_libglib_2 is not set+g" $FREETZ_SSL_HOME_PATH/.config
 sed -i "s+FREETZ_BUSYBOX___V127_START_STOP_DAEMON=y+# FREETZ_BUSYBOX___V127_START_STOP_DAEMON is not set+g" $FREETZ_SSL_HOME_PATH/.config
 sed -i "s+FREETZ_BUSYBOX___V134_START_STOP_DAEMON=y+# FREETZ_BUSYBOX___V134_START_STOP_DAEMON is not set+g" $FREETZ_SSL_HOME_PATH/.config
 sed -i "s+FREETZ_BUSYBOX___V135_START_STOP_DAEMON=y+# FREETZ_BUSYBOX___V135_START_STOP_DAEMON is not set+g" $FREETZ_SSL_HOME_PATH/.config
