@@ -1,13 +1,15 @@
 #!/bin/bash
 rm -f $FREETZ_SSL_HOME_PATH/make/libs/leptonica/leptonica.mk 2>/dev/null
-#rm -f $FREETZ_SSL_HOME_PATH/make/libs/leptonica/Config.in 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/leptonica/Config.in 2>/dev/null
 rm -f $FREETZ_SSL_HOME_PATH/make/libs/leptonica/external.files 2>/dev/null
 rm -f $FREETZ_SSL_HOME_PATH/make/libs/leptonica/external.in 2>/dev/null
 rm -f $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/010-enforce-libpng12.leptonica.patch 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/tesseract/Config.in.libs 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/leptonica.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/leptonica/leptonica.mk 2>/dev/null
-#mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/Config.in.orig $FREETZ_SSL_HOME_PATH/make/libs/leptonica/Config.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/Config.in.orig $FREETZ_SSL_HOME_PATH/make/libs/leptonica/Config.in 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/leptonica/external.files 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/leptonica/external.in 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/010-enforce-libpng12.leptonica.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/010-enforce-libpng12.leptonica.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/pkgs/tesseract/Config.in.libs.orig $FREETZ_SSL_HOME_PATH/make/pkgs/tesseract/Config.in.libs 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/020-no_xtractprotos.leptonica.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/020-no_xtractprotos.leptonica.patch 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/030-no_demo_code_in_lib.leptonica.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/030-no_demo_code_in_lib.leptonica.patch 2>/dev/null

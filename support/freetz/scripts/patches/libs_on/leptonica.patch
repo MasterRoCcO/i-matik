@@ -1,19 +1,49 @@
 --- make/libs/leptonica/leptonica.mk	2022-09-18 09:29:13.503136000 +0200
 +++ make/libs/leptonica/leptonica.mk	2022-09-18 11:07:30.720885006 +0200
-@@ -1,8 +1,8 @@
+@@ -1,12 +1,12 @@
 -$(call PKG_INIT_LIB, 1.69)
 -$(PKG)_LIB_VERSION:=3.0.0
 -$(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.bz2
 -$(PKG)_HASH:=e8a4e327f0402073c967bf2da976dc914b9086b6bd2b48558307c928a0960b6d
 -$(PKG)_SITE:=http://leptonica.googlecode.com/files
-+$(call PKG_INIT_LIB, 1.82.0)
-+$(PKG)_LIB_VERSION:=5.0.4
+-
+-$(PKG)_BINARY:=$($(PKG)_DIR)/src/.libs/liblept.so.$($(PKG)_LIB_VERSION)
+-$(PKG)_STAGING_BINARY:=$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/lib/liblept.so.$($(PKG)_LIB_VERSION)
+-$(PKG)_TARGET_BINARY:=$($(PKG)_TARGET_DIR)/liblept.so.$($(PKG)_LIB_VERSION)
++$(call PKG_INIT_LIB, 1.83.1)
++$(PKG)_LIB_VERSION:=6.0.0
 +$(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
-+$(PKG)_HASH:=155302ee914668c27b6fe3ca9ff2da63b245f6d62f3061c8f27563774b8ae2d6
++$(PKG)_HASH:=8f18615e0743af7df7f50985c730dfcf0c93548073d1f56621e4156a8b54d3dd
 +$(PKG)_SITE:=https://github.com/DanBloomberg/leptonica/releases/download/$($(PKG)_VERSION)
++
++$(PKG)_BINARY:=$($(PKG)_DIR)/src/.libs/libleptonica.so.$($(PKG)_LIB_VERSION)
++$(PKG)_STAGING_BINARY:=$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/lib/libleptonica.so.$($(PKG)_LIB_VERSION)
++$(PKG)_TARGET_BINARY:=$($(PKG)_TARGET_DIR)/libleptonica.so.$($(PKG)_LIB_VERSION)
  
- $(PKG)_BINARY:=$($(PKG)_DIR)/src/.libs/liblept.so.$($(PKG)_LIB_VERSION)
- $(PKG)_STAGING_BINARY:=$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/lib/liblept.so.$($(PKG)_LIB_VERSION)
+ $(PKG)_DEPENDS_ON += jpeg libpng tiff zlib
+ 
+@@ -35,7 +35,7 @@
+ 	$(SUBMAKE) -C $(LEPTONICA_DIR) \
+ 		DESTDIR="$(TARGET_TOOLCHAIN_STAGING_DIR)" \
+ 		install
+-	$(PKG_FIX_LIBTOOL_LA) $(TARGET_TOOLCHAIN_STAGING_DIR)/usr/lib/liblept.la
++	$(PKG_FIX_LIBTOOL_LA) $(TARGET_TOOLCHAIN_STAGING_DIR)/usr/lib/libleptonica.la
+ 
+ $($(PKG)_TARGET_BINARY): $($(PKG)_STAGING_BINARY)
+ 	$(INSTALL_LIBRARY_STRIP)
+@@ -47,10 +47,10 @@
+ $(pkg)-clean:
+ 	-$(SUBMAKE) -C $(LEPTONICA_DIR) clean
+ 	$(RM) -r \
+-		$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/lib/liblept* \
++		$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/lib/libleptonica* \
+ 		$(TARGET_TOOLCHAIN_STAGING_DIR)/usr/include/leptonica
+ 
+ $(pkg)-uninstall:
+-	$(RM) $(LEPTONICA_TARGET_DIR)/liblept*.so*
++	$(RM) $(LEPTONICA_TARGET_DIR)/libleptonica*.so*
+ 
+ $(PKG_FINISH)
 --- make/libs/leptonica/patches/010-enforce-libpng12.leptonica.patch	2022-09-18 09:29:13.507135000 +0200
 +++ make/libs/leptonica/patches/010-enforce-libpng12.leptonica.patch	2022-09-18 11:13:03.342545193 +0200
 @@ -1,28 +1,11 @@
@@ -21,7 +51,7 @@
  +++ configure
 -@@ -11402,13 +11402,13 @@
 - fi
-+@@ -13603,7 +13603,7 @@
++@@ -13598,7 +13598,7 @@
   
 - if test "x$with_libpng" != xno; then :
 --  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for png_read_png in -lpng" >&5
@@ -52,13 +82,40 @@
 +++ make/libs/leptonica/external.files	2022-09-18 11:30:16.908848605 +0200
 @@ -1 +1 @@
 -[ "$EXTERNAL_FREETZ_LIB_liblept" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/liblept.so.3.0.0"
-+[ "$EXTERNAL_FREETZ_LIB_liblept" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/liblept.so.5.0.4"
++[ "$EXTERNAL_FREETZ_LIB_libleptonica" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libleptonica.so.6.0.0"
 --- make/libs/leptonica/external.in	2022-09-18 09:29:13.503136000 +0200
 +++ make/libs/leptonica/external.in	2022-09-18 11:30:30.696566918 +0200
-@@ -4,5 +4,5 @@
+@@ -1,8 +1,8 @@
+-config EXTERNAL_FREETZ_LIB_liblept
+-	depends on EXTERNAL_ENABLED && FREETZ_LIB_liblept
+-	bool "liblept"
++config EXTERNAL_FREETZ_LIB_libleptonica
++	depends on EXTERNAL_ENABLED && FREETZ_LIB_libleptonica
++	bool "libleptonica"
  	default n
  	help
  		externals the following file(s):
 -		 ${FREETZ_LIBRARY_DIR}/liblept.so.3.0.0
-+		 ${FREETZ_LIBRARY_DIR}/liblept.so.5.0.4
++		 ${FREETZ_LIBRARY_DIR}/libleptonica.so.6.0.0
  
+--- make/libs/leptonica/Config.in	2023-01-27 10:52:21.326018000 +0100
++++ make/libs/leptonica/Config.in	2023-01-27 11:51:54.874784651 +0100
+@@ -1,5 +1,5 @@
+-config FREETZ_LIB_liblept
+-	bool "leptonica (liblept.so)"
++config FREETZ_LIB_libleptonica
++	bool "leptonica (libleptonica.so)"
+ 	select FREETZ_LIB_libm if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
+ 	select FREETZ_LIB_libjpeg
+ 	select FREETZ_LIB_libpng16
+--- make/pkgs/tesseract/Config.in.libs	2023-01-27 10:52:21.486015000 +0100
++++ make/pkgs/tesseract/Config.in.libs	2023-01-27 12:08:34.754763511 +0100
+@@ -3,7 +3,7 @@
+ 	select FREETZ_STDCXXLIB_FORCE_GNULIBSTDCXX
+ 	select FREETZ_LIB_STDCXXLIB
+ 	select FREETZ_LIB_libpthread if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
+-	select FREETZ_LIB_liblept
++	select FREETZ_LIB_libleptonica
+ 	default n
+ 	help
+ 		Tesseract OCR engine library
