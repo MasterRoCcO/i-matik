@@ -160,7 +160,7 @@ cp -ar $PKGS_PATCH_PATH_ON/tree.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < avahi.patch
 patch -p0 -b < axtlswrap.patch
 #patch -p0 -b < bind.patch
-patch -p0 -b < bird.patch
+#patch -p0 -b < bird.patch
 patch -p0 -b < bittwist.patch
 patch -p0 -b < bridge-utils.patch
 #patch -p0 -b < ca-bundle.patch
