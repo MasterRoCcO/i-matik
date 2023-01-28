@@ -26,7 +26,8 @@ Options
   -ta,--toolchain-activate      Activate toolchain
   -td,--toolchain-disable       Disable toolchain
   -cm,--callmonitor		Callmonitor
-  -rr,--rrdstats		RRDstats for RRDtool
+  -rr,--rrdstats		RRDstats for RRDtool 1.2.30
+  -rr18,--rrdstats18		RRDstats for RRDtool 1.8.0
   -push				push image to Fritz!Box or Fritz!Repeater or Fritz!Powerline
   -backup			make a backup of your freetz-signature and freetz-dl
   -us,--user-skins		user skins

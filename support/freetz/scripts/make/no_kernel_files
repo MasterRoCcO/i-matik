@@ -36,6 +36,8 @@ while [ $# -ne 0 ];do
 	    ;;
 	-rr|--rrdstats)			PARAM_RR=1
 	    ;;
+	-rr18|--rrdstats18)		PARAM_RR_1_8=1
+	    ;;
 	-us|--user-skins)		PARAM_SKINS=1
 	    ;;
 	-ua|--user-application)		PARAM_USER_SCRIPTS=1

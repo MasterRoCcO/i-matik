@@ -12,6 +12,13 @@
 		source $PKGS_PATH_ON_OFF/cifsmount_off
 	fi
 	
+	if [ -z $PARAM_RR_1_8 ]; then
+		sleep 0
+	else
+		source $PKGS_PATH_ON_OFF/rrdstats_off
+		source $PKGS_PATH_ON_OFF/cifsmount_off
+	fi
+	
 	if [ -z $PARAM_USER_SCRIPTS ]; then
 		sleep 0
 	else
