@@ -112,6 +112,7 @@ OSCAM_OFF="$I_MATIK_PATH/support/freetz/scripts/pkgs_on_off/oscam_off"
 #define i-matik for oscam type
 OSCAM="$I_MATIK_PATH/support/s3_releases/scripts/oscam"
 OSCAM_EMU="$I_MATIK_PATH/support/s3_releases/scripts/oscam_emu"
+OSCAM_SMOD="$I_MATIK_PATH/support/s3_releases/scripts/oscam_smod"
 OSCAM_TOOLCHAIN="$I_MATIK_PATH/support/s3_releases/scripts/oscam_mit"
 OSCAM_MULTI="$I_MATIK_PATH/support/s3_releases/scripts_privat/oscam"
 OSCAM_MULTI_TOOLCHAIN="$I_MATIK_PATH/support/s3_releases/scripts_privat/oscam_mit"

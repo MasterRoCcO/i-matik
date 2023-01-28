@@ -16,6 +16,8 @@ while [ $# -ne 0 ];do
 	    ;;
 	-yoe|--yes-oscam-emu)		PARAM_OSCAM_EMU=1
 	    ;;
+	-ysmod|--yes-oscam-smod)	PARAM_OSCAM_SMOD=1
+	    ;;
 	-to|--tool-oscam)		PARAM_OSCAM_TOOL=1
 	    ;;
 	-do|--del-oscam)		PARAM_DEL_OSCAM=1
