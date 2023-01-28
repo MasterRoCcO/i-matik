@@ -337,6 +337,7 @@ EOF
 		sed -i "s+int_$MASTERBOX_NEU+$MASTERBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		fi
 		
+		source $PKGS_OFF
 		# oscam off
 		source $OSCAM_OFF
 	
@@ -365,7 +366,6 @@ EOF
 		grep -v EXTERNAL_FREETZ_PACKAGE_USBUTILS $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
 		grep -v EXTERNAL_FREETZ_PACKAGE_STRACE $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
 
-		source $PKGS_OFF
 		source $REPLACE_KERNEL
 		
 		#echo "mv .$configto to $config" && sleep 2 #echo command 2 seconds for progress

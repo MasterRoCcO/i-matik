@@ -305,6 +305,7 @@ for bs in "${BOX_SSL[@]}"; do
 		sed -i "s+int_$MASTERBOX_NEU+$MASTERBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		fi
 		
+		source $PKGS_OFF
 		# oscam off
 		source $OSCAM_OFF
 	
@@ -315,7 +316,6 @@ for bs in "${BOX_SSL[@]}"; do
 		source $I_MATIK_PATH/support/freetz/scripts/pkgs_on_off/skins_off
 	fi
 
-		source $PKGS_OFF
 		source $REPLACE_KERNEL
 
 		#echo "mv .$configto to $config" && sleep 2 #echo command 2 seconds for progress
