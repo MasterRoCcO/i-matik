@@ -10,6 +10,7 @@
 	else
 		source $PKGS_PATH_ON_OFF/rrdstats_on
 		source $PKGS_PATH_ON_OFF/cifsmount_on
+		source $PKGS_PATH_ON_OFF/rrdtools_auto
 	fi
 		
 	if [ -z $PARAM_RR_1_8 ]; then
