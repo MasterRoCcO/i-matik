@@ -225,7 +225,7 @@ for bs in "${BOX_SSL[@]}"; do
 	fi
 
 		source $NO_KERNEL
-		source $NO_REPLACE_KERNEL
+		source $NO_REPLACE
 		
 		INT_REGION_COMMENT="$(grep '^FREETZ_TYPE_LANG_EN=' .config | awk -F'"' '{print $1}' | xargs)"
 		if [ ${INT_REGION_COMMENT:20:1} = $INT_REGION ] 2>/dev/null

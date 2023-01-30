@@ -1,0 +1,7 @@
+#!/bin/bash
+BAD_FB_TYP="$(grep '^FREETZ_TYPE_PREFIX=' .config | awk -F'"' '{print $2}' | xargs)"
+
+if [ $BAD_FB_TYP = $BAD_TYP ]
+	then
+		source $NO_REPLACE_KERNEL
+fi
