@@ -368,6 +368,12 @@ for bs in "${BOX_SSL[@]}"; do
 		source $OSCAM_EMU
 	fi
 
+	if [ -z $PARAM_OSCAM_SMOD ]; then
+		sleep 0 #not oscam is created
+	else
+		source $OSCAM_SMOD
+	fi
+
 	if [ -z $PARAM_OSCAM_TOOL ]; then
 		sleep 0 #not oscam is created
 	else
