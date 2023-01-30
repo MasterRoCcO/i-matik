@@ -20,6 +20,12 @@ cp -ar $DL_FIRMWARE_PATCH_PATH_ON/dl-firmware.in.patch "$FREETZ_SSL_HOME_PATH/" 
 patch -p0 -b < dl-firmware.in.patch
 rm -rf "$FREETZ_SSL_HOME_PATH/dl-firmware.in.patch" 2>/dev/null
 
+# features
+echo -e ${GREEN}"Freetz files patch for Temperature Sensors."${NC}
+cp -ar $FEATURES_PATCH_PATH_ON/features.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < features.patch
+rm -rf "$FREETZ_SSL_HOME_PATH/features.patch" 2>/dev/null
+
 # libs
 echo -e ${GREEN}"Freetz files patch for libs."${NC}
 cp -ar $LIBS_PATCH_PATH_ON/bluez-libs.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null

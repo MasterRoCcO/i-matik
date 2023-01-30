@@ -54,6 +54,9 @@ I_MATIK_PATCH_PATH_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/i-matik_off
 # dl-firmware
 DL_FIRMWARE_PATCH_PATH_ON="$I_MATIK_PATH/support/freetz/scripts/patches/dl-firmware_on"
 DL_FIRMWARE_PATCH_PATH_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/dl-firmware_off"
+# features
+FEATURES_PATCH_PATH_ON="$I_MATIK_PATH/support/freetz/scripts/patches/features_on"
+FEATURES_PATCH_PATH_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/features_off"
 # libs
 LIBS_PATCH_PATH_ON="$I_MATIK_PATH/support/freetz/scripts/patches/libs_on"
 LIBS_PATCH_PATH_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/libs_off"

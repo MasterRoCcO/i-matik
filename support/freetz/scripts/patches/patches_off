@@ -8,6 +8,9 @@ source $I_MATIK_PATCH_PATH_OFF/motd
 # dl-firmware
 source $DL_FIRMWARE_PATCH_PATH_OFF/dl-firmware.in
 
+# features
+source $FEATURES_PATCH_PATH_OFF/features
+
 # libs
 source $LIBS_PATCH_PATH_OFF/bluez-libs
 source $LIBS_PATCH_PATH_OFF/db
