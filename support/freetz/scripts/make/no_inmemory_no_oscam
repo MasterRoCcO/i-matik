@@ -151,7 +151,7 @@ for bs in "${BOX_SSL[@]}"; do
 	fi
 
 	# Searching box specific config files and save them into a string array
-	CONFIGS=( $(find "$FREETZ_SSL_CONFIG_PATH/" -name "config_fritz${BOX_NAME}_*wunschimage") $(find "$FREETZ_SSL_CONFIG_PATH/" -name "config_fritz${BOX_NAME}_*masterbox") $(find "$FREETZ_SSL_CONFIG_PATH/" -name "config_fritz${BOX_NAME}_*clientbox") $(find "$FREETZ_SSL_CONFIG_PATH/" -name "config_fritz${BOX_NAME}_*powerline") $(find "$FREETZ_SSL_CONFIG_PATH/" -name "config_fritz${BOX_NAME}_*repeater") )
+	CONFIGS=( $(find "$FREETZ_SSL_CONFIG_PATH/" -name "config_fritz${BOX_NAME}_*wunschimage") $(find "$FREETZ_SSL_CONFIG_PATH/" -name "config_fritz${BOX_NAME}_*masterbox") $(find "$FREETZ_SSL_CONFIG_PATH/" -name "config_fritz${BOX_NAME}_*clientbox") $(find "$FREETZ_SSL_CONFIG_PATH/" -name "config_fritz${BOX_NAME}_*powerline") $(find "$FREETZ_SSL_CONFIG_PATH/" -name "config_fritz${BOX_NAME}_*repeater") $(find "$FREETZ_SSL_CONFIG_PATH/" -name "config_fritz${BOX_NAME}_*gateway") )
 	printf "\nFound ${FREETZ_NAME} config files for ${GREEN}${BOX_NAME} SSL ${SSL_VERSION}${NC}:\n"
 	echo "${CONFIGS[@]}" | tr ' ' '\n' && printf "\n" && sleep 1 
 
