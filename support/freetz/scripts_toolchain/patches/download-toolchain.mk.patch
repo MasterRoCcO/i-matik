@@ -1,5 +1,5 @@
---- toolchain/make/download-toolchain.mk	2022-07-06 02:38:20.928262426 +0200
-+++ toolchain/make/download-toolchain.mk	2022-07-07 08:50:48.599156415 +0200
+--- make/toolchain/download-toolchain.mk	2022-07-06 02:38:20.928262426 +0200
++++ make/toolchain/download-toolchain.mk	2022-07-07 08:50:48.599156415 +0200
 @@ -3,7 +3,7 @@
  include $(TOOLCHAIN_DIR)/make/target/libtool-staging/libtool-staging.mk
  include $(TOOLCHAIN_DIR)/make/target/uclibc/uclibc.mk
