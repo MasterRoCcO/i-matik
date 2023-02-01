@@ -53,7 +53,7 @@ source $PKGS_PATCH_PATH_OFF/axtlswrap
 source $PKGS_PATCH_PATH_OFF/bittwist
 source $PKGS_PATCH_PATH_OFF/bridge-utils
 #source $PKGS_PATCH_PATH_OFF/ca-bundle
-#source $PKGS_PATCH_PATH_OFF/ccid
+source $PKGS_PATCH_PATH_OFF/ccid
 #source $PKGS_PATCH_PATH_OFF/cifsmount
 source $PKGS_PATCH_PATH_OFF/bvi
 source $PKGS_PATCH_PATH_OFF/dbus
