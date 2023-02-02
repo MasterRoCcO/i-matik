@@ -81,11 +81,11 @@ PRIVAT_PATCH_ON="$I_MATIK_PATH/support/freetz/scripts_privat/patches/patches_on"
 PRIVAT_PATCH_OFF="$I_MATIK_PATH/support/freetz/scripts_privat/patches/patches_off"
 
 #If you don't need the make menuconfig, just put a # in front of MENUC and MENUC1
-MENUC=menuconfig
-NOMENUC=olddefconfig
+MENUC="menuconfig"
+NOMENUC="olddefconfig"
 
 #image2inmemory tool
-IMAGE2MEMORY=./image2inmemory
+IMAGE2MEMORY="./image2inmemory"
 
 #define bad kernels an os
 KERNEL_ON="$I_MATIK_PATH/support/freetz/scripts/kernel/kernel_on"
@@ -107,6 +107,12 @@ RRD_AUTO="07_5X"
 
 #define int region an os
 INT_REGION="y"
+
+#pachtelf for mips and mipsel boxen 0.14.5
+PATCHELF_0145_ON="$I_MATIK_PATH/support/freetz/scripts/patchelf/0145_on"
+PATCHELF_0145_OFF="$I_MATIK_PATH/support/freetz/scripts/patchelf/0145_off"
+PATCHELF_MIPS="mips"
+PATCHELF_MIPSEL="mipsel"
 
 #oscam addone and on of
 OSCAM_ADDON_CONFIG="$I_MATIK_PATH/support/i-matik/config/addon"
