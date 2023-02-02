@@ -607,10 +607,10 @@ source $SSL10_PUSH_REPEATER
 
 elif [[ $1 == 'DVB-c-Alien1750E.11' ]]; then
 source $NO_INMEMORY_NO_OSCAM
-elif [[ $1 == 'DVB-c-Alien1750E.30' ]]; then
-source $NO_INMEMORY_NO_OSCAM
-elif [[ $1 == 'DVB-c-Alien1750E.multi' ]]; then
-printf ${RED}"No supported\n"
+#elif [[ $1 == 'DVB-c-Alien1750E.30' ]]; then
+#source $NO_INMEMORY_NO_OSCAM
+#elif [[ $1 == 'DVB-c-Alien1750E.multi' ]]; then
+#printf ${RED}"No supported\n"
 elif [[ $1 == 'DVB-c-Alien1750E' ]] && [[ $2 == '-push' ]]; then
 source $SSL11_PUSH_REPEATER
 
