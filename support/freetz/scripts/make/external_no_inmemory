@@ -279,7 +279,7 @@ EOF
 		fi
 
 		#echo "starte make -j$MAX_CPUS" && sleep 2 #echo command 2 seconds for progress
-		source $PATCHELF_0145_ON
+		source $PATCHELF_0145_ON 2>/dev/null
 		make -j$MAX_CPUS #run make for freetz
 		source $PATCHELF_0145_OFF
 
