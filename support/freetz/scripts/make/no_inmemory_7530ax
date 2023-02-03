@@ -218,6 +218,14 @@ for bs in "${BOX_SSL[@]}"; do
 
 		# oscam	
 		source $OSCAM_ADDON_7530AX 2>/dev/null
+		
+	if [ -z $PARAM_SKINS ]; then
+		sleep 0
+	else
+		sed -i "s+# FREETZ_SKIN_newfreetz is not set+FREETZ_SKIN_newfreetz=y+g" $FREETZ_SSL_HOME_PATH/.config
+		sed -i "s+# FREETZ_SKIN_phoenix is not set+FREETZ_SKIN_phoenix=y+g" $FREETZ_SSL_HOME_PATH/.config
+		
+	fi
 
 	if [ -z $PARAM_KERNEL ]; then
 		sleep 0
