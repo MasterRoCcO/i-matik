@@ -115,7 +115,7 @@ for bs in "${BOX_SSL[@]}"; do
 	if [ -z $PARAM_SKINS ]; then
 		sleep 0
 	else
-		source $I_MATIK_PATH/support/freetz/scripts/pkgs_on_off/skins_on
+		source $I_MATIK_PATH/support/freetz/scripts/pkgs_on_off/skins_on 2>/dev/null
 	fi
 
 	# update git working copy
@@ -164,7 +164,7 @@ for bs in "${BOX_SSL[@]}"; do
 	if [ ! -f $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}.orig ]; then
 			sleep 0
 	else
-			source $KERNEL_OFF
+			source $KERNEL_OFF 2>/dev/null
 	fi
 		sed -i "s+FREETZ_JLEVEL=20+FREETZ_JLEVEL=$MAX_CPUS+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_PACKAGE_OSCAM=y+# FREETZ_PACKAGE_OSCAM is not set+g" $FREETZ_SSL_HOME_PATH/.config
@@ -220,7 +220,7 @@ for bs in "${BOX_SSL[@]}"; do
 		make target-toolchain-clean  #run target-toolchain-clean
 	fi
 
-		source $PKGS_ON
+		source $PKGS_ON 2>/dev/null
 
 	if [ -z $PARAM_CONFIG ]; then
 			make $MENUC #run make menuconfig
@@ -228,9 +228,9 @@ for bs in "${BOX_SSL[@]}"; do
 			make $NOMENUC #run make olddefconfig
 	fi
 
-		source $KERNEL_ON
-		source $NO_KERNEL
-		source $NO_REPLACE
+		source $KERNEL_ON 2>/dev/null
+		source $NO_KERNEL 2>/dev/null
+		source $NO_REPLACE 2>/dev/null
 		
 		INT_REGION_COMMENT="$(grep '^FREETZ_TYPE_LANG_EN=' .config | awk -F'"' '{print $1}' | xargs)"
 		if [ ${INT_REGION_COMMENT:20:1} = $INT_REGION ] 2>/dev/null
@@ -239,9 +239,7 @@ for bs in "${BOX_SSL[@]}"; do
 		fi
 
 		#echo "starte make -j$MAX_CPUS" && sleep 2 #echo command 2 seconds for progress
-		source $PATCHELF_0145_ON 2>/dev/null
 		make -j$MAX_CPUS #run make for freetz
-		source $PATCHELF_0145_OFF 2>/dev/null
 
 		# Get custom image file name part from .config
 		FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
@@ -283,7 +281,7 @@ for bs in "${BOX_SSL[@]}"; do
 	
 		sed -i "s+FREETZ_JLEVEL=$MAX_CPUS+FREETZ_JLEVEL=20+g" $FREETZ_SSL_HOME_PATH/.config
 
-		source $KERNEL_OFF
+		source $KERNEL_OFF 2>/dev/null
 
 		if [ ${INT_REGION_COMMENT:20:1} = $INT_REGION ] 2>/dev/null
 		then
@@ -294,11 +292,11 @@ for bs in "${BOX_SSL[@]}"; do
 	if [ -z $PARAM_SKINS ]; then
 		sleep 0
 	else
-		source $I_MATIK_PATH/support/freetz/scripts/pkgs_on_off/skins_off
+		source $I_MATIK_PATH/support/freetz/scripts/pkgs_on_off/skins_off 2>/dev/null
 	fi
 
-		source $PKGS_OFF
-		source $REPLACE_KERNEL
+		source $PKGS_OFF 2>/dev/null
+		source $REPLACE_KERNEL 2>/dev/null
 
 		#echo "mv .$configto to $config" && sleep 2 #echo command 2 seconds for progress
 		mv .config "$conf" #move back updated .config to box config
