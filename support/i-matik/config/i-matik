@@ -6,7 +6,6 @@ EXTERNAL_NO_INMEMORY="$I_MATIK_PATH/support/freetz/scripts/make/external_no_inme
 EXTERNAL_NO_INMEMORY_NO_OSCAM="$I_MATIK_PATH/support/freetz/scripts/make/external_no_inmemory_no_oscam"
 I_MATIK="$I_MATIK_PATH/support/freetz/scripts/make/i-matik"
 NO_INMEMORY="$I_MATIK_PATH/support/freetz/scripts/make/no_inmemory"
-NO_INMEMORY_7530AX="$I_MATIK_PATH/support/freetz/scripts/make/no_inmemory"
 NO_INMEMORY_NO_OSCAM="$I_MATIK_PATH/support/freetz/scripts/make/no_inmemory_no_oscam"
 NO_OSCAM="$I_MATIK_PATH/support/freetz/scripts/make/no_oscam"
 NO_KERNEL_FILES="$I_MATIK_PATH/support/freetz/scripts/make/no_kernel_files"
@@ -21,7 +20,6 @@ SSL11_PUSH_REPEATER="$I_MATIK_PATH/support/freetz/scripts/push/ssl11_push_repeat
 
 SSL10="$I_MATIK_PATH/support/freetz/scripts_privat/make/ssl10_multi"
 SSL11="$I_MATIK_PATH/support/freetz/scripts_privat/make/ssl11_multi"
-SSL11_7530AX="$I_MATIK_PATH/support/freetz/scripts_privat/make/ssl11_multi_7530ax"
 
 CONFIG_FRITZBOX_PATH_SSL_10="$CONFIG_FRITZBOX_PATH/ssl_10"
 CONFIG_FRITZBOX_PATH_SSL_11="$CONFIG_FRITZBOX_PATH/ssl_11"
@@ -75,8 +73,6 @@ HOST_TOOLS_PATCH_PATH_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/host-too
 #define paches path
 PATCH_ON="$I_MATIK_PATH/support/freetz/scripts/patches/patches_on"
 PATCH_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/patches_off"
-PATCH_ON_7530AX="$I_MATIK_PATH/support/freetz/scripts/patches/patches_on_7530ax"
-PATCH_OFF_7530AX="$I_MATIK_PATH/support/freetz/scripts/patches/patches_off_7530ax"
 PRIVAT_PATCH_ON="$I_MATIK_PATH/support/freetz/scripts_privat/patches/patches_on"
 PRIVAT_PATCH_OFF="$I_MATIK_PATH/support/freetz/scripts_privat/patches/patches_off"
 
@@ -120,7 +116,6 @@ LIBUSB1_7530AX="7530_AX"
 #oscam addone and on of
 OSCAM_ADDON_CONFIG="$I_MATIK_PATH/support/i-matik/config/addon"
 OSCAM_ADDON="$I_MATIK_PATH/support/freetz/scripts/addon/oscam_addon"
-OSCAM_ADDON_7530AX="$I_MATIK_PATH/support/freetz/scripts/addon/oscam_addon_7530ax"
 OSCAM_ADDON_ON="$I_MATIK_PATH/support/freetz/scripts/pkgs_on_off/oscam_addon_on"
 OSCAM_ON="$I_MATIK_PATH/support/freetz/scripts/pkgs_on_off/oscam_on"
 OSCAM_OFF="$I_MATIK_PATH/support/freetz/scripts/pkgs_on_off/oscam_off"
