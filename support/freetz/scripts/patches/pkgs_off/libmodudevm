@@ -1,0 +1,3 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/mod/files/root/usr/lib/libmodudevm.sh 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/pkgs/mod/files/root/usr/lib/libmodudevm.sh.orig $FREETZ_SSL_HOME_PATH/make/pkgs/mod/files/root/usr/lib/libmodudevm.sh 2>/dev/null
