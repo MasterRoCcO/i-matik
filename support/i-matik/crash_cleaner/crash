@@ -1,0 +1,31 @@
+#!/bin/bash
+if [ ! -f $FREETZ_SSL_HOME_PATH/make/pkgs/mod/files/root/usr/mww/cgi-bin/status.d/10-box.sh.orig ]; then
+	sleep 0
+else
+	source $PATCH_OFF 2>/dev/null
+	source $PRIVAT_PATCH_OFF 2>/dev/null
+	grep -v oscam $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+	source $I_MATIK_PATH/support/freetz/scripts/pkgs_on_off/skins_off 2>/dev/null
+	sed -i "s+${VERSIONS_NR}+xxxxx+g" $VERSION
+fi	
+
+if [ ! -f $FREETZ_SSL_HOME_PATH/config/ui/toolchain.in.orig ]; then
+	sleep 0
+else
+	rm -f $FREETZ_SSL_HOME_PATH/config/ui/toolchain.in 2>/dev/null
+	mv $FREETZ_SSL_HOME_PATH/config/ui/toolchain.in.orig $FREETZ_SSL_HOME_PATH/config/ui/toolchain.in 2>/dev/null
+	fi
+	
+if [ ! -f $FREETZ_SSL_HOME_PATH/make/host-tools/patchelf-host/patchelf-host.mk.orig ]; then
+	sleep 0
+else
+	rm -f $FREETZ_SSL_HOME_PATH/make/host-tools/patchelf-host/patchelf-host.mk 2>/dev/null
+	mv $FREETZ_SSL_HOME_PATH/make/host-tools/patchelf-host/patchelf-host.mk.orig $FREETZ_SSL_HOME_PATH/make/host-tools/patchelf-host/patchelf-host.mk 2>/dev/null
+fi
+	
+if [ ! -f $FREETZ_SSL_HOME_PATH/make/libs/libusb1/libusb1.mk.orig ]; then
+	sleep 0
+else
+	rm -f $FREETZ_SSL_HOME_PATH/make/libs/libusb1/libusb1.mk 2>/dev/null
+	mv $FREETZ_SSL_HOME_PATH/make/libs/libusb1/libusb1.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/libusb1/libusb1.mk 2>/dev/null
+fi

@@ -115,7 +115,7 @@ DOWNGRADE_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_
 PATCHELF_MIPS="mips"
 PATCHELF_MIPSEL="mipsel"
 #libusb1 
-LIBUSB1_7530AX="7539"
+LIBUSB1_7530AX="7530_AX"
 
 #oscam addone and on of
 OSCAM_ADDON_CONFIG="$I_MATIK_PATH/support/i-matik/config/addon"
@@ -138,5 +138,6 @@ OSCAM_TCUPDATE="$I_MATIK_PATH/support/s3_releases/scripts/tcupdate"
 MY_FILES_HOME_PATH_OSCAM="$I_MATIK_PATH/support/s3_releases/MY_FILES"
 PRIVAT_MY_FILES_HOME_PATH_OSCAM="$I_MATIK_PATH/support/s3_releases/MY_FILES_PRIVAT"
 
+CRASH_CLEANER="$I_MATIK_PATH/support/i-matik/crash_cleaner/crash"
 #end of config
 source $CONFIG_USER_PATH
