@@ -104,7 +104,7 @@ for bs in "${BOX_SSL[@]}"; do
 		source $PRIVAT_PATCH_OFF 2>/dev/null
 		source $I_MATIK_PATH/support/freetz/scripts/pkgs_on_off/skins_off 2>/dev/null
 		sed -i "s+${VERSIONS_NR}+xxxxx+g" $VERSION
-		source $DOWNGRADE_OFF 2>/dev/null
+		source $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/patchelf_off/patchelf-host 2>/dev/null
 	fi
 
 	# Create directory for saving built images
