@@ -108,6 +108,15 @@ RRD_AUTO="07_5X"
 #define int region an os
 INT_REGION="y"
 
+#downgrade
+DOWNGRADE_ON="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_on"
+DOWNGRADE_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_off"
+#patchelf
+PATCHELF_MIPS="mips"
+PATCHELF_MIPSEL="mipsel"
+#libusb1 
+LIBUSB1_7530AX="7539"
+
 #oscam addone and on of
 OSCAM_ADDON_CONFIG="$I_MATIK_PATH/support/i-matik/config/addon"
 OSCAM_ADDON="$I_MATIK_PATH/support/freetz/scripts/addon/oscam_addon"

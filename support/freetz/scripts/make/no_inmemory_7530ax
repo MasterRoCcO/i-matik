@@ -181,6 +181,9 @@ for bs in "${BOX_SSL[@]}"; do
 	else
 			source $KERNEL_OFF 2>/dev/null
 	fi
+	
+	source $DOWNGRADE_ON 2>/dev/null
+	
 		sed -i "s+FREETZ_JLEVEL=20+FREETZ_JLEVEL=$MAX_CPUS+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_DOWNLOAD_TOOLCHAIN=y+# FREETZ_DOWNLOAD_TOOLCHAIN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_TOOLCHAIN_CCACHE=y+# FREETZ_TOOLCHAIN_CCACHE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
@@ -329,6 +332,7 @@ for bs in "${BOX_SSL[@]}"; do
 	fi
 
 		source $REPLACE_KERNEL 2>/dev/null
+		source $DOWNGRADE_OFF 2>/dev/null
 
 		#echo "mv .$configto to $config" && sleep 2 #echo command 2 seconds for progress
 		mv .config "$conf" #move back updated .config to box config
