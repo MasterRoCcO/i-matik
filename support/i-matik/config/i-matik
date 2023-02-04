@@ -107,11 +107,14 @@ INT_REGION="y"
 #downgrade
 DOWNGRADE_ON="$I_MATIK_PATH/support/freetz/scripts_privat/patches/downgrade/downgrade_on"
 DOWNGRADE_OFF="$I_MATIK_PATH/support/freetz/scripts_privat/patches/downgrade/downgrade_off"
-#patchelf
-PATCHELF_MIPS="mips"
-PATCHELF_MIPSEL="mipsel"
 #libusb1 
 LIBUSB1_7530AX="7530_AX"
+
+#pachtelf for mips and mipsel boxen 0.14.5
+PATCHELF_0145_ON="$I_MATIK_PATH/support/freetz/scripts_privat/patches/patchelf/0145_on"
+PATCHELF_0145_OFF="$I_MATIK_PATH/support/freetz/scripts_privat/patches/patchelf/0145_off"
+PATCHELF_MIPS="mips"
+PATCHELF_MIPSEL="mipsel"
 
 #oscam addone and on of
 OSCAM_ADDON_CONFIG="$I_MATIK_PATH/support/i-matik/config/addon"
@@ -136,3 +139,4 @@ PRIVAT_MY_FILES_HOME_PATH_OSCAM="$I_MATIK_PATH/support/s3_releases/MY_FILES_PRIV
 CRASH_CLEANER="$I_MATIK_PATH/support/i-matik/crash_cleaner/crash"
 #end of config
 source $CONFIG_USER_PATH
+
