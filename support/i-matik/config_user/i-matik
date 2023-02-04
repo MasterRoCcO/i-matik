@@ -1,9 +1,9 @@
 #!/bin/bash
 #define freetz-ng for ssl path
-FREETZ_PATH_SSL_10="$I_MATIK_PATH/freetz-ng/ssl_1_0_x"
-FREETZ_PATH_SSL_11="$I_MATIK_PATH/freetz-ng/ssl_1_1_x"
-FREETZ_PATH_SSL_30="$I_MATIK_PATH/freetz-ng/ssl_3_0_x"
-FREETZ_PATH_SSL_MULTI="$I_MATIK_PATH/reetz-ng/ssl_multi"
+FREETZ_PATH_SSL_10="$I_MATIK_PATH/freetz-ng"
+FREETZ_PATH_SSL_11="$I_MATIK_PATH/freetz-ng"
+FREETZ_PATH_SSL_30="$I_MATIK_PATH/freetz-ng"
+FREETZ_PATH_SSL_MULTI="$I_MATIK_PATH/reetz-ng"
 
 #define image home path
 FREETZ_IMAGE_PATH="$I_MATIK_PATH/freetz-images"
