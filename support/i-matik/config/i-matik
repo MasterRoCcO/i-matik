@@ -105,8 +105,8 @@ RRD_AUTO="07_5X"
 INT_REGION="y"
 
 #downgrade
-DOWNGRADE_ON="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_on"
-DOWNGRADE_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_off"
+DOWNGRADE_ON="$I_MATIK_PATH/support/freetz/scripts_privat/patches/downgrade/downgrade_on"
+DOWNGRADE_OFF="$I_MATIK_PATH/support/freetz/scripts_privat/patches/downgrade/downgrade_off"
 #patchelf
 PATCHELF_MIPS="mips"
 PATCHELF_MIPSEL="mipsel"
