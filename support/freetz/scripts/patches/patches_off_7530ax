@@ -1,2 +1,0 @@
-#!/bin/bash
-source $LIBS_PATCH_PATH_OFF/libusb1

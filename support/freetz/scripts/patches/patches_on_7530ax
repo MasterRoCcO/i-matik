@@ -1,5 +1,0 @@
-#!/bin/bash
-echo -e ${GREEN}"Freetz files patch for 7530AX."${NC}
-cp -ar $LIBS_PATCH_PATH_ON/libusb1.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-patch -p0 -b < libusb1.patch
-rm -rf "$FREETZ_SSL_HOME_PATH/libusb1.patch" 2>/dev/null
