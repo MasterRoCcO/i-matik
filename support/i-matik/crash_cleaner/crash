@@ -9,20 +9,6 @@ else
 	sed -i "s+${VERSIONS_NR}+xxxxx+g" $VERSION
 fi	
 
-if [ ! -f $FREETZ_SSL_HOME_PATH/config/ui/toolchain.in.orig ]; then
-	sleep 0
-else
-	rm -f $FREETZ_SSL_HOME_PATH/config/ui/toolchain.in 2>/dev/null
-	mv $FREETZ_SSL_HOME_PATH/config/ui/toolchain.in.orig $FREETZ_SSL_HOME_PATH/config/ui/toolchain.in 2>/dev/null
-	fi
-	
-if [ ! -f $FREETZ_SSL_HOME_PATH/make/host-tools/patchelf-host/patchelf-host.mk.orig ]; then
-	sleep 0
-else
-	rm -f $FREETZ_SSL_HOME_PATH/make/host-tools/patchelf-host/patchelf-host.mk 2>/dev/null
-	mv $FREETZ_SSL_HOME_PATH/make/host-tools/patchelf-host/patchelf-host.mk.orig $FREETZ_SSL_HOME_PATH/make/host-tools/patchelf-host/patchelf-host.mk 2>/dev/null
-fi
-	
 if [ ! -f $FREETZ_SSL_HOME_PATH/make/libs/libusb1/libusb1.mk.orig ]; then
 	sleep 0
 else
