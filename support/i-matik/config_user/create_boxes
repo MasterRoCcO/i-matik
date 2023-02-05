@@ -31,19 +31,18 @@ if [ -z $PARAM_MY_BOXES ]; then
 	sleep 0
 else
 #start point this shows you how long it took him to create the images
-
-#end point this shows you how long it yook him yo create the images
+#	mv $OSCAM_PATH/oscam-svn $OSCAM_PATH/oscam-svn_ohne_emu
+#	mv $OSCAM_PATH/oscam-svn_mit_emu $OSCAM_PATH/oscam-svn
+	./i-matik 7490.11 7590AX.11 -yo -nc -s -rr18 -c
+	./i-matik 7530AX.11 -yo -nc -rr18 -c
+	./i-matik 1200AX.11 -s -c
+	./i-matik 6000.11 -s -rr18 -c
+	./i-matik 5590.11 -yo -nc -s -rr18 -c
+	./i-matik 1750E.11 -s -c
 termin1=$(date +"%s")
 difftimelps1=$(($termin1-$begin1))
 echo "$(($difftimelps1 / 60)) minutes and $(($difftimelps1 % 60)) seconds elapsed for Script Execution."
-
-fi
-
-if [ -z $PARAM_MY_BOXES_MULTI ]; then
-	sleep 0
-else
-#start point this shows you how long it took him to create the images
-	sleep 0	
+#end point this shows you how long it yook him yo create the images
 fi
 
 if [ -z $PARAM_MY_os75 ]; then
