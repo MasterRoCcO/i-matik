@@ -61,10 +61,21 @@ LIBS_PATCH_PATH_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/libs_off"
 # packages
 PKGS_PATCH_PATH_ON="$I_MATIK_PATH/support/freetz/scripts/patches/pkgs_on"
 PKGS_PATCH_PATH_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/pkgs_off"
-
 PKGS_PATH_ON_OFF="$I_MATIK_PATH/support/freetz/scripts/pkgs_on_off"
 PKGS_OFF="$PKGS_PATH_ON_OFF/pkgs_off"
 PKGS_ON="$PKGS_PATH_ON_OFF/pkgs_on"
+
+#downgrade
+DOWNGRADE_ON="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_on"
+DOWNGRADE_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_off"
+#libusb1 
+LIBUSB1_7530AX="7539"
+
+#pachtelf for mips and mipsel boxen 0.14.5
+PATCHELF_0145_ON="$I_MATIK_PATH/support/freetz/scripts/patchelf/0145_on"
+PATCHELF_0145_OFF="$I_MATIK_PATH/support/freetz/scripts/patchelf/0145_off"
+PATCHELF_MIPS="mips"
+PATCHELF_MIPSEL="mipsel"
 
 # host-tools
 HOST_TOOLS_PATCH_PATH_ON="$I_MATIK_PATH/support/freetz/scripts/patches/host-tools_on"
@@ -103,18 +114,6 @@ RRD_AUTO="07_5X"
 
 #define int region an os
 INT_REGION="y"
-
-#downgrade
-DOWNGRADE_ON="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_on"
-DOWNGRADE_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_off"
-#libusb1 
-LIBUSB1_7530AX="7539"
-
-#pachtelf for mips and mipsel boxen 0.14.5
-PATCHELF_0145_ON="$I_MATIK_PATH/support/freetz/scripts/patchelf/0145_on"
-PATCHELF_0145_OFF="$I_MATIK_PATH/support/freetz/scripts/patchelf/0145_off"
-PATCHELF_MIPS="mips"
-PATCHELF_MIPSEL="mipsel"
 
 #oscam addone and on of
 OSCAM_ADDON_CONFIG="$I_MATIK_PATH/support/i-matik/config/addon"
