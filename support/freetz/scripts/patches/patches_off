@@ -1,6 +1,7 @@
 #!/bin/bash
 # i-matik
 source $I_MATIK_PATCH_PATH_OFF/10-box
+source $I_MATIK_PATCH_PATH_OFF/ifree
 source $I_MATIK_PATCH_PATH_OFF/info.cgi
 source $I_MATIK_PATCH_PATH_OFF/menu-new
 source $I_MATIK_PATCH_PATH_OFF/motd

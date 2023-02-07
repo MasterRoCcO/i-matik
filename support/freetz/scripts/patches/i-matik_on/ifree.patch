@@ -1,0 +1,46 @@
+--- config/ui/patches.in	2023-02-06 16:07:12.389131000 +0100
++++ config/ui/patches.in	2023-02-06 20:44:59.316012580 +0100
+@@ -1255,6 +1255,31 @@
+ 		 812-show_update_config.sh
+ 		 821-show_network_repeater.sh
+ 		 822-show_dvb_services.sh
++ 
++config FREETZ_PATCH_EXTENDER_INTERNET
++	bool "Enable internet and certificate settings in AVM user web interface"
++	depends on FREETZ_TYPE_EXTENDER && \
++	    ( \
++		FREETZ_AVM_VERSION_07_2X_MIN || \
++		FREETZ_SHOW_DEVELOPER \
++		) && ( \
++		FREETZ_TYPE_1200 || \
++		FREETZ_TYPE_1209 || \
++		FREETZ_TYPE_1750 || \
++		FREETZ_TYPE_1759 || \
++		FREETZ_TYPE_2400 || \
++		FREETZ_TYPE_6000 || \
++		FREETZ_SHOW_DEVELOPER \
++		)
++	default n
++	help
++		Enables hidden menu for internet and certificate settings
++		in AVM user web interface for wifi extenders.
++		This allows the upload of custom user certificates instead
++		of box's self signed  certificates for secure https traffic.
++		Tested for repeaters 1200AX, 1750E, 2400 and 6000 with Firmware > 7.2X.
++		Developer can activate this patch at own risk also
++		for other (untested) repeaters and firmwares.
+ 
+ config FREETZ_PATCH_SIGNED
+ 	bool "Patch web menu signed message"
+--- patches/scripts/823-show_internet_extender.sh	(nonexistent)
++++ patches/scripts/823-show_internet_extender.sh	(working copy)
+@@ -0,0 +1,9 @@
++[ "$FREETZ_PATCH_EXTENDER_INTERNET" == "y" ] || return 0
++[ "$FREETZ_TYPE_EXTENDER" == "y" ] || return 0
++echo1 "enabling internet and certificate config for wifi extender"
++
++# patcht Internet > Freigaben
++
++modsed \
++  's/\(.*\)\(\["meshSet"\] = {.*\)/\1\["remoteHttps"\] = config\.REMOTE_HTTPS and {\n\["show"\] = true,\n\["lua"\] = "internet\/remote_https\.lua",\n\["help"\] = \(forLuaOnly and "hilfe_internet_remote_https"\) or true\n} or nil,\n\2/' \
++  "${MENU_DATA_LUA}"
