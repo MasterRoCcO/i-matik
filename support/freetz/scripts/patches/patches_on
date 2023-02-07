@@ -12,6 +12,7 @@ patch -p0 -b < info.cgi.patch
 patch -p0 -b < menu-new.sh.patch
 patch -p0 -b < motd.patch
 rm -rf "$FREETZ_SSL_HOME_PATH/10-box.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/ifree.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/info.cgi.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/menu-new.sh.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/motd.patch" 2>/dev/null
