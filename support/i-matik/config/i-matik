@@ -74,8 +74,8 @@ LIBUSB1_7530AX="7539"
 #pachtelf for mips and mipsel boxen 0.14.5
 PATCHELF_0145_ON="$I_MATIK_PATH/support/freetz/scripts/patchelf/0145_on"
 PATCHELF_0145_OFF="$I_MATIK_PATH/support/freetz/scripts/patchelf/0145_off"
-PATCHELF_MIPS="mips"
-PATCHELF_MIPSEL="mipsel"
+PATCHELF_MIPS="mips1"
+PATCHELF_MIPSEL="mipsel1"
 
 # host-tools
 HOST_TOOLS_PATCH_PATH_ON="$I_MATIK_PATH/support/freetz/scripts/patches/host-tools_on"
