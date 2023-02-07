@@ -13,4 +13,7 @@ elif [ $KERNEL = $BAD_KERNEL3 ]
 elif [ $KERNEL = $BAD_KERNEL4 ]
 	then
 		source $OSCAM_OFF
+elif [ $KERNEL = $BAD_KERNEL5 ]
+	then
+		source $OSCAM_OFF
 fi
