@@ -5,10 +5,4 @@ DOWNGRADE_FOR_PATCHELF="$(grep '^FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=' .conf
 if [ $DOWNGRADE_FOR_7530AX = $LIBUSB1_7530AX ]
 	then
 		source $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/libusb1_off/libusb1
-#elif [ $DOWNGRADE_FOR_PATCHELF = $PATCHELF_MIPS ]
-#	then
-#		source $I_MATIK_PATH/support/freetz/scripts_privat/patches/downgrade/patchelf_off/patchelf-host
-#elif [ $DOWNGRADE_FOR_PATCHELF = $PATCHELF_MIPSEL ]
-#	then
-#		source $I_MATIK_PATH/support/freetz/scripts_privat/patches/downgrade/patchelf_off/patchelf-host
 fi	
