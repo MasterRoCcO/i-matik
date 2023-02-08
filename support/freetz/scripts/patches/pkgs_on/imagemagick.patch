@@ -1,0 +1,42 @@
+--- make/pkgs/imagemagick/imagemagick.mk	2023-02-08 22:02:57.142058000 +0100
++++ make/pkgs/imagemagick/imagemagick.mk	2023-02-08 22:59:47.187935424 +0100
+@@ -1,9 +1,9 @@
+-$(call PKG_INIT_BIN, 7.1.0-57)
++$(call PKG_INIT_BIN, 7.1.0-61)
+ $(PKG)_LIB_VERSION:=10.0.0
+ $(PKG)_ABI_SUFFIX:=Q16
+ $(PKG)_MAJOR_VERSION:=$(call GET_MAJOR_VERSION,$($(PKG)_VERSION),1)
+ $(PKG)_SOURCE:=ImageMagick-$($(PKG)_VERSION).tar.xz
+-$(PKG)_HASH:=9c3bc3de37376b90a643b9437435cb477db68596b26a778a584020915196870b
++$(PKG)_HASH:=4b4f9437666ef1a87df69b34bc8abdf7ad05d524c00dd1d63f6699e6ab1ed94e
+ $(PKG)_SITE:=https://download.imagemagick.org/archive,http://www.imagemagick.org/download,https://www.imagemagick.org/archive,@SF/$(pkg)
+ ### WEBSITE:=https://www.imagemagick.org/
+ ### MANPAGE:=https://www.imagemagick.org/Usage/
+--- make/pkgs/imagemagick/Config.in	2023-02-08 22:02:57.142058000 +0100
++++ make/pkgs/imagemagick/Config.in	2023-02-08 23:05:20.305097120 +0100
+@@ -1,5 +1,5 @@
+ menuconfig FREETZ_PACKAGE_IMAGEMAGICK
+-	bool "ImageMagick 7.1.0-57 (binary only)"
++	bool "ImageMagick 7.1.0-61 (binary only)"
+ 	select FREETZ_LIB_libpthread  if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
+ 	select FREETZ_LIB_libm        if FREETZ_TARGET_UCLIBC_HAS_multiple_libs
+ 	default n
+--- make/pkgs/imagemagick/patches/010-extra_flags.patch	2023-02-08 22:02:57.142058000 +0100
++++ make/pkgs/imagemagick/patches/010-extra_flags.patch	2023-02-08 23:03:09.943773745 +0100
+@@ -1,6 +1,6 @@
+ --- Makefile.in
+ +++ Makefile.in
+-@@ -3149,7 +3149,7 @@
++@@ -3150,7 +3150,7 @@
+  CC = @CC@
+  CCDEPMODE = @CCDEPMODE@
+  CCMALLOCDelegate = @CCMALLOCDelegate@
+@@ -9,7 +9,7 @@
+  CODER_DIRNAME = @CODER_DIRNAME@
+  CODER_PATH = @CODER_PATH@
+  CONFIGURE_ARGS = @CONFIGURE_ARGS@
+-@@ -3247,7 +3247,7 @@
++@@ -3248,7 +3248,7 @@
+  LCMS_CFLAGS = @LCMS_CFLAGS@
+  LCMS_LIBS = @LCMS_LIBS@
+  LD = @LD@

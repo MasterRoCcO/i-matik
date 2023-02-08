@@ -159,7 +159,7 @@ cp -ar $PKGS_PATCH_PATH_ON/bvi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $PKGS_PATCH_PATH_ON/dbus.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $PKGS_PATCH_PATH_ON/dtach.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $PKGS_PATCH_PATH_ON/hdparm.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $PKGS_PATCH_PATH_ON/imagemagick.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $PKGS_PATCH_PATH_ON/imagemagick.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $PKGS_PATCH_PATH_ON/irssi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $PKGS_PATCH_PATH_ON/knock.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $PKGS_PATCH_PATH_ON/libmodudevm.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
@@ -183,7 +183,7 @@ patch -p0 -b < bvi.patch
 patch -p0 -b < dbus.patch
 patch -p0 -b < dtach.patch
 patch -p0 -b < hdparm.patch
-#patch -p0 -b < imagemagick.patch
+patch -p0 -b < imagemagick.patch
 patch -p0 -b < irssi.patch
 #patch -p0 -b < knock.patch
 #patch -p0 -b < libmodudevm.patch
@@ -216,7 +216,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/bvi.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/dbus.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/dtach.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/hdparm.patch" 2>/dev/null
-#rm -rf "$FREETZ_SSL_HOME_PATH/imagemagick.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/imagemagick.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/irssi.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/knock.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/libmodudevm.patch" 2>/dev/null
