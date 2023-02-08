@@ -44,6 +44,7 @@ source $LIBS_PATCH_PATH_OFF/opus
 source $LIBS_PATCH_PATH_OFF/protobuf-c
 source $LIBS_PATCH_PATH_OFF/speex
 source $LIBS_PATCH_PATH_OFF/srtp
+source $LIBS_PATCH_PATH_OFF/utf8proc
 source $LIBS_PATCH_PATH_OFF/yaml
 
 # packages

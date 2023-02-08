@@ -62,6 +62,7 @@ cp -ar $LIBS_PATCH_PATH_ON/opus.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH_ON/protobuf-c.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH_ON/speex.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH_ON/srtp.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH_ON/utf8proc.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH_ON/yaml.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < bluez-libs.patch
 patch -p0 -b < db.patch
@@ -94,6 +95,7 @@ patch -p0 -b < opus.patch
 patch -p0 -b < protobuf-c.patch
 patch -p0 -b < speex.patch
 patch -p0 -b < srtp.patch
+patch -p0 -b < utf8proc.patch
 patch -p0 -b < yaml.patch
 mv $FREETZ_SSL_HOME_PATH/make/libs/db/patches/020-drop_backtrace_dependency.db.patch $FREETZ_SSL_HOME_PATH/make/libs/db/patches/020-drop_backtrace_dependency.db.patch.orig 2>/dev/null
 #mv $FREETZ_SSL_HOME_PATH/make/libs/gettext/patches/010-disable_GLIBC_specific_code.patch $FREETZ_SSL_HOME_PATH/make/libs/gettext/patches/010-disable_GLIBC_specific_code.patch.orig 2>/dev/null
@@ -139,6 +141,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/opus.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/protobuf-c.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/speex.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/srtp.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/utf8proc.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/yaml.patch" 2>/dev/null
 
 # packages
