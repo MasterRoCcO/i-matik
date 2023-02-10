@@ -65,6 +65,7 @@ source $PKGS_PATCH_PATH_OFF/imagemagick
 source $PKGS_PATCH_PATH_OFF/irssi
 #source $PKGS_PATCH_PATH_OFF/knock
 #source $PKGS_PATCH_PATH_OFF/libmodudevm
+source $PKGS_PATCH_PATH_OFF/mc
 source $PKGS_PATCH_PATH_OFF/minisatip
 #source $PKGS_PATCH_PATH_OFF/pcsc-lite
 source $PKGS_PATCH_PATH_OFF/tiff
