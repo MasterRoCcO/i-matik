@@ -63,9 +63,9 @@ USER_APPLICATION_OFF="$I_MATIK_PATH/support/freetz/scripts/user_scripts/user-app
 DOWNGRADE_ON="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_on"
 DOWNGRADE_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_off"
 #libusb1 
-LIBUSB1_7530AX="7530_AX1"
+LIBUSB1_7530AX="7530_AX"
 
-#pachtelf for mips and mipsel boxen 0.14.5 check
+#fix check
 FIX_CHECK_ON="$I_MATIK_PATH/support/freetz/scripts/fix_check/fix_check_on"
 FIX_CHECK_OFF="$I_MATIK_PATH/support/freetz/scripts/fix_check/fix_check_off"
 PATCHELF_MIPS="mips"
@@ -73,10 +73,6 @@ PATCHELF_MIPSEL="mipsel"
 NO_GLIB2_6430="6430"
 NO_GLIB2_6490="6490"
 NO_GLIB2_6590="6590"
-
-# host-tools
-HOST_TOOLS_PATCH_PATH_ON="$I_MATIK_PATH/support/freetz/scripts/patches/host-tools_on"
-HOST_TOOLS_PATCH_PATH_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/host-tools_off"
 
 #If you don't need the make menuconfig, just put a # in front of MENUC and MENUC1
 MENUC="menuconfig"
