@@ -1,0 +1,13 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/flac/flac.mk 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/flac/external.files 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/flac/external.in 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/flac/patches/100-no-docs-and-examples.flac.patch 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/flac/patches/300-warning_flags.flac.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/flac/flac.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/flac/flac.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/flac/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/flac/external.files.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/flac/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/flac/external.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/flac/patches/100-no-docs-and-examples.flac.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/flac/patches/100-no-docs-and-examples.flac.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/flac/patches/200-CFLAGS.flac.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/flac/patches/200-CFLAGS.flac.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/flac/patches/300-warning_flags.flac.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/flac/patches/300-warning_flags.flac.patch 2>/dev/null
+

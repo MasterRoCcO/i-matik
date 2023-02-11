@@ -33,6 +33,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/features.patch" 2>/dev/null
 echo -e ${GREEN}"Freetz files patch for libs."${NC}
 cp -ar $LIBS_PATCH_PATH/bluez-libs.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH/db.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH/flac.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $LIBS_PATCH_PATH/freetype.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $LIBS_PATCH_PATH/gettext.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH/gsasl.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
@@ -66,6 +67,7 @@ cp -ar $LIBS_PATCH_PATH/utf8proc.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH/yaml.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < bluez-libs.patch
 patch -p0 -b < db.patch
+patch -p0 -b < flac.patch
 #patch -p0 -b < freetype.patch
 #patch -p0 -b < gettext.patch
 patch -p0 -b < gsasl.patch
@@ -97,6 +99,7 @@ patch -p0 -b < speex.patch
 patch -p0 -b < srtp.patch
 patch -p0 -b < utf8proc.patch
 patch -p0 -b < yaml.patch
+mv $FREETZ_SSL_HOME_PATH/make/libs/flac/patches/200-CFLAGS.flac.patch $FREETZ_SSL_HOME_PATH/make/libs/flac/patches/200-CFLAGS.flac.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/db/patches/020-drop_backtrace_dependency.db.patch $FREETZ_SSL_HOME_PATH/make/libs/db/patches/020-drop_backtrace_dependency.db.patch.orig 2>/dev/null
 #mv $FREETZ_SSL_HOME_PATH/make/libs/gettext/patches/010-disable_GLIBC_specific_code.patch $FREETZ_SSL_HOME_PATH/make/libs/gettext/patches/010-disable_GLIBC_specific_code.patch.orig 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/020-no_xtractprotos.leptonica.patch $FREETZ_SSL_HOME_PATH/make/libs/leptonica/patches/020-no_xtractprotos.leptonica.patch.orig 2>/dev/null
@@ -112,6 +115,7 @@ mv $FREETZ_SSL_HOME_PATH/make/libs/libosip2/patches/010-multiple_CFLAGS.libosip2
 mv $FREETZ_SSL_HOME_PATH/make/libs/speex/patches $FREETZ_SSL_HOME_PATH/make/libs/speex/patches.orig 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/bluez-libs.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/db.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/flac.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/freetype.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/gettext.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/gsasl.patch" 2>/dev/null

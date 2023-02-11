@@ -1,0 +1,124 @@
+--- make/libs/flac/flac.mk	2023-02-11 10:33:50.739534000 +0100
++++ make/libs/flac/flac.mk	2023-02-11 11:44:23.945442011 +0100
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_LIB, 1.3.2)
+-$(PKG)_LIB_VERSION:=8.3.0
++$(call PKG_INIT_LIB, 1.4.2)
++$(PKG)_LIB_VERSION:=12.0.0
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.xz
+-$(PKG)_HASH:=91cfc3ed61dc40f47f050a109b08610667d73477af6ef36dcad31c31a4a8d53f
++$(PKG)_HASH:=e322d58a1f48d23d9dd38f432672865f6f79e73a6f9cc5a5f57fcaa83eb5a8e4
+ $(PKG)_SITE:=http://downloads.xiph.org/releases/flac
+ 
+ $(PKG)_BINARY:=$($(PKG)_DIR)/src/libFLAC/.libs/libFLAC.so.$($(PKG)_LIB_VERSION)
+--- make/libs/flac/external.files	2023-02-11 10:33:50.739534000 +0100
++++ make/libs/flac/external.files	2023-02-11 11:45:20.404292239 +0100
+@@ -1 +1 @@
+-[ "$EXTERNAL_FREETZ_LIB_libFLAC" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libFLAC.so.8.3.0"
++[ "$EXTERNAL_FREETZ_LIB_libFLAC" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libFLAC.so.12.0.0"
+--- make/libs/flac/external.in	2023-02-11 11:45:53.115626212 +0100
++++ make/libs/flac/external.in	2023-02-11 10:33:50.739534695 +0100
+@@ -4,5 +4,5 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libFLAC.so.8.3.0
++		 ${FREETZ_LIBRARY_DIR}/libFLAC.so.12.0.0
+ 
+--- make/libs/flac/patches/100-no-docs-and-examples.flac.patch	2023-02-11 10:33:50.739534000 +0100
++++ make/libs/flac/patches/100-no-docs-and-examples.flac.patch	2023-02-11 11:37:30.993864005 +0100
+@@ -4,37 +4,37 @@
+  
+  ACLOCAL_AMFLAGS = -I m4
+  
+--SUBDIRS = doc include m4 man src examples test build objs microbench
+-+SUBDIRS =     include        src               build objs
++-SUBDIRS = doc include m4 man src test microbench oss-fuzz
+++SUBDIRS =     include        src                 oss-fuzz
+  
+- EXTRA_DIST = \
+- 	COPYING.FDL \
++ if EXAMPLES
++ SUBDIRS += examples
+ --- Makefile.in
+ +++ Makefile.in
+-@@ -397,7 +397,7 @@
++@@ -395,7 +395,7 @@
+  top_builddir = @top_builddir@
+  top_srcdir = @top_srcdir@
+  ACLOCAL_AMFLAGS = -I m4
+--SUBDIRS = doc include m4 man src examples test build objs microbench
+-+SUBDIRS =     include        src               build objs
++-SUBDIRS = doc include m4 man src test microbench oss-fuzz \
+++SUBDIRS =     include        src                 oss-fuzz \
++ 	$(am__append_1)
+  EXTRA_DIST = \
+- 	COPYING.FDL \
+- 	COPYING.GPL \
++ 	CMakeLists.txt \
+ --- src/Makefile.am
+ +++ src/Makefile.am
+-@@ -21,7 +21,7 @@
+- endif
++@@ -17,7 +17,7 @@
++ #  distribution.
+  
+  if FLaC__WITH_CPPLIBS
+ -CPPLIBS_DIRS = libFLAC++ test_libFLAC++
+ +CPPLIBS_DIRS = libFLAC++
+  endif
+  
+- SUBDIRS = \
+-@@ -30,11 +30,6 @@
+- 	flac \
+- 	metaflac \
+- 	$(XMMS_DIRS) \
++ if FLaC__WITH_PROGRAMS
++@@ -28,11 +28,6 @@
++ 	libFLAC \
++ 	share \
++ 	$(PROGRAMS_DIRS) \
+ -	test_grabbag \
+ -	test_libs_common \
+ -	test_libFLAC \
+@@ -45,18 +45,17 @@
+  
+ --- src/Makefile.in
+ +++ src/Makefile.in
+-@@ -363,18 +363,13 @@
++@@ -357,17 +357,12 @@
++ top_build_prefix = @top_build_prefix@
+  top_builddir = @top_builddir@
+  top_srcdir = @top_srcdir@
+- @FLaC__HAS_XMMS_TRUE@XMMS_DIRS = plugin_common plugin_xmms
+ -@FLaC__WITH_CPPLIBS_TRUE@CPPLIBS_DIRS = libFLAC++ test_libFLAC++
+ +@FLaC__WITH_CPPLIBS_TRUE@CPPLIBS_DIRS = libFLAC++
++ @FLaC__WITH_PROGRAMS_TRUE@PROGRAMS_DIRS = flac metaflac
+  SUBDIRS = \
+  	libFLAC \
+  	share \
+- 	flac \
+- 	metaflac \
+- 	$(XMMS_DIRS) \
++ 	$(PROGRAMS_DIRS) \
+ -	test_grabbag \
+ -	test_libs_common \
+ -	test_libFLAC \
+--- make/libs/flac/patches/300-warning_flags.flac.patch	2023-02-11 10:33:50.739534000 +0100
++++ make/libs/flac/patches/300-warning_flags.flac.patch	2023-02-11 11:42:09.732176551 +0100
+@@ -1,12 +1,12 @@
+ --- configure
+ +++ configure
+-@@ -20573,6 +20573,9 @@
++@@ -21485,6 +21485,9 @@
+  	CFLAGS="$CFLAGS -Wall -Wextra -Wstrict-prototypes -Wmissing-prototypes -Waggregate-return -Wcast-align -Wnested-externs -Wshadow -Wundef -Wmissing-declarations -Winline " # -Wcast-qual -Wbad-function-cast -Wwrite-strings -Wconversion
+  	CXXFLAGS="$CXXFLAGS -Wall -Wextra -Wcast-align -Wshadow -Wwrite-strings -Wctor-dtor-privacy -Wnon-virtual-dtor -Wreorder -Wsign-promo -Wundef " # -Wcast-qual -Wbad-function-cast -Wwrite-strings -Woverloaded-virtual -Wmissing-declarations
+  
+ +	CFLAGS="$CFLAGS -Wno-unused-function "
+ +	CXXFLAGS="$CXXFLAGS -Wno-unused-function "
+ +
+- 	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking if $CC accepts -Wdeclaration-after-statement" >&5
+- $as_echo_n "checking if $CC accepts -Wdeclaration-after-statement... " >&6; }
++ 	{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking if $CC accepts -Wdeclaration-after-statement" >&5
++ printf %s "checking if $CC accepts -Wdeclaration-after-statement... " >&6; }
+  	ac_add_cflags__old_cflags="$CFLAGS"
