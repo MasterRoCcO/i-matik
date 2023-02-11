@@ -70,6 +70,9 @@ FIX_CHECK_ON="$I_MATIK_PATH/support/freetz/scripts/fix_check/fix_check_on"
 FIX_CHECK_OFF="$I_MATIK_PATH/support/freetz/scripts/fix_check/fix_check_off"
 PATCHELF_MIPS="mips"
 PATCHELF_MIPSEL="mipsel"
+NO_GLIB2_6430="6430"
+NO_GLIB2_6490="6490"
+NO_GLIB2_6590="6590"
 
 # host-tools
 HOST_TOOLS_PATCH_PATH_ON="$I_MATIK_PATH/support/freetz/scripts/patches/host-tools_on"
