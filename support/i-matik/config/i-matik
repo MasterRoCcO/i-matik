@@ -52,6 +52,7 @@ AVM_PATCH_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/config/avm"
 LIBS_PATCH_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/make/libs"
 # packages
 PKGS_PATCH_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/make/pkgs"
+PKGS_PATH_ON_OFF="$I_MATIK_PATH/support/freetz/scripts/pkgs_on_off"
 PKGS_OFF="$PKGS_PATH_ON_OFF/pkgs_off"
 PKGS_ON="$PKGS_PATH_ON_OFF/pkgs_on"
 
