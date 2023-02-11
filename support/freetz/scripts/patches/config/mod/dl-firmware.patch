@@ -5,7 +5,7 @@
  	default "@AVM/fritzbox-5530-fiber/{other,deutschland}/fritz.os,@AVM/5530Fiber"                                     if FREETZ_TYPE_5530
  	#
 -	default "@AVM/fritzbox-5590-fiber/{other,deutschland}/fritz.os"                                                    if FREETZ_TYPE_5590
-+	default "@AVM/fritzbox-5590-fiber/{other,deutschland}/fritz.os,@AVM/5530Fiber"                                     if FREETZ_TYPE_5590
++	default "@AVM/fritzbox-5590-fiber/{other,deutschland}/fritz.os,@AVM/5590Fiber"                                     if FREETZ_TYPE_5590
 +	
  	#
  	default "@AVM/fritzwlan/fritzrepeater-6000/deutschland/fritz.os"                                                   if FREETZ_TYPE_6000 && FREETZ_TYPE_FIRMWARE_07_25
@@ -31,7 +31,7 @@
  	default "fritzbox-4040-labor-101165.zip"          if FREETZ_TYPE_4040
  	default "fritzbox-4060-labor-101164.zip"          if FREETZ_TYPE_4060
  	default "fritzbox-5530-fiber-labor-102667.zip"    if FREETZ_TYPE_5530
-+	default "fritzbox-5590-fiber-labor-102864.zip"    if FREETZ_TYPE_5530
++	default "fritzbox-5590-fiber-labor-102864.zip"    if FREETZ_TYPE_5590
  	default "fritz-repeater-6000-labor-101161.zip"    if FREETZ_TYPE_6000
  	default "fritzbox-6490-labor-101216.zip"          if FREETZ_TYPE_6490
  	default "fritzbox-6590-labor-101217.zip"          if FREETZ_TYPE_6590
