@@ -32,6 +32,15 @@
  
  config FREETZ_PATCH_SIGNED
  	bool "Patch web menu signed message"
+@@ -1334,7 +1334,7 @@
+ 
+ menuconfig FREETZ_PATCH_MODFS_BOOT_MANAGER
+ 	bool "Add yf-bootmanager"
+-	depends on !FREETZ_ADD_INACTIVE_SYSTEM || (FREETZ_ADD_INACTIVE_SYSTEM && FREETZ_AVM_PROP_INNER_FILESYSTEM_TYPE_CPIO)
++#	depends on !FREETZ_ADD_INACTIVE_SYSTEM || (FREETZ_ADD_INACTIVE_SYSTEM && FREETZ_AVM_PROP_INNER_FILESYSTEM_TYPE_CPIO)
+ 	depends on FREETZ_AVM_VERSION_06_5X_MIN
+ 	depends on ( FREETZ_AVM_HAS_SEPARATE_FILESYSTEM_IMAGE && !FREETZ_AVM_HAS_FWLAYOUT_6 ) || \
+ 		                   ( FREETZ_AVM_HAS_FWLAYOUT_6 && (FREETZ_AVM_HAS_BLK_DEV_LOOP_BUILTIN || FREETZ_REPLACE_MODULE_AVAILABLE) )
 --- patches/scripts/823-show_internet_extender.sh	(nonexistent)
 +++ patches/scripts/823-show_internet_extender.sh	(working copy)
 @@ -0,0 +1,9 @@

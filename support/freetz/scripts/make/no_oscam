@@ -236,9 +236,9 @@ for bs in "${BOX_SSL[@]}"; do
 		fi
 
 		#echo "starte make -j$MAX_CPUS" && sleep 2 #echo command 2 seconds for progress
-		source $PATCHELF_0145_ON 2>/dev/null
+		source $FIX_CHECK_ON 2>/dev/null
 		make -j$MAX_CPUS #run make for freetz
-		source $PATCHELF_0145_OFF 2>/dev/null
+		source $FIX_CHECK_OFF 2>/dev/null
 
 		# Get custom image file name part from .config
 		FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"

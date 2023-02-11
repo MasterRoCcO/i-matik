@@ -1,11 +1,29 @@
 #!/bin/bash
-DOWNGRADE_FOR_7530AX="$(grep '^FREETZ_TYPE_PREFIX=' .config | awk -F'"' '{print $2}' | xargs)" 2>/dev/null
+DOWNGRADE_FOR="$(grep '^FREETZ_TYPE_PREFIX=' .config | awk -F'"' '{print $2}' | xargs)" 2>/dev/null
 DOWNGRADE_FOR_PATCHELF="$(grep '^FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=' .config | awk -F'"' '{print $2}' | xargs)" 2>/dev/null
 
-if [ $DOWNGRADE_FOR_7530AX = $LIBUSB1_7530AX ]
+if [ $DOWNGRADE_FOR = $LIBUSB1_7530AX ]
 	then
 		echo -e ${GREEN}"Freetz files downgrade for libusb1."${NC}
-		cp -ar $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/libusb1_on/libusb1.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+		cp -ar $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/libusb1/libusb1.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 		patch -p0 -b < libusb1.patch
 		rm -rf "$FREETZ_SSL_HOME_PATH/libusb1.patch" 2>/dev/null
+#elif [ $DOWNGRADE_FOR_PATCHELF = $PATCHELF_MIPS ]
+#	then
+#		echo -e ${GREEN}"Freetz files downgrade for patchelf."${NC}
+#		cp -ar $I_MATIK_PATH/support/freetz/scripts_privat/patches/downgrade/patchelf_on/patchelf-host.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#		patch -p0 -b < patchelf-host.patch
+#		rm -rf "$FREETZ_SSL_HOME_PATH/patchelf-host.patch" 2>/dev/null
+#		cp -ar $I_MATIK_PATH/support/freetz/scripts_privat/patches/downgrade/patchelf_on/patchelf-host1.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#		patch -p0 < patchelf-host1.patch
+#		rm -rf "$FREETZ_SSL_HOME_PATH/patchelf-host1.patch" 2>/dev/null
+#elif [ $DOWNGRADE_FOR_PATCHELF = $PATCHELF_MIPSEL ]
+#	then
+#		echo -e ${GREEN}"Freetz files downgrade for patchelf."${NC}
+#		cp -ar $I_MATIK_PATH/support/freetz/scripts_privat/patches/downgrade/patchelf_on/patchelf-host.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#		patch -p0 -b < patchelf-host.patch
+#		rm -rf "$FREETZ_SSL_HOME_PATH/patchelf-host.patch" 2>/dev/null
+#		cp -ar $I_MATIK_PATH/support/freetz/scripts_privat/patches/downgrade/patchelf_on/patchelf-host1.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#		patch -p0 < patchelf-host1.patch
+#		rm -rf "$FREETZ_SSL_HOME_PATH/patchelf-host1.patch" 2>/dev/null
 fi

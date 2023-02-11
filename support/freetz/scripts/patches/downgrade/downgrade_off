@@ -1,8 +1,14 @@
 #!/bin/bash
-DOWNGRADE_FOR_7530AX="$(grep '^FREETZ_TYPE_PREFIX=' .config | awk -F'"' '{print $2}' | xargs)" 2>/dev/null
+DOWNGRADE_FOR="$(grep '^FREETZ_TYPE_PREFIX=' .config | awk -F'"' '{print $2}' | xargs)" 2>/dev/null
 DOWNGRADE_FOR_PATCHELF="$(grep '^FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=' .config | awk -F'"' '{print $2}' | xargs)" 2>/dev/null
 
-if [ $DOWNGRADE_FOR_7530AX = $LIBUSB1_7530AX ]
+if [ $DOWNGRADE_FOR = $LIBUSB1_7530AX ]
 	then
-		source $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/libusb1_off/libusb1
+		source $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/libusb1/libusb1
+#elif [ $DOWNGRADE_FOR_PATCHELF = $PATCHELF_MIPS ]
+#	then
+#		source $I_MATIK_PATH/support/freetz/scripts_privat/patches/downgrade/patchelf_off/patchelf-host
+#elif [ $DOWNGRADE_FOR_PATCHELF = $PATCHELF_MIPSEL ]
+#	then
+#		source $I_MATIK_PATH/support/freetz/scripts_privat/patches/downgrade/patchelf_off/patchelf-host
 fi	

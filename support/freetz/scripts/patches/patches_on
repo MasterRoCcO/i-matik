@@ -1,11 +1,11 @@
 #!/bin/bash
 # i-matik
 echo -e ${GREEN}"Freetz files patch for i-matik."${NC}
-cp -ar $I_MATIK_PATCH_PATH_ON/10-box.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $I_MATIK_PATCH_PATH_ON/ifree.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $I_MATIK_PATCH_PATH_ON/info.cgi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $I_MATIK_PATCH_PATH_ON/menu-new.sh.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $I_MATIK_PATCH_PATH_ON/motd.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATCH_PATH/10-box.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATCH_PATH/ifree.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATCH_PATH/info.cgi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATCH_PATH/menu-new.sh.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATCH_PATH/motd.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < 10-box.patch
 patch -p0 -b < ifree.patch
 patch -p0 -b < info.cgi.patch
@@ -19,51 +19,51 @@ rm -rf "$FREETZ_SSL_HOME_PATH/motd.patch" 2>/dev/null
 
 # dl-firmware
 echo -e ${GREEN}"Freetz files patch for dl-firmware."${NC}
-cp -ar $DL_FIRMWARE_PATCH_PATH_ON/dl-firmware.in.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-patch -p0 -b < dl-firmware.in.patch
-rm -rf "$FREETZ_SSL_HOME_PATH/dl-firmware.in.patch" 2>/dev/null
+cp -ar $MOD_PATCH_PATH/dl-firmware.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < dl-firmware.patch
+rm -rf "$FREETZ_SSL_HOME_PATH/dl-firmware.patch" 2>/dev/null
 
 # features
 echo -e ${GREEN}"Freetz files patch for Temperature Sensors."${NC}
-cp -ar $FEATURES_PATCH_PATH_ON/features.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $AVM_PATCH_PATH/features.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < features.patch
 rm -rf "$FREETZ_SSL_HOME_PATH/features.patch" 2>/dev/null
 
 # libs
 echo -e ${GREEN}"Freetz files patch for libs."${NC}
-cp -ar $LIBS_PATCH_PATH_ON/bluez-libs.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $LIBS_PATCH_PATH_ON/db.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $LIBS_PATCH_PATH_ON/freetype.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $LIBS_PATCH_PATH_ON/gettext.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $LIBS_PATCH_PATH_ON/gsasl.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $LIBS_PATCH_PATH_ON/jansson.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $LIBS_PATCH_PATH_ON/jpeg.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $LIBS_PATCH_PATH_ON/ldns.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $LIBS_PATCH_PATH_ON/leptonica.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $LIBS_PATCH_PATH_ON/libcap.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $LIBS_PATCH_PATH_ON/libev.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $LIBS_PATCH_PATH_ON/libffi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $LIBS_PATCH_PATH_ON/libgpg-error.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $LIBS_PATCH_PATH_ON/libgsm.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $LIBS_PATCH_PATH_ON/libidn.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $LIBS_PATCH_PATH_ON/libmnl.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $LIBS_PATCH_PATH_ON/libnet.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $LIBS_PATCH_PATH_ON/libogg.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $LIBS_PATCH_PATH_ON/libonig.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $LIBS_PATCH_PATH_ON/liboping.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $LIBS_PATCH_PATH_ON/libosip2.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $LIBS_PATCH_PATH_ON/libpng.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $LIBS_PATCH_PATH_ON/libtasn1.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $LIBS_PATCH_PATH_ON/libxml2.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $LIBS_PATCH_PATH_ON/libvorbis.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $LIBS_PATCH_PATH_ON/mbedtls.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $LIBS_PATCH_PATH_ON/neon.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $LIBS_PATCH_PATH_ON/opus.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $LIBS_PATCH_PATH_ON/protobuf-c.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $LIBS_PATCH_PATH_ON/speex.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $LIBS_PATCH_PATH_ON/srtp.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $LIBS_PATCH_PATH_ON/utf8proc.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $LIBS_PATCH_PATH_ON/yaml.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH/bluez-libs.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH/db.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $LIBS_PATCH_PATH/freetype.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $LIBS_PATCH_PATH/gettext.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH/gsasl.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH/jansson.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $LIBS_PATCH_PATH/jpeg.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH/ldns.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH/leptonica.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $LIBS_PATCH_PATH/libcap.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $LIBS_PATCH_PATH/libev.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $LIBS_PATCH_PATH/libffi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $LIBS_PATCH_PATH/libgpg-error.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH/libgsm.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $LIBS_PATCH_PATH/libidn.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH/libmnl.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH/libnet.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH/libogg.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH/libonig.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH/liboping.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH/libosip2.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $LIBS_PATCH_PATH/libpng.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $LIBS_PATCH_PATH/libtasn1.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $LIBS_PATCH_PATH/libxml2.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH/libvorbis.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $LIBS_PATCH_PATH/mbedtls.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $LIBS_PATCH_PATH/neon.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH/opus.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH/protobuf-c.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH/speex.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH/srtp.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH/utf8proc.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH/yaml.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < bluez-libs.patch
 patch -p0 -b < db.patch
 #patch -p0 -b < freetype.patch
@@ -146,31 +146,31 @@ rm -rf "$FREETZ_SSL_HOME_PATH/yaml.patch" 2>/dev/null
 
 # packages
 echo -e ${GREEN}"Freetz files patch for packages."${NC}
-cp -ar $PKGS_PATCH_PATH_ON/avahi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $PKGS_PATCH_PATH_ON/axtlswrap.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $PKGS_PATCH_PATH_ON/bind.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $PKGS_PATCH_PATH_ON/bird.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $PKGS_PATCH_PATH_ON/bittwist.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $PKGS_PATCH_PATH_ON/bridge-utils.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $PKGS_PATCH_PATH_ON/ca-bundle.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $PKGS_PATCH_PATH_ON/ccid.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $PKGS_PATCH_PATH_ON/cifsmount.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $PKGS_PATCH_PATH_ON/bvi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $PKGS_PATCH_PATH_ON/dbus.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $PKGS_PATCH_PATH_ON/dtach.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $PKGS_PATCH_PATH_ON/hdparm.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $PKGS_PATCH_PATH_ON/imagemagick.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $PKGS_PATCH_PATH_ON/irssi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $PKGS_PATCH_PATH_ON/knock.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $PKGS_PATCH_PATH_ON/libmodudevm.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $PKGS_PATCH_PATH_ON/mc.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $PKGS_PATCH_PATH_ON/minisatip.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $PKGS_PATCH_PATH_ON/pcsc-lite.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $PKGS_PATCH_PATH_ON/tiff.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $PKGS_PATCH_PATH_ON/tor.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $PKGS_PATCH_PATH_ON/tree.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $PKGS_PATCH_PATH_ON/xz.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $PKGS_PATCH_PATH_ON/zabbix.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $PKGS_PATCH_PATH/avahi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $PKGS_PATCH_PATH/axtlswrap.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $PKGS_PATCH_PATH/bind.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $PKGS_PATCH_PATH/bird.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $PKGS_PATCH_PATH/bittwist.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $PKGS_PATCH_PATH/bridge-utils.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $PKGS_PATCH_PATH/ca-bundle.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $PKGS_PATCH_PATH/ccid.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $PKGS_PATCH_PATH/cifsmount.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $PKGS_PATCH_PATH/bvi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $PKGS_PATCH_PATH/dbus.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $PKGS_PATCH_PATH/dtach.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $PKGS_PATCH_PATH/hdparm.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $PKGS_PATCH_PATH/imagemagick.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $PKGS_PATCH_PATH/irssi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $PKGS_PATCH_PATH/knock.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $PKGS_PATCH_PATH/libmodudevm.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $PKGS_PATCH_PATH/mc.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $PKGS_PATCH_PATH/minisatip.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $PKGS_PATCH_PATH/pcsc-lite.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $PKGS_PATCH_PATH/tiff.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $PKGS_PATCH_PATH/tor.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $PKGS_PATCH_PATH/tree.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $PKGS_PATCH_PATH/xz.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $PKGS_PATCH_PATH/zabbix.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < avahi.patch
 patch -p0 -b < axtlswrap.patch
 #patch -p0 -b < bind.patch

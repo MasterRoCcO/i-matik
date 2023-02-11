@@ -18,9 +18,6 @@ SSL11_PUSH="$I_MATIK_PATH/support/freetz/scripts/push/ssl11_push"
 SSL11_PUSH_POWERLINE="$I_MATIK_PATH/support/freetz/scripts/push/ssl11_push_powerline"
 SSL11_PUSH_REPEATER="$I_MATIK_PATH/support/freetz/scripts/push/ssl11_push_repeater"
 
-SSL10="$I_MATIK_PATH/support/freetz/scripts_privat/make/ssl10_multi"
-SSL11="$I_MATIK_PATH/support/freetz/scripts_privat/make/ssl11_multi"
-
 CONFIG_FRITZBOX_PATH_SSL_10="$CONFIG_FRITZBOX_PATH/ssl_10"
 CONFIG_FRITZBOX_PATH_SSL_11="$CONFIG_FRITZBOX_PATH/ssl_11"
 CONFIG_FRITZBOX_PATH_SSL_30="$CONFIG_FRITZBOX_PATH/ssl_30"
@@ -30,6 +27,7 @@ VERSION="$I_MATIK_PATH/support/i-matik/config/version"
 BOX_ARCH_PATH="$I_MATIK_PATH/support/i-matik/box_arch"
 #BOX_ARCH="$I_MATIK_PATH/support/i-matik/box_arch_NEU"
 CONFIG_USER_PATH="$I_MATIK_PATH/support/i-matik/config_user/i-matik"
+CONFIG_PRIVAT_PATH="$I_MATIK_PATH/support/i-matik/config/privat"
 
 #define the openssl version for SKIP_CLIENT and SKIP_MASTER 
 FREETZ_SSL_VERSION_10="ssl_1_0_x"
@@ -39,53 +37,43 @@ FREETZ_SSL_VERSION_MULTI="ssl_multi"
 
 #define my files home path for freetz-ng
 MY_FILES_HOME_PATH="$I_MATIK_PATH/support/freetz/MY_FILES"
-PRIVAT_MY_FILES_HOME_PATH="$I_MATIK_PATH/support/freetz/MY_FILES_PRIVAT"
-PRIVAT_MY_FILES_SCRIPT="$I_MATIK_PATH/support/freetz/scripts_privat/my_files_privat"
+
+#define paches path
+PATCH_ON="$I_MATIK_PATH/support/freetz/scripts/patches/patches_on"
+PATCH_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/patches_off"
+
+# i-matik patch path
+I_MATIK_PATCH_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/i-matik"
+# dl-firmware
+MOD_PATCH_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/config/mod"
+# features
+AVM_PATCH_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/config/avm"
+# libs
+LIBS_PATCH_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/make/libs"
+# packages
+PKGS_PATCH_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/make/pkgs"
+PKGS_OFF="$PKGS_PATH_ON_OFF/pkgs_off"
+PKGS_ON="$PKGS_PATH_ON_OFF/pkgs_on"
 
 #define user scripts home path
 USER_APPLICATION_ON="$I_MATIK_PATH/support/freetz/scripts/user_scripts/user-application_on"
 USER_APPLICATION_OFF="$I_MATIK_PATH/support/freetz/scripts/user_scripts/user-application_off"
 
-# i-matik patch path
-I_MATIK_PATCH_PATH_ON="$I_MATIK_PATH/support/freetz/scripts/patches/i-matik_on"
-I_MATIK_PATCH_PATH_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/i-matik_off"
-# dl-firmware
-DL_FIRMWARE_PATCH_PATH_ON="$I_MATIK_PATH/support/freetz/scripts/patches/dl-firmware_on"
-DL_FIRMWARE_PATCH_PATH_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/dl-firmware_off"
-# features
-FEATURES_PATCH_PATH_ON="$I_MATIK_PATH/support/freetz/scripts/patches/features_on"
-FEATURES_PATCH_PATH_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/features_off"
-# libs
-LIBS_PATCH_PATH_ON="$I_MATIK_PATH/support/freetz/scripts/patches/libs_on"
-LIBS_PATCH_PATH_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/libs_off"
-# packages
-PKGS_PATCH_PATH_ON="$I_MATIK_PATH/support/freetz/scripts/patches/pkgs_on"
-PKGS_PATCH_PATH_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/pkgs_off"
-PKGS_PATH_ON_OFF="$I_MATIK_PATH/support/freetz/scripts/pkgs_on_off"
-PKGS_OFF="$PKGS_PATH_ON_OFF/pkgs_off"
-PKGS_ON="$PKGS_PATH_ON_OFF/pkgs_on"
-
 #downgrade
 DOWNGRADE_ON="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_on"
 DOWNGRADE_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_off"
 #libusb1 
-LIBUSB1_7530AX="7539"
+LIBUSB1_7530AX="7530_AX1"
 
-#pachtelf for mips and mipsel boxen 0.14.5
-PATCHELF_0145_ON="$I_MATIK_PATH/support/freetz/scripts/patchelf/0145_on"
-PATCHELF_0145_OFF="$I_MATIK_PATH/support/freetz/scripts/patchelf/0145_off"
-PATCHELF_MIPS="mips1"
-PATCHELF_MIPSEL="mipsel1"
+#pachtelf for mips and mipsel boxen 0.14.5 check
+FIX_CHECK_ON="$I_MATIK_PATH/support/freetz/scripts/fix_check/fix_check_on"
+FIX_CHECK_OFF="$I_MATIK_PATH/support/freetz/scripts/fix_check/fix_check_off"
+PATCHELF_MIPS="mips"
+PATCHELF_MIPSEL="mipsel"
 
 # host-tools
 HOST_TOOLS_PATCH_PATH_ON="$I_MATIK_PATH/support/freetz/scripts/patches/host-tools_on"
 HOST_TOOLS_PATCH_PATH_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/host-tools_off"
-
-#define paches path
-PATCH_ON="$I_MATIK_PATH/support/freetz/scripts/patches/patches_on"
-PATCH_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/patches_off"
-PRIVAT_PATCH_ON="$I_MATIK_PATH/support/freetz/scripts_privat/patches/patches_on"
-PRIVAT_PATCH_OFF="$I_MATIK_PATH/support/freetz/scripts_privat/patches/patches_off"
 
 #If you don't need the make menuconfig, just put a # in front of MENUC and MENUC1
 MENUC="menuconfig"
@@ -104,7 +92,7 @@ NO_REPLACE="$I_MATIK_PATH/support/freetz/scripts/kernel/no_replace"
 REPLACE_KERNEL="$I_MATIK_PATH/support/freetz/scripts/kernel/replace_kernel"
 BAD_KERNEL1="4.1.38"
 BAD_KERNEL2="4.4.2711"
-BAD_KERNEL3="4.9.279"
+BAD_KERNEL3="4.9.2791"
 BAD_KERNEL4="4.9.2181"
 BAD_KERNEL5="4.19.183"
 BAD_OS="07_5X"
@@ -128,15 +116,12 @@ OSCAM="$I_MATIK_PATH/support/s3_releases/scripts/oscam"
 OSCAM_EMU="$I_MATIK_PATH/support/s3_releases/scripts/oscam_emu"
 OSCAM_SMOD="$I_MATIK_PATH/support/s3_releases/scripts/oscam_smod"
 OSCAM_TOOLCHAIN="$I_MATIK_PATH/support/s3_releases/scripts/oscam_mit"
-OSCAM_MULTI="$I_MATIK_PATH/support/s3_releases/scripts_privat/oscam"
-OSCAM_MULTI_TOOLCHAIN="$I_MATIK_PATH/support/s3_releases/scripts_privat/oscam_mit"
 OSCAM_TCUPDATE="$I_MATIK_PATH/support/s3_releases/scripts/tcupdate"
 
 #define my files home path for oscam 
 MY_FILES_HOME_PATH_OSCAM="$I_MATIK_PATH/support/s3_releases/MY_FILES"
-PRIVAT_MY_FILES_HOME_PATH_OSCAM="$I_MATIK_PATH/support/s3_releases/MY_FILES_PRIVAT"
 
 CRASH_CLEANER="$I_MATIK_PATH/support/i-matik/crash_cleaner/crash"
 #end of config
+source $CONFIG_PRIVAT_PATH
 source $CONFIG_USER_PATH
-
