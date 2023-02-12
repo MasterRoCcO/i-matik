@@ -1,0 +1,3 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/make/libs/openjp2/openjp2.mk 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/libs/openjp2/openjp2.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/openjp2/openjp2.mk 2>/dev/null

@@ -41,6 +41,7 @@ source $LIBS_PATCH_PATH/libosip2
 source $LIBS_PATCH_PATH/libvorbis
 #source $LIBS_PATCH_PATH/mbedtls
 #source $LIBS_PATCH_PATH/neon
+source $LIBS_PATCH_PATH/openjp2
 source $LIBS_PATCH_PATH/opus
 source $LIBS_PATCH_PATH/protobuf-c
 source $LIBS_PATCH_PATH/speex

@@ -59,6 +59,7 @@ cp -ar $LIBS_PATCH_PATH/libosip2.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH/libvorbis.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $LIBS_PATCH_PATH/mbedtls.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $LIBS_PATCH_PATH/neon.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH/openjp2.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH/opus.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH/protobuf-c.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH/speex.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
@@ -93,6 +94,7 @@ patch -p0 -b < libosip2.patch
 patch -p0 -b < libvorbis.patch
 #patch -p0 -b < mbedtls.patch
 #patch -p0 -b < neon.patch
+patch -p0 -b < openjp2.patch
 patch -p0 -b < opus.patch
 patch -p0 -b < protobuf-c.patch
 patch -p0 -b < speex.patch
@@ -141,6 +143,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/libosip2.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/libvorbis.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/mbedtls.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/neon.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/openjp2.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/opus.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/protobuf-c.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/speex.patch" 2>/dev/null
