@@ -173,7 +173,7 @@ cp -ar $PKGS_PATCH_PATH/imagemagick.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $PKGS_PATCH_PATH/irssi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $PKGS_PATCH_PATH/knock.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $PKGS_PATCH_PATH/libmodudevm.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $PKGS_PATCH_PATH/mc.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#cp -ar $PKGS_PATCH_PATH/mc.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $PKGS_PATCH_PATH/minisatip.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $PKGS_PATCH_PATH/pcsc-lite.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $PKGS_PATCH_PATH/tiff.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
@@ -198,7 +198,7 @@ patch -p0 -b < imagemagick.patch
 patch -p0 -b < irssi.patch
 #patch -p0 -b < knock.patch
 #patch -p0 -b < libmodudevm.patch
-patch -p0 -b < mc.patch
+#patch -p0 -b < mc.patch
 patch -p0 -b < minisatip.patch
 #patch -p0 -b < pcsc-lite.patch
 patch -p0 -b < tiff.patch
@@ -232,7 +232,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/imagemagick.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/irssi.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/knock.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/libmodudevm.patch" 2>/dev/null
-rm -rf "$FREETZ_SSL_HOME_PATH/mc.patch" 2>/dev/null
+#rm -rf "$FREETZ_SSL_HOME_PATH/mc.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/minisatip.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/pcsc-lite.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/tiff.patch" 2>/dev/null

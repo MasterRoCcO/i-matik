@@ -1,9 +1,0 @@
-#!/bin/bash
-rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/mc/mc.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/mc/Config.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/mc/patches/020-no_macro_examples.patch 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/mc/patches/030-no_docs.patch 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/pkgs/mc/mc.mk.orig $FREETZ_SSL_HOME_PATH/make/pkgs/mc/mc.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/pkgs/mc/Config.in.orig $FREETZ_SSL_HOME_PATH/make/pkgs/mc/Config.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/pkgs/mc/patches/020-no_macro_examples.patch.orig $FREETZ_SSL_HOME_PATH/make/pkgs/mc/patches/020-no_macro_examples.patch 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/pkgs/mc/patches/030-no_docs.patch.orig $FREETZ_SSL_HOME_PATH/make/pkgs/mc/patches/030-no_docs.patch 2>/dev/null
