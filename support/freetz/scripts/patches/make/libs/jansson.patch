@@ -3,11 +3,11 @@
 @@ -1,7 +1,7 @@
 -$(call PKG_INIT_LIB, 2.7)
 -$(PKG)_LIB_VERSION:=4.7.0
-+$(call PKG_INIT_LIB, 2.13)
++$(call PKG_INIT_LIB, 2.13.1)
 +$(PKG)_LIB_VERSION:=4.12.0
  $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
 -$(PKG)_HASH:=7905e6590fb316c0ff943df3dc6a21cd81a59cff7a6d12514054c359d04d78d7
-+$(PKG)_HASH:=02c31bc16e702b30feb06d18bbfe086c0d8c938e906950980af7adcdb324541b
++$(PKG)_HASH:=f4f377da17b10201a60c1108613e78ee15df6b12016b116b6de42209f47a474f
  $(PKG)_SITE:=http://www.digip.org/jansson/releases
  
  $(PKG)_LIBNAME:=lib$(pkg).so.$($(PKG)_LIB_VERSION)
