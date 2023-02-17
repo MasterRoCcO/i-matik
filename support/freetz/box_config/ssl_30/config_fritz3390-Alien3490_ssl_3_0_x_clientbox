@@ -884,7 +884,7 @@ FREETZ_LIB_libgcc_s=y
 #
 # GLib
 #
-FREETZ_LIB_libglib_2=y
+# FREETZ_LIB_libglib_2 is not set
 # FREETZ_LIB_libgio_2 is not set
 # FREETZ_LIB_libgobject_2 is not set
 # FREETZ_LIB_libgmodule_2 is not set
@@ -972,7 +972,7 @@ FREETZ_LIB_libglib_2=y
 #
 # ncurses
 #
-FREETZ_SHARE_terminfo=y
+# FREETZ_SHARE_terminfo is not set
 FREETZ_SHARE_terminfo_ansi=y
 FREETZ_SHARE_terminfo_gnome=y
 FREETZ_SHARE_terminfo_konsole=y
@@ -1075,7 +1075,7 @@ FREETZ_LIB_libncursesw=y
 # Regular expressions
 #
 # FREETZ_LIB_libonig is not set
-FREETZ_LIB_libpcre=y
+# FREETZ_LIB_libpcre is not set
 # FREETZ_LIB_libpcreposix is not set
 # FREETZ_LIB_libpcre2 is not set
 # FREETZ_LIB_libpcre2_posix is not set
@@ -2834,7 +2834,7 @@ FREETZ_TARGET_BINUTILS_2_39_DEFAULT=y
 # FREETZ_TARGET_BINUTILS_2_25 is not set
 # FREETZ_TARGET_BINUTILS_2_26 is not set
 # FREETZ_TARGET_BINUTILS_2_38 is not set
-FREETZ_TARGET_BINUTILS_2_39=y
+FREETZ_TARGET_BINUTILS_2_38=y
 FREETZ_TARGET_GCC_5=y
 FREETZ_TARGET_GCC_4_MIN=y
 FREETZ_TARGET_GCC_4_6_MIN=y

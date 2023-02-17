@@ -9,15 +9,16 @@ FREETZ_HAVE_DOT_CONFIG=y
 #
 
 #
-#  freetz-ng 20521MS-bf1a5149f master 2022-11-29
+#  freetz-ng 20570MS-396a16b24 master 2022-12-06
 #
 
 #
 # User competence ------------------------------------------
 #
-FREETZ_USER_LEVEL_BEGINNER=y
-# FREETZ_USER_LEVEL_EXPERT is not set
+# FREETZ_USER_LEVEL_BEGINNER is not set
+FREETZ_USER_LEVEL_EXPERT=y
 # FREETZ_USER_LEVEL_DEVELOPER is not set
+FREETZ_SHOW_EXPERT=y
 
 #
 # Hardware/Firmware ----------------------------------------
@@ -171,11 +172,13 @@ FREETZ_TYPE_LANG_DE=y
 # FREETZ_TYPE_LANG_EN is not set
 FREETZ_TYPE_LANGUAGE="xx"
 FREETZ_TYPE_FIRMWARE_07_25=y
+# FREETZ_TYPE_FIRMWARE_07_5X_INHAUS is not set
 
 #
 #  >> This firmware fits on AVM and AVME devices
 #
 FREETZ_AVM_VERSION_LATEST_MAJOR=y
+# FREETZ_TYPE_FIRMWARE_DETECT_LATEST is not set
 FREETZ_TYPE_FIRMWARE_FINAL=y
 
 #
@@ -207,12 +210,14 @@ FREETZ_TARGET_IPV6_SUPPORT=y
 #
 # Removal patches
 #
+# FREETZ_SELECT_HARDENING is not set
 
 #
 # Removal patches ------------------------------------------
 #
 FREETZ_REMOVE_LEFTOVER=y
 FREETZ_REMOVE_MULTI_ANNEX_FIRMWARE_DIFFS=y
+# FREETZ_REMOVE_MULTI_ANNEX_FIRMWARE_PRIME is not set
 # FREETZ_REMOVE_DSLD is not set
 FREETZ_REMOVE_SHOWDSLDSTAT=y
 FREETZ_REMOVE_ASSISTANT=y
@@ -241,6 +246,8 @@ FREETZ_REMOVE_HELP=y
 FREETZ_REMOVE_SAMBA=y
 FREETZ_REMOVE_SUPPORT=y
 # FREETZ_REMOVE_SUPPORT_EVENTSDUMP is not set
+# FREETZ_REMOVE_PUBKEY is not set
+# FREETZ_REMOVE_TR069 is not set
 # FREETZ_REMOVE_UMTSD is not set
 # FREETZ_REMOVE_UPNP is not set
 FREETZ_REMOVE_KIDS=y
@@ -283,6 +290,7 @@ FREETZ_PATCH_MODFS_BOOT_MANAGER_tested=y
 # Replacement patches --------------------------------------
 #
 # FREETZ_REPLACE_DTRACE is not set
+# FREETZ_REPLACE_ONLINECHANGED is not set
 
 #
 # Additional patches ---------------------------------------
@@ -290,6 +298,7 @@ FREETZ_PATCH_MODFS_BOOT_MANAGER_tested=y
 # FREETZ_ADD_TELNETD is not set
 FREETZ_CUSTOM_ETCSERVICES=y
 # FREETZ_ADD_ETCNETCONFIG is not set
+# FREETZ_ENFORCE_URLADER_SETTINGS is not set
 FREETZ_ENFORCE_FIRMWARE_VERSION_VIA_RCCONF=""
 
 #
@@ -710,6 +719,7 @@ FREETZ_WGET=y
 # FREETZ_PACKAGE_SANE_BACKENDS is not set
 # FREETZ_PACKAGE_SCANBUTTOND is not set
 # FREETZ_PACKAGE_USBROOT is not set
+# FREETZ_PACKAGE_VIRTUALIP_CGI is not set
 # FREETZ_PACKAGE_ZABBIX is not set
 # end of Unstable
 
@@ -735,6 +745,10 @@ FREETZ_PACKAGE_SYSLOGD_CGI=y
 # FREETZ_PACKAGE_WOL_CGI is not set
 # end of Web interfaces
 # end of Packages
+
+#
+# Shared libraries
+#
 
 #
 # Apache Portable Runtime libs
@@ -873,7 +887,7 @@ FREETZ_LIB_libgcc_s=y
 #
 # GLib
 #
-FREETZ_LIB_libglib_2=y
+# FREETZ_LIB_libglib_2 is not set
 # FREETZ_LIB_libgio_2 is not set
 # FREETZ_LIB_libgobject_2 is not set
 # FREETZ_LIB_libgmodule_2 is not set
@@ -961,7 +975,7 @@ FREETZ_LIB_libglib_2=y
 #
 # ncurses
 #
-FREETZ_SHARE_terminfo=y
+# FREETZ_SHARE_terminfo is not set
 FREETZ_SHARE_terminfo_ansi=y
 FREETZ_SHARE_terminfo_gnome=y
 FREETZ_SHARE_terminfo_konsole=y
@@ -1064,7 +1078,7 @@ FREETZ_LIB_libncursesw=y
 # Regular expressions
 #
 # FREETZ_LIB_libonig is not set
-FREETZ_LIB_libpcre=y
+# FREETZ_LIB_libpcre is not set
 # FREETZ_LIB_libpcreposix is not set
 # FREETZ_LIB_libpcre2 is not set
 # FREETZ_LIB_libpcre2_posix is not set
@@ -1131,6 +1145,11 @@ FREETZ_LIB_libuClibc=y
 # FREETZ_LIB_libltdl is not set
 # FREETZ_LIB_libuv is not set
 # FREETZ_LIB_libyaml is not set
+# end of Shared libraries
+
+#
+# Kernel modules
+#
 FREETZ_MODULES_OWN=""
 
 #
@@ -1245,7 +1264,11 @@ FREETZ_MODULES_OWN=""
 # FREETZ_MODULE_sch_sfq is not set
 # FREETZ_MODULE_sch_tbf is not set
 # end of net
+# end of Kernel modules
 
+#
+# Busybox applets
+#
 FREETZ_BUSYBOX__VERSION_V134=y
 # FREETZ_BUSYBOX__VERSION_V135 is not set
 FREETZ_BUSYBOX__VERSION_STRING="1.34.1"
@@ -2697,6 +2720,7 @@ FREETZ_BUSYBOX___V134_FEATURE_IPC_SYSLOG=y
 FREETZ_BUSYBOX___V134_FEATURE_IPC_SYSLOG_BUFFER_SIZE=16
 # FREETZ_BUSYBOX___V134_FEATURE_KMSG_SYSLOG is not set
 # end of System Logging Utilities
+# end of Busybox applets
 
 # EXTERNAL_ENABLED is not set
 
@@ -2743,6 +2767,9 @@ FREETZ_TAGGING_STRING="pimped"
 FREETZ_WEBIF_LINK=y
 # end of Web Interface
 
+#
+# Additional informations
+#
 FREETZ_ADD_JUIS_CHECK=y
 # FREETZ_ADD_JUIS_CHECK__SSL is not set
 # FREETZ_REMOVE_BOX_INFO is not set
@@ -2761,8 +2788,18 @@ FREETZ_IMAGE_NAME_REGION=y
 FREETZ_IMAGE_NAME_FREETZ=y
 # FREETZ_IMAGE_NAME_TIMESTAMP is not set
 FREETZ_CREATE_SEPARATE_OPTIONS_CFG=y
+# FREETZ_DOT_CONFIG_DONOTADD is not set
 FREETZ_DOT_CONFIG_STRIPPED=y
 # FREETZ_DOT_CONFIG_COMPLETE is not set
+# end of Additional informations
+
+#
+# Build system ---------------------------------------------
+#
+
+#
+# Toolchain options
+#
 FREETZ_BUILD_TOOLCHAIN=y
 # FREETZ_TOOLCHAIN_CCACHE is not set
 FREETZ_TOOLCHAIN_MINIMIZE_REQUIRED_GLIBC_VERSION=y
@@ -2791,7 +2828,7 @@ FREETZ_TARGET_BINUTILS_2_39_DEFAULT=y
 # FREETZ_TARGET_BINUTILS_2_25 is not set
 # FREETZ_TARGET_BINUTILS_2_26 is not set
 # FREETZ_TARGET_BINUTILS_2_38 is not set
-FREETZ_TARGET_BINUTILS_2_39=y
+FREETZ_TARGET_BINUTILS_2_38=y
 FREETZ_TARGET_GCC_5=y
 FREETZ_TARGET_GCC_4_MIN=y
 FREETZ_TARGET_GCC_4_6_MIN=y
@@ -2832,6 +2869,11 @@ FREETZ_TARGET_UCLIBC_PROVIDES_SSP=y
 FREETZ_ROOTEMU_PSEUDO=y
 # FREETZ_HOSTTOOLS_DOWNLOAD is not set
 FREETZ_HOSTTOOLS_BUILD=y
+# end of Toolchain options
+
+#
+# Build system options
+#
 FREETZ_MENUCONFIG_REVISION=y
 # FREETZ_MENUCONFIG_BUTTONS is not set
 # FREETZ_VERBOSITY_LEVEL_0 is not set
@@ -2842,20 +2884,40 @@ FREETZ_SIZEINFO_COMPRESSED=y
 # FREETZ_SIZEINFO_UNCOMPRESSED is not set
 FREETZ_JLEVEL=20
 FREETZ_CHECK_CHANGED=y
+# end of Build system options
+
+#
+# Firmware packaging (fwmod) options
+#
 # FREETZ_FWMOD_SKIP_UNPACK is not set
 FREETZ_FWMOD_VALIDATE=y
 # FREETZ_FWMOD_SKIP_MODIFY is not set
 # FREETZ_FWMOD_SKIP_PACK is not set
 FREETZ_FWMOD_SIGN=y
 FREETZ_FWMOD_SIGN_PASSWORD="freetz"
+# end of Firmware packaging (fwmod) options
+
+#
+# SquashFS options
+#
 # FREETZ_SQUASHFS_BLOCKSIZE_ORIG is not set
 FREETZ_SQUASHFS_BLOCKSIZE_65536=y
 FREETZ_SQUASHFS_BLOCKSIZE=65536
+# end of SquashFS options
+
+#
+# Strip options
+#
 FREETZ_STRIP_BINARIES=y
 # FREETZ_STRIP_MODULES_NONE is not set
 FREETZ_STRIP_MODULES_FREETZ=y
 # FREETZ_STRIP_MODULES_ALL is not set
 # FREETZ_STRIP_SCRIPTS is not set
+# end of Strip options
+
+#
+# Download options
+#
 FREETZ_DL_SITE_USER=""
 FREETZ_DL_VCS_REPO_FIRST=y
 FREETZ_DL_VCS_FROM_MIRRORS=y
@@ -2865,6 +2927,7 @@ FREETZ_DL_KERNEL_TOOLCHAIN_HASH="27dd13cc4ed142e8b1616ae96f75b548925e49eb5602d1b
 FREETZ_DL_TARGET_TOOLCHAIN_VERSION="r19900"
 FREETZ_DL_TARGET_TOOLCHAIN_HASH="X"
 FREETZ_DL_TOOLCHAIN_SUFFIX="shared-glibc"
+# FREETZ_DL_KERNEL_OVERRIDE is not set
 FREETZ_DL_KERNEL_SOURCE_ID="7530_07.25"
 FREETZ_DL_KERNEL_AVMPACK_SOURCE="${FREETZ_DL_KERNEL_SOURCE_ID}${FREETZ_SYSTEM_TYPE_CORE_SUFFIX}-release_kernel.tar.xz"
 FREETZ_DL_KERNEL_AVMPACK_HASH="bd80ab0e4f9bed9fd30dfdf971be03b79ffad9a23dc12ba8e14edea6a5c50167"
@@ -2873,8 +2936,11 @@ FREETZ_DL_KERNEL_VANILLA_HASH="ee98e905ae1a9d285cd1fee2d4c94f4dc0623ef477ce7762f
 FREETZ_DL_KERNEL_AVMDIFF_VERSION="ADv1"
 FREETZ_DL_KERNEL_AVMDIFF_SOURCE="kernel_${FREETZ_KERNEL_VERSION}-${FREETZ_DL_KERNEL_SOURCE_ID}${FREETZ_SYSTEM_TYPE_CORE_SUFFIX}-${FREETZ_DL_KERNEL_AVMDIFF_VERSION}.patch.xz"
 FREETZ_DL_KERNEL_AVMDIFF_HASH="5b145c4550c45cb4925198ff348e94e3ae6811861fd82373d3ecaa384cb81775"
+# FREETZ_DL_OVERRIDE is not set
 FREETZ_DL_SITE="@AVM/fritzbox-7520-B/deutschland/fritz.os,@1&1/7520B"
 FREETZ_DL_SOURCE="FRITZ.Box_7520_B-07.31.image"
+# end of Download options
+
 FREETZ_AVM_HAS_FIRMWARE_07_25=y
 FREETZ_AVM_HAS_FIRMWARE_07_5X_INHAUS=y
 FREETZ_AVM_HAS_LANG_DE=y

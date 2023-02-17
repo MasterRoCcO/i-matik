@@ -883,7 +883,7 @@ FREETZ_LIB_libgcc_s=y
 #
 # GLib
 #
-FREETZ_LIB_libglib_2=y
+# FREETZ_LIB_libglib_2 is not set
 # FREETZ_LIB_libgio_2 is not set
 # FREETZ_LIB_libgobject_2 is not set
 # FREETZ_LIB_libgmodule_2 is not set
@@ -1073,7 +1073,7 @@ FREETZ_LIB_libncursesw=y
 # Regular expressions
 #
 # FREETZ_LIB_libonig is not set
-FREETZ_LIB_libpcre=y
+# FREETZ_LIB_libpcre is not set
 # FREETZ_LIB_libpcreposix is not set
 # end of Regular expressions
 

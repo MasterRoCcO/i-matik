@@ -881,7 +881,7 @@ FREETZ_LIB_libgcc_s=y
 #
 # GLib
 #
-FREETZ_LIB_libglib_2=y
+# FREETZ_LIB_libglib_2 is not set
 # FREETZ_LIB_libgio_2 is not set
 # FREETZ_LIB_libgobject_2 is not set
 # FREETZ_LIB_libgmodule_2 is not set
@@ -1070,7 +1070,7 @@ FREETZ_LIB_libncursesw=y
 # Regular expressions
 #
 # FREETZ_LIB_libonig is not set
-FREETZ_LIB_libpcre=y
+# FREETZ_LIB_libpcre is not set
 # FREETZ_LIB_libpcreposix is not set
 # end of Regular expressions
 
@@ -2731,8 +2731,8 @@ EXTERNAL_FREETZ_PACKAGE_USBUTILS=y
 EXTERNAL_FREETZ_LIB_libcrypto=y
 EXTERNAL_FREETZ_LIB_libssl=y
 EXTERNAL_FREETZ_LIB_libncursesw=y
-EXTERNAL_FREETZ_LIB_libglib_2=y
-EXTERNAL_FREETZ_LIB_libpcre=y
+EXTERNAL_# FREETZ_LIB_libglib_2 is not set
+EXTERNAL_# FREETZ_LIB_libpcre is not set
 EXTERNAL_FREETZ_LIB_libpcsclite=y
 EXTERNAL_FREETZ_LIB_libusb_1=y
 
