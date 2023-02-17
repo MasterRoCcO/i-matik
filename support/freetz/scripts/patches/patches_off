@@ -16,7 +16,7 @@ source $AVM_PATCH_PATH/features
 source $LIBS_PATCH_PATH/bluez-libs
 source $LIBS_PATCH_PATH/db
 source $LIBS_PATCH_PATH/flac
-#source $LIBS_PATCH_PATH/freetype
+source $LIBS_PATCH_PATH/freetype
 #source $LIBS_PATCH_PATH/gettext
 source $LIBS_PATCH_PATH/gsasl
 source $LIBS_PATCH_PATH/jansson

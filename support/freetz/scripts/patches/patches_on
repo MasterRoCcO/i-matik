@@ -34,7 +34,7 @@ echo -e ${GREEN}"Freetz files patch for libs."${NC}
 cp -ar $LIBS_PATCH_PATH/bluez-libs.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH/db.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH/flac.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#cp -ar $LIBS_PATCH_PATH/freetype.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $LIBS_PATCH_PATH/freetype.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $LIBS_PATCH_PATH/gettext.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH/gsasl.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $LIBS_PATCH_PATH/jansson.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
@@ -70,7 +70,7 @@ cp -ar $LIBS_PATCH_PATH/yaml.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < bluez-libs.patch
 patch -p0 -b < db.patch
 patch -p0 -b < flac.patch
-#patch -p0 -b < freetype.patch
+patch -p0 -b < freetype.patch
 #patch -p0 -b < gettext.patch
 patch -p0 -b < gsasl.patch
 patch -p0 -b < jansson.patch
@@ -120,7 +120,7 @@ mv $FREETZ_SSL_HOME_PATH/make/libs/speex/patches $FREETZ_SSL_HOME_PATH/make/libs
 rm -rf "$FREETZ_SSL_HOME_PATH/bluez-libs.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/db.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/flac.patch" 2>/dev/null
-#rm -rf "$FREETZ_SSL_HOME_PATH/freetype.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/freetype.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/gettext.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/gsasl.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/jansson.patch" 2>/dev/null
