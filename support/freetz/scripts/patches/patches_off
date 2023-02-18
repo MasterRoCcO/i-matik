@@ -71,7 +71,6 @@ source $PKGS_PATCH_PATH/irssi
 #source $PKGS_PATCH_PATH/mc
 source $PKGS_PATCH_PATH/minisatip
 #source $PKGS_PATCH_PATH/pcsc-lite
-source $PKGS_PATCH_PATH/no_rrdstats_1_8
 source $PKGS_PATCH_PATH/tiff
 #source $PKGS_PATCH_PATH/tor
 source $PKGS_PATCH_PATH/tree
@@ -79,4 +78,5 @@ source $PKGS_PATCH_PATH/tree
 #source $PKGS_PATCH_PATH/zabbix
 
 # fix for freetz-ng
-
+source $PKGS_FIX_PATH/no_rrdstats_1_8
+source $PKGS_FIX_PATH/openssl

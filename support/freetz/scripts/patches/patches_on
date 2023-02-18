@@ -246,3 +246,6 @@ echo -e ${GREEN}"Freetz files patch for fix."${NC}
 cp -ar $PKGS_FIX_PATH/no_rrdstats_1_8.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < no_rrdstats_1_8.patch
 rm -rf "$FREETZ_SSL_HOME_PATH/no_rrdstats_1_8.patch" 2>/dev/null
+cp -ar $PKGS_FIX_PATH/openssl.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < openssl.patch
+rm -rf "$FREETZ_SSL_HOME_PATH/openssl.patch" 2>/dev/null
