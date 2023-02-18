@@ -1,6 +1,6 @@
 --- make/pkgs/rrdtool/Config.in	2023-02-18 02:32:23.354472000 +0100
 +++ make/pkgs/rrdtool/Config.in	2023-02-18 13:36:24.134363265 +0100
-@@ -26,7 +26,7 @@
+@@ -26,7 +27,7 @@
  
  		config FREETZ_PACKAGE_RRDTOOL_VERSION_CURRENT
  			bool "1.8.0"
