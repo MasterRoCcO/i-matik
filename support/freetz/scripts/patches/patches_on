@@ -176,6 +176,7 @@ cp -ar $PKGS_PATCH_PATH/irssi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $PKGS_PATCH_PATH/mc.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $PKGS_PATCH_PATH/minisatip.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $PKGS_PATCH_PATH/pcsc-lite.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $PKGS_PATCH_PATH/no_rrdstats_1_8.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $PKGS_PATCH_PATH/tiff.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 #cp -ar $PKGS_PATCH_PATH/tor.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $PKGS_PATCH_PATH/tree.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
@@ -201,6 +202,7 @@ patch -p0 -b < irssi.patch
 #patch -p0 -b < mc.patch
 patch -p0 -b < minisatip.patch
 #patch -p0 -b < pcsc-lite.patch
+patch -p0 -b < no_rrdstats_1_8.patch
 patch -p0 -b < tiff.patch
 #patch -p0 -b < tor.patch
 patch -p0 -b < tree.patch
@@ -235,6 +237,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/irssi.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/mc.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/minisatip.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/pcsc-lite.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/no_rrdstats_1_8.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/tiff.patch" 2>/dev/null
 #rm -rf "$FREETZ_SSL_HOME_PATH/tor.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/tree.patch" 2>/dev/null

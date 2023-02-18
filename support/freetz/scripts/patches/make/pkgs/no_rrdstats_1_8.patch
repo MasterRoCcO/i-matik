@@ -1,0 +1,11 @@
+--- make/pkgs/rrdtool/Config.in	2023-02-18 02:32:23.354472000 +0100
++++ make/pkgs/rrdtool/Config.in	2023-02-18 13:36:24.134363265 +0100
+@@ -26,7 +26,7 @@
+ 
+ 		config FREETZ_PACKAGE_RRDTOOL_VERSION_CURRENT
+ 			bool "1.8.0"
+-			depends on FREETZ_SEPARATE_AVM_UCLIBC
++			depends on FREETZ_SEPARATE_AVM_UCLIBC && !FREETZ_TYPE_6430 && !FREETZ_TYPE_6490 && !FREETZ_TYPE_6590
+ 			help
+ 				This version needs about 3,7MB (including all libs).
+ 
