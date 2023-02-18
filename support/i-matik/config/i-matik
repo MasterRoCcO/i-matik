@@ -99,9 +99,6 @@ BAD_KERNEL6="4.19.183"
 BAD_OS="07_5X"
 BAD_TYP="7490"
 
-#autoupdate rrdtools 1.2.30 to 1.8.0
-RRD_AUTO="07_5X"
-
 #define int region an os
 INT_REGION="y"
 
