@@ -27,7 +27,6 @@ elif [ ! -d "$OSCAM_PATH/oscam-svn" ]; then
 #	printf "${YELLOW}'$OSCAM_PATH/oscam-svn' already exists but is not a directory${NC}" 1>&2
 	exit 1
 fi
-
 	cd "$OSCAM_PATH" && git pull
 	cp -ar /$MY_FILES_HOME_PATH_OSCAM/* "$OSCAM_PATH/" 2>/dev/null
 	cp -ar /$PRIVAT_MY_FILES_HOME_PATH_OSCAM/support/i-matik.cfg "$OSCAM_PATH/support/" 2>/dev/null
@@ -63,7 +62,7 @@ if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn${OSCAMVERSION_
 	mv $OSCAM_PATH/support/binaries/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz_${FB_ARCH}_${FB_OS}-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8}-upx $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8}.upx
 		
 elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8}.upx ]]; then
-	echo -e "${GREEN}$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8}.upx already exists${NC}" 1>&2
+	printf "${GREEN}$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8}.upx already exists${NC}"
 fi
 	cd $OSCAM_PATH/oscam-svn
 	patch -p0 -R < oscam-emu.patch
