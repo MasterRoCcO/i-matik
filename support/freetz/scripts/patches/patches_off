@@ -8,6 +8,9 @@ source $I_MATIK_PATCH_PATH/motd
 
 # dl-firmware
 source $MOD_PATCH_PATH/dl-firmware
+# fix for freetz-ng
+source $PKGS_FIX_PATH/no_rrdstats_1_8
+source $PKGS_FIX_PATH/openssl
 
 # features
 source $AVM_PATCH_PATH/features
@@ -76,7 +79,3 @@ source $PKGS_PATCH_PATH/tiff
 source $PKGS_PATCH_PATH/tree
 #source $PKGS_PATCH_PATH/xz
 #source $PKGS_PATCH_PATH/zabbix
-
-# fix for freetz-ng
-source $PKGS_FIX_PATH/no_rrdstats_1_8
-source $PKGS_FIX_PATH/openssl
