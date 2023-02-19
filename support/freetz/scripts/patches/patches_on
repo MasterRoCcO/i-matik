@@ -17,13 +17,11 @@ rm -rf "$FREETZ_SSL_HOME_PATH/info.cgi.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/menu-new.sh.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/motd.patch" 2>/dev/null
 
-# dl-firmware
-echo -e ${GREEN}"Freetz files patch for dl-firmware."${NC}
-cp -ar $MOD_PATCH_PATH/dl-firmware.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-patch -p0 -b < dl-firmware.patch
-rm -rf "$FREETZ_SSL_HOME_PATH/dl-firmware.patch" 2>/dev/null
 # fix for freetz-ng
 echo -e ${GREEN}"Freetz files patch for fix."${NC}
+cp -ar $MOD_FIX_PATH/dl-firmware.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < dl-firmware.patch
+rm -rf "$FREETZ_SSL_HOME_PATH/dl-firmware.patch" 2>/dev/null
 cp -ar $PKGS_FIX_PATH/no_rrdstats_1_8.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < no_rrdstats_1_8.patch
 rm -rf "$FREETZ_SSL_HOME_PATH/no_rrdstats_1_8.patch" 2>/dev/null

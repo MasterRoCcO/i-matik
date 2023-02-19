@@ -27,7 +27,7 @@ VERSION="$I_MATIK_PATH/support/i-matik/config/version"
 BOX_ARCH_PATH="$I_MATIK_PATH/support/i-matik/box_arch"
 #BOX_ARCH="$I_MATIK_PATH/support/i-matik/box_arch_NEU"
 CONFIG_USER_PATH="$I_MATIK_PATH/support/i-matik/config_user/i-matik"
-CONFIG_PRIVAT_PATH="$I_MATIK_PATH/support/i-matik/config/privat"
+CONFIG_PRIVAT_PATH="$I_MATIK_PATH/support/i-matik/config/privat" 2>/dev/null
 
 #define the openssl version for SKIP_CLIENT and SKIP_MASTER 
 FREETZ_SSL_VERSION_10="ssl_1_0_x"
@@ -44,16 +44,17 @@ PATCH_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/patches_off"
 
 # i-matik patch path
 I_MATIK_PATCH_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/i-matik"
-# dl-firmware
+# MOD
 MOD_PATCH_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/config/mod"
+MOD_FIX_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/fix/config/mod"
 # features
 AVM_PATCH_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/config/avm"
 # libs
 LIBS_PATCH_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/make/libs"
-LIBS_FIX_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/fix/libs"
+LIBS_FIX_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/fix/make/libs"
 # packages
 PKGS_PATCH_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/make/pkgs"
-PKGS_FIX_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/fix/pkgs"
+PKGS_FIX_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/fix/make/pkgs"
 PKGS_PATH_ON_OFF="$I_MATIK_PATH/support/freetz/scripts/pkgs_on_off"
 PKGS_OFF="$PKGS_PATH_ON_OFF/pkgs_off"
 PKGS_ON="$PKGS_PATH_ON_OFF/pkgs_on"
@@ -66,7 +67,7 @@ USER_APPLICATION_OFF="$I_MATIK_PATH/support/freetz/scripts/user_scripts/user-app
 DOWNGRADE_ON="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_on"
 DOWNGRADE_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_off"
 #libusb1 
-LIBUSB1_7530AX="7530_AX"
+LIBUSB1_7530AX="7530_AX1"
 
 #fix check
 FIX_CHECK_ON="$I_MATIK_PATH/support/freetz/scripts/fix_check/fix_check_on"
@@ -102,7 +103,6 @@ BAD_OS="07_5X"
 BAD_TYP1="7490"
 BAD_TYP2="6490"
 BAD_TYP3="6590"
-
 
 #define int region an os
 INT_REGION="y"
