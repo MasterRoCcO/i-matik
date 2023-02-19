@@ -14,14 +14,17 @@ elif [ $BOX_ARCH_FOR_PATCHELF = $PATCHELF_MIPSEL ]
 elif [ $NO_GLIB2_FOR = $NO_GLIB2_6430 ]
 	then
 		sed -i "s+FREETZ_LIB_libglib_2=y+# FREETZ_LIB_libglib_2 is not set+g" $FREETZ_SSL_HOME_PATH/.config
+		sed -i "s+FREETZ_LIB_libglib_2_VERSION_CURRENT=y+# FREETZ_LIB_libglib_2_VERSION_CURRENT is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_PACKAGE_MC=y+# FREETZ_PACKAGE_MC is not set+g" $FREETZ_SSL_HOME_PATH/.config
 elif [ $NO_GLIB2_FOR = $NO_GLIB2_6490 ]
 	then
 		sed -i "s+FREETZ_LIB_libglib_2=y+# FREETZ_LIB_libglib_2 is not set+g" $FREETZ_SSL_HOME_PATH/.config
+		sed -i "s+FREETZ_LIB_libglib_2_VERSION_CURRENT=y+# FREETZ_LIB_libglib_2_VERSION_CURRENT is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_PACKAGE_MC=y+# FREETZ_PACKAGE_MC is not set+g" $FREETZ_SSL_HOME_PATH/.config
 elif [ $NO_GLIB2_FOR = $NO_GLIB2_6590 ]
 	then
 		sed -i "s+FREETZ_LIB_libglib_2=y+# FREETZ_LIB_libglib_2 is not set+g" $FREETZ_SSL_HOME_PATH/.config
+		sed -i "s+FREETZ_LIB_libglib_2_VERSION_CURRENT=y+# FREETZ_LIB_libglib_2_VERSION_CURRENT is not set+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_PACKAGE_MC=y+# FREETZ_PACKAGE_MC is not set+g" $FREETZ_SSL_HOME_PATH/.config
 fi
 if [ -f $FREETZ_SSL_HOME_PATH/tools/patchelf ]; then
