@@ -3,6 +3,7 @@ if [ -z $PARAM_OSCAM ]; then
 		sleep 0
 	else
 		sed -i "s+FREETZ_PACKAGE_OSCAM=y+# FREETZ_PACKAGE_OSCAM is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_PACKAGE_OSCAM_ALT=y+# FREETZ_PACKAGE_OSCAM_ALT is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_CCID=y+# FREETZ_PACKAGE_CCID is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_PCSC_LITE=y+# FREETZ_PACKAGE_PCSC_LITE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_LIB_libpcsclite=y+# FREETZ_LIB_libpcsclite is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
@@ -42,6 +43,7 @@ if [ -z $PARAM_OSCAM_EMU ]; then
 		sleep 0
 	else
 		sed -i "s+FREETZ_PACKAGE_OSCAM=y+# FREETZ_PACKAGE_OSCAM is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_PACKAGE_OSCAM_ALT=y+# FREETZ_PACKAGE_OSCAM_ALT is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_CCID=y+# FREETZ_PACKAGE_CCID is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_PCSC_LITE=y+# FREETZ_PACKAGE_PCSC_LITE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_LIB_libpcsclite=y+# FREETZ_LIB_libpcsclite is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
@@ -81,6 +83,7 @@ if [ -z $PARAM_OSCAM_SMOD ]; then
 		sleep 0
 	else
 		sed -i "s+FREETZ_PACKAGE_OSCAM=y+# FREETZ_PACKAGE_OSCAM is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_PACKAGE_OSCAM_ALT=y+# FREETZ_PACKAGE_OSCAM_ALT is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_CCID=y+# FREETZ_PACKAGE_CCID is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_PCSC_LITE=y+# FREETZ_PACKAGE_PCSC_LITE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_LIB_libpcsclite=y+# FREETZ_LIB_libpcsclite is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
@@ -120,6 +123,7 @@ if [ -z $PARAM_OSCAM_TOOL ]; then
 		sleep 0
 	else
 		sed -i "s+FREETZ_PACKAGE_OSCAM=y+# FREETZ_PACKAGE_OSCAM is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_PACKAGE_OSCAM_ALT=y+# FREETZ_PACKAGE_OSCAM_ALT is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_CCID=y+# FREETZ_PACKAGE_CCID is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_PCSC_LITE=y+# FREETZ_PACKAGE_PCSC_LITE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_LIB_libpcsclite=y+# FREETZ_LIB_libpcsclite is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null

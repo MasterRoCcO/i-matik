@@ -1,5 +1,6 @@
 #!/bin/bash
 sed -i "s+# FREETZ_PACKAGE_OSCAM is not set+FREETZ_PACKAGE_OSCAM=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+# FREETZ_PACKAGE_OSCAM_ALT is not set+FREETZ_PACKAGE_OSCAM_ALT=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 sed -i "s+# FREETZ_PACKAGE_CCID is not set+FREETZ_PACKAGE_CCID=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 sed -i "s+# FREETZ_PACKAGE_PCSC_LITE is not set+FREETZ_PACKAGE_PCSC_LITE=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 sed -i "s+# FREETZ_LIB_libpcsclite is not set+FREETZ_LIB_libpcsclite=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
