@@ -24,5 +24,4 @@ elif [ $NO_GLIB2_FOR = $NO_GLIB2_6590 ]
 		sed -i "s+# FREETZ_LIB_libglib_2 is not set+FREETZ_LIB_libglib_2=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_LIB_libglib_2_VERSION_CURRENT is not set+FREETZ_LIB_libglib_2_VERSION_CURRENT=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_PACKAGE_MC is not set+FREETZ_PACKAGE_MC=y+g" $FREETZ_SSL_HOME_PATH/.config
-		
 fi
