@@ -1,18 +1,17 @@
 #!/bin/bash
 if [[ $(lsb_release -rs) == "20.04" ]] || [[ $(lsb_release -rs) == "21.10" ]] || [[ $(lsb_release -rs) == "22.04" ]] || [[ $(lsb_release -rs) == "10" ]] || [[ $(lsb_release -rs) == "11" ]]; then # replace 20.04 by the number of release you want
 
-PACKAGES="  cpio pv rsync kmod java-wrappers sqlite3 libsqlite3-dev flex tofrodos gettext pkg-config ecj perl gawk net-tools ncftp libxml2-dev"
-PACKAGES+=" bzip2 unar inkscape imagemagick graphicsmagick subversion git bc wget curl sudo cmake ccache unzip zip intltool patchutils gcc-multilib sharutils"
-PACKAGES+=" gcc g++ binutils autoconf automake autopoint libtool-bin make bison patch texinfo lib32ncurses-dev libcap-dev bsdmainutils"
-PACKAGES+=" libzstd-dev libc6-dev netcat lib32z1-dev libncurses5-dev libreadline-dev zlib1g-dev libacl1-dev lib32stdc++6 libglib2.0-dev libusb-dev"
-PACKAGES+=" uuid-dev libssl-dev libgnutls28-dev u-boot-tools device-tree-compiler libelf-dev" # for FIT-Image
-PACKAGES+=" execstack python2 python-is-python3 openjdk-11-jdk-headless gcc-9-multilib meson liblzma-dev"
-#PACKAGES+=" libzstd-dev:i386 libc6-dev-i386 ninja-build"
+PACKAGES="  autoconf automake autopoint bc binutils bison bsdmainutils bzip2 ccache cmake cpio curl ecj flex g++ gawk gcc gcc-multilib"
+PACKAGES+=" gettext git graphicsmagick imagemagick inkscape intltool java-wrappers kmod lib32ncurses-dev lib32stdc++6 lib32z1-dev libacl1-dev"
+PACKAGES+=" libcap-dev libelf-dev libglib2.0-dev libgnutls28-dev libncurses5-dev libreadline-dev libsqlite3-dev libssl-dev libstring-crc32-perl libtool-bin libusb-dev libxml2-dev libzstd-dev make ncftp"
+PACKAGES+=" netcat-openbsd net-tools patch patchutils perl pkg-config pv rsync sharutils sqlite3 subversion sudo texinfo tofrodos unar unzip uuid-dev wget zip zlib1g-dev"
+PACKAGES+=" device-tree-compiler" # for FIT-Image
+PACKAGES+=" libc6-dev-i386"
 	
 if ! dpkg -s $PACKAGES >/dev/null 2>&1; then
 	printf "${YELLOW}Installing prerequisite packages...\n${NC}"
 #	sudo dpkg --add-architecture i386
-	sudo add-apt-repository ppa:git-core/ppa
+#	sudo add-apt-repository ppa:git-core/ppa
 	sudo apt-get install $PACKAGES
 	cd /tmp
 	wget http://mirrors.kernel.org/ubuntu/pool/universe/u/upx-ucl/upx-ucl_3.95-2build1_amd64.deb
