@@ -21,7 +21,7 @@ cat << EOF | sed -r 's/(.+[^>])$/\1<br>/g'
  <ul>
         <li><a class="active" href="https://www.ip-phone-forum.de/threads/vorstellung-meines-scripts-namens-i-matik.312640/" target="_blank">https://www.ip-phone-forum.de/threads/vorstellung-meines-scripts-namens-i-matik.312640/</a></li>
     </ul>
-The installed version on this device is currently 0.70.6
+The installed version on this device is currently xxxx
 <br/>
 
 <h1>Big thanks to</h1>
