@@ -1,34 +1,45 @@
 #!/bin/bash
 source $OSCAM_ADDON_CONFIG
-	if [ -z $PARAM_OSCAM ]; then
-	 	sleep 0
-	else
+if [ -z $PARAM_OSCAM ]; then
+ 	sleep 0
+else
 ed $FREETZ_SSL_HOME_PATH/addon/static.pkg <<EOF
 /# Addons:/a
-${OSCAM_ADDON_VERSION}
+${NEW_OSCAM_ADDON_VERSION}
 .
 wq
 EOF
-	fi	
+fi	
+
+if [ -z $PARAM_OSCAM_EMU ]; then
+ 	sleep 0
+else
+ed $FREETZ_SSL_HOME_PATH/addon/static.pkg <<EOF
+/# Addons:/a
+${NEW_OSCAM_ADDON_VERSION}
+.
+wq
+EOF
+fi
 	
-	if [ -z $PARAM_OSCAM_EMU ]; then
-	 	sleep 0
-	else
+if [ -z $PARAM_OSCAM_SMOD ]; then
+ 	sleep 0
+else
 ed $FREETZ_SSL_HOME_PATH/addon/static.pkg <<EOF
 /# Addons:/a
-${OSCAM_ADDON_VERSION}
+${NEW_OSCAM_ADDON_VERSION}
 .
 wq
 EOF
-	fi
+fi
 		
-	if [ -z $PARAM_OSCAM_TOOL ]; then
-		sleep 0
-	else
+if [ -z $PARAM_OSCAM_TOOL ]; then
+	sleep 0
+else
 ed $FREETZ_SSL_HOME_PATH/addon/static.pkg <<EOF
 /# Addons:/a
-${OSCAM_ADDON_VERSION}
+${NEW_OSCAM_ADDON_VERSION}
 .
 wq
 EOF
-	fi
+fi
