@@ -11,7 +11,7 @@ cat << EOF | sed -r 's/(.+[^>])$/\1<br>/g'
 <center>
 
 <p>
-<h1>Supporters</h1>
+<h1>Get help here</h1>
  <ul>
         <li><a class="active" href="https://github.com/MasterRoCcO/i-matik" target="_blank">https://github.com/MasterRoCcO/i-matik</a></li>
     </ul>
@@ -21,13 +21,9 @@ cat << EOF | sed -r 's/(.+[^>])$/\1<br>/g'
  <ul>
         <li><a class="active" href="https://www.ip-phone-forum.de/threads/vorstellung-meines-scripts-namens-i-matik.312640/" target="_blank">https://www.ip-phone-forum.de/threads/vorstellung-meines-scripts-namens-i-matik.312640/</a></li>
     </ul>
-</p>
-The installed version on this device is currently xxxx
-</center>
+The installed version on this device is currently 0.70.6
+<br/>
 
-<center>
-
-<p>
 <h1>Big thanks to</h1>
 bbszx
 berndy2001
