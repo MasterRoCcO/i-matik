@@ -24,5 +24,16 @@ cat << EOF | sed -r 's/(.+[^>])$/\1<br>/g'
 </p>
 The installed version on this device is currently xxxx
 </center>
+
+<center>
+
+<p>
+<h1>Big thanks to</h1>
+bbszx
+berndy2001
+hermann72pb
+</p>
+
+</center>
 EOF
 cgi_end
