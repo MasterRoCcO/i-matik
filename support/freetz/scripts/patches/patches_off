@@ -10,6 +10,7 @@ source $I_MATIK_PATCH_PATH/motd
 source $MOD_FIX_PATH/dl-firmware
 source $PKGS_FIX_PATH/no_rrdstats_1_8
 source $PKGS_FIX_PATH/openssl
+source $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/host-tools/sed-host
 
 # features
 source $AVM_PATCH_PATH/features

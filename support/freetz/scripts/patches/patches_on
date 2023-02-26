@@ -29,6 +29,10 @@ cp -ar $PKGS_FIX_PATH/openssl.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < openssl.patch
 rm -rf "$FREETZ_SSL_HOME_PATH/openssl.patch" 2>/dev/null
 
+cp -ar $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/host-tools/sed-host.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < sed-host.patch
+rm -rf "$FREETZ_SSL_HOME_PATH/sed-host.patch" 2>/dev/null
+
 # features
 echo -e ${GREEN}"Freetz files patch for Temperature Sensors."${NC}
 cp -ar $AVM_PATCH_PATH/features.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null

@@ -4,4 +4,3 @@ if [ $DOWNGRADE_FOR = $LIBUSB1_7530AX ]
 	then
 		source $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/libusb1/libusb1
 fi
-source $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/host-tools/sed-host
