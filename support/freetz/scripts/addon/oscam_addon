@@ -7,7 +7,7 @@
 		sleep 0
 	else 
 		echo -e ${YELLOW}"Unfortunately the ${OSCAM_ADDON_PATH} is not available, so an automatic download is now started."${NC}
-		grep -v ${NEW_OSCAM_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+		grep -v ${OSCAM_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei &&  mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
 		cd $MY_FILES_HOME_PATH/addon
 		wget https://www.freetz.digital-eliteboard.com/Teamserver/Freetz/Addon/oscam%20${OSCAM_ADDON_VERSION:6:4}x/${OSCAM_ADDON_VERSION:6:5}/${OSCAM_ADDON_VERSION}.tar.gz 2>/dev/null
 		tar xfvz ${OSCAM_ADDON_VERSION}.tar.gz
@@ -31,7 +31,7 @@
 		sleep 0
 	else 
 		echo -e ${YELLOW}"Unfortunately the ${OSCAM_ADDON_PATH} is not available, so an automatic download is now started."${NC}
-		grep -v ${NEW_OSCAM_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+		grep -v ${OSCAM_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
 		cd $MY_FILES_HOME_PATH/addon
 		wget https://www.freetz.digital-eliteboard.com/Teamserver/Freetz/Addon/oscam%20${OSCAM_ADDON_VERSION:6:4}x/${OSCAM_ADDON_VERSION:6:5}/${OSCAM_ADDON_VERSION}.tar.gz 2>/dev/null
 		tar xfvz ${OSCAM_ADDON_VERSION}.tar.gz
@@ -55,7 +55,7 @@
 		sleep 0
 	else 
 		echo -e ${YELLOW}"Unfortunately the ${OSCAM_ADDON_PATH} is not available, so an automatic download is now started."${NC}
-		grep -v ${NEW_OSCAM_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+		grep -v ${OSCAM_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
 		cd $MY_FILES_HOME_PATH/addon
 		wget https://www.freetz.digital-eliteboard.com/Teamserver/Freetz/Addon/oscam%20${OSCAM_ADDON_VERSION:6:4}x/${OSCAM_ADDON_VERSION:6:5}/${OSCAM_ADDON_VERSION}.tar.gz 2>/dev/null
 		tar xfvz ${OSCAM_ADDON_VERSION}.tar.gz
@@ -79,7 +79,7 @@
 		sleep 0
 	else 
 		echo -e ${YELLOW}"Unfortunately the ${OSCAM_ADDON_PATH} is not available, so an automatic download is now started."${NC}
-		grep -v ${NEW_OSCAM_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+		grep -v ${OSCAM_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
 		cd $MY_FILES_HOME_PATH/addon
 		wget https://www.freetz.digital-eliteboard.com/Teamserver/Freetz/Addon/oscam%20${OSCAM_ADDON_VERSION:6:4}x/${OSCAM_ADDON_VERSION:6:5}/${OSCAM_ADDON_VERSION}.tar.gz 2>/dev/null
 		tar xfvz ${OSCAM_ADDON_VERSION}.tar.gz
