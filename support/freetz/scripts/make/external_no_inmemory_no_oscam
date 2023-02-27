@@ -12,6 +12,8 @@ while [ $# -ne 0 ];do
 	    ;;
 	-s|--skip-image2memory)	 	PARAM_SKIP_I2M=1
 	    ;;
+	-int|--international)		PARAM_INTERNATIONAL=1
+	    ;;
 	-nc|--no-clientbox)		PARAM_SKIP_CLIENT=1
 	    ;;
 	-nm|--no-masterbox)		PARAM_SKIP_MASTER=1
@@ -250,7 +252,15 @@ wq
 EOF
 
 		source $PKGS_ON 2>/dev/null
+		
+	if [ -z $PARAM_INTERNATIONAL ]; then
+		sleep 0
+	else
+		sed -i "s+FREETZ_TYPE_LANG_DE=y+# FREETZ_TYPE_LANG_DE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+# FREETZ_TYPE_LANG_EN is not set+FREETZ_TYPE_LANG_EN=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 
+	fi
+			
 	if [ -z $PARAM_CONFIG ]; then
 			make $MENUC #run make menuconfig
 		else
@@ -328,8 +338,16 @@ EOF
 		if [ ${INT_REGION_COMMENT:20:1} = $INT_REGION ] 2>/dev/null
 		then
 		sed -i "s+int_$MASTERBOX_NEU+$MASTERBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		fi
+		fi	
 		
+	if [ -z $PARAM_INTERNATIONAL ]; then
+		sleep 0
+	else
+		sed -i "s+# FREETZ_TYPE_LANG_DE is not set+FREETZ_TYPE_LANG_DE=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_TYPE_LANG_EN=y+# FREETZ_TYPE_LANG_EN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+
+	fi
+	
 	# skins to static.pkg
 	if [ -z $PARAM_SKINS ]; then
 		sleep 0
