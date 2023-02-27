@@ -98,8 +98,9 @@ for bs in "${BOX_SSL[@]}"; do
 	if [ ! -e "$FREETZ_SSL_HOME_PATH" ]; then
 		umask 0022
 		git clone https://github.com/Freetz-NG/freetz-ng "$FREETZ_SSL_HOME_PATH"
-		cp -ar /$MY_FILES_HOME_PATH/make/* "$FREETZ_SSL_HOME_PATH/make/" 2>/dev/null
-		cp -ar /$MY_FILES_HOME_PATH/addon "$FREETZ_SSL_HOME_PATH"
+		rm -rf "$FREETZ_SSL_HOME_PATH/addon"
+		cp -ar /$MY_FILES_HOME_PATH/make/* "$FREETZ_SSL_HOME_PATH/make/"
+		ln -s /$MY_FILES_HOME_PATH/addon "$FREETZ_SSL_HOME_PATH/addon"
 		source $PRIVAT_MY_FILES_SCRIPT 2>/dev/null
 	elif [ ! -d "$FREETZ_SSL_HOME_PATH" ]; then
 		printf "${YELLOW}'$FREETZ_SSL_HOME_PATH' already exists but is not a directory${NC}" 1>&2
@@ -113,7 +114,6 @@ for bs in "${BOX_SSL[@]}"; do
 	#[ -z $PARAM_SKIP_I2M ] && mkdir -p $FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME 2>/dev/null	# create inmemory folder, when it is not disabled
 
 	# oscam to static.pkg
-	cp -ar /$MY_FILES_HOME_PATH/addon "$FREETZ_SSL_HOME_PATH"
 	source $OSCAM_ADDON_ON 2>/dev/null
 
 	# skins to static.pkg
