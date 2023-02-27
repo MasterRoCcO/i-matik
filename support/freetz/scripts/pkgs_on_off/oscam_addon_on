@@ -5,7 +5,7 @@ if [ -z $PARAM_OSCAM ]; then
 else
 ed $FREETZ_SSL_HOME_PATH/addon/static.pkg <<EOF
 /# Addons:/a
-${NEW_OSCAM_ADDON_VERSION}
+${OSCAM_ADDON_VERSION}
 .
 wq
 EOF
@@ -16,7 +16,7 @@ if [ -z $PARAM_OSCAM_EMU ]; then
 else
 ed $FREETZ_SSL_HOME_PATH/addon/static.pkg <<EOF
 /# Addons:/a
-${NEW_OSCAM_ADDON_VERSION}
+${OSCAM_ADDON_VERSION}
 .
 wq
 EOF
@@ -27,7 +27,7 @@ if [ -z $PARAM_OSCAM_SMOD ]; then
 else
 ed $FREETZ_SSL_HOME_PATH/addon/static.pkg <<EOF
 /# Addons:/a
-${NEW_OSCAM_ADDON_VERSION}
+${OSCAM_ADDON_VERSION}
 .
 wq
 EOF
@@ -38,7 +38,7 @@ if [ -z $PARAM_OSCAM_TOOL ]; then
 else
 ed $FREETZ_SSL_HOME_PATH/addon/static.pkg <<EOF
 /# Addons:/a
-${NEW_OSCAM_ADDON_VERSION}
+${OSCAM_ADDON_VERSION}
 .
 wq
 EOF

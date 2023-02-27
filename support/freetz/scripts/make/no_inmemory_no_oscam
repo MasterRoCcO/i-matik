@@ -88,11 +88,10 @@ for bs in "${BOX_SSL[@]}"; do
 	if [ ! -e "$FREETZ_SSL_HOME_PATH" ]; then
 		umask 0022
 		git clone https://github.com/Freetz-NG/freetz-ng "$FREETZ_SSL_HOME_PATH"
-		rm -rf "$FREETZ_SSL_HOME_PATH/addon"
-		cp -ar /$MY_FILES_HOME_PATH/make/* "$FREETZ_SSL_HOME_PATH/make/"
-		ln -s /$MY_FILES_HOME_PATH/addon "$FREETZ_SSL_HOME_PATH/addon"
+		cp -ar /$MY_FILES_HOME_PATH/make/* "$FREETZ_SSL_HOME_PATH/make/" 2>/dev/null
+		cp -ar /$MY_FILES_HOME_PATH/addon "$FREETZ_SSL_HOME_PATH"
 		source $PRIVAT_MY_FILES_SCRIPT 2>/dev/null
-		elif [ ! -d "$FREETZ_SSL_HOME_PATH" ]; then
+	elif [ ! -d "$FREETZ_SSL_HOME_PATH" ]; then
 		printf "${YELLOW}'$FREETZ_SSL_HOME_PATH' already exists but is not a directory${NC}" 1>&2
 		exit 1
 	fi
@@ -166,10 +165,10 @@ for bs in "${BOX_SSL[@]}"; do
 		sed -i "s+FREETZ_DOWNLOAD_TOOLCHAIN=y+# FREETZ_DOWNLOAD_TOOLCHAIN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_TOOLCHAIN_CCACHE=y+# FREETZ_TOOLCHAIN_CCACHE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_UBOOT_STATIC=y+# FREETZ_UBOOT_STATIC is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		#sed -i "s+FREETZ_ROOTEMU_FAKEROOT=y+# FREETZ_ROOTEMU_FAKEROOT is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		#sed -i "s+# FREETZ_ROOTEMU_PSEUDO is not set+FREETZ_ROOTEMU_PSEUDO=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+# FREETZ_ROOTEMU_FAKEROOT is not set+FREETZ_ROOTEMU_FAKEROOT=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_ROOTEMU_PSEUDO=y+# FREETZ_ROOTEMU_PSEUDO is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_ROOTEMU_FAKEROOT=y+# FREETZ_ROOTEMU_FAKEROOT is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+# FREETZ_ROOTEMU_PSEUDO is not set+FREETZ_ROOTEMU_PSEUDO=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		#sed -i "s+# FREETZ_ROOTEMU_FAKEROOT is not set+FREETZ_ROOTEMU_FAKEROOT=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		#sed -i "s+FREETZ_ROOTEMU_PSEUDO=y+# FREETZ_ROOTEMU_PSEUDO is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_HOSTTOOLS_DOWNLOAD=y+# FREETZ_HOSTTOOLS_DOWNLOAD is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+$MASTERBOX_ALT+$MASTERBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+$CLIENTBOX_ALT+$CLIENTBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
