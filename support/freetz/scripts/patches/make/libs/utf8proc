@@ -1,3 +1,0 @@
-#!/bin/bash
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/utf8proc/utf8proc.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/utf8proc/utf8proc.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/utf8proc/utf8proc.mk 2>/dev/null

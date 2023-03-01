@@ -1,7 +1,0 @@
-#!/bin/bash
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/ldns/ldns.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/ldns/external.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/ldns/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/ldns/ldns.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/ldns/ldns.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/ldns/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/ldns/external.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/ldns/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/ldns/external.files 2>/dev/null

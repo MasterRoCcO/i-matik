@@ -1,7 +1,0 @@
-#!/bin/bash
-rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/axtlswrap/axtlswrap.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/axtlswrap/Config.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/axtlswrap/patches/020_add_keycertpath.patch
-mv $FREETZ_SSL_HOME_PATH/make/pkgs/axtlswrap/axtlswrap.mk.orig $FREETZ_SSL_HOME_PATH/make/pkgs/axtlswrap/axtlswrap.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/pkgs/axtlswrap/Config.in.orig $FREETZ_SSL_HOME_PATH/make/pkgs/axtlswrap/Config.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/pkgs/axtlswrap/patches/020_add_keycertpath.patch.orig $FREETZ_SSL_HOME_PATH/make/pkgs/axtlswrap/patches/020_add_keycertpath.patch 2>/dev/null

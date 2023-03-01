@@ -1,7 +1,0 @@
-#!/bin/bash
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/jansson/jansson.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/jansson/external.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/jansson/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/jansson/jansson.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/jansson/jansson.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/jansson/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/jansson/external.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/jansson/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/jansson/external.files 2>/dev/null

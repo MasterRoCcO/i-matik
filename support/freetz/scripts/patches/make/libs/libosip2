@@ -1,8 +1,0 @@
-#!/bin/bash
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libosip2/libosip2.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libosip2/external.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/libosip2/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libosip2/libosip2.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/libosip2/libosip2.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libosip2/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/libosip2/external.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libosip2/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/libosip2/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/libosip2/patches/010-multiple_CFLAGS.libosip2.patch.orig $FREETZ_SSL_HOME_PATH/make/libs/libosip2/patches/010-multiple_CFLAGS.libosip2.patch 2>/dev/null

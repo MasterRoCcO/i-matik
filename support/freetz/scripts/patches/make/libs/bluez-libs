@@ -1,7 +1,0 @@
-#!/bin/bash
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/bluez-libs/bluez-libs.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/bluez-libs/external.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/libs/bluez-libs/external.files 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/bluez-libs/bluez-libs.mk.orig $FREETZ_SSL_HOME_PATH/make/libs/bluez-libs/bluez-libs.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/bluez-libs/external.in.orig $FREETZ_SSL_HOME_PATH/make/libs/bluez-libs/external.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/libs/bluez-libs/external.files.orig $FREETZ_SSL_HOME_PATH/make/libs/bluez-libs/external.files 2>/dev/null

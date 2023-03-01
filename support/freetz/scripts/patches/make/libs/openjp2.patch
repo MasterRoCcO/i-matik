@@ -1,8 +1,0 @@
---- make/libs/openjp2/openjp2.mk	2023-02-11 10:33:50.751534000 +0100
-+++ make/libs/openjp2/openjp2.mk	2023-02-12 06:33:01.508355576 +0100
-@@ -1,4 +1,4 @@
--$(call PKG_INIT_LIB, a5891555eb49ed7cc26b2901ea680acda136d811)
-+$(call PKG_INIT_LIB, ee58d77047867dd422593163e660e66a109ba1c0)
- $(PKG)_LIB_VERSION:=2.5.0
- $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.gz
- $(PKG)_HASH:=eb777df08834b9d0293763077581709c8fb38ab0e253c74e9f9b33bc45ec324c

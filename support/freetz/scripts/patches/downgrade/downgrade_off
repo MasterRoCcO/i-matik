@@ -1,6 +1,0 @@
-#!/bin/bash
-DOWNGRADE_FOR="$(grep '^FREETZ_TYPE_PREFIX=' .config | awk -F'"' '{print $2}' | xargs)" 2>/dev/null
-if [ $DOWNGRADE_FOR = $LIBUSB1_7530AX ]
-	then
-		source $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/libusb1/libusb1
-fi

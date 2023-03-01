@@ -1,7 +1,0 @@
-#!/bin/bash
-rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/imagemagick/Config.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/imagemagick/imagemagick.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/imagemagick/patches/010-extra_flags.patch 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/pkgs/imagemagick/Config.in.orig $FREETZ_SSL_HOME_PATH/make/pkgs/imagemagick/Config.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/pkgs/imagemagick/imagemagick.mk.orig $FREETZ_SSL_HOME_PATH/make/pkgs/imagemagick/imagemagick.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/pkgs/imagemagick/patches/010-extra_flags.patch.orig $FREETZ_SSL_HOME_PATH/make/pkgs/imagemagick/patches/010-extra_flags.patch 2>/dev/null

@@ -1,5 +1,0 @@
-#!/bin/bash
-rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/irssi/irssi.mk 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/pkgs/irssi/Config.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/pkgs/irssi/irssi.mk.orig $FREETZ_SSL_HOME_PATH/make/pkgs/irssi/irssi.mk 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/pkgs/irssi/Config.in.orig $FREETZ_SSL_HOME_PATH/make/pkgs/irssi/Config.in 2>/dev/null
