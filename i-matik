@@ -9,7 +9,7 @@ I_MATIK_PATH=$(cd `dirname $0` && pwd)
 git pull
 source $I_MATIK_PATH/support/i-matik/config/i-matik
 source $INSTAL_CHECK
-VERSIONS_NR="0.71(i00.1)"
+VERSIONS_NR="0.72(i00.8)"
 ln -s $CREATE_BOXES $I_MATIK_PATH/my-boxes_please_edit_me 2>/dev/null
 
 #arm boxen
@@ -142,7 +142,8 @@ elif [[ $1 == '3000' ]] && [[ $2 == '-push' ]]; then
 source $SSL11_PUSH_REPEATER
 
 elif [[ $1 == '7581.10' ]]; then
-source $NO_KERNEL_FILES
+#source $NO_KERNEL_FILES
+printf ${RED}"No OpenSSL 1.0.2 Suportet by Freetz-NG\n"
 elif [[ $1 == '7581.11' ]]; then
 source $NO_KERNEL_FILES
 elif [[ $1 == '7581.30' ]]; then
@@ -153,7 +154,8 @@ elif [[ $1 == '7581' ]] && [[ $2 == '-push' ]]; then
 source $SSL10_PUSH
 
 elif [[ $1 == '7582.10' ]]; then
-source $NO_KERNEL_FILES
+#source $NO_KERNEL_FILES
+printf ${RED}"No OpenSSL 1.0.2 Suportet by Freetz-NG\n"
 elif [[ $1 == '7582.11' ]]; then
 source $NO_KERNEL_FILES
 elif [[ $1 == '7582.30' ]]; then
@@ -211,7 +213,8 @@ source $NO_INMEMORY_NO_OSCAM
 
 #i686 boxen no inmemory
 elif [[ $1 == '6430.10' ]]; then
-source $NO_INMEMORY
+#source $NO_INMEMORY
+printf ${RED}"No OpenSSL 1.0.2 Suportet by Freetz-NG\n"
 elif [[ $1 == '6430.11' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '6430.30' ]]; then
@@ -222,7 +225,8 @@ elif [[ $1 == '6430' ]] && [[ $2 == '-push' ]]; then
 source $SSL10_PUSH
 
 elif [[ $1 == '6490.10' ]]; then
-source $NO_INMEMORY
+#source $NO_INMEMORY
+printf ${RED}"No OpenSSL 1.0.2 Suportet by Freetz-NG\n"
 elif [[ $1 == '6490.11' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '6490.30' ]]; then
@@ -233,7 +237,8 @@ elif [[ $1 == '6490' ]] && [[ $2 == '-push' ]]; then
 source $SSL10_PUSH
 
 elif [[ $1 == '6590.10' ]]; then
-source $NO_INMEMORY
+#source $NO_INMEMORY
+printf ${RED}"No OpenSSL 1.0.2 Suportet by Freetz-NG\n"
 elif [[ $1 == '6590.11' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '6590.30' ]]; then
@@ -801,7 +806,7 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf "  -int,--international\t\tInternational Version\n"
 	printf "  -yo,--yes-oscam\t\tThe image is with oscam add-on and an oscam is created\n"
 	printf "  -yoe,--yes-oscam\t\tThe image is with oscam_emu add-on and an oscam is created\n"
-	printf "  -ysmod,--yes-oscam-smod\t\tThe image is with oscam_smod add-on and an oscam is created (still disabled)\n"
+	printf "  -ysmod,--yes-oscam-smod\tThe image is with oscam_smod add-on and an oscam is created (still disabled)\n"
 	printf "  -to,--tool-oscam\t\toscam ToolChain\n"
 	printf "  -do,--del-oscam\t\tdelete the old oscam and build a new one\n"
 	printf "  -deloscam\t\t\tdelete all oscams\n"
