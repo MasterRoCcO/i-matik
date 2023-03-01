@@ -5,7 +5,7 @@ PACKAGES="  autoconf automake autopoint bc binutils bison bsdmainutils bzip2 cca
 PACKAGES+=" gettext git graphicsmagick imagemagick inkscape intltool java-wrappers kmod lib32ncurses-dev lib32stdc++6 lib32z1-dev libacl1-dev"
 PACKAGES+=" libcap-dev libelf-dev libglib2.0-dev libgnutls28-dev libncurses5-dev libreadline-dev libsqlite3-dev libssl-dev libstring-crc32-perl libtool-bin libusb-dev libxml2-dev libzstd-dev make ncftp"
 PACKAGES+=" netcat-openbsd net-tools patch patchutils perl pkg-config pv rsync sharutils sqlite3 subversion sudo texinfo tofrodos unar unzip uuid-dev wget zip zlib1g-dev"
-PACKAGES+=" device-tree-compiler" # for FIT-Image
+#PACKAGES+=" device-tree-compiler" # for FIT-Image
 PACKAGES+=" libc6-dev-i386"
 	
 if ! dpkg -s $PACKAGES >/dev/null 2>&1; then
