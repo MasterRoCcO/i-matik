@@ -251,6 +251,7 @@ for bs in "${BOX_SSL[@]}"; do
 			sed -i "s+$CLIENTBOX_NEU+int_$CLIENTBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 			sed -i "s+$POWERLINE_NEU+int_$POWERLINE_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 			sed -i "s+$REPEATER_NEU+int_$REPEATER_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+			sed -i "s+$GATEWAY_NEU+int_$GATEWAY_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 			sed -i "s+$WUNSCHIMAGE_NEU+int_$WUNSCHIMAGE_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		fi
 
@@ -305,6 +306,7 @@ for bs in "${BOX_SSL[@]}"; do
 			sed -i "s+int_$CLIENTBOX_NEU+$CLIENTBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 			sed -i "s+int_$POWERLINE_NEU+$POWERLINE_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 			sed -i "s+int_$REPEATER_NEU+$REPEATER_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+			sed -i "s+int_$GATEWAY_NEU+$GATEWAY_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 			sed -i "s+int_$WUNSCHIMAGE_NEU+$WUNSCHIMAGE_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 	fi	
 		
