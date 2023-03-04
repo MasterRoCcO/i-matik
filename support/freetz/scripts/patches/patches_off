@@ -5,3 +5,4 @@ source $I_MATIK_PATCH_PATH/ifree
 source $I_MATIK_PATCH_PATH/info.cgi
 source $I_MATIK_PATCH_PATH/menu-new
 source $I_MATIK_PATCH_PATH/motd
+source $I_MATIK_PATH/support/freetz/scripts/patches/host-tools/sed-host
