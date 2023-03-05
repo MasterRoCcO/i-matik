@@ -264,7 +264,7 @@ for bs in "${BOX_SSL[@]}"; do
 		FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
 		#FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
 		FUD_COMMENT_BOX="$(echo $FUD_COMMENT)"
-		FUD_COMMENT_SSL="${FUD_COMMENT/"_${FUD_COMMENT_BOX}"/""}"
+		FUD_COMMENT_SSL="${FUD_COMMENT/"${FUD_COMMENT_BOX}"/""}"
 		FB_SSL="ssl_${BOX_SSL:0:1}_${BOX_SSL:1:1}_x"
 		
 		# Remove older image files
