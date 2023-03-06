@@ -204,6 +204,7 @@ for bs in "${BOX_SSL[@]}"; do
 	else
 		sed -i "s+# FREETZ_SKIN_newfreetz is not set+FREETZ_SKIN_newfreetz=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+# FREETZ_SKIN_phoenix is not set+FREETZ_SKIN_phoenix=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+# FREETZ_SKIN_cuma is not set+FREETZ_SKIN_cuma=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+# FREETZ_PACKAGE_USER_SKINS is not set+FREETZ_PACKAGE_USER_SKINS=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 	fi
 
