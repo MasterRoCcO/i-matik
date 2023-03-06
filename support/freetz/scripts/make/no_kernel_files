@@ -201,9 +201,9 @@ for bs in "${BOX_SSL[@]}"; do
 	if [ -z $PARAM_SKINS ]; then
 		sleep 0
 	else
-		sed -i "s+# FREETZ_SKIN_newfreetz is not set+FREETZ_SKIN_newfreetz=y+g" $FREETZ_SSL_HOME_PATH/.config
-		sed -i "s+# FREETZ_SKIN_phoenix is not set+FREETZ_SKIN_phoenix=y+g" $FREETZ_SSL_HOME_PATH/.config
-		
+		sed -i "s+# FREETZ_SKIN_newfreetz is not set+FREETZ_SKIN_newfreetz=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+# FREETZ_SKIN_phoenix is not set+FREETZ_SKIN_phoenix=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+# FREETZ_PACKAGE_USER_SKINS is not set+FREETZ_PACKAGE_USER_SKINS=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 	fi
 
 	if [ -z $PARAM_KERNEL ]; then
@@ -263,6 +263,7 @@ for bs in "${BOX_SSL[@]}"; do
 		# Get custom image file name part from .config
 		FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
 		#FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
+		#FUD_COMMENT_SSL="${FUD_COMMENT/"_${FUD_COMMENT_BOX}"/""}"
 		FUD_COMMENT_BOX="$(echo $FUD_COMMENT)"
 		FUD_COMMENT_SSL="${FUD_COMMENT/"${FUD_COMMENT_BOX}"/""}"
 		FB_SSL="ssl_${BOX_SSL:0:1}_${BOX_SSL:1:1}_x"

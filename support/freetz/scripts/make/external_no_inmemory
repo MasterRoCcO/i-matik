@@ -115,15 +115,15 @@ for bs in "${BOX_SSL[@]}"; do
 	mkdir -p $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME 2>/dev/null	# create images folder
 	#[ -z $PARAM_SKIP_I2M ] && mkdir -p $FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME 2>/dev/null	# create inmemory folder, when it is not disabled
 
-	# oscam to static.pkg
-	source $OSCAM_ADDON_ON 2>/dev/null
-
 	# skins to static.pkg
 	if [ -z $PARAM_SKINS ]; then
 		sleep 0
 	else
 		source $I_MATIK_PATH/support/freetz/scripts/pkgs_on_off/skins_on 2>/dev/null
 	fi
+	
+	# oscam to static.pkg
+	source $OSCAM_ADDON_ON 2>/dev/null
 
 	# update git working copy
 	cd "$FREETZ_SSL_HOME_PATH" && git pull
@@ -217,9 +217,9 @@ for bs in "${BOX_SSL[@]}"; do
 	if [ -z $PARAM_SKINS ]; then
 		sleep 0
 	else
-		sed -i "s+# FREETZ_SKIN_newfreetz is not set+FREETZ_SKIN_newfreetz=y+g" $FREETZ_SSL_HOME_PATH/.config
-		sed -i "s+# FREETZ_SKIN_phoenix is not set+FREETZ_SKIN_phoenix=y+g" $FREETZ_SSL_HOME_PATH/.config
-		
+		sed -i "s+# FREETZ_SKIN_newfreetz is not set+FREETZ_SKIN_newfreetz=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+# FREETZ_SKIN_phoenix is not set+FREETZ_SKIN_phoenix=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+# FREETZ_PACKAGE_USER_SKINS is not set+FREETZ_PACKAGE_USER_SKINS=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 	fi
 
 	if [ -z $PARAM_KERNEL ]; then
@@ -307,6 +307,7 @@ EOF
 		# Get custom image file name part from .config
 		FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
 		#FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
+		#FUD_COMMENT_SSL="${FUD_COMMENT/"_${FUD_COMMENT_BOX}"/""}"
 		FUD_COMMENT_BOX="$(echo $FUD_COMMENT)"
 		FUD_COMMENT_SSL="${FUD_COMMENT/"${FUD_COMMENT_BOX}"/""}"
 		FB_OS_COMMENT="$(grep '^FREETZ_TYPE_PREFIX_SERIES_SUBDIR=' .config | awk -F'"' '{print $2}' | xargs)"

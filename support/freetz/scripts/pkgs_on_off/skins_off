@@ -5,3 +5,4 @@ grep -v Nachtfalke_old_Skin $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SS
 grep -v Nachtfalke_Skin $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
 sed -i "s+FREETZ_SKIN_newfreetz=y+# FREETZ_SKIN_newfreetz is not set+g" $FREETZ_SSL_HOME_PATH/.config
 sed -i "s+FREETZ_SKIN_phoenix=y+# FREETZ_SKIN_phoenix is not set+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+FREETZ_PACKAGE_USER_SKINS=y+# FREETZ_PACKAGE_USER_SKINS is not set+g" $FREETZ_SSL_HOME_PATH/.config
