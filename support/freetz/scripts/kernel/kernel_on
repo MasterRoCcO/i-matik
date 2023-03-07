@@ -8,6 +8,7 @@ cp -p $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:4
 sed -i "s+# CONFIG_USB_SERIAL is not set+CONFIG_USB_SERIAL=m+g" $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
 sed -i "s+# CONFIG_USB_SERIAL_FTDI_SIO is not set+CONFIG_USB_SERIAL_FTDI_SIO=m+g" $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
 sed -i "s+# CONFIG_USB_SERIAL_PL2303 is not set+CONFIG_USB_SERIAL_PL2303=m+g" $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
+#sed -i "s+# CONFIG_USB_SERIAL_CP210X is not set+CONFIG_USB_SERIAL_CP210X=m+g" $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
 sed -i "s+# CONFIG_AUTOFS4_FS is not set+CONFIG_AUTOFS4_FS=m+g" $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
 sed -i "s+# CONFIG_NETWORK_FILESYSTEMS is not set+CONFIG_NETWORK_FILESYSTEMS=y+g" $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
 sed -i "s+# CONFIG_CRYPTO_ARC4 is not set+CONFIG_CRYPTO_ARC4=m+g" $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
@@ -65,10 +66,11 @@ CONFIG_NFS_V3=y
 # CONFIG_NFS_SWAP is not set
 CONFIG_ROOT_NFS=y
 CONFIG_NFSD=m
-# CONFIG_NFSD_DEPRECATED is not set
+CONFIG_NFSD_V2_ACL=y
 CONFIG_NFSD_V3=y
-# CONFIG_NFSD_V3_ACL is not set
-# CONFIG_NFSD_V4 is not set
+CONFIG_NFSD_V3_ACL=y
+CONFIG_NFSD_V4=y
+# CONFIG_NFSD_DEPRECATED is not set
 CONFIG_GRACE_PERIOD=m
 CONFIG_LOCKD=m
 CONFIG_LOCKD_V4=y
@@ -106,10 +108,11 @@ CONFIG_NFS_V3=y
 # CONFIG_NFS_SWAP is not set
 CONFIG_ROOT_NFS=y
 CONFIG_NFSD=m
-# CONFIG_NFSD_DEPRECATED is not set
+CONFIG_NFSD_V2_ACL=y
 CONFIG_NFSD_V3=y
-# CONFIG_NFSD_V3_ACL is not set
-# CONFIG_NFSD_V4 is not set
+CONFIG_NFSD_V3_ACL=y
+CONFIG_NFSD_V4=y
+# CONFIG_NFSD_DEPRECATED is not set
 CONFIG_GRACE_PERIOD=m
 CONFIG_LOCKD=m
 CONFIG_LOCKD_V4=y
