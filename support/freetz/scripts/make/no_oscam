@@ -109,7 +109,7 @@ for bs in "${BOX_SSL[@]}"; do
 	if [ -z $PARAM_SKINS ]; then
 		sleep 0
 	else
-		source $I_MATIK_PATH/support/freetz/scripts/pkgs_on_off/skins_on 2>/dev/null
+		source $I_MATIK_PATH/support/freetz/scripts/pkgs_on_off/skins_on_static 2>/dev/null
 	fi
 
 	# update git working copy
@@ -199,19 +199,7 @@ for bs in "${BOX_SSL[@]}"; do
 		make clean
 	fi
 		
-	if [ -z $PARAM_SKINS ]; then
-		sleep 0
-	else
-		sed -i "s+# FREETZ_SKIN_newfreetz is not set+FREETZ_SKIN_newfreetz=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+# FREETZ_SKIN_phoenix is not set+FREETZ_SKIN_phoenix=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+# FREETZ_SKIN_cuma is not set+FREETZ_SKIN_cuma=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+# FREETZ_GUI_SKINS_DEB is not set+FREETZ_GUI_SKINS_DEB=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+# FREETZ_GUI_SKINS_KEYWELT is not set+FREETZ_GUI_SKINS_KEYWELT=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+# FREETZ_GUI_SKINS_NACHTFALKE is not set+FREETZ_GUI_SKINS_NACHTFALKE=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+# FREETZ_GUI_SKINS_NACHTFALKE_OLD is not set+FREETZ_GUI_SKINS_NACHTFALKE_OLD=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+# FREETZ_GUI_SKINS_PRISRAK is not set+FREETZ_GUI_SKINS_PRISRAK=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+# FREETZ_GUI_SKINS_PRISRAK1 is not set+FREETZ_GUI_SKINS_PRISRAK1=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-	fi
+	source $I_MATIK_PATH/support/freetz/scripts/pkgs_on_off/skins_on 2>/dev/null
 
 	if [ -z $PARAM_KERNEL ]; then
 		sleep 0

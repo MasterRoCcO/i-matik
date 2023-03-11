@@ -1,10 +1,14 @@
 #!/bin/bash
-ed $FREETZ_SSL_HOME_PATH/addon/static.pkg <<EOF
-/# Addons:/a
-Digital_Eliteboard_Skin
-Keywelt_Skin
-Nachtfalke_old_Skin
-Nachtfalke_Skin
-.
-wq
-EOF
+if [ -z $PARAM_SKINS ]; then
+	sleep 0
+else
+	sed -i "s+# FREETZ_SKIN_newfreetz is not set+FREETZ_SKIN_newfreetz=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+# FREETZ_SKIN_phoenix is not set+FREETZ_SKIN_phoenix=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+# FREETZ_SKIN_cuma is not set+FREETZ_SKIN_cuma=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+# FREETZ_PACKAGE_SKIN_DIGITAL_ELITEBOARD is not set+FREETZ_PACKAGE_SKIN_DIGITAL_ELITEBOARD=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+# FREETZ_PACKAGE_SKIN_KEYWELT_SKIN is not set+FREETZ_PACKAGE_SKIN_KEYWELT_SKIN=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+# FREETZ_PACKAGE_SKIN_NACHTFALKE_SKIN is not set+FREETZ_PACKAGE_SKIN_NACHTFALKE_SKIN=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+# FREETZ_PACKAGE_SKIN_NACHTFALKE_OLD_SKIN is not set+FREETZ_PACKAGE_SKIN_NACHTFALKE_OLD_SKIN=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+# FREETZ_PACKAGE_SKIN_PRISRAK_SKIN is not set+FREETZ_PACKAGE_SKIN_PRISRAK_SKIN=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+# FREETZ_PACKAGE_SKIN_PRISRAK1_SKIN is not set+FREETZ_PACKAGE_SKIN_PRISRAK1_SKIN=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+fi
