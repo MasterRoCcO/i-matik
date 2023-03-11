@@ -221,6 +221,8 @@ for bs in "${BOX_SSL[@]}"; do
 		sed -i "s+# FREETZ_SKIN_phoenix is not set+FREETZ_SKIN_phoenix=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+# FREETZ_SKIN_cuma is not set+FREETZ_SKIN_cuma=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+# FREETZ_GUI_SKINS is not set+FREETZ_GUI_SKINS=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+# FREETZ_GUI_SKINS_PRISRAK is not set+FREETZ_GUI_SKINS_PRISRAK=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+# FREETZ_GUI_SKINS_PRISRAK1 is not set+FREETZ_GUI_SKINS_PRISRAK1=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 	fi
 
 	if [ -z $PARAM_KERNEL ]; then
