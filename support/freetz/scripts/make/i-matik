@@ -46,6 +46,8 @@ while [ $# -ne 0 ];do
 	    ;;
 	-us|--user-skins)		PARAM_SKINS=1
 	    ;;
+	-us1|--user-skins1)		PARAM_SKINS1=1
+	    ;;
 	-ua|--user-application)		PARAM_USER_SCRIPTS=1
 	    ;;
 	-*|--*)				PARAM_BAD=1
@@ -119,7 +121,7 @@ for bs in "${BOX_SSL[@]}"; do
 	if [ -z $PARAM_SKINS ]; then
 		sleep 0
 	else
-		source $I_MATIK_PATH/support/freetz/scripts/pkgs_on_off/skins_on_static 2>/dev/null
+		source $PKGS_PATH_ON_OFF/skins_on_static 2>/dev/null
 	fi
 	
 	# oscam to static.pkg
@@ -173,7 +175,36 @@ for bs in "${BOX_SSL[@]}"; do
 	else
 			source $KERNEL_OFF 2>/dev/null
 	fi
-	
+		sed -i "s+FREETZ_LIB_libgcrypt=y+# FREETZ_LIB_libgcrypt is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_LIB_libssl=y+# FREETZ_LIB_libssl is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_LIB_libntfs=y+# FREETZ_LIB_libntfs is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_LIB_libfuse=y+# FREETZ_LIB_libfuse is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_LIB_libusb_0=y+# FREETZ_LIB_libusb_0 is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_LIB_libnettle=y+# FREETZ_LIB_libnettle is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_LIB_libftdi=y+# FREETZ_LIB_libftdi is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_BUSYBOX_LSUSB=y+# FREETZ_BUSYBOX_LSUSB is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_BUSYBOX__NOEXEC_NOFORK_OPTIMIZATIONS=y+# FREETZ_BUSYBOX__NOEXEC_NOFORK_OPTIMIZATIONS is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_LIB_libcrypto=y+# FREETZ_LIB_libcrypto is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_LIB_libgpg_error=y+# FREETZ_LIB_libgpg_error is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_PACKAGE_OSCAM=y+# FREETZ_PACKAGE_OSCAM is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_PACKAGE_CCID=y+# FREETZ_PACKAGE_CCID is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_PACKAGE_PCSC_LITE=y+# FREETZ_PACKAGE_PCSC_LITE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_LIB_libpcsclite=y+# FREETZ_LIB_libpcsclite is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_LIB_libusb_1=y+# FREETZ_LIB_libusb_1 is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_PACKAGE_USBIDS=y+# FREETZ_PACKAGE_USBIDS is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_PACKAGE_USBUTILS=y+# FREETZ_PACKAGE_USBUTILS is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_MODULE_ftdi_sio=y+# FREETZ_MODULE_ftdi_sio is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_MODULE_pl2303=y+# FREETZ_MODULE_pl2303 is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_MODULE_usbserial=y+# FREETZ_MODULE_usbserial is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_PATCH_UDEVMOUNT=y+# FREETZ_PATCH_UDEVMOUNT is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_PATCH_MAXDEVCOUNT=y+# FREETZ_PATCH_MAXDEVCOUNT is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_CUSTOM_UDEV_RULES=y+# FREETZ_CUSTOM_UDEV_RULES is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_DROP_NOEXEC_EXTERNAL=y+# FREETZ_DROP_NOEXEC_EXTERNAL is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_PATCH_FREETZMOUNT=y+# FREETZ_PATCH_FREETZMOUNT is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_PACKAGE_AVM_PORTFW=y+# FREETZ_PACKAGE_AVM_PORTFW is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_PACKAGE_AVM_FIREWALL=y+# FREETZ_PACKAGE_AVM_FIREWALL is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_PACKAGE_AVM_FORWARDING=y+# FREETZ_PACKAGE_AVM_FORWARDING is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_PACKAGE_STRACE=y+# FREETZ_PACKAGE_STRACE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null	
 	source $DOWNGRADE_ON 2>/dev/null
 	
 		sed -i "s+FREETZ_JLEVEL=20+FREETZ_JLEVEL=$MAX_CPUS+g" $FREETZ_SSL_HOME_PATH/.config
@@ -214,7 +245,7 @@ for bs in "${BOX_SSL[@]}"; do
 		# oscam on
 		source $OSCAM_ADDON 2>/dev/null
 		
-	source $I_MATIK_PATH/support/freetz/scripts/pkgs_on_off/skins_on 2>/dev/null
+	source $PKGS_PATH_ON_OFF/skins_on 2>/dev/null
 
 	if [ -z $PARAM_KERNEL ]; then
 		sleep 0
@@ -336,19 +367,11 @@ for bs in "${BOX_SSL[@]}"; do
 		sed -i "s+FREETZ_LANG_EN=y+# FREETZ_LANG_EN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 	fi
 	
-	source $PKGS_OFF 2>/dev/null
-		# oscam off
 		source $OSCAM_OFF 2>/dev/null
-
-	# skins to static.pkg
-	if [ -z $PARAM_SKINS ]; then
-		sleep 0
-	else
-		source $I_MATIK_PATH/support/freetz/scripts/pkgs_on_off/skins_off 2>/dev/null
-	fi
-
+		source $PKGS_OFF 2>/dev/null
 		source $REPLACE_KERNEL 2>/dev/null
 		source $DOWNGRADE_OFF 2>/dev/null
+		source $PKGS_PATH_ON_OFF/skins_off 2>/dev/null
 
 		#echo "mv .$configto to $config" && sleep 2 #echo command 2 seconds for progress
 		mv .config "$conf" #move back updated .config to box config
