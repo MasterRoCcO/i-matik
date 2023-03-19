@@ -1,6 +1,8 @@
 #!/bin/bash
 sed -i "s+FREETZ_PACKAGE_RRDSTATS=y+# FREETZ_PACKAGE_RRDSTATS is not set+g" $FREETZ_SSL_HOME_PATH/.config
 sed -i "s+FREETZ_PACKAGE_RRDTOOL=y+# FREETZ_PACKAGE_RRDTOOL is not set+g" $FREETZ_SSL_HOME_PATH/.config
+grep -v FREETZ_PACKAGE_RRDTOOL_VERSION_ABANDON $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+grep -v FREETZ_PACKAGE_RRDTOOL_VERSION_CURRENT $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
 sed -i "s+FREETZ_LIB_libz=y+# FREETZ_LIB_libz is not set+g" $FREETZ_SSL_HOME_PATH/.config
 sed -i "s+FREETZ_LIB_libfreetype=y+# FREETZ_LIB_libfreetype is not set+g" $FREETZ_SSL_HOME_PATH/.config
 sed -i "s+FREETZ_LIB_libart_lgpl_2=y+# FREETZ_LIB_libart_lgpl_2 is not set+g" $FREETZ_SSL_HOME_PATH/.config
