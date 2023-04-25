@@ -1,6 +1,6 @@
---- config/ui/patches.in	2023-02-06 16:07:12.389131000 +0100
-+++ config/ui/patches.in	2023-02-06 20:44:59.316012580 +0100
-@@ -1255,6 +1255,31 @@
+--- config/ui/patches.in	2023-04-25 08:47:14.495367376 +0200
++++ config/ui/patches.in	2023-04-25 08:47:15.235352891 +0200
+@@ -1263,6 +1263,31 @@
  		 812-show_update_config.sh
  		 821-show_network_repeater.sh
  		 822-show_dvb_services.sh
