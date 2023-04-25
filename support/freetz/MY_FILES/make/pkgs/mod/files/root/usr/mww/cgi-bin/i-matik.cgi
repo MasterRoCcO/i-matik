@@ -28,6 +28,7 @@ The installed version on this device is currently xxxx
 bbszx
 berndy2001
 hermann72pb
+Loman
 </p>
 
 </center>
