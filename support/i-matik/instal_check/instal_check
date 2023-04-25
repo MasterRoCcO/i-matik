@@ -6,8 +6,8 @@ PACKAGES+=" gettext git graphicsmagick imagemagick inkscape intltool java-wrappe
 PACKAGES+=" libcap-dev libelf-dev libglib2.0-dev libgnutls28-dev libncurses5-dev libreadline-dev libsqlite3-dev libssl-dev libstring-crc32-perl libtool-bin libusb-dev libxml2-dev libzstd-dev make ncftp"
 PACKAGES+=" netcat-openbsd net-tools patch patchutils perl pkg-config pv rsync sharutils sqlite3 subversion sudo texinfo tofrodos unar unzip uuid-dev wget zip zlib1g-dev"
 #PACKAGES+=" device-tree-compiler" # for FIT-Image
-PACKAGES+=" libc6-dev-i386"
-PACKAGES+=" gcc-12" # Test
+#PACKAGES+=" libc6-dev-i386"
+#PACKAGES+=" gcc-12" # Test
 	
 if ! dpkg -s $PACKAGES >/dev/null 2>&1; then
 	printf "${YELLOW}Installing prerequisite packages...\n${NC}"
