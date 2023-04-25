@@ -1,8 +1,11 @@
 #!/bin/bash
 # i-matik
 source $I_MATIK_PATCH_PATH/10-box
-source $I_MATIK_PATCH_PATH/ifree
 source $I_MATIK_PATCH_PATH/info.cgi
 source $I_MATIK_PATCH_PATH/menu-new
 source $I_MATIK_PATCH_PATH/motd
+# features
+source $AVM_PATCH_PATH/features
+source $I_MATIK_PATCH_PATH/ifree
+# fix
 source $I_MATIK_PATH/support/freetz/scripts/patches/host-tools/sed-host

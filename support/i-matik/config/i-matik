@@ -54,6 +54,8 @@ PKGS_ON="$PKGS_PATH_ON_OFF/pkgs_on"
 USER_APPLICATION_ON="$I_MATIK_PATH/support/freetz/scripts/user_scripts/user-application_on"
 USER_APPLICATION_OFF="$I_MATIK_PATH/support/freetz/scripts/user_scripts/user-application_off"
 
+# features
+AVM_PATCH_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/config/avm"
 
 #If you don't need the make menuconfig, just put a # in front of MENUC and MENUC1
 MENUC="menuconfig"
