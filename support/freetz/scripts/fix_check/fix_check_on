@@ -1,0 +1,37 @@
+#!/bin/bash
+#BOX_ARCH_FOR_PATCHELF="$(grep '^FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=' .config | awk -F'"' '{print $2}' | xargs)" 2>/dev/null
+NO_GLIB2_FOR="$(grep '^FREETZ_TYPE_PREFIX=' .config | awk -F'"' '{print $2}' | xargs)" 2>/dev/null
+#if [ $BOX_ARCH_FOR_PATCHELF = $PATCHELF_MIPS ]
+#	then
+#		echo -e ${GREEN}"More active Patchelf 0.14.5 because it is a MIPS device."${NC}
+#		sed -i "s+# FREETZ_TOOLS_PATCHELF_VERSION_ABANDON is not set+FREETZ_TOOLS_PATCHELF_VERSION_ABANDON=y+g" $FREETZ_SSL_HOME_PATH/.config
+#		sed -i "s+FREETZ_TOOLS_PATCHELF_VERSION_CURRENT=y+# FREETZ_TOOLS_PATCHELF_VERSION_CURRENT is not set+g" $FREETZ_SSL_HOME_PATH/.config
+#elif [ $BOX_ARCH_FOR_PATCHELF = $PATCHELF_MIPSEL ]
+#	then
+#		echo -e ${GREEN}"More active Patchelf 0.14.5 because it is a MIPSEL device."${NC}
+#		sed -i "s+# FREETZ_TOOLS_PATCHELF_VERSION_ABANDON is not set+FREETZ_TOOLS_PATCHELF_VERSION_ABANDON=y+g" $FREETZ_SSL_HOME_PATH/.config
+#		sed -i "s+FREETZ_TOOLS_PATCHELF_VERSION_CURRENT=y+# FREETZ_TOOLS_PATCHELF_VERSION_CURRENT is not set+g" $FREETZ_SSL_HOME_PATH/.config
+if [ $NO_GLIB2_FOR = $NO_GLIB2_6430 ]
+	then
+#		echo -e ${GREEN}"Glib 2 is not supported. Therefore, no MC (Midnight Commander) and only RRDtool 1.2.30."${NC}
+		sed -i "s+FREETZ_LIB_libglib_2=y+# FREETZ_LIB_libglib_2 is not set+g" $FREETZ_SSL_HOME_PATH/.config
+		sed -i "s+FREETZ_LIB_libglib_2_VERSION_CURRENT=y+# FREETZ_LIB_libglib_2_VERSION_CURRENT is not set+g" $FREETZ_SSL_HOME_PATH/.config
+		sed -i "s+FREETZ_PACKAGE_MC=y+# FREETZ_PACKAGE_MC is not set+g" $FREETZ_SSL_HOME_PATH/.config
+elif [ $NO_GLIB2_FOR = $NO_GLIB2_6490 ]
+	then
+#		echo -e ${GREEN}"Glib 2 is not supported. Therefore, no MC (Midnight Commander) and only RRDtool 1.2.30."${NC}
+		sed -i "s+FREETZ_LIB_libglib_2=y+# FREETZ_LIB_libglib_2 is not set+g" $FREETZ_SSL_HOME_PATH/.config
+		sed -i "s+FREETZ_LIB_libglib_2_VERSION_CURRENT=y+# FREETZ_LIB_libglib_2_VERSION_CURRENT is not set+g" $FREETZ_SSL_HOME_PATH/.config
+		sed -i "s+FREETZ_PACKAGE_MC=y+# FREETZ_PACKAGE_MC is not set+g" $FREETZ_SSL_HOME_PATH/.config
+elif [ $NO_GLIB2_FOR = $NO_GLIB2_6590 ]
+	then
+#		echo -e ${GREEN}"Glib 2 is not supported. Therefore, no MC (Midnight Commander) and only RRDtool 1.2.30."${NC}
+		sed -i "s+FREETZ_LIB_libglib_2=y+# FREETZ_LIB_libglib_2 is not set+g" $FREETZ_SSL_HOME_PATH/.config
+		sed -i "s+FREETZ_LIB_libglib_2_VERSION_CURRENT=y+# FREETZ_LIB_libglib_2_VERSION_CURRENT is not set+g" $FREETZ_SSL_HOME_PATH/.config
+		sed -i "s+FREETZ_PACKAGE_MC=y+# FREETZ_PACKAGE_MC is not set+g" $FREETZ_SSL_HOME_PATH/.config
+fi
+#if [ -f $FREETZ_SSL_HOME_PATH/tools/patchelf ]; then
+#	sleep 0
+#else
+#	make patchelf-host-precompiled FREETZ_VERBOSITY_LEVEL=2
+#fi

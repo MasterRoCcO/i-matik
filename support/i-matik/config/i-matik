@@ -50,6 +50,15 @@ PKGS_PATH_ON_OFF="$I_MATIK_PATH/support/freetz/scripts/pkgs_on_off"
 PKGS_OFF="$PKGS_PATH_ON_OFF/pkgs_off"
 PKGS_ON="$PKGS_PATH_ON_OFF/pkgs_on"
 
+#fix check
+FIX_CHECK_ON="$I_MATIK_PATH/support/freetz/scripts/fix_check/fix_check_on"
+FIX_CHECK_OFF="$I_MATIK_PATH/support/freetz/scripts/fix_check/fix_check_off"
+#PATCHELF_MIPS="mips1"
+#PATCHELF_MIPSEL="mipsel1"
+NO_GLIB2_6430="6430"
+NO_GLIB2_6490="6490"
+NO_GLIB2_6590="6590"
+
 #define user scripts home path
 USER_APPLICATION_ON="$I_MATIK_PATH/support/freetz/scripts/user_scripts/user-application_on"
 USER_APPLICATION_OFF="$I_MATIK_PATH/support/freetz/scripts/user_scripts/user-application_off"
