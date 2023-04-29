@@ -32,6 +32,8 @@ while [ $# -ne 0 ];do
 	    ;;
 	-kc|--kernel-clean)		PARAM_KERNEL_CLEAN=1
 	    ;;
+	-km|--kernel-menuconfig)	PARAM_KERNEL_MENU=1
+	    ;;
 	-ta|--toolchain-activate)       PARAM_TOOLCHAIN_ACTIVATE=1
 	    ;;
 	-td|--toolchain-disable)	PARAM_TOOLCHAIN_DISABLE=1
@@ -247,24 +249,6 @@ for bs in "${BOX_SSL[@]}"; do
 		
 	source $PKGS_PATH_ON_OFF/skins_on 2>/dev/null
 
-	if [ -z $PARAM_KERNEL ]; then
-		sleep 0
-	else
-		make kernel-precompiled #run make kernel-precompiled
-	fi
-
-	if [ -z $PARAM_KERNEL_CLEAN ]; then 2>/dev/null
-		sleep 0
-	else
-		make kernel-dirclean #run make kernel-dirclean
-	fi
-
-	if [ -z $PARAM_TOOLCHAIN_CLEAN ]; then
-		sleep 0
-	else
-		make target-toolchain-clean  #run target-toolchain-clean
-	fi
-
 		source $PKGS_ON 2>/dev/null
 		
 	if [ -z $PARAM_INTERNATIONAL ]; then
@@ -285,7 +269,34 @@ for bs in "${BOX_SSL[@]}"; do
 		source $KERNEL_ON 2>/dev/null
 		source $NO_KERNEL 2>/dev/null
 		source $NO_REPLACE 2>/dev/null
-		
+	
+	if [ -z $PARAM_KERNEL_CLEAN ]; then
+		sleep 0
+	else
+		make kernel-dirclean #run make kernel-dirclean
+	fi
+
+	if [ -z $PARAM_KERNEL ]; then
+		sleep 0
+	else
+		make kernel-dirclean #run make kernel-dirclean
+		make kernel-precompiled #run make kernel-precompiled
+	fi
+
+	if [ -z $PARAM_KERNEL_MENU ]; then
+		sleep 0
+	else
+		make kernel-dirclean #run make kernel-dirclean
+		make kernel-menuconfig #run kernel-menuconfig
+		make kernel-precompiled #run make kernel-precompiled
+	fi
+
+	if [ -z $PARAM_TOOLCHAIN_CLEAN ]; then
+		sleep 0
+	else
+		make target-toolchain-clean  #run target-toolchain-clean
+	fi
+
 		INT_REGION_COMMENT="$(grep '^FREETZ_TYPE_LANG_EN=' .config | awk -F'"' '{print $1}' | xargs)"
 		if [ ${INT_REGION_COMMENT:20:1} = $INT_REGION ] 2>/dev/null
 			then
@@ -368,8 +379,8 @@ for bs in "${BOX_SSL[@]}"; do
 		sed -i "s+FREETZ_LANG_EN=y+# FREETZ_LANG_EN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 	fi
 	
+		source $PKGS_OFF 2>/dev/null	
 		source $OSCAM_OFF 2>/dev/null
-		source $PKGS_OFF 2>/dev/null
 		source $REPLACE_KERNEL 2>/dev/null
 		source $DOWNGRADE_OFF 2>/dev/null
 		source $PKGS_PATH_ON_OFF/skins_off 2>/dev/null

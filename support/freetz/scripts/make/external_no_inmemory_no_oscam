@@ -22,6 +22,8 @@ while [ $# -ne 0 ];do
 	    ;;
 	-kc|--kernel-clean)		PARAM_KERNEL_CLEAN=1
 	    ;;
+	-km|--kernel-menuconfig)	PARAM_KERNEL_MENU=1
+	    ;;
 	-ta|--toolchain-activate)       PARAM_TOOLCHAIN_ACTIVATE=1
 	    ;;
 	-td|--toolchain-disable)	PARAM_TOOLCHAIN_DISABLE=1
@@ -231,24 +233,6 @@ for bs in "${BOX_SSL[@]}"; do
 		
 	source $PKGS_PATH_ON_OFF/skins_on 2>/dev/null
 
-	if [ -z $PARAM_KERNEL ]; then
-		sleep 0
-	else
-		make kernel-precompiled #run make kernel-precompiled
-	fi
-
-	if [ -z $PARAM_KERNEL_CLEAN ]; then
-		sleep 0
-	else
-		make kernel-dirclean #run make kernel-dirclean
-	fi
-
-	if [ -z $PARAM_TOOLCHAIN_CLEAN ]; then
-		sleep 0
-	else
-		make target-toolchain-clean  #run target-toolchain-clean
-	fi
-
 		sed -i "s+# EXTERNAL_ENABLED is not set+EXTERNAL_ENABLED=y+g" $FREETZ_SSL_HOME_PATH/.config
 
 ed $FREETZ_SSL_HOME_PATH/.config <<EOF
@@ -296,7 +280,34 @@ EOF
 		source $KERNEL_ON 2>/dev/null
 		source $NO_KERNEL 2>/dev/null
 		source $NO_REPLACE 2>/dev/null
-		
+	
+	if [ -z $PARAM_KERNEL_CLEAN ]; then
+		sleep 0
+	else
+		make kernel-dirclean #run make kernel-dirclean
+	fi
+
+	if [ -z $PARAM_KERNEL ]; then
+		sleep 0
+	else
+		make kernel-dirclean #run make kernel-dirclean
+		make kernel-precompiled #run make kernel-precompiled
+	fi
+
+	if [ -z $PARAM_KERNEL_MENU ]; then
+		sleep 0
+	else
+		make kernel-dirclean #run make kernel-dirclean
+		make kernel-menuconfig #run kernel-menuconfig
+		make kernel-precompiled #run make kernel-precompiled
+	fi
+
+	if [ -z $PARAM_TOOLCHAIN_CLEAN ]; then
+		sleep 0
+	else
+		make target-toolchain-clean  #run target-toolchain-clean
+	fi
+
 		INT_REGION_COMMENT="$(grep '^FREETZ_TYPE_LANG_EN=' .config | awk -F'"' '{print $1}' | xargs)"
 		if [ ${INT_REGION_COMMENT:20:1} = $INT_REGION ] 2>/dev/null
 			then
@@ -403,7 +414,7 @@ EOF
 		grep -v EXTERNAL_FREETZ_PACKAGE_USBUTILS $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
 		grep -v EXTERNAL_FREETZ_PACKAGE_STRACE $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
 
-		source $PKGS_OFF 2>/dev/null
+		source $PKGS_OFF 2>/dev/null	
 		source $REPLACE_KERNEL 2>/dev/null
 		source $DOWNGRADE_OFF 2>/dev/null
 		source $PKGS_PATH_ON_OFF/skins_off 2>/dev/null

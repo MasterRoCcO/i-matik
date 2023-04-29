@@ -9,7 +9,7 @@ I_MATIK_PATH=$(cd `dirname $0` && pwd)
 git pull
 source $I_MATIK_PATH/support/i-matik/config/i-matik
 source $INSTAL_CHECK
-VERSIONS_NR="0.72.6(i02.9)"
+VERSIONS_NR="0.72.7(i02.9)"
 ln -s $CREATE_BOXES $I_MATIK_PATH/my-boxes_please_edit_me 2>/dev/null
 
 #arm boxen
@@ -813,7 +813,8 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf "  -nc,--no-clientbox\t\tNo client box image is created\n"
 	printf "  -nm,--no-masterbox\t\tNo master box image is created\n"
 	printf "  -kp,--kernel-precompiled\tMake kernel-precompiled\n"
-	printf "  -kc,--kernel-clean\t\tMake kernel-precompiled\n"
+	printf "  -kc,--kernel-clean\t\tMake kernel-clean\n"
+	printf "  -km,--kernel-menuconfig\tMake kernel-menuconfig\n"
 	printf "  -ta,--toolchain-activate\tActivate toolchain\n"
 	printf "  -td,--toolchain-disable\tDisable toolchain\n"
 	printf "  -tc,--toolchain-clean\t\tClean toolchain\n"
