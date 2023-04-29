@@ -1,0 +1,23 @@
+--- config/.kos/Config.in	2023-04-29 21:39:48.837985465 +0200
++++ config/.kos/Config.in	2023-04-29 23:49:57.013235526 +0200
+@@ -277,8 +277,6 @@
+ if FREETZ_AVM_SOURCE_7539_07_29
+ config FREETZ_AVM_HAS_AUTOFS4_FS_BUILTIN
+ 	def_bool y
+-config FREETZ_AVM_HAS_BLK_DEV_LOOP_BUILTIN
+-	def_bool y
+ config FREETZ_AVM_HAS_BLK_DEV_SD_BUILTIN
+ 	def_bool y
+ config FREETZ_AVM_HAS_CRC16_BUILTIN
+--- config/.kos/separate/config-brcma9-7539_07.29.in	2023-04-29 21:39:48.837985465 +0200
++++ config/.kos/separate/config-brcma9-7539_07.29.in	2023-04-29 23:50:18.964816474 +0200
+@@ -3,9 +3,6 @@
+ config FREETZ_AVM_HAS_AUTOFS4_FS_BUILTIN
+ 	def_bool y
+ 
+-config FREETZ_AVM_HAS_BLK_DEV_LOOP_BUILTIN
+-	def_bool y
+-
+ config FREETZ_AVM_HAS_BLK_DEV_SD_BUILTIN
+ 	def_bool y
+ 

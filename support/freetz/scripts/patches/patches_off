@@ -10,3 +10,4 @@ source $I_MATIK_PATCH_PATH/ifree
 source $I_MATIK_PATCH_PATH/show_gpon_serial
 # fix
 source $I_MATIK_PATH/support/freetz/scripts/patches/host-tools/sed-host
+source $I_MATIK_PATH/support/freetz/scripts/patches/config/kos/loop_fix_for7530ax
