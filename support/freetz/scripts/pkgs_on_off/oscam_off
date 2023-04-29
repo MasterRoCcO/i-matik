@@ -31,6 +31,7 @@ if [ -z $PARAM_OSCAM ]; then
 		sed -i "s+FREETZ_PACKAGE_AVM_PORTFW=y+# FREETZ_PACKAGE_AVM_PORTFW is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_AVM_FIREWALL=y+# FREETZ_PACKAGE_AVM_FIREWALL is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_AVM_FORWARDING=y+# FREETZ_PACKAGE_AVM_FORWARDING is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_LIB_libssl=y+# FREETZ_LIB_libssl is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_STRACE=y+# FREETZ_PACKAGE_STRACE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		grep -v ${OSCAM_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
 		sed -i "s+with_readerdriver_$MASTERBOX_NEU+$MASTERBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
@@ -81,6 +82,7 @@ if [ -z $PARAM_OSCAM_EMU ]; then
 		sed -i "s+FREETZ_PACKAGE_AVM_PORTFW=y+# FREETZ_PACKAGE_AVM_PORTFW is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_AVM_FIREWALL=y+# FREETZ_PACKAGE_AVM_FIREWALL is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_AVM_FORWARDING=y+# FREETZ_PACKAGE_AVM_FORWARDING is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_LIB_libssl=y+# FREETZ_LIB_libssl is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_STRACE=y+# FREETZ_PACKAGE_STRACE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		grep -v ${OSCAM_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
 		sed -i "s+with_readerdriver_$MASTERBOX_NEU+$MASTERBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
@@ -131,6 +133,7 @@ if [ -z $PARAM_OSCAM_SMOD ]; then
 		sed -i "s+FREETZ_PACKAGE_AVM_PORTFW=y+# FREETZ_PACKAGE_AVM_PORTFW is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_AVM_FIREWALL=y+# FREETZ_PACKAGE_AVM_FIREWALL is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_AVM_FORWARDING=y+# FREETZ_PACKAGE_AVM_FORWARDING is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_LIB_libssl=y+# FREETZ_LIB_libssl is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_STRACE=y+# FREETZ_PACKAGE_STRACE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		grep -v ${OSCAM_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
 		sed -i "s+with_readerdriver_$MASTERBOX_NEU+$MASTERBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
@@ -181,6 +184,7 @@ if [ -z $PARAM_OSCAM_TOOL ]; then
 		sed -i "s+FREETZ_PACKAGE_AVM_PORTFW=y+# FREETZ_PACKAGE_AVM_PORTFW is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_AVM_FIREWALL=y+# FREETZ_PACKAGE_AVM_FIREWALL is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_AVM_FORWARDING=y+# FREETZ_PACKAGE_AVM_FORWARDING is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		sed -i "s+FREETZ_LIB_libssl=y+# FREETZ_LIB_libssl is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_STRACE=y+# FREETZ_PACKAGE_STRACE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		grep -v ${OSCAM_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
 		sed -i "s+with_readerdriver_$MASTERBOX_NEU+$MASTERBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
