@@ -1,5 +1,0 @@
-#!/bin/bash
-rm -f $FREETZ_SSL_HOME_PATH/config/.kos/Config.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/config/.kos/Config.in.orig $FREETZ_SSL_HOME_PATH/config/.kos/Config.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/config/.kos/separate/config-brcma9-7539_07.29.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/config/.kos/separate/config-brcma9-7539_07.29.in.orig $FREETZ_SSL_HOME_PATH/config/.kos/separate/config-brcma9-7539_07.29.in 2>/dev/null
