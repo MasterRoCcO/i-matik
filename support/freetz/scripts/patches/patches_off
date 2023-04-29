@@ -7,5 +7,6 @@ source $I_MATIK_PATCH_PATH/motd
 # features
 source $AVM_PATCH_PATH/features
 source $I_MATIK_PATCH_PATH/ifree
+source $I_MATIK_PATCH_PATH/show_gpon_serial
 # fix
 source $I_MATIK_PATH/support/freetz/scripts/patches/host-tools/sed-host

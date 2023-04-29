@@ -22,6 +22,10 @@ echo -e ${GREEN}"Freetz files patch for Internet Sharing on Repeater."${NC}
 cp -ar $I_MATIK_PATCH_PATH/ifree.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < ifree.patch
 rm -rf "$FREETZ_SSL_HOME_PATH/ifree.patch" 2>/dev/null
+echo -e ${GREEN}"Freetz files patch for GPON Serial Number."${NC}
+cp -ar $I_MATIK_PATCH_PATH/show_gpon_serial.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < show_gpon_serial.patch
+rm -rf "$FREETZ_SSL_HOME_PATH/show_gpon_serial.patch" 2>/dev/null
 # fix
 echo -e ${GREEN}"fix for sed host (static.pkg)."${NC}
 cp -ar $I_MATIK_PATH/support/freetz/scripts/patches/host-tools/sed-host.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null

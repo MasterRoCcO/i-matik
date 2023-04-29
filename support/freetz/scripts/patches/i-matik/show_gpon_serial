@@ -1,0 +1,5 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/patches/cond/851-show_gpon_serial/851-show_gpon_serial_07_5X.patch.orig 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/patches/cond/851-show_gpon_serial/851-show_gpon_serial_07_5X.patch 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/patches/scripts/851-show_gpon_serial.sh.orig 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/patches/scripts/851-show_gpon_serial.sh 2>/dev/null
