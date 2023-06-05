@@ -25,3 +25,9 @@
 		ln -s $USER_APPLICATION_ON $I_MATIK_PATH/user-application_please_edit_me 2>/dev/null
 		source $USER_APPLICATION_ON
 	fi
+		
+	if [ -z $PARAM_VNSTAT ]; then
+		sleep 0
+	else
+		source $PKGS_PATH_ON_OFF/vnstat_on
+	fi

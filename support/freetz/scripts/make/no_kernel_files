@@ -42,6 +42,8 @@ while [ $# -ne 0 ];do
 	    ;;
 	-ua|--user-application)		PARAM_USER_SCRIPTS=1
 	    ;;
+	-vs|--vnstat)			PARAM_VNSTAT=1
+	    ;;
 	-*|--*)				PARAM_BAD=1
 	    ;;
 	*)				BOX_SSL+=( $1 )

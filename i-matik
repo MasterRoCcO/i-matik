@@ -9,7 +9,7 @@ I_MATIK_PATH=$(cd `dirname $0` && pwd)
 git pull
 source $I_MATIK_PATH/support/i-matik/config/i-matik
 source $INSTAL_CHECK
-VERSIONS_NR="0.73.1(i04.0)"
+VERSIONS_NR="0.73.2(i04.0)"
 ln -s $CREATE_BOXES $I_MATIK_PATH/my-boxes_please_edit_me 2>/dev/null
 
 #arm boxen
@@ -821,6 +821,7 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf "  -cm,--callmonitor\t\tCallmonitor\n"
 	printf "  -rr,--rrdstats\t\tRRDstats for RRDtool 1.2.30\n"
 	printf "  -rr18,--rrdstats18\t\tRRDstats for RRDtool 1.8.0\n"
+	printf "  -vs,--vnstat\t\t\tVNSTAT\n"
 	printf "  -push\t\t\t\tpush image to Fritz!Box or Fritz!Repeater or Fritz!Powerline\n"
 	printf "  -backup\t\t\tmake a backup of your freetz-signature and freetz-dl\n"
 	printf "  -us,--user-skins\t\tuser skins\n"
