@@ -29,4 +29,10 @@
 		sleep 0
 	else
 		source $PKGS_PATH_ON_OFF/vnstat_off
+	fi
+		
+	if [ -z $PARAM_WIREGUARD ]; then
+		sleep 0
+	else
+		source $PKGS_PATH_ON_OFF/wireguard_off
 	fi	

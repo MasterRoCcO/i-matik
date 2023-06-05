@@ -44,6 +44,8 @@ while [ $# -ne 0 ];do
 	    ;;
 	-vs|--vnstat)			PARAM_VNSTAT=1
 	    ;;
+	-wg|--wireguard)		PARAM_WIREGUARD=1
+	    ;;
 	-*|--*)				PARAM_BAD=1
 	    ;;
 	*)				BOX_SSL+=( $1 )
