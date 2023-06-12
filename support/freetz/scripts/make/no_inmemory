@@ -273,6 +273,7 @@ for bs in "${BOX_SSL[@]}"; do
 		source $KERNEL_ON 2>/dev/null
 		source $NO_KERNEL 2>/dev/null
 		source $NO_REPLACE 2>/dev/null
+		source $NO_WATCHDOG 2>/dev/null
 	
 	if [ -z $PARAM_KERNEL_CLEAN ]; then
 		sleep 0
@@ -383,9 +384,10 @@ for bs in "${BOX_SSL[@]}"; do
 		sed -i "s+FREETZ_LANG_EN=y+# FREETZ_LANG_EN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 	fi
 	
-		source $PKGS_OFF 2>/dev/null	
+		source $PKGS_OFF 2>/dev/null
 		source $OSCAM_OFF 2>/dev/null
 		source $REPLACE_KERNEL 2>/dev/null
+		source $YES_WATCHDOG 2>/dev/null
 		source $DOWNGRADE_OFF 2>/dev/null
 		source $PKGS_PATH_ON_OFF/skins_off 2>/dev/null
 

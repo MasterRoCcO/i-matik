@@ -92,6 +92,16 @@ BAD_TYP1="74901"
 BAD_TYP2="64901"
 BAD_TYP3="65901"
 
+YES_WATCHDOG="$I_MATIK_PATH/support/freetz/scripts/watchdog/watchdog_yes"
+NO_WATCHDOG="$I_MATIK_PATH/support/freetz/scripts/watchdog/watchdog_no"
+WATCHDOG_ON="$I_MATIK_PATH/support/freetz/scripts/watchdog/watchdog_on"
+WATCHDOG_OFF="$I_MATIK_PATH/support/freetz/scripts/watchdog/watchdog_off"
+BAD_WD_OS="07_5X"
+WATCHDOG_CLEAN1="6690"
+WATCHDOG_CLEAN2="6xxx"
+WATCHDOG_CLEAN3="6xxy"
+WATCHDOG_CLEAN4="6xxz"
+
 #define int region an os
 INT_REGION="y"
 
