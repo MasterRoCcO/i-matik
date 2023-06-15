@@ -5,9 +5,14 @@ CORE_SUFFIX="$(grep '^FREETZ_SYSTEM_TYPE_CORE_SUFFIX=' .config | awk -F'"' '{pri
 
 cp -p $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}.orig 2>/dev/null
 
+#USB_HOST="y"
+#USB_HOST_COMMENT="$(grep '^FREETZ_AVM_HAS_USB_HOST=' .config | awk -F'"' '{print $1}' | xargs)"
+#if [ ${USB_HOST_COMMENT:24:1} = $USB_HOST ] 2>/dev/null
+#then
 sed -i "s+# CONFIG_USB_SERIAL is not set+CONFIG_USB_SERIAL=m+g" $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
 sed -i "s+# CONFIG_USB_SERIAL_FTDI_SIO is not set+CONFIG_USB_SERIAL_FTDI_SIO=m+g" $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
 sed -i "s+# CONFIG_USB_SERIAL_PL2303 is not set+CONFIG_USB_SERIAL_PL2303=m+g" $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
+#fi
 sed -i "s+# CONFIG_AUTOFS4_FS is not set+CONFIG_AUTOFS4_FS=m+g" $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
 sed -i "s+# CONFIG_NETWORK_FILESYSTEMS is not set+CONFIG_NETWORK_FILESYSTEMS=y+g" $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
 sed -i "s+# CONFIG_CRYPTO_ARC4 is not set+CONFIG_CRYPTO_ARC4=m+g" $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
