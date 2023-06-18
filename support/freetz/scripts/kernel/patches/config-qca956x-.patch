@@ -1,0 +1,2731 @@
+--- make/kernel/patches/4.4.60/4.4.60/010-shell_bash.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/010-shell_bash.patch	2023-06-17 12:27:48.784255000 +0200
+@@ -0,0 +1,11 @@
++--- linux-4.4/Makefile
+++++ linux-4.4/Makefile
++@@ -4,6 +4,8 @@
++ EXTRAVERSION =
++ NAME = Blurry Fish Butt
++ 
+++SHELL := bash
+++
++ # *DOCUMENTATION*
++ # To see a list of typical targets execute "make help"
++ # More info can be located in ./README
+--- make/kernel/patches/4.4.60/4.4.60/0546_07.12/001-avm-menuconfig-symbols.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/0546_07.12/001-avm-menuconfig-symbols.patch	2023-06-17 12:27:48.784255000 +0200
+@@ -0,0 +1,7 @@
++--- linux-4.4/drivers/char/ubik2/Kconfig
+++++ linux-4.4/drivers/char/ubik2/Kconfig
++@@ -0,0 +1,3 @@
+++config UBIK2_ISDNSTACK_ON_CPU
+++	int "UBIK2_ISDNSTACK_ON_CPU"
+++	default 0
++
+--- make/kernel/patches/4.4.60/4.4.60/0546_07.12/001-regular_dot_config_location.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/0546_07.12/001-regular_dot_config_location.patch	2023-06-17 12:27:48.784255000 +0200
+@@ -0,0 +1,10 @@
++--- linux-4.4/.kernelvariables
+++++ linux-4.4/.kernelvariables
++@@ -35,7 +35,6 @@
++ CP ?= /bin/cp
++ export CP
++
++-export KCONFIG_CONFIG = avm/conf/linux-4.4.wasp
++
++ # No variables exported via $(kernelvariables_extra)
++
+--- make/kernel/patches/4.4.60/4.4.60/0546_07.12/100-evaloader.TODO.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/0546_07.12/100-evaloader.TODO.patch	2023-06-17 12:27:48.784255000 +0200
+@@ -0,0 +1,12 @@
++--- linux-4.4/arch/mips/Makefile
+++++ linux-4.4/arch/mips/Makefile
++@@ -357,6 +357,9 @@
++ 
++ all:	$(all-y)
++ 
+++vmlinux.eva_pad: vmlinux.bin FORCE
+++	cp arch/mips/boot/$< arch/mips/boot/$@
+++
++ # boot
++ $(boot-y): $(vmlinux-32) FORCE
++ 	$(Q)$(MAKE) $(build)=arch/mips/boot VMLINUX=$(vmlinux-32) \
+--- make/kernel/patches/4.4.60/4.4.60/0546_07.12/300-no_ccache_check.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/0546_07.12/300-no_ccache_check.patch	2023-06-17 12:27:48.784255000 +0200
+@@ -0,0 +1,15 @@
++--- linux-4.4/GNUmakefile
+++++ linux-4.4/GNUmakefile
++@@ -16,12 +16,6 @@
++ $(if $(kernelvariables),$(info linux/GNUmakefile: including $(kernelvariables)))
++ export _kernelvariables_read := 1
++ -include $(kernelvariables)
++-
++-# Iff /GU/tmp/ is not available and CCACHE_DISABLE is not set, disable ccache
++-ifeq ($(wildcard /GU/tmp/)$(CCACHE_DISABLE),)
++-$(info /GU/tmp is not available, disabling ccache)
++-export CCACHE_DISABLE = true
++-endif
++ endif
++ 
++ # ACHTUNG: Make wird hier neugestartet um die Übernahme der
+--- make/kernel/patches/4.4.60/4.4.60/1200_07.14/001-avm-menuconfig-symbols.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1200_07.14/001-avm-menuconfig-symbols.patch	2023-06-17 12:27:48.784255000 +0200
+@@ -0,0 +1,216 @@
++--- linux-4.4/drivers/usb/Kconfig
+++++ linux-4.4/drivers/usb/Kconfig
++@@ -96,6 +96,7 @@
++ 
++ endif
++ 
+++source "drivers/usb/musb/Kconfig"
++ 
++ source "drivers/usb/dwc3/Kconfig"
++ 
++--- linux-4.4/drivers/net/nlaudio/Kconfig
+++++ linux-4.4/drivers/net/nlaudio/Kconfig
++@@ -0,0 +1,3 @@
+++config AVM_NET_LINK_AUDIO
+++	tristate "AVM_NET_LINK_AUDIO"
+++	default m
++--- linux-4.4/drivers/char/dect_io/Kconfig
+++++ linux-4.4/drivers/char/dect_io/Kconfig
++@@ -0,0 +1,12 @@
+++menu "AVM DECT_IO"
+++
+++config AVM_DECT_IO
+++	tristate "AVM dect IO managment support"
+++	default n
+++	help
+++	  This driver provides power managment functions for AVMs own drivers.
+++
+++	  To compile this driver as a module, choose M here. The module
+++	  will be called avm.
+++
+++endmenu
++--- linux-4.4/drivers/char/Piglet_noemif/Kconfig
+++++ linux-4.4/drivers/char/Piglet_noemif/Kconfig
++@@ -0,0 +1,22 @@
+++#config AVM_PIGLET
+++#	tristate "AVM Piglet load support"
+++#	default n
+++#	help
+++#	  This driver provides the piglet load support.
+++
+++menu "AVM Piglet (no emif)"
+++
+++config AVM_PIGLET_NOEMIF
+++	tristate "AVM Piglet load support (No Emif)"
+++	default n
+++	help
+++	  This driver provides the piglet load support (without Emif).
+++
+++config AVM_PIGLET_DECT
+++	bool "AVM Piglet DECT Loader support (only on Piglet No Emif)"
+++	depends on AVM_PIGLET_NOEMIF
+++	default y
+++	help
+++	  This driver provides the DECT loader support in piglet
+++
+++endmenu
++--- linux-4.4/drivers/char/ubik2/Kconfig
+++++ linux-4.4/drivers/char/ubik2/Kconfig
++@@ -1,4 +1,29 @@
++-config UBIK2_ISDNSTACK_ON_CPU
++-    int
+++menu "AVM PCMLINK driver for PCM-Routing"
+++
+++config UBIK2
+++	tristate "UBIK2/PCMLINK Driver Support (AVM)"
+++	default n
+++
+++config UBIK2_DEVELOPMENT_SUPPORT
+++	int "Mask for Developmentfeature"
+++	depends on UBIK2
++ 	default 0
+++	help
+++	  0x1 Touch-Datenerfassung/TDM-Rawdaten-Erfassung
+++	  0x2 integrierter Ec-Generator
+++
+++config UBIK2_MSEC_PER_IRQ
+++	int "interrupt-trigger"
+++	depends on UBIK2
+++	default 8
+++	help
+++	  only 4 or 8 ms supported
+++
+++config UBIK2_ISDNSTACK_ON_CPU
+++	int "interrupt on cpuX"
+++#	depends on UBIK2 && SMP  # HACK für GPL: define wird verwendet, UBIK2 ist aber auskonfiguriert
+++	default 1
+++	help
+++	  ISDN-Stack have to bind on fixed cpu
++ 
+++endmenu
++--- linux-4.4/drivers/isdn/avm_dect/Kconfig
+++++ linux-4.4/drivers/isdn/avm_dect/Kconfig
++@@ -0,0 +1,10 @@
+++menu "AVM DECT Stack"
+++
+++config AVM_DECT
+++    tristate "AVM DECT Stack"
+++
+++config AVM_DECT_DEBUG
+++    bool "AVM DECT debug version"
+++    depends on AVM_DECT
+++
+++endmenu
++--- linux-4.4/drivers/isdn/capi_codec/Kconfig
+++++ linux-4.4/drivers/isdn/capi_codec/Kconfig
++@@ -0,0 +1,43 @@
+++menu "AVM CAPI-CODEC"
+++
+++config CAPI_CODEC
+++    tristate "capi driver codec support"
+++    depends on ISDN
+++
+++config CAPI_CODEC_SPEEX
+++    bool "capi driver codec SPEEX"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_ILBC
+++    bool "capi driver codec ILBC"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G729
+++    bool "capi driver codec G729"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G711
+++    bool "capi driver codec G711"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G726
+++    bool "capi driver codec G726"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G722
+++    bool "capi driver codec G722"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_VAD
+++    bool "capi driver codec VAD"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_CNG
+++    bool "capi driver codec CNG (comfort noise generator)"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_FAX
+++    bool "capi driver codec FAX (T30/T38)"
+++    depends on CAPI_CODEC
+++
+++endmenu
++--- linux-4.4/drivers/isdn/isdn_fon5/Kconfig
+++++ linux-4.4/drivers/isdn/isdn_fon5/Kconfig
++@@ -0,0 +1,64 @@
+++#
+++# ISDN-PCMLINK driver
+++#
+++
+++config ISDN_CAPI_ISDN_NT_PCMLINK
+++    tristate "AVM ISDN NT PCMLINK driver"
+++    depends on CAPI_AVM
+++    select ISDN_NT_PCMLINK_BLK
+++    select ISDN_NT_PCMLINK_E1
+++    select ISDN_NT_PCMLINK_STACK
+++    select ISDN_NT_PCMLINK_ISDN_AB
+++
+++config ISDN_NT_PCMLINK_BLK
+++    tristate "AVM ISDN NT PCMLINK driver (hardware interfacing part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_E1
+++    tristate "AVM ISDN NT PCMLINK driver (layer 1 part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_STACK
+++    tristate "AVM ISDN NT PCMLINK driver (protocol stack)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_ISDN_AB
+++    tristate "AVM ISDN NT PCMLINK driver (telephony part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_DEBUG
+++    bool "AVM ISDN NT PCMLINK driver debug"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_NO_BCHANNEL
+++    bool "AVM ISDN NT PCMLINK driver without B-Channels support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_FAX
+++    bool "AVM ISDN NT PCMLINK driver with FAX support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_COMPRESS
+++    bool "AVM ISDN NT PCMLINK driver with Compression support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_MODEM
+++    bool "AVM ISDN NT PCMLINK driver with MODEM support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_DTMF
+++    bool "AVM ISDN NT PCMLINK driver with DTMF support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_VCTRLS
+++    bool "AVM ISDN NT PCMLINK driver virtual controller support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_VCTRLS_NUMBER
+++    int "AVM ISDN NT PCMLINK driver, number of virtual controllers"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && ISDN_NT_PCMLINK_VCTRLS
+++    default 1
+++
+++config ISDN_NT_PCMLINK_FRITZX
+++    bool "AVM ISDN NT PCMLINK driver with FRITZX controller support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+--- make/kernel/patches/4.4.60/4.4.60/1200_07.14/001-regular_dot_config_location.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1200_07.14/001-regular_dot_config_location.patch	2023-06-17 12:27:48.784255000 +0200
+@@ -0,0 +1,10 @@
++--- linux-4.4/.kernelvariables
+++++ linux-4.4/.kernelvariables
++@@ -35,7 +35,6 @@
++ CP ?= /bin/cp
++ export CP
++ 
++-export KCONFIG_CONFIG = avm/conf/linux-4.4.cortexa9
++ 
++ # No variables exported via $(kernelvariables_extra)
++ 
+--- make/kernel/patches/4.4.60/4.4.60/1200_07.14/100-evaloader.TODO.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1200_07.14/100-evaloader.TODO.patch	2023-06-17 12:27:48.784255000 +0200
+@@ -0,0 +1,12 @@
++--- linux-4.4/arch/arm/Makefile
+++++ linux-4.4/arch/arm/Makefile
++@@ -334,6 +334,9 @@
++ 
++ PHONY += bzImage $(BOOT_TARGETS) $(INSTALL_TARGETS)
++ 
+++vmlinux.eva_pad: Image FORCE
+++	cp $(boot)/$< $(boot)/$@
+++
++ bootpImage uImage: zImage
++ zImage: Image
++ 
+--- make/kernel/patches/4.4.60/4.4.60/1200_07.14/300-no_ccache_check.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1200_07.14/300-no_ccache_check.patch	2023-06-17 12:27:48.788255000 +0200
+@@ -0,0 +1,15 @@
++--- linux-4.4/GNUmakefile
+++++ linux-4.4/GNUmakefile
++@@ -16,12 +16,6 @@
++ $(if $(kernelvariables),$(info linux/GNUmakefile: including $(kernelvariables)))
++ export _kernelvariables_read := 1
++ -include $(kernelvariables)
++-
++-# Iff /GU/tmp/ is not available and CCACHE_DISABLE is not set, disable ccache
++-ifeq ($(wildcard /GU/tmp/)$(CCACHE_DISABLE),)
++-$(info /GU/tmp is not available, disabling ccache)
++-export CCACHE_DISABLE = true
++-endif
++ endif
++ 
++ # ACHTUNG: Make wird hier neugestartet um die Übernahme der
+--- make/kernel/patches/4.4.60/4.4.60/1200_07.20/000-1200.07.20-1200.07.21-delta.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1200_07.20/000-1200.07.20-1200.07.21-delta.patch	2023-06-17 12:27:48.788255000 +0200
+@@ -0,0 +1,323 @@
++This patch has been created from AVM's opensrc packages:
++
++    diff -durN --no-dereference 1200.07.20 1200.07.21 > this.patch
++
++--- linux-4.4/arch/arm/boot/dts/Fritz_Box_HW249-0.dts	2020-06-12 15:45:57.000000000 +0200
+++++ linux-4.4/arch/arm/boot/dts/Fritz_Box_HW249-0.dts	2020-10-01 11:11:07.000000000 +0200
++@@ -305,10 +305,14 @@
++ 			value = <50>;
++ 			param = <AVM_DEF_HW_PARAM_GPIO_OUT_ACTIVE_LOW>;
++ 		};
++-		led_connect: gpio_avm_led_pairing {
+++		led_connect_g: gpio_avm_led_pairing_g {
++ 			value = <45>;
++ 			param = <AVM_DEF_HW_PARAM_GPIO_OUT_ACTIVE_HIGH>;
++ 		};
+++		led_connect_y: gpio_avm_led_pairing_y {
+++			value = <46>;
+++			param = <AVM_DEF_HW_PARAM_GPIO_OUT_ACTIVE_LOW>;
+++		};
++ 		gpio_avm_reset_plc {
++ 			value = <18>;
++ 			param = <AVM_DEF_HW_PARAM_GPIO_OUT_ACTIVE_HIGH>;
++@@ -324,7 +328,13 @@
++ 
++ 		repeater-one-no-rssi {
++ 			compatible = "avm,hui-generic-led-avm";
++-			avm-gpios = <&led_connect>;
+++			avm-gpios = <&led_connect_g>, <&led_connect_y>;
+++
+++			colors {
+++				normal = <0xFF>, <0x0>, <0x0>;
+++				warn = <0x0>, <0xFF>, <0x0>;
+++				error = <0xFF>, <0x0>, <0x0>;
+++			};
++ 		};
++ 
++ 		repeater-plc-wlan {
++--- linux-4.4/arch/arm/boot/dts/Fritz_Box_HW258-0.dts	2020-06-12 15:45:57.000000000 +0200
+++++ linux-4.4/arch/arm/boot/dts/Fritz_Box_HW258-0.dts	2020-10-01 11:11:07.000000000 +0200
++@@ -286,7 +286,12 @@
++ 				< 710000 >;
++ 		};
++ 
++-		lte_vctrl: fixedregulator@1 {
+++		/* Power up sequence of the RM500Q:
+++		 *  1) set vctrl to high and wait 50ms
+++		 *  2) set power to high and wait 70ms
+++		 *  3) set reset to high
+++		 */
+++		lte_vctrl: fixedregulator@2 {
++ 			compatible = "regulator-fixed";
++ 			regulator-name = "lte-vctrl";
++ 			regulator-min-microvolt = <5000000>;
++@@ -297,16 +302,27 @@
++ 			gpio = <&tlmm 31 GPIO_ACTIVE_HIGH>;
++ 		};
++ 
++-		lte_power: fixedregulator@0 {
+++		lte_power: fixedregulator@1 {
++ 			compatible = "regulator-fixed";
++ 			regulator-name = "lte-power";
++ 			regulator-min-microvolt = <5000000>;
++ 			regulator-max-microvolt = <5000000>;
++ 			gpio = <&tlmm 9 GPIO_ACTIVE_HIGH>;
+++			/* wait at least 70ms to enable reset */
+++			startup-delay-us = <70000>;
+++			enable-active-high;
+++			vin-supply = <&lte_vctrl>;
+++		};
+++		lte_reset: fixedregulator@0 {
+++			compatible = "regulator-fixed";
+++			regulator-name = "lte-reset";
+++			regulator-min-microvolt = <5000000>;
+++			regulator-max-microvolt = <5000000>;
+++			gpio = <&tlmm 10 GPIO_ACTIVE_HIGH>;
++ 			/* Also wait a bit here. */
++ 			startup-delay-us = <25000>;
++ 			enable-active-high;
++-			vin-supply = <&lte_vctrl>;
+++			vin-supply = <&lte_power>;
++ 		};
++ 	};
++ 
++@@ -407,10 +423,6 @@
++ 			value = <49>;
++ 			param = <AVM_DEF_HW_PARAM_GPIO_OUT_ACTIVE_HIGH>;
++ 		};
++-		gpio_avm_lte_reset {
++-			value = <10>;
++-			param = <AVM_DEF_HW_PARAM_GPIO_OUT_ACTIVE_HIGH>;
++-		};
++ 		gpio_avm_lte_disable {
++ 			value = <11>;
++ 			param = <AVM_DEF_HW_PARAM_GPIO_OUT_ACTIVE_HIGH>;
++@@ -437,6 +449,6 @@
++ 
++ &pcie0 {
++ 	perst-gpio = <&tlmm 50 GPIO_ACTIVE_LOW>;
++-	vdda-supply = <&lte_power>;
+++	vdda-supply = <&lte_reset>;
++ 	status = "ok";
++ };
++--- linux-4.4/avm/conf/linux-4.4.cortexa9	2020-06-12 15:45:57.000000000 +0200
+++++ linux-4.4/avm/conf/linux-4.4.cortexa9	2020-10-01 11:11:07.000000000 +0200
++@@ -3866,10 +3866,7 @@
++ CONFIG_SLUB_DEBUG_ON=y
++ # CONFIG_SLUB_STATS is not set
++ CONFIG_HAVE_DEBUG_KMEMLEAK=y
++-CONFIG_DEBUG_KMEMLEAK=y
++-CONFIG_DEBUG_KMEMLEAK_EARLY_LOG_SIZE=1000
++-# CONFIG_DEBUG_KMEMLEAK_TEST is not set
++-CONFIG_DEBUG_KMEMLEAK_DEFAULT_OFF=y
+++# CONFIG_DEBUG_KMEMLEAK is not set
++ # CONFIG_DEBUG_STACK_USAGE is not set
++ # CONFIG_DEBUG_VM is not set
++ # CONFIG_DEBUG_MEMORY_INIT is not set
++@@ -3910,7 +3907,7 @@
++ CONFIG_DEBUG_ATOMIC_SLEEP=y
++ # CONFIG_DEBUG_LOCKING_API_SELFTESTS is not set
++ # CONFIG_LOCK_TORTURE_TEST is not set
++-CONFIG_STACKTRACE=y
+++# CONFIG_STACKTRACE is not set
++ # CONFIG_DEBUG_KOBJECT is not set
++ CONFIG_DEBUG_BUGVERBOSE=y
++ # CONFIG_DEBUG_LIST is not set
++--- linux-4.4/drivers/usb/core/hub.c	2020-06-12 15:45:57.000000000 +0200
+++++ linux-4.4/drivers/usb/core/hub.c	2020-10-01 11:11:07.000000000 +0200
++@@ -2260,7 +2260,7 @@
++ 		/* descriptor may appear anywhere in config */
++ 		err = __usb_get_extra_descriptor(udev->rawdescriptors[0],
++ 				le16_to_cpu(udev->config[0].desc.wTotalLength),
++-				USB_DT_OTG, (void **) &desc);
+++				USB_DT_OTG, (void **) &desc, sizeof(*desc));
++ 		if (err || !(desc->bmAttributes & USB_OTG_HNP))
++ 			return 0;
++ 
++--- linux-4.4/drivers/usb/core/usb.c	2020-06-12 15:45:57.000000000 +0200
+++++ linux-4.4/drivers/usb/core/usb.c	2020-10-01 11:11:07.000000000 +0200
++@@ -681,14 +681,14 @@
++  */
++ 
++ int __usb_get_extra_descriptor(char *buffer, unsigned size,
++-			       unsigned char type, void **ptr)
+++			       unsigned char type, void **ptr, size_t minsize)
++ {
++ 	struct usb_descriptor_header *header;
++ 
++ 	while (size >= sizeof(struct usb_descriptor_header)) {
++ 		header = (struct usb_descriptor_header *)buffer;
++ 
++-		if (header->bLength < 2) {
+++		if (header->bLength < 2 || header->bLength > size) {
++ 			printk(KERN_ERR
++ 				"%s: bogus descriptor, type %d length %d\n",
++ 				usbcore_name,
++@@ -697,7 +697,7 @@
++ 			return -1;
++ 		}
++ 
++-		if (header->bDescriptorType == type) {
+++		if (header->bDescriptorType == type && header->bLength >= minsize) {
++ 			*ptr = header;
++ 			return 0;
++ 		}
++--- linux-4.4/drivers/usb/host/hwa-hc.c	2020-06-12 15:45:57.000000000 +0200
+++++ linux-4.4/drivers/usb/host/hwa-hc.c	2020-10-01 11:11:07.000000000 +0200
++@@ -654,7 +654,7 @@
++ 	top = itr + itr_size;
++ 	result = __usb_get_extra_descriptor(usb_dev->rawdescriptors[index],
++ 			le16_to_cpu(usb_dev->actconfig->desc.wTotalLength),
++-			USB_DT_SECURITY, (void **) &secd);
+++			USB_DT_SECURITY, (void **) &secd, sizeof(*secd));
++ 	if (result == -1) {
++ 		dev_warn(dev, "BUG? WUSB host has no security descriptors\n");
++ 		return 0;
++--- linux-4.4/include/linux/usb.h	2020-06-12 15:45:57.000000000 +0200
+++++ linux-4.4/include/linux/usb.h	2020-10-01 11:11:07.000000000 +0200
++@@ -333,11 +333,11 @@
++ };
++ 
++ int __usb_get_extra_descriptor(char *buffer, unsigned size,
++-	unsigned char type, void **ptr);
+++	unsigned char type, void **ptr, size_t min);
++ #define usb_get_extra_descriptor(ifpoint, type, ptr) \
++ 				__usb_get_extra_descriptor((ifpoint)->extra, \
++ 				(ifpoint)->extralen, \
++-				type, (void **)ptr)
+++				type, (void **)ptr, sizeof(**(ptr)))
++ 
++ /* ----------------------------------------------------------------------- */
++ 
++--- linux-4.4/include/uapi/linux/avm_led_event.h	2020-06-12 15:45:57.000000000 +0200
+++++ linux-4.4/include/uapi/linux/avm_led_event.h	2020-10-01 11:11:07.000000000 +0200
++@@ -1,11 +1,11 @@
++-/*** LED-Events Version 2.33 ***/
+++/*** LED-Events Version 2.34 ***/
++ 
++ #ifndef _avm_led_event_h_
++ #define _avm_led_event_h_
++ 
++ #ifndef LED_EVENT_VERSION
++ #define LED_EVENT_VERSION 2
++-#define LED_EVENT_SUBVERSION 33
+++#define LED_EVENT_SUBVERSION 34
++ #endif
++ 
++ #ifndef AVM_LED_INTERNAL
++@@ -338,20 +338,83 @@
++ 	event_button_connect_wlan_repeater_long_done = 471,
++ 	event_afb_aktiv = 472,
++ 	event_afb_inaktiv = 473,
++-	LastEvent = 474
+++	event_plc_low_phyrate = 474,
+++	LastEvent = 475
++ };
++ #endif /*--- #ifndef AVM_LED_INTERNAL ---*/
++ 
++ 
++ #ifndef __KERNEL__
+++/**
+++ * Initialize LED event API for the current process.
+++ *
+++ * @param version use LED_EVENT_VERSION
+++ *
+++ * @retval 0 on success
+++ * @retval -2 on version mismatch
+++ * @retval -1 on open(2) failure, will set \c errno
+++ */
++ int led_event_init(int version);  /* Aufruf: led_event_init(LED_EVENT_VERSION)*/
+++
+++/**
+++ * Shutdown LED event API for the current process.
+++ *
+++ * @retval 0 on success
+++ * @retval -1 if not initialized
+++ * @retval -1 on close(2) failure, will set \c errno
+++ */
++ int led_event_deinit(void);
++ 
+++/**
+++ * Trigger LED event.
+++ *
+++ * @param event LED event.
+++ * @param value event value
+++ *
+++ * @retval 0 on success
+++ * @retval -1 if not initialized
+++ * @retval -1 on ioctl(2) failure, will set \c errno
+++ */
++ int led_event_set(enum _led_event event, unsigned int value);
+++
+++/**
+++ * Trigger LED event with \c value = 1.
+++ *
+++ * @param event LED event.
+++ *
+++ * @retval 0 on success
+++ * @retval -1 if not initialized
+++ * @retval -1 on ioctl(2) failure, will set \c errno
+++ */
++ int led_event(enum _led_event event);  /* macht implizit: value=1 */
++ 
+++/**
+++ * Trigger LED event with parameter \p param and its length \p param_len.
+++ *
+++ * @param event LED event.
+++ * @param value event value
+++ * @param param_len LED event parameter \p param length, MUST not be 0
+++ * @param param LED event parameter, MUST not be NULL
+++ *
+++ * @retval 0 on success
+++ * @retval -1 if not initialized or parameter failure
+++ * @retval -1 on ioctl(2) failure, will set \c errno
+++ */
++ int led_event_set_with_event(enum _led_event event, unsigned int value, unsigned int param_len, void *param);
+++
+++/**
+++ * Trigger LED event with \c value = 1 and parameter \p param and its length \p param_len.
+++ *
+++ * @param event LED event.
+++ * @param param_len LED event parameter \p param length, MUST not be 0
+++ * @param param LED event parameter, MUST not be NULL
+++ *
+++ * @retval 0 on success
+++ * @retval -1 if not initialized or parameter failure
+++ * @retval -1 on ioctl(2) failure, will set \c errno
+++ */
++ int led_event_with_event(enum _led_event event, unsigned int param_len, void *param);  /* macht implizit: value=1 */
+++
++ #endif /*--- #ifndef __KERNEL__ ---*/
++ 
++ 
++@@ -397,7 +460,7 @@
++  * Die Action-Funktion muss im Interrupt-Kontext aufrufbar sein und sollte größere Aktionen
++  * asynchron ausführen. 
++  * Parameter der Action Funktion sind:
++- *   - ĺed_id        => 0..99
+++ *   - led_id        => 0..99
++  *   - action        => led_ext_enable/led_ext_disable ermöglichen eine De/Initialisierung der 
++  *                      LED-Ansteuerung; led_ext_error braucht hier nicht behandelt werden
++  *   - callback_func => falls die Aktion asychron ausgeführt wird, soll callback_func()
++--- linux-4.4/.kernelvariables	2020-07-31 13:55:19.000000000 +0200
+++++ linux-4.4/.kernelvariables	2020-10-16 19:15:36.000000000 +0200
++@@ -1,6 +1,6 @@
++ # vim: set autoread filetype=make:
++ #
++-# Auto-generated at build-80517
+++# Auto-generated at build-82709
++ # while generating for Fritz_Box_HW244
++ #
++ ARCH = arm
++--- linux-4.4/mm/slub.c	2020-06-12 15:45:57.000000000 +0200
+++++ linux-4.4/mm/slub.c	2020-10-01 11:11:07.000000000 +0200
++@@ -5301,7 +5301,9 @@
++ 	&red_zone_attr.attr,
++ 	&poison_attr.attr,
++ 	&store_user_attr.attr,
+++#ifdef CONFIG_SLUB_AVM_ALLOC_LIST
++ 	&store_user_lite_attr.attr,
+++#endif
++ 	&validate_attr.attr,
++ 	&alloc_calls_attr.attr,
++ 	&free_calls_attr.attr,
+--- make/kernel/patches/4.4.60/4.4.60/1200_07.20/001-avm-menuconfig-symbols.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1200_07.20/001-avm-menuconfig-symbols.patch	2023-06-17 12:27:48.788255000 +0200
+@@ -0,0 +1,216 @@
++--- linux-4.4/drivers/usb/Kconfig
+++++ linux-4.4/drivers/usb/Kconfig
++@@ -96,6 +96,7 @@
++ 
++ endif
++ 
+++source "drivers/usb/musb/Kconfig"
++ 
++ source "drivers/usb/dwc3/Kconfig"
++ 
++--- linux-4.4/drivers/net/nlaudio/Kconfig
+++++ linux-4.4/drivers/net/nlaudio/Kconfig
++@@ -0,0 +1,3 @@
+++config AVM_NET_LINK_AUDIO
+++	tristate "AVM_NET_LINK_AUDIO"
+++	default m
++--- linux-4.4/drivers/char/dect_io/Kconfig
+++++ linux-4.4/drivers/char/dect_io/Kconfig
++@@ -0,0 +1,12 @@
+++menu "AVM DECT_IO"
+++
+++config AVM_DECT_IO
+++	tristate "AVM dect IO managment support"
+++	default n
+++	help
+++	  This driver provides power managment functions for AVMs own drivers.
+++
+++	  To compile this driver as a module, choose M here. The module
+++	  will be called avm.
+++
+++endmenu
++--- linux-4.4/drivers/char/Piglet_noemif/Kconfig
+++++ linux-4.4/drivers/char/Piglet_noemif/Kconfig
++@@ -0,0 +1,22 @@
+++#config AVM_PIGLET
+++#	tristate "AVM Piglet load support"
+++#	default n
+++#	help
+++#	  This driver provides the piglet load support.
+++
+++menu "AVM Piglet (no emif)"
+++
+++config AVM_PIGLET_NOEMIF
+++	tristate "AVM Piglet load support (No Emif)"
+++	default n
+++	help
+++	  This driver provides the piglet load support (without Emif).
+++
+++config AVM_PIGLET_DECT
+++	bool "AVM Piglet DECT Loader support (only on Piglet No Emif)"
+++	depends on AVM_PIGLET_NOEMIF
+++	default y
+++	help
+++	  This driver provides the DECT loader support in piglet
+++
+++endmenu
++--- linux-4.4/drivers/char/ubik2/Kconfig
+++++ linux-4.4/drivers/char/ubik2/Kconfig
++@@ -1,4 +1,29 @@
++-config UBIK2_ISDNSTACK_ON_CPU
++-    int
+++menu "AVM PCMLINK driver for PCM-Routing"
+++
+++config UBIK2
+++	tristate "UBIK2/PCMLINK Driver Support (AVM)"
+++	default n
+++
+++config UBIK2_DEVELOPMENT_SUPPORT
+++	int "Mask for Developmentfeature"
+++	depends on UBIK2
++ 	default 0
+++	help
+++	  0x1 Touch-Datenerfassung/TDM-Rawdaten-Erfassung
+++	  0x2 integrierter Ec-Generator
+++
+++config UBIK2_MSEC_PER_IRQ
+++	int "interrupt-trigger"
+++	depends on UBIK2
+++	default 8
+++	help
+++	  only 4 or 8 ms supported
+++
+++config UBIK2_ISDNSTACK_ON_CPU
+++	int "interrupt on cpuX"
+++#	depends on UBIK2 && SMP  # HACK für GPL: define wird verwendet, UBIK2 ist aber auskonfiguriert
+++	default 1
+++	help
+++	  ISDN-Stack have to bind on fixed cpu
++ 
+++endmenu
++--- linux-4.4/drivers/isdn/avm_dect/Kconfig
+++++ linux-4.4/drivers/isdn/avm_dect/Kconfig
++@@ -0,0 +1,10 @@
+++menu "AVM DECT Stack"
+++
+++config AVM_DECT
+++    tristate "AVM DECT Stack"
+++
+++config AVM_DECT_DEBUG
+++    bool "AVM DECT debug version"
+++    depends on AVM_DECT
+++
+++endmenu
++--- linux-4.4/drivers/isdn/capi_codec/Kconfig
+++++ linux-4.4/drivers/isdn/capi_codec/Kconfig
++@@ -0,0 +1,43 @@
+++menu "AVM CAPI-CODEC"
+++
+++config CAPI_CODEC
+++    tristate "capi driver codec support"
+++    depends on ISDN
+++
+++config CAPI_CODEC_SPEEX
+++    bool "capi driver codec SPEEX"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_ILBC
+++    bool "capi driver codec ILBC"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G729
+++    bool "capi driver codec G729"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G711
+++    bool "capi driver codec G711"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G726
+++    bool "capi driver codec G726"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G722
+++    bool "capi driver codec G722"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_VAD
+++    bool "capi driver codec VAD"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_CNG
+++    bool "capi driver codec CNG (comfort noise generator)"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_FAX
+++    bool "capi driver codec FAX (T30/T38)"
+++    depends on CAPI_CODEC
+++
+++endmenu
++--- linux-4.4/drivers/isdn/isdn_fon5/Kconfig
+++++ linux-4.4/drivers/isdn/isdn_fon5/Kconfig
++@@ -0,0 +1,64 @@
+++#
+++# ISDN-PCMLINK driver
+++#
+++
+++config ISDN_CAPI_ISDN_NT_PCMLINK
+++    tristate "AVM ISDN NT PCMLINK driver"
+++    depends on CAPI_AVM
+++    select ISDN_NT_PCMLINK_BLK
+++    select ISDN_NT_PCMLINK_E1
+++    select ISDN_NT_PCMLINK_STACK
+++    select ISDN_NT_PCMLINK_ISDN_AB
+++
+++config ISDN_NT_PCMLINK_BLK
+++    tristate "AVM ISDN NT PCMLINK driver (hardware interfacing part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_E1
+++    tristate "AVM ISDN NT PCMLINK driver (layer 1 part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_STACK
+++    tristate "AVM ISDN NT PCMLINK driver (protocol stack)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_ISDN_AB
+++    tristate "AVM ISDN NT PCMLINK driver (telephony part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_DEBUG
+++    bool "AVM ISDN NT PCMLINK driver debug"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_NO_BCHANNEL
+++    bool "AVM ISDN NT PCMLINK driver without B-Channels support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_FAX
+++    bool "AVM ISDN NT PCMLINK driver with FAX support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_COMPRESS
+++    bool "AVM ISDN NT PCMLINK driver with Compression support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_MODEM
+++    bool "AVM ISDN NT PCMLINK driver with MODEM support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_DTMF
+++    bool "AVM ISDN NT PCMLINK driver with DTMF support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_VCTRLS
+++    bool "AVM ISDN NT PCMLINK driver virtual controller support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_VCTRLS_NUMBER
+++    int "AVM ISDN NT PCMLINK driver, number of virtual controllers"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && ISDN_NT_PCMLINK_VCTRLS
+++    default 1
+++
+++config ISDN_NT_PCMLINK_FRITZX
+++    bool "AVM ISDN NT PCMLINK driver with FRITZX controller support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+--- make/kernel/patches/4.4.60/4.4.60/1200_07.20/001-regular_dot_config_location.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1200_07.20/001-regular_dot_config_location.patch	2023-06-17 12:27:48.788255000 +0200
+@@ -0,0 +1,10 @@
++--- linux-4.4/.kernelvariables
+++++ linux-4.4/.kernelvariables
++@@ -35,7 +35,6 @@
++ CP ?= /bin/cp
++ export CP
++ 
++-export AVM_KCONFIG_CONFIG = avm/conf/linux-4.4.cortexa9
++ 
++ # No variables exported via $(kernelvariables_extra)
++ 
+--- make/kernel/patches/4.4.60/4.4.60/1200_07.20/100-evaloader.TODO.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1200_07.20/100-evaloader.TODO.patch	2023-06-17 12:27:48.788255000 +0200
+@@ -0,0 +1,12 @@
++--- linux-4.4/arch/arm/Makefile
+++++ linux-4.4/arch/arm/Makefile
++@@ -334,6 +334,9 @@
++ 
++ PHONY += bzImage $(BOOT_TARGETS) $(INSTALL_TARGETS)
++ 
+++vmlinux.eva_pad: Image FORCE
+++	cp $(boot)/$< $(boot)/$@
+++
++ bootpImage uImage: zImage
++ zImage: Image
++ 
+--- make/kernel/patches/4.4.60/4.4.60/1200_07.20/300-no_ccache_check.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1200_07.20/300-no_ccache_check.patch	2023-06-17 12:27:48.788255000 +0200
+@@ -0,0 +1,17 @@
++--- linux-4.4/GNUmakefile
+++++ linux-4.4/GNUmakefile
++@@ -22,14 +22,6 @@
++ endif
++ export _kernelvariables_read := 1
++ -include $(kernelvariables)
++-
++-# Iff /GU/tmp/ is not available and CCACHE_DISABLE is not set, disable ccache
++-ifeq ($(wildcard /GU/tmp/)$(CCACHE_DISABLE),)
++-ifneq (,$(V))
++-$(info /GU/tmp is not available, disabling ccache)
++-endif
++-export CCACHE_DISABLE = true
++-endif
++ endif
++ 
++ # Prevent accidental influence of user space targeted settings in standard
+--- make/kernel/patches/4.4.60/4.4.60/1200_07.20/310-no_diffconfig.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1200_07.20/310-no_diffconfig.patch	2023-06-17 12:27:48.788255000 +0200
+@@ -0,0 +1,16 @@
++--- ./linux-4.4/GNUmakefile
+++++ ./linux-4.4/GNUmakefile
++@@ -105,13 +105,6 @@
++ 		avm-subprojects='$(avm-subprojects)' \
++ 		USERINCLUDE_AVM_SUBPROJECTS='$(USERINCLUDE_AVM_SUBPROJECTS)' \
++ 		LINUXINCLUDE_AVM_SUBPROJECTS='$(LINUXINCLUDE_AVM_SUBPROJECTS)'
++-ifeq ($(KBUILD_EXTMOD)$(M),)
++-    ifneq ($(AVM_KCONFIG_CONFIG),$(KCONFIG_CONFIG),)
++-	$(if $(filter-out $(no-config-diff-targets),$@),\
++-		@scripts/diffconfig $(AVM_KCONFIG_CONFIG) $(KCONFIG_CONFIG) | \
++-		 sed -re '1{s|^|Linux config has changed compared to $(AVM_KCONFIG_CONFIG):\n|}') >&2
++-    endif
++-endif
++ 
++ $(KCONFIG_CONFIG): $(wildcard $(AVM_KCONFIG_CONFIG))
++ 	$(if $<,@echo "UPD $< -> $@")
+--- make/kernel/patches/4.4.60/4.4.60/1200_07.27/001-avm-menuconfig-symbols.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1200_07.27/001-avm-menuconfig-symbols.patch	2023-06-17 12:27:48.788255000 +0200
+@@ -0,0 +1,216 @@
++--- linux-4.4/drivers/usb/Kconfig
+++++ linux-4.4/drivers/usb/Kconfig
++@@ -96,6 +96,7 @@
++ 
++ endif
++ 
+++source "drivers/usb/musb/Kconfig"
++ 
++ source "drivers/usb/dwc3/Kconfig"
++ 
++--- linux-4.4/drivers/net/nlaudio/Kconfig
+++++ linux-4.4/drivers/net/nlaudio/Kconfig
++@@ -0,0 +1,3 @@
+++config AVM_NET_LINK_AUDIO
+++	tristate "AVM_NET_LINK_AUDIO"
+++	default m
++--- linux-4.4/drivers/char/dect_io/Kconfig
+++++ linux-4.4/drivers/char/dect_io/Kconfig
++@@ -0,0 +1,12 @@
+++menu "AVM DECT_IO"
+++
+++config AVM_DECT_IO
+++	tristate "AVM dect IO managment support"
+++	default n
+++	help
+++	  This driver provides power managment functions for AVMs own drivers.
+++
+++	  To compile this driver as a module, choose M here. The module
+++	  will be called avm.
+++
+++endmenu
++--- linux-4.4/drivers/char/Piglet_noemif/Kconfig
+++++ linux-4.4/drivers/char/Piglet_noemif/Kconfig
++@@ -0,0 +1,22 @@
+++#config AVM_PIGLET
+++#	tristate "AVM Piglet load support"
+++#	default n
+++#	help
+++#	  This driver provides the piglet load support.
+++
+++menu "AVM Piglet (no emif)"
+++
+++config AVM_PIGLET_NOEMIF
+++	tristate "AVM Piglet load support (No Emif)"
+++	default n
+++	help
+++	  This driver provides the piglet load support (without Emif).
+++
+++config AVM_PIGLET_DECT
+++	bool "AVM Piglet DECT Loader support (only on Piglet No Emif)"
+++	depends on AVM_PIGLET_NOEMIF
+++	default y
+++	help
+++	  This driver provides the DECT loader support in piglet
+++
+++endmenu
++--- linux-4.4/drivers/char/ubik2/Kconfig
+++++ linux-4.4/drivers/char/ubik2/Kconfig
++@@ -1,4 +1,29 @@
++-config UBIK2_ISDNSTACK_ON_CPU
++-    int
+++menu "AVM PCMLINK driver for PCM-Routing"
+++
+++config UBIK2
+++	tristate "UBIK2/PCMLINK Driver Support (AVM)"
+++	default n
+++
+++config UBIK2_DEVELOPMENT_SUPPORT
+++	int "Mask for Developmentfeature"
+++	depends on UBIK2
++ 	default 0
+++	help
+++	  0x1 Touch-Datenerfassung/TDM-Rawdaten-Erfassung
+++	  0x2 integrierter Ec-Generator
+++
+++config UBIK2_MSEC_PER_IRQ
+++	int "interrupt-trigger"
+++	depends on UBIK2
+++	default 8
+++	help
+++	  only 4 or 8 ms supported
+++
+++config UBIK2_ISDNSTACK_ON_CPU
+++	int "interrupt on cpuX"
+++#	depends on UBIK2 && SMP  # HACK für GPL: define wird verwendet, UBIK2 ist aber auskonfiguriert
+++	default 1
+++	help
+++	  ISDN-Stack have to bind on fixed cpu
++ 
+++endmenu
++--- linux-4.4/drivers/isdn/avm_dect/Kconfig
+++++ linux-4.4/drivers/isdn/avm_dect/Kconfig
++@@ -0,0 +1,10 @@
+++menu "AVM DECT Stack"
+++
+++config AVM_DECT
+++    tristate "AVM DECT Stack"
+++
+++config AVM_DECT_DEBUG
+++    bool "AVM DECT debug version"
+++    depends on AVM_DECT
+++
+++endmenu
++--- linux-4.4/drivers/isdn/capi_codec/Kconfig
+++++ linux-4.4/drivers/isdn/capi_codec/Kconfig
++@@ -0,0 +1,43 @@
+++menu "AVM CAPI-CODEC"
+++
+++config CAPI_CODEC
+++    tristate "capi driver codec support"
+++    depends on ISDN
+++
+++config CAPI_CODEC_SPEEX
+++    bool "capi driver codec SPEEX"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_ILBC
+++    bool "capi driver codec ILBC"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G729
+++    bool "capi driver codec G729"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G711
+++    bool "capi driver codec G711"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G726
+++    bool "capi driver codec G726"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G722
+++    bool "capi driver codec G722"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_VAD
+++    bool "capi driver codec VAD"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_CNG
+++    bool "capi driver codec CNG (comfort noise generator)"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_FAX
+++    bool "capi driver codec FAX (T30/T38)"
+++    depends on CAPI_CODEC
+++
+++endmenu
++--- linux-4.4/drivers/isdn/isdn_fon5/Kconfig
+++++ linux-4.4/drivers/isdn/isdn_fon5/Kconfig
++@@ -0,0 +1,64 @@
+++#
+++# ISDN-PCMLINK driver
+++#
+++
+++config ISDN_CAPI_ISDN_NT_PCMLINK
+++    tristate "AVM ISDN NT PCMLINK driver"
+++    depends on CAPI_AVM
+++    select ISDN_NT_PCMLINK_BLK
+++    select ISDN_NT_PCMLINK_E1
+++    select ISDN_NT_PCMLINK_STACK
+++    select ISDN_NT_PCMLINK_ISDN_AB
+++
+++config ISDN_NT_PCMLINK_BLK
+++    tristate "AVM ISDN NT PCMLINK driver (hardware interfacing part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_E1
+++    tristate "AVM ISDN NT PCMLINK driver (layer 1 part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_STACK
+++    tristate "AVM ISDN NT PCMLINK driver (protocol stack)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_ISDN_AB
+++    tristate "AVM ISDN NT PCMLINK driver (telephony part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_DEBUG
+++    bool "AVM ISDN NT PCMLINK driver debug"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_NO_BCHANNEL
+++    bool "AVM ISDN NT PCMLINK driver without B-Channels support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_FAX
+++    bool "AVM ISDN NT PCMLINK driver with FAX support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_COMPRESS
+++    bool "AVM ISDN NT PCMLINK driver with Compression support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_MODEM
+++    bool "AVM ISDN NT PCMLINK driver with MODEM support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_DTMF
+++    bool "AVM ISDN NT PCMLINK driver with DTMF support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_VCTRLS
+++    bool "AVM ISDN NT PCMLINK driver virtual controller support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_VCTRLS_NUMBER
+++    int "AVM ISDN NT PCMLINK driver, number of virtual controllers"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && ISDN_NT_PCMLINK_VCTRLS
+++    default 1
+++
+++config ISDN_NT_PCMLINK_FRITZX
+++    bool "AVM ISDN NT PCMLINK driver with FRITZX controller support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+--- make/kernel/patches/4.4.60/4.4.60/1200_07.27/001-regular_dot_config_location.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1200_07.27/001-regular_dot_config_location.patch	2023-06-17 12:27:48.788255000 +0200
+@@ -0,0 +1,10 @@
++--- linux-4.4/.kernelvariables
+++++ linux-4.4/.kernelvariables
++@@ -35,7 +35,6 @@
++ CP ?= /bin/cp
++ export CP
++ 
++-export AVM_KCONFIG_CONFIG = avm/conf/linux-4.4.cortexa9
++ 
++ # No variables exported via $(kernelvariables_extra)
++ 
+--- make/kernel/patches/4.4.60/4.4.60/1200_07.27/100-evaloader.TODO.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1200_07.27/100-evaloader.TODO.patch	2023-06-17 12:27:48.788255000 +0200
+@@ -0,0 +1,12 @@
++--- linux-4.4/arch/arm/Makefile
+++++ linux-4.4/arch/arm/Makefile
++@@ -334,6 +334,9 @@
++ 
++ PHONY += bzImage $(BOOT_TARGETS) $(INSTALL_TARGETS)
++ 
+++vmlinux.eva_pad: Image FORCE
+++	cp $(boot)/$< $(boot)/$@
+++
++ bootpImage uImage: zImage
++ zImage: Image
++ 
+--- make/kernel/patches/4.4.60/4.4.60/1200_07.27/300-no_ccache_check.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1200_07.27/300-no_ccache_check.patch	2023-06-17 12:27:48.788255000 +0200
+@@ -0,0 +1,17 @@
++--- linux-4.4/GNUmakefile
+++++ linux-4.4/GNUmakefile
++@@ -29,14 +29,6 @@
++ endif
++ export _kernelvariables_read := 1
++ -include $(kernelvariables)
++-
++-# Iff /GU/tmp/ is not available and CCACHE_DISABLE is not set, disable ccache
++-ifeq ($(wildcard /GU/tmp/)$(CCACHE_DISABLE),)
++-ifneq (,$(V))
++-$(info /GU/tmp is not available, disabling ccache)
++-endif
++-export CCACHE_DISABLE = true
++-endif
++ endif
++ 
++ # Prevent accidental influence of user space targeted settings in standard
+--- make/kernel/patches/4.4.60/4.4.60/1200_07.27/310-no_diffconfig.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1200_07.27/310-no_diffconfig.patch	2023-06-17 12:27:48.788255000 +0200
+@@ -0,0 +1,16 @@
++--- linux-4.4/GNUmakefile
+++++ linux-4.4/GNUmakefile
++@@ -114,13 +114,6 @@
++ 		USERINCLUDE_AVM_SUBPROJECTS='$(USERINCLUDE_AVM_SUBPROJECTS)' \
++ 		LINUXINCLUDE_AVM_SUBPROJECTS='$(LINUXINCLUDE_AVM_SUBPROJECTS)'
++ 	@# Skip config diff for out-of-tree module builds
++-ifeq ($(KBUILD_EXTMOD)$(M),)
++-    ifeq ($(words $(sort $(AVM_KCONFIG_CONFIG) $(KCONFIG_CONFIG))),2)
++-	$(if $(filter-out $(no-config-diff-targets),$@),\
++-		@scripts/diffconfig $(AVM_KCONFIG_CONFIG) $(KCONFIG_CONFIG) | \
++-		 sed -re '1{s|^|Linux config has changed compared to $(AVM_KCONFIG_CONFIG):\n|}' >&2)
++-    endif
++-endif
++ 
++ $(KCONFIG_CONFIG): $(wildcard $(AVM_KCONFIG_CONFIG))
++ 	$(if $<,@echo "UPD $< -> $@")
+--- make/kernel/patches/4.4.60/4.4.60/1750_07.01/001-regular_dot_config_location.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1750_07.01/001-regular_dot_config_location.patch	2023-06-17 12:27:48.788255000 +0200
+@@ -0,0 +1,10 @@
++--- linux-4.4/.kernelvariables
+++++ linux-4.4/.kernelvariables
++@@ -35,7 +35,6 @@
++ CP ?=   /bin/cp
++ export CP
++ 
++-export KCONFIG_CONFIG = avm/conf/linux-4.4.scrpn
++ 
++ # No variables exported via $(kernelvariables_extra)
++ 
+--- make/kernel/patches/4.4.60/4.4.60/1750_07.01/100-evaloader.TODO.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1750_07.01/100-evaloader.TODO.patch	2023-06-17 12:27:48.788255000 +0200
+@@ -0,0 +1,12 @@
++--- linux-4.4/arch/mips/Makefile
+++++ linux-4.4/arch/mips/Makefile
++@@ -357,6 +357,9 @@
++ 
++ all:	$(all-y)
++ 
+++vmlinux.eva_pad: vmlinux.bin FORCE
+++	cp arch/mips/boot/$< arch/mips/boot/$@
+++
++ # boot
++ $(boot-y): $(vmlinux-32) FORCE
++ 	$(Q)$(MAKE) $(build)=arch/mips/boot VMLINUX=$(vmlinux-32) \
+--- make/kernel/patches/4.4.60/4.4.60/1750_07.12/001-avm-menuconfig-symbols.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1750_07.12/001-avm-menuconfig-symbols.patch	2023-06-17 12:27:48.788255000 +0200
+@@ -0,0 +1,7 @@
++--- linux-4.4/drivers/char/ubik2/Kconfig
+++++ linux-4.4/drivers/char/ubik2/Kconfig
++@@ -0,0 +1,3 @@
+++config UBIK2_ISDNSTACK_ON_CPU
+++	int "UBIK2_ISDNSTACK_ON_CPU"
+++	default 0
++
+--- make/kernel/patches/4.4.60/4.4.60/1750_07.12/001-regular_dot_config_location.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1750_07.12/001-regular_dot_config_location.patch	2023-06-17 12:27:48.792255000 +0200
+@@ -0,0 +1,10 @@
++--- linux-4.4/.kernelvariables
+++++ linux-4.4/.kernelvariables
++@@ -35,7 +35,6 @@
++ CP ?= /bin/cp
++ export CP
++
++-export KCONFIG_CONFIG = avm/conf/linux-4.4.scrpn
++
++ # No variables exported via $(kernelvariables_extra)
++
+--- make/kernel/patches/4.4.60/4.4.60/1750_07.12/100-evaloader.TODO.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1750_07.12/100-evaloader.TODO.patch	2023-06-17 12:27:48.792255000 +0200
+@@ -0,0 +1,12 @@
++--- linux-4.4/arch/mips/Makefile
+++++ linux-4.4/arch/mips/Makefile
++@@ -357,6 +357,9 @@
++ 
++ all:	$(all-y)
++ 
+++vmlinux.eva_pad: vmlinux.bin FORCE
+++	cp arch/mips/boot/$< arch/mips/boot/$@
+++
++ # boot
++ $(boot-y): $(vmlinux-32) FORCE
++ 	$(Q)$(MAKE) $(build)=arch/mips/boot VMLINUX=$(vmlinux-32) \
+--- make/kernel/patches/4.4.60/4.4.60/1750_07.12/300-no_ccache_check.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1750_07.12/300-no_ccache_check.patch	2023-06-17 12:27:48.792255000 +0200
+@@ -0,0 +1,15 @@
++--- linux-4.4/GNUmakefile
+++++ linux-4.4/GNUmakefile
++@@ -16,12 +16,6 @@
++ $(if $(kernelvariables),$(info linux/GNUmakefile: including $(kernelvariables)))
++ export _kernelvariables_read := 1
++ -include $(kernelvariables)
++-
++-# Iff /GU/tmp/ is not available and CCACHE_DISABLE is not set, disable ccache
++-ifeq ($(wildcard /GU/tmp/)$(CCACHE_DISABLE),)
++-$(info /GU/tmp is not available, disabling ccache)
++-export CCACHE_DISABLE = true
++-endif
++ endif
++ 
++ # ACHTUNG: Make wird hier neugestartet um die Übernahme der
+--- make/kernel/patches/4.4.60/4.4.60/1750_07.20/001-avm-menuconfig-symbols.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1750_07.20/001-avm-menuconfig-symbols.patch	2023-06-17 12:27:48.792255000 +0200
+@@ -0,0 +1,7 @@
++--- linux-4.4/drivers/char/ubik2/Kconfig
+++++ linux-4.4/drivers/char/ubik2/Kconfig
++@@ -0,0 +1,3 @@
+++config UBIK2_ISDNSTACK_ON_CPU
+++	int "UBIK2_ISDNSTACK_ON_CPU"
+++	default 0
++
+--- make/kernel/patches/4.4.60/4.4.60/1750_07.20/001-regular_dot_config_location.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1750_07.20/001-regular_dot_config_location.patch	2023-06-17 12:27:48.792255000 +0200
+@@ -0,0 +1,10 @@
++--- linux-4.4/.kernelvariables
+++++ linux-4.4/.kernelvariables
++@@ -35,7 +35,6 @@
++ CP ?= /bin/cp
++ export CP
++
++-export AVM_KCONFIG_CONFIG = avm/conf/linux-4.4.scrpn
++
++ # No variables exported via $(kernelvariables_extra)
++
+--- make/kernel/patches/4.4.60/4.4.60/1750_07.20/100-evaloader.TODO.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1750_07.20/100-evaloader.TODO.patch	2023-06-17 12:27:48.792255000 +0200
+@@ -0,0 +1,12 @@
++--- linux-4.4/arch/mips/Makefile
+++++ linux-4.4/arch/mips/Makefile
++@@ -357,6 +357,9 @@
++ 
++ all:	$(all-y)
++ 
+++vmlinux.eva_pad: vmlinux.bin FORCE
+++	cp arch/mips/boot/$< arch/mips/boot/$@
+++
++ # boot
++ $(boot-y): $(vmlinux-32) FORCE
++ 	$(Q)$(MAKE) $(build)=arch/mips/boot VMLINUX=$(vmlinux-32) \
+--- make/kernel/patches/4.4.60/4.4.60/1750_07.20/300-no_ccache_check.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1750_07.20/300-no_ccache_check.patch	2023-06-17 12:27:48.792255000 +0200
+@@ -0,0 +1,17 @@
++--- linux-4.4/GNUmakefile
+++++ linux-4.4/GNUmakefile
++@@ -22,14 +22,6 @@
++ endif
++ export _kernelvariables_read := 1
++ -include $(kernelvariables)
++-
++-# Iff /GU/tmp/ is not available and CCACHE_DISABLE is not set, disable ccache
++-ifeq ($(wildcard /GU/tmp/)$(CCACHE_DISABLE),)
++-ifneq (,$(V))
++-$(info /GU/tmp is not available, disabling ccache)
++-endif
++-export CCACHE_DISABLE = true
++-endif
++ endif
++ 
++ # Prevent accidental influence of user space targeted settings in standard
+--- make/kernel/patches/4.4.60/4.4.60/1750_07.20/310-no_diffconfig.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1750_07.20/310-no_diffconfig.patch	2023-06-17 12:27:48.792255000 +0200
+@@ -0,0 +1,16 @@
++--- ./linux-4.4/GNUmakefile
+++++ ./linux-4.4/GNUmakefile
++@@ -105,13 +105,6 @@
++ 		avm-subprojects='$(avm-subprojects)' \
++ 		USERINCLUDE_AVM_SUBPROJECTS='$(USERINCLUDE_AVM_SUBPROJECTS)' \
++ 		LINUXINCLUDE_AVM_SUBPROJECTS='$(LINUXINCLUDE_AVM_SUBPROJECTS)'
++-ifeq ($(KBUILD_EXTMOD)$(M),)
++-    ifneq ($(AVM_KCONFIG_CONFIG),$(KCONFIG_CONFIG),)
++-	$(if $(filter-out $(no-config-diff-targets),$@),\
++-		@scripts/diffconfig $(AVM_KCONFIG_CONFIG) $(KCONFIG_CONFIG) | \
++-		 sed -re '1{s|^|Linux config has changed compared to $(AVM_KCONFIG_CONFIG):\n|}') >&2
++-    endif
++-endif
++ 
++ $(KCONFIG_CONFIG): $(wildcard $(AVM_KCONFIG_CONFIG))
++ 	$(if $<,@echo "UPD $< -> $@")
+--- make/kernel/patches/4.4.60/4.4.60/1750_07.27/001-avm-menuconfig-symbols.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1750_07.27/001-avm-menuconfig-symbols.patch	2023-06-17 12:27:48.792255000 +0200
+@@ -0,0 +1,7 @@
++--- linux-4.4/drivers/char/ubik2/Kconfig
+++++ linux-4.4/drivers/char/ubik2/Kconfig
++@@ -0,0 +1,3 @@
+++config UBIK2_ISDNSTACK_ON_CPU
+++	int "UBIK2_ISDNSTACK_ON_CPU"
+++	default 0
++
+--- make/kernel/patches/4.4.60/4.4.60/1750_07.27/001-regular_dot_config_location.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1750_07.27/001-regular_dot_config_location.patch	2023-06-17 12:27:48.792255000 +0200
+@@ -0,0 +1,10 @@
++--- linux-4.4/.kernelvariables
+++++ linux-4.4/.kernelvariables
++@@ -35,7 +35,6 @@
++ CP ?= /bin/cp
++ export CP
++
++-export AVM_KCONFIG_CONFIG = avm/conf/linux-4.4.scrpn
++
++ # No variables exported via $(kernelvariables_extra)
++
+--- make/kernel/patches/4.4.60/4.4.60/1750_07.27/100-evaloader.TODO.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1750_07.27/100-evaloader.TODO.patch	2023-06-17 12:27:48.792255000 +0200
+@@ -0,0 +1,12 @@
++--- linux-4.4/arch/mips/Makefile
+++++ linux-4.4/arch/mips/Makefile
++@@ -357,6 +357,9 @@
++ 
++ all:	$(all-y)
++ 
+++vmlinux.eva_pad: vmlinux.bin FORCE
+++	cp arch/mips/boot/$< arch/mips/boot/$@
+++
++ # boot
++ $(boot-y): $(vmlinux-32) FORCE
++ 	$(Q)$(MAKE) $(build)=arch/mips/boot VMLINUX=$(vmlinux-32) \
+--- make/kernel/patches/4.4.60/4.4.60/1750_07.27/300-no_ccache_check.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1750_07.27/300-no_ccache_check.patch	2023-06-17 12:27:48.792255000 +0200
+@@ -0,0 +1,17 @@
++--- linux-4.4/GNUmakefile
+++++ linux-4.4/GNUmakefile
++@@ -29,14 +29,6 @@
++ endif
++ export _kernelvariables_read := 1
++ -include $(kernelvariables)
++-
++-# Iff /GU/tmp/ is not available and CCACHE_DISABLE is not set, disable ccache
++-ifeq ($(wildcard /GU/tmp/)$(CCACHE_DISABLE),)
++-ifneq (,$(V))
++-$(info /GU/tmp is not available, disabling ccache)
++-endif
++-export CCACHE_DISABLE = true
++-endif
++ endif
++ 
++ # Prevent accidental influence of user space targeted settings in standard
+--- make/kernel/patches/4.4.60/4.4.60/1750_07.27/310-no_diffconfig.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/1750_07.27/310-no_diffconfig.patch	2023-06-17 12:27:48.792255000 +0200
+@@ -0,0 +1,16 @@
++--- ./linux-4.4/GNUmakefile
+++++ ./linux-4.4/GNUmakefile
++@@ -114,13 +114,6 @@
++ 		USERINCLUDE_AVM_SUBPROJECTS='$(USERINCLUDE_AVM_SUBPROJECTS)' \
++ 		LINUXINCLUDE_AVM_SUBPROJECTS='$(LINUXINCLUDE_AVM_SUBPROJECTS)'
++ 	@# Skip config diff for out-of-tree module builds
++-ifeq ($(KBUILD_EXTMOD)$(M),)
++-    ifeq ($(words $(sort $(AVM_KCONFIG_CONFIG) $(KCONFIG_CONFIG))),2)
++-	$(if $(filter-out $(no-config-diff-targets),$@),\
++-		@scripts/diffconfig $(AVM_KCONFIG_CONFIG) $(KCONFIG_CONFIG) | \
++-		 sed -re '1{s|^|Linux config has changed compared to $(AVM_KCONFIG_CONFIG):\n|}' >&2)
++-    endif
++-endif
++ 
++ $(KCONFIG_CONFIG): $(wildcard $(AVM_KCONFIG_CONFIG))
++ 	$(if $<,@echo "UPD $< -> $@")
+--- make/kernel/patches/4.4.60/4.4.60/2400_07.27/001-avm-menuconfig-symbols.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/2400_07.27/001-avm-menuconfig-symbols.patch	2023-06-17 12:27:48.792255000 +0200
+@@ -0,0 +1,216 @@
++--- linux-4.4/drivers/usb/Kconfig
+++++ linux-4.4/drivers/usb/Kconfig
++@@ -96,6 +96,7 @@
++ 
++ endif
++ 
+++source "drivers/usb/musb/Kconfig"
++ 
++ source "drivers/usb/dwc3/Kconfig"
++ 
++--- linux-4.4/drivers/net/nlaudio/Kconfig
+++++ linux-4.4/drivers/net/nlaudio/Kconfig
++@@ -0,0 +1,3 @@
+++config AVM_NET_LINK_AUDIO
+++	tristate "AVM_NET_LINK_AUDIO"
+++	default m
++--- linux-4.4/drivers/char/dect_io/Kconfig
+++++ linux-4.4/drivers/char/dect_io/Kconfig
++@@ -0,0 +1,12 @@
+++menu "AVM DECT_IO"
+++
+++config AVM_DECT_IO
+++	tristate "AVM dect IO managment support"
+++	default n
+++	help
+++	  This driver provides power managment functions for AVMs own drivers.
+++
+++	  To compile this driver as a module, choose M here. The module
+++	  will be called avm.
+++
+++endmenu
++--- linux-4.4/drivers/char/Piglet_noemif/Kconfig
+++++ linux-4.4/drivers/char/Piglet_noemif/Kconfig
++@@ -0,0 +1,22 @@
+++#config AVM_PIGLET
+++#	tristate "AVM Piglet load support"
+++#	default n
+++#	help
+++#	  This driver provides the piglet load support.
+++
+++menu "AVM Piglet (no emif)"
+++
+++config AVM_PIGLET_NOEMIF
+++	tristate "AVM Piglet load support (No Emif)"
+++	default n
+++	help
+++	  This driver provides the piglet load support (without Emif).
+++
+++config AVM_PIGLET_DECT
+++	bool "AVM Piglet DECT Loader support (only on Piglet No Emif)"
+++	depends on AVM_PIGLET_NOEMIF
+++	default y
+++	help
+++	  This driver provides the DECT loader support in piglet
+++
+++endmenu
++--- linux-4.4/drivers/char/ubik2/Kconfig
+++++ linux-4.4/drivers/char/ubik2/Kconfig
++@@ -1,4 +1,29 @@
++-config UBIK2_ISDNSTACK_ON_CPU
++-    int
+++menu "AVM PCMLINK driver for PCM-Routing"
+++
+++config UBIK2
+++	tristate "UBIK2/PCMLINK Driver Support (AVM)"
+++	default n
+++
+++config UBIK2_DEVELOPMENT_SUPPORT
+++	int "Mask for Developmentfeature"
+++	depends on UBIK2
++ 	default 0
+++	help
+++	  0x1 Touch-Datenerfassung/TDM-Rawdaten-Erfassung
+++	  0x2 integrierter Ec-Generator
+++
+++config UBIK2_MSEC_PER_IRQ
+++	int "interrupt-trigger"
+++	depends on UBIK2
+++	default 8
+++	help
+++	  only 4 or 8 ms supported
+++
+++config UBIK2_ISDNSTACK_ON_CPU
+++	int "interrupt on cpuX"
+++#	depends on UBIK2 && SMP  # HACK für GPL: define wird verwendet, UBIK2 ist aber auskonfiguriert
+++	default 1
+++	help
+++	  ISDN-Stack have to bind on fixed cpu
++ 
+++endmenu
++--- linux-4.4/drivers/isdn/avm_dect/Kconfig
+++++ linux-4.4/drivers/isdn/avm_dect/Kconfig
++@@ -0,0 +1,10 @@
+++menu "AVM DECT Stack"
+++
+++config AVM_DECT
+++    tristate "AVM DECT Stack"
+++
+++config AVM_DECT_DEBUG
+++    bool "AVM DECT debug version"
+++    depends on AVM_DECT
+++
+++endmenu
++--- linux-4.4/drivers/isdn/capi_codec/Kconfig
+++++ linux-4.4/drivers/isdn/capi_codec/Kconfig
++@@ -0,0 +1,43 @@
+++menu "AVM CAPI-CODEC"
+++
+++config CAPI_CODEC
+++    tristate "capi driver codec support"
+++    depends on ISDN
+++
+++config CAPI_CODEC_SPEEX
+++    bool "capi driver codec SPEEX"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_ILBC
+++    bool "capi driver codec ILBC"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G729
+++    bool "capi driver codec G729"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G711
+++    bool "capi driver codec G711"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G726
+++    bool "capi driver codec G726"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G722
+++    bool "capi driver codec G722"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_VAD
+++    bool "capi driver codec VAD"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_CNG
+++    bool "capi driver codec CNG (comfort noise generator)"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_FAX
+++    bool "capi driver codec FAX (T30/T38)"
+++    depends on CAPI_CODEC
+++
+++endmenu
++--- linux-4.4/drivers/isdn/isdn_fon5/Kconfig
+++++ linux-4.4/drivers/isdn/isdn_fon5/Kconfig
++@@ -0,0 +1,64 @@
+++#
+++# ISDN-PCMLINK driver
+++#
+++
+++config ISDN_CAPI_ISDN_NT_PCMLINK
+++    tristate "AVM ISDN NT PCMLINK driver"
+++    depends on CAPI_AVM
+++    select ISDN_NT_PCMLINK_BLK
+++    select ISDN_NT_PCMLINK_E1
+++    select ISDN_NT_PCMLINK_STACK
+++    select ISDN_NT_PCMLINK_ISDN_AB
+++
+++config ISDN_NT_PCMLINK_BLK
+++    tristate "AVM ISDN NT PCMLINK driver (hardware interfacing part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_E1
+++    tristate "AVM ISDN NT PCMLINK driver (layer 1 part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_STACK
+++    tristate "AVM ISDN NT PCMLINK driver (protocol stack)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_ISDN_AB
+++    tristate "AVM ISDN NT PCMLINK driver (telephony part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_DEBUG
+++    bool "AVM ISDN NT PCMLINK driver debug"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_NO_BCHANNEL
+++    bool "AVM ISDN NT PCMLINK driver without B-Channels support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_FAX
+++    bool "AVM ISDN NT PCMLINK driver with FAX support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_COMPRESS
+++    bool "AVM ISDN NT PCMLINK driver with Compression support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_MODEM
+++    bool "AVM ISDN NT PCMLINK driver with MODEM support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_DTMF
+++    bool "AVM ISDN NT PCMLINK driver with DTMF support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_VCTRLS
+++    bool "AVM ISDN NT PCMLINK driver virtual controller support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_VCTRLS_NUMBER
+++    int "AVM ISDN NT PCMLINK driver, number of virtual controllers"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && ISDN_NT_PCMLINK_VCTRLS
+++    default 1
+++
+++config ISDN_NT_PCMLINK_FRITZX
+++    bool "AVM ISDN NT PCMLINK driver with FRITZX controller support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+--- make/kernel/patches/4.4.60/4.4.60/2400_07.27/001-regular_dot_config_location.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/2400_07.27/001-regular_dot_config_location.patch	2023-06-17 12:27:48.792255000 +0200
+@@ -0,0 +1,10 @@
++--- linux-4.4/.kernelvariables
+++++ linux-4.4/.kernelvariables
++@@ -35,7 +35,6 @@
++ CP ?= /bin/cp
++ export CP
++ 
++-export AVM_KCONFIG_CONFIG = avm/conf/linux-4.4.drgfly
++ 
++ # No variables exported via $(kernelvariables_extra)
++ 
+--- make/kernel/patches/4.4.60/4.4.60/2400_07.27/100-evaloader.TODO.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/2400_07.27/100-evaloader.TODO.patch	2023-06-17 12:27:48.796255000 +0200
+@@ -0,0 +1,12 @@
++--- linux-4.4/arch/mips/Makefile
+++++ linux-4.4/arch/mips/Makefile
++@@ -357,6 +357,9 @@
++ 
++ all:	$(all-y)
++ 
+++vmlinux.eva_pad: vmlinux.bin FORCE
+++	cp arch/mips/boot/$< arch/mips/boot/$@
+++
++ # boot
++ $(boot-y): $(vmlinux-32) FORCE
++ 	$(Q)$(MAKE) $(build)=arch/mips/boot VMLINUX=$(vmlinux-32) \
+--- make/kernel/patches/4.4.60/4.4.60/2400_07.27/300-no_ccache_check.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/2400_07.27/300-no_ccache_check.patch	2023-06-17 12:27:48.796255000 +0200
+@@ -0,0 +1,17 @@
++--- linux-4.4/GNUmakefile
+++++ linux-4.4/GNUmakefile
++@@ -29,14 +29,6 @@
++ endif
++ export _kernelvariables_read := 1
++ -include $(kernelvariables)
++-
++-# Iff /GU/tmp/ is not available and CCACHE_DISABLE is not set, disable ccache
++-ifeq ($(wildcard /GU/tmp/)$(CCACHE_DISABLE),)
++-ifneq (,$(V))
++-$(info /GU/tmp is not available, disabling ccache)
++-endif
++-export CCACHE_DISABLE = true
++-endif
++ endif
++ 
++ # Prevent accidental influence of user space targeted settings in standard
+--- make/kernel/patches/4.4.60/4.4.60/2400_07.27/310-no_diffconfig.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/2400_07.27/310-no_diffconfig.patch	2023-06-17 12:27:48.796255000 +0200
+@@ -0,0 +1,16 @@
++--- linux-4.4/GNUmakefile
+++++ linux-4.4/GNUmakefile
++@@ -114,13 +114,6 @@
++ 		USERINCLUDE_AVM_SUBPROJECTS='$(USERINCLUDE_AVM_SUBPROJECTS)' \
++ 		LINUXINCLUDE_AVM_SUBPROJECTS='$(LINUXINCLUDE_AVM_SUBPROJECTS)'
++ 	@# Skip config diff for out-of-tree module builds
++-ifeq ($(KBUILD_EXTMOD)$(M),)
++-    ifeq ($(words $(sort $(AVM_KCONFIG_CONFIG) $(KCONFIG_CONFIG))),2)
++-	$(if $(filter-out $(no-config-diff-targets),$@),\
++-		@scripts/diffconfig $(AVM_KCONFIG_CONFIG) $(KCONFIG_CONFIG) | \
++-		 sed -re '1{s|^|Linux config has changed compared to $(AVM_KCONFIG_CONFIG):\n|}' >&2)
++-    endif
++-endif
++ 
++ $(KCONFIG_CONFIG): $(wildcard $(AVM_KCONFIG_CONFIG))
++ 	$(if $<,@echo "UPD $< -> $@")
+--- make/kernel/patches/4.4.60/4.4.60/400-perl-lib-dir.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/400-perl-lib-dir.patch	2023-06-17 12:27:48.796255000 +0200
+@@ -0,0 +1,11 @@
++--- linux-4.4/drivers/char/avm_new/avm_dist_event/avm_event_generate.pl
+++++ linux-4.4/drivers/char/avm_new/avm_dist_event/avm_event_generate.pl
++@@ -2,7 +2,7 @@
++ 
++ use strict;
++ use warnings;
++-
+++use lib '.';
++ use input_enum;
++ use input_params;
++ use avm_event_generate_enum;
+--- make/kernel/patches/4.4.60/4.4.60/4020_07.01/001-avm-menuconfig-symbols.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/4020_07.01/001-avm-menuconfig-symbols.patch	2023-06-17 12:27:48.796255000 +0200
+@@ -0,0 +1,147 @@
++--- linux-4.4/drivers/isdn/capi_codec/Kconfig
+++++ linux-4.4/drivers/isdn/capi_codec/Kconfig
++@@ -0,0 +1,43 @@
+++menu "AVM CAPI-CODEC"
+++
+++config CAPI_CODEC
+++    tristate "capi driver codec support"
+++    depends on ISDN
+++
+++config CAPI_CODEC_SPEEX
+++    bool "capi driver codec SPEEX"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_ILBC
+++    bool "capi driver codec ILBC"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G729
+++    bool "capi driver codec G729"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G711
+++    bool "capi driver codec G711"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G726
+++    bool "capi driver codec G726"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G722
+++    bool "capi driver codec G722"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_VAD
+++    bool "capi driver codec VAD"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_CNG
+++    bool "capi driver codec CNG (comfort noise generator)"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_FAX
+++    bool "capi driver codec FAX (T30/T38)"
+++    depends on CAPI_CODEC
+++
+++endmenu
++--- linux-4.4/drivers/isdn/isdn_fon5/Kconfig
+++++ linux-4.4/drivers/isdn/isdn_fon5/Kconfig
++@@ -0,0 +1,64 @@
+++#
+++# ISDN-PCMLINK driver
+++#
+++
+++config ISDN_CAPI_ISDN_NT_PCMLINK
+++    tristate "AVM ISDN NT PCMLINK driver"
+++    depends on CAPI_AVM
+++    select ISDN_NT_PCMLINK_BLK
+++    select ISDN_NT_PCMLINK_E1
+++    select ISDN_NT_PCMLINK_STACK
+++    select ISDN_NT_PCMLINK_ISDN_AB
+++
+++config ISDN_NT_PCMLINK_BLK
+++    tristate "AVM ISDN NT PCMLINK driver (hardware interfacing part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_E1
+++    tristate "AVM ISDN NT PCMLINK driver (layer 1 part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_STACK
+++    tristate "AVM ISDN NT PCMLINK driver (protocol stack)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_ISDN_AB
+++    tristate "AVM ISDN NT PCMLINK driver (telephony part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_DEBUG
+++    bool "AVM ISDN NT PCMLINK driver debug"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_NO_BCHANNEL
+++    bool "AVM ISDN NT PCMLINK driver without B-Channels support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_FAX
+++    bool "AVM ISDN NT PCMLINK driver with FAX support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_COMPRESS
+++    bool "AVM ISDN NT PCMLINK driver with Compression support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_MODEM
+++    bool "AVM ISDN NT PCMLINK driver with MODEM support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_DTMF
+++    bool "AVM ISDN NT PCMLINK driver with DTMF support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_VCTRLS
+++    bool "AVM ISDN NT PCMLINK driver virtual controller support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_VCTRLS_NUMBER
+++    int "AVM ISDN NT PCMLINK driver, number of virtual controllers"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && ISDN_NT_PCMLINK_VCTRLS
+++    default 1
+++
+++config ISDN_NT_PCMLINK_FRITZX
+++    bool "AVM ISDN NT PCMLINK driver with FRITZX controller support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
++--- linux-4.4/drivers/char/ubik2/Kconfig
+++++ linux-4.4/drivers/char/ubik2/Kconfig
++@@ -1,4 +1,29 @@
++-config UBIK2_ISDNSTACK_ON_CPU
++-    int
+++menu "AVM PCMLINK driver for PCM-Routing"
+++
+++config UBIK2
+++	tristate "UBIK2/PCMLINK Driver Support (AVM)"
+++	default n
+++
+++config UBIK2_DEVELOPMENT_SUPPORT
+++	int "Mask for Developmentfeature"
+++	depends on UBIK2
++ 	default 0
+++	help
+++	  0x1 Touch-Datenerfassung/TDM-Rawdaten-Erfassung
+++	  0x2 integrierter Ec-Generator
+++
+++config UBIK2_MSEC_PER_IRQ
+++	int "interrupt-trigger"
+++	depends on UBIK2
+++	default 8
+++	help
+++	  only 4 or 8 ms supported
+++
+++config UBIK2_ISDNSTACK_ON_CPU
+++	int
+++
+++
+++	help
+++	  ISDN-Stack have to bind on fixed cpu
++ 
+++endmenu
+--- make/kernel/patches/4.4.60/4.4.60/4020_07.01/001-regular_dot_config_location.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/4020_07.01/001-regular_dot_config_location.patch	2023-06-17 12:27:48.796255000 +0200
+@@ -0,0 +1,10 @@
++--- linux-4.4/.kernelvariables	2019-01-02 14:31:17.000000000 +0100
+++++ linux-4.4/.kernelvariables	2019-03-02 19:25:01.326608979 +0100
++@@ -35,7 +35,6 @@
++ CP ?=   /bin/cp
++ export CP
++ 
++-export KCONFIG_CONFIG = avm/conf/linux-4.4.drgfly
++ 
++ # No variables exported via $(kernelvariables_extra)
++ 
+--- make/kernel/patches/4.4.60/4.4.60/4020_07.01/100-evaloader.TODO.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/4020_07.01/100-evaloader.TODO.patch	2023-06-17 12:27:48.796255000 +0200
+@@ -0,0 +1,12 @@
++--- linux-4.4/arch/mips/Makefile
+++++ linux-4.4/arch/mips/Makefile
++@@ -357,6 +357,9 @@
++ 
++ all:	$(all-y)
++ 
+++vmlinux.eva_pad: vmlinux.bin FORCE
+++	cp arch/mips/boot/$< arch/mips/boot/$@
+++
++ # boot
++ $(boot-y): $(vmlinux-32) FORCE
++ 	$(Q)$(MAKE) $(build)=arch/mips/boot VMLINUX=$(vmlinux-32) \
+--- make/kernel/patches/4.4.60/4.4.60/4040_07.01/001-avm-menuconfig-symbols.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/4040_07.01/001-avm-menuconfig-symbols.patch	2023-06-17 12:27:48.796255000 +0200
+@@ -0,0 +1,206 @@
++--- linux-4.4/drivers/net/nlaudio/Kconfig
+++++ linux-4.4/drivers/net/nlaudio/Kconfig
++@@ -0,0 +1,3 @@
+++config AVM_NET_LINK_AUDIO
+++	tristate "AVM_NET_LINK_AUDIO"
+++	default m
++--- linux-4.4/drivers/char/dect_io/Kconfig
+++++ linux-4.4/drivers/char/dect_io/Kconfig
++@@ -0,0 +1,12 @@
+++menu "AVM DECT_IO"
+++
+++config AVM_DECT_IO
+++	tristate "AVM dect IO managment support"
+++	default n
+++	help
+++	  This driver provides power managment functions for AVMs own drivers.
+++
+++	  To compile this driver as a module, choose M here. The module
+++	  will be called avm.
+++
+++endmenu
++--- linux-4.4/drivers/char/Piglet_noemif/Kconfig
+++++ linux-4.4/drivers/char/Piglet_noemif/Kconfig
++@@ -0,0 +1,22 @@
+++#config AVM_PIGLET
+++#	tristate "AVM Piglet load support"
+++#	default n
+++#	help
+++#	  This driver provides the piglet load support.
+++
+++menu "AVM Piglet (no emif)"
+++
+++config AVM_PIGLET_NOEMIF
+++	tristate "AVM Piglet load support (No Emif)"
+++	default n
+++	help
+++	  This driver provides the piglet load support (without Emif).
+++
+++config AVM_PIGLET_DECT
+++	bool "AVM Piglet DECT Loader support (only on Piglet No Emif)"
+++	depends on AVM_PIGLET_NOEMIF
+++	default y
+++	help
+++	  This driver provides the DECT loader support in piglet
+++
+++endmenu
++--- linux-4.4/drivers/char/ubik2/Kconfig
+++++ linux-4.4/drivers/char/ubik2/Kconfig
++@@ -1,4 +1,29 @@
++-config UBIK2_ISDNSTACK_ON_CPU
++-    int
+++menu "AVM PCMLINK driver for PCM-Routing"
+++
+++config UBIK2
+++	tristate "UBIK2/PCMLINK Driver Support (AVM)"
+++	default n
+++
+++config UBIK2_DEVELOPMENT_SUPPORT
+++	int "Mask for Developmentfeature"
+++	depends on UBIK2
++ 	default 0
+++	help
+++	  0x1 Touch-Datenerfassung/TDM-Rawdaten-Erfassung
+++	  0x2 integrierter Ec-Generator
+++
+++config UBIK2_MSEC_PER_IRQ
+++	int "interrupt-trigger"
+++	depends on UBIK2
+++	default 8
+++	help
+++	  only 4 or 8 ms supported
+++
+++config UBIK2_ISDNSTACK_ON_CPU
+++	int "interrupt on cpuX"
+++#	depends on UBIK2 && SMP  # HACK für GPL: define wird verwendet, UBIK2 ist aber auskonfiguriert
+++	default 1
+++	help
+++	  ISDN-Stack have to bind on fixed cpu
++ 
+++endmenu
++--- linux-4.4/drivers/isdn/avm_dect/Kconfig
+++++ linux-4.4/drivers/isdn/avm_dect/Kconfig
++@@ -0,0 +1,10 @@
+++menu "AVM DECT Stack"
+++
+++config AVM_DECT
+++    tristate "AVM DECT Stack"
+++
+++config AVM_DECT_DEBUG
+++    bool "AVM DECT debug version"
+++    depends on AVM_DECT
+++
+++endmenu
++--- linux-4.4/drivers/isdn/capi_codec/Kconfig
+++++ linux-4.4/drivers/isdn/capi_codec/Kconfig
++@@ -0,0 +1,43 @@
+++menu "AVM CAPI-CODEC"
+++
+++config CAPI_CODEC
+++    tristate "capi driver codec support"
+++    depends on ISDN
+++
+++config CAPI_CODEC_SPEEX
+++    bool "capi driver codec SPEEX"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_ILBC
+++    bool "capi driver codec ILBC"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G729
+++    bool "capi driver codec G729"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G711
+++    bool "capi driver codec G711"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G726
+++    bool "capi driver codec G726"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G722
+++    bool "capi driver codec G722"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_VAD
+++    bool "capi driver codec VAD"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_CNG
+++    bool "capi driver codec CNG (comfort noise generator)"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_FAX
+++    bool "capi driver codec FAX (T30/T38)"
+++    depends on CAPI_CODEC
+++
+++endmenu
++--- linux-4.4/drivers/isdn/isdn_fon5/Kconfig
+++++ linux-4.4/drivers/isdn/isdn_fon5/Kconfig
++@@ -0,0 +1,64 @@
+++#
+++# ISDN-PCMLINK driver
+++#
+++
+++config ISDN_CAPI_ISDN_NT_PCMLINK
+++    tristate "AVM ISDN NT PCMLINK driver"
+++    depends on CAPI_AVM
+++    select ISDN_NT_PCMLINK_BLK
+++    select ISDN_NT_PCMLINK_E1
+++    select ISDN_NT_PCMLINK_STACK
+++    select ISDN_NT_PCMLINK_ISDN_AB
+++
+++config ISDN_NT_PCMLINK_BLK
+++    tristate "AVM ISDN NT PCMLINK driver (hardware interfacing part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_E1
+++    tristate "AVM ISDN NT PCMLINK driver (layer 1 part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_STACK
+++    tristate "AVM ISDN NT PCMLINK driver (protocol stack)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_ISDN_AB
+++    tristate "AVM ISDN NT PCMLINK driver (telephony part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_DEBUG
+++    bool "AVM ISDN NT PCMLINK driver debug"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_NO_BCHANNEL
+++    bool "AVM ISDN NT PCMLINK driver without B-Channels support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_FAX
+++    bool "AVM ISDN NT PCMLINK driver with FAX support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_COMPRESS
+++    bool "AVM ISDN NT PCMLINK driver with Compression support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_MODEM
+++    bool "AVM ISDN NT PCMLINK driver with MODEM support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_DTMF
+++    bool "AVM ISDN NT PCMLINK driver with DTMF support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_VCTRLS
+++    bool "AVM ISDN NT PCMLINK driver virtual controller support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_VCTRLS_NUMBER
+++    int "AVM ISDN NT PCMLINK driver, number of virtual controllers"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && ISDN_NT_PCMLINK_VCTRLS
+++    default 1
+++
+++config ISDN_NT_PCMLINK_FRITZX
+++    bool "AVM ISDN NT PCMLINK driver with FRITZX controller support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+--- make/kernel/patches/4.4.60/4.4.60/4040_07.01/001-regular_dot_config_location.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/4040_07.01/001-regular_dot_config_location.patch	2023-06-17 12:27:48.796255000 +0200
+@@ -0,0 +1,10 @@
++--- linux-4.4/.kernelvariables
+++++ linux-4.4/.kernelvariables
++@@ -35,7 +35,6 @@
++ CP ?=   /bin/cp
++ export CP
++ 
++-export KCONFIG_CONFIG = avm/conf/linux-4.4.cortexa9
++ 
++ # No variables exported via $(kernelvariables_extra)
++ 
+--- make/kernel/patches/4.4.60/4.4.60/4040_07.01/100-evaloader.TODO.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/4040_07.01/100-evaloader.TODO.patch	2023-06-17 12:27:48.796255000 +0200
+@@ -0,0 +1,12 @@
++--- linux-4.4/arch/arm/Makefile
+++++ linux-4.4/arch/arm/Makefile
++@@ -334,6 +334,9 @@
++ 
++ PHONY += bzImage $(BOOT_TARGETS) $(INSTALL_TARGETS)
++ 
+++vmlinux.eva_pad: Image FORCE
+++	cp $(boot)/$< $(boot)/$@
+++
++ bootpImage uImage: zImage
++ zImage: Image
++ 
+--- make/kernel/patches/4.4.60/4.4.60/4040_07.14/001-avm-menuconfig-symbols.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/4040_07.14/001-avm-menuconfig-symbols.patch	2023-06-17 12:27:48.796255000 +0200
+@@ -0,0 +1,206 @@
++--- linux-4.4/drivers/net/nlaudio/Kconfig
+++++ linux-4.4/drivers/net/nlaudio/Kconfig
++@@ -0,0 +1,3 @@
+++config AVM_NET_LINK_AUDIO
+++	tristate "AVM_NET_LINK_AUDIO"
+++	default m
++--- linux-4.4/drivers/char/dect_io/Kconfig
+++++ linux-4.4/drivers/char/dect_io/Kconfig
++@@ -0,0 +1,12 @@
+++menu "AVM DECT_IO"
+++
+++config AVM_DECT_IO
+++	tristate "AVM dect IO managment support"
+++	default n
+++	help
+++	  This driver provides power managment functions for AVMs own drivers.
+++
+++	  To compile this driver as a module, choose M here. The module
+++	  will be called avm.
+++
+++endmenu
++--- linux-4.4/drivers/char/Piglet_noemif/Kconfig
+++++ linux-4.4/drivers/char/Piglet_noemif/Kconfig
++@@ -0,0 +1,22 @@
+++#config AVM_PIGLET
+++#	tristate "AVM Piglet load support"
+++#	default n
+++#	help
+++#	  This driver provides the piglet load support.
+++
+++menu "AVM Piglet (no emif)"
+++
+++config AVM_PIGLET_NOEMIF
+++	tristate "AVM Piglet load support (No Emif)"
+++	default n
+++	help
+++	  This driver provides the piglet load support (without Emif).
+++
+++config AVM_PIGLET_DECT
+++	bool "AVM Piglet DECT Loader support (only on Piglet No Emif)"
+++	depends on AVM_PIGLET_NOEMIF
+++	default y
+++	help
+++	  This driver provides the DECT loader support in piglet
+++
+++endmenu
++--- linux-4.4/drivers/char/ubik2/Kconfig
+++++ linux-4.4/drivers/char/ubik2/Kconfig
++@@ -1,4 +1,29 @@
++-config UBIK2_ISDNSTACK_ON_CPU
++-    int
+++menu "AVM PCMLINK driver for PCM-Routing"
+++
+++config UBIK2
+++	tristate "UBIK2/PCMLINK Driver Support (AVM)"
+++	default n
+++
+++config UBIK2_DEVELOPMENT_SUPPORT
+++	int "Mask for Developmentfeature"
+++	depends on UBIK2
++ 	default 0
+++	help
+++	  0x1 Touch-Datenerfassung/TDM-Rawdaten-Erfassung
+++	  0x2 integrierter Ec-Generator
+++
+++config UBIK2_MSEC_PER_IRQ
+++	int "interrupt-trigger"
+++	depends on UBIK2
+++	default 8
+++	help
+++	  only 4 or 8 ms supported
+++
+++config UBIK2_ISDNSTACK_ON_CPU
+++	int "interrupt on cpuX"
+++#	depends on UBIK2 && SMP  # HACK für GPL: define wird verwendet, UBIK2 ist aber auskonfiguriert
+++	default 1
+++	help
+++	  ISDN-Stack have to bind on fixed cpu
++ 
+++endmenu
++--- linux-4.4/drivers/isdn/avm_dect/Kconfig
+++++ linux-4.4/drivers/isdn/avm_dect/Kconfig
++@@ -0,0 +1,10 @@
+++menu "AVM DECT Stack"
+++
+++config AVM_DECT
+++    tristate "AVM DECT Stack"
+++
+++config AVM_DECT_DEBUG
+++    bool "AVM DECT debug version"
+++    depends on AVM_DECT
+++
+++endmenu
++--- linux-4.4/drivers/isdn/capi_codec/Kconfig
+++++ linux-4.4/drivers/isdn/capi_codec/Kconfig
++@@ -0,0 +1,43 @@
+++menu "AVM CAPI-CODEC"
+++
+++config CAPI_CODEC
+++    tristate "capi driver codec support"
+++    depends on ISDN
+++
+++config CAPI_CODEC_SPEEX
+++    bool "capi driver codec SPEEX"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_ILBC
+++    bool "capi driver codec ILBC"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G729
+++    bool "capi driver codec G729"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G711
+++    bool "capi driver codec G711"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G726
+++    bool "capi driver codec G726"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G722
+++    bool "capi driver codec G722"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_VAD
+++    bool "capi driver codec VAD"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_CNG
+++    bool "capi driver codec CNG (comfort noise generator)"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_FAX
+++    bool "capi driver codec FAX (T30/T38)"
+++    depends on CAPI_CODEC
+++
+++endmenu
++--- linux-4.4/drivers/isdn/isdn_fon5/Kconfig
+++++ linux-4.4/drivers/isdn/isdn_fon5/Kconfig
++@@ -0,0 +1,64 @@
+++#
+++# ISDN-PCMLINK driver
+++#
+++
+++config ISDN_CAPI_ISDN_NT_PCMLINK
+++    tristate "AVM ISDN NT PCMLINK driver"
+++    depends on CAPI_AVM
+++    select ISDN_NT_PCMLINK_BLK
+++    select ISDN_NT_PCMLINK_E1
+++    select ISDN_NT_PCMLINK_STACK
+++    select ISDN_NT_PCMLINK_ISDN_AB
+++
+++config ISDN_NT_PCMLINK_BLK
+++    tristate "AVM ISDN NT PCMLINK driver (hardware interfacing part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_E1
+++    tristate "AVM ISDN NT PCMLINK driver (layer 1 part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_STACK
+++    tristate "AVM ISDN NT PCMLINK driver (protocol stack)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_ISDN_AB
+++    tristate "AVM ISDN NT PCMLINK driver (telephony part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_DEBUG
+++    bool "AVM ISDN NT PCMLINK driver debug"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_NO_BCHANNEL
+++    bool "AVM ISDN NT PCMLINK driver without B-Channels support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_FAX
+++    bool "AVM ISDN NT PCMLINK driver with FAX support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_COMPRESS
+++    bool "AVM ISDN NT PCMLINK driver with Compression support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_MODEM
+++    bool "AVM ISDN NT PCMLINK driver with MODEM support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_DTMF
+++    bool "AVM ISDN NT PCMLINK driver with DTMF support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_VCTRLS
+++    bool "AVM ISDN NT PCMLINK driver virtual controller support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_VCTRLS_NUMBER
+++    int "AVM ISDN NT PCMLINK driver, number of virtual controllers"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && ISDN_NT_PCMLINK_VCTRLS
+++    default 1
+++
+++config ISDN_NT_PCMLINK_FRITZX
+++    bool "AVM ISDN NT PCMLINK driver with FRITZX controller support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+--- make/kernel/patches/4.4.60/4.4.60/4040_07.14/001-regular_dot_config_location.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/4040_07.14/001-regular_dot_config_location.patch	2023-06-17 12:27:48.796255000 +0200
+@@ -0,0 +1,10 @@
++--- linux-4.4/.kernelvariables
+++++ linux-4.4/.kernelvariables
++@@ -35,7 +35,6 @@
++ CP ?= /bin/cp
++ export CP
++ 
++-export KCONFIG_CONFIG = avm/conf/linux-4.4.cortexa9
++ 
++ # No variables exported via $(kernelvariables_extra)
++ 
+--- make/kernel/patches/4.4.60/4.4.60/4040_07.14/100-evaloader.TODO.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/4040_07.14/100-evaloader.TODO.patch	2023-06-17 12:27:48.796255000 +0200
+@@ -0,0 +1,12 @@
++--- linux-4.4/arch/arm/Makefile
+++++ linux-4.4/arch/arm/Makefile
++@@ -334,6 +334,9 @@
++ 
++ PHONY += bzImage $(BOOT_TARGETS) $(INSTALL_TARGETS)
++ 
+++vmlinux.eva_pad: Image FORCE
+++	cp $(boot)/$< $(boot)/$@
+++
++ bootpImage uImage: zImage
++ zImage: Image
++ 
+--- make/kernel/patches/4.4.60/4.4.60/4040_07.14/300-no_ccache_check.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/4040_07.14/300-no_ccache_check.patch	2023-06-17 12:27:48.796255000 +0200
+@@ -0,0 +1,15 @@
++--- linux-4.4/GNUmakefile
+++++ linux-4.4/GNUmakefile
++@@ -16,12 +16,6 @@
++ $(if $(kernelvariables),$(info linux/GNUmakefile: including $(kernelvariables)))
++ export _kernelvariables_read := 1
++ -include $(kernelvariables)
++-
++-# Iff /GU/tmp/ is not available and CCACHE_DISABLE is not set, disable ccache
++-ifeq ($(wildcard /GU/tmp/)$(CCACHE_DISABLE),)
++-$(info /GU/tmp is not available, disabling ccache)
++-export CCACHE_DISABLE = true
++-endif
++ endif
++ 
++ # ACHTUNG: Make wird hier neugestartet um die Übernahme der
+--- make/kernel/patches/4.4.60/4.4.60/4040_07.29/001-avm-menuconfig-symbols.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/4040_07.29/001-avm-menuconfig-symbols.patch	2023-06-17 12:27:48.800255000 +0200
+@@ -0,0 +1,216 @@
++--- linux-4.4/drivers/usb/Kconfig
+++++ linux-4.4/drivers/usb/Kconfig
++@@ -96,6 +96,7 @@
++ 
++ endif
++ 
+++source "drivers/usb/musb/Kconfig"
++ 
++ source "drivers/usb/dwc3/Kconfig"
++ 
++--- linux-4.4/drivers/net/nlaudio/Kconfig
+++++ linux-4.4/drivers/net/nlaudio/Kconfig
++@@ -0,0 +1,3 @@
+++config AVM_NET_LINK_AUDIO
+++	tristate "AVM_NET_LINK_AUDIO"
+++	default m
++--- linux-4.4/drivers/char/dect_io/Kconfig
+++++ linux-4.4/drivers/char/dect_io/Kconfig
++@@ -0,0 +1,12 @@
+++menu "AVM DECT_IO"
+++
+++config AVM_DECT_IO
+++	tristate "AVM dect IO managment support"
+++	default n
+++	help
+++	  This driver provides power managment functions for AVMs own drivers.
+++
+++	  To compile this driver as a module, choose M here. The module
+++	  will be called avm.
+++
+++endmenu
++--- linux-4.4/drivers/char/Piglet_noemif/Kconfig
+++++ linux-4.4/drivers/char/Piglet_noemif/Kconfig
++@@ -0,0 +1,22 @@
+++#config AVM_PIGLET
+++#	tristate "AVM Piglet load support"
+++#	default n
+++#	help
+++#	  This driver provides the piglet load support.
+++
+++menu "AVM Piglet (no emif)"
+++
+++config AVM_PIGLET_NOEMIF
+++	tristate "AVM Piglet load support (No Emif)"
+++	default n
+++	help
+++	  This driver provides the piglet load support (without Emif).
+++
+++config AVM_PIGLET_DECT
+++	bool "AVM Piglet DECT Loader support (only on Piglet No Emif)"
+++	depends on AVM_PIGLET_NOEMIF
+++	default y
+++	help
+++	  This driver provides the DECT loader support in piglet
+++
+++endmenu
++--- linux-4.4/drivers/char/ubik2/Kconfig
+++++ linux-4.4/drivers/char/ubik2/Kconfig
++@@ -1,4 +1,29 @@
++-config UBIK2_ISDNSTACK_ON_CPU
++-    int
+++menu "AVM PCMLINK driver for PCM-Routing"
+++
+++config UBIK2
+++	tristate "UBIK2/PCMLINK Driver Support (AVM)"
+++	default n
+++
+++config UBIK2_DEVELOPMENT_SUPPORT
+++	int "Mask for Developmentfeature"
+++	depends on UBIK2
++ 	default 0
+++	help
+++	  0x1 Touch-Datenerfassung/TDM-Rawdaten-Erfassung
+++	  0x2 integrierter Ec-Generator
+++
+++config UBIK2_MSEC_PER_IRQ
+++	int "interrupt-trigger"
+++	depends on UBIK2
+++	default 8
+++	help
+++	  only 4 or 8 ms supported
+++
+++config UBIK2_ISDNSTACK_ON_CPU
+++	int "interrupt on cpuX"
+++#	depends on UBIK2 && SMP  # HACK für GPL: define wird verwendet, UBIK2 ist aber auskonfiguriert
+++	default 1
+++	help
+++	  ISDN-Stack have to bind on fixed cpu
++ 
+++endmenu
++--- linux-4.4/drivers/isdn/avm_dect/Kconfig
+++++ linux-4.4/drivers/isdn/avm_dect/Kconfig
++@@ -0,0 +1,10 @@
+++menu "AVM DECT Stack"
+++
+++config AVM_DECT
+++    tristate "AVM DECT Stack"
+++
+++config AVM_DECT_DEBUG
+++    bool "AVM DECT debug version"
+++    depends on AVM_DECT
+++
+++endmenu
++--- linux-4.4/drivers/isdn/capi_codec/Kconfig
+++++ linux-4.4/drivers/isdn/capi_codec/Kconfig
++@@ -0,0 +1,43 @@
+++menu "AVM CAPI-CODEC"
+++
+++config CAPI_CODEC
+++    tristate "capi driver codec support"
+++    depends on ISDN
+++
+++config CAPI_CODEC_SPEEX
+++    bool "capi driver codec SPEEX"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_ILBC
+++    bool "capi driver codec ILBC"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G729
+++    bool "capi driver codec G729"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G711
+++    bool "capi driver codec G711"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G726
+++    bool "capi driver codec G726"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_G722
+++    bool "capi driver codec G722"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_VAD
+++    bool "capi driver codec VAD"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_CNG
+++    bool "capi driver codec CNG (comfort noise generator)"
+++    depends on CAPI_CODEC
+++
+++config CAPI_CODEC_FAX
+++    bool "capi driver codec FAX (T30/T38)"
+++    depends on CAPI_CODEC
+++
+++endmenu
++--- linux-4.4/drivers/isdn/isdn_fon5/Kconfig
+++++ linux-4.4/drivers/isdn/isdn_fon5/Kconfig
++@@ -0,0 +1,64 @@
+++#
+++# ISDN-PCMLINK driver
+++#
+++
+++config ISDN_CAPI_ISDN_NT_PCMLINK
+++    tristate "AVM ISDN NT PCMLINK driver"
+++    depends on CAPI_AVM
+++    select ISDN_NT_PCMLINK_BLK
+++    select ISDN_NT_PCMLINK_E1
+++    select ISDN_NT_PCMLINK_STACK
+++    select ISDN_NT_PCMLINK_ISDN_AB
+++
+++config ISDN_NT_PCMLINK_BLK
+++    tristate "AVM ISDN NT PCMLINK driver (hardware interfacing part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_E1
+++    tristate "AVM ISDN NT PCMLINK driver (layer 1 part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_STACK
+++    tristate "AVM ISDN NT PCMLINK driver (protocol stack)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_ISDN_AB
+++    tristate "AVM ISDN NT PCMLINK driver (telephony part)"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_DEBUG
+++    bool "AVM ISDN NT PCMLINK driver debug"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_NO_BCHANNEL
+++    bool "AVM ISDN NT PCMLINK driver without B-Channels support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_FAX
+++    bool "AVM ISDN NT PCMLINK driver with FAX support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_COMPRESS
+++    bool "AVM ISDN NT PCMLINK driver with Compression support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_MODEM
+++    bool "AVM ISDN NT PCMLINK driver with MODEM support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_DTMF
+++    bool "AVM ISDN NT PCMLINK driver with DTMF support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && !ISDN_NT_PCMLINK_NO_BCHANNEL
+++
+++config ISDN_NT_PCMLINK_VCTRLS
+++    bool "AVM ISDN NT PCMLINK driver virtual controller support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+++
+++config ISDN_NT_PCMLINK_VCTRLS_NUMBER
+++    int "AVM ISDN NT PCMLINK driver, number of virtual controllers"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK && ISDN_NT_PCMLINK_VCTRLS
+++    default 1
+++
+++config ISDN_NT_PCMLINK_FRITZX
+++    bool "AVM ISDN NT PCMLINK driver with FRITZX controller support"
+++    depends on ISDN_CAPI_ISDN_NT_PCMLINK
+--- make/kernel/patches/4.4.60/4.4.60/4040_07.29/001-regular_dot_config_location.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/4040_07.29/001-regular_dot_config_location.patch	2023-06-17 12:27:48.800255000 +0200
+@@ -0,0 +1,10 @@
++--- linux-4.4/.kernelvariables
+++++ linux-4.4/.kernelvariables
++@@ -35,7 +35,6 @@
++ CP ?= /bin/cp
++ export CP
++ 
++-export AVM_KCONFIG_CONFIG = avm/conf/linux-4.4.cortexa9
++ 
++ # No variables exported via $(kernelvariables_extra)
++ 
+--- make/kernel/patches/4.4.60/4.4.60/4040_07.29/100-evaloader.TODO.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/4040_07.29/100-evaloader.TODO.patch	2023-06-17 12:27:48.800255000 +0200
+@@ -0,0 +1,12 @@
++--- linux-4.4/arch/arm/Makefile
+++++ linux-4.4/arch/arm/Makefile
++@@ -334,6 +334,9 @@
++ 
++ PHONY += bzImage $(BOOT_TARGETS) $(INSTALL_TARGETS)
++ 
+++vmlinux.eva_pad: Image FORCE
+++	cp $(boot)/$< $(boot)/$@
+++
++ bootpImage uImage: zImage
++ zImage: Image
++ 
+--- make/kernel/patches/4.4.60/4.4.60/4040_07.29/300-no_ccache_check.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/4040_07.29/300-no_ccache_check.patch	2023-06-17 12:27:48.800255000 +0200
+@@ -0,0 +1,17 @@
++--- linux-4.4/GNUmakefile
+++++ linux-4.4/GNUmakefile
++@@ -29,14 +29,6 @@
++ endif
++ export _kernelvariables_read := 1
++ -include $(kernelvariables)
++-
++-# Iff /GU/tmp/ is not available and CCACHE_DISABLE is not set, disable ccache
++-ifeq ($(wildcard /GU/tmp/)$(CCACHE_DISABLE),)
++-ifneq (,$(V))
++-$(info /GU/tmp is not available, disabling ccache)
++-endif
++-export CCACHE_DISABLE = true
++-endif
++ endif
++ 
++ # Prevent accidental influence of user space targeted settings in standard
+--- make/kernel/patches/4.4.60/4.4.60/4040_07.29/310-no_diffconfig.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/4040_07.29/310-no_diffconfig.patch	2023-06-17 12:27:48.800255000 +0200
+@@ -0,0 +1,16 @@
++--- linux-4.4/GNUmakefile
+++++ linux-4.4/GNUmakefile
++@@ -114,13 +114,6 @@
++ 		USERINCLUDE_AVM_SUBPROJECTS='$(USERINCLUDE_AVM_SUBPROJECTS)' \
++ 		LINUXINCLUDE_AVM_SUBPROJECTS='$(LINUXINCLUDE_AVM_SUBPROJECTS)'
++ 	@# Skip config diff for out-of-tree module builds
++-ifeq ($(KBUILD_EXTMOD)$(M),)
++-    ifeq ($(words $(sort $(AVM_KCONFIG_CONFIG) $(KCONFIG_CONFIG))),2)
++-	$(if $(filter-out $(no-config-diff-targets),$@),\
++-		@scripts/diffconfig $(AVM_KCONFIG_CONFIG) $(KCONFIG_CONFIG) | \
++-		 sed -re '1{s|^|Linux config has changed compared to $(AVM_KCONFIG_CONFIG):\n|}' >&2)
++-    endif
++-endif
++ 
++ $(KCONFIG_CONFIG): $(wildcard $(AVM_KCONFIG_CONFIG))
++ 	$(if $<,@echo "UPD $< -> $@")
+--- make/kernel/patches/4.4.60/4.4.60/410-fix-statement_without_prompt.patch	1970-01-01 01:00:00.000000000 +0100
++++ make/kernel/patches/4.4.60/4.4.60/410-fix-statement_without_prompt.patch	2023-06-17 12:27:48.800255000 +0200
+@@ -0,0 +1,12 @@
++--- linux-4.4/net/sched/Kconfig

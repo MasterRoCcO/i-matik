@@ -1,0 +1,75 @@
+--- make/kernel/configs/freetz/config-iks-7340_06.06	2023-06-17 12:27:48.708257121 +0200
++++ make/kernel/configs/freetz/config-iks-7340_06.06	2023-06-18 20:40:13.915970580 +0200
+@@ -1,7 +1,7 @@
+ #
+ # Automatically generated make config: don't edit
+ # Linux kernel version: 2.6.28.8
+-# Mon Nov 18 22:02:08 2013
++# Sun Jun 18 20:40:09 2023
+ #
+ CONFIG_MIPS=y
+ 
+@@ -1298,7 +1298,7 @@
+ # CONFIG_REISERFS_PROC_INFO is not set
+ # CONFIG_REISERFS_FS_XATTR is not set
+ # CONFIG_JFS_FS is not set
+-# CONFIG_FS_POSIX_ACL is not set
++CONFIG_FS_POSIX_ACL=y
+ CONFIG_FILE_LOCKING=y
+ # CONFIG_XFS_FS is not set
+ # CONFIG_GFS2_FS is not set
+@@ -1400,32 +1400,35 @@
+ # CONFIG_SYSV_FS is not set
+ # CONFIG_UFS_FS is not set
+ CONFIG_NETWORK_FILESYSTEMS=y
+-CONFIG_NFS_FS=y
++CONFIG_NFS_FS=m
+ CONFIG_NFS_V3=y
+ # CONFIG_NFS_V3_ACL is not set
+ # CONFIG_NFS_V4 is not set
+-CONFIG_ROOT_NFS=y
+ CONFIG_NFSD=m
++CONFIG_NFSD_V2_ACL=y
+ CONFIG_NFSD_V3=y
+-# CONFIG_NFSD_V3_ACL is not set
+-# CONFIG_NFSD_V4 is not set
+-CONFIG_LOCKD=y
++CONFIG_NFSD_V3_ACL=y
++CONFIG_NFSD_V4=y
++CONFIG_LOCKD=m
+ CONFIG_LOCKD_V4=y
+ CONFIG_EXPORTFS=m
++CONFIG_NFS_ACL_SUPPORT=m
+ CONFIG_NFS_COMMON=y
+-CONFIG_SUNRPC=y
+-# CONFIG_SUNRPC_REGISTER_V4 is not set
+-# CONFIG_RPCSEC_GSS_KRB5 is not set
++CONFIG_SUNRPC=m
++CONFIG_SUNRPC_GSS=m
++CONFIG_SUNRPC_REGISTER_V4=y
++CONFIG_RPCSEC_GSS_KRB5=m
+ # CONFIG_RPCSEC_GSS_SPKM3 is not set
+ # CONFIG_SMB_FS is not set
+ CONFIG_CIFS=m
+-# CONFIG_CIFS_STATS is not set
++CONFIG_CIFS_STATS=y
++# CONFIG_CIFS_STATS2 is not set
+ # CONFIG_CIFS_WEAK_PW_HASH is not set
+ # CONFIG_CIFS_XATTR is not set
+ # CONFIG_CIFS_DEBUG2 is not set
+ # CONFIG_CIFS_EXPERIMENTAL is not set
+ # CONFIG_NCP_FS is not set
+-CONFIG_CODA_FS=m
++# CONFIG_CODA_FS is not set
+ # CONFIG_AFS_FS is not set
+ 
+ #
+@@ -1612,7 +1615,7 @@
+ # Digest
+ #
+ # CONFIG_CRYPTO_CRC32C is not set
+-# CONFIG_CRYPTO_MD4 is not set
++CONFIG_CRYPTO_MD4=m
+ CONFIG_CRYPTO_MD5=y
+ # CONFIG_CRYPTO_MICHAEL_MIC is not set
+ # CONFIG_CRYPTO_RMD128 is not set

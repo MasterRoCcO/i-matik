@@ -1,0 +1,89 @@
+--- make/kernel/configs/freetz/config-ar9-7320_06.30	2023-06-17 12:27:48.708257121 +0200
++++ make/kernel/configs/freetz/config-ar9-7320_06.30	2023-06-18 20:38:27.089672859 +0200
+@@ -1,7 +1,7 @@
+ #
+ # Automatically generated make config: don't edit
+ # Linux kernel version: 2.6.32.61
+-# Mon May 26 12:30:24 2014
++# Sun Jun 18 20:38:25 2023
+ #
+ CONFIG_MIPS=y
+ 
+@@ -1830,21 +1830,23 @@
+ # CONFIG_SYSV_FS is not set
+ # CONFIG_UFS_FS is not set
+ CONFIG_NETWORK_FILESYSTEMS=y
+-CONFIG_NFS_FS=y
++CONFIG_NFS_FS=m
+ CONFIG_NFS_V3=y
+ # CONFIG_NFS_V3_ACL is not set
+ # CONFIG_NFS_V4 is not set
+-CONFIG_ROOT_NFS=y
+ CONFIG_NFSD=m
++CONFIG_NFSD_V2_ACL=y
+ CONFIG_NFSD_V3=y
+-# CONFIG_NFSD_V3_ACL is not set
+-# CONFIG_NFSD_V4 is not set
+-CONFIG_LOCKD=y
++CONFIG_NFSD_V3_ACL=y
++CONFIG_NFSD_V4=y
++CONFIG_LOCKD=m
+ CONFIG_LOCKD_V4=y
+ CONFIG_EXPORTFS=m
++CONFIG_NFS_ACL_SUPPORT=m
+ CONFIG_NFS_COMMON=y
+-CONFIG_SUNRPC=y
+-# CONFIG_RPCSEC_GSS_KRB5 is not set
++CONFIG_SUNRPC=m
++CONFIG_SUNRPC_GSS=m
++CONFIG_RPCSEC_GSS_KRB5=m
+ # CONFIG_RPCSEC_GSS_SPKM3 is not set
+ # CONFIG_SMB_FS is not set
+ CONFIG_CIFS=m
+@@ -1857,7 +1859,7 @@
+ # CONFIG_CIFS_DFS_UPCALL is not set
+ # CONFIG_CIFS_EXPERIMENTAL is not set
+ # CONFIG_NCP_FS is not set
+-CONFIG_CODA_FS=m
++# CONFIG_CODA_FS is not set
+ # CONFIG_AFS_FS is not set
+ 
+ #
+@@ -2005,7 +2007,7 @@
+ # CONFIG_SECURITY_FILE_CAPABILITIES is not set
+ # CONFIG_SECURITY_SELINUX is not set
+ # CONFIG_SECURITY_TOMOYO is not set
+-CONFIG_CRYPTO=y
++CONFIG_CRYPTO=m
+ 
+ #
+ # Crypto core or helper
+@@ -2052,7 +2054,7 @@
+ #
+ # Hash modes
+ #
+-# CONFIG_CRYPTO_HMAC is not set
++CONFIG_CRYPTO_HMAC=m
+ # CONFIG_CRYPTO_XCBC is not set
+ # CONFIG_CRYPTO_VMAC is not set
+ 
+@@ -2061,8 +2063,8 @@
+ #
+ CONFIG_CRYPTO_CRC32C=m
+ # CONFIG_CRYPTO_GHASH is not set
+-# CONFIG_CRYPTO_MD4 is not set
+-# CONFIG_CRYPTO_MD5 is not set
++CONFIG_CRYPTO_MD4=m
++CONFIG_CRYPTO_MD5=m
+ # CONFIG_CRYPTO_MICHAEL_MIC is not set
+ # CONFIG_CRYPTO_RMD128 is not set
+ # CONFIG_CRYPTO_RMD160 is not set
+@@ -2084,7 +2086,7 @@
+ # CONFIG_CRYPTO_CAMELLIA is not set
+ # CONFIG_CRYPTO_CAST5 is not set
+ # CONFIG_CRYPTO_CAST6 is not set
+-# CONFIG_CRYPTO_DES is not set
++CONFIG_CRYPTO_DES=m
+ # CONFIG_CRYPTO_FCRYPT is not set
+ # CONFIG_CRYPTO_KHAZAD is not set
+ # CONFIG_CRYPTO_SALSA20 is not set

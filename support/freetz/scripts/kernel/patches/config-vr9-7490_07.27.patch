@@ -1,0 +1,34 @@
+--- make/kernel/configs/freetz/config-vr9-7490_07.27	2023-06-17 12:27:48.716256993 +0200
++++ make/kernel/configs/freetz/config-vr9-7490_07.27	2023-06-18 20:45:02.367499869 +0200
+@@ -2503,17 +2503,22 @@
+ # CONFIG_NFS_V4 is not set
+ # CONFIG_NFS_SWAP is not set
+ CONFIG_NFSD=m
++CONFIG_NFSD_V2_ACL=y
+ CONFIG_NFSD_V3=y
+-# CONFIG_NFSD_V3_ACL is not set
+-# CONFIG_NFSD_V4 is not set
++CONFIG_NFSD_V3_ACL=y
++CONFIG_NFSD_V4=y
++# CONFIG_NFSD_FAULT_INJECTION is not set
+ CONFIG_LOCKD=m
+ CONFIG_LOCKD_V4=y
++CONFIG_NFS_ACL_SUPPORT=m
+ CONFIG_NFS_COMMON=y
+ CONFIG_SUNRPC=m
++CONFIG_SUNRPC_GSS=m
+ # CONFIG_SUNRPC_DEBUG is not set
+ # CONFIG_CEPH_FS is not set
+ CONFIG_CIFS=m
+-# CONFIG_CIFS_STATS is not set
++CONFIG_CIFS_STATS=y
++# CONFIG_CIFS_STATS2 is not set
+ # CONFIG_CIFS_WEAK_PW_HASH is not set
+ # CONFIG_CIFS_UPCALL is not set
+ # CONFIG_CIFS_XATTR is not set
+@@ -2854,4 +2859,5 @@
+ # CONFIG_AVERAGE is not set
+ # CONFIG_CORDIC is not set
+ # CONFIG_DDR is not set
++CONFIG_OID_REGISTRY=m
+ # CONFIG_VIRTUALIZATION is not set
