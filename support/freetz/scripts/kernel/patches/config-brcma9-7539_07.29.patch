@@ -1,5 +1,14 @@
---- make/kernel/configs/freetz/config-brcma9-7539_07.29	2023-06-17 12:27:48.708257121 +0200
-+++ make/kernel/configs/freetz/config-brcma9-7539_07.29	2023-06-18 15:54:10.286178036 +0200
+--- make/kernel/configs/freetz/config-brcma9-7539_07.29	2023-06-19 21:23:23.019060091 +0200
++++ make/kernel/configs/freetz/config-brcma9-7539_07.29	2023-06-24 23:59:29.112905582 +0200
+@@ -1235,7 +1235,7 @@
+ # CONFIG_BLK_DEV_DAC960 is not set
+ # CONFIG_BLK_DEV_UMEM is not set
+ # CONFIG_BLK_DEV_COW_COMMON is not set
+-CONFIG_BLK_DEV_LOOP=y
++CONFIG_BLK_DEV_LOOP=m
+ CONFIG_BLK_DEV_LOOP_MIN_COUNT=4
+ # CONFIG_BLK_DEV_CRYPTOLOOP is not set
+ # CONFIG_BLK_DEV_DRBD is not set
 @@ -1360,7 +1360,7 @@
  # CONFIG_NETCONSOLE is not set
  # CONFIG_NETPOLL is not set
