@@ -10,6 +10,9 @@ begin_oscam=$(date +"%s")
 if [[ ! -e "$OSCAM_PATH" ]]; then
 	umask 0022
 	git clone https://github.com/gorgone/s3_releases "$OSCAM_PATH"
+	cp -ar /$MY_FILES_HOME_PATH_OSCAM/* "$OSCAM_PATH/" 2>/dev/null
+	cp -ar /$PRIVAT_MY_FILES_HOME_PATH_OSCAM/* "$OSCAM_PATH/" 2>/dev/null
+	cp -ar /$USER_OSCAM_TOOLCHAINS/* "$OSCAM_PATH/support" 2>/dev/null
 elif [ ! -d "$OSCAM_PATH" ]; then
 #	printf "${YELLOW}'$OSCAM_PATH' already exists but is not a directory${NC}" 1>&2
 	exit 1
@@ -50,7 +53,7 @@ if [[ ! -e $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS} ]]; then
 fi
 	cd $OSCAM_PATH/oscam-svn && OSCAM_SMOD_VERSION_ALT="$(./config.sh -r)"
 	cd $OSCAM_PATH/oscam-svn && git pull && OSCAM_SMOD_VERSION_NEU="$(./config.sh -r)"
-	ICAM_VERSION="$(grep '"-SMOD-ICAM-v' $OSCAM_PATH/oscam-svn/oscam.c  | awk -F'"' '{print $4}' | xargs)"
+	ICAM_VERSION="$(grep '"-ICAM-v' $OSCAM_PATH/oscam-svn/oscam.c  | awk -F'"' '{print $4}' | xargs)"
 
 if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx ]]; then
 	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-svn${OSCAM_SMOD_VERSION_ALT:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAM_SMOD_VERSION_ALT:6:8}.upx" -type f -mmin +0 -delete

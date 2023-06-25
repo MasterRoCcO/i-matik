@@ -17,7 +17,7 @@ Options
   -int,--international		International Version
   -yo,--yes-oscam		The image is with oscam add-on and an oscam is created
   -yoe,--yes-oscam		The image is with oscam_emu add-on and an oscam is created
-  -ysmod,--yes-oscam-smod	The image is with oscam_smod add-on and an oscam is created (still disabled)
+  -ysmod,--yes-oscam-smod	The image is with oscam_smod add-on and an oscam is created
   -to,--tool-oscam              oscam ToolChain
   -do,--del-oscam		delete the old oscam and build a new one
   -deloscam			delete all oscams
