@@ -251,7 +251,9 @@ for bs in "${BOX_SSL[@]}"; do
 		# oscam	on
 		source $OSCAM_ADDON 2>/dev/null
 		
-	source $PKGS_PATH_ON_OFF/skins_on 2>/dev/nullsed -i "s+# EXTERNAL_ENABLED is not set+EXTERNAL_ENABLED=y+g" $FREETZ_SSL_HOME_PATH/.config
+	source $PKGS_PATH_ON_OFF/skins_on 2>/dev/null
+
+		sed -i "s+# EXTERNAL_ENABLED is not set+EXTERNAL_ENABLED=y+g" $FREETZ_SSL_HOME_PATH/.config
 
 ed $FREETZ_SSL_HOME_PATH/.config <<EOF
 /EXTERNAL_ENABLED=y/a
