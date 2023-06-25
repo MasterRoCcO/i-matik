@@ -5,6 +5,7 @@ sed -i "s+# FREETZ_PACKAGE_PCSC_LITE is not set+FREETZ_PACKAGE_PCSC_LITE=y+g" $F
 sed -i "s+# FREETZ_LIB_libpcsclite is not set+FREETZ_LIB_libpcsclite=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 sed -i "s+# FREETZ_LIB_libusb_0 is not set+FREETZ_LIB_libusb_0=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 sed -i "s+# FREETZ_LIB_libusb_1 is not set+FREETZ_LIB_libusb_1=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+# FREETZ_LIB_libftdi is not set+FREETZ_LIB_libftdi=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 sed -i "s+# FREETZ_PACKAGE_USBIDS is not set+FREETZ_PACKAGE_USBIDS=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 sed -i "s+# FREETZ_PACKAGE_USBUTILS is not set+FREETZ_PACKAGE_USBUTILS=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 sed -i "s+# FREETZ_MODULE_ftdi_sio is not set+FREETZ_MODULE_ftdi_sio=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
