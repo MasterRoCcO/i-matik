@@ -1,11 +1,11 @@
 --- make/kernel/configs/freetz/config-ar934x-6810_06.21	2023-06-17 12:27:48.708257121 +0200
-+++ make/kernel/configs/freetz/config-ar934x-6810_06.21	2023-06-18 20:33:32.886565153 +0200
++++ make/kernel/configs/freetz/config-ar934x-6810_06.21	2023-06-19 12:29:14.933495014 +0200
 @@ -1,7 +1,7 @@
  #
  # Automatically generated make config: don't edit
  # Linux kernel version: 2.6.32.61
 -# Mon Jan 18 21:57:53 2016
-+# Sun Jun 18 20:33:29 2023
++# Mon Jun 19 12:29:13 2023
  #
  CONFIG_MIPS=y
  

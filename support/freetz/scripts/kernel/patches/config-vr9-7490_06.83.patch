@@ -1,5 +1,5 @@
 --- make/kernel/configs/freetz/config-vr9-7490_06.83	2023-06-17 12:27:48.716256993 +0200
-+++ make/kernel/configs/freetz/config-vr9-7490_06.83	2023-06-18 16:18:56.670487178 +0200
++++ make/kernel/configs/freetz/config-vr9-7490_06.83	2023-06-19 11:55:54.231407401 +0200
 @@ -1185,8 +1185,19 @@
  # CONFIG_MDIO_BUS_MUX_GPIO is not set
  # CONFIG_MDIO_BUS_MUX_MMIOREG is not set
@@ -86,7 +86,7 @@
 -# CONFIG_CRYPTO_CMAC is not set
 -# CONFIG_CRYPTO_HMAC is not set
 +CONFIG_CRYPTO_CMAC=m
-+CONFIG_CRYPTO_HMAC=y
++CONFIG_CRYPTO_HMAC=m
  # CONFIG_CRYPTO_XCBC is not set
  # CONFIG_CRYPTO_VMAC is not set
  

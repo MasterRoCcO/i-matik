@@ -1,5 +1,5 @@
 --- make/kernel/configs/freetz/config-ipq40xx-4040_07.01	2023-06-17 12:27:48.708257121 +0200
-+++ make/kernel/configs/freetz/config-ipq40xx-4040_07.01	2023-06-18 15:28:29.582450059 +0200
++++ make/kernel/configs/freetz/config-ipq40xx-4040_07.01	2023-06-19 10:44:04.853652113 +0200
 @@ -3122,7 +3122,7 @@
  # CONFIG_USB_SERIAL_CP210X is not set
  # CONFIG_USB_SERIAL_CYPRESS_M8 is not set
@@ -87,7 +87,7 @@
  #
 -# CONFIG_CRYPTO_CMAC is not set
 +CONFIG_CRYPTO_CMAC=m
- CONFIG_CRYPTO_HMAC=y
+ CONFIG_CRYPTO_HMAC=m
  # CONFIG_CRYPTO_XCBC is not set
  # CONFIG_CRYPTO_VMAC is not set
 @@ -3985,7 +4021,7 @@

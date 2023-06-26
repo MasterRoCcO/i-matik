@@ -1,5 +1,5 @@
 --- make/kernel/configs/freetz/config-qca955x-1750_07.01	2023-06-17 12:27:48.712257056 +0200
-+++ make/kernel/configs/freetz/config-qca955x-1750_07.01	2023-06-18 20:35:44.388334615 +0200
++++ make/kernel/configs/freetz/config-qca955x-1750_07.01	2023-06-19 10:08:07.442600755 +0200
 @@ -1445,8 +1445,19 @@
  # CONFIG_PHYLIB is not set
  # CONFIG_PSB6970_PHY is not set
@@ -38,7 +38,7 @@
 +# CONFIG_USB_SERIAL_CP210X is not set
 +# CONFIG_USB_SERIAL_CYPRESS_M8 is not set
 +# CONFIG_USB_SERIAL_EMPEG is not set
-+# CONFIG_USB_SERIAL_FTDI_SIO is not set
++CONFIG_USB_SERIAL_FTDI_SIO=m
 +# CONFIG_USB_SERIAL_VISOR is not set
 +# CONFIG_USB_SERIAL_IPAQ is not set
 +# CONFIG_USB_SERIAL_IR is not set
@@ -58,7 +58,7 @@
 +# CONFIG_USB_SERIAL_MOS7840 is not set
 +# CONFIG_USB_SERIAL_MXUPORT is not set
 +# CONFIG_USB_SERIAL_NAVMAN is not set
-+# CONFIG_USB_SERIAL_PL2303 is not set
++CONFIG_USB_SERIAL_PL2303=m
 +# CONFIG_USB_SERIAL_OTI6858 is not set
 +# CONFIG_USB_SERIAL_QCAUX is not set
 +# CONFIG_USB_SERIAL_QUALCOMM is not set

@@ -1,5 +1,5 @@
 --- make/kernel/configs/freetz/config-vr9-7490_07.27	2023-06-17 12:27:48.716256993 +0200
-+++ make/kernel/configs/freetz/config-vr9-7490_07.27	2023-06-18 20:45:02.367499869 +0200
++++ make/kernel/configs/freetz/config-vr9-7490_07.27	2023-06-19 11:56:43.074471233 +0200
 @@ -2503,17 +2503,22 @@
  # CONFIG_NFS_V4 is not set
  # CONFIG_NFS_SWAP is not set

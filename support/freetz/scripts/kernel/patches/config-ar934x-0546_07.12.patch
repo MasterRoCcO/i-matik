@@ -1,5 +1,5 @@
 --- make/kernel/configs/freetz/config-ar934x-0546_07.12	2023-06-17 12:27:48.708257121 +0200
-+++ make/kernel/configs/freetz/config-ar934x-0546_07.12	2023-06-18 20:36:42.799368042 +0200
++++ make/kernel/configs/freetz/config-ar934x-0546_07.12	2023-06-19 10:23:55.300460680 +0200
 @@ -1336,8 +1336,18 @@
  # CONFIG_PHYLIB is not set
  # CONFIG_PSB6970_PHY is not set

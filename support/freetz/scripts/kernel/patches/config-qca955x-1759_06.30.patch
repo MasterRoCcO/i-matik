@@ -1,11 +1,11 @@
 --- make/kernel/configs/freetz/config-qca955x-1759_06.30	2023-06-17 12:27:48.712257056 +0200
-+++ make/kernel/configs/freetz/config-qca955x-1759_06.30	2023-06-18 20:35:16.132807148 +0200
++++ make/kernel/configs/freetz/config-qca955x-1759_06.30	2023-06-19 10:06:28.668499336 +0200
 @@ -1,7 +1,7 @@
  #
  # Automatically generated make config: don't edit
  # Linux kernel version: 2.6.32.61
 -# Tue Mar 17 13:24:33 2015
-+# Sun Jun 18 20:35:15 2023
++# Mon Jun 19 10:06:28 2023
  #
  CONFIG_MIPS=y
  
@@ -55,7 +55,7 @@
 +# CONFIG_USB_SERIAL_CP210X is not set
 +# CONFIG_USB_SERIAL_CYPRESS_M8 is not set
 +# CONFIG_USB_SERIAL_EMPEG is not set
-+# CONFIG_USB_SERIAL_FTDI_SIO is not set
++CONFIG_USB_SERIAL_FTDI_SIO=m
 +# CONFIG_USB_SERIAL_FUNSOFT is not set
 +# CONFIG_USB_SERIAL_VISOR is not set
 +# CONFIG_USB_SERIAL_IPAQ is not set
@@ -74,7 +74,7 @@
 +# CONFIG_USB_SERIAL_MOS7840 is not set
 +# CONFIG_USB_SERIAL_MOTOROLA is not set
 +# CONFIG_USB_SERIAL_NAVMAN is not set
-+# CONFIG_USB_SERIAL_PL2303 is not set
++CONFIG_USB_SERIAL_PL2303=m
 +# CONFIG_USB_SERIAL_OTI6858 is not set
 +# CONFIG_USB_SERIAL_QUALCOMM is not set
 +# CONFIG_USB_SERIAL_SPCP8X5 is not set

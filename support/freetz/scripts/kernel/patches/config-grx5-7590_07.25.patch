@@ -1,5 +1,5 @@
 --- make/kernel/configs/freetz/config-grx5-7590_07.25	2023-06-17 12:27:48.708257121 +0200
-+++ make/kernel/configs/freetz/config-grx5-7590_07.25	2023-06-18 15:25:19.902079589 +0200
++++ make/kernel/configs/freetz/config-grx5-7590_07.25	2023-06-19 12:23:49.847605904 +0200
 @@ -1760,8 +1760,19 @@
  # CONFIG_VITESSE_PHY is not set
  # CONFIG_XILINX_GMII2RGMII is not set

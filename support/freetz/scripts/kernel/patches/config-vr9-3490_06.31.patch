@@ -1,11 +1,11 @@
 --- make/kernel/configs/freetz/config-vr9-3490_06.31	2023-06-17 12:27:48.716256993 +0200
-+++ make/kernel/configs/freetz/config-vr9-3490_06.31	2023-06-18 16:18:14.323366461 +0200
++++ make/kernel/configs/freetz/config-vr9-3490_06.31	2023-06-19 10:36:27.242194914 +0200
 @@ -1,7 +1,7 @@
  #
  # Automatically generated make config: don't edit
  # Linux kernel version: 2.6.32.61
 -# Sun Sep 21 08:11:41 2014
-+# Sun Jun 18 16:18:13 2023
++# Mon Jun 19 10:36:25 2023
  #
  CONFIG_MIPS=y
  

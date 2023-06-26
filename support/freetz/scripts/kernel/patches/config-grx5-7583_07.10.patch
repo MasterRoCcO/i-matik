@@ -1,5 +1,5 @@
 --- make/kernel/configs/freetz/config-grx5-7583_07.10	2023-06-17 12:27:48.708257121 +0200
-+++ make/kernel/configs/freetz/config-grx5-7583_07.10	2023-06-18 15:26:10.569111777 +0200
++++ make/kernel/configs/freetz/config-grx5-7583_07.10	2023-06-19 12:23:31.839942939 +0200
 @@ -2646,24 +2646,34 @@
  # CONFIG_UFS_FS is not set
  # CONFIG_F2FS_FS is not set
@@ -50,7 +50,7 @@
  #
 -# CONFIG_CRYPTO_CMAC is not set
 +CONFIG_CRYPTO_CMAC=m
- CONFIG_CRYPTO_HMAC=y
+ CONFIG_CRYPTO_HMAC=m
  CONFIG_CRYPTO_XCBC=y
  # CONFIG_CRYPTO_VMAC is not set
 @@ -2992,5 +3002,6 @@

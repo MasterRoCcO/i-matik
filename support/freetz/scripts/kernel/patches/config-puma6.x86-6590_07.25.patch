@@ -1,5 +1,5 @@
 --- make/kernel/configs/freetz/config-puma6.x86-6590_07.25	2023-06-17 12:27:48.712257056 +0200
-+++ make/kernel/configs/freetz/config-puma6.x86-6590_07.25	2023-06-18 15:53:03.323367107 +0200
++++ make/kernel/configs/freetz/config-puma6.x86-6590_07.25	2023-06-19 10:55:59.680150427 +0200
 @@ -1316,8 +1316,18 @@
  #
  # CONFIG_FDDI is not set

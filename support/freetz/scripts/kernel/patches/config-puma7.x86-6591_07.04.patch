@@ -1,5 +1,5 @@
 --- make/kernel/configs/freetz/config-puma7.x86-6591_07.04	2023-06-17 12:27:48.712257056 +0200
-+++ make/kernel/configs/freetz/config-puma7.x86-6591_07.04	2023-06-18 15:38:41.310669702 +0200
++++ make/kernel/configs/freetz/config-puma7.x86-6591_07.04	2023-06-19 10:56:24.539679355 +0200
 @@ -1412,8 +1412,19 @@
  # CONFIG_MDIO_GPIO is not set
  # CONFIG_MICREL_KS8995MA is not set

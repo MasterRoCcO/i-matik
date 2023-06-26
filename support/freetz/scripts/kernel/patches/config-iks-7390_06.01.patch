@@ -1,11 +1,11 @@
 --- make/kernel/configs/freetz/config-iks-7390_06.01	2023-06-17 12:27:48.708257121 +0200
-+++ make/kernel/configs/freetz/config-iks-7390_06.01	2023-06-18 16:04:49.834470832 +0200
++++ make/kernel/configs/freetz/config-iks-7390_06.01	2023-06-19 11:51:38.932306466 +0200
 @@ -1,7 +1,7 @@
  #
  # Automatically generated make config: don't edit
  # Linux kernel version: 2.6.28.8
 -# Mon Nov 18 22:02:08 2013
-+# Sun Jun 18 16:04:42 2023
++# Mon Jun 19 11:51:38 2023
  #
  CONFIG_MIPS=y
  
