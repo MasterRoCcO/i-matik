@@ -1,37 +1,37 @@
 #!/bin/bash
 #### A ####
 # ACME.sh (letsencrypt) https://freetz-ng.github.io/freetz-ng/make/acme.html
-#source $I_MATIK_PATH/support/freetz/scripts/packages/acme_off
+#source $PKGS_PATH_ON_OFF/acme_off
 # Apache HTTP Server https://freetz-ng.github.io/freetz-ng/make/apache2.html
-#source $I_MATIK_PATH/support/freetz/scripts/packages/apache2_off
+#source $PKGS_PATH_ON_OFF/apache2_off
 # atop The program atop is an interactive monitor to view the load on a Linux system. It shows the occupation of the most critical hardware resources (from a performance point of view) on system level, i.e. cpu, memory, disk and network.
-#source $I_MATIK_PATH/support/freetz/scripts/packages/atop_off
+#source $PKGS_PATH_ON_OFF/atop_off
 # AutoFS https://freetz-ng.github.io/freetz-ng/make/autofs.html
-#source $I_MATIK_PATH/support/freetz/scripts/packages/autofs_off
+source $PKGS_PATH_ON_OFF/autofs_off
 
 #### C ####
 # Callmonitor https://freetz-ng.github.io/freetz-ng/make/callmonitor.html
-#source $I_MATIK_PATH/support/freetz/scripts/packages/callmonitor_off
+#source $PKGS_PATH_ON_OFF/callmonitor_off
 # Cifsmount https://freetz-ng.github.io/freetz-ng/make/cifsmount.html
-#source $I_MATIK_PATH/support/freetz/scripts/packages/cifsmount_off
+#source $PKGS_PATH_ON_OFF/cifsmount_off
 
 #### I ####
 # ImageMagick (binary only)
-source $I_MATIK_PATH/support/freetz/scripts/packages/imagemagick_off
+#source $PKGS_PATH_ON_OFF/imagemagick_off
 
 #### O ####
 # OpenVPN https://freetz-ng.github.io/freetz-ng/make/openvpn.html
-#source $I_MATIK_PATH/support/freetz/scripts/packages/openvpn_off
+#source $PKGS_PATH_ON_OFF/openvpn_off
 
 #### R ####
 # RRDstats for RRDtool https://freetz-ng.github.io/freetz-ng/make/rrdstats.html
-#source $I_MATIK_PATH/support/freetz/scripts/packages/rrdstats_off
+#source $PKGS_PATH_ON_OFF/rrdstats_off
 # Cabelmodem Supplement to RRDstats for RRDtool
-#source $I_MATIK_PATH/support/freetz/scripts/packages/rrdstatsc_off
+#source $PKGS_PATH_ON_OFF/rrdstatsc_off
 # DigiTemp Supplement to RRDstats for RRDtool
-#source $I_MATIK_PATH/support/freetz/scripts/packages/rrdstatsd_off
+#source $PKGS_PATH_ON_OFF/rrdstatsd_off
 
 
 #### T ####
 # Tor The Onion Router Anonymous Internet communication system. https://freetz-ng.github.io/freetz-ng/make/tor.html
-#source $I_MATIK_PATH/support/freetz/scripts/packages/tor_off
+#source $PKGS_PATH_ON_OFF/tor_off
