@@ -1,5 +1,5 @@
---- make/kernel/configs/freetz/config-qca956x-4020_07.01	2023-06-17 12:27:48.712257056 +0200
-+++ make/kernel/configs/freetz/config-qca956x-4020_07.01	2023-06-18 16:08:00.590909234 +0200
+--- make/kernel/configs/freetz/config-qca956x-4020_07.01	2023-06-19 21:23:23.023060017 +0200
++++ make/kernel/configs/freetz/config-qca956x-4020_07.01	2023-06-26 21:25:05.485359410 +0200
 @@ -2162,7 +2162,7 @@
  # CONFIG_USB_SERIAL_CP210X is not set
  # CONFIG_USB_SERIAL_CYPRESS_M8 is not set
@@ -79,15 +79,6 @@
  CONFIG_NLS=y
  CONFIG_NLS_DEFAULT="utf-8"
  CONFIG_NLS_CODEPAGE_437=y
-@@ -2721,7 +2755,7 @@
- CONFIG_CRYPTO_PCOMP2=y
- CONFIG_CRYPTO_AKCIPHER2=y
- # CONFIG_CRYPTO_RSA is not set
--CONFIG_CRYPTO_MANAGER=m
-+CONFIG_CRYPTO_MANAGER=y
- CONFIG_CRYPTO_MANAGER2=y
- # CONFIG_CRYPTO_USER is not set
- # CONFIG_CRYPTO_MANAGER_DISABLE_TESTS is not set
 @@ -2758,8 +2792,8 @@
  #
  # Hash modes
@@ -95,7 +86,7 @@
 -# CONFIG_CRYPTO_CMAC is not set
 -# CONFIG_CRYPTO_HMAC is not set
 +CONFIG_CRYPTO_CMAC=m
-+CONFIG_CRYPTO_HMAC=y
++CONFIG_CRYPTO_HMAC=m
  # CONFIG_CRYPTO_XCBC is not set
  # CONFIG_CRYPTO_VMAC is not set
  
