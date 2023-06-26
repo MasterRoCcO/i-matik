@@ -27,6 +27,7 @@ Options
   -kc,--kernel-clean            Make kernel-clean
   -ta,--toolchain-activate      Activate toolchain
   -td,--toolchain-disable       Disable toolchain
+  -tm,--toolchain-make		Toolchain make
   -cm,--callmonitor		Callmonitor
   -rr,--rrdstats		RRDstats for RRDtool 1.2.30
   -rr18,--rrdstats18		RRDstats for RRDtool 1.8.0

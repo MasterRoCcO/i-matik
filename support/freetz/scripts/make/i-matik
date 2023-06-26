@@ -40,6 +40,8 @@ while [ $# -ne 0 ];do
 	    ;;
 	-tc|--toolchain-clean)		PARAM_TOOLCHAIN_CLEAN=1
 	    ;;
+	-tm|--toolchain-make)		PARAM_TOOLCHAIN_MAKE=1
+	    ;;
 	-cm|--callmonitor)		PARAM_CM=1
 	    ;;
 	-rr|--rrdstats)			PARAM_RR=1
@@ -235,7 +237,6 @@ for bs in "${BOX_SSL[@]}"; do
 		sed -i "s+# FREETZ_TOOLCHAIN_CCACHE is not set+FREETZ_TOOLCHAIN_CCACHE=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+# FREETZ_DOWNLOAD_TOOLCHAIN is not set+FREETZ_DOWNLOAD_TOOLCHAIN=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+# FREETZ_HOSTTOOLS_DOWNLOAD is not set+FREETZ_HOSTTOOLS_DOWNLOAD=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-
 	fi
 	
 	if [ -z $PARAM_TOOLCHAIN_DISABLE ]; then
@@ -269,7 +270,7 @@ for bs in "${BOX_SSL[@]}"; do
 		else
 			make $NOMENUC #run make olddefconfig
 	fi
-
+	
 		source $KERNEL_ON 2>/dev/null
 		source $NO_KERNEL 2>/dev/null
 		source $NO_REPLACE 2>/dev/null
@@ -318,6 +319,12 @@ for bs in "${BOX_SSL[@]}"; do
 		make -j$MAX_CPUS #run make for freetz
 		source $FIX_CHECK_OFF 2>/dev/null
 
+		if [ -z $PARAM_TOOLCHAIN_MAKE ]; then
+			sleep 0
+		else
+			make toolchain
+		fi
+		
 		# Get custom image file name part from .config
 		FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
 		#FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
