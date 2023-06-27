@@ -3,7 +3,7 @@
 @@ -0,0 +1,11 @@
 +--- usr/www/all/support.lua
 ++++ usr/www/all/support.lua
-+@@ -692,7 +692,7 @@
++@@ -718,7 +718,7 @@
 + --end
 + end
 + function gpon_serial.show()
