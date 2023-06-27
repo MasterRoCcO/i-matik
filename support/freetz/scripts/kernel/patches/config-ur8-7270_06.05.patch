@@ -1,11 +1,11 @@
---- make/kernel/configs/freetz/config-ur8-7270_06.05	2023-06-17 12:27:48.716256993 +0200
-+++ make/kernel/configs/freetz/config-ur8-7270_06.05	2023-06-19 11:34:01.704584657 +0200
+--- make/kernel/configs/freetz/config-ur8-7270_06.05	2023-06-19 21:23:23.023060017 +0200
++++ make/kernel/configs/freetz/config-ur8-7270_06.05	2023-06-27 12:34:05.641262650 +0200
 @@ -1,7 +1,7 @@
  #
  # Automatically generated make config: don't edit
  # Linux kernel version: 2.6.32.60
 -# Thu Mar 27 11:05:34 2014
-+# Mon Jun 19 11:34:00 2023
++# Tue Jun 27 12:34:05 2023
  #
  CONFIG_MIPS=y
  

@@ -1,5 +1,5 @@
---- make/kernel/configs/freetz/config-ipq40xx-7530_07.25	2023-06-17 12:27:48.712257056 +0200
-+++ make/kernel/configs/freetz/config-ipq40xx-7530_07.25	2023-06-19 12:01:04.769459809 +0200
+--- make/kernel/configs/freetz/config-ipq40xx-7530_07.25	2023-06-19 21:23:23.023060017 +0200
++++ make/kernel/configs/freetz/config-ipq40xx-7530_07.25	2023-06-27 12:55:45.896454642 +0200
 @@ -3657,7 +3657,7 @@
  # CONFIG_NILFS2_FS is not set
  # CONFIG_F2FS_FS is not set

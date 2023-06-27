@@ -1,5 +1,5 @@
 --- make/kernel/configs/freetz/config-brcma9-7539_07.29	2023-06-19 21:23:23.019060091 +0200
-+++ make/kernel/configs/freetz/config-brcma9-7539_07.29	2023-06-24 23:59:29.112905582 +0200
++++ make/kernel/configs/freetz/config-brcma9-7539_07.29	2023-06-27 12:56:58.539071630 +0200
 @@ -1235,7 +1235,7 @@
  # CONFIG_BLK_DEV_DAC960 is not set
  # CONFIG_BLK_DEV_UMEM is not set
@@ -124,7 +124,7 @@
  #
 -# CONFIG_CRYPTO_CMAC is not set
 +CONFIG_CRYPTO_CMAC=m
- CONFIG_CRYPTO_HMAC=m
+ CONFIG_CRYPTO_HMAC=y
  # CONFIG_CRYPTO_XCBC is not set
  # CONFIG_CRYPTO_VMAC is not set
 @@ -2565,7 +2612,7 @@

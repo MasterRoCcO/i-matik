@@ -1,5 +1,5 @@
---- make/kernel/configs/freetz/config-qcaarmv8-5590_07.29	2023-06-17 12:27:48.712257056 +0200
-+++ make/kernel/configs/freetz/config-qcaarmv8-5590_07.29	2023-06-19 10:50:08.906789102 +0200
+--- make/kernel/configs/freetz/config-qcaarmv8-5590_07.29	2023-06-19 21:23:23.023060017 +0200
++++ make/kernel/configs/freetz/config-qcaarmv8-5590_07.29	2023-06-27 11:47:22.222841845 +0200
 @@ -3234,7 +3234,7 @@
  # CONFIG_USB_SERIAL_CP210X is not set
  # CONFIG_USB_SERIAL_CYPRESS_M8 is not set
@@ -88,7 +88,7 @@
  #
 -# CONFIG_CRYPTO_CMAC is not set
 +CONFIG_CRYPTO_CMAC=m
- CONFIG_CRYPTO_HMAC=m
+ CONFIG_CRYPTO_HMAC=y
  # CONFIG_CRYPTO_XCBC is not set
  # CONFIG_CRYPTO_VMAC is not set
 @@ -4261,7 +4298,7 @@

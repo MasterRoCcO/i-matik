@@ -1,5 +1,5 @@
---- make/kernel/configs/freetz/config-qca956x-2400_07.50	2023-06-17 12:27:48.712257056 +0200
-+++ make/kernel/configs/freetz/config-qca956x-2400_07.50	2023-06-19 10:00:13.395745928 +0200
+--- make/kernel/configs/freetz/config-qca956x-2400_07.50	2023-06-19 21:23:23.023060017 +0200
++++ make/kernel/configs/freetz/config-qca956x-2400_07.50	2023-06-27 13:11:03.162988495 +0200
 @@ -2223,7 +2223,7 @@
  # CONFIG_USB_SERIAL_CP210X is not set
  # CONFIG_USB_SERIAL_CYPRESS_M8 is not set

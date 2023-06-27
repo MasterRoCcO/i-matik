@@ -1,5 +1,5 @@
---- make/kernel/configs/freetz/config-ipq40xx-1200_07.50	2023-06-17 12:27:48.708257121 +0200
-+++ make/kernel/configs/freetz/config-ipq40xx-1200_07.50	2023-06-19 10:19:23.905645808 +0200
+--- make/kernel/configs/freetz/config-ipq40xx-1200_07.50	2023-06-19 21:23:23.019060091 +0200
++++ make/kernel/configs/freetz/config-ipq40xx-1200_07.50	2023-06-27 13:11:20.730653941 +0200
 @@ -3164,7 +3164,7 @@
  # CONFIG_USB_SERIAL_CP210X is not set
  # CONFIG_USB_SERIAL_CYPRESS_M8 is not set

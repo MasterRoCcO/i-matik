@@ -1,5 +1,5 @@
---- make/kernel/configs/freetz/config-qca956x-2400_07.27	2023-06-17 12:27:48.712257056 +0200
-+++ make/kernel/configs/freetz/config-qca956x-2400_07.27	2023-06-19 09:59:13.468889603 +0200
+--- make/kernel/configs/freetz/config-qca956x-2400_07.27	2023-06-19 21:23:23.023060017 +0200
++++ make/kernel/configs/freetz/config-qca956x-2400_07.27	2023-06-27 13:10:34.675530989 +0200
 @@ -2233,7 +2233,7 @@
  # CONFIG_USB_SERIAL_CP210X is not set
  # CONFIG_USB_SERIAL_CYPRESS_M8 is not set
@@ -80,15 +80,6 @@
  CONFIG_NLS=y
  CONFIG_NLS_DEFAULT="utf-8"
  CONFIG_NLS_CODEPAGE_437=y
-@@ -2834,7 +2869,7 @@
- CONFIG_CRYPTO_PCOMP2=y
- CONFIG_CRYPTO_AKCIPHER2=y
- # CONFIG_CRYPTO_RSA is not set
--CONFIG_CRYPTO_MANAGER=m
-+CONFIG_CRYPTO_MANAGER=y
- CONFIG_CRYPTO_MANAGER2=y
- # CONFIG_CRYPTO_USER is not set
- # CONFIG_CRYPTO_MANAGER_DISABLE_TESTS is not set
 @@ -2871,8 +2906,8 @@
  #
  # Hash modes

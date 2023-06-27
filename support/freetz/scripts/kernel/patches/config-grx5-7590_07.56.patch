@@ -1,5 +1,5 @@
---- make/kernel/configs/freetz/config-grx5-7590_07.56	2023-06-17 12:27:48.708257121 +0200
-+++ make/kernel/configs/freetz/config-grx5-7590_07.56	2023-06-19 12:27:03.059979128 +0200
+--- make/kernel/configs/freetz/config-grx5-7590_07.56	2023-06-19 21:23:23.019060091 +0200
++++ make/kernel/configs/freetz/config-grx5-7590_07.56	2023-06-27 13:00:56.270545208 +0200
 @@ -3057,29 +3057,35 @@
  CONFIG_NFS_V2=m
  CONFIG_NFS_V3=m

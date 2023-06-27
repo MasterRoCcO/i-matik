@@ -1,5 +1,5 @@
---- make/kernel/configs/freetz/config-grx5-5530_07.29	2023-06-17 12:27:48.708257121 +0200
-+++ make/kernel/configs/freetz/config-grx5-5530_07.29	2023-06-19 10:48:53.464214206 +0200
+--- make/kernel/configs/freetz/config-grx5-5530_07.29	2023-06-19 21:23:23.019060091 +0200
++++ make/kernel/configs/freetz/config-grx5-5530_07.29	2023-06-27 11:46:01.672333153 +0200
 @@ -2569,7 +2569,7 @@
  # CONFIG_USB_SERIAL_CP210X is not set
  # CONFIG_USB_SERIAL_CYPRESS_M8 is not set

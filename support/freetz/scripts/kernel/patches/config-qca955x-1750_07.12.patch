@@ -1,5 +1,5 @@
---- make/kernel/configs/freetz/config-qca955x-1750_07.12	2023-06-17 12:27:48.712257056 +0200
-+++ make/kernel/configs/freetz/config-qca955x-1750_07.12	2023-06-19 10:08:30.822151739 +0200
+--- make/kernel/configs/freetz/config-qca955x-1750_07.12	2023-06-19 21:23:23.023060017 +0200
++++ make/kernel/configs/freetz/config-qca955x-1750_07.12	2023-06-27 12:20:03.529555621 +0200
 @@ -1446,8 +1446,19 @@
  # CONFIG_PHYLIB is not set
  # CONFIG_PSB6970_PHY is not set
@@ -56,7 +56,7 @@
 -# CONFIG_AUTOFS4_FS is not set
 -# CONFIG_FUSE_FS is not set
 +CONFIG_AUTOFS4_FS=m
-+CONFIG_FUSE_FS=y
++CONFIG_FUSE_FS=m
 +# CONFIG_CUSE is not set
  # CONFIG_OVERLAY_FS is not set
  

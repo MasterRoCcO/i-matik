@@ -1,11 +1,11 @@
---- make/kernel/configs/freetz/config-puma6.x86-6590_06.87	2023-06-17 12:27:48.712257056 +0200
-+++ make/kernel/configs/freetz/config-puma6.x86-6590_06.87	2023-06-19 10:54:47.789512362 +0200
+--- make/kernel/configs/freetz/config-puma6.x86-6590_06.87	2023-06-19 21:23:23.023060017 +0200
++++ make/kernel/configs/freetz/config-puma6.x86-6590_06.87	2023-06-27 12:11:56.607164627 +0200
 @@ -1,7 +1,7 @@
  #
  # Automatically generated make config: don't edit
  # Linux/x86 2.6.39.3 Kernel Configuration
 -# Sun Mar 10 14:52:44 2019
-+# Mon Jun 19 10:54:46 2023
++# Tue Jun 27 12:11:53 2023
  #
  # CONFIG_64BIT is not set
  CONFIG_X86_32=y

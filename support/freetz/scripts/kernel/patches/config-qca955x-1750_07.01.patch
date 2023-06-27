@@ -1,5 +1,5 @@
---- make/kernel/configs/freetz/config-qca955x-1750_07.01	2023-06-17 12:27:48.712257056 +0200
-+++ make/kernel/configs/freetz/config-qca955x-1750_07.01	2023-06-19 10:08:07.442600755 +0200
+--- make/kernel/configs/freetz/config-qca955x-1750_07.01	2023-06-19 21:23:23.023060017 +0200
++++ make/kernel/configs/freetz/config-qca955x-1750_07.01	2023-06-27 13:07:17.375288202 +0200
 @@ -1445,8 +1445,19 @@
  # CONFIG_PHYLIB is not set
  # CONFIG_PSB6970_PHY is not set
@@ -38,7 +38,7 @@
 +# CONFIG_USB_SERIAL_CP210X is not set
 +# CONFIG_USB_SERIAL_CYPRESS_M8 is not set
 +# CONFIG_USB_SERIAL_EMPEG is not set
-+CONFIG_USB_SERIAL_FTDI_SIO=m
++# CONFIG_USB_SERIAL_FTDI_SIO is not set
 +# CONFIG_USB_SERIAL_VISOR is not set
 +# CONFIG_USB_SERIAL_IPAQ is not set
 +# CONFIG_USB_SERIAL_IR is not set
@@ -58,7 +58,7 @@
 +# CONFIG_USB_SERIAL_MOS7840 is not set
 +# CONFIG_USB_SERIAL_MXUPORT is not set
 +# CONFIG_USB_SERIAL_NAVMAN is not set
-+CONFIG_USB_SERIAL_PL2303=m
++# CONFIG_USB_SERIAL_PL2303 is not set
 +# CONFIG_USB_SERIAL_OTI6858 is not set
 +# CONFIG_USB_SERIAL_QCAUX is not set
 +# CONFIG_USB_SERIAL_QUALCOMM is not set
@@ -97,7 +97,7 @@
 -# CONFIG_AUTOFS4_FS is not set
 -# CONFIG_FUSE_FS is not set
 +CONFIG_AUTOFS4_FS=m
-+CONFIG_FUSE_FS=y
++CONFIG_FUSE_FS=m
 +# CONFIG_CUSE is not set
  # CONFIG_OVERLAY_FS is not set
  

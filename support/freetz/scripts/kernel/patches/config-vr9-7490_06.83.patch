@@ -1,5 +1,5 @@
---- make/kernel/configs/freetz/config-vr9-7490_06.83	2023-06-17 12:27:48.716256993 +0200
-+++ make/kernel/configs/freetz/config-vr9-7490_06.83	2023-06-19 11:55:54.231407401 +0200
+--- make/kernel/configs/freetz/config-vr9-7490_06.83	2023-06-19 21:23:23.027059946 +0200
++++ make/kernel/configs/freetz/config-vr9-7490_06.83	2023-06-27 12:54:22.530041742 +0200
 @@ -1185,8 +1185,19 @@
  # CONFIG_MDIO_BUS_MUX_GPIO is not set
  # CONFIG_MDIO_BUS_MUX_MMIOREG is not set

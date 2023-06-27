@@ -1,5 +1,5 @@
---- make/kernel/configs/freetz/config-puma7.x86-6690_07.56	2023-06-17 15:44:33.650782057 +0200
-+++ make/kernel/configs/freetz/config-puma7.x86-6690_07.56	2023-06-19 10:59:23.648283814 +0200
+--- make/kernel/configs/freetz/config-puma7.x86-6690_07.56	2023-06-19 21:23:23.023060017 +0200
++++ make/kernel/configs/freetz/config-puma7.x86-6690_07.56	2023-06-27 12:17:22.544737901 +0200
 @@ -1714,8 +1714,19 @@
  # CONFIG_XILINX_GMII2RGMII is not set
  # CONFIG_MICREL_KS8995MA is not set

@@ -1,5 +1,5 @@
---- make/kernel/configs/freetz/config-grx5-5530_07.50	2023-06-17 12:27:48.708257121 +0200
-+++ make/kernel/configs/freetz/config-grx5-5530_07.50	2023-06-19 10:49:18.379743692 +0200
+--- make/kernel/configs/freetz/config-grx5-5530_07.50	2023-06-19 21:23:23.019060091 +0200
++++ make/kernel/configs/freetz/config-grx5-5530_07.50	2023-06-27 11:46:52.843386317 +0200
 @@ -1433,7 +1433,7 @@
  # CONFIG_NETCONSOLE is not set
  # CONFIG_NETPOLL is not set

@@ -1,11 +1,11 @@
---- make/kernel/configs/freetz/config-ar10-3272_06.86	2023-06-17 12:27:48.704257185 +0200
-+++ make/kernel/configs/freetz/config-ar10-3272_06.86	2023-06-19 10:35:36.519131936 +0200
+--- make/kernel/configs/freetz/config-ar10-3272_06.86	2023-06-19 21:23:23.019060091 +0200
++++ make/kernel/configs/freetz/config-ar10-3272_06.86	2023-06-27 11:29:41.930710962 +0200
 @@ -1,7 +1,7 @@
  #
  # Automatically generated make config: don't edit
  # Linux kernel version: 2.6.32.61
 -# Mon Nov 17 15:23:17 2014
-+# Mon Jun 19 10:35:35 2023
++# Tue Jun 27 11:29:41 2023
  #
  CONFIG_MIPS=y
  

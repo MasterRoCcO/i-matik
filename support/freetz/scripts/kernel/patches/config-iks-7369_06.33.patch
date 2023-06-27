@@ -1,11 +1,11 @@
---- make/kernel/configs/freetz/config-iks-7369_06.33	2023-06-17 12:27:48.708257121 +0200
-+++ make/kernel/configs/freetz/config-iks-7369_06.33	2023-06-19 11:48:02.852463761 +0200
+--- make/kernel/configs/freetz/config-iks-7369_06.33	2023-06-19 21:23:23.019060091 +0200
++++ make/kernel/configs/freetz/config-iks-7369_06.33	2023-06-27 12:50:24.306576274 +0200
 @@ -1,7 +1,7 @@
  #
  # Automatically generated make config: don't edit
  # Linux kernel version: 2.6.28.8
 -# Sat Sep 20 14:57:16 2014
-+# Mon Jun 19 11:48:02 2023
++# Tue Jun 27 12:50:20 2023
  #
  CONFIG_MIPS=y
  
@@ -64,7 +64,15 @@
  # CONFIG_AFS_FS is not set
  
  #
-@@ -1693,7 +1696,7 @@
+@@ -1686,14 +1689,14 @@
+ #
+ # Hash modes
+ #
+-CONFIG_CRYPTO_HMAC=y
++CONFIG_CRYPTO_HMAC=m
+ # CONFIG_CRYPTO_XCBC is not set
+ 
+ #
  # Digest
  #
  # CONFIG_CRYPTO_CRC32C is not set

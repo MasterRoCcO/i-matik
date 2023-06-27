@@ -1,5 +1,5 @@
---- make/kernel/configs/freetz/config-ipq40xx-7530_07.56	2023-06-17 12:27:48.712257056 +0200
-+++ make/kernel/configs/freetz/config-ipq40xx-7530_07.56	2023-06-19 12:01:27.373027231 +0200
+--- make/kernel/configs/freetz/config-ipq40xx-7530_07.56	2023-06-19 21:23:23.023060017 +0200
++++ make/kernel/configs/freetz/config-ipq40xx-7530_07.56	2023-06-27 12:56:10.111993616 +0200
 @@ -3181,7 +3181,7 @@
  # CONFIG_USB_SERIAL_MOS7840 is not set
  # CONFIG_USB_SERIAL_MXUPORT is not set

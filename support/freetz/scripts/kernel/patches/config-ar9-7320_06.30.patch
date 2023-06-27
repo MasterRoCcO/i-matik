@@ -1,11 +1,11 @@
---- make/kernel/configs/freetz/config-ar9-7320_06.30	2023-06-17 12:27:48.708257121 +0200
-+++ make/kernel/configs/freetz/config-ar9-7320_06.30	2023-06-19 11:41:31.472016122 +0200
+--- make/kernel/configs/freetz/config-ar9-7320_06.30	2023-06-19 21:23:23.019060091 +0200
++++ make/kernel/configs/freetz/config-ar9-7320_06.30	2023-06-27 12:41:57.496238714 +0200
 @@ -1,7 +1,7 @@
  #
  # Automatically generated make config: don't edit
  # Linux kernel version: 2.6.32.61
 -# Mon May 26 12:30:24 2014
-+# Mon Jun 19 11:41:29 2023
++# Tue Jun 27 12:41:54 2023
  #
  CONFIG_MIPS=y
  

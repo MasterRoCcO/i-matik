@@ -1,11 +1,11 @@
---- make/kernel/configs/freetz/config-iks-7390_06.80	2023-06-17 12:27:48.708257121 +0200
-+++ make/kernel/configs/freetz/config-iks-7390_06.80	2023-06-19 11:52:48.098978071 +0200
+--- make/kernel/configs/freetz/config-iks-7390_06.80	2023-06-19 21:23:23.019060091 +0200
++++ make/kernel/configs/freetz/config-iks-7390_06.80	2023-06-27 12:52:47.891843256 +0200
 @@ -1,7 +1,7 @@
  #
  # Automatically generated make config: don't edit
  # Linux kernel version: 2.6.28.8
 -# Sun Jan 16 19:16:55 2022
-+# Mon Jun 19 11:52:47 2023
++# Tue Jun 27 12:52:45 2023
  #
  CONFIG_MIPS=y
  
@@ -62,5 +62,14 @@
 -CONFIG_CODA_FS=m
 +# CONFIG_CODA_FS is not set
  # CONFIG_AFS_FS is not set
+ 
+ #
+@@ -1610,7 +1613,7 @@
+ #
+ # Hash modes
+ #
+-CONFIG_CRYPTO_HMAC=y
++CONFIG_CRYPTO_HMAC=m
+ # CONFIG_CRYPTO_XCBC is not set
  
  #
