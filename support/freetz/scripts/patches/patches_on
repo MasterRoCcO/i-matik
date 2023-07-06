@@ -31,7 +31,3 @@ echo -e ${GREEN}"fix for sed host (static.pkg)."${NC}
 cp -ar $I_MATIK_PATH/support/freetz/scripts/patches/host-tools/sed-host.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < sed-host.patch
 rm -rf "$FREETZ_SSL_HOME_PATH/sed-host.patch" 2>/dev/null
-echo -e ${GREEN}"fix for loop module on 7530AX."${NC}
-cp -ar $I_MATIK_PATH/support/freetz/scripts/patches/config/kos/loop_fix_for7530ax.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-patch -p0 -b < loop_fix_for7530ax.patch
-rm -rf "$FREETZ_SSL_HOME_PATH/loop_fix_for7530ax.patch" 2>/dev/null
