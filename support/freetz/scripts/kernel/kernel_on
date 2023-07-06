@@ -3,6 +3,6 @@ SYSTEM_TYPE="$(grep '^FREETZ_AVM_SOURCE_FOR_SYSTEM_TYPE_' .config | awk -F'=y' '
 SOURCE_ID="$(grep '^FREETZ_AVM_SOURCE_ID=' .config | awk -F'"' '{print $2}' | xargs)"
 CORE_SUFFIX="$(grep '^FREETZ_SYSTEM_TYPE_CORE_SUFFIX=' .config | awk -F'"' '{print $2}' | xargs)"
 
-cp -p $KERNEL_PATCHES/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-patch -p0 -b < config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}.patch
-rm -rf "$FREETZ_SSL_HOME_PATH/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}.patch" 2>/dev/null
+#cp -p $KERNEL_PATCHES/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#patch -p0 -b < config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}.patch
+#rm -rf "$FREETZ_SSL_HOME_PATH/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}.patch" 2>/dev/null
