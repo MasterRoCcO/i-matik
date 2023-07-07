@@ -9,6 +9,8 @@ else
 	sed -i "s+FREETZ_SKIN_newfreetz=y+# FREETZ_SKIN_newfreetz is not set+g" $FREETZ_SSL_HOME_PATH/.config
 	sed -i "s+FREETZ_SKIN_phoenix=y+# FREETZ_SKIN_phoenix is not set+g" $FREETZ_SSL_HOME_PATH/.config
 	sed -i "s+FREETZ_SKIN_cuma=y+# FREETZ_SKIN_cuma is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	grep -v FREETZ_STYLE_GREY= $FREETZ_SSL_HOME_PATH/.config > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 
+	grep -v FREETZ_STYLE= $FREETZ_SSL_HOME_PATH/.config > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 
 	sed -i "s+FREETZ_PACKAGE_SKIN_DIGITAL_ELITEBOARD=y+# FREETZ_PACKAGE_SKIN_DIGITAL_ELITEBOARD is not set+g" $FREETZ_SSL_HOME_PATH/.config
 	sed -i "s+FREETZ_PACKAGE_SKIN_KEYWELT=y+# FREETZ_PACKAGE_SKIN_KEYWELT is not set+g" $FREETZ_SSL_HOME_PATH/.config
 	sed -i "s+FREETZ_PACKAGE_SKIN_NACHTFALKE=y+# FREETZ_PACKAGE_SKIN_NACHTFALKE is not set+g" $FREETZ_SSL_HOME_PATH/.config
@@ -27,10 +29,13 @@ else
 	sed -i "s+FREETZ_SKIN_newfreetz=y+# FREETZ_SKIN_newfreetz is not set+g" $FREETZ_SSL_HOME_PATH/.config
 	sed -i "s+FREETZ_SKIN_phoenix=y+# FREETZ_SKIN_phoenix is not set+g" $FREETZ_SSL_HOME_PATH/.config
 	sed -i "s+FREETZ_SKIN_cuma=y+# FREETZ_SKIN_cuma is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	grep -v FREETZ_STYLE_GREY= $FREETZ_SSL_HOME_PATH/.config > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 
+	grep -v FREETZ_STYLE= $FREETZ_SSL_HOME_PATH/.config > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 
 	sed -i "s+FREETZ_PACKAGE_SKIN_DIGITAL_ELITEBOARD=y+# FREETZ_PACKAGE_SKIN_DIGITAL_ELITEBOARD is not set+g" $FREETZ_SSL_HOME_PATH/.config
 	sed -i "s+FREETZ_PACKAGE_SKIN_KEYWELT=y+# FREETZ_PACKAGE_SKIN_KEYWELT is not set+g" $FREETZ_SSL_HOME_PATH/.config
 	sed -i "s+FREETZ_PACKAGE_SKIN_NACHTFALKE=y+# FREETZ_PACKAGE_SKIN_NACHTFALKE is not set+g" $FREETZ_SSL_HOME_PATH/.config
 	sed -i "s+FREETZ_PACKAGE_SKIN_NACHTFALKE_OLD=y+# FREETZ_PACKAGE_SKIN_NACHTFALKE_OLD is not set+g" $FREETZ_SSL_HOME_PATH/.config
 	sed -i "s+FREETZ_PACKAGE_SKIN_PRISRAK=y+# FREETZ_PACKAGE_SKIN_PRISRAK is not set+g" $FREETZ_SSL_HOME_PATH/.config
 	sed -i "s+FREETZ_PACKAGE_SKIN_PRISRAK1=y+# FREETZ_PACKAGE_SKIN_PRISRAK1 is not set+g" $FREETZ_SSL_HOME_PATH/.config
+	
 fi
