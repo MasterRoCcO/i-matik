@@ -191,7 +191,9 @@ for bs in "${BOX_SSL[@]}"; do
 		sed -i "s+FREETZ_PACKAGE_AVM_PORTFW=y+# FREETZ_PACKAGE_AVM_PORTFW is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_AVM_FIREWALL=y+# FREETZ_PACKAGE_AVM_FIREWALL is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_AVM_FORWARDING=y+# FREETZ_PACKAGE_AVM_FORWARDING is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_PACKAGE_STRACE=y+# FREETZ_PACKAGE_STRACE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null	
+		sed -i "s+FREETZ_PACKAGE_STRACE=y+# FREETZ_PACKAGE_STRACE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		grep -v FREETZ_STYLE_GREY= $FREETZ_SSL_HOME_PATH/.config > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 
+		grep -v FREETZ_STYLE= $FREETZ_SSL_HOME_PATH/.config > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 
 	source $DOWNGRADE_ON 2>/dev/null
 	
 		
