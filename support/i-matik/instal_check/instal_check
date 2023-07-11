@@ -1,13 +1,17 @@
 #!/bin/bash
-if [[ $(lsb_release -rs) == "20.04" ]] || [[ $(lsb_release -rs) == "21.10" ]] || [[ $(lsb_release -rs) == "22.04" ]] || [[ $(lsb_release -rs) == "23.04" ]]; then # replace 20.04 by the number of release you want
+if [[ $(lsb_release -rs) == "20.04" ]] || [[ $(lsb_release -rs) == "21.10" ]] || [[ $(lsb_release -rs) == "22.04" ]] || [[ $(lsb_release -rs) == "23.04" ]] || [[ $(lsb_release -rs) == "10" ]] || [[ $(lsb_release -rs) == "11" ]]; then # replace 20.04 by the number of release you want
 
-PACKAGES="  autoconf automake autopoint bc binutils bison bsdmainutils bzip2 ccache cmake cpio curl ecj flex g++ gawk gcc gcc-multilib"
-PACKAGES+=" gettext git graphicsmagick imagemagick inkscape intltool java-wrappers kmod lib32ncurses-dev lib32stdc++6 lib32z1-dev libacl1-dev"
-PACKAGES+=" libcap-dev libelf-dev libglib2.0-dev libgnutls28-dev libncurses5-dev libreadline-dev libsqlite3-dev libssl-dev libstring-crc32-perl libtool-bin libusb-dev libxml2-dev libzstd-dev make ncftp"
-PACKAGES+=" netcat-openbsd net-tools patch patchutils perl pkg-config pv rsync sharutils sqlite3 subversion sudo texinfo tofrodos unar unzip uuid-dev wget zip zlib1g-dev"
+PACKAGES="  autopoint bc binutils bison bsdmainutils bzip2 ccache cmake cpio curl ecj flex g++ gawk gcc"
+PACKAGES+=" gcc-multilib gettext git graphicsmagick imagemagick inkscape intltool java-wrappers kmod"
+PACKAGES+=" lib32ncurses-dev lib32stdc++6 lib32z1-dev libacl1-dev libc6-dev-i386 libcap-dev libelf-dev"
+PACKAGES+=" libglib2.0-dev libgnutls28-dev libncurses5-dev libreadline-dev libsqlite3-dev libssl-dev"
+PACKAGES+=" libstring-crc32-perl libtool-bin libusb-dev libxml2-dev libzstd-dev make ncftp netcat-openbsd net-tools patch"
+PACKAGES+=" patchutils perl pkg-config pv rsync sharutils sqlite3 subversion sudo texinfo tofrodos unar unzip"
+PACKAGES+=" uuid-dev wget zip zlib1g-dev"
 PACKAGES+=" device-tree-compiler" # for FIT-Image
-#PACKAGES+=" libc6-dev-i386"
-#PACKAGES+=" gcc-12" # Test
+#PACKAGES+=" execstack python-is-python3" #old
+#PACKAGES+=" gcc-12 gcc-12-locales gcc-12-multilib gcc-12-doc cpp-12 libasan8 libgcc-12-dev libtsan2" #test
+#PACKAGES+=" ninja-build" #test
 	
 if ! dpkg -s $PACKAGES >/dev/null 2>&1; then
 	printf "${YELLOW}Installing prerequisite packages...\n${NC}"
@@ -16,12 +20,14 @@ if ! dpkg -s $PACKAGES >/dev/null 2>&1; then
 	sudo apt-get install $PACKAGES
 	cd /tmp
 	wget http://mirrors.kernel.org/ubuntu/pool/universe/u/upx-ucl/upx-ucl_3.95-2build1_amd64.deb
+#	wget http://ftp.osuosl.org/pub/ubuntu/pool/universe/k/kmod/module-init-tools_24-1ubuntu3_all.deb
 	sudo apt install /tmp/upx-ucl_3.95-2build1_amd64.deb
+#	sudo apt install /tmp/module-init-tools_24-1ubuntu3_all.deb
 	echo upx-ucl hold | sudo dpkg --set-selections
 	sudo apt-get update && sudo apt-get -y upgrade && sudo apt dist-upgrade && sudo apt autoclean && sudo apt autoremove
 fi
 else
        echo "Non-compatible version"
        echo "read here https://freetz-ng.github.io/freetz-ng/PREREQUISITES"
-#       exit
+       exit
 fi
