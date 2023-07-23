@@ -47,7 +47,38 @@ if [ -z $PARAM_OSCAM ]; then
 		PUMA7_IMAGE_COMMENT="$(grep '^FREETZ_SYSTEM_TYPE=' .config | awk -F'"' '{print $2}' | xargs)"
 		if [ $PUMA7_IMAGE_COMMENT = $PUMA7_IMAGE ] 2>/dev/null
 		then
-		sed -i "s+FREETZ_HOSTTOOLS_DOWNLOAD=y+# FREETZ_HOSTTOOLS_DOWNLOAD is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam $I_MATIK_PATH/support/s3_releases/scripts/oscam_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam
+	
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu
+	
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam
+	
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod
+	
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc	
+		
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile
 		fi
 		##### test
 		sed -i "s+FREETZ_PACKAGE_XZ=y+# FREETZ_PACKAGE_XZ is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
@@ -111,7 +142,38 @@ if [ -z $PARAM_OSCAM_EMU ]; then
 		PUMA7_IMAGE_COMMENT="$(grep '^FREETZ_SYSTEM_TYPE=' .config | awk -F'"' '{print $2}' | xargs)"
 		if [ $PUMA7_IMAGE_COMMENT = $PUMA7_IMAGE ] 2>/dev/null
 		then
-		sed -i "s+FREETZ_HOSTTOOLS_DOWNLOAD=y+# FREETZ_HOSTTOOLS_DOWNLOAD is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam $I_MATIK_PATH/support/s3_releases/scripts/oscam_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam
+	
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu
+	
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam
+	
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod
+	
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc	
+		
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile
 		fi
 		##### test
 		sed -i "s+FREETZ_PACKAGE_XZ=y+# FREETZ_PACKAGE_XZ is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
@@ -175,7 +237,38 @@ if [ -z $PARAM_OSCAM_SMOD ]; then
 		PUMA7_IMAGE_COMMENT="$(grep '^FREETZ_SYSTEM_TYPE=' .config | awk -F'"' '{print $2}' | xargs)"
 		if [ $PUMA7_IMAGE_COMMENT = $PUMA7_IMAGE ] 2>/dev/null
 		then
-		sed -i "s+FREETZ_HOSTTOOLS_DOWNLOAD=y+# FREETZ_HOSTTOOLS_DOWNLOAD is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam $I_MATIK_PATH/support/s3_releases/scripts/oscam_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam
+	
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu
+	
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam
+	
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod
+	
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc	
+		
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile
 		fi
 # Get custom image file name part from .config
 FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
@@ -232,7 +325,38 @@ if [ -z $PARAM_OSCAM_NCAM ]; then
 		PUMA7_IMAGE_COMMENT="$(grep '^FREETZ_SYSTEM_TYPE=' .config | awk -F'"' '{print $2}' | xargs)"
 		if [ $PUMA7_IMAGE_COMMENT = $PUMA7_IMAGE ] 2>/dev/null
 		then
-		sed -i "s+FREETZ_HOSTTOOLS_DOWNLOAD=y+# FREETZ_HOSTTOOLS_DOWNLOAD is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam $I_MATIK_PATH/support/s3_releases/scripts/oscam_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam
+	
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu
+	
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam
+	
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod
+	
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc	
+		
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile
 		fi
 # Get custom image file name part from .config
 FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
@@ -289,7 +413,38 @@ if [ -z $PARAM_OSCAM_TOOL ]; then
 		PUMA7_IMAGE_COMMENT="$(grep '^FREETZ_SYSTEM_TYPE=' .config | awk -F'"' '{print $2}' | xargs)"
 		if [ $PUMA7_IMAGE_COMMENT = $PUMA7_IMAGE ] 2>/dev/null
 		then
-		sed -i "s+FREETZ_HOSTTOOLS_DOWNLOAD=y+# FREETZ_HOSTTOOLS_DOWNLOAD is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam $I_MATIK_PATH/support/s3_releases/scripts/oscam_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam
+	
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu
+	
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam
+	
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod
+	
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc_ohne
+		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc	
+		
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile
+	
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_ohne
+		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile
 		fi
 # Get custom image file name part from .config
 FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"

@@ -18,9 +18,12 @@ elif [ ! -d "$OSCAM_PATH" ]; then
 	exit 1
 fi
 
+mv $OSCAM_PATH/oscam-svn $OSCAM_PATH/ohne-oscam-ncam
+mv $OSCAM_PATH/oscam-ncam $OSCAM_PATH/oscam-svn
+
 if [[ ! -e "$OSCAM_PATH/oscam-svn" ]]; then
-	svn checkout https://svn.streamboard.tv/oscam/trunk $OSCAM_PATH/oscam-svn
-ed $OSCAM_PATH/oscam-svn/oscam.c <<EOF
+	git clone https://github.com/fairbird/NCam $OSCAM_PATH/oscam-svn
+ed $OSCAM_PATH/oscam-svn/ncam.c <<EOF
 /", CS_TARGET);/a
 	fprintf(fp, "Built by:       %s\n", "i-matik");
 .
@@ -30,6 +33,7 @@ elif [ ! -d "$OSCAM_PATH/oscam-svn" ]; then
 #	printf "${YELLOW}'$OSCAM_PATH/oscam-svn' already exists but is not a directory${NC}" 1>&2
 	exit 1
 fi
+
 	cd "$OSCAM_PATH" && git pull
 	cp -ar /$MY_FILES_HOME_PATH_OSCAM/* "$OSCAM_PATH/" 2>/dev/null
 	cp -ar /$PRIVAT_MY_FILES_HOME_PATH_OSCAM/support/i-matik.cfg "$OSCAM_PATH/support/" 2>/dev/null
@@ -47,31 +51,30 @@ if [[ ! -e $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS} ]]; then
 #elif [[ ! -d $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS} ]]; then
 #	echo "$OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS} existiert bereits, ist aber kein Verzeichnis " 1>&2
 fi
-		$OSCAM_PATH/./s3 update_emu
-		cp -ar $OSCAM_PATH/support/downloads/emu_github/oscam-emu.patch $OSCAM_PATH/oscam-svn/
-		cd $OSCAM_PATH/oscam-svn
-		patch -p0 < oscam-emu.patch
-		cd $OSCAM_PATH/oscam-svn && OSCAMVERSION_ALT="$(./config.sh -r)"
-		cd $OSCAM_PATH/oscam-svn && svn up && OSCAMVERSION_NEU="$(./config.sh -r)"
+	cd $OSCAM_PATH/oscam-svn && OSCAM_NCAM_VERSION_ALT="$(./config.sh -r)"
+	cd $OSCAM_PATH/oscam-svn && git pull && OSCAM_NCAM_VERSION_NEU="$(./config.sh -r)"
+	ICAM_VERSION="$(grep '"-ICAM-v' $OSCAM_PATH/oscam-svn/ncam.c  | awk -F'"' '{print $4}' | xargs)"
 
-if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8}.upx ]]; then
-	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-svn${OSCAMVERSION_ALT:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_ALT:6:8}.upx" -type f -mmin +0 -delete
+if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/ncam-${OSCAM_NCAM_VERSION_NEU:0:10}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx ]]; then
+	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-svn${OSCAM_NCAM_VERSION_ALT:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAM_NCAM_VERSION_ALT:6:8}.upx" -type f -mmin +0 -delete
 
 	rm -rf $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
 	ln -s $FREETZ_SSL_HOME_PATH/toolchain/target $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
 
 	$OSCAM_PATH/./s3 fritz_${FB_ARCH}_${FB_OS} -p=$OSCAM_READER_EMU.profile
 	
-	mv $OSCAM_PATH/support/binaries/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz_${FB_ARCH}_${FB_OS}-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8}-upx $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8}.upx
-		
-elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8}.upx ]]; then
-	printf "${GREEN}$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8}.upx already exists${NC}"
+	
+	mv $OSCAM_PATH/oscam-svn/Distribution/ncam-Unofficial-${OSCAM_NCAM_VERSION_NEU:0:10}-${FB_ARCH}-linux-uclibcgnueabi-libusb-pcsc-upx $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/ncam-${OSCAM_NCAM_VERSION_NEU:0:10}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx
+echo $OSCAM_PATH/oscam-svn/Distribution/ncam-Unofficial-${OSCAM_NCAM_VERSION_NEU:0:10}-${FB_ARCH}-linux-uclibcgnueabi-libusb-pcsc-upx $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/ncam-${OSCAM_NCAM_VERSION_NEU:0:10}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx
+	
+elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/ncam-${OSCAM_NCAM_VERSION_NEU:0:10}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx ]]; then
+	printf "${GREEN}$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/ncam-${OSCAM_NCAM_VERSION_NEU:0:10}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx already exists${NC}"
 fi
-	cd $OSCAM_PATH/oscam-svn
-	patch -p0 -R < oscam-emu.patch
-
 	rm -rf "$OSCAM_PATH/support/toolchains.cfg"
 	mv $OSCAM_PATH/support/toolchains.cfg.orig $OSCAM_PATH/support/toolchains.cfg
+
+mv $OSCAM_PATH/oscam-svn $OSCAM_PATH/oscam-ncam
+mv $OSCAM_PATH/ohne-oscam-ncam $OSCAM_PATH/oscam-svn
 
 #	rm -rf $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
 		

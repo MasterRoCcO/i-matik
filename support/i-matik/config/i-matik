@@ -118,7 +118,7 @@ OSCAM="$I_MATIK_PATH/support/s3_releases/scripts/oscam"
 OSCAM_EMU="$I_MATIK_PATH/support/s3_releases/scripts/oscam_emu"
 OSCAM_SMOD="$I_MATIK_PATH/support/s3_releases/scripts/oscam_smod"
 OSCAM_NCAM="$I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam"
-OSCAM_TOOLCHAIN="$I_MATIK_PATH/support/s3_releases/scripts/oscam_mit"
+OSCAM_TOOLCHAIN="$I_MATIK_PATH/support/s3_releases/scripts/oscam_tc"
 OSCAM_TCUPDATE="$I_MATIK_PATH/support/s3_releases/scripts/tcupdate"
 
 #define my files home path for oscam 
