@@ -62,23 +62,23 @@ if [ -z $PARAM_OSCAM ]; then
 		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc_ohne
 		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc	
 		
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc.profile $OSCAM_PATH/profiles/webif-libusb-pcsc.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile
+		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile_mit $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile
+		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile_mit $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile
 		fi
 		##### test
 		sed -i "s+FREETZ_PACKAGE_XZ=y+# FREETZ_PACKAGE_XZ is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
@@ -157,23 +157,23 @@ if [ -z $PARAM_OSCAM_EMU ]; then
 		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc_ohne
 		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc	
 		
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc.profile $OSCAM_PATH/profiles/webif-libusb-pcsc.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile
+		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile_mit $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile
+		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile_mit $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile
 		fi
 		##### test
 		sed -i "s+FREETZ_PACKAGE_XZ=y+# FREETZ_PACKAGE_XZ is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
@@ -252,23 +252,23 @@ if [ -z $PARAM_OSCAM_SMOD ]; then
 		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc_ohne
 		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc	
 		
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc.profile $OSCAM_PATH/profiles/webif-libusb-pcsc.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile
+		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile_mit $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile
+		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile_mit $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile
 		fi
 # Get custom image file name part from .config
 FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
@@ -340,23 +340,23 @@ if [ -z $PARAM_OSCAM_NCAM ]; then
 		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc_ohne
 		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc	
 		
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc.profile $OSCAM_PATH/profiles/webif-libusb-pcsc.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile
+		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile_mit $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile
+		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile_mit $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile
 		fi
 # Get custom image file name part from .config
 FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
@@ -428,23 +428,23 @@ if [ -z $PARAM_OSCAM_TOOL ]; then
 		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc_ohne
 		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc	
 		
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc.profile $OSCAM_PATH/profiles/webif-libusb-pcsc.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile
+		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile_mit $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile
+		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile_mit $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile
 	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile_ohne
+		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile
 		fi
 # Get custom image file name part from .config
 FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
