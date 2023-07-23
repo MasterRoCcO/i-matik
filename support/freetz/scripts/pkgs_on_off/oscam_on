@@ -64,4 +64,22 @@ then
 	
 	mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile_mit
 	mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile_ohne $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile
+	
+	mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_mit
+	mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_ohne $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile
+	
+	mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_mit
+	mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_ohne $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile
+	
+	mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_mit
+	mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_ohne $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile
+	
+	mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_mit
+	mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_ohne $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile
+	
+	mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_mit
+	mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_ohne $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile
+	
+	mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_mit
+	mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_ohne $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile
 fi
