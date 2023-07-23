@@ -1,5 +1,5 @@
 #!/bin/bash
-if [[ $(lsb_release -rs) == "20.04" ]] || [[ $(lsb_release -rs) == "21.10" ]] || [[ $(lsb_release -rs) == "22.04" ]] || [[ $(lsb_release -rs) == "23.04" ]] || [[ $(lsb_release -rs) == "10" ]] || [[ $(lsb_release -rs) == "11" ]]; then # replace 20.04 by the number of release you want
+if [[ $(lsb_release -rs) == "20.04" ]] || [[ $(lsb_release -rs) == "21.10" ]] || [[ $(lsb_release -rs) == "22.04" ]] || [[ $(lsb_release -rs) == "23.04" ]] || [[ $(lsb_release -rs) == "10" ]] || [[ $(lsb_release -rs) == "11" ]] || [[ $(lsb_release -rs) == "12" ]]; then # replace 20.04 by the number of release you want
 
 PACKAGES="  autopoint bc binutils bison bsdmainutils bzip2 ccache cmake cpio curl ecj flex g++ gawk gcc"
 PACKAGES+=" gcc-multilib gettext git graphicsmagick imagemagick inkscape intltool java-wrappers kmod"
