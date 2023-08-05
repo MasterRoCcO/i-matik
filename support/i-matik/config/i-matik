@@ -60,6 +60,12 @@ NO_GLIB2_6430="6430"
 NO_GLIB2_6490="6490"
 NO_GLIB2_6590="6590"
 
+#downgrade
+DOWNGRADE_ON="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_on"
+DOWNGRADE_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_off"
+#libusb1 
+LIBUSB1_7530AX="7530_AX"
+
 #define user scripts home path
 USER_APPLICATION_ON="$I_MATIK_PATH/support/freetz/scripts/user_scripts/user-application_on"
 USER_APPLICATION_OFF="$I_MATIK_PATH/support/freetz/scripts/user_scripts/user-application_off"
