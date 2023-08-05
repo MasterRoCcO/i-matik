@@ -1,0 +1,11 @@
+--- make/pkgs/openssl/Config.in.libs	2023-08-02 18:27:35.830721857 +0200
++++ make/pkgs/openssl/Config.in.libs	2023-08-03 16:40:43.857215419 +0200
+@@ -62,7 +62,7 @@
+ 
+ 	config FREETZ_OPENSSL_VERSION_1
+ 		bool "1.0.2 - DEPRECATED"
+-		depends on !FREETZ_SEPARATE_AVM_UCLIBC
++#		depends on !FREETZ_SEPARATE_AVM_UCLIBC
+ 
+ 	config FREETZ_OPENSSL_VERSION_2
+ 		bool "1.1.1 - DEPRECATED"
