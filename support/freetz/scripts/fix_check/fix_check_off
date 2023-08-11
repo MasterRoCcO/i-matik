@@ -1,5 +1,5 @@
 #!/bin/bash
-BOX_ARCH_FOR_PATCHELF="$(grep '^FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=' .config | awk -F'"' '{print $2}' | xargs)" 2>/dev/null
+#BOX_ARCH_FOR_PATCHELF="$(grep '^FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=' .config | awk -F'"' '{print $2}' | xargs)" 2>/dev/null
 NO_GLIB2_FOR="$(grep '^FREETZ_TYPE_PREFIX=' .config | awk -F'"' '{print $2}' | xargs)" 2>/dev/null
 #if [ $BOX_ARCH_FOR_PATCHELF = $PATCHELF_MIPS ]
 #	then
@@ -24,4 +24,14 @@ elif [ $NO_GLIB2_FOR = $NO_GLIB2_6590 ]
 		sed -i "s+# FREETZ_LIB_libglib_2 is not set+FREETZ_LIB_libglib_2=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_LIB_libglib_2_VERSION_CURRENT is not set+FREETZ_LIB_libglib_2_VERSION_CURRENT=y+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_PACKAGE_MC is not set+FREETZ_PACKAGE_MC=y+g" $FREETZ_SSL_HOME_PATH/.config
+fi
+BAD_FB_EXT3_OS="$(grep '^FREETZ_TYPE_PREFIX_SERIES_SUBDIR=' .config | awk -F'"' '{print $2}' | xargs)"
+BAD_FB_EXT3_TYP="$(grep '^FREETZ_TYPE_PREFIX=' .config | awk -F'"' '{print $2}' | xargs)"
+if [ $BAD_FB_EXT3_OS = $BAD_EXT3_OS ]
+	then
+		if [ $BAD_FB_EXT3_TYP = $BAD_EXT3_TYP ]
+			then
+		sed -i "s+# FREETZ_UDEVMOUNT_EXT3 is not set+FREETZ_UDEVMOUNT_EXT3=y+g" $FREETZ_SSL_HOME_PATH/.config
+		sed -i "s+# FREETZ_MODULE_ext3 is not set+FREETZ_MODULE_ext3=y+g" $FREETZ_SSL_HOME_PATH/.config
+	fi
 fi

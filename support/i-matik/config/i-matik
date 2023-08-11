@@ -59,6 +59,9 @@ FIX_CHECK_OFF="$I_MATIK_PATH/support/freetz/scripts/fix_check/fix_check_off"
 NO_GLIB2_6430="6430"
 NO_GLIB2_6490="6490"
 NO_GLIB2_6590="6590"
+#ext3
+BAD_EXT3_OS="07_5X"
+BAD_EXT3_TYP="7530_AX"
 
 #downgrade
 DOWNGRADE_ON="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_on"
