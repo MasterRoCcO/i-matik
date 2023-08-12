@@ -1,5 +1,5 @@
 #!/bin/bash
-if [[ $(lsb_release -rs) == "20.04" ]] || [[ $(lsb_release -rs) == "21.10" ]] || [[ $(lsb_release -rs) == "22.04" ]] || [[ $(lsb_release -rs) == "23.04" ]] || [[ $(lsb_release -rs) == "10" ]] || [[ $(lsb_release -rs) == "11" ]] || [[ $(lsb_release -rs) == "12" ]] || [[ $(lsb_release -rs) == "2023.1" ]] || [[ $(lsb_release -rs) == "2023.2" ]] || [[ $(lsb_release -rs) == "21.2" ]]; then # my os is 22.04 (ubuntu)
+if [[ $(lsb_release -rs) == "20.04" ]] || [[ $(lsb_release -rs) == "21.10" ]] || [[ $(lsb_release -rs) == "22.04" ]] || [[ $(lsb_release -rs) == "23.04" ]] || [[ $(lsb_release -rs) == "10" ]] || [[ $(lsb_release -rs) == "11" ]] || [[ $(lsb_release -rs) == "12" ]] || [[ $(lsb_release -rs) == "2023.1" ]] || [[ $(lsb_release -rs) == "2023.2" ]] || [[ $(lsb_release -rs) == "21.2" ]] || [[ $(lsb_release -rs) == "16" ]]; then # my os is 22.04 (ubuntu)
 
 PACKAGES="  autopoint bc binutils bison bsdmainutils bzip2 ccache cmake cpio curl ecj flex g++ gawk gcc"
 PACKAGES+=" gcc-multilib gettext git graphicsmagick imagemagick inkscape intltool java-wrappers kmod"
@@ -21,7 +21,10 @@ if ! dpkg -s $PACKAGES >/dev/null 2>&1; then
 	sudo apt-get install $PACKAGES
 	cd /tmp
 	wget http://mirrors.kernel.org/ubuntu/pool/universe/u/upx-ucl/upx-ucl_3.95-2build1_amd64.deb
+#	wget http://ftp.osuosl.org/pub/ubuntu/pool/universe/k/kmod/module-init-tools_24-1ubuntu3_all.deb
 	sudo apt install /tmp/upx-ucl_3.95-2build1_amd64.deb
+#	sudo apt install /$INSTAL_CHECK/upx-ucl_4.02-2build1_amd64.deb
+#	sudo apt install /tmp/module-init-tools_24-1ubuntu3_all.deb
 	echo upx-ucl hold | sudo dpkg --set-selections
 	sudo apt-get update && sudo apt-get -y upgrade && sudo apt dist-upgrade && sudo apt autoclean && sudo apt autoremove
 fi
@@ -40,6 +43,7 @@ fi
 # 10     = Debian
 # 11     = Debian
 # 12     = Debian
+# 16     = Zorin
 # 2023.1 = Rhino
 # 2023.2 = Kali
 # 21.2   = Mint
