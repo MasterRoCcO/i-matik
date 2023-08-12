@@ -5,7 +5,7 @@
  		config FREETZ_PACKAGE_RRDTOOL_VERSION_CURRENT
  			bool "1.8.0"
 -			depends on FREETZ_SEPARATE_AVM_UCLIBC
-+			depends on FREETZ_SEPARATE_AVM_UCLIBC && !FREETZ_TYPE_6430 && !FREETZ_TYPE_6490 && !FREETZ_TYPE_6590
++			depends on FREETZ_SEPARATE_AVM_UCLIBC && !FREETZ_TYPE_64301 && !FREETZ_TYPE_64901 && !FREETZ_TYPE_65901
  			help
  				This version needs about 3,7MB (including all libs).
  
