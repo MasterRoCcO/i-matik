@@ -33,6 +33,7 @@ Options
   -rr18,--rrdstats18		RRDstats for RRDtool 1.8.0
   -vs,--vnstat			VNSTAT
   -wg,--wireguard		WIREGUARD
+  -ov,--openvpn			OpenVPN
   -push				push image to Fritz!Box or Fritz!Repeater or Fritz!Powerline
   -backup			make a backup of your freetz-signature and freetz-dl
   -us,--user-skins		user skins

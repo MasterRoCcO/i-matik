@@ -58,6 +58,8 @@ while [ $# -ne 0 ];do
 	    ;;
 	-wg|--wireguard)		PARAM_WIREGUARD=1
 	    ;;
+	-ov|--openvpn)			PARAM_OPENVPN=1
+	    ;;
 	-*|--*)				PARAM_BAD=1
 	    ;;
 	*)				BOX_SSL+=( $1 )
