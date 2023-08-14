@@ -22,9 +22,9 @@ if ! dpkg -s $PACKAGES >/dev/null 2>&1; then
 	cd /tmp
 	wget http://mirrors.kernel.org/ubuntu/pool/universe/u/upx-ucl/upx-ucl_3.95-2build1_amd64.deb
 #	wget http://ftp.osuosl.org/pub/ubuntu/pool/universe/k/kmod/module-init-tools_24-1ubuntu3_all.deb
-	sudo apt install /tmp/upx-ucl_3.95-2build1_amd64.deb
-#	sudo apt install /$INSTAL_CHECK/upx-ucl_4.02-2build1_amd64.deb
-#	sudo apt install /tmp/module-init-tools_24-1ubuntu3_all.deb
+	sudo dpkg -i /tmp/upx-ucl_3.95-2build1_amd64.deb
+#	sudo dpkg -i /$INSTAL_CHECK/upx-ucl_4.02-2build1_amd64.deb
+#	sudo dpkg -i /tmp/module-init-tools_24-1ubuntu3_all.deb
 	echo upx-ucl hold | sudo dpkg --set-selections
 	sudo apt-get update && sudo apt-get -y upgrade && sudo apt dist-upgrade && sudo apt autoclean && sudo apt autoremove
 fi
