@@ -45,3 +45,7 @@ echo -e ${GREEN}"fix 7530AX FW 7.56"${NC}
 cp -ar $I_MATIK_PATH/support/freetz/scripts/fix/fix_for7530ax.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < fix_for7530ax.patch 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/fix_for7530ax.patch" 2>/dev/null
+echo -e ${GREEN}"fix loop FW 7.56"${NC}
+cp -ar $I_MATIK_PATH/support/freetz/scripts/fix/loop_fix.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < loop_fix.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/loop_fix.patch" 2>/dev/null

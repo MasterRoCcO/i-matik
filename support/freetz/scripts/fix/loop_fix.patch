@@ -1,0 +1,87 @@
+--- config/.kos/Config.in	2023-08-18 15:23:30.291488612 +0200
++++ config/.kos/Config.in	2023-08-19 17:03:22.675230091 +0200
+@@ -351,8 +351,6 @@
+ if FREETZ_AVM_SOURCE_7539_07_56
+ config FREETZ_AVM_HAS_AUTOFS4_FS_BUILTIN
+ 	def_bool y
+-config FREETZ_AVM_HAS_BLK_DEV_LOOP_BUILTIN
+-	def_bool y
+ config FREETZ_AVM_HAS_BLK_DEV_SD_BUILTIN
+ 	def_bool y
+ config FREETZ_AVM_HAS_CRC16_BUILTIN
+@@ -2581,8 +2579,6 @@
+ 	def_bool y
+ endif
+ if FREETZ_AVM_SOURCE_1209_07_56
+-config FREETZ_AVM_HAS_BLK_DEV_LOOP_BUILTIN
+-	def_bool y
+ config FREETZ_AVM_HAS_CRC16_BUILTIN
+ 	def_bool y
+ config FREETZ_AVM_HAS_CRYPTO_AEAD_BUILTIN
+@@ -2671,8 +2667,6 @@
+ 	def_bool y
+ endif
+ if FREETZ_AVM_SOURCE_7510_07_56
+-config FREETZ_AVM_HAS_BLK_DEV_LOOP_BUILTIN
+-	def_bool y
+ config FREETZ_AVM_HAS_CRC16_BUILTIN
+ 	def_bool y
+ config FREETZ_AVM_HAS_CRYPTO_AEAD_BUILTIN
+--- make/kernel/configs/diffs/config-maple-1209_07.56.diff	2023-08-16 19:16:54.408533229 +0200
++++ make/kernel/configs/diffs/config-maple-1209_07.56.diff	2023-08-19 17:04:52.342233075 +0200
+@@ -36,6 +36,15 @@
+  
+  #
+  # Network testing
++@@ -1437,7 +1438,7 @@
++ # CONFIG_BLK_DEV_DAC960 is not set
++ # CONFIG_BLK_DEV_UMEM is not set
++ # CONFIG_BLK_DEV_COW_COMMON is not set
++-CONFIG_BLK_DEV_LOOP=y
+++CONFIG_BLK_DEV_LOOP=m
++ CONFIG_BLK_DEV_LOOP_MIN_COUNT=8
++ # CONFIG_BLK_DEV_CRYPTOLOOP is not set
++ # CONFIG_BLK_DEV_DRBD is not set
+ @@ -2059,6 +2060,8 @@
+  CONFIG_AVM_FW_INFO_DT=y
+  CONFIG_AVM_MODULE_MEM=y
+--- make/kernel/configs/diffs/config-maple-7510_07.56.diff	2023-08-16 19:16:54.408533229 +0200
++++ make/kernel/configs/diffs/config-maple-7510_07.56.diff	2023-08-19 17:04:52.346233031 +0200
+@@ -37,6 +37,15 @@
+  
+  #
+  # Network testing
++@@ -1439,7 +1438,7 @@
++ # CONFIG_BLK_DEV_DAC960 is not set
++ # CONFIG_BLK_DEV_UMEM is not set
++ # CONFIG_BLK_DEV_COW_COMMON is not set
++-CONFIG_BLK_DEV_LOOP=y
+++CONFIG_BLK_DEV_LOOP=m
++ CONFIG_BLK_DEV_LOOP_MIN_COUNT=8
++ # CONFIG_BLK_DEV_CRYPTOLOOP is not set
++ # CONFIG_BLK_DEV_DRBD is not set
+ @@ -2061,6 +2060,8 @@
+  CONFIG_AVM_FW_INFO_DT=y
+  CONFIG_AVM_MODULE_MEM=y
+--- make/kernel/configs/freetz/config-maple-1209_07.56	2023-08-16 19:16:54.412533144 +0200
++++ make/kernel/configs/freetz/config-maple-1209_07.56	2023-08-19 17:04:37.122402332 +0200
+@@ -1438,7 +1438,7 @@
+ # CONFIG_BLK_DEV_DAC960 is not set
+ # CONFIG_BLK_DEV_UMEM is not set
+ # CONFIG_BLK_DEV_COW_COMMON is not set
+-CONFIG_BLK_DEV_LOOP=y
++CONFIG_BLK_DEV_LOOP=m
+ CONFIG_BLK_DEV_LOOP_MIN_COUNT=8
+ # CONFIG_BLK_DEV_CRYPTOLOOP is not set
+ # CONFIG_BLK_DEV_DRBD is not set
+--- make/kernel/configs/freetz/config-maple-7510_07.56	2023-08-16 19:16:54.412533144 +0200
++++ make/kernel/configs/freetz/config-maple-7510_07.56	2023-08-19 17:03:54.610875039 +0200
+@@ -1438,7 +1438,7 @@
+ # CONFIG_BLK_DEV_DAC960 is not set
+ # CONFIG_BLK_DEV_UMEM is not set
+ # CONFIG_BLK_DEV_COW_COMMON is not set
+-CONFIG_BLK_DEV_LOOP=y
++CONFIG_BLK_DEV_LOOP=m
+ CONFIG_BLK_DEV_LOOP_MIN_COUNT=8
+ # CONFIG_BLK_DEV_CRYPTOLOOP is not set
+ # CONFIG_BLK_DEV_DRBD is not set

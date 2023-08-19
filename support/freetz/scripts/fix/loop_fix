@@ -1,0 +1,11 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/config/.kos/Config.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/config/.kos/Config.in.orig $FREETZ_SSL_HOME_PATH/config/.kos/Config.in 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/kernel/configs/diffs/config-maple-1209_07.56.diff 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/kernel/configs/diffs/config-maple-1209_07.56.diff.orig $FREETZ_SSL_HOME_PATH/make/kernel/configs/diffs/config-maple-1209_07.56.diff 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/kernel/configs/diffs/config-maple-7510_07.56.diff 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/kernel/configs/diffs/config-maple-7510_07.56.diff.orig $FREETZ_SSL_HOME_PATH/make/kernel/configs/diffs/config-maple-7510_07.56.diff 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-maple-1209_07.56 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-maple-1209_07.56.orig $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-maple-1209_07.56 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-maple-7510_07.56 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-maple-7510_07.56.orig $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-maple-7510_07.56 2>/dev/null
