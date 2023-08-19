@@ -4,13 +4,16 @@ source $I_MATIK_PATCH_PATH/10-box
 source $I_MATIK_PATCH_PATH/info.cgi
 source $I_MATIK_PATCH_PATH/menu-new
 source $I_MATIK_PATCH_PATH/motd
+
 # features
 source $AVM_PATCH_PATH/features
 source $I_MATIK_PATCH_PATH/ifree
 source $I_MATIK_PATCH_PATH/show_gpon_serial
+
 # fix
 source $I_MATIK_PATH/support/freetz/scripts/patches/host-tools/sed-host
 source $PKGS_FIX_PATH/no_rrdstats_1_8
 source $PKGS_FIX_PATH/openssl
 source $I_MATIK_PATH/support/freetz/scripts/fix/fix_for7530ax 2>/dev/null
 source $I_MATIK_PATH/support/freetz/scripts/fix/loop_fix 2>/dev/null
+source $KERNEL_FIX_PATH/7490_07.56 2>/dev/null
