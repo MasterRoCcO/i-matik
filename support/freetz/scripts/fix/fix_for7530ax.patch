@@ -1,5 +1,5 @@
 --- config/mod/source.in	2023-08-18 15:23:30.291488612 +0200
-+++ config/mod/source.in	2023-08-19 11:23:04.532078780 +0200
++++ config/mod/source.in	2023-08-19 16:54:57.564835998 +0200
 @@ -38,7 +38,6 @@
  	depends on ! FREETZ_KERNEL_AVM_CHAOTIC_PACK
  	depends on ! FREETZ_KERNEL_VERSION_4_1_38                                              # 07_1X-final 7581/7582 (corrupt)
@@ -18,18 +18,98 @@
  	default y
  	help
  		AVM used the "chaos theory" packing method and so these sources would waste to much time to integrate.
-
---- make/kernel/configs/freetz/config-brcma9-7539_07.56	2023-08-16 19:16:54.392533566 +0200
-+++ make/kernel/configs/freetz/config-brcma9-7539_07.56	2023-08-19 15:12:35.652436000 +0200
-@@ -4,7 +4,7 @@
- #
- 
- #
--# Compiler: arm-buildroot-linux-gnueabi-gcc.br_real (Buildroot 2020.02.1-g53bf1c36) 9.3.0
-+# Compiler: arm-unknown-linux-gnueabi-gcc (GCC) 9.3.0
- #
- CONFIG_CC_IS_GCC=y
- CONFIG_GCC_VERSION=90300
+--- make/kernel/configs/diffs/config-brcma9-7539_07.56.diff	2023-08-16 19:16:54.404533313 +0200
++++ make/kernel/configs/diffs/config-brcma9-7539_07.56.diff	2023-08-19 16:55:40.564359754 +0200
+@@ -9,7 +9,27 @@
+  #
+  CONFIG_CC_IS_GCC=y
+  CONFIG_GCC_VERSION=90300
+-@@ -3363,6 +3363,11 @@
++@@ -1369,7 +1369,7 @@
++ # CONFIG_BLK_DEV_PCIESSD_MTIP32XX is not set
++ # CONFIG_BLK_DEV_DAC960 is not set
++ # CONFIG_BLK_DEV_UMEM is not set
++-CONFIG_BLK_DEV_LOOP=y
+++CONFIG_BLK_DEV_LOOP=m
++ CONFIG_BLK_DEV_LOOP_MIN_COUNT=4
++ # CONFIG_BLK_DEV_CRYPTOLOOP is not set
++ # CONFIG_BLK_DEV_DRBD is not set
++@@ -2402,7 +2402,9 @@
++ CONFIG_EXT2_FS_XATTR=y
++ CONFIG_EXT2_FS_POSIX_ACL=y
++ CONFIG_EXT2_FS_SECURITY=y
++-# CONFIG_EXT3_FS is not set
+++CONFIG_EXT3_FS=m
+++# CONFIG_EXT3_FS_POSIX_ACL is not set
+++# CONFIG_EXT3_FS_SECURITY is not set
++ CONFIG_EXT4_FS=y
++ CONFIG_EXT4_FS_POSIX_ACL=y
++ CONFIG_EXT4_FS_SECURITY=y
++@@ -3363,6 +3365,11 @@
+  #
+  
+  #
+@@ -21,7 +41,7 @@
+  # SPIDEV_VOICE
+  #
+  # CONFIG_BCM_SPIDEV_VOICE is not set
+-@@ -3374,9 +3379,9 @@
++@@ -3374,9 +3381,9 @@
+  CONFIG_BCM_BOOTSTATE_IMPL=1
+  
+  #
+@@ -33,7 +53,7 @@
+  
+  #
+  # MCAST
+-@@ -3387,45 +3392,38 @@
++@@ -3387,45 +3394,38 @@
+  CONFIG_BR_MLD_SNOOP=y
+  
+  #
+@@ -95,7 +115,7 @@
+  
+  #
+  # BCA_PINCTRL
+-@@ -3434,13 +3432,20 @@
++@@ -3434,13 +3434,20 @@
+  CONFIG_BCM_BCA_PINCTRL_IMPL=1
+  
+  #
+@@ -107,19 +127,19 @@
+  #
+ -# SOTP
+ +# BCA_LED
+-+#
++ #
+ +CONFIG_BCM_BCA_LED=y
+ +CONFIG_BCM_BCA_LED_IMPL=1
+ +
+ +#
+ +# BCA_VREG_SYNC
+- #
+++#
+ +CONFIG_BCM_BCA_VREG_SYNC=y
+ +CONFIG_BCM_BCA_VREG_SYNC_IMPL=1
+  
+  #
+  # BCA_GPIO
+-@@ -3449,40 +3454,42 @@
++@@ -3449,40 +3456,42 @@
+  CONFIG_BCM_BCA_GPIO_IMPL=1
+  
+  #
+@@ -178,7 +198,7 @@
+  # CONFIG_SND_BCM63xx_I2S_WHISTLER is not set
+  # CONFIG_SND_BCM63xx_I2S_MERRITT is not set
+  # CONFIG_SND_BCM63xx_PCM_SQUAMISH is not set
+-@@ -3493,14 +3500,7 @@
++@@ -3493,14 +3502,7 @@
+  # CONFIG_SND_BCM63148_SOC_I2S is not set
+  
+  #
+--- make/kernel/configs/freetz/config-brcma9-7539_07.56	2023-08-16 19:16:54.412533144 +0200
++++ make/kernel/configs/freetz/config-brcma9-7539_07.56	2023-08-19 16:50:52.803541000 +0200
 @@ -1369,7 +1369,7 @@
  # CONFIG_BLK_DEV_PCIESSD_MTIP32XX is not set
  # CONFIG_BLK_DEV_DAC960 is not set
@@ -39,398 +119,14 @@
  CONFIG_BLK_DEV_LOOP_MIN_COUNT=4
  # CONFIG_BLK_DEV_CRYPTOLOOP is not set
  # CONFIG_BLK_DEV_DRBD is not set
-@@ -3363,6 +3363,11 @@
- #
- 
- #
-+# SPIDEV_REV2
-+#
-+# CONFIG_BCM_SPIDEV_REV2 is not set
-+
-+#
- # SPIDEV_VOICE
- #
- # CONFIG_BCM_SPIDEV_VOICE is not set
-@@ -3374,9 +3379,9 @@
- CONFIG_BCM_BOOTSTATE_IMPL=1
- 
- #
--# SPIDEV_REV2
-+# CRYPTODEV
- #
--# CONFIG_BCM_SPIDEV_REV2 is not set
-+# CONFIG_BCM_CRYPTODEV is not set
- 
- #
- # MCAST
-@@ -3387,45 +3392,38 @@
- CONFIG_BR_MLD_SNOOP=y
- 
- #
--# CRYPTODEV
--#
--# CONFIG_BCM_CRYPTODEV is not set
--
--#
--# BCA_USB
--#
--# CONFIG_BCM_BCA_USB is not set
--
--#
--# PON_WAN_TYPE_AUTO_DETECT
-+# SOTP
- #
- 
- #
--# BCA_EXTINTR
-+# BUTTON
- #
--CONFIG_BCM_BCA_EXTINTR=y
--CONFIG_BCM_BCA_EXTINTR_IMPL=1
-+# CONFIG_BCM_BUTTON is not set
- 
- #
--# VOICE_RELAY
-+# COMMON_CLK
- #
--# CONFIG_BCM_VOICE_RELAY is not set
-+CONFIG_BCM_COMMON_CLK=y
-+CONFIG_BCM_COMMON_CLK_IMPL=1
-+# CONFIG_BCM_COMMON_CLK_I2S is not set
-+# CONFIG_BCM_COMMON_CLK_I2S_TDM is not set
-+# CONFIG_BCM_COMMON_CLK_PCM is not set
- 
- #
--# VOICE_PARAMS
-+# BCA_LEGACY_LED_API
- #
--# CONFIG_BCM_VOICE_PARAMS is not set
-+# CONFIG_BCM_BCA_LEGACY_LED_API is not set
- 
- #
--# VOICE_DECT_RESET
-+# BCA_EXTINTR
- #
--# CONFIG_BCM_VOICE_DECT_RESET is not set
-+CONFIG_BCM_BCA_EXTINTR=y
-+CONFIG_BCM_BCA_EXTINTR_IMPL=1
- 
- #
--# PMC 
-+# CPUFREQ
- #
--CONFIG_BCM_PMC=y
--CONFIG_BCM_PMC_IMPL=1
-+# CONFIG_BCM_CPUFREQ is not set
- 
- #
- # BCA_PINCTRL
-@@ -3434,13 +3432,20 @@
- CONFIG_BCM_BCA_PINCTRL_IMPL=1
- 
- #
--# BUTTON
-+# PON_WAN_TYPE_AUTO_DETECT
- #
--# CONFIG_BCM_BUTTON is not set
- 
- #
--# SOTP
-+# BCA_LED
- #
-+CONFIG_BCM_BCA_LED=y
-+CONFIG_BCM_BCA_LED_IMPL=1
-+
-+#
-+# BCA_VREG_SYNC
-+#
-+CONFIG_BCM_BCA_VREG_SYNC=y
-+CONFIG_BCM_BCA_VREG_SYNC_IMPL=1
- 
- #
- # BCA_GPIO
-@@ -3449,40 +3454,42 @@
- CONFIG_BCM_BCA_GPIO_IMPL=1
- 
- #
--# BCA_VREG_SYNC
-+# PMC 
- #
--CONFIG_BCM_BCA_VREG_SYNC=y
--CONFIG_BCM_BCA_VREG_SYNC_IMPL=1
-+CONFIG_BCM_PMC=y
-+CONFIG_BCM_PMC_IMPL=1
- 
- #
--# BCA_LEGACY_LED_API
-+# RESET_BUTTON
- #
--# CONFIG_BCM_BCA_LEGACY_LED_API is not set
- 
- #
--# BCA_LED
-+# VOICE_DECT_RESET
- #
--CONFIG_BCM_BCA_LED=y
--CONFIG_BCM_BCA_LED_IMPL=1
-+# CONFIG_BCM_VOICE_DECT_RESET is not set
- 
- #
--# CPUFREQ
-+# VOICE_PARAMS
- #
--# CONFIG_BCM_CPUFREQ is not set
-+# CONFIG_BCM_VOICE_PARAMS is not set
- 
- #
--# COMMON_CLK
-+# VOICE_RELAY
- #
--CONFIG_BCM_COMMON_CLK=y
--CONFIG_BCM_COMMON_CLK_IMPL=1
--# CONFIG_BCM_COMMON_CLK_I2S is not set
--# CONFIG_BCM_COMMON_CLK_I2S_TDM is not set
--# CONFIG_BCM_COMMON_CLK_PCM is not set
-+# CONFIG_BCM_VOICE_RELAY is not set
- 
- #
- # SOUND
- #
- # CONFIG_BCM_SOUND is not set
-+# CONFIG_SND_SOC_MAPLELEAF is not set
-+# CONFIG_SND_SOC_MAPLETREE is not set
-+# CONFIG_SND_SOC_CS4345 is not set
-+# CONFIG_SND_SOC_PCM5100 is not set
-+
-+#
-+# SOUND
-+#
- # CONFIG_SND_BCM63xx_I2S_WHISTLER is not set
- # CONFIG_SND_BCM63xx_I2S_MERRITT is not set
- # CONFIG_SND_BCM63xx_PCM_SQUAMISH is not set
-@@ -3493,14 +3500,7 @@
- # CONFIG_SND_BCM63148_SOC_I2S is not set
- 
- #
--# SOUND
--#
--# CONFIG_SND_SOC_MAPLELEAF is not set
--# CONFIG_SND_SOC_MAPLETREE is not set
--# CONFIG_SND_SOC_CS4345 is not set
--# CONFIG_SND_SOC_PCM5100 is not set
--
--#
--# RESET_BUTTON
-+# BCA_USB
- #
-+# CONFIG_BCM_BCA_USB is not set
- CONFIG_BCM_IN_KERNEL=y
---- make/kernel/configs/diffs/config-brcma9-7539_07.56.diff	2023-08-16 19:16:54.404533313 +0200
-+++ make/kernel/configs/diffs/config-brcma9-7539_07.56.diff	2023-08-19 15:14:32.415134005 +0200
-@@ -1,197 +1,11 @@
- --- avm/config-brcma9-7539_07.56
- +++ freetz/config-brcma9-7539_07.56
--@@ -4,7 +4,7 @@
-- #
-- 
-- #
---# Compiler: arm-buildroot-linux-gnueabi-gcc.br_real (Buildroot 2020.02.1-g53bf1c36) 9.3.0
--+# Compiler: arm-unknown-linux-gnueabi-gcc (GCC) 9.3.0
-- #
-- CONFIG_CC_IS_GCC=y
-- CONFIG_GCC_VERSION=90300
--@@ -3363,6 +3363,11 @@
-- #
-- 
-- #
--+# SPIDEV_REV2
--+#
--+# CONFIG_BCM_SPIDEV_REV2 is not set
--+
--+#
-- # SPIDEV_VOICE
-- #
-- # CONFIG_BCM_SPIDEV_VOICE is not set
--@@ -3374,9 +3379,9 @@
-- CONFIG_BCM_BOOTSTATE_IMPL=1
-- 
-- #
---# SPIDEV_REV2
--+# CRYPTODEV
-- #
---# CONFIG_BCM_SPIDEV_REV2 is not set
--+# CONFIG_BCM_CRYPTODEV is not set
-- 
-- #
-- # MCAST
--@@ -3387,45 +3392,38 @@
-- CONFIG_BR_MLD_SNOOP=y
-- 
-- #
---# CRYPTODEV
---#
---# CONFIG_BCM_CRYPTODEV is not set
---
---#
---# BCA_USB
---#
---# CONFIG_BCM_BCA_USB is not set
---
---#
---# PON_WAN_TYPE_AUTO_DETECT
--+# SOTP
-- #
-- 
-- #
---# BCA_EXTINTR
--+# BUTTON
-- #
---CONFIG_BCM_BCA_EXTINTR=y
---CONFIG_BCM_BCA_EXTINTR_IMPL=1
--+# CONFIG_BCM_BUTTON is not set
-- 
-- #
---# VOICE_RELAY
--+# COMMON_CLK
-- #
---# CONFIG_BCM_VOICE_RELAY is not set
--+CONFIG_BCM_COMMON_CLK=y
--+CONFIG_BCM_COMMON_CLK_IMPL=1
--+# CONFIG_BCM_COMMON_CLK_I2S is not set
--+# CONFIG_BCM_COMMON_CLK_I2S_TDM is not set
--+# CONFIG_BCM_COMMON_CLK_PCM is not set
-- 
-- #
---# VOICE_PARAMS
--+# BCA_LEGACY_LED_API
-- #
---# CONFIG_BCM_VOICE_PARAMS is not set
--+# CONFIG_BCM_BCA_LEGACY_LED_API is not set
-- 
-- #
---# VOICE_DECT_RESET
--+# BCA_EXTINTR
-- #
---# CONFIG_BCM_VOICE_DECT_RESET is not set
--+CONFIG_BCM_BCA_EXTINTR=y
--+CONFIG_BCM_BCA_EXTINTR_IMPL=1
-- 
-- #
---# PMC 
--+# CPUFREQ
-- #
---CONFIG_BCM_PMC=y
---CONFIG_BCM_PMC_IMPL=1
--+# CONFIG_BCM_CPUFREQ is not set
-- 
-- #
-- # BCA_PINCTRL
--@@ -3434,13 +3432,20 @@
-- CONFIG_BCM_BCA_PINCTRL_IMPL=1
-- 
-- #
---# BUTTON
--+# PON_WAN_TYPE_AUTO_DETECT
-- #
---# CONFIG_BCM_BUTTON is not set
-- 
-- #
---# SOTP
--+# BCA_LED
--+#
--+CONFIG_BCM_BCA_LED=y
--+CONFIG_BCM_BCA_LED_IMPL=1
--+
--+#
--+# BCA_VREG_SYNC
-- #
--+CONFIG_BCM_BCA_VREG_SYNC=y
--+CONFIG_BCM_BCA_VREG_SYNC_IMPL=1
-- 
-- #
-- # BCA_GPIO
--@@ -3449,40 +3454,42 @@
-- CONFIG_BCM_BCA_GPIO_IMPL=1
-- 
-- #
---# BCA_VREG_SYNC
--+# PMC 
-- #
---CONFIG_BCM_BCA_VREG_SYNC=y
---CONFIG_BCM_BCA_VREG_SYNC_IMPL=1
--+CONFIG_BCM_PMC=y
--+CONFIG_BCM_PMC_IMPL=1
-- 
-- #
---# BCA_LEGACY_LED_API
--+# RESET_BUTTON
-- #
---# CONFIG_BCM_BCA_LEGACY_LED_API is not set
-- 
-- #
---# BCA_LED
--+# VOICE_DECT_RESET
-- #
---CONFIG_BCM_BCA_LED=y
---CONFIG_BCM_BCA_LED_IMPL=1
--+# CONFIG_BCM_VOICE_DECT_RESET is not set
-- 
-- #
---# CPUFREQ
--+# VOICE_PARAMS
-- #
---# CONFIG_BCM_CPUFREQ is not set
--+# CONFIG_BCM_VOICE_PARAMS is not set
-- 
-- #
---# COMMON_CLK
--+# VOICE_RELAY
-- #
---CONFIG_BCM_COMMON_CLK=y
---CONFIG_BCM_COMMON_CLK_IMPL=1
---# CONFIG_BCM_COMMON_CLK_I2S is not set
---# CONFIG_BCM_COMMON_CLK_I2S_TDM is not set
---# CONFIG_BCM_COMMON_CLK_PCM is not set
--+# CONFIG_BCM_VOICE_RELAY is not set
-- 
-- #
-- # SOUND
-- #
-- # CONFIG_BCM_SOUND is not set
--+# CONFIG_SND_SOC_MAPLELEAF is not set
--+# CONFIG_SND_SOC_MAPLETREE is not set
--+# CONFIG_SND_SOC_CS4345 is not set
--+# CONFIG_SND_SOC_PCM5100 is not set
--+
--+#
--+# SOUND
--+#
-- # CONFIG_SND_BCM63xx_I2S_WHISTLER is not set
-- # CONFIG_SND_BCM63xx_I2S_MERRITT is not set
-- # CONFIG_SND_BCM63xx_PCM_SQUAMISH is not set
--@@ -3493,14 +3500,7 @@
-- # CONFIG_SND_BCM63148_SOC_I2S is not set
-- 
-- #
---# SOUND
---#
---# CONFIG_SND_SOC_MAPLELEAF is not set
---# CONFIG_SND_SOC_MAPLETREE is not set
---# CONFIG_SND_SOC_CS4345 is not set
---# CONFIG_SND_SOC_PCM5100 is not set
---
---#
---# RESET_BUTTON
--+# BCA_USB
-- #
--+# CONFIG_BCM_BCA_USB is not set
-- CONFIG_BCM_IN_KERNEL=y
-+@@ -1369,7 +1369,7 @@
-+ # CONFIG_BLK_DEV_PCIESSD_MTIP32XX is not set
-+ # CONFIG_BLK_DEV_DAC960 is not set
-+ # CONFIG_BLK_DEV_UMEM is not set
-+-CONFIG_BLK_DEV_LOOP=m
-++CONFIG_BLK_DEV_LOOP=y
-+ CONFIG_BLK_DEV_LOOP_MIN_COUNT=4
-+ # CONFIG_BLK_DEV_CRYPTOLOOP is not set
-+ # CONFIG_BLK_DEV_DRBD is not set
+@@ -2402,7 +2402,9 @@
+ CONFIG_EXT2_FS_XATTR=y
+ CONFIG_EXT2_FS_POSIX_ACL=y
+ CONFIG_EXT2_FS_SECURITY=y
+-# CONFIG_EXT3_FS is not set
++CONFIG_EXT3_FS=m
++# CONFIG_EXT3_FS_POSIX_ACL is not set
++# CONFIG_EXT3_FS_SECURITY is not set
+ CONFIG_EXT4_FS=y
+ CONFIG_EXT4_FS_POSIX_ACL=y
+ CONFIG_EXT4_FS_SECURITY=y
