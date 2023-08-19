@@ -41,15 +41,11 @@ echo -e ${GREEN}"fix ssl 1.0.x aktiv for 64xx and 6590."${NC}
 cp -ar $PKGS_FIX_PATH/openssl.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < openssl.patch
 rm -rf "$FREETZ_SSL_HOME_PATH/openssl.patch" 2>/dev/null
-#echo -e ${GREEN}"fix 7530AX FW 7.56"${NC}
+echo -e ${GREEN}"fix 7530AX FW 7.56"${NC}
 cp -ar $I_MATIK_PATH/support/freetz/scripts/fix/fix_for7530ax.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < fix_for7530ax.patch 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/fix_for7530ax.patch" 2>/dev/null
-#echo -e ${GREEN}"fix loop FW 7.56"${NC}
+echo -e ${GREEN}"fix loop FW 7.56"${NC}
 cp -ar $I_MATIK_PATH/support/freetz/scripts/fix/loop_fix.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < loop_fix.patch 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/loop_fix.patch" 2>/dev/null
-echo -e ${GREEN}"fix reboot loop."${NC}
-cp -ar $KERNEL_FIX_PATH/7490_07.56.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-patch -p0 -b < 7490_07.56.patch
-rm -rf "$FREETZ_SSL_HOME_PATH/7490_07.56.patch" 2>/dev/null
