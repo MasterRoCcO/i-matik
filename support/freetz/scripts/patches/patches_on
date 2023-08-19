@@ -50,6 +50,6 @@ cp -ar $I_MATIK_PATH/support/freetz/scripts/fix/loop_fix.patch "$FREETZ_SSL_HOME
 patch -p0 -b < loop_fix.patch 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/loop_fix.patch" 2>/dev/null
 echo -e ${GREEN}"fix reboot loop."${NC}
-cp -ar $KERNEL_FIX_PATH/7490_07.56.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $KERNEL_FIX_PATH_LOOP/7490_07.56.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < 7490_07.56.patch
 rm -rf "$FREETZ_SSL_HOME_PATH/7490_07.56.patch" 2>/dev/null
