@@ -19,8 +19,8 @@
  	help
  		AVM used the "chaos theory" packing method and so these sources would waste to much time to integrate.
 
---- make/kernel/configs/avm/config-brcma9-7539_07.56	2023-08-16 19:16:54.392533566 +0200
-+++ make/kernel/configs/avm/config-brcma9-7539_07.56	2023-08-19 15:12:35.652436000 +0200
+--- make/kernel/configs/freetz/config-brcma9-7539_07.56	2023-08-16 19:16:54.392533566 +0200
++++ make/kernel/configs/freetz/config-brcma9-7539_07.56	2023-08-19 15:12:35.652436000 +0200
 @@ -4,7 +4,7 @@
  #
  
