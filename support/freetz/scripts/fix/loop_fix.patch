@@ -63,6 +63,96 @@
  @@ -2061,6 +2060,8 @@
   CONFIG_AVM_FW_INFO_DT=y
   CONFIG_AVM_MODULE_MEM=y
+--- make/kernel/configs/diffs/config-brcma9-7539_07.56.diff	2023-08-16 19:16:54.404533313 +0200
++++ make/kernel/configs/diffs/config-brcma9-7539_07.56.diff	2023-08-19 16:55:40.564359754 +0200
+@@ -9,7 +9,27 @@
+  #
+  CONFIG_CC_IS_GCC=y
+  CONFIG_GCC_VERSION=90300
+-@@ -3363,6 +3363,11 @@
++@@ -1369,7 +1369,7 @@
++ # CONFIG_BLK_DEV_PCIESSD_MTIP32XX is not set
++ # CONFIG_BLK_DEV_DAC960 is not set
++ # CONFIG_BLK_DEV_UMEM is not set
++-CONFIG_BLK_DEV_LOOP=y
+++CONFIG_BLK_DEV_LOOP=m
++ CONFIG_BLK_DEV_LOOP_MIN_COUNT=4
++ # CONFIG_BLK_DEV_CRYPTOLOOP is not set
++ # CONFIG_BLK_DEV_DRBD is not set
++@@ -2402,7 +2402,9 @@
++ CONFIG_EXT2_FS_XATTR=y
++ CONFIG_EXT2_FS_POSIX_ACL=y
++ CONFIG_EXT2_FS_SECURITY=y
++-# CONFIG_EXT3_FS is not set
+++CONFIG_EXT3_FS=m
+++# CONFIG_EXT3_FS_POSIX_ACL is not set
+++# CONFIG_EXT3_FS_SECURITY is not set
++ CONFIG_EXT4_FS=y
++ CONFIG_EXT4_FS_POSIX_ACL=y
++ CONFIG_EXT4_FS_SECURITY=y
++@@ -3363,6 +3365,11 @@
+  #
+  
+  #
+@@ -21,7 +41,7 @@
+  # SPIDEV_VOICE
+  #
+  # CONFIG_BCM_SPIDEV_VOICE is not set
+-@@ -3374,9 +3379,9 @@
++@@ -3374,9 +3381,9 @@
+  CONFIG_BCM_BOOTSTATE_IMPL=1
+  
+  #
+@@ -33,7 +53,7 @@
+  
+  #
+  # MCAST
+-@@ -3387,45 +3392,38 @@
++@@ -3387,45 +3394,38 @@
+  CONFIG_BR_MLD_SNOOP=y
+  
+  #
+@@ -95,7 +115,7 @@
+  
+  #
+  # BCA_PINCTRL
+-@@ -3434,13 +3432,20 @@
++@@ -3434,13 +3434,20 @@
+  CONFIG_BCM_BCA_PINCTRL_IMPL=1
+  
+  #
+@@ -107,19 +127,19 @@
+  #
+ -# SOTP
+ +# BCA_LED
+-+#
++ #
+ +CONFIG_BCM_BCA_LED=y
+ +CONFIG_BCM_BCA_LED_IMPL=1
+ +
+ +#
+ +# BCA_VREG_SYNC
+- #
+++#
+ +CONFIG_BCM_BCA_VREG_SYNC=y
+ +CONFIG_BCM_BCA_VREG_SYNC_IMPL=1
+  
+  #
+  # BCA_GPIO
+-@@ -3449,40 +3454,42 @@
++@@ -3449,40 +3456,42 @@
+  CONFIG_BCM_BCA_GPIO_IMPL=1
+  
+  #
+@@ -178,7 +198,7 @@
+  # CONFIG_SND_BCM63xx_I2S_WHISTLER is not set
+  # CONFIG_SND_BCM63xx_I2S_MERRITT is not set
+  # CONFIG_SND_BCM63xx_PCM_SQUAMISH is not set
+-@@ -3493,14 +3500,7 @@
++@@ -3493,14 +3502,7 @@
+  # CONFIG_SND_BCM63148_SOC_I2S is not set
+  
+  #
 --- make/kernel/configs/freetz/config-maple-1209_07.56	2023-08-16 19:16:54.412533144 +0200
 +++ make/kernel/configs/freetz/config-maple-1209_07.56	2023-08-19 17:04:37.122402332 +0200
 @@ -1438,7 +1438,7 @@
@@ -85,3 +175,25 @@
  CONFIG_BLK_DEV_LOOP_MIN_COUNT=8
  # CONFIG_BLK_DEV_CRYPTOLOOP is not set
  # CONFIG_BLK_DEV_DRBD is not set
+--- make/kernel/configs/freetz/config-brcma9-7539_07.56	2023-08-16 19:16:54.412533144 +0200
++++ make/kernel/configs/freetz/config-brcma9-7539_07.56	2023-08-19 16:50:52.803541000 +0200
+@@ -1369,7 +1369,7 @@
+ # CONFIG_BLK_DEV_PCIESSD_MTIP32XX is not set
+ # CONFIG_BLK_DEV_DAC960 is not set
+ # CONFIG_BLK_DEV_UMEM is not set
+-CONFIG_BLK_DEV_LOOP=y
++CONFIG_BLK_DEV_LOOP=m
+ CONFIG_BLK_DEV_LOOP_MIN_COUNT=4
+ # CONFIG_BLK_DEV_CRYPTOLOOP is not set
+ # CONFIG_BLK_DEV_DRBD is not set
+@@ -2402,7 +2402,9 @@
+ CONFIG_EXT2_FS_XATTR=y
+ CONFIG_EXT2_FS_POSIX_ACL=y
+ CONFIG_EXT2_FS_SECURITY=y
+-# CONFIG_EXT3_FS is not set
++CONFIG_EXT3_FS=m
++# CONFIG_EXT3_FS_POSIX_ACL is not set
++# CONFIG_EXT3_FS_SECURITY is not set
+ CONFIG_EXT4_FS=y
+ CONFIG_EXT4_FS_POSIX_ACL=y
+ CONFIG_EXT4_FS_SECURITY=y

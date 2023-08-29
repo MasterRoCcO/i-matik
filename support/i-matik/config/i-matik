@@ -52,7 +52,7 @@ PKGS_ON="$PKGS_PATH_ON_OFF/pkgs_on"
 PKGS_FIX_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/fix/make/pkgs"
 
 # kernel
-KERNEL_FIX_PATH_LOOP="$I_MATIK_PATH/support/freetz/scripts/patches/fix/make/kernel"
+KERNEL_FIX_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/fix/make/kernel"
 
 #fix check
 FIX_CHECK_ON="$I_MATIK_PATH/support/freetz/scripts/fix_check/fix_check_on"
