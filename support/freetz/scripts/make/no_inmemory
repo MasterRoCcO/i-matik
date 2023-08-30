@@ -86,7 +86,7 @@ for bs in "${BOX_SSL[@]}"; do
 	BOX_NAME="$(echo $bs | awk -F'.' '{print $1}')"	# extract box type
 	BOX_SSL="$(echo $bs | awk -F'.' '{print $2}')"	# extract ssl number
 	[[ $BOX_SSL == ?(-)+([0-9]) ]] && SSL_VERSION="${BOX_SSL:0:1}.${BOX_SSL:1:1}.x" || SSL_VERSION="${BOX_SSL,,}" # translate ssl number to version string
-	
+
 	# Check box is supported
 	MATCH_BOX="$(echo $SUPPORTED_BOX_TYPE_LIST | grep -wo $BOX_NAME)"
 	MATCH_SSL="$(echo $SUPPORTED_SSL_NUMBER_LIST | grep -wo $BOX_SSL)"
@@ -120,7 +120,7 @@ for bs in "${BOX_SSL[@]}"; do
 		printf "${YELLOW}'$FREETZ_SSL_HOME_PATH' already exists but is not a directory${NC}" 1>&2
 		exit 1
 	fi
-	
+
 	source $CRASH_CLEANER 2>/dev/null
 
 	# Create directory for saving built images
@@ -133,7 +133,7 @@ for bs in "${BOX_SSL[@]}"; do
 	else
 		source $PKGS_PATH_ON_OFF/skins_on_static 2>/dev/null
 	fi
-	
+
 	# oscam to static.pkg
 	source $OSCAM_ADDON_ON 2>/dev/null
 
@@ -217,9 +217,9 @@ for bs in "${BOX_SSL[@]}"; do
 		sed -i "s+FREETZ_PACKAGE_STRACE=y+# FREETZ_PACKAGE_STRACE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		grep -v FREETZ_STYLE_GREY= $FREETZ_SSL_HOME_PATH/.config > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 
 		grep -v FREETZ_STYLE= $FREETZ_SSL_HOME_PATH/.config > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 
-		
+
 		source $DOWNGRADE_ON 2>/dev/null
-	
+
 		sed -i "s+FREETZ_JLEVEL=20+FREETZ_JLEVEL=$MAX_CPUS+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+FREETZ_DOWNLOAD_TOOLCHAIN=y+# FREETZ_DOWNLOAD_TOOLCHAIN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_TOOLCHAIN_CCACHE=y+# FREETZ_TOOLCHAIN_CCACHE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
@@ -234,7 +234,7 @@ for bs in "${BOX_SSL[@]}"; do
 		sed -i "s+$POWERLINE_ALT+$POWERLINE_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+$REPEATER_ALT+$REPEATER_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+$WUNSCHIMAGE_ALT+$WUNSCHIMAGE_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		
+
 	if [ -z $PARAM_TOOLCHAIN_ACTIVATE ]; then
 		sleep 0
 	else
@@ -255,7 +255,7 @@ for bs in "${BOX_SSL[@]}"; do
 		make clean
 	fi
 
-		# oscam			
+		# oscam
 		source $OSCAM_ADDON 2>/dev/null
 		
 	source $PKGS_PATH_ON_OFF/skins_on 2>/dev/null
@@ -270,18 +270,18 @@ for bs in "${BOX_SSL[@]}"; do
 		sed -i "s+# FREETZ_TYPE_LANG_EN is not set+FREETZ_TYPE_LANG_EN=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+# FREETZ_LANG_EN is not set+FREETZ_LANG_EN=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 	fi
-			
+
 	if [ -z $PARAM_CONFIG ]; then
 			make $MENUC #run make menuconfig
 		else
 			make $NOMENUC #run make olddefconfig
 	fi
-	
+
 		source $KERNEL_ON 2>/dev/null
 		source $NO_KERNEL 2>/dev/null
 		source $NO_REPLACE 2>/dev/null
 		source $NO_WATCHDOG 2>/dev/null
-	
+
 	if [ -z $PARAM_KERNEL_CLEAN ]; then
 		sleep 0
 	else
@@ -330,7 +330,7 @@ for bs in "${BOX_SSL[@]}"; do
 		else
 			make toolchain
 		fi
-		
+
 		# Get custom image file name part from .config
 		FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
 		#FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
@@ -342,12 +342,12 @@ for bs in "${BOX_SSL[@]}"; do
 		FB_SSL="ssl_${BOX_SSL:0:1}_${BOX_SSL:1:1}_x"
 		FB_ARCH="$(grep '^FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=' .config | awk -F'"' '{print $2}' | xargs)"
 		FB_TYPE="${BOX_NAME}_${FB_OS}_${FB_SSL}_${FB_ARCH}"
-		
+
 		# Remove older image files
 		DELETE_IMAGE_NAME="*$(echo ${FB_SSL}_${FUD_COMMENT}).image"	# construct image filname filter
 		find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}" -type f -mmin +$DELETE_IMAGES -delete 2>/dev/null
 		#find "$FREETZ_IMAGE_PATH/$END_IMAGE_INMEMORY_PATH/$BOX_NAME/" -name "${DELETE_IMAGE_NAME}.inmemory" -type f -mmin +$DELETE_IMAGES -delete 2>/dev/null 
-		
+
 		# Construct image filename generated in freetz-ng (original)
 		#ssl_1_1_x_masterbox_7490_07.29.all_$FREETZNGVERSION-$FREETZNGVERSION1.image
 		IMAGE_ORIGINAL_FILENAME="${FUD_COMMENT}_${BOX_NAME}_*_${FREETZ_NAME}-${FREETZ_VERSION}.image"
@@ -386,8 +386,8 @@ for bs in "${BOX_SSL[@]}"; do
 			sed -i "s+int_$REPEATER_NEU+$REPEATER_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 			sed -i "s+int_$GATEWAY_NEU+$GATEWAY_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 			sed -i "s+int_$WUNSCHIMAGE_NEU+$WUNSCHIMAGE_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-	fi	
-		
+	fi
+
 	if [ -z $PARAM_INTERNATIONAL ]; then
 		sleep 0
 	else
@@ -396,7 +396,7 @@ for bs in "${BOX_SSL[@]}"; do
 		sed -i "s+FREETZ_TYPE_LANG_EN=y+# FREETZ_TYPE_LANG_EN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_LANG_EN=y+# FREETZ_LANG_EN is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 	fi
-	
+
 		source $PKGS_OFF 2>/dev/null
 		source $OSCAM_OFF 2>/dev/null
 		source $REPLACE_KERNEL 2>/dev/null
