@@ -43,3 +43,4 @@ if [ -z $PARAM_OPENVPN ]; then
 else
 	source $PKGS_PATH_ON_OFF/openvpn_on
 fi
+sed -i "s+FREETZ_TYPE_FIRMWARE_DETECT_LATEST=y+# FREETZ_TYPE_FIRMWARE_DETECT_LATEST is not set+g" $FREETZ_SSL_HOME_PATH/.config
