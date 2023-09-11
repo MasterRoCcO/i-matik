@@ -146,6 +146,7 @@ for bs in "${BOX_SSL[@]}"; do
 		mv -f $CONFIG_FRITZBOX_PATH_SSL_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox $CONFIG_FRITZBOX_PATH_SSL_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox_no 2>/dev/null	
 		mv -f $CONFIG_FRITZBOX_PATH_SSL_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox $CONFIG_FRITZBOX_PATH_SSL_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox_no 2>/dev/null
 		mv -f $CONFIG_FRITZBOX_PATH_SSL_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox $CONFIG_FRITZBOX_PATH_SSL_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox_no 2>/dev/null
+		mv -f $CONFIG_FRITZBOX_PATH_SSL_31/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_31}_clientbox $CONFIG_FRITZBOX_PATH_SSL_31/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_31}_clientbox_no 2>/dev/null
 	fi
 
 	if [ -z $PARAM_SKIP_MASTER ]; then
@@ -154,6 +155,7 @@ for bs in "${BOX_SSL[@]}"; do
 		mv -f $CONFIG_FRITZBOX_PATH_SSL_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox $CONFIG_FRITZBOX_PATH_SSL_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox_no 2>/dev/null	
 		mv -f $CONFIG_FRITZBOX_PATH_SSL_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox $CONFIG_FRITZBOX_PATH_SSL_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox_no 2>/dev/null
 		mv -f $CONFIG_FRITZBOX_PATH_SSL_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox $CONFIG_FRITZBOX_PATH_SSL_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox_no 2>/dev/null
+		mv -f $CONFIG_FRITZBOX_PATH_SSL_31/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_31}_masterbox $CONFIG_FRITZBOX_PATH_SSL_31/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_31}_masterbox_no 2>/dev/null
 	fi
 
 	# Searching box specific config files and save them into a string array
@@ -395,6 +397,7 @@ for bs in "${BOX_SSL[@]}"; do
 		mv -f $CONFIG_FRITZBOX_PATH_SSL_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox_no $CONFIG_FRITZBOX_PATH_SSL_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_clientbox 2>/dev/null
 		mv -f $CONFIG_FRITZBOX_PATH_SSL_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox_no $CONFIG_FRITZBOX_PATH_SSL_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_clientbox 2>/dev/null
 		mv -f $CONFIG_FRITZBOX_PATH_SSL_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox_no $CONFIG_FRITZBOX_PATH_SSL_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_clientbox 2>/dev/null
+		mv -f $CONFIG_FRITZBOX_PATH_SSL_31/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_31}_clientbox_no $CONFIG_FRITZBOX_PATH_SSL_31/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_31}_clientbox 2>/dev/null
 	fi
 
 	if [ -z $PARAM_SKIP_MASTER ]; then
@@ -403,6 +406,7 @@ for bs in "${BOX_SSL[@]}"; do
 		mv -f $CONFIG_FRITZBOX_PATH_SSL_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox_no $CONFIG_FRITZBOX_PATH_SSL_10/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_10}_masterbox 2>/dev/null
 		mv -f $CONFIG_FRITZBOX_PATH_SSL_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox_no $CONFIG_FRITZBOX_PATH_SSL_11/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_11}_masterbox 2>/dev/null
 		mv -f $CONFIG_FRITZBOX_PATH_SSL_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox_no $CONFIG_FRITZBOX_PATH_SSL_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox 2>/dev/null
+		mv -f $CONFIG_FRITZBOX_PATH_SSL_31/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_31}_masterbox_no $CONFIG_FRITZBOX_PATH_SSL_31/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_31}_masterbox 2>/dev/null
 	fi
 		source $PATCH_OFF 2>/dev/null
 		source $PRIVAT_PATCH_OFF 2>/dev/null

@@ -21,6 +21,7 @@ SSL11_PUSH_REPEATER="$I_MATIK_PATH/support/freetz/scripts/push/ssl11_push_repeat
 CONFIG_FRITZBOX_PATH_SSL_10="$CONFIG_FRITZBOX_PATH/ssl_10"
 CONFIG_FRITZBOX_PATH_SSL_11="$CONFIG_FRITZBOX_PATH/ssl_11"
 CONFIG_FRITZBOX_PATH_SSL_30="$CONFIG_FRITZBOX_PATH/ssl_30"
+CONFIG_FRITZBOX_PATH_SSL_31="$CONFIG_FRITZBOX_PATH/ssl_31"
 CONFIG_FRITZBOX_PATH_SSL_multi="$CONFIG_FRITZBOX_PATH/ssl_multi"
 INSTAL_CHECK="$I_MATIK_PATH/support/i-matik/instal_check/instal_check"
 VERSION="$I_MATIK_PATH/support/i-matik/config/version"
@@ -33,6 +34,7 @@ CONFIG_PRIVAT_PATH="$I_MATIK_PATH/support/i-matik/config/privat" 2>/dev/null
 FREETZ_SSL_VERSION_10="ssl_1_0_x"
 FREETZ_SSL_VERSION_11="ssl_1_1_x"
 FREETZ_SSL_VERSION_30="ssl_3_0_x"
+FREETZ_SSL_VERSION_31="ssl_3_1_x"
 FREETZ_SSL_VERSION_MULTI="ssl_multi"
 
 #define my files home path for freetz-ng
