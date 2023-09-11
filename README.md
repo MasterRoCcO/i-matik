@@ -11,7 +11,7 @@ Options
   SSL_NUMBER			10 - OpenSSL 1.0.x
   				11 - OpenSSL 1.1.x
   				30 - OpenSSL 3.0.x
-  				multi - OpenSSL multiple Versions
+  				multi - OpenSSL multiple Versions (inter Version)
   -c,--config			show not freetz-ng configuration dialog
   -s,--skip-image2memory	do not create inmemory image
   -int,--international		International Version
