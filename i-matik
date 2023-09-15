@@ -9,7 +9,7 @@ I_MATIK_PATH=$(cd `dirname $0` && pwd)
 git pull
 source $I_MATIK_PATH/support/i-matik/config/i-matik
 source $INSTAL_CHECK
-VERSIONS_NR="0.78.0(i05.9)"
+VERSIONS_NR="0.78.1(i05.9)"
 ln -s $CREATE_BOXES $I_MATIK_PATH/my-boxes_please_edit_me 2>/dev/null
 
 #arm boxen
@@ -208,6 +208,17 @@ elif [[ $1 == '1200AX.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '1200AX' ]] && [[ $2 == '-push' ]]; then
 source $SSL11_PUSH
+
+elif [[ $1 == '1240AX.11' ]]; then
+source $NO_INMEMORY_NO_OSCAM
+elif [[ $1 == '1240AX.30' ]]; then
+source $NO_INMEMORY_NO_OSCAM
+elif [[ $1 == '1240AX.31' ]]; then
+source $NO_INMEMORY_NO_OSCAM
+elif [[ $1 == '1240AX.multi' ]]; then
+printf ${RED}"No supported\n"
+elif [[ $1 == '1240AX' ]] && [[ $2 == '-push' ]]; then
+source $SSL11_PUSH_POWERLINE
 
 elif [[ $1 == '1260E.11' ]]; then
 source $NO_INMEMORY_NO_OSCAM
