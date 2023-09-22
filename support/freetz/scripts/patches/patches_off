@@ -17,7 +17,4 @@ source $PKGS_FIX_PATH/openssl
 source $I_MATIK_PATH/support/freetz/scripts/fix/fix_for7530ax 2>/dev/null
 source $I_MATIK_PATH/support/freetz/scripts/fix/fix_for7530ax_friend 2>/dev/null
 source $KERNEL_FIX_PATH/loop_fix 2>/dev/null
-source $KERNEL_FIX_PATH/7490_07.56 2>/dev/null
-
-
-
+#source $KERNEL_FIX_PATH/7490_07.56 2>/dev/null
