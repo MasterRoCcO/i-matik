@@ -1,5 +1,5 @@
 #!/bin/bash
-if [[ $(lsb_release -rs) == "20.04" ]] || [[ $(lsb_release -rs) == "21.10" ]] || [[ $(lsb_release -rs) == "22.04" ]] || [[ $(lsb_release -rs) == "23.04" ]] ||  [[ $(lsb_release -rs) == "23.10" ]] || [[ $(lsb_release -rs) == "10" ]] || [[ $(lsb_release -rs) == "11" ]] || [[ $(lsb_release -rs) == "12" ]] || [[ $(lsb_release -rs) == "2023.1" ]] || [[ $(lsb_release -rs) == "2023.2" ]] || [[ $(lsb_release -rs) == "21.2" ]] || [[ $(lsb_release -rs) == "16" ]] || [[ $(lsb_release -rs) == "7" ]]; then # my os is 22.04 (ubuntu)
+if [[ $(lsb_release -rs) == "20.04" ]] || [[ $(lsb_release -rs) == "21.10" ]] || [[ $(lsb_release -rs) == "22.04" ]] || [[ $(lsb_release -rs) == "23.04" ]] ||  [[ $(lsb_release -rs) == "23.10" ]] || [[ $(lsb_release -rs) == "10" ]] || [[ $(lsb_release -rs) == "11" ]] || [[ $(lsb_release -rs) == "12" ]] || [[ $(lsb_release -rs) == "2023.1" ]] || [[ $(lsb_release -rs) == "2023.2" ]] || [[ $(lsb_release -rs) == "21.2" ]] || [[ $(lsb_release -rs) == "16" ]] || [[ $(lsb_release -rs) == "7.1" ]]; then # my os is 22.04 (ubuntu)
 
 PACKAGES="  autopoint bc binutils bison bsdmainutils bzip2 ccache cmake cpio curl ecj flex g++ gawk gcc"
 PACKAGES+=" gcc-multilib gettext git graphicsmagick imagemagick inkscape intltool java-wrappers kmod"
@@ -48,6 +48,6 @@ fi
 # 2023.1 = Rhino
 # 2023.2 = Kali
 # 21.2   = Mint
-# 7      = elementary
+# 7.1    = elementary
 
 # all OS tested
