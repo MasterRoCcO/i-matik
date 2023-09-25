@@ -29,8 +29,8 @@ sed -i "s+openssl_multi_masterbox+with_readerdriver_openssl_multi_masterbox+g" $
 sed -i "s+openssl_multi_clientbox+with_readerdriver_openssl_multi_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 
 PUMA7_IMAGE="puma7"
-PUMA7_IMAGE_COMMENT="$(grep '^FREETZ_SYSTEM_TYPE=' .config | awk -F'"' '{print $2}' | xargs)"
-if [ $PUMA7_IMAGE_COMMENT = $PUMA7_IMAGE ] 2>/dev/null
+PUMA7_IMAGE_COMMENT_ON="$(grep '^FREETZ_SYSTEM_TYPE=' .config | awk -F'"' '{print $2}' | xargs)"
+if [ $PUMA7_IMAGE_COMMENT_ON = $PUMA7_IMAGE ] 2>/dev/null
 then
 	mv $I_MATIK_PATH/support/s3_releases/scripts/oscam $I_MATIK_PATH/support/s3_releases/scripts/oscam_mit
 	mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_ohne $I_MATIK_PATH/support/s3_releases/scripts/oscam

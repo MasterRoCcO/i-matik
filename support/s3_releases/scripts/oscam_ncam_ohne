@@ -77,17 +77,8 @@ mv $OSCAM_PATH/oscam-svn $OSCAM_PATH/oscam-ncam
 mv $OSCAM_PATH/ohne-oscam-ncam $OSCAM_PATH/oscam-svn
 
 #	rm -rf $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
-		
-finish=$(date +"%s")	# build finished time
-timediff=$(($finish-$beginbs))	# build time
-[[ $COUNT > 1 ]] && printf "\n${GREEN}${BOX_NAME} SSL ${SSL_VERSION}${NC} build finished in $(($timediff / 60)) minutes and $(($timediff % 60)) seconds. ${YELLOW}<- end time $(date +"%Y-%m-%d %H:%M:%S")${NC}\n"
-
-finish_oscam=$(date +"%s")		# script finished time
-timediff=$(($finish_oscam-$begin_oscam)) # script time
-avg=$(($timediff / $COUNT))		# average time for box
-
-		if [ $PUMA7_IMAGE_COMMENT = $PUMA7_IMAGE ] 2>/dev/null
-		then
+if [ $PUMA7_IMAGE_COMMENT_OFF = $PUMA7_IMAGE ] 2>/dev/null
+	then
 		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam $I_MATIK_PATH/support/s3_releases/scripts/oscam_ohne
 		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam
 	
@@ -138,5 +129,12 @@ avg=$(($timediff / $COUNT))		# average time for box
 	
 		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_ohne
 		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile
-		fi
+fi		
+finish=$(date +"%s")	# build finished time
+timediff=$(($finish-$beginbs))	# build time
+[[ $COUNT > 1 ]] && printf "\n${GREEN}${BOX_NAME} SSL ${SSL_VERSION}${NC} build finished in $(($timediff / 60)) minutes and $(($timediff % 60)) seconds. ${YELLOW}<- end time $(date +"%Y-%m-%d %H:%M:%S")${NC}\n"
+
+finish_oscam=$(date +"%s")		# script finished time
+timediff=$(($finish_oscam-$begin_oscam)) # script time
+avg=$(($timediff / $COUNT))		# average time for box
 printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} oscam(es). -> $(($avg / 60))m $(($avg % 60))s per oscam\n"
