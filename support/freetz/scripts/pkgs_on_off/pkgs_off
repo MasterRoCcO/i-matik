@@ -42,3 +42,9 @@ if [ -z $PARAM_OPENVPN ]; then
 else
 	source $PKGS_PATH_ON_OFF/openvpn_off
 fi
+
+if [ -z $PARAM_TELNET ]; then
+	sleep 0
+else
+	source $PKGS_PATH_ON_OFF/telnet_off
+fi

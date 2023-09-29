@@ -1,0 +1,2 @@
+#!/bin/bash
+sed -i "s+FREETZ_ADD_TELNETD=y+# FREETZ_ADD_TELNETD is not set+g" $FREETZ_SSL_HOME_PATH/.config
