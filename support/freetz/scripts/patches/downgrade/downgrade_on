@@ -7,3 +7,27 @@ if [ $DOWNGRADE_FOR = $LIBUSB1_7530AX ]
 		patch -p0 -b < libusb1.patch
 		rm -rf "$FREETZ_SSL_HOME_PATH/libusb1.patch" 2>/dev/null
 fi
+
+if [ $DOWNGRADE_FOR = $LIBUSB1_6591 ]
+	then
+		echo -e ${GREEN}"Freetz files downgrade for libusb1."${NC}
+		cp -ar $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/make/libs/libusb1.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+		patch -p0 -b < libusb1.patch
+		rm -rf "$FREETZ_SSL_HOME_PATH/libusb1.patch" 2>/dev/null
+fi
+
+if [ $DOWNGRADE_FOR = $LIBUSB1_6660 ]
+	then
+		echo -e ${GREEN}"Freetz files downgrade for libusb1."${NC}
+		cp -ar $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/make/libs/libusb1.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+		patch -p0 -b < libusb1.patch
+		rm -rf "$FREETZ_SSL_HOME_PATH/libusb1.patch" 2>/dev/null
+fi
+
+if [ $DOWNGRADE_FOR = $LIBUSB1_6690 ]
+	then
+		echo -e ${GREEN}"Freetz files downgrade for libusb1."${NC}
+		cp -ar $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/make/libs/libusb1.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+		patch -p0 -b < libusb1.patch
+		rm -rf "$FREETZ_SSL_HOME_PATH/libusb1.patch" 2>/dev/null
+fi
