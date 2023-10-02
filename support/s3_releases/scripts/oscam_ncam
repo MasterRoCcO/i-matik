@@ -87,7 +87,6 @@ finish_oscam=$(date +"%s")		# script finished time
 timediff=$(($finish_oscam-$begin_oscam)) # script time
 avg=$(($timediff / $COUNT))		# average time for box
 printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} oscam(es). -> $(($avg / 60))m $(($avg % 60))s per oscam\n"
-exit
 fi
 
 if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/ncam-${OSCAM_NCAM_VERSION_NEU:0:10}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx ]]; then
