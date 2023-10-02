@@ -54,6 +54,41 @@ fi
 		cd $OSCAM_PATH/oscam-svn && OSCAMVERSION_ALT="$(./config.sh -r)"
 		cd $OSCAM_PATH/oscam-svn && svn up && OSCAMVERSION_NEU="$(./config.sh -r)"
 
+if [ $PUMA7_IMAGE_COMMENT = $PUMA7_IMAGE ] 2>/dev/null
+	then
+if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8} ]]; then
+	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-svn${OSCAMVERSION_ALT:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_ALT:6:8}" -type f -mmin +0 -delete
+
+	rm -rf $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
+	ln -s $FREETZ_SSL_HOME_PATH/toolchain/target $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
+
+	$OSCAM_PATH/./s3 fritz_${FB_ARCH}_${FB_OS} -p=$OSCAM_READER_EMU.profile
+	
+	upx -d $OSCAM_PATH/support/binaries/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz_${FB_ARCH}_${FB_OS}-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8}-upx -o $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8} 2>/dev/null
+	rm -f $OSCAM_PATH/support/binaries/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz_${FB_ARCH}_${FB_OS}-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8}-upx
+		
+elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8} ]]; then
+	printf "${GREEN}$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8} already exists${NC}"
+fi
+	cd $OSCAM_PATH/oscam-svn
+	patch -p0 -R < oscam-emu.patch
+
+	rm -rf "$OSCAM_PATH/support/toolchains.cfg"
+	mv $OSCAM_PATH/support/toolchains.cfg.orig $OSCAM_PATH/support/toolchains.cfg
+
+#	rm -rf $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
+		
+finish=$(date +"%s")	# build finished time
+timediff=$(($finish-$beginbs))	# build time
+[[ $COUNT > 1 ]] && printf "\n${GREEN}${BOX_NAME} SSL ${SSL_VERSION}${NC} build finished in $(($timediff / 60)) minutes and $(($timediff % 60)) seconds. ${YELLOW}<- end time $(date +"%Y-%m-%d %H:%M:%S")${NC}\n"
+
+finish_oscam=$(date +"%s")		# script finished time
+timediff=$(($finish_oscam-$begin_oscam)) # script time
+avg=$(($timediff / $COUNT))		# average time for box
+printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} oscam(es). -> $(($avg / 60))m $(($avg % 60))s per oscam\n"
+exit
+fi
+
 if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8}.upx ]]; then
 	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-svn${OSCAMVERSION_ALT:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_ALT:6:8}.upx" -type f -mmin +0 -delete
 
@@ -82,58 +117,4 @@ timediff=$(($finish-$beginbs))	# build time
 finish_oscam=$(date +"%s")		# script finished time
 timediff=$(($finish_oscam-$begin_oscam)) # script time
 avg=$(($timediff / $COUNT))		# average time for box
-
-		if [ $PUMA7_IMAGE_COMMENT = $PUMA7_IMAGE ] 2>/dev/null
-		then
-		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam $I_MATIK_PATH/support/s3_releases/scripts/oscam_ohne
-		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam
-	
-		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu_ohne
-		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_emu
-	
-		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam_ohne
-		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam
-	
-		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod_ohne
-		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_smod
-	
-		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc_ohne
-		mv $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc_mit $I_MATIK_PATH/support/s3_releases/scripts/oscam_tc	
-		
-		mv $OSCAM_PATH/profiles/webif-libusb-pcsc.profile $OSCAM_PATH/profiles/webif-libusb-pcsc.profile_ohne
-		mv $OSCAM_PATH/profiles/webif-libusb-pcsc.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc.profile
-	
-		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile_ohne
-		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile_mit $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc.profile
-	
-		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile_ohne
-		mv $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile_mit $OSCAM_PATH/profiles/webif-dvbapi-libusb-pcsc-emu.profile
-	
-		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile_ohne
-		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc-emu.profile
-	
-		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile_ohne
-		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6.profile
-	
-		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile_ohne
-		mv $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile_mit $OSCAM_PATH/profiles/webif-libusb-pcsc-ipv6-emu.profile
-		
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc.profile
-	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc.profile
-	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-dvbapi-libusb-pcsc-emu.profile
-	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-emu.profile
-	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6.profile
-	
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_ohne
-		mv $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile_mit $MY_FILES_HOME_PATH_OSCAM/support/profiles/webif-libusb-pcsc-ipv6-emu.profile
-		fi
 printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} oscam(es). -> $(($avg / 60))m $(($avg % 60))s per oscam\n"

@@ -267,5 +267,3 @@ FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print 
 FUD_COMMENT_BOX="$(echo $FUD_COMMENT)"
 FUD_COMMENT_SSL="${FUD_COMMENT/"_${FUD_COMMENT_BOX}"/""}"
 fi
-PUMA7_IMAGE="puma7"
-PUMA7_IMAGE_COMMENT_OFF="$(grep '^FREETZ_SYSTEM_TYPE=' .config | awk -F'"' '{print $2}' | xargs)"
