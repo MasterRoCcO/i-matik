@@ -57,12 +57,12 @@ fi
 if [ $PUMA7_IMAGE_COMMENT = $PUMA7_IMAGE ] 2>/dev/null
 	then
 		if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8} ]]; then
-			find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-svn$OSCAMVERSION_ALT-fritz${FB_TYPE}-freetz-$OSCAM_READER" -type f -mmin +0 -delete
+			find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-svn${OSCAMVERSION_ALT:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_ALT:6:8}" -type f -mmin +0 -delete
 
 			rm -rf $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
 			ln -s $FREETZ_SSL_HOME_PATH/toolchain/target $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
 
-			$OSCAM_PATH/./s3 fritz_${FB_ARCH}_${FB_OS} -p=$OSCAM_READER.profile
+			$OSCAM_PATH/./s3 fritz_${FB_ARCH}_${FB_OS} -p=$OSCAM_READER_EMU.profile
 	
 			upx -d $OSCAM_PATH/support/binaries/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz_${FB_ARCH}_${FB_OS}-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8}-upx -o $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8} 2>/dev/null
 			rm -f $OSCAM_PATH/support/binaries/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz_${FB_ARCH}_${FB_OS}-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8}-upx
@@ -70,6 +70,8 @@ if [ $PUMA7_IMAGE_COMMENT = $PUMA7_IMAGE ] 2>/dev/null
 		elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8} ]]; then
 			printf "${GREEN}$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8} already exists${NC}"
 	fi
+			cd $OSCAM_PATH/oscam-svn
+			patch -p0 -R < oscam-emu.patch
 			rm -rf "$OSCAM_PATH/support/toolchains.cfg"
 			mv $OSCAM_PATH/support/toolchains.cfg.orig $OSCAM_PATH/support/toolchains.cfg
 
@@ -85,17 +87,19 @@ if [ $PUMA7_IMAGE_COMMENT = $PUMA7_IMAGE ] 2>/dev/null
 		printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} oscam(es). -> $(($avg / 60))m $(($avg % 60))s per oscam\n"
 else
 	if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8}.upx ]]; then
-			find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-svn$OSCAMVERSION_ALT-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx" -type f -mmin +0 -delete
+			find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-svn${OSCAMVERSION_ALT:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_ALT:6:8}.upx" -type f -mmin +0 -delete
 
 			rm -rf $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
 			ln -s $FREETZ_SSL_HOME_PATH/toolchain/target $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
 
-			$OSCAM_PATH/./s3 fritz_${FB_ARCH}_${FB_OS} -p=$OSCAM_READER.profile
+			$OSCAM_PATH/./s3 fritz_${FB_ARCH}_${FB_OS} -p=$OSCAM_READER_EMU.profile
 			mv $OSCAM_PATH/support/binaries/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz_${FB_ARCH}_${FB_OS}-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8}-upx $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8}.upx
 
 		elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8}.upx ]]; then
 			printf "${GREEN}$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8}.upx already exists${NC}"
 		fi
+			cd $OSCAM_PATH/oscam-svn
+			patch -p0 -R < oscam-emu.patch
 			rm -rf "$OSCAM_PATH/support/toolchains.cfg"
 			mv $OSCAM_PATH/support/toolchains.cfg.orig $OSCAM_PATH/support/toolchains.cfg
 
