@@ -28,4 +28,4 @@ sed -i "s+$WUNSCHIMAGE_NEU+with_readerdriver_$WUNSCHIMAGE_NEU+g" $FREETZ_SSL_HOM
 sed -i "s+openssl_multi_masterbox+with_readerdriver_openssl_multi_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 sed -i "s+openssl_multi_clientbox+with_readerdriver_openssl_multi_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 PUMA7_IMAGE="puma7"
-PUMA7_IMAGE_COMMENT_ON="$(grep '^FREETZ_SYSTEM_TYPE=' .config | awk -F'"' '{print $2}' | xargs)"
+PUMA7_IMAGE_COMMENT="$(grep '^FREETZ_SYSTEM_TYPE=' .config | awk -F'"' '{print $2}' | xargs)"
