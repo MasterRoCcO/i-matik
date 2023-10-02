@@ -54,67 +54,61 @@ fi
 	cd $OSCAM_PATH/oscam-svn && OSCAM_SMOD_VERSION_ALT="$(./config.sh -r)"
 	cd $OSCAM_PATH/oscam-svn && git pull && OSCAM_SMOD_VERSION_NEU="$(./config.sh -r)"
 	ICAM_VERSION="$(grep '"-ICAM-v' $OSCAM_PATH/oscam-svn/oscam.c  | awk -F'"' '{print $4}' | xargs)"
-
 if [ $PUMA7_IMAGE_COMMENT = $PUMA7_IMAGE ] 2>/dev/null
 	then
-if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION ]]; then
-	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-svn${OSCAM_SMOD_VERSION_ALT:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAM_SMOD_VERSION_ALT:6:8}" -type f -mmin +0 -delete
+		if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION ]]; then
+			find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-svn$OSCAMVERSION_ALT-fritz${FB_TYPE}-freetz-$OSCAM_READER" -type f -mmin +0 -delete
 
-	rm -rf $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
-	ln -s $FREETZ_SSL_HOME_PATH/toolchain/target $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
+			rm -rf $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
+			ln -s $FREETZ_SSL_HOME_PATH/toolchain/target $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
 
-	$OSCAM_PATH/./s3 fritz_${FB_ARCH}_${FB_OS} -p=$OSCAM_READER_EMU.profile
+			$OSCAM_PATH/./s3 fritz_${FB_ARCH}_${FB_OS} -p=$OSCAM_READER.profile
 	
-	upx -d $OSCAM_PATH/support/binaries/oscam-svn-fritz_${FB_ARCH}_${FB_OS}-${OSCAM_READER_EMU}798-upx -o $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION 2>/dev/null
-	rm -f $OSCAM_PATH/support/binaries/oscam-svn-fritz_${FB_ARCH}_${FB_OS}-${OSCAM_READER_EMU}798-upx
-	
-elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION ]]; then
-	printf "${GREEN}$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION already exists${NC}"
-fi
-	rm -rf "$OSCAM_PATH/support/toolchains.cfg"
-	mv $OSCAM_PATH/support/toolchains.cfg.orig $OSCAM_PATH/support/toolchains.cfg
+			upx -d $OSCAM_PATH/support/binaries/oscam-svn-fritz_${FB_ARCH}_${FB_OS}-${OSCAM_READER_EMU}798-upx-upx -o $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION 2>/dev/null
+			rm -f $OSCAM_PATH/support/binaries/oscam-svn-fritz_${FB_ARCH}_${FB_OS}-${OSCAM_READER_EMU}798-upx
 
-mv $OSCAM_PATH/oscam-svn $OSCAM_PATH/oscam-smod
-mv $OSCAM_PATH/ohne-oscam-smod $OSCAM_PATH/oscam-svn
+		elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION ]]; then
+			printf "${GREEN}$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION already exists${NC}"
+	fi
+			rm -rf "$OSCAM_PATH/support/toolchains.cfg"
+			mv $OSCAM_PATH/support/toolchains.cfg.orig $OSCAM_PATH/support/toolchains.cfg
 
-#	rm -rf $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
+#			rm -rf $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
 		
-finish=$(date +"%s")	# build finished time
-timediff=$(($finish-$beginbs))	# build time
-[[ $COUNT > 1 ]] && printf "\n${GREEN}${BOX_NAME} SSL ${SSL_VERSION}${NC} build finished in $(($timediff / 60)) minutes and $(($timediff % 60)) seconds. ${YELLOW}<- end time $(date +"%Y-%m-%d %H:%M:%S")${NC}\n"
+		finish=$(date +"%s")	# build finished time
+		timediff=$(($finish-$beginbs))	# build time
+		[[ $COUNT > 1 ]] && printf "\n${GREEN}${BOX_NAME} SSL ${SSL_VERSION}${NC} build finished in $(($timediff / 60)) minutes and $(($timediff % 60)) seconds. ${YELLOW}<- end time $(date +"%Y-%m-%d %H:%M:%S")${NC}\n"
 
-finish_oscam=$(date +"%s")		# script finished time
-timediff=$(($finish_oscam-$begin_oscam)) # script time
-avg=$(($timediff / $COUNT))		# average time for box
-printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} oscam(es). -> $(($avg / 60))m $(($avg % 60))s per oscam\n"
-fi
+		finish_oscam=$(date +"%s")		# script finished time
+		timediff=$(($finish_oscam-$begin_oscam)) # script time
+		avg=$(($timediff / $COUNT))		# average time for box
+		printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} oscam(es). -> $(($avg / 60))m $(($avg % 60))s per oscam\n"
+else
+	if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx ]]; then
+			find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-svn$OSCAMVERSION_ALT-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx" -type f -mmin +0 -delete
 
-if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx ]]; then
-	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-svn${OSCAM_SMOD_VERSION_ALT:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAM_SMOD_VERSION_ALT:6:8}.upx" -type f -mmin +0 -delete
+			rm -rf $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
+			ln -s $FREETZ_SSL_HOME_PATH/toolchain/target $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
 
-	rm -rf $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
-	ln -s $FREETZ_SSL_HOME_PATH/toolchain/target $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
+			$OSCAM_PATH/./s3 fritz_${FB_ARCH}_${FB_OS} -p=$OSCAM_READER.profile
+			mv $OSCAM_PATH/support/binaries/oscam-svn-fritz_${FB_ARCH}_${FB_OS}-${OSCAM_READER_EMU}798-upx-upx $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx
 
-	$OSCAM_PATH/./s3 fritz_${FB_ARCH}_${FB_OS} -p=$OSCAM_READER_EMU.profile
-	
-	mv $OSCAM_PATH/support/binaries/oscam-svn-fritz_${FB_ARCH}_${FB_OS}-${OSCAM_READER_EMU}798-upx $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx
-	
-elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx ]]; then
-	printf "${GREEN}$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx already exists${NC}"
-fi
-	rm -rf "$OSCAM_PATH/support/toolchains.cfg"
-	mv $OSCAM_PATH/support/toolchains.cfg.orig $OSCAM_PATH/support/toolchains.cfg
+		elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx ]]; then
+			printf "${GREEN}$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx already exists${NC}"
+		fi
+			rm -rf "$OSCAM_PATH/support/toolchains.cfg"
+			mv $OSCAM_PATH/support/toolchains.cfg.orig $OSCAM_PATH/support/toolchains.cfg
 
-mv $OSCAM_PATH/oscam-svn $OSCAM_PATH/oscam-smod
-mv $OSCAM_PATH/ohne-oscam-smod $OSCAM_PATH/oscam-svn
-
-#	rm -rf $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
+#			rm -rf $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
 		
-finish=$(date +"%s")	# build finished time
-timediff=$(($finish-$beginbs))	# build time
-[[ $COUNT > 1 ]] && printf "\n${GREEN}${BOX_NAME} SSL ${SSL_VERSION}${NC} build finished in $(($timediff / 60)) minutes and $(($timediff % 60)) seconds. ${YELLOW}<- end time $(date +"%Y-%m-%d %H:%M:%S")${NC}\n"
+	finish=$(date +"%s")	# build finished time
+	timediff=$(($finish-$beginbs))	# build time
+	[[ $COUNT > 1 ]] && printf "\n${GREEN}${BOX_NAME} SSL ${SSL_VERSION}${NC} build finished in $(($timediff / 60)) minutes and $(($timediff % 60)) seconds. ${YELLOW}<- end time $(date +"%Y-%m-%d %H:%M:%S")${NC}\n"
 
-finish_oscam=$(date +"%s")		# script finished time
-timediff=$(($finish_oscam-$begin_oscam)) # script time
-avg=$(($timediff / $COUNT))		# average time for box
-printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} oscam(es). -> $(($avg / 60))m $(($avg % 60))s per oscam\n"
+	finish_oscam=$(date +"%s")		# script finished time
+	timediff=$(($finish_oscam-$begin_oscam)) # script time
+	avg=$(($timediff / $COUNT))		# average time for box
+	printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} oscam(es). -> $(($avg / 60))m $(($avg % 60))s per oscam\n"
+
+	fi
+fi
