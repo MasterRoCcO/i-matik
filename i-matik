@@ -171,7 +171,7 @@ source $SSL11_PUSH_REPEATER
 
 elif [[ $1 == '7581.10' ]]; then
 source $NO_KERNEL_FILES
-printf ${RED}"No OpenSSL 1.0.2 Suportet by Freetz-NG\n"
+#printf ${RED}"No OpenSSL 1.0.2 Suportet by Freetz-NG\n"
 elif [[ $1 == '7581.11' ]]; then
 source $NO_KERNEL_FILES
 elif [[ $1 == '7581.30' ]]; then
@@ -185,7 +185,7 @@ source $SSL10_PUSH
 
 elif [[ $1 == '7582.10' ]]; then
 source $NO_KERNEL_FILES
-printf ${RED}"No OpenSSL 1.0.2 Suportet by Freetz-NG\n"
+#printf ${RED}"No OpenSSL 1.0.2 Suportet by Freetz-NG\n"
 elif [[ $1 == '7582.11' ]]; then
 source $NO_KERNEL_FILES
 elif [[ $1 == '7582.30' ]]; then
