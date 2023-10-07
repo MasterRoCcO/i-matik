@@ -2,6 +2,5 @@
 sed -i "s+FREETZ_PACKAGE_TOR=y+# FREETZ_PACKAGE_TOR is not set+g" $FREETZ_SSL_HOME_PATH/.config
 sed -i "s+FREETZ_LIB_libcrypto_WITH_EC=y+# FREETZ_LIB_libcrypto_WITH_EC is not set+g" $FREETZ_SSL_HOME_PATH/.config
 sed -i "s+FREETZ_LIB_libevent=y+# FREETZ_LIB_libevent is not set+g" $FREETZ_SSL_HOME_PATH/.config
-sed -i "s+FREETZ_BUSYBOX___V134_SOFTLIMIT=y+# FREETZ_BUSYBOX___V134_SOFTLIMIT is not set+g" $FREETZ_SSL_HOME_PATH/.config
-sed -i "s+FREETZ_BUSYBOX___V135_SOFTLIMIT=y+# FREETZ_BUSYBOX___V135_SOFTLIMIT is not set+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+FREETZ_BUSYBOX___V136_SOFTLIMIT=y+# FREETZ_BUSYBOX___V136_SOFTLIMIT is not set+g" $FREETZ_SSL_HOME_PATH/.config
 grep -v FREETZ_BUSYBOX_SOFTLIMIT $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
