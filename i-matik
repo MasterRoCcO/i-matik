@@ -9,7 +9,7 @@ I_MATIK_PATH=$(cd `dirname $0` && pwd)
 git pull
 source $I_MATIK_PATH/support/i-matik/config/i-matik
 source $INSTAL_CHECK
-VERSIONS_NR="0.79.3(i08.0)"
+VERSIONS_NR="0.79.3(i08.1)"
 ln -s $CREATE_BOXES $I_MATIK_PATH/my-boxes_please_edit_me 2>/dev/null
 
 #arm boxen
