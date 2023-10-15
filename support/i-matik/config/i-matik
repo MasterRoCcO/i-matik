@@ -71,6 +71,10 @@ BAD_EXT3_TYP="7530_AX"
 #downgrade
 DOWNGRADE_ON="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_on"
 DOWNGRADE_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_off"
+
+#BINUTILS Version
+TBINUTILS="2_41"
+
 #libusb1 
 LIBUSB1_7530AX="7530_AX"
 LIBUSB1_6591="6591"
