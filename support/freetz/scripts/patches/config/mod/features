@@ -1,0 +1,3 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/config/mod/prefix.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/config/mod/prefix.in.orig $FREETZ_SSL_HOME_PATH/config/mod/prefix.in 2>/dev/null
