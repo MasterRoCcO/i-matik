@@ -1,0 +1,3 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/config/mod/juis.in 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/config/mod/juis.in.orig $FREETZ_SSL_HOME_PATH/config/mod/juis.in 2>/dev/null
