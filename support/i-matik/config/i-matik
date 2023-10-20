@@ -87,6 +87,8 @@ USER_APPLICATION_OFF="$I_MATIK_PATH/support/freetz/scripts/user_scripts/user-app
 
 # features
 AVM_PATCH_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/config/avm"
+MOD_PATCH_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/config/mod"
+TOOLS_PATCH_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/tools"
 
 #If you don't need the make menuconfig, just put a # in front of MENUC and MENUC1
 MENUC="menuconfig"

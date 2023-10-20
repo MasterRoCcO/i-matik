@@ -37,6 +37,9 @@ rm -rf "$FREETZ_SSL_HOME_PATH/prefix.patch" 2>/dev/null
 cp -ar $MOD_PATCH_PATH/juis.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < juis.patch
 rm -rf "$FREETZ_SSL_HOME_PATH/juis.patch" 2>/dev/null
+cp -ar $TOOLS_PATCH_PATH/freetz_download.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < freetz_download.patch
+rm -rf "$FREETZ_SSL_HOME_PATH/freetz_download.patch" 2>/dev/null
 
 #echo -e ${GREEN}"Freetz files patch for INHAUS Extras."${NC}
 #cp -ar $I_MATIK_PATCH_PATH/show_inhaus_extra.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null

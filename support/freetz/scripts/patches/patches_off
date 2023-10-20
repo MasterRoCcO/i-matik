@@ -11,8 +11,9 @@ source $I_MATIK_PATCH_PATH/ifree
 source $I_MATIK_PATCH_PATH/show_gpon_serial
 #source $I_MATIK_PATCH_PATH/show_inhaus_extra
 source $AVM_PATCH_PATH/version
-source $AVM_PATCH_PATH/prefix
-source $AVM_PATCH_PATH/juis
+source $MOD_PATCH_PATH/prefix
+source $MOD_PATCH_PATH/juis
+source $TOOLS_PATCH_PATH/freetz_download
 
 # fix
 source $I_MATIK_PATH/support/freetz/scripts/patches/host-tools/sed-host
