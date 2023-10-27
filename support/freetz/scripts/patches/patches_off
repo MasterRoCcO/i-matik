@@ -39,4 +39,4 @@ source $TOOLS_PATCH_PATH_FRIENDS/freetz_download
 
 ## 7539
 source $MAKE_PATCH_PATH_FRIENDS/kernel/patches/4.19.183/7539_07.56/001-regular_dot_config_location
-source $CONFIG_PATCH_PATH_FRIENDS/mod/source.patch
+source $CONFIG_PATCH_PATH_FRIENDS/mod/source
