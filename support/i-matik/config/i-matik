@@ -153,3 +153,4 @@ CRASH_CLEANER="$I_MATIK_PATH/support/i-matik/crash_cleaner/crash"
 #end of config
 source $CONFIG_PRIVAT_PATH 2>/dev/null
 source $CONFIG_USER_PATH 2>/dev/null
+source $I_MATIK_PATH/support/i-matik/config/pw 2>/dev/null
