@@ -19,3 +19,23 @@ source $I_MATIK_PATH/support/freetz/scripts/fix/fix_for7530ax 2>/dev/null
 source $I_MATIK_PATH/support/freetz/scripts/fix/fix_for7530ax_friend 2>/dev/null
 source $KERNEL_FIX_PATH/loop_fix 2>/dev/null
 #source $KERNEL_FIX_PATH/7490_07.56 2>/dev/null
+
+# patche for friends
+source $CONFIG_PATCH_PATH_FRIENDS/avm/availability
+source $CONFIG_PATCH_PATH_FRIENDS/avm/version
+source $CONFIG_PATCH_PATH_FRIENDS/img/Config
+source $CONFIG_PATCH_PATH_FRIENDS/img/separate/5530--07_2X
+source $CONFIG_PATCH_PATH_FRIENDS/img/separate/5530--07_5X
+source $CONFIG_PATCH_PATH_FRIENDS/img/separate/5530
+source $CONFIG_PATCH_PATH_FRIENDS/img/separate/5530--07_7X
+source $CONFIG_PATCH_PATH_FRIENDS/img/separate/5590--07_7X
+source $CONFIG_PATCH_PATH_FRIENDS/img/separate/7539--07_7X
+source $CONFIG_PATCH_PATH_FRIENDS/img/separate/7599--07_7X
+source $CONFIG_PATCH_PATH_FRIENDS/img/separate/Config
+source $CONFIG_PATCH_PATH_FRIENDS/mod/dl-firmware
+source $CONFIG_PATCH_PATH_FRIENDS/mod/juis
+source $CONFIG_PATCH_PATH_FRIENDS/mod/prefix
+source $CONFIG_PATCH_PATH_FRIENDS/ui/firmware
+source $PATCHES_PATCH_PATH_FRIENDS/cond/832-hide_dsl_overview-hint/832-hide_dsl_overview-hint_07_7X
+source $PATCHES_PATCH_PATH_FRIENDS/scripts/832-hide_dsl_overview-hint
+source $TOOLS_PATCH_PATH_FRIENDS/freetz_download
