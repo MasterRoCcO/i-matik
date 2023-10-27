@@ -86,10 +86,10 @@ LIBUSB1_6690="6690"
 USER_APPLICATION_ON="$I_MATIK_PATH/support/freetz/scripts/user_scripts/user-application_on"
 USER_APPLICATION_OFF="$I_MATIK_PATH/support/freetz/scripts/user_scripts/user-application_off"
 
-# features
-#AVM_PATCH_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/config/avm"
-#MOD_PATCH_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/config/mod"
-#TOOLS_PATCH_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/tools"
+# patches for friends
+CONFIG_PATCH_PATH_FRIENDS="$I_MATIK_PATH/support/freetz/scripts/patches/friends/config"
+PATCHES_PATCH_PATH_FRIENDS="$I_MATIK_PATH/support/freetz/scripts/patches/friends/patches"
+TOOLS_PATCH_PATH_FRIENDS="$I_MATIK_PATH/support/freetz/scripts/patches/friends/tools"
 
 #If you don't need the make menuconfig, just put a # in front of MENUC and MENUC1
 MENUC="menuconfig"
