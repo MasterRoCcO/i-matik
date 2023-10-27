@@ -1,7 +1,0 @@
-#!/bin/bash
-rm -f $FREETZ_SSL_HOME_PATH/config/mod/source.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/config/mod/source.in.orig $FREETZ_SSL_HOME_PATH/config/mod/source.in 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/kernel/configs/diffs/config-brcma9-7539_07.56.diff 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/kernel/configs/diffs/config-brcma9-7539_07.56.diff.orig $FREETZ_SSL_HOME_PATH/make/kernel/configs/diffs/config-brcma9-7539_07.56.diff 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-brcma9-7539_07.56 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-brcma9-7539_07.56.orig $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-brcma9-7539_07.56 2>/dev/null
