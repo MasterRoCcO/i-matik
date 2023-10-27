@@ -90,6 +90,7 @@ USER_APPLICATION_OFF="$I_MATIK_PATH/support/freetz/scripts/user_scripts/user-app
 CONFIG_PATCH_PATH_FRIENDS="$I_MATIK_PATH/support/freetz/scripts/patches/friends/config"
 PATCHES_PATCH_PATH_FRIENDS="$I_MATIK_PATH/support/freetz/scripts/patches/friends/patches"
 TOOLS_PATCH_PATH_FRIENDS="$I_MATIK_PATH/support/freetz/scripts/patches/friends/tools"
+MAKE_PATCH_PATH_FRIENDS="$I_MATIK_PATH/support/freetz/scripts/patches/friends/make"
 
 #If you don't need the make menuconfig, just put a # in front of MENUC and MENUC1
 MENUC="menuconfig"
