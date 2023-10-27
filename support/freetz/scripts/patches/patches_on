@@ -46,6 +46,7 @@ cp -ar $KERNEL_FIX_PATH/loop_fix.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < loop_fix.patch 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/loop_fix.patch" 2>/dev/null
 echo -e ${GREEN}"patche for friends"${NC}
+
 ### 07_7X
 cp -ar $CONFIG_PATCH_PATH_FRIENDS/avm/availability.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < availability.patch 2>/dev/null
@@ -101,6 +102,7 @@ rm -rf "$FREETZ_SSL_HOME_PATH/832-hide_dsl_overview-hint.patch" 2>/dev/null
 cp -ar $TOOLS_PATCH_PATH_FRIENDS/freetz_download.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < freetz_download.patch 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/freetz_download.patch" 2>/dev/null
+
 ####### 7539 Kernel
 #echo -e ${GREEN}"fix 7530AX FW 7.56"${NC}
 cp -ar $MAKE_PATCH_PATH_FRIENDS/kernel/patches/4.19.183/7539_07.56/001-regular_dot_config_location.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
