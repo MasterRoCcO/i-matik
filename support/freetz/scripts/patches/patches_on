@@ -83,20 +83,15 @@ rm -rf "$FREETZ_SSL_HOME_PATH/7599--07_7X.patch" 2>/dev/null
 cp -ar $CONFIG_PATCH_PATH_FRIENDS/img/separate/Config.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < Config.patch 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/Config.patch" 2>/dev/null
-
-
 cp -ar $CONFIG_PATCH_PATH_FRIENDS/img/separate/5530--07_2X.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < 5530--07_2X.patch 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/5530--07_2X.patch" 2>/dev/null
-
 cp -ar $CONFIG_PATCH_PATH_FRIENDS/img/separate/5530--07_5X.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < 5530--07_5X.patch 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/5530--07_5X.patch" 2>/dev/null
-
 cp -ar $CONFIG_PATCH_PATH_FRIENDS/img/separate/5530.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < 5530.patch 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/5530.patch" 2>/dev/null
-
 cp -ar $CONFIG_PATCH_PATH_FRIENDS/mod/dl-firmware.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < dl-firmware.patch 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/dl-firmware.patch" 2>/dev/null
