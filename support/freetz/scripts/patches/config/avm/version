@@ -1,3 +1,0 @@
-#!/bin/bash
-rm -f $FREETZ_SSL_HOME_PATH/config/avm/version.in 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/config/avm/version.in.orig $FREETZ_SSL_HOME_PATH/config/avm/version.in 2>/dev/null
