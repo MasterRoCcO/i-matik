@@ -51,4 +51,66 @@ cp -ar $KERNEL_FIX_PATH/loop_fix.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < loop_fix.patch 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/loop_fix.patch" 2>/dev/null
 echo -e ${GREEN}"patche for friends"${NC}
-source $PATCH_ON_FRIENDS
+### 07_7X
+cp -ar $CONFIG_PATCH_PATH_FRIENDS/avm/availability.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < availability.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/availability.patch" 2>/dev/null
+cp -ar $CONFIG_PATCH_PATH_FRIENDS/avm/version.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < version.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/version.patch" 2>/dev/null
+cp -ar $CONFIG_PATCH_PATH_FRIENDS/img/Config.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < Config.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/Config.patch" 2>/dev/null
+cp -ar $CONFIG_PATCH_PATH_FRIENDS/img/separate/5530--07_7X.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < 5530--07_7X.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/5530--07_7X.patch" 2>/dev/null
+cp -ar $CONFIG_PATCH_PATH_FRIENDS/img/separate/5590--07_7X.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < 5590--07_7X.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/5590--07_7X.patch" 2>/dev/null
+cp -ar $CONFIG_PATCH_PATH_FRIENDS/img/separate/7539--07_7X.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < 7539--07_7X.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/7539--07_7X.patch" 2>/dev/null
+cp -ar $CONFIG_PATCH_PATH_FRIENDS/img/separate/7599--07_7X.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < 7599--07_7X.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/7599--07_7X.patch" 2>/dev/null
+cp -ar $CONFIG_PATCH_PATH_FRIENDS/img/separate/Config.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < Config.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/Config.patch" 2>/dev/null
+cp -ar $CONFIG_PATCH_PATH_FRIENDS/img/separate/5530--07_2X.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < 5530--07_2X.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/5530--07_2X.patch" 2>/dev/null
+cp -ar $CONFIG_PATCH_PATH_FRIENDS/img/separate/5530--07_5X.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < 5530--07_5X.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/5530--07_5X.patch" 2>/dev/null
+cp -ar $CONFIG_PATCH_PATH_FRIENDS/img/separate/5530.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < 5530.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/5530.patch" 2>/dev/null
+cp -ar $CONFIG_PATCH_PATH_FRIENDS/mod/dl-firmware.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < dl-firmware.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/dl-firmware.patch" 2>/dev/null
+cp -ar $CONFIG_PATCH_PATH_FRIENDS/mod/juis.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < juis.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/juis.patch" 2>/dev/null
+cp -ar $CONFIG_PATCH_PATH_FRIENDS/mod/prefix.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < prefix.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/prefix.patch" 2>/dev/null
+cp -ar $CONFIG_PATCH_PATH_FRIENDS/ui/firmware.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < firmware.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/firmware.patch" 2>/dev/null
+cp -ar $PATCHES_PATCH_PATH_FRIENDS/cond/832-hide_dsl_overview-hint/832-hide_dsl_overview-hint_07_7X.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < 832-hide_dsl_overview-hint_07_7X.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/832-hide_dsl_overview-hint_07_7X.patch" 2>/dev/null
+cp -ar $PATCHES_PATCH_PATH_FRIENDS/scripts/832-hide_dsl_overview-hint.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < 832-hide_dsl_overview-hint.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/832-hide_dsl_overview-hint.patch" 2>/dev/null
+cp -ar $TOOLS_PATCH_PATH_FRIENDS/freetz_download.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < freetz_download.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/freetz_download.patch" 2>/dev/null
+####### 7539 Kernel
+#echo -e ${GREEN}"fix 7530AX FW 7.56"${NC}
+cp -ar $MAKE_PATCH_PATH_FRIENDS/kernel/patches/4.19.183/7539_07.56/001-regular_dot_config_location.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < 001-regular_dot_config_location.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/001-regular_dot_config_location.patch" 2>/dev/null
+cp -ar $CONFIG_PATCH_PATH_FRIENDS/mod/source.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < source.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/source.patch" 2>/dev/null
