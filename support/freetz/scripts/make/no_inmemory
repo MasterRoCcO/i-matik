@@ -20,6 +20,8 @@ while [ $# -ne 0 ];do
 	    ;;
 	-ysmod|--yes-oscam-smod)	PARAM_OSCAM_SMOD=1
 	    ;;
+	-yncam|--yes-ncam)		PARAM_OSCAM_NCAM=1
+	    ;;
 	-to|--tool-oscam)		PARAM_OSCAM_TOOL=1
 	    ;;
 	-do|--del-oscam)		PARAM_DEL_OSCAM=1
@@ -442,7 +444,7 @@ for bs in "${BOX_SSL[@]}"; do
 	if [ -z $PARAM_DEL_OSCAM ]; then
 		sleep 0
 	else
-		rm $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn*-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx
+		rm $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-*
 	fi
 		source $EXIT_KERNEL 2>/dev/null
 
@@ -464,6 +466,12 @@ for bs in "${BOX_SSL[@]}"; do
 		source $OSCAM_SMOD 2>/dev/null
 	fi
 
+	if [ -z $PARAM_OSCAM_NCAM ]; then
+		sleep 0 #not oscam is created
+	else
+		source $OSCAM_NCAM 2>/dev/null
+	fi
+	
 	if [ -z $PARAM_OSCAM_TOOL ]; then
 		sleep 0 #not oscam is created
 	else

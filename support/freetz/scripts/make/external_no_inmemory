@@ -493,7 +493,7 @@ EOF
 	if [ -z $PARAM_DEL_OSCAM ]; then
 		sleep 0
 	else
-		rm $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn*-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx
+		rm $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-*
 	fi
 		source $EXIT_KERNEL 2>/dev/null
 
