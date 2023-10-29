@@ -24,6 +24,9 @@ cat << EOF | sed -r 's/(.+[^>])$/\1<br>/g'
 The installed version on this device is currently xxxx
 <br/>
 
+<h1>Donate Page</h1>
+https://www.spendenseite.de/i-matik/-67603
+
 <h1>Big thanks to</h1>
 bbszx
 berndy2001
