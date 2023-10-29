@@ -25,8 +25,10 @@ The installed version on this device is currently xxxx
 <br/>
 
 <h1>Donate Page</h1>
-https://www.spendenseite.de/i-matik/-67603
-
+ <ul>
+        <li><a class="active" href="https://www.spendenseite.de/i-matik/-67603/" target="_blank">https://www.spendenseite.de/i-matik/-67603/</a></li>
+    </ul>
+<br/>
 <h1>Big thanks to</h1>
 bbszx
 berndy2001
