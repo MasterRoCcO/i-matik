@@ -30,6 +30,7 @@ if [ -z $PARAM_VNSTAT ]; then
 	sleep 0
 else
 	source $PKGS_PATH_ON_OFF/vnstat_on
+	source $PKGS_PATH_ON_OFF/cifsmount_on
 fi
 	
 if [ -z $PARAM_WIREGUARD ]; then
