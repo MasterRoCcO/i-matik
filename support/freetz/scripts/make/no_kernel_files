@@ -294,12 +294,14 @@ for bs in "${BOX_SSL[@]}"; do
 		INT_REGION_COMMENT="$(grep '^FREETZ_TYPE_LANG_EN=' .config | awk -F'"' '{print $1}' | xargs)"
 		if [ ${INT_REGION_COMMENT:20:1} = $INT_REGION ] 2>/dev/null
 			then
-			sed -i "s+$MASTERBOX_NEU+int_$MASTERBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-			sed -i "s+$CLIENTBOX_NEU+int_$CLIENTBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-			sed -i "s+$POWERLINE_NEU+int_$POWERLINE_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-			sed -i "s+$REPEATER_NEU+int_$REPEATER_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-			sed -i "s+$GATEWAY_NEU+int_$GATEWAY_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-			sed -i "s+$WUNSCHIMAGE_NEU+int_$WUNSCHIMAGE_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+			FUD_COMMENT_INT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
+			sed -i "s+${FUD_COMMENT_INT}+int_${FUD_COMMENT_INT}+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+			#sed -i "s+$MASTERBOX_NEU+int_$MASTERBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+			#sed -i "s+$CLIENTBOX_NEU+int_$CLIENTBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+			#sed -i "s+$POWERLINE_NEU+int_$POWERLINE_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+			#sed -i "s+$REPEATER_NEU+int_$REPEATER_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+			#sed -i "s+$GATEWAY_NEU+int_$GATEWAY_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+			#sed -i "s+$WUNSCHIMAGE_NEU+int_$WUNSCHIMAGE_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		fi
 
 		#echo "starte make -j$MAX_CPUS" && sleep 2 #echo command 2 seconds for progress
@@ -356,12 +358,13 @@ for bs in "${BOX_SSL[@]}"; do
 
 	if [ ${INT_REGION_COMMENT:20:1} = $INT_REGION ] 2>/dev/null
 		then
-			sed -i "s+int_$MASTERBOX_NEU+$MASTERBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-			sed -i "s+int_$CLIENTBOX_NEU+$CLIENTBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-			sed -i "s+int_$POWERLINE_NEU+$POWERLINE_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-			sed -i "s+int_$REPEATER_NEU+$REPEATER_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-			sed -i "s+int_$GATEWAY_NEU+$GATEWAY_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-			sed -i "s+int_$WUNSCHIMAGE_NEU+$WUNSCHIMAGE_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+			sed -i "s+int_${FUD_COMMENT_INT}+${FUD_COMMENT_INT}+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+			#sed -i "s+int_$MASTERBOX_NEU+$MASTERBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+			#sed -i "s+int_$CLIENTBOX_NEU+$CLIENTBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+			#sed -i "s+int_$POWERLINE_NEU+$POWERLINE_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+			#sed -i "s+int_$REPEATER_NEU+$REPEATER_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+			#sed -i "s+int_$GATEWAY_NEU+$GATEWAY_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+			#sed -i "s+int_$WUNSCHIMAGE_NEU+$WUNSCHIMAGE_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 	fi
 
 	if [ -z $PARAM_INTERNATIONAL ]; then
