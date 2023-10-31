@@ -83,14 +83,14 @@ USER_APPLICATION_ON="$I_MATIK_PATH/support/freetz/scripts/user_scripts/user-appl
 USER_APPLICATION_OFF="$I_MATIK_PATH/support/freetz/scripts/user_scripts/user-application_off"
 
 # patches for friends
-CONFIG_PATCH_PATH_FRIENDS="$I_MATIK_PATH/support/freetz/scripts/patches/friends/config"
-PATCHES_PATCH_PATH_FRIENDS="$I_MATIK_PATH/support/freetz/scripts/patches/friends/patches"
-TOOLS_PATCH_PATH_FRIENDS="$I_MATIK_PATH/support/freetz/scripts/patches/friends/tools"
-MAKE_PATCH_PATH_FRIENDS="$I_MATIK_PATH/support/freetz/scripts/patches/friends/make"
-ONLY_FRIENDS="$I_MATIK_PATH/support/freetz/scripts/patches/friends/only"
-
-FRIENDS_PATCH_ON="$I_MATIK_PATH/support/freetz/scripts/patches/friends/friends_patches_on"
-FRIENDS_PATCH_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/friends/friends_patches_off"
+ONLY_FRIENDS_PATCH="$I_MATIK_PATH/support/freetz/scripts/patches/friends"
+CONFIG_PATCH_PATH_FRIENDS="$ONLY_FRIENDS_PATCH/config"
+PATCHES_PATCH_PATH_FRIENDS="$ONLY_FRIENDS_PATCHs/patches"
+TOOLS_PATCH_PATH_FRIENDS="$ONLY_FRIENDS_PATCH/tools"
+MAKE_PATCH_PATH_FRIENDS="$ONLY_FRIENDS_PATCH/make"
+ONLY_FRIENDS="$ONLY_FRIENDS/only"
+FRIENDS_PATCH_ON="$ONLY_FRIENDS_PATCH/friends_patches_on"
+FRIENDS_PATCH_OFF="$ONLY_FRIENDS_PATCH/friends_patches_off"
 
 #If you don't need the make menuconfig, just put a # in front of MENUC and MENUC1
 MENUC="menuconfig"
