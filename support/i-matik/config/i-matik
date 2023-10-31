@@ -59,11 +59,7 @@ KERNEL_FIX_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/fix/make/kernel"
 #fix check
 FIX_CHECK_ON="$I_MATIK_PATH/support/freetz/scripts/fix_check/fix_check_on"
 FIX_CHECK_OFF="$I_MATIK_PATH/support/freetz/scripts/fix_check/fix_check_off"
-#PATCHELF_MIPS="mips1"
-#PATCHELF_MIPSEL="mipsel1"
-NO_GLIB2_6430="64301"
-NO_GLIB2_6490="64901"
-NO_GLIB2_6590="65901"
+
 #ext3
 BAD_EXT3_OS_75="07_5X"
 BAD_EXT3_OS_77="07_7X"
@@ -118,10 +114,11 @@ BAD_KERNEL3="4.9.2791"
 BAD_KERNEL4="4.9.2181"
 BAD_KERNEL5="4.9.3251"
 BAD_KERNEL6="4.19.1831"
-BAD_OS="07_5X"
-BAD_TYP1="74901"
-BAD_TYP2="64901"
-BAD_TYP3="65901"
+
+#BAD_OS="07_5X"
+#BAD_TYP1="74901"
+#BAD_TYP2="64901"
+#BAD_TYP3="65901"
 
 YES_WATCHDOG="$I_MATIK_PATH/support/freetz/scripts/watchdog/watchdog_yes"
 NO_WATCHDOG="$I_MATIK_PATH/support/freetz/scripts/watchdog/watchdog_no"
