@@ -9,7 +9,7 @@ I_MATIK_PATH=$(cd `dirname $0` && pwd)
 git pull
 source $I_MATIK_PATH/support/i-matik/config/i-matik
 source $INSTAL_CHECK
-VERSIONS_NR="0.81.1(f01.1)(i08.6)"
+VERSIONS_NR="0.81.1(f01.4)(i08.6)"
 ln -s $CREATE_BOXES $I_MATIK_PATH/my-boxes_please_edit_me 2>/dev/null
 source $I_MATIK_PATH/support/freetz/scripts/friends 2>/dev/null
 
