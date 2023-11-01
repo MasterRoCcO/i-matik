@@ -10,7 +10,7 @@ while [ $# -ne 0 ];do
     case "$1" in
 	-c|--config)			PARAM_CONFIG=1
 	    ;;
-	-s|--skip-image2memory)	 	PARAM_SKIP_I2M=1
+	-s|--skip-image2memory)		PARAM_SKIP_I2M=1
 	    ;;
 	-int|--international)		PARAM_INTERNATIONAL=1
 	    ;;
@@ -28,13 +28,13 @@ while [ $# -ne 0 ];do
 	    ;;
 	-nm|--no-masterbox)		PARAM_SKIP_MASTER=1
 	    ;;
-	-kp|--kernel-precompiled)       PARAM_KERNEL=1
+	-kp|--kernel-precompiled)	PARAM_KERNEL=1
 	    ;;
 	-kc|--kernel-clean)		PARAM_KERNEL_CLEAN=1
 	    ;;
 	-km|--kernel-menuconfig)	PARAM_KERNEL_MENU=1
 	    ;;
-	-ta|--toolchain-activate)       PARAM_TOOLCHAIN_ACTIVATE=1
+	-ta|--toolchain-activate)	PARAM_TOOLCHAIN_ACTIVATE=1
 	    ;;
 	-td|--toolchain-disable)	PARAM_TOOLCHAIN_DISABLE=1
 	    ;;
@@ -432,6 +432,7 @@ for bs in "${BOX_SSL[@]}"; do
 		mv -f $CONFIG_FRITZBOX_PATH_SSL_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox_no $CONFIG_FRITZBOX_PATH_SSL_30/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_30}_masterbox 2>/dev/null
 		mv -f $CONFIG_FRITZBOX_PATH_SSL_31/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_31}_masterbox_no $CONFIG_FRITZBOX_PATH_SSL_31/config_fritz${BOX_NAME}_${FREETZ_SSL_VERSION_31}_masterbox 2>/dev/null
 	fi
+
 		source $PATCH_OFF 2>/dev/null
 		source $PRIVAT_PATCH_OFF 2>/dev/null
 
@@ -481,3 +482,4 @@ avg=$(($timediff / $COUNT))		# average time for box
 printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} box(es). ->  $(($avg / 60))m $(($avg % 60))s per box\n"
 $VERSION	# show i-matik disclaimer
 sed -i "s+${VERSIONS_NR}+xxxxx+g" $VERSION
+source $ONLY_FRIENDS_PATCH/only_friends_off 2>/dev/null
