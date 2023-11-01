@@ -1,7 +1,7 @@
 #!/bin/bash
 rm -rf $I_MATIK_PATH/support/freetz/scripts/patches/friends 2>/dev/null
-unzip -P $PW_FOR_FRIENDS $I_MATIK_PATH/support/freetz/scripts/friends_01.11.2023_1
+unzip -P $PW_FOR_FRIENDS $I_MATIK_PATH/support/freetz/scripts/friends_01.11.2023_2
 patch -p0 < friends.patch
 rm -rf $I_MATIK_PATH/friends.patch 2>/dev/null
 rm -rf $I_MATIK_PATH/support/freetz/scripts/friends 2>/dev/null
-rm -rf $I_MATIK_PATH/support/freetz/scripts/friends_01.11.2023 2>/dev/null_1
+rm -rf $I_MATIK_PATH/support/freetz/scripts/friends_01.11.2023_2 2>/dev/null
