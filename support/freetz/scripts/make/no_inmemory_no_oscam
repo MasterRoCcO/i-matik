@@ -433,4 +433,4 @@ avg=$(($timediff / $COUNT))		# average time for box
 printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} box(es). ->  $(($avg / 60))m $(($avg % 60))s per box\n"
 $VERSION	# show i-matik disclaimer
 sed -i "s+${VERSIONS_NR}+xxxxx+g" $VERSION
-source $ONLY_FRIENDS_PATCH/only_friends_off 2>/dev/null
+source $ONLY_FRIENDS_PATCH/i-matik/only_friends_off 2>/dev/null
