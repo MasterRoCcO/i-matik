@@ -1,8 +1,7 @@
 #!/bin/bash
-BAD_FB_OS="$(grep '^FREETZ_TYPE_PREFIX_SERIES_SUBDIR=' .config | awk -F'"' '{print $2}' | xargs)"
-
-if [ $BAD_FB_OS = $BAD_OS ]
-	then
-		sed -i "s+FREETZ_REPLACE_KERNEL=y+# FREETZ_REPLACE_KERNEL is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		#source $OSCAM_OFF
-fi
+#BAD_FB_OS="$(grep '^FREETZ_TYPE_PREFIX_SERIES_SUBDIR=' .config | awk -F'"' '{print $2}' | xargs)"
+#if [ $BAD_FB_OS = $BAD_OS ]
+#	then
+#		sed -i "s+FREETZ_REPLACE_KERNEL=y+# FREETZ_REPLACE_KERNEL is not set+g" $FREETZ_SSL_HOME_PATH/.config
+#		#source $OSCAM_OFF
+#fi
