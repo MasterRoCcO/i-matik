@@ -8,6 +8,8 @@ source $I_MATIK_PATCH_PATH/motd
 # features
 source $AVM_PATCH_PATH/features
 source $I_MATIK_PATCH_PATH/ifree
+source $I_MATIK_PATCH_PATH/cond/832-hide_dsl_overview-hint/832-hide_dsl_overview-hint_07_8X
+source $I_MATIK_PATCH_PATH/scripts/832-hide_dsl_overview-hint
 
 # fix
 source $I_MATIK_PATH/support/freetz/scripts/patches/host-tools/sed-host

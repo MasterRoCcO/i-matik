@@ -1,0 +1,3 @@
+#!/bin/bash
+rm -f $FREETZ_SSL_HOME_PATH/patches/cond/832-hide_dsl_overview-hint/832-hide_dsl_overview-hint_07_8X.patch 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/patches/cond/832-hide_dsl_overview-hint/832-hide_dsl_overview-hint_07_8X.patch.orig $FREETZ_SSL_HOME_PATH/patches/cond/832-hide_dsl_overview-hint/832-hide_dsl_overview-hint_07_8X.patch 2>/dev/null
