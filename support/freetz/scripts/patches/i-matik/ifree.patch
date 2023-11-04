@@ -1,6 +1,6 @@
 --- config/ui/patches.in	2023-08-22 21:37:18.845440609 +0200
 +++ config/ui/patches.in	2023-08-23 17:41:23.974315126 +0200
-@@ -1263,6 +1263,42 @@
+@@ -1263,6 +1263,31 @@
  		 812-show_update_config.sh
  		 821-show_network_repeater.sh
  		 822-show_dvb_services.sh
@@ -29,21 +29,19 @@
 +		Tested for repeaters 1200AX, 1750E, 2400 and 6000 with Firmware > 7.2X.
 +		Developer can activate this patch at own risk also
 +		for other (untested) repeaters and firmwares.
-+		
-+config FREETZ_SHOW_GPON_SERIAL
-+	bool "GPON serial number"
-+	depends on \
-+		( FREETZ_AVM_VERSION_07_5X_MIN && !FREETZ_TYPE_FIRMWARE_INHAUS && ( \
-+			FREETZ_TYPE_5530 || \
-+			FREETZ_TYPE_5590 \
-+		))
-+	default n
-+	help
-+		Enables hidden menu for GPON serial number
  
  config FREETZ_PATCH_SIGNED
  	bool "Patch web menu signed message"
-@@ -1342,7 +1385,7 @@
+@@ -1324,7 +1349,7 @@
+ 
+ config FREETZ_ENABLE_GPON_SERIAL
+ 	bool "Enable GPON serial textbox"
+-	depends on FREETZ_TYPE_FIBER
++	depends on FREETZ_TYPE_FIBER && !FREETZ_TYPE_FIRMWARE_INHAUS
+ 	depends on !FREETZ_REMOVE_SUPPORT
+ 	default n
+ 	help
+@@ -1350,7 +1375,7 @@
  
  menuconfig FREETZ_PATCH_MODFS_BOOT_MANAGER
  	bool "Add yf-bootmanager"
