@@ -40,7 +40,7 @@ if [ $BAD_FB_EXT3_OS = $BAD_EXT3_OS_75 ]
 		sed -i "s+FREETZ_MODULE_ext3=y+# FREETZ_MODULE_ext3 is not set+g" $FREETZ_SSL_HOME_PATH/.config
 	fi
 fi
-if [ $BAD_FB_EXT3_OS = $BAD_EXT3_OS_77 ]
+if [ $BAD_FB_EXT3_OS = $BAD_EXT3_OS_78 ]
 	then
 		if [ $BAD_FB_EXT3_TYP = $BAD_EXT3_TYP ]
 			then

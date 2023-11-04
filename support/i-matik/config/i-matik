@@ -62,7 +62,7 @@ FIX_CHECK_OFF="$I_MATIK_PATH/support/freetz/scripts/fix_check/fix_check_off"
 
 #ext3
 BAD_EXT3_OS_75="07_5X"
-BAD_EXT3_OS_77="07_7X"
+BAD_EXT3_OS_78="07_8X"
 BAD_EXT3_TYP="7530_AX"
 
 #downgrade
@@ -94,6 +94,8 @@ MAKE_PATCH_PATH_FRIENDS="$ONLY_FRIENDS_PATCH/make"
 ONLY_FRIENDS="$ONLY_FRIENDS_PATCH/i-matik/only"
 FRIENDS_PATCH_ON="$ONLY_FRIENDS_PATCH/friends_patches_on"
 FRIENDS_PATCH_OFF="$ONLY_FRIENDS_PATCH/friends_patches_off"
+FRIENDS_PATCH_INFO="$I_MATIK_PATH/support/freetz/scripts/patches/friends/i-matik"
+FRIENDS_PATCH_DL="$I_MATIK_PATH/support/freetz/scripts"
 
 #If you don't need the make menuconfig, just put a # in front of MENUC and MENUC1
 MENUC="menuconfig"
