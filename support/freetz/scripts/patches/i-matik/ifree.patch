@@ -1,5 +1,5 @@
---- config/ui/patches.in	2023-08-22 21:37:18.845440609 +0200
-+++ config/ui/patches.in	2023-08-23 17:41:23.974315126 +0200
+--- config/ui/patches.in	2023-11-04 13:42:27.844150219 +0100
++++ config/ui/patches.in	2023-11-08 08:59:47.413584278 +0100
 @@ -1263,6 +1263,31 @@
  		 812-show_update_config.sh
  		 821-show_network_repeater.sh
@@ -32,7 +32,29 @@
  
  config FREETZ_PATCH_SIGNED
  	bool "Patch web menu signed message"
-@@ -1324,7 +1349,7 @@
+@@ -1291,7 +1316,21 @@
+ 	default n
+ 	help
+ 		ipphone_from_outside does not trigger the message.
++		
++config FREETZ_PATCH_SECURE_nau
++	bool "Caused by noAutoupdate_disabled"
++	depends on FREETZ_PATCH_SECURE && FREETZ_AVM_VERSION_07_8X_MIN
++	default y
++	help
++		noAutoupdate_disabled does not trigger the message.
+ 
++config FREETZ_PATCH_SECURE_nus
++	bool "Caused by noUpdateSearch_disabled"
++	depends on FREETZ_PATCH_SECURE && FREETZ_AVM_VERSION_07_8X_MIN
++	default y
++	help
++		noUpdateSearch_disabled does not trigger the message.
++		
+ config FREETZ_MODIFY_DSL_WARNING
+ 	bool "Patch DSL modified message"
+ 	depends on FREETZ_TYPE_DSL && FREETZ_AVM_VERSION_06_5X_MIN && !FREETZ_REMOVE_DSLD && !FREETZ_REMOVE_MULTI_ANNEX_FIRMWARE_PRIME
+@@ -1324,7 +1363,7 @@
  
  config FREETZ_ENABLE_GPON_SERIAL
  	bool "Enable GPON serial textbox"
@@ -41,7 +63,7 @@
  	depends on !FREETZ_REMOVE_SUPPORT
  	default n
  	help
-@@ -1350,7 +1375,7 @@
+@@ -1350,7 +1389,7 @@
  
  menuconfig FREETZ_PATCH_MODFS_BOOT_MANAGER
  	bool "Add yf-bootmanager"
@@ -50,8 +72,19 @@
  	depends on FREETZ_AVM_VERSION_06_5X_MIN
  	depends on ( FREETZ_AVM_HAS_SEPARATE_FILESYSTEM_IMAGE && !FREETZ_AVM_HAS_FWLAYOUT_6 ) || \
  		                   ( FREETZ_AVM_HAS_FWLAYOUT_6 && (FREETZ_AVM_HAS_BLK_DEV_LOOP_BUILTIN || FREETZ_REPLACE_MODULE_AVAILABLE) )
---- patches/scripts/823-show_internet_extender.sh	(nonexistent)
-+++ patches/scripts/823-show_internet_extender.sh	(working copy)
+--- patches/scripts/194-patch_webmenu_secure.sh	2023-10-19 05:18:48.691298000 +0200
++++ patches/scripts/194-patch_webmenu_secure.sh	2023-11-08 08:59:47.413584278 +0100
+@@ -8,6 +8,8 @@
+        [ ! -e ${FILESYSTEM_MOD_DIR}${file} ] && continue
+            [ "$FREETZ_PATCH_SECURE_2fa" == "y" ] && modsed 's/data[.]fritzos[.]twofactor_disabled/false/g'   ${FILESYSTEM_MOD_DIR}${file}
+            [ "$FREETZ_PATCH_SECURE_sip" == "y" ] && modsed 's/data[.]fritzos[.]ipphone_from_outside/false/g' ${FILESYSTEM_MOD_DIR}${file}
++           [ "$FREETZ_PATCH_SECURE_nau" == "y" ] && modsed 's/data[.]fritzos[.]noAutoupdate/false/g'   ${FILESYSTEM_MOD_DIR}${file}
++           [ "$FREETZ_PATCH_SECURE_nus" == "y" ] && modsed 's/data[.]fritzos[.]noUpdateSearch/false/g' ${FILESYSTEM_MOD_DIR}${file}
+    done
+ done
+ 
+--- patches/scripts/823-show_internet_extender.sh	1970-01-01 01:00:00.000000000 +0100
++++ patches/scripts/823-show_internet_extender.sh	2023-11-08 08:59:22.166490288 +0100
 @@ -0,0 +1,9 @@
 +[ "$FREETZ_PATCH_EXTENDER_INTERNET" == "y" ] || return 0
 +[ "$FREETZ_TYPE_EXTENDER" == "y" ] || return 0
