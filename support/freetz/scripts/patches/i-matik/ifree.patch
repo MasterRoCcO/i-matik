@@ -1,6 +1,6 @@
 --- config/ui/patches.in	2023-08-22 21:37:18.845440609 +0200
 +++ config/ui/patches.in	2023-11-08 17:28:16.263690699 +0100
-@@ -1263,6 +1263,31 @@
+@@ -1270,6 +1270,31 @@
  		 812-show_update_config.sh
  		 821-show_network_repeater.sh
  		 822-show_dvb_services.sh
@@ -32,7 +32,7 @@
  
  config FREETZ_PATCH_SIGNED
  	bool "Patch web menu signed message"
-@@ -1340,7 +1365,7 @@
+@@ -1347,7 +1372,7 @@
  
  config FREETZ_ENABLE_GPON_SERIAL
  	bool "Enable GPON serial textbox"
@@ -41,7 +41,7 @@
  	depends on !FREETZ_REMOVE_SUPPORT
  	default n
  	help
-@@ -1366,7 +1391,7 @@
+@@ -1373,7 +1398,7 @@
  
  menuconfig FREETZ_PATCH_MODFS_BOOT_MANAGER
  	bool "Add yf-bootmanager"
