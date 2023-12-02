@@ -1,3 +1,4 @@
 #!/bin/bash
 OSCAM_ADDON_VERSION="oscam-1.5.5"
+OSCAM_ADDON_VERSION_OLD="oscam-1.5.4"
 OSCAM_ADDON_PATH="${FREETZ_SSL_HOME_PATH}/addon/oscam-1.5.5"
