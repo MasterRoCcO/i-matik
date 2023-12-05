@@ -1,4 +1,8 @@
 #!/bin/bash
+FUD_COMMENT_RD="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
+sed -i "s+${FUD_COMMENT_RD}+with_readerdriver_${FUD_COMMENT_RD}+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+PUMA7_IMAGE="puma7"
+PUMA7_IMAGE_COMMENT="$(grep '^FREETZ_SYSTEM_TYPE=' .config | awk -F'"' '{print $2}' | xargs)"
 sed -i "s+# FREETZ_PACKAGE_OSCAM is not set+FREETZ_PACKAGE_OSCAM=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 sed -i "s+# FREETZ_PACKAGE_CCID is not set+FREETZ_PACKAGE_CCID=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 sed -i "s+# FREETZ_PACKAGE_PCSC_LITE is not set+FREETZ_PACKAGE_PCSC_LITE=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
@@ -27,7 +31,12 @@ sed -i "s+# FREETZ_LIB_libssl is not set+FREETZ_LIB_libssl=y+g" $FREETZ_SSL_HOME
 #sed -i "s+$WUNSCHIMAGE_NEU+with_readerdriver_$WUNSCHIMAGE_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 #sed -i "s+openssl_multi_masterbox+with_readerdriver_openssl_multi_masterbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 #sed -i "s+openssl_multi_clientbox+with_readerdriver_openssl_multi_clientbox+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-FUD_COMMENT_RD="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
-sed -i "s+${FUD_COMMENT_RD}+with_readerdriver_${FUD_COMMENT_RD}+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-PUMA7_IMAGE="puma7"
-PUMA7_IMAGE_COMMENT="$(grep '^FREETZ_SYSTEM_TYPE=' .config | awk -F'"' '{print $2}' | xargs)"
+
+#sed -i "s+# FREETZ_PACKAGE_OPENSSL is not set+FREETZ_PACKAGE_OPENSSL=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#ed $FREETZ_SSL_HOME_PATH/.config <<EOF
+#/FREETZ_PACKAGE_OPENSSL=y/a
+#FREETZ_PACKAGE_OPENSSL_TRACE=y
+#FREETZ_PACKAGE_OPENSSL_STATIC=y
+#.
+#wq
+#EOF

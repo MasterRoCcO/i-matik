@@ -34,6 +34,9 @@ if [ -z $PARAM_OSCAM ]; then
 		sed -i "s+FREETZ_LIB_libssl=y+# FREETZ_LIB_libssl is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_STRACE=y+# FREETZ_PACKAGE_STRACE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		grep -v ${OSCAM_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+		sed -i "s+FREETZ_PACKAGE_OPENSSL=y+# FREETZ_PACKAGE_OPENSSL is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		grep -v FREETZ_PACKAGE_OPENSSL_TRACE $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		grep -v FREETZ_PACKAGE_OPENSSL_STATIC $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 #		sed -i "s+with_readerdriver_$MASTERBOX_NEU+$MASTERBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 #		sed -i "s+with_readerdriver_$CLIENTBOX_NEU+$CLIENTBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 #		sed -i "s+with_readerdriver_$WUNSCHIMAGE_NEU+$WUNSCHIMAGE_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
@@ -45,12 +48,12 @@ if [ -z $PARAM_OSCAM ]; then
 		grep -v FREETZ_UDEVMOUNT_REISER_FS $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		grep -v FREETZ_PACKAGE_USBIDS_FORCE_DOWNLOAD $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		##### test
-		sed -i "s+FREETZ_PACKAGE_XZ=y+# FREETZ_PACKAGE_XZ is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_LIB_liblzma=y+# FREETZ_LIB_liblzma is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_LIB_libz=y+# FREETZ_LIB_libz is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_LIB_libelf=y+# FREETZ_LIB_libelf is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_LIB_libltdl=y+# FREETZ_LIB_libltdl is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_BUSYBOX___V136_FEATURE_MD5_SHA1_SUM_CHECK=y+# FREETZ_BUSYBOX___V136_FEATURE_MD5_SHA1_SUM_CHECK is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_PACKAGE_XZ=y+# FREETZ_PACKAGE_XZ is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_LIB_liblzma=y+# FREETZ_LIB_liblzma is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_LIB_libz=y+# FREETZ_LIB_libz is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_LIB_libelf=y+# FREETZ_LIB_libelf is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_LIB_libltdl=y+# FREETZ_LIB_libltdl is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_BUSYBOX___V136_FEATURE_MD5_SHA1_SUM_CHECK=y+# FREETZ_BUSYBOX___V136_FEATURE_MD5_SHA1_SUM_CHECK is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 # Get custom image file name part from .config
 FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
 #FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
@@ -93,6 +96,9 @@ if [ -z $PARAM_OSCAM_EMU ]; then
 		sed -i "s+FREETZ_LIB_libssl=y+# FREETZ_LIB_libssl is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_STRACE=y+# FREETZ_PACKAGE_STRACE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		grep -v ${OSCAM_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+		sed -i "s+FREETZ_PACKAGE_OPENSSL=y+# FREETZ_PACKAGE_OPENSSL is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		grep -v FREETZ_PACKAGE_OPENSSL_TRACE $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		grep -v FREETZ_PACKAGE_OPENSSL_STATIC $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 #		sed -i "s+with_readerdriver_$MASTERBOX_NEU+$MASTERBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 #		sed -i "s+with_readerdriver_$CLIENTBOX_NEU+$CLIENTBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 #		sed -i "s+with_readerdriver_$WUNSCHIMAGE_NEU+$WUNSCHIMAGE_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
@@ -104,12 +110,12 @@ if [ -z $PARAM_OSCAM_EMU ]; then
 		grep -v FREETZ_UDEVMOUNT_REISER_FS $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		grep -v FREETZ_PACKAGE_USBIDS_FORCE_DOWNLOAD $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		##### test
-		sed -i "s+FREETZ_PACKAGE_XZ=y+# FREETZ_PACKAGE_XZ is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_LIB_liblzma=y+# FREETZ_LIB_liblzma is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_LIB_libz=y+# FREETZ_LIB_libz is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_LIB_libelf=y+# FREETZ_LIB_libelf is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_LIB_libltdl=y+# FREETZ_LIB_libltdl is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_BUSYBOX___V136_FEATURE_MD5_SHA1_SUM_CHECK=y+# FREETZ_BUSYBOX___V136_FEATURE_MD5_SHA1_SUM_CHECK is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_PACKAGE_XZ=y+# FREETZ_PACKAGE_XZ is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_LIB_liblzma=y+# FREETZ_LIB_liblzma is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_LIB_libz=y+# FREETZ_LIB_libz is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_LIB_libelf=y+# FREETZ_LIB_libelf is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_LIB_libltdl=y+# FREETZ_LIB_libltdl is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_BUSYBOX___V136_FEATURE_MD5_SHA1_SUM_CHECK=y+# FREETZ_BUSYBOX___V136_FEATURE_MD5_SHA1_SUM_CHECK is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 # Get custom image file name part from .config
 FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
 #FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
@@ -152,6 +158,9 @@ if [ -z $PARAM_OSCAM_SMOD ]; then
 		sed -i "s+FREETZ_LIB_libssl=y+# FREETZ_LIB_libssl is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_STRACE=y+# FREETZ_PACKAGE_STRACE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		grep -v ${OSCAM_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+		sed -i "s+FREETZ_PACKAGE_OPENSSL=y+# FREETZ_PACKAGE_OPENSSL is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		grep -v FREETZ_PACKAGE_OPENSSL_TRACE $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		grep -v FREETZ_PACKAGE_OPENSSL_STATIC $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 #		sed -i "s+with_readerdriver_$MASTERBOX_NEU+$MASTERBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 #		sed -i "s+with_readerdriver_$CLIENTBOX_NEU+$CLIENTBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 #		sed -i "s+with_readerdriver_$WUNSCHIMAGE_NEU+$WUNSCHIMAGE_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
@@ -204,6 +213,9 @@ if [ -z $PARAM_OSCAM_NCAM ]; then
 		sed -i "s+FREETZ_LIB_libssl=y+# FREETZ_LIB_libssl is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_STRACE=y+# FREETZ_PACKAGE_STRACE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		grep -v ${OSCAM_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+		sed -i "s+FREETZ_PACKAGE_OPENSSL=y+# FREETZ_PACKAGE_OPENSSL is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		grep -v FREETZ_PACKAGE_OPENSSL_TRACE $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		grep -v FREETZ_PACKAGE_OPENSSL_STATIC $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 #		sed -i "s+with_readerdriver_$MASTERBOX_NEU+$MASTERBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 #		sed -i "s+with_readerdriver_$CLIENTBOX_NEU+$CLIENTBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 #		sed -i "s+with_readerdriver_$WUNSCHIMAGE_NEU+$WUNSCHIMAGE_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
@@ -256,6 +268,9 @@ if [ -z $PARAM_OSCAM_TOOL ]; then
 		sed -i "s+FREETZ_LIB_libssl=y+# FREETZ_LIB_libssl is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		sed -i "s+FREETZ_PACKAGE_STRACE=y+# FREETZ_PACKAGE_STRACE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		grep -v ${OSCAM_ADDON_VERSION} $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+		sed -i "s+FREETZ_PACKAGE_OPENSSL=y+# FREETZ_PACKAGE_OPENSSL is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		grep -v FREETZ_PACKAGE_OPENSSL_TRACE $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+		grep -v FREETZ_PACKAGE_OPENSSL_STATIC $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 #		sed -i "s+with_readerdriver_$MASTERBOX_NEU+$MASTERBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 #		sed -i "s+with_readerdriver_$CLIENTBOX_NEU+$CLIENTBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 #		sed -i "s+with_readerdriver_$WUNSCHIMAGE_NEU+$WUNSCHIMAGE_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
