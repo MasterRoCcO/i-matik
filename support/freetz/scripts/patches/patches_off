@@ -5,6 +5,7 @@ source $I_MATIK_PATCH_PATH/info.cgi
 source $I_MATIK_PATCH_PATH/menu-new
 source $I_MATIK_PATCH_PATH/motd
 source $I_MATIK_PATCH_PATH/000-remove_i-matik_orig_files
+source $MAKE_PATCH_PATH/libs/libusb1
 
 # features
 source $AVM_PATCH_PATH/features

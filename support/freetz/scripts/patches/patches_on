@@ -27,6 +27,11 @@ cp -ar $I_MATIK_PATCH_PATH/ifree.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < ifree.patch
 rm -rf "$FREETZ_SSL_HOME_PATH/ifree.patch" 2>/dev/null
 
+echo -e ${GREEN}"patch libusb1 to 1.0.27-rc1."${NC}
+cp -ar $MAKE_PATCH_PATH/libs/libusb1.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < libusb1.patch
+rm -rf "$FREETZ_SSL_HOME_PATH/libusb1.patch" 2>/dev/null
+
 echo -e ${GREEN}"Freetz files patch for 832-hide_dsl_overview Labor and Inhaus"${NC}
 cp -ar $I_MATIK_PATCH_PATH/cond/832-hide_dsl_overview-hint/832-hide_dsl_overview-hint_07_8X.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < 832-hide_dsl_overview-hint_07_8X.patch 2>/dev/null
