@@ -84,7 +84,7 @@ USER_APPLICATION_ON="$I_MATIK_PATH/support/freetz/scripts/user_scripts/user-appl
 USER_APPLICATION_OFF="$I_MATIK_PATH/support/freetz/scripts/user_scripts/user-application_off"
 
 # features
-AVM_PATCH_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/config/avm"
+CONFIG_PATCH_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/config"
 
 # patches for friends
 ONLY_FRIENDS_PATCH="$I_MATIK_PATH/support/freetz/scripts/patches/friends"

@@ -19,9 +19,10 @@ rm -rf "$FREETZ_SSL_HOME_PATH/000-remove_i-matik_orig_files.patch" 2>/dev/null
 
 # features
 echo -e ${GREEN}"Freetz files patch for Temperature Sensors."${NC}
-cp -ar $AVM_PATCH_PATH/features.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $CONFIG_PATCH_PATH/avm/features.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < features.patch
 rm -rf "$FREETZ_SSL_HOME_PATH/features.patch" 2>/dev/null
+
 echo -e ${GREEN}"Freetz files patch for Internet Sharing on Repeater."${NC}
 cp -ar $I_MATIK_PATCH_PATH/ifree.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < ifree.patch

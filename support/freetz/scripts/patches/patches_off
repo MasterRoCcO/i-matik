@@ -8,7 +8,7 @@ source $I_MATIK_PATCH_PATH/000-remove_i-matik_orig_files
 source $MAKE_PATCH_PATH/libs/libusb1
 
 # features
-source $AVM_PATCH_PATH/features
+source $CONFIG_PATCH_PATH/avm/features
 source $I_MATIK_PATCH_PATH/ifree
 source $I_MATIK_PATCH_PATH/cond/832-hide_dsl_overview-hint/832-hide_dsl_overview-hint_07_8X
 source $I_MATIK_PATCH_PATH/scripts/832-hide_dsl_overview-hint
