@@ -1,0 +1,4 @@
+#!/bin/bash
+rm -rf $FREETZ_SSL_HOME_PATH/patches/cond/531-enable_gpon_serial/ 2>/dev/null
+rm -rf $FREETZ_SSL_HOME_PATH/patches/scripts/531-enable_gpon_serial.sh 2>/dev/null
+mv $FREETZ_SSL_HOME_PATH/patches/scripts/531-enable_gpon_serial.sh.orig $FREETZ_SSL_HOME_PATH/patches/scripts/531-enable_gpon_serial.sh 2>/dev/null
