@@ -23,6 +23,24 @@ cp -ar $CONFIG_PATCH_PATH/avm/features.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/nul
 patch -p0 -b < features.patch
 rm -rf "$FREETZ_SSL_HOME_PATH/features.patch" 2>/dev/null
 
+### 07_8X
+echo -e ${GREEN}"Patch for add FW 07_5X PLUS and Inhaus"${NC}
+cp -ar $CONFIG_PATCH_PATH/avm/availability.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < availability.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/availability.patch" 2>/dev/null
+
+cp -ar $CONFIG_PATCH_PATH/mod/dl-firmware.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < dl-firmware.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/dl-firmware.patch" 2>/dev/null
+
+cp -ar $CONFIG_PATCH_PATH/mod/prefix.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < prefix.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/prefix.patch" 2>/dev/null
+
+cp -ar $CONFIG_PATCH_PATH/ui/firmware.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < firmware.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/firmware.patch" 2>/dev/null
+
 echo -e ${GREEN}"Freetz files patch for Internet Sharing on Repeater."${NC}
 cp -ar $I_MATIK_PATCH_PATH/ifree.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < ifree.patch

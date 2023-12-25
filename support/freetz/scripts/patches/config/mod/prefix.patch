@@ -1,0 +1,10 @@
+--- config/mod/prefix.in	2023-11-03 22:10:30.540740526 +0100
++++ config/mod/prefix.in	2023-11-03 22:59:50.221525902 +0100
+@@ -108,6 +108,7 @@
+ config FREETZ_TYPE_PREFIX_LABOR_FIRMWARE
+ 	string
+ 	default "_labor"            if FREETZ_TYPE_FIRMWARE_LABOR
++	default "_laborplus"        if FREETZ_TYPE_FIRMWARE_PLUS
+ 	default "_inhaus"           if FREETZ_TYPE_FIRMWARE_INHAUS
+ 
+ config FREETZ_TYPE_PREFIX_SERIES_SUBDIR

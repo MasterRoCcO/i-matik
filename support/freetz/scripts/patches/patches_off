@@ -7,6 +7,12 @@ source $I_MATIK_PATCH_PATH/motd
 source $I_MATIK_PATCH_PATH/000-remove_i-matik_orig_files
 source $MAKE_PATCH_PATH/libs/libusb1
 
+### 07_8X
+source $CONFIG_PATCH_PATH/avm/availability
+source $CONFIG_PATCH_PATH/mod/dl-firmware
+source $CONFIG_PATCH_PATH/mod/prefix
+source $CONFIG_PATCH_PATH/ui/firmware
+
 # features
 source $CONFIG_PATCH_PATH/avm/features
 source $I_MATIK_PATCH_PATH/ifree
