@@ -1,0 +1,19 @@
+--- tools/freetz_download	2023-11-03 22:10:30.544740440 +0100
++++ tools/freetz_download	2023-11-03 23:14:45.212415535 +0100
+@@ -295,13 +296,14 @@
+ #				sites[(( num_sites++ ))]=https://download.avm.de/fritzpowerline/$subpath
+ #				sites[(( num_sites++ ))]=https://download.avm.de/fritzsmart/$subpath
+ 				sites[(( num_sites++ ))]=https://avm.de/$subpath
+-#				sites[(( num_sites++ ))]=https://download.avm.de/labor/GoFiber23/$subpath
++				sites[(( num_sites++ ))]=https://download.avm.de/labor/GoFiber23/$subpath
+ #				sites[(( num_sites++ ))]=https://download.avm.de/labor/MOVE21NL1/$subpath
+ #				sites[(( num_sites++ ))]=https://download.avm.de/labor/MOVE21/$subpath
+ 				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/GoFiber23/$subpath
+-#				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/MOVE21NL1/$subpath
++				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/MOVE21NL1/$subpath
+ #				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/MOVE21/$subpath
+ #				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/WU22PSQ19/$subpath
++				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/GoFiber23/$subpath
+ 				sites[(( num_sites++ ))]=https://download.avm.de/archive/fritz.box/$subpath
+ 				sites[(( num_sites++ ))]=https://service.avm.de/downloads/downgrade/$subpath
+ 				sites[(( num_sites++ ))]=https://service.avm.de/downloads/zwischenupdate/$subpath
