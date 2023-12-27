@@ -1,0 +1,11 @@
+--- make/pkgs/mod/files/root/etc/default.mod/mod.cfg	2023-10-19 05:18:48.591301000 +0200
++++ make/pkgs/mod/files/root/etc/default.mod/mod.cfg	2023-12-27 06:57:02.328957346 +0100
+@@ -36,7 +36,7 @@
+ export MOD_SHUTDOWN_LAST='cifsmount davfs2 autofs'
+ export MOD_PATH_WTMP='/var/log/'
+ export MOD_GET_IP_METHOD='--all'
+-export MOD_GET_IP_STUN='stun.1und1.de'
++export MOD_GET_IP_STUN=''
+ export MOD_SKIN='cuma'
+ export MOD_LANG='en'
+ export MOD_RESOLV_DNS='127.0.0.1'
