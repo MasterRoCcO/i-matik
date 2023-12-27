@@ -5,17 +5,14 @@ cp -ar $I_MATIK_PATCH_PATH/10-box.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATCH_PATH/info.cgi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATCH_PATH/menu-new.sh.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATCH_PATH/motd.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-cp -ar $I_MATIK_PATCH_PATH/000-remove_i-matik_orig_files.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < 10-box.patch
 patch -p0 -b < info.cgi.patch
 patch -p0 -b < menu-new.sh.patch
 patch -p0 -b < motd.patch
-patch -p0 < 000-remove_i-matik_orig_files.patch
 rm -rf "$FREETZ_SSL_HOME_PATH/10-box.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/info.cgi.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/menu-new.sh.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/motd.patch" 2>/dev/null
-rm -rf "$FREETZ_SSL_HOME_PATH/000-remove_i-matik_orig_files.patch" 2>/dev/null
 
 # features
 echo -e ${GREEN}"Freetz files patch for Temperature Sensors."${NC}

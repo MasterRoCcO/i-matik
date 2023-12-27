@@ -1,2 +1,0 @@
-#!/bin/bash
-rm -f $FREETZ_SSL_HOME_PATH/patches/scripts/000-remove_i-matik_orig_files.sh 2>/dev/null
