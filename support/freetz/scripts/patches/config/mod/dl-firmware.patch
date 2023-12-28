@@ -77,7 +77,7 @@
  	default "FRITZ.Box_6690_Cable-07.29.image"                                             if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_6690_Cable-07.57.image"                                             if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_07_5X
 +	default "FRITZ.Box_6690_Cable-07.57-108550-LabPLUS.image"                              if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_07_5X_PLUS
-+	default "FRITZ.Box_6690_Cable-07.57-109864-Inhaus.image"                               if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
++	default "FRITZ.Box_6690_Cable-07.57-109913-Inhaus.image"                               if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
  	#
  	default "FRITZ.Box_6810_LTE.108.06.35.image"                                           if FREETZ_TYPE_6810 && FREETZ_TYPE_LANG_DE && FREETZ_TYPE_FIRMWARE_06_2X
  	default "FRITZ.Box_6810_LTE.en-de-es-it-fr.108.06.35.image"                            if FREETZ_TYPE_6810 && FREETZ_TYPE_LANG_EN && FREETZ_TYPE_FIRMWARE_06_2X
