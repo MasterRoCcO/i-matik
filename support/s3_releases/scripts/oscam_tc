@@ -9,7 +9,7 @@ begin_oscam=$(date +"%s")
 
 if [[ ! -e "$OSCAM_PATH" ]]; then
 	umask 0022
-	git clone https://github.com/gorgone/s3_releases "$OSCAM_PATH"
+	git clone https://github.com/gorgone/s3_releases.git "$OSCAM_PATH"
 	cp -ar /$MY_FILES_HOME_PATH_OSCAM/* "$OSCAM_PATH/" 2>/dev/null
 	cp -ar /$PRIVAT_MY_FILES_HOME_PATH_OSCAM/* "$OSCAM_PATH/" 2>/dev/null
 	cp -ar /$USER_OSCAM_TOOLCHAINS/* "$OSCAM_PATH/support" 2>/dev/null

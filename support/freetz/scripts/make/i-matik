@@ -113,7 +113,7 @@ for bs in "${BOX_SSL[@]}"; do
 
 	if [ ! -e "$FREETZ_SSL_HOME_PATH" ]; then
 		umask 0022
-		git clone https://github.com/Freetz-NG/freetz-ng "$FREETZ_SSL_HOME_PATH"
+		git clone https://github.com/Freetz-NG/freetz-ng.git "$FREETZ_SSL_HOME_PATH"
 		rm -rf "$FREETZ_SSL_HOME_PATH/addon"
 		cp -ar /$MY_FILES_HOME_PATH/make/* "$FREETZ_SSL_HOME_PATH/make/" 2>/dev/null
 		ln -s /$MY_FILES_HOME_PATH/addon "$FREETZ_SSL_HOME_PATH/addon"

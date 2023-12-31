@@ -9,7 +9,7 @@ begin_oscam=$(date +"%s")
 
 if [[ ! -e "$OSCAM_PATH" ]]; then
 	umask 0022
-	git clone https://github.com/gorgone/s3_releases "$OSCAM_PATH"
+	git clone https://github.com/gorgone/s3_releases.git "$OSCAM_PATH"
 elif [ ! -d "$OSCAM_PATH" ]; then
 #	printf "${YELLOW}'$OSCAM_PATH' already exists but is not a directory${NC}" 1>&2
 	exit 1
@@ -19,7 +19,7 @@ mv $OSCAM_PATH/oscam-svn $OSCAM_PATH/ohne-oscam-ncam
 mv $OSCAM_PATH/oscam-ncam $OSCAM_PATH/oscam-svn
 
 if [[ ! -e "$OSCAM_PATH/oscam-svn" ]]; then
-	git clone https://github.com/fairbird/NCam $OSCAM_PATH/oscam-svn
+	git clone https://github.com/fairbird/NCam.git $OSCAM_PATH/oscam-svn
 ed $OSCAM_PATH/oscam-svn/ncam.c <<EOF
 /", CS_TARGET);/a
 	fprintf(fp, "Built by:       %s\n", "i-matik");
