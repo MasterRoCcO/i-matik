@@ -32,6 +32,7 @@ The installed version on this device is currently xxxx
 <h1>Big thanks to</h1>
 bbszx
 berndy2001
+Humpty Dumpty
 hermann72pb
 Loman
 MC Crap FIX
