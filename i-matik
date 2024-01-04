@@ -9,7 +9,7 @@ I_MATIK_PATH=$(cd `dirname $0` && pwd)
 git pull 2>/dev/null
 source $I_MATIK_PATH/support/i-matik/config/i-matik
 source $INSTAL_CHECK
-VERSIONS_NR="0.84.4(f10.2)(i08.7)"
+VERSIONS_NR="0.84.4(f10.1)(i08.7)"
 ln -s $CREATE_BOXES $I_MATIK_PATH/my-boxes_please_edit_me 2>/dev/null
 source $I_MATIK_PATH/support/freetz/scripts/friends 2>/dev/null
 
@@ -1023,6 +1023,6 @@ printf "\t        for freetz-ng and s3_releases\n"
 printf "\t   https://github.com/MasterRoCcO/i-matik\n"
 printf "\t        Version $VERSIONS_NR\n"
 printf "\t  https://www.spendenseite.de/i-matik/-67603\n"
-source $ONLY_FRIENDS
+source $ONLY_FRIENDS 2>/dev/null
 	exit 0
 fi
