@@ -1,5 +1,5 @@
---- config/mod/dl-firmware.in	2024-01-06 12:21:17.523894422 +0100
-+++ config/mod/dl-firmware.in	2024-01-06 12:25:31.068256031 +0100
+--- config/mod/dl-firmware.in	2024-01-08 18:20:20.885912407 +0100
++++ config/mod/dl-firmware.in	2024-01-08 18:21:30.516383408 +0100
 @@ -51,7 +51,7 @@
  	#
  	default "@AVM/fritzwlan/fritzrepeater-3000/{other,deutschland}/fritz.os,@AVM/3000"                                 if FREETZ_TYPE_3000
@@ -58,12 +58,15 @@
  	default "FRITZ.Box_5590-07.30.image"                                                   if FREETZ_TYPE_5590 && FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_5590_Fiber-07.58-V2.image/FRITZ.Box_5590_Fiber-07.58.image"         if FREETZ_TYPE_5590 && FREETZ_TYPE_FIRMWARE_07_5X
 -	default "FRITZ.Box_5590_Fiber-07.70-108944-LabBETA.image"                              if FREETZ_TYPE_5590 && FREETZ_TYPE_FIRMWARE_07_8X_LABOR
+-	#
+-	default "FRITZ.Repeater_6000-07.31-V2.image/FRITZ.Repeater_6000-07.31.image"           if FREETZ_TYPE_6000 && FREETZ_TYPE_FIRMWARE_07_2X
+-	default "FRITZ.Repeater_6000-07.57.image"                                              if FREETZ_TYPE_6000 && FREETZ_TYPE_FIRMWARE_07_5X
 +	default "FRITZ.Box_5590_Fiber-07.58-108561-LabPLUS.image"                              if FREETZ_TYPE_5590 && FREETZ_TYPE_FIRMWARE_07_5X_PLUS
 +	default "FRITZ.Box_5590_Fiber-07.70-109883-Labor.image"                                if FREETZ_TYPE_5590 && FREETZ_TYPE_FIRMWARE_07_8X_LABOR
 +	default "FRITZ.Box_5590_Fiber-07.70-109939-Inhaus.image"                               if FREETZ_TYPE_5590 && FREETZ_TYPE_FIRMWARE_07_8X_INHAUS
- 	#
- 	default "FRITZ.Repeater_6000-07.31.image"                                              if FREETZ_TYPE_6000 && FREETZ_TYPE_FIRMWARE_07_2X
- 	default "FRITZ.Repeater_6000-07.57.image"                                              if FREETZ_TYPE_6000 && FREETZ_TYPE_FIRMWARE_07_5X
++	#
++	default "FRITZ.Repeater_6000-07.31-V2.image/FRITZ.Repeater_6000-07.31.image"           if FREETZ_TYPE_6000 && FREETZ_TYPE_FIRMWARE_07_2X	
++	default "FRITZ.Repeater_6000-07.57-V2.image/FRITZ.Repeater_6000-07.57.image"           if FREETZ_TYPE_6000 && FREETZ_TYPE_FIRMWARE_07_5X
 +	default "FRITZ.Repeater_6000-07.57-109860-Inhaus.image"                                if FREETZ_TYPE_6000 && FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
  	#
  	default "FRITZ.Box_6430_Cable-07.12.image"                                             if FREETZ_TYPE_6430 && FREETZ_TYPE_FIRMWARE_07_1X
