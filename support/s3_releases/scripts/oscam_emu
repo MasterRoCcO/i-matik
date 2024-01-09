@@ -39,7 +39,19 @@ fi
 	DELETE_OSCAM_NAME="*$(echo ${!FREETZ_SSL_PATH} | awk -F'/' '{print $NF}').upx"	# construct image filname filter
 	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "${DELETE_OSCAM_NAME}" -type f -mmin +$DELETE_OSCAM -delete 2>/dev/null
 	find $OSCAM_PATH/support/logs -name "*.log" -type f -mmin +$DELETE_OSCAM_LOG -delete
- 	
+
+if [[ ! -e $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS} ]]; then
+	$OSCAM_PATH/./s3 tcrepair fritz_${FB_ARCH}_${FB_OS}
+#elif [[ ! -d $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS} ]]; then
+#	echo "$OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS} existiert bereits, ist aber kein Verzeichnis " 1>&2
+fi
+		$OSCAM_PATH/./s3 update_emu
+		cp -ar $OSCAM_PATH/support/downloads/emu_github/oscam-emu.patch $OSCAM_PATH/oscam-svn/
+		cd $OSCAM_PATH/oscam-svn
+		patch -p0 < oscam-emu.patch
+		cd $OSCAM_PATH/oscam-svn && OSCAMVERSION_ALT="$(./config.sh -r)"
+		cd $OSCAM_PATH/oscam-svn && svn up && OSCAMVERSION_NEU="$(./config.sh -r)"
+		
 if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-svn${OSCAMVERSION_NEU:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8}.upx ]]; then
 	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-svn${OSCAMVERSION_ALT:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_ALT:6:8}.upx" -type f -mmin +0 -delete
 
