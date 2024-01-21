@@ -1,5 +1,5 @@
---- config/mod/dl-firmware.in	2024-01-08 21:44:31.164483386 +0100
-+++ config/mod/dl-firmware.in	2024-01-08 21:47:46.775081663 +0100
+--- config/mod/dl-firmware.in	2024-01-21 15:19:57.373919008 +0100
++++ config/mod/dl-firmware.in	2024-01-21 22:30:17.297735185 +0100
 @@ -51,7 +51,7 @@
  	#
  	default "@AVM/fritzwlan/fritzrepeater-3000/{other,deutschland}/fritz.os,@AVM/3000"                                 if FREETZ_TYPE_3000
@@ -141,3 +141,12 @@
  #	default "xxxxxxxxxxxxxxxxxxxxxxxxx.zip"           if FREETZ_TYPE_xxxx
  	#
  	default ""
+@@ -779,7 +796,7 @@
+ 	string "AVM alien web interface firmware source"                                if FREETZ_DL_OVERRIDE
+ 	depends on FREETZ_DL_ALIEN
+ 	#
+-	default "FRITZ.Box_WLAN_Repeater_DVB_C.en-de-es-it-fr-pl.133.07.02.image"       if FREETZ_TYPE_1759_1750
++	default "FRITZ.Box_WLAN_Repeater_DVB_C.en-de-es-it-fr-pl.133.07.03.image"       if FREETZ_TYPE_1759_1750
+ 	#
+ 	default "fritz.box_wlan_3170.49.04.58.image"                                    if FREETZ_TYPE_3170_7170
+ 	default "FRITZ.Box_Fon_WLAN_7112.87.04.88.image"                                if FREETZ_TYPE_7112_7170
