@@ -62,6 +62,10 @@ KERNEL_FIX_PATH="$I_MATIK_PATH/support/freetz/scripts/patches/fix/make/kernel"
 FIX_CHECK_ON="$I_MATIK_PATH/support/freetz/scripts/fix_check/fix_check_on"
 FIX_CHECK_OFF="$I_MATIK_PATH/support/freetz/scripts/fix_check/fix_check_off"
 
+#NO_GLIB2_6430="64301"
+#NO_GLIB2_6490="64901"
+#NO_GLIB2_6590="65901"
+
 #ext3
 BAD_EXT3_OS_75="07_5X"
 BAD_EXT3_OS_78="07_8X"
@@ -98,6 +102,12 @@ FRIENDS_PATCH_ON="$ONLY_FRIENDS_PATCH/friends_patches_on"
 FRIENDS_PATCH_OFF="$ONLY_FRIENDS_PATCH/friends_patches_off"
 FRIENDS_PATCH_INFO="$I_MATIK_PATH/support/freetz/scripts/patches/friends/i-matik"
 FRIENDS_PATCH_DL="$I_MATIK_PATH/support/freetz/scripts"
+
+FRIENDS_DOWNGRADE_ON="$ONLY_FRIENDS_PATCH/make/downgrade_on"
+FRIENDS_DOWNGRADE_OFF="$ONLY_FRIENDS_PATCH/make/downgrade_off"
+
+#FRIENDS_PATCH_ON="$I_MATIK_PATH/support/freetz/scripts/patches/friends/friends_patches_on"
+#FRIENDS_PATCH_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/friends/friends_patches_off"
 
 #If you don't need the make menuconfig, just put a # in front of MENUC and MENUC1
 MENUC="menuconfig"
@@ -151,7 +161,7 @@ OSCAM_OFF="$I_MATIK_PATH/support/freetz/scripts/pkgs_on_off/oscam_off"
 OSCAM="$I_MATIK_PATH/support/s3_releases/scripts/oscam"
 OSCAM_EMU="$I_MATIK_PATH/support/s3_releases/scripts/oscam_emu"
 OSCAM_SMOD="$I_MATIK_PATH/support/s3_releases/scripts/oscam_smod"
-OSCAM_NCAM="$I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam"
+#OSCAM_NCAM="$I_MATIK_PATH/support/s3_releases/scripts/oscam_ncam"
 OSCAM_TOOLCHAIN="$I_MATIK_PATH/support/s3_releases/scripts/oscam_tc"
 OSCAM_TCUPDATE="$I_MATIK_PATH/support/s3_releases/scripts/tcupdate"
 

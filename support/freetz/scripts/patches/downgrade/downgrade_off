@@ -2,20 +2,21 @@
 DOWNGRADE_FOR="$(grep '^FREETZ_TYPE_PREFIX=' .config | awk -F'"' '{print $2}' | xargs)" 2>/dev/null
 if [ $DOWNGRADE_FOR = $LIBUSB1_7530AX ]
 	then
-		source $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/make/libs/libusb1
+		source $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/make/libs/libusb1 2>/dev/null
 fi
 
 if [ $DOWNGRADE_FOR = $LIBUSB1_6591 ]
 	then
-		source $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/make/libs/libusb1
+		source $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/make/libs/libusb1 2>/dev/null
 fi
 
 if [ $DOWNGRADE_FOR = $LIBUSB1_6660 ]
 	then
-		source $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/make/libs/libusb1
+		source $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/make/libs/libusb1 2>/dev/null
 fi
 
 if [ $DOWNGRADE_FOR = $LIBUSB1_6690 ]
 	then
-		source $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/make/libs/libusb1
+		source $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/make/libs/libusb1 2>/dev/null
 fi
+source $FRIENDS_DOWNGRADE_OFF 2>/dev/null
