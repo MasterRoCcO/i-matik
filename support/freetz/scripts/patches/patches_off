@@ -5,13 +5,14 @@ source $I_MATIK_PATCH_PATH/info.cgi
 source $I_MATIK_PATCH_PATH/menu-new
 source $I_MATIK_PATCH_PATH/motd
 source $I_MATIK_PATCH_PATH/mod
-source $MAKE_PATCH_PATH/libs/libusb1
+source $I_MATIK_PATCH_PATH/000-remove_i-matik_orig_files
 
 ### 07_8X
 source $CONFIG_PATCH_PATH/avm/availability
 source $CONFIG_PATCH_PATH/mod/dl-firmware
 source $CONFIG_PATCH_PATH/mod/prefix
 source $CONFIG_PATCH_PATH/ui/firmware
+source $CONFIG_PATCH_PATH/ui/toolchain
 source $TOOLS_PATCH_PATH/freetz_download
 
 # features
@@ -20,10 +21,13 @@ source $I_MATIK_PATCH_PATH/ifree
 source $I_MATIK_PATCH_PATH/enable_gpon_serial
 source $I_MATIK_PATCH_PATH/cond/832-hide_dsl_overview-hint/832-hide_dsl_overview-hint_07_8X
 source $I_MATIK_PATCH_PATH/scripts/832-hide_dsl_overview-hint
+source $MAKE_PATCH_PATH/libs/libusb1
 
 # fix
-source $I_MATIK_PATH/support/freetz/scripts/patches/host-tools/sed-host
+#source $I_MATIK_PATH/support/freetz/scripts/patches/host-tools/sed-host
+source $PKGS_FIX_PATH/no_rrdstats_1_8
 source $PKGS_FIX_PATH/openssl
+#source $KERNEL_FIX_PATH/loop_fix 2>/dev/null
 
 # patche for friends
 source $FRIENDS_PATCH_OFF

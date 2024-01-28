@@ -6,16 +6,19 @@ cp -ar $I_MATIK_PATCH_PATH/info.cgi.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATCH_PATH/menu-new.sh.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATCH_PATH/motd.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 cp -ar $I_MATIK_PATCH_PATH/mod.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+cp -ar $I_MATIK_PATCH_PATH/000-remove_i-matik_orig_files.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < 10-box.patch
 patch -p0 -b < info.cgi.patch
 patch -p0 -b < menu-new.sh.patch
 patch -p0 -b < motd.patch
 patch -p0 -b < mod.patch
+patch -p0 < 000-remove_i-matik_orig_files.patch
 rm -rf "$FREETZ_SSL_HOME_PATH/10-box.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/info.cgi.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/menu-new.sh.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/motd.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/mod.patch" 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/000-remove_i-matik_orig_files.patch" 2>/dev/null
 
 # features
 echo -e ${GREEN}"Freetz files patch for Temperature Sensors."${NC}
@@ -40,6 +43,10 @@ rm -rf "$FREETZ_SSL_HOME_PATH/prefix.patch" 2>/dev/null
 cp -ar $CONFIG_PATCH_PATH/ui/firmware.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < firmware.patch 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/firmware.patch" 2>/dev/null
+
+cp -ar $CONFIG_PATCH_PATH/ui/toolchain.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < toolchain.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/toolchain.patch" 2>/dev/null
 
 cp -ar $TOOLS_PATCH_PATH/freetz_download.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < freetz_download.patch 2>/dev/null
@@ -69,10 +76,10 @@ patch -p0 -b < 832-hide_dsl_overview-hint.patch 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/832-hide_dsl_overview-hint.patch" 2>/dev/null
 
 # fix
-echo -e ${GREEN}"fix for sed host (static.pkg)."${NC}
-cp -ar $I_MATIK_PATH/support/freetz/scripts/patches/host-tools/sed-host.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-patch -p0 -b < sed-host.patch
-rm -rf "$FREETZ_SSL_HOME_PATH/sed-host.patch" 2>/dev/null
+#echo -e ${GREEN}"fix for sed host (static.pkg)."${NC}
+#cp -ar $I_MATIK_PATH/support/freetz/scripts/patches/host-tools/sed-host.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+#patch -p0 -b < sed-host.patch
+#rm -rf "$FREETZ_SSL_HOME_PATH/sed-host.patch" 2>/dev/null
 
 echo -e ${GREEN}"fix ssl 1.0.x aktiv for 64xx and 6590."${NC}
 cp -ar $PKGS_FIX_PATH/openssl.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
