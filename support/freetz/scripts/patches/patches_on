@@ -44,13 +44,14 @@ cp -ar $CONFIG_PATCH_PATH/ui/firmware.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < firmware.patch 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/firmware.patch" 2>/dev/null
 
-cp -ar $CONFIG_PATCH_PATH/ui/toolchain.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-patch -p0 -b < toolchain.patch 2>/dev/null
-rm -rf "$FREETZ_SSL_HOME_PATH/toolchain.patch" 2>/dev/null
-
 cp -ar $TOOLS_PATCH_PATH/freetz_download.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < freetz_download.patch 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/freetz_download.patch" 2>/dev/null
+
+echo -e ${GREEN}"Patch for gcc selection"${NC}
+cp -ar $CONFIG_PATCH_PATH/ui/toolchain.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < toolchain.patch 2>/dev/null
+rm -rf "$FREETZ_SSL_HOME_PATH/toolchain.patch" 2>/dev/null
 
 echo -e ${GREEN}"Freetz files patch for Internet Sharing on Repeater."${NC}
 cp -ar $I_MATIK_PATCH_PATH/ifree.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
