@@ -68,14 +68,6 @@ cp -ar $MAKE_PATCH_PATH/libs/libusb1.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < libusb1.patch
 rm -rf "$FREETZ_SSL_HOME_PATH/libusb1.patch" 2>/dev/null
 
-echo -e ${GREEN}"Freetz files patch for 832-hide_dsl_overview Labor and Inhaus"${NC}
-cp -ar $I_MATIK_PATCH_PATH/cond/832-hide_dsl_overview-hint/832-hide_dsl_overview-hint_07_8X.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-patch -p0 -b < 832-hide_dsl_overview-hint_07_8X.patch 2>/dev/null
-rm -rf "$FREETZ_SSL_HOME_PATH/832-hide_dsl_overview-hint_07_8X.patch" 2>/dev/null
-cp -ar $I_MATIK_PATCH_PATH/scripts/832-hide_dsl_overview-hint.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-patch -p0 -b < 832-hide_dsl_overview-hint.patch 2>/dev/null
-rm -rf "$FREETZ_SSL_HOME_PATH/832-hide_dsl_overview-hint.patch" 2>/dev/null
-
 # fix
 #echo -e ${GREEN}"fix for sed host (static.pkg)."${NC}
 #cp -ar $I_MATIK_PATH/support/freetz/scripts/patches/host-tools/sed-host.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
