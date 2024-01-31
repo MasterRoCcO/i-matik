@@ -1,3 +1,0 @@
-#!/bin/bash
-rm -f $FREETZ_SSL_HOME_PATH/patches/scripts/832-hide_dsl_overview-hint.sh 2>/dev/null
-mv $FREETZ_SSL_HOME_PATH/patches/scripts/832-hide_dsl_overview-hint.sh.orig $FREETZ_SSL_HOME_PATH/patches/scripts/832-hide_dsl_overview-hint.sh 2>/dev/null
