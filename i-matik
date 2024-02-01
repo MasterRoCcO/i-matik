@@ -9,7 +9,7 @@ I_MATIK_PATH=$(cd `dirname $0` && pwd)
 git pull 2>/dev/null
 source $I_MATIK_PATH/support/i-matik/config/i-matik
 source $INSTAL_CHECK
-VERSIONS_NR="0.86.0(f11.0)(i08.9)"
+VERSIONS_NR="0.86.0(f11.4)(i08.9)"
 ln -s $CREATE_BOXES $I_MATIK_PATH/my-boxes_please_edit_me 2>/dev/null
 source $I_MATIK_PATH/support/freetz/scripts/friends 2>/dev/null
 
@@ -978,9 +978,12 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf "  -rr18,--rrdstats18\t\tRRDstats for RRDtool 1.8.0\n"
 	printf "  -vs,--vnstat\t\t\tVNSTAT\n"
 	printf "  -wg,--wireguard\t\tWIREGUARD\n"
+	printf "  -ov|--openvpn\t\tOpenvpn\n"
+	printf "  -tel|--telnet\t\tTelnet\n"
 	printf "  -push\t\t\t\tpush image to Fritz!Box or Fritz!Repeater or Fritz!Powerline\n"
 	printf "  -backup\t\t\tmake a backup of your freetz-signature and freetz-dl\n"
 	printf "  -us,--user-skins\t\tuser skins\n"
+	printf "  -us1,--user-skins1\t\tuser skins1\n"
 	printf "  -ua,--user-application\\tuser application \n\n"
 	printf ${GREEN}"List of currently OpenSSL 1.0.x supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST_SSL_1_0}\n"
 	printf ${BLUE}"To build an OpenSSL 1.0.x image for Fritz!Box 3272 use this command:${NC}\n"
