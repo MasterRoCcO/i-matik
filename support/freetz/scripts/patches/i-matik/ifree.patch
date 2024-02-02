@@ -32,15 +32,21 @@
  
  config FREETZ_PATCH_SIGNED
  	bool "Patch web menu signed message"
-@@ -1347,7 +1372,7 @@
+@@ -1347,8 +1347,13 @@
  
  config FREETZ_ENABLE_GPON_SERIAL
  	bool "Enable GPON serial textbox"
 -	depends on FREETZ_TYPE_FIBER && FREETZ_AVM_VERSION_07_5X_MAX
-+	depends on FREETZ_TYPE_FIBER && FREETZ_AVM_VERSION_07_5X_MIN && !FREETZ_TYPE_FIRMWARE_INHAUS
++	depends on FREETZ_AVM_VERSION_07_5X_MIN && !FREETZ_TYPE_FIRMWARE_INHAUS
  	depends on !FREETZ_REMOVE_SUPPORT
++	depends on \
++		( FREETZ_AVM_VERSION_07_5X_MIN && ( \
++			FREETZ_TYPE_5530 || \
++			FREETZ_TYPE_5590 \
++		))
  	default n
  	help
+ 		Re-enables access to the GPON serial textbox on support page.
 @@ -1373,7 +1398,7 @@
  
  menuconfig FREETZ_PATCH_MODFS_BOOT_MANAGER
