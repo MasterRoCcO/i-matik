@@ -11,7 +11,7 @@ if [[ ! -e "$OSCAM_PATH" ]]; then
 	umask 0022
 	git clone https://github.com/gorgone/s3_releases.git "$OSCAM_PATH"
 	cp -ar $MY_FILES_HOME_PATH_OSCAM/* "$OSCAM_PATH/" 2>/dev/null
-	cp -ar $PRIVAT_MY_FILES_HOME_PATH_OSCAM/* "$OSCAM_PATH/" 2>/dev/null
+#	cp -ar $PRIVAT_MY_FILES_HOME_PATH_OSCAM/* "$OSCAM_PATH/" 2>/dev/null
 	cp -ar $USER_OSCAM_TOOLCHAINS/* "$OSCAM_PATH/support" 2>/dev/null
 elif [ ! -d "$OSCAM_PATH" ]; then
 #	printf "${YELLOW}'$OSCAM_PATH' already exists but is not a directory${NC}" 1>&2
