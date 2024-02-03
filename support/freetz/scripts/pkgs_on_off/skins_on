@@ -19,4 +19,5 @@ else
 	sed -i "s+# FREETZ_SKIN_cuma is not set+FREETZ_SKIN_cuma=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 	sed -i "s+# FREETZ_PACKAGE_SKIN_PRISRAK is not set+FREETZ_PACKAGE_SKIN_PRISRAK=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 	sed -i "s+# FREETZ_PACKAGE_SKIN_PRISRAK1 is not set+FREETZ_PACKAGE_SKIN_PRISRAK1=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+# FREETZ_TAGGING_PRISRAK is not set+FREETZ_TAGGING_PRISRAK=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 fi

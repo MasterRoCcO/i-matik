@@ -1,0 +1,29 @@
+--- config/ui/freetz.in	2024-02-01 23:05:38.000000000 +0100
++++ config/ui/freetz.in	2024-02-03 18:07:34.264453976 +0100
+@@ -179,9 +179,15 @@
+ 
+ 		config FREETZ_TAGGING_NG
+ 			bool "Freetz-NG"
++ 			
++		config FREETZ_TAGGING_PIMPED_YELLOW
++			bool "Pimped Yellow"
+ 			
+-		config FREETZ_TAGGING_PIMPED
++ 		config FREETZ_TAGGING_PIMPED
+ 			bool "Pimped"
++			
++		config FREETZ_TAGGING_PRISRAK
++			bool "PRISRAK"
+ 
+ 	endchoice # "AVM tagging" #
+ 
+@@ -195,7 +201,9 @@
+ 		depends on !FREETZ_TAGGING_NONE
+ 		default "cuma"          if FREETZ_TAGGING_CUMA
+ 		default "freetz-ng"     if FREETZ_TAGGING_NG
++		default "pimped-yellow" if FREETZ_TAGGING_PIMPED_YELLOW
+ 		default "pimped"        if FREETZ_TAGGING_PIMPED
++		default "prisrak"       if FREETZ_TAGGING_PRISRAK
+ 
+ 	config FREETZ_WEBIF_LINK
+ 		bool "AVM menu link"

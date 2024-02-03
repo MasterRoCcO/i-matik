@@ -44,6 +44,10 @@ cp -ar $CONFIG_PATCH_PATH/ui/firmware.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < firmware.patch 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/firmware.patch" 2>/dev/null
 
+cp -ar $CONFIG_PATCH_PATH/ui/freetz.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < freetz.patch
+rm -rf "$FREETZ_SSL_HOME_PATH/freetz.patch" 2>/dev/null
+
 cp -ar $TOOLS_PATCH_PATH/freetz_download.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 patch -p0 -b < freetz_download.patch 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/freetz_download.patch" 2>/dev/null

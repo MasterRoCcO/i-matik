@@ -12,6 +12,7 @@ source $CONFIG_PATCH_PATH/avm/availability
 source $CONFIG_PATCH_PATH/mod/dl-firmware
 source $CONFIG_PATCH_PATH/mod/prefix
 source $CONFIG_PATCH_PATH/ui/firmware
+source $CONFIG_PATCH_PATH/ui/freetz
 source $CONFIG_PATCH_PATH/ui/toolchain
 source $TOOLS_PATCH_PATH/freetz_download
 
