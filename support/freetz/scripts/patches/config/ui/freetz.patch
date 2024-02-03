@@ -13,7 +13,7 @@
  			bool "Pimped"
 +			
 +		config FREETZ_TAGGING_PRISRAK
-+			bool "PRISRAK"
++			bool "Prisrak"
  
  	endchoice # "AVM tagging" #
  
