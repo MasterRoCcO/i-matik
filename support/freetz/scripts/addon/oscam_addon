@@ -11,7 +11,7 @@
 		cd $MY_FILES_HOME_PATH/addon
 		wget https://freetz.digital-eliteboard.com/Teamserver/Freetz/Addon/oscam%20${OSCAM_ADDON_VERSION:6:4}x/${OSCAM_ADDON_VERSION:6:5}/${OSCAM_ADDON_VERSION}.tar.gz 2>/dev/null
 		tar xfvz ${OSCAM_ADDON_VERSION}.tar.gz
-		chmod -v 755 ${OSCAM_ADDON_VERSION}
+		chmod -R -v 755 ${OSCAM_ADDON_VERSION}
 		rm -rf ${OSCAM_ADDON_VERSION_OLD}
 		rm ${OSCAM_ADDON_VERSION}.tar.gz
 #		echo -e ${GREEN}"rolu2 from the DEB forum is responsible for maintaining the oscam add-on. I have only developed one way that it is equally available to everyone in i-matik. Therefore, I will not give support for the Oscam add-on."${NC}
@@ -36,7 +36,7 @@
 		cd $MY_FILES_HOME_PATH/addon
 		wget https://freetz.digital-eliteboard.com/Teamserver/Freetz/Addon/oscam%20${OSCAM_ADDON_VERSION:6:4}x/${OSCAM_ADDON_VERSION:6:5}/${OSCAM_ADDON_VERSION}.tar.gz 2>/dev/null
 		tar xfvz ${OSCAM_ADDON_VERSION}.tar.gz
-		chmod -v 755 ${OSCAM_ADDON_VERSION}
+		chmod -R -v 755 ${OSCAM_ADDON_VERSION}
 		rm -rf ${OSCAM_ADDON_VERSION_OLD}
 		rm ${OSCAM_ADDON_VERSION}.tar.gz
 #		echo -e ${GREEN}"rolu2 from the DEB forum is responsible for maintaining the oscam add-on. I have only developed one way that it is equally available to everyone in i-matik. Therefore, I will not give support for the Oscam add-on."${NC}
@@ -61,7 +61,7 @@
 		cd $MY_FILES_HOME_PATH/addon
 		wget https://freetz.digital-eliteboard.com/Teamserver/Freetz/Addon/oscam%20${OSCAM_ADDON_VERSION:6:4}x/${OSCAM_ADDON_VERSION:6:5}/${OSCAM_ADDON_VERSION}.tar.gz 2>/dev/null
 		tar xfvz ${OSCAM_ADDON_VERSION}.tar.gz
-		chmod -v 755 ${OSCAM_ADDON_VERSION}
+		chmod -R -v 755 ${OSCAM_ADDON_VERSION}
 		rm -rf ${OSCAM_ADDON_VERSION_OLD}
 		rm ${OSCAM_ADDON_VERSION}.tar.gz
 #		echo -e ${GREEN}"rolu2 from the DEB forum is responsible for maintaining the oscam add-on. I have only developed one way that it is equally available to everyone in i-matik. Therefore, I will not give support for the Oscam add-on."${NC}
@@ -86,7 +86,7 @@
 		cd $MY_FILES_HOME_PATH/addon
 		wget https://freetz.digital-eliteboard.com/Teamserver/Freetz/Addon/oscam%20${OSCAM_ADDON_VERSION:6:4}x/${OSCAM_ADDON_VERSION:6:5}/${OSCAM_ADDON_VERSION}.tar.gz 2>/dev/null
 		tar xfvz ${OSCAM_ADDON_VERSION}.tar.gz
-		chmod -v 755 ${OSCAM_ADDON_VERSION}
+		chmod -R -v 755 ${OSCAM_ADDON_VERSION}
 		rm -rf ${OSCAM_ADDON_VERSION_OLD}
 		rm ${OSCAM_ADDON_VERSION}.tar.gz
 #		echo -e ${GREEN}"rolu2 from the DEB forum is responsible for maintaining the oscam add-on. I have only developed one way that it is equally available to everyone in i-matik. Therefore, I will not give support for the Oscam add-on."${NC}
@@ -111,7 +111,7 @@
 		cd $MY_FILES_HOME_PATH/addon
 		wget https://freetz.digital-eliteboard.com/Teamserver/Freetz/Addon/oscam%20${OSCAM_ADDON_VERSION:6:4}x/${OSCAM_ADDON_VERSION:6:5}/${OSCAM_ADDON_VERSION}.tar.gz 2>/dev/null
 		tar xfvz ${OSCAM_ADDON_VERSION}.tar.gz
-		chmod -v 755 ${OSCAM_ADDON_VERSION}
+		chmod -R -v 755 ${OSCAM_ADDON_VERSION}
 		rm -rf ${OSCAM_ADDON_VERSION_OLD}
 		rm ${OSCAM_ADDON_VERSION}.tar.gz
 #		echo -e ${GREEN}"rolu2 from the DEB forum is responsible for maintaining the oscam add-on. I have only developed one way that it is equally available to everyone in i-matik. Therefore, I will not give support for the Oscam add-on."${NC}
