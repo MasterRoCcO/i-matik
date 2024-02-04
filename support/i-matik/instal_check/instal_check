@@ -19,7 +19,7 @@ if ! dpkg -s $PACKAGES >/dev/null 2>&1; then
 	printf "${YELLOW}Installing prerequisite packages...\n${NC}"
 #	sudo dpkg --add-architecture i386
 #	sudo add-apt-repository ppa:git-core/ppa
-	sudo apt-get install $PACKAGES
+	sudo apt-get install $PACKAGES -y
 	cd /tmp
 	wget http://mirrors.kernel.org/ubuntu/pool/universe/u/upx-ucl/upx-ucl_3.95-2build1_amd64.deb
 #	wget http://ftp.osuosl.org/pub/ubuntu/pool/universe/k/kmod/module-init-tools_24-1ubuntu3_all.deb
@@ -27,7 +27,7 @@ if ! dpkg -s $PACKAGES >/dev/null 2>&1; then
 #	sudo dpkg -i /$INSTAL_CHECK/upx-ucl_4.02-2build1_amd64.deb
 #	sudo dpkg -i /tmp/module-init-tools_24-1ubuntu3_all.deb
 	echo upx-ucl hold | sudo dpkg --set-selections
-	sudo apt-get update && sudo apt-get -y upgrade && sudo apt dist-upgrade && sudo apt autoclean && sudo apt autoremove
+	sudo apt-get update && sudo apt-get upgrade -y && sudo apt dist-upgrade -y && sudo apt autoclean -y && sudo apt autoremove -y
 fi
 else
        echo "Non-compatible version"
