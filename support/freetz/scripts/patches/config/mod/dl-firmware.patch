@@ -1,6 +1,89 @@
 --- config/mod/dl-firmware.in	2024-02-07 11:33:43.309888992 +0100
-+++ config/mod/dl-firmware.in	2024-02-07 17:08:10.575508211 +0100
-@@ -51,7 +51,7 @@
++++ config/mod/dl-firmware.in	2024-02-07 17:27:05.094180909 +0100
+@@ -47,11 +47,11 @@
+ 	#
+ 	default "@AVM/fritzbox.2170/firmware/deutsch"                                                                      if FREETZ_TYPE_2170
+ 	#
+-	default "@AVM/fritzwlan/fritzrepeater-2400/{other,deutschland}/fritz.os"                                           if FREETZ_TYPE_2400
++	default "@AVM/fritzwlan/fritzrepeater-2400/{other,deutschland}/fritz.os,@AVM/2400"                                 if FREETZ_TYPE_2400
+ 	#
+ 	default "@AVM/fritzwlan/fritzrepeater-3000/{other,deutschland}/fritz.os,@AVM/3000"                                 if FREETZ_TYPE_3000
+ 	#
+-	default "@AVM/fritzwlan/fritzrepeater-3000-ax/{other,deutschland}/fritz.os"                                        if FREETZ_TYPE_3009
++	default "@AVM/fritzwlan/fritzrepeater-3000-ax/{other,deutschland}/fritz.os,@AVM/3000AX"                            if FREETZ_TYPE_3009
+ 	#
+ 	default "@AVM/fritzbox.sl_wlan/firmware"                                                                           if FREETZ_TYPE_3020
+ 	#
+@@ -104,7 +104,7 @@
+ 	#
+ 	default "@AVM/fritzbox-5590-fiber/{other,deutschland}/fritz.os,@AVM/5590Fiber"                                     if FREETZ_TYPE_5590
+ 	#
+-	default "@AVM/fritzwlan/fritzrepeater-6000/deutschland/fritz.os"                                                   if FREETZ_TYPE_6000
++	default "@AVM/fritzwlan/fritzrepeater-6000/deutschland/fritz.os,@AVM/6000"                                         if FREETZ_TYPE_6000
+ 	#
+ 	default "@AVM/firmware/6430/65797387"                                                                              if FREETZ_TYPE_6430 && FREETZ_TYPE_FIRMWARE_07_1X
+ 	default "@AVM/fritzbox-6430-cable/deutsch+++ config/mod/dl-firmware.in	2024-02-07 17:42:34.041427417 +0100
+@@ -31,7 +31,7 @@
+ 	#
+ 	default "@AVM/fritzwlan/fritzrepeater-1200/{other,deutschland}/fritz.os,@AVM/1200"                                 if FREETZ_TYPE_1200
+ 	#
+-	default "@AVM/fritzwlan/fritzrepeater-1200-ax/{other,deutschland}/fritz.os,@AVM/firmware/1200AX"                   if FREETZ_TYPE_1209
++	default "@AVM/fritzwlan/fritzrepeater-1200-ax/{other,deutschland}/fritz.os,@AVM/1200AX"                            if FREETZ_TYPE_1209
+ 	#
+ 	default "@AVM/fritzpowerline/fritzpowerline-1240e/{other,deutschland}/fritz.os"                                    if FREETZ_TYPE_1240
+ 	#
+@@ -47,11 +47,11 @@
+ 	#
+ 	default "@AVM/fritzbox.2170/firmware/deutsch"                                                                      if FREETZ_TYPE_2170
+ 	#
+-	default "@AVM/fritzwlan/fritzrepeater-2400/{other,deutschland}/fritz.os"                                           if FREETZ_TYPE_2400
++	default "@AVM/fritzwlan/fritzrepeater-2400/{other,deutschland}/fritz.os,@AVM/2400"                                 if FREETZ_TYPE_2400
+ 	#
+ 	default "@AVM/fritzwlan/fritzrepeater-3000/{other,deutschland}/fritz.os,@AVM/3000"                                 if FREETZ_TYPE_3000
+ 	#
+-	default "@AVM/fritzwlan/fritzrepeater-3000-ax/{other,deutschland}/fritz.os"                                        if FREETZ_TYPE_3009
++	default "@AVM/fritzwlan/fritzrepeater-3000-ax/{other,deutschland}/fritz.os,@AVM/3000AX"                            if FREETZ_TYPE_3009
+ 	#
+ 	default "@AVM/fritzbox.sl_wlan/firmware"                                                                           if FREETZ_TYPE_3020
+ 	#
+@@ -104,7 +104,7 @@
+ 	#
+ 	default "@AVM/fritzbox-5590-fiber/{other,deutschland}/fritz.os,@AVM/5590Fiber"                                     if FREETZ_TYPE_5590
+ 	#
+-	default "@AVM/fritzwlan/fritzrepeater-6000/deutschland/fritz.os"                                                   if FREETZ_TYPE_6000
++	default "@AVM/fritzwlan/fritzrepeater-6000/deutschland/fritz.os,@AVM/6000"                                         if FREETZ_TYPE_6000
+ 	#
+ 	default "@AVM/firmware/6430/65797387"                                                                              if FREETZ_TYPE_6430 && FREETZ_TYPE_FIRMWARE_07_1X
+ 	default "@AVM/fritzbox-6430-cable/deutschland/fritz.os"                                                            if FREETZ_TYPE_6430
+@@ -123,9 +123,9 @@
+ 	default "@AVM/fritzbox-6591-cable/{deutschland,other}/fritz.os,@AVM/6591Cable"                                     if FREETZ_TYPE_6591
+ 	#
+ 	default "@AVM/firmware/6660/89746785"                                                                              if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_07_1X
+-	default "@AVM/fritzbox-6660-cable/{deutschland,other}/fritz.os"                                                    if FREETZ_TYPE_6660
++	default "@AVM/fritzbox-6660-cable/{deutschland,other}/fritz.os,@AVM/6660Cable"                                     if FREETZ_TYPE_6660
+ 	#
+-	default "@AVM/fritzbox-6690-cable/{deutschland,other}/fritz.os,@AVM/FRITZ%21Box%206690%20Cable/other/fritz.os"     if FREETZ_TYPE_6690
++	default "@AVM/fritzbox-6690-cable/{deutschland,other}/fritz.os,@AVM/6690Cable"                                     if FREETZ_TYPE_6690
+ 	#
+ 	default "@AVM/{fritzbox-6810-lte/deutschland/fritz.os,fritzbox_6810_lte/firmware/deutsch}"                         if FREETZ_TYPE_6810 && FREETZ_TYPE_LANG_DE
+ 	default "@AVM/{fritzbox-6810-lte/other/fritz.os,fritzbox_6810_lte/firmware/english}"                               if FREETZ_TYPE_6810 && FREETZ_TYPE_LANG_EN
+@@ -287,9 +287,11 @@
+ 	default "FRITZ.Repeater_1200-07.14.image"    +++ config/mod/dl-firmware.in	2024-02-07 19:04:24.588436478 +0100
+@@ -31,7 +31,7 @@
+ 	#
+ 	default "@AVM/fritzwlan/fritzrepeater-1200/{other,deutschland}/fritz.os,@AVM/1200"                                 if FREETZ_TYPE_1200
+ 	#
+-	default "@AVM/fritzwlan/fritzrepeater-1200-ax/{other,deutschland}/fritz.os,@AVM/firmware/1200AX"                   if FREETZ_TYPE_1209
++	default "@AVM/fritzwlan/fritzrepeater-1200-ax/{other,deutschland}/fritz.os,@AVM/1200AX"                            if FREETZ_TYPE_1209
+ 	#
+ 	default "@AVM/fritzpowerline/fritzpowerline-1240e/{other,deutschland}/fritz.os"                                    if FREETZ_TYPE_1240
+ 	#
+@@ -47,11 +47,11 @@
+ 	#
+ 	default "@AVM/fritzbox.2170/firmware/deutsch"                                                                      if FREETZ_TYPE_2170
+ 	#
+-	default "@AVM/fritzwlan/fritzrepeater-2400/{other,deutschland}/fritz.os"                                           if FREETZ_TYPE_2400
++	default "@AVM/fritzwlan/fritzrepeater-2400/{other,deutschland}/fritz.os,@AVM/2400"                                 if FREETZ_TYPE_2400
  	#
  	default "@AVM/fritzwlan/fritzrepeater-3000/{other,deutschland}/fritz.os,@AVM/3000"                                 if FREETZ_TYPE_3000
  	#
