@@ -1,0 +1,720 @@
+/* optimized_for */
+body {
+    background-image: url(/images/Keywelt/alu.gif);
+    background-position: center;
+    padding-top: 2px;
+        font-size: 16px;
+}
+a {
+    text-decoration: none;
+    border-style: none;
+}
+a:link,a:visited  {
+    color: #F8580F;
+    font-weight: bold;
+    border-style: none;
+}
+a:hover {
+	color: black;
+    font-style: italic;
+    border-style: none;
+}
+p, ul, ol {
+	margin-left: 20px;
+    margin-top: 10px;
+	margin-bottom: 15px;
+    padding: 0px;
+}
+form {
+    margin-left: 10px;
+	margin-top: 10px;
+}
+
+h1, legend {
+	margin-top: 5px;
+	color: black;
+	font: bold 14px sans-serif;
+}
+h2 {
+	margin-top: 10px;
+	margin-bottom: 7px;
+	padding: 0px;
+	color: black;
+	font: italic 14px sans-serif;
+}
+fieldset {
+	margin: 20px 10px;
+	padding: 10px;
+}
+small {
+	font-size: 8pt;
+}
+input {
+	padding: 2px;
+}
+form.btn {
+	margin: 0px;
+}
+div.btn {
+	float: left;
+	margin-bottom: 10px;
+	padding-right: 0px;
+}
+div, td  {
+    	margin-left: 2px;
+    	margin-top: 5px;
+}
+div#content {
+	padding-top:15px;
+    	width: inherit;
+    	max-width: 700px;
+	clear: left;
+}
+div.timeline {
+	margin-left:20px;
+}
+.menu#teaminfo {
+	float: right;
+	width:180px;
+	height:30px;
+	clear: right;
+}
+img#teaminfo {
+	float: left;
+	border:none;
+	margin:-10px 0px 0px 0px;
+	width:30px;
+	height:25px;
+	clear: left;
+}
+span#teaminfo {
+	float:right;
+	font-size:90%;
+	font-weight:bold;
+	padding-right:3px;
+	clear: right;
+}
+.submenu {
+	margin-left:15px;
+	font-weight:bold;
+}
+a#extra_menu {
+	margin-left:25px;
+}
+.menu {
+	display: inline;
+	width: 160px;
+	height: inherit;
+	float: right;
+	border-top: 2px groove black;
+    border-bottom: 2px groove black;
+    border-left: 2px groove black;
+    border-right: 2px groove black;
+	margin-top: inherit;
+    margin: 20px 15px 0 50px;
+	padding: 5px;
+	padding-top: 10px;
+    padding-bottom: 15px;
+    clear: right;
+}
+.menu ul, .menu li {
+	margin: 0;
+	padding: 0;
+}
+.menu li {
+	display: block;
+	font: bold 14px sans-serif;
+	margin-top: 5px;
+	padding: 0px;
+}
+.menu li li {
+	font-weight: normal;
+	#margin: 0;
+	margin-top: 3px;
+}
+
+.menu a {
+	display: block;
+	padding: 2px 5px;
+	border-top: 2px groove black;
+    border-bottom: 2px groove black;
+    border-left: 2px groove black;
+    border-right: 2px groove black;
+}
+.menu ul a {
+	padding-left: 35px;
+	text-indent: -15px;
+}
+.menu a:link, .menu a:visited {
+    	color: black;
+}
+.menu a:hover {
+    	font-style: italic;
+    	font-weight: bold;
+    	font-size: 14px;
+    	color: white
+}
+.menu .active {
+    font-style: normal;
+    	font-weight: bold;
+    	color: #F8580F;
+	   background-color: #F8580F;
+}
+.menu.new ul {
+	display: none;
+}
+.menu.new > li.open ul {
+	display: block;
+}
+div.titlebar {
+	color: #F8580F;
+	font: bold 14px sans-serif;
+    margin-left: 5px;
+	margin-top: 10px;
+}
+div.titlebar a {
+    	color: #F8580F;
+    }
+span.title, span.describes {
+	font-style: italic;
+}
+span.describes {
+	font-weight: bold;
+}
+div.version {
+	color: #F8580F;
+	font: italic bold 12px sans-serif;
+	margin-right: 10px;
+	margin-top:  12px;
+	float: right;
+}
+span.webif_on {
+	color:green;
+}
+span.webif_off {
+	color:#800000;
+}
+span.webif_inactiv {
+	color:#808080;
+}
+#footer {
+	color: gray;
+	font: italic 12px Verdana, sans-serif;
+	text-align: center;
+	margin-top: 8px;
+}
+div.su a {
+	padding-left: 20px;
+	padding-right: 5px;
+}
+div .config {
+	max-width: 680px;
+	margin-left: 10px;
+	padding-top: 10px;
+	background-color: #E4C6B2;
+	border: 4px groove silver;
+}
+#update_file button{
+	margin-right:10px;
+	#float:right;
+	#clear:right;
+}
+#aktual {
+	float:right;
+	margin-right:10px;
+}
+#update_version {
+	margin-left:10px;
+}
+div[align="center"] {
+	font-size: 14px;
+}
+#edge {
+	table-layout: auto;
+	margin-left: auto;
+	margin-right: auto;
+	border-spacing: 0px;
+}
+#edge td {
+	padding-right: 0px;
+    padding-left: inherit;
+	margin: auto;
+}
+#edge-left {
+	background-position: center top;
+    #background-repeat: repeat-x;
+	background-image: url(/images/Keywelt/edge_l.gif);
+  
+}
+#edge-top {
+    background-position: center top;
+    background-repeat: repeat-x;
+	background-image: url(/images/Keywelt/edge_t.gif);
+  #border-top: 4px groove silver;
+    #height: 85px;
+    padding-bottom:12px;
+}
+#edge-right {
+	background-position: center top;
+    #background-repeat: repeat-x;
+	background-image: url(/images/Keywelt/edge_r.gif);
+  
+}
+#edge-bottom {
+	background-position: center top;
+    background-repeat: repeat-x;
+	background-image: url(/images/Keywelt/edge_b.gif);
+  #background-repeat: no-repeat;
+    #border-bottom: 4px groove silver;
+    height: 33px;
+}
+#edge-top-left {
+    background-position: center top;
+    background-repeat: repeat-x;
+	background-image: url(/images/Keywelt/edge_lt.gif);
+  #border-left: 4px groove silver;
+    #border-top: 4px groove silver;
+    width: auto;
+    height: auto;  
+}
+#edge-top-right {
+    background-position: center top;
+    background-repeat: repeat-x;
+	background-image: url(/images/Keywelt/edge_rt.gif);
+  #border-right: 4px groove silver;
+    #border-top: 4px groove silver;  
+}
+#edge-bottom-left {
+    background-position: center top;
+    background-repeat: repeat-x;
+	background-image: url(/images/Keywelt/edge_lb.gif);
+  #border-left: 4px groove silver;
+    #border-bottom: 4px groove silver;
+    width: auto;
+    height: auto;  
+}
+#edge-bottom-right {
+    background-position: center top;
+    background-repeat: repeat-x;
+	background-image: url(/images/Keywelt/edge_rb.gif);
+  #border-right: 4px groove silver;
+    #border-bottom: 4px groove silver;  
+}
+#container {
+	padding: 10px;
+}
+.menu + #content {
+    margin-left: 15px;
+	margin-right: 200px;
+}
+pre {
+	overflow: auto;
+	width: inherit;
+	max-width: 550px;
+	border: 2px groove silver;
+}
+pre.log {
+    background: inherit;
+    border: 2px groove silver;
+    padding: 1ex;
+    max-height: 350px;
+}
+pre.log_full {
+	margin-left: -40px;
+	max-width: 550px;
+}
+pre.log .failure {
+	color: #ff0000;
+}
+pre.log .success {
+	color: #00c000;
+}
+pre.log .foreign {
+	color: #0000ff;
+}
+pre.log .disabled {
+	color: #ff9933;
+}
+.error {
+	color: #ff0000;
+	font-weight: bold;
+}
+.warning {
+	color: #ff0000;
+}
+.info {
+	font-style: italic;
+}
+table.bar, table.bar td {
+	border: 0px;
+	padding: 2px;
+	margin: 0px;
+}
+table.bar {
+	width: 100%;
+	table-layout: fixed;
+	margin: 0px 0px;
+	border-spacing: 0px;
+}
+table.bar td {
+	text-align: center;
+	font-size: 8pt;
+	padding: 2px;
+	overflow: hidden;
+}
+table {
+	empty-cells: show;
+	border-spacing: 5px;
+}
+td {
+	padding: 0;
+}
+
+dl.info {
+	display: block;
+	font-style: normal;
+	margin: 0;
+	margin-top: 6px;
+}
+dl.info dl {
+	display: block;
+	margin: 0;
+}
+dl.info dt {
+	font-weight: bold;
+	display: inline;
+	margin: 0;
+	margin-right: 0.25em;
+}
+dl.info dt:after {
+	content: ":";
+}
+dl.info dd {
+	font-weight: normal;
+	display: inline;
+	margin: 0;
+	margin-right: 1em;
+}
+
+/* input elements */
+
+input[type="text"], input[type="password"], textarea, select {
+    background-color: #E4C6B2;
+    border: solid 1px white;
+    color: black;
+}
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus,
+select:focus {
+   background-color: #E4C6B2;
+    border-color: black;
+}
+input[name="source"]{
+   background-color: #E4C6B2;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+}
+#uploadfile {
+    background-color: silver;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+}
+#id_new_fwdrule,#fw_file,#id_fwd_in_sport{
+    #background-color: #E4C6B2;
+    border: solid 1px white;
+    max-width: 450px;
+}
+div.textwrapper textarea {
+	margin-left: 20px;
+	width: 100%;
+	max-width: 580px;
+	border: 3px groove silver;
+	background: inherit;
+}
+p.warning, p.error, p.info {
+    display: block;
+    background-color: inherit;
+    background-position: left center;
+    background-repeat: no-repeat;
+    min-height: 30px;
+    padding: 8px 0px 0px 30px;
+}
+p.warning {
+    background-image: url(/all_images/dialog-warning.png);
+}
+p.error {
+    background-image: url(/all_images/dialog-error.png);
+}
+p.info {
+	background-image: url(/all_images/dialog-information.png);
+}
+table.daemons tr.running td.status, tr.daemons td.status[value="running"] {
+  #background-image: url(/images/green.gif);
+    background-repeat: no-repeat;
+    background-position: 0px;
+    font-size: 0px;
+}
+table.daemons tr.stopped td.status, tr.daemons td.status[value="stopped"] {
+	#background-image: url(/images/red.gif);
+    background-repeat: no-repeat;
+    background-position: 0px;
+    font-size: 0px;
+}
+table.daemons tr.none .status, tr.daemons td.status[value="none"]  {
+	#background-image: url(/images/gray.gif);
+    background-repeat: no-repeat;
+    background-position: 0px;
+    font-size: 0px;
+}
+/*Buttons*/
+
+.daemons input[value="start"]{
+        color: silver;
+        font-size: 0px;
+        font-weight: bold;
+        width: 40px;
+        height: 40px;
+        background-image: url(/images/Keywelt/inact_startstop.gif);
+        background-color: transparent;
+        background-position: center;
+        border: 0px;
+        padding-bottom: 10px;
+}
+.daemons input[value="stop"]{
+        color: silver;
+        font-size: 0px;
+        font-weight: bold;
+        width: 40px;
+        height: 40px;
+        background-image: url(/images/Keywelt/inact_startstop.gif);
+        background-color: transparent;
+        background-position: center;
+        border: 0px;
+        padding-bottom: 10px;
+}
+
+.daemons input[value="restart"]{
+        color: silver;
+        font-size: 0px;
+        font-weight: bold;
+        width: 40px;
+        height: 40px;
+        background-image: url(/images/Keywelt/reset-blasser.gif);
+        background-color: transparent;
+        background-position: center;
+        border: 0px;
+        padding-bottom: 10px;
+}
+
+button[type="button"],button[type="submit"]{
+    color: #0A075A;
+    font-size: 13px;
+    background-color: transparent;
+    background-position: center;
+    -moz-border-radius-bottomright: 0.33em;
+        -moz-border-radius-bottomleft: 0.33em;
+        -moz-border-radius-topright: 0.33em;
+        -moz-border-radius-topleft: 0.33em;
+    border-radius: 0.5em;
+    border-top: 3px groove silver;
+    border-left: 3px groove black;
+    border-bottom: 3px groove black;
+    border-right: 3px groove silver;
+}
+form.btn input.button[value="R"],form.btn input[value="Ok"],form.btn input.button[value="W"]{
+    background-image: url(/images/Keywelt/b_ru_30.gif);
+    background-color: transparent;
+    background-position: center;
+}
+form.btn input.button[value="R"],form.btn input.button[value="W"], form.btn input[value="Ok"]{
+	color: silver;
+    font-size: 12px;
+    font-weight: bold;
+    width: 30px;
+    height:30px;
+    border: 0px;
+    padding-bottom: 4px;
+}
+form.btn input[value="unmount"]{
+    color: silver;
+    font-size: 14px;
+    font-weight: bold;
+    background-image: url(/images/Keywelt/b_100.gif);
+    background-color: transparent;
+    background-position: center center;
+    width: 100px;
+    height: 30px;
+    border: 0px;
+    padding-bottom: 5px;
+}
+input[type="button"]{
+    	border-top: 4px solid white;
+    	border-bottom: 4px solid gray;
+    	border-left: 4px solid gray;
+    	border-right: 4px solid gray;
+		-moz-border-radius-bottomleft: 1.5em;
+    	-moz-border-radius-bottomright: 1.5em;
+    	-moz-border-radius-topleft: 1.5em;
+    	-moz-border-radius-topright: 1.5em;
+    	border-radius: 1.5em;
+       
+}
+input[value="Apply"],input[value^='Zur'],input[value^="Hinzuf"],input[value="Reboot"],input[value="Start"],input[value="anlegen"],input[value="Aktivieren"],input[value="Aktualisieren"],input[value="Neustart"],input[value$='berspringen'],input[value="Abbrechen"],input[value="Update"],input[value="Standard"],input[value$='bernehmen'],input[value="Testanruf"],input[value^="Aufr"],input[value="Weiter"] {
+	background-position: center; 
+	border: 0px;  width: 120px; 
+	height: 30px; color: rgb(89, 89, 89); 
+	padding-bottom: 6px; 
+	font-size: 13px; font-weight: bold; 
+	background-image: url(/images/Keywelt/input_submit.png); 
+	background-color: transparent;
+}
+input[value="LOG-Datei leeren"],input[value~="Assistant"],input[value="Memory setup"],input[value="Speicher einrichten"],input[value~="TFFS"],input[value="anfordern"],input[value="Wiederherstellen"],input[value~="E-mail"],input[value~="e-mail"],input[value$='FILES'],input[value="Deinstallation"],input[value="Konfiguration"],input[value="Formatierung"],input[value~="Log-Datei"],input[value~="Stick-Daten"],input[value~="Skript"],input[value~="Hist."],input[value="Hochladen"],input[value="Beenden"],input[value="Fortsetzen"],input[value="Nachschlagen"],input[value~="Cache"],input[value="Installation"],input[value="Start-Config"]{
+	background-position: center; 
+	border: 0px;  width: 150px; 
+	height: 30px; color: rgb(89, 89, 89); 
+	padding-bottom: 6px; 
+	font-size: 13px; font-weight: bold;
+	background-image: url(/images/Keywelt/input_150.png); 
+	background-color: transparent;
+}
+input[value~="Query"],input[value~="Abfrage"],input[value="Restore"],input[value="Clean up"],input[value="Bereinigen"],input[value="Sichern"],input[value~="SoftCam.Key"],input[value~="list_smargo"],input[value~="OSCam"],input[value~="Backup"],input[value~="External"],input[value="Archiv-Upload"],input[value~="uStor-Archiv"],input[value~="Swapfile"],input[value~="Fenster"],input[value~="System"],input[value="External-Tools"],input[value$='Auswahl']{
+	background-position: center; 
+	border: 0px;  width: 180px; 
+	height: 30px; color: rgb(89, 89, 89); 
+	padding-bottom: 6px; 
+	font-size: 13px; font-weight: bold;
+	background-image: url(/images/Keywelt/input_180.png); 
+	background-color: transparent;
+}
+input[value$="Adjustments"],input[value~="Firmware"],input[value~="Archiv"],input[value~="Datei"],input[value~="Swap-Datei"],input[value~="SIP-Update"],input[value$='bersicht'],input[value~="Assistent"],input[value$="Einstellungen"],input[value$="setzen"],input[value$="wechseln"]{
+	background-position: center; 
+	border: 0px;  width: 200px; 
+	height: 30px; color: rgb(89, 89, 89); 
+	padding-bottom: 6px; 
+	font-size: 13px; font-weight: bold;
+	background-image: url(/images/Keywelt/input_200.png); 
+	background-color: transparent;
+}
+
+/*Buttons:active*/
+
+.daemons input[value="start"]:active, .daemons input[value="stop"]:active, .daemons input[value="restart"]:active{
+    color: white; 
+}
+.daemons input[value="restart"]:active {
+     padding-bottom: 4px;
+}
+.daemons input[value="start"]:active, .daemons input[value="stop"]:active {
+	padding-bottom: 6px;
+}	
+form.btn input[value="Ok"]:active,form.btn input.button[value="R"]:active,form.btn input.button[value="W"]:active,form.btn input[value="unmount"]:active {
+    color: white;
+}
+
+form.btn input[value="unmount"]:active {
+    padding-left: 4px;
+}
+input[type="submit"]:active {
+	padding-bottom: 4px;
+}
+button[type="button"]:active, button[type="submit"]:active,button#lw_assistant:active{
+    background-color: #a6a7a7;
+    border-top: 3px solid #565758;
+    border-left: 3px solid #565758;
+    border-bottom: 3px solid #F8FAFB;
+    border-right: 3px solid #F8FAFB;
+}
+
+/*Buttons:hover*/
+
+input[type="button"]:hover{
+    color:  white;
+}
+form.btn input[value="unmount"]:hover{
+    color: white;
+    background-image: url(/images/Keywelt/b_100_act.gif);
+}
+.daemons input[value="start"]:hover{
+	color: white;
+	 background-image: url(/images/Keywelt/act_start.gif);
+}
+.daemons input[value="stop"]:hover{
+	color: white;
+	 background-image: url(/images/Keywelt/act_stop.gif);
+}
+ .daemons input[value="restart"]:hover{
+	color: white;
+	 background-image: url(/images/Keywelt/reset.gif);
+}
+input[value="Apply"]:hover,input[value='Standard']:hover,input[value$='bernehmen']:hover,input[value="anlegen"]:hover,input[value="Reboot"]:hover,input[value="Reparatur"]:hover,input[value$='berspringen']:hover,input[value="Aktivieren"]:hover,input[value="Aktualisieren"]:hover,input[value="Start"]:hover, input[value^="Hinzuf"]:hover, input[value^="Zur"]:hover,input[value="Neustart"]:hover,input[value="Abbrechen"]:hover,input[value="Update"]:hover,input[value="Testanruf"]:hover,input[value^="Aufr"]:hover,input[value="Weiter"]:hover{
+	background-position: center; 
+	color: white; border: 0px;  
+	width: 120px; height: 30px; 
+	border: 0px;  width: 120px;
+	background-image: url(/images/Keywelt/input_submit_act.png);
+}
+input[value="LOG-Datei leeren"]:hover,input[value~="Assistant"]:hover,input[value="Memory setup"]:hover,input[value="Speicher einrichten"]:hover,input[value~="TFFS"]:hover,input[value="Wiederherstellen"]:hover,input[value="anfordern"]:hover,input[value$='FILES']:hover,input[value~="E-mail"]:hover,input[value~="e-mail"]:hover,input[value="Konfiguration"]:hover,input[value="Deinstallation"]:hover,input[value="Formatierung"]:hover,input[value~="Log-Datei"]:hover,input[value~="Stick-Daten"]:hover,input[value="Beenden"]:hover,input[value~="Skript"]:hover,input[value~="Hist."]:hover,input[value="Hochladen"]:hover,input[value="Fortsetzen"]:hover,input[value="Nachschlagen"]:hover,input[value~="Cache"]:hover,input[value="Installation"]:hover,input[value="Start-Config"]:hover{
+	background-position: center; 
+	border: 0px;  width: 150px; 
+	height: 30px; color: white; 
+	background-image: url(/images/Keywelt/input_150_act.png); 
+	background-color: transparent;
+}
+input[value~="Query"]:hover,input[value~="Abfrage"]:hover,input[value="Restore"]:hover,input[value="Clean up"]:hover,input[value~="SoftCam.Key"]:hover,input[value="Bereinigen"]:hover,input[value="Sichern"]:hover,input[value~="list_smargo"]:hover,input[value~="OSCam"]:hover,input[value~="Backup"]:hover,input[value~="External"]:hover,input[value~="uStor-Archiv"]:hover,input[value="External-Tools"]:hover,input[value~="System"]:hover,input[value~="Swapfile"]:hover,input[value~="Fenster"]:hover,input[value$='Auswahl']:hover{
+	background-position: center; 
+	border: 0px;  width: 180px; 
+	height: 30px; color: white; 
+	background-image: url(/images/Keywelt/input_180_act.png); 
+	background-color: transparent;
+}
+input[value$="Adjustments"]:hover,input[value~="Firmware"]:hover,input[value~="Archiv"]:hover,input[value~="Datei"]:hover,input[value~="Swap-Datei"]:hover,input[value~="SIP-Update"]:hover,input[value$='bersicht']:hover,input[value~="Assistent"]:hover,input[value$="Einstellungen"]:hover,input[value$='setzen']:hover,input[value$='wechseln']:hover {
+	background-position: center; 
+	border: 0px;  width: 200px; 
+	height: 30px; color: white; 
+	background-image: url(/images/Keywelt/input_200_act.png); 
+	background-color: transparent;
+}
+form.btn input[value="Ok"]:hover,form.btn input.button[value="R"]:hover{
+    color: white;
+    background-image: url(/images/Keywelt/b_ru_30_act.gif);
+}
+form.btn input.button[value="W"]:hover{
+	color: silver;
+}
+button[type="button"]:hover,button[type="submit"]:hover,button#lw_assistant:hover{
+    color: white;
+    background-color: #E4C6B2;
+}
+
+/*Buttons inaktiv*/
+.daemons input[value="start"][disabled]{
+   color: silver;
+   background-image: url(/images/Keywelt/start.gif);
+}
+.daemons input[value="stop"][disabled]{
+   color: silver;
+   background-image: url(/images/Keywelt/stop.gif);
+}
+.daemons input[value="restart"][disabled]{
+   color: silver;
+   background-image: url(/images/Keywelt/reset-grau.gif);
+}
+
+.daemons input[value="start"][disabled],.daemons input[value="stop"][disabled],.daemons input[value="restart"][disabled]{
+        padding-bottom: 10px;
+}
+form.btn input.button[value="W"][disabled],form.btn input.button[value="R"][disabled]{
+    background-image: url(/images/Keywelt/b_ru_30_inact.gif);
+    background-color: transparent;
+}    
+form button[value="upload_dir"][disabled]{
+	 background-color: #a6a7a7;
+    border-top: 3px solid #565758;
+    border-left: 3px solid #565758;
+    border-bottom: 3px solid #F8FAFB;
+    border-right: 3px solid #F8FAFB;
+}
+div.btn input[value="Aktivieren"][disabled]{
+	background-image: url(/images/Keywelt/input_submit.png);
+	color:lightgray;
+	padding-bottom:4px;
+}

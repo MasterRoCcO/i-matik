@@ -1,0 +1,42 @@
+table.bar.rw .part0 { 
+    background-color: #B7CFEB;
+    	-moz-border-radius-bottomright: 1em;
+    	-moz-border-radius-topright: 1em;
+}
+table.bar.br .part0 {
+    background-color: #B7CFEB;
+    -moz-border-radius-bottomright: 1em;
+    	-moz-border-radius-topright: 1em;
+}
+table.bar.rw .part1 { 
+    background-color: #0E66B8;
+    -moz-border-radius-bottomleft: 1em;
+    	-moz-border-radius-topleft: 1em;
+} 
+table.bar.br .part1 { 
+    background-color: #0E66B8;
+     -moz-border-radius-bottomleft: 1em;
+    	-moz-border-radius-topleft: 1em;
+}
+table.bar.br .part2 { 
+    background-color: #5E88BA; 
+}
+table.bar.ro .part0 { 
+    background-color: #B7CFEB; 
+    -moz-border-radius-bottomright: 1em;
+    	-moz-border-radius-topright: 1em;
+}
+table.bar.ro .part1 { 
+    background-color: #0E66B8; 
+    color: #ffffff; 
+    -moz-border-radius-bottomleft: 1em;
+    	-moz-border-radius-topleft: 1em;
+}
+
+.mounted .rw .path	{ color: #000000; }
+.mounted .ro .path	{ color: #000000; }
+
+.mounted .button[value=R] { border-color:#0E66B8; color: #0E66B8; }
+.mounted .ro .button[value=R] { background-color:#0E66B8; color: white; }
+.mounted .button[value=W] { border-color:#0E66B8; color: #0E66B8; }
+.mounted .rw .button[value=W] { background-color:#0E66B8; color: white; }

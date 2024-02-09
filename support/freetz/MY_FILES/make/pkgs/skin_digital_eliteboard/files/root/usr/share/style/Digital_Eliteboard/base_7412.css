@@ -1,0 +1,531 @@
+/* optimized_for */
+body {
+	background:#494949;
+	margin: 20px 0px;
+}
+a {
+    text-decoration: none;
+    border-style: none;
+}
+a:link,a:visited  {
+    color: #000000;
+    font-weight: bold;
+    border-style: none;
+}
+a:hover {
+	color: #FFFAFA;
+    font-style: italic;
+    border-style: none;
+}
+p, ul, ol {
+	margin-left: 20px;
+    margin-top: 10px;
+	margin-bottom: 15px;
+    padding: 0px;
+}
+form {
+    margin-left: 10px;
+	margin-top: 10px;
+}
+
+h1, legend {
+	margin-top: 5px;
+	color: black;
+	font: bold 14px sans-serif;
+}
+h2 {
+	margin-top: 10px;
+	margin-bottom: 7px;
+	padding: 0px;
+	color: black;
+	font: italic 14px sans-serif;
+}
+fieldset {
+	margin: 20px 10px;
+	padding: 10px;
+}
+small {
+	font-size: 8pt;
+}
+input {
+	padding: 2px;
+}
+form.btn {
+	margin: 0px;
+}
+div.btn {
+	float: left;
+	margin-bottom: 10px;
+	padding-right: 0px;
+}
+div, td  {
+    	margin-left: 2px;
+    	margin-top: 5px;
+}
+div#content {
+	padding-top:15px;
+    	width: inherit;
+    	max-width: 700px;
+	clear: left;
+}
+div.timeline {
+	margin-left:20px;
+}
+.menu#teaminfo {
+	float: right;
+	width:180px;
+	height:30px;
+	clear: right;
+}
+img#teaminfo {
+	float: left;
+	border:none;
+	margin:-10px 0px 0px 0px;
+	width:30px;
+	height:25px;
+	clear: left;
+}
+span#teaminfo {
+	float:right;
+	font-size:90%;
+	font-weight:bold;
+	padding-right:3px;
+	clear: right;
+}
+.submenu {
+	margin-left:15px;
+	font-weight:bold;
+}
+a#extra_menu {
+	margin-left:25px;
+}
+.menu {
+	display: block;
+	width: 190px;
+	background-color: #999999;
+	float: right;
+	border: 2px dotted #bbbbbb;
+	margin: 30px 10px 10px 0px;
+	padding: 2px;
+	padding-top: 0px;
+	clear: right;
+}
+.menu ul, .menu li {
+	margin: 0;
+	padding: 0;
+}
+.menu li {
+	display: block;
+	font: bold 12px sans-serif;
+	margin-top: 2px;
+	padding: 0px;
+}
+.menu li li {
+	font-weight: normal;
+	margin: 0;
+}
+
+.menu a {
+	display: block;
+	padding: 1px 5px;
+}
+.menu ul a {
+	padding-left: 35px;
+	text-indent: -15px;
+}
+.menu a:link, .menu a:visited {
+    	color: black;
+}
+menu a:hover {
+    font-style: italic;
+   	font-weight: bold;
+   	font-size: 15px;
+   	color: white;
+}	
+.menu .active {
+	background-color: #757575;
+}
+.menu.new ul {
+	display: none;
+}
+.menu.new > li.open ul {
+	display: block;
+}
+div.titlebar {
+	color: white;
+	font: italic bold 19px sans-serif;
+    margin-left: 5px;
+	margin-top: 2px;
+}
+div.titlebar a {
+    	color: white;
+    	font: italic bold 19px sans-serif;
+    margin-left: 5px;
+	margin-top: 2px;
+    }
+span.title, span.describes {
+	font-style: italic;
+}
+span.describes {
+	font-weight: bold;
+}
+div.version {
+	color: #bae3ff;
+	font: italic bold 12px Verdana, sans-serif;
+	margin-right: 5px;
+	margin-top: 65px;
+	float: right;
+}
+span.webif_on {
+	color:green;
+}
+span.webif_off {
+	color:#800000;
+}
+span.webif_inactiv {
+	color:#808080;
+}
+#footer {
+	color: gray;
+	font: normal 10px Verdana, sans-serif;
+	text-align: center;
+	margin-top: 5px;
+}
+div.su a {
+	padding-left: 20px;
+	padding-right: 5px;
+}
+div .config {
+	max-width: 680px;
+	margin-left: 10px;
+	padding-top: 10px;
+	background-color: #757575;
+	border: 4px groove silver;
+}
+#update_file button{
+	margin-right:10px;
+	#float:right;
+	#clear:right;
+}
+#aktual {
+	float:right;
+	margin-right:10px;
+}
+#update_version {
+	margin-left:10px;
+}
+div[align="center"] {
+	font-size: 14px;
+}
+#edge {
+	table-layout: fixed;
+	margin-left: auto;
+	margin-right: auto;
+	border-spacing: 0;
+}
+#edge td {
+	padding: 0;
+	margin: 0;
+}
+#edge-top {
+	background: url(/images/Digital_Eliteboard/edge_t_7412.png) repeat-x top;
+}
+#edge-bottom {
+	background: url(/images/Digital_Eliteboard/edge_b.png) repeat-x bottom;
+}
+#edge-top-left, #edge-top-right {
+	width: 20px;
+	height: 100px;
+	background-repeat: no-repeat;
+}
+#edge-bottom-left, #edge-bottom-right {
+	width: 20px;
+	height: 60px;
+	background-repeat: no-repeat;
+}
+#container {
+	padding: 10px;
+}
+.menu + #content {
+    margin-left: 15px;
+	margin-right: 200px;
+}
+pre {
+	overflow: auto;
+	width: inherit;
+	max-width: 550px;
+	border: 2px groove silver;
+}
+pre.log {
+    background: inherit;
+    border: 2px groove silver;
+    padding: 1ex;
+    max-height: 350px;
+}
+pre.log_full {
+	margin-left: -40px;
+	max-width: 550px;
+}
+pre.log .failure {
+	color: #ff0000;
+}
+pre.log .success {
+	color: #00c000;
+}
+pre.log .foreign {
+	color: #0000ff;
+}
+pre.log .disabled {
+	color: #ff9933;
+}
+.error {
+	color: #ff0000;
+	font-weight: bold;
+}
+.warning {
+	color: #ff0000;
+}
+.info {
+	font-style: italic;
+}
+table.bar, table.bar td {
+	border: 0px;
+	padding: 2px;
+	margin: 0px;
+}
+table.bar {
+	width: 100%;
+	table-layout: fixed;
+	margin: 0px 0px;
+	border-spacing: 0px;
+}
+table.bar td {
+	text-align: center;
+	font-size: 8pt;
+	padding: 2px;
+	overflow: hidden;
+}
+table {
+	empty-cells: show;
+	border-spacing: 5px;
+}
+td {
+	padding: 0;
+}
+
+dl.info {
+	display: block;
+	font-style: normal;
+	margin: 0;
+	margin-top: 6px;
+}
+dl.info dl {
+	display: block;
+	margin: 0;
+}
+dl.info dt {
+	font-weight: bold;
+	display: inline;
+	margin: 0;
+	margin-right: 0.25em;
+}
+dl.info dt:after {
+	content: ":";
+}
+dl.info dd {
+	font-weight: normal;
+	display: inline;
+	margin: 0;
+	margin-right: 1em;
+}
+/*Buttons*/
+
+
+button[type="button"],button[type="submit"]{
+    #color: #0A075A;
+    font-size: 13px;
+    background-color: transparent;
+    background-position: center;
+    -moz-border-radius-bottomright: 0.33em;
+        -moz-border-radius-bottomleft: 0.33em;
+        -moz-border-radius-topright: 0.33em;
+        -moz-border-radius-topleft: 0.33em;
+    border-radius: 0.5em;
+    border-top: 3px groove silver;
+    border-left: 3px groove black;
+    border-bottom: 3px groove black;
+    border-right: 3px groove silver;
+}
+
+input[type="button"]{
+    	border-top: 4px solid white;
+    	border-bottom: 4px solid gray;
+    	border-left: 4px solid gray;
+    	border-right: 4px solid gray;
+		-moz-border-radius-bottomleft: 1.5em;
+    	-moz-border-radius-bottomright: 1.5em;
+    	-moz-border-radius-topleft: 1.5em;
+    	-moz-border-radius-topright: 1.5em;
+    	border-radius: 1.5em;
+       
+}
+input[value="Apply"],input[value^='Zur'],input[value^="Hinzuf"],input[value="Reboot"],input[value="Start"],input[value="anlegen"],input[value="Aktivieren"],input[value="Aktualisieren"],input[value="Neustart"],input[value$='berspringen'],input[value="Abbrechen"],input[value="Update"],input[value="Standard"],input[value$='bernehmen'],input[value="Testanruf"],input[value^="Aufr"],input[value="Weiter"] {
+	background-position: center; 
+	border: 0px;  width: 120px; 
+	height: 30px; color: rgb(89, 89, 89); 
+	padding-bottom: 6px; 
+	font-size: 13px; font-weight: bold;  
+	background-color: transparent;
+}
+input[value="LOG-Datei leeren"],input[value~="Assistant"],input[value="Memory setup"],input[value="Speicher einrichten"],input[value~="TFFS"],input[value="Wiederherstellen"],input[value="anfordern"],input[value~="E-mail"],input[value~="e-mail"],input[value$='FILES'],input[value="Deinstallation"],input[value="Konfiguration"],input[value="Formatierung"],input[value~="Log-Datei"],input[value~="Stick-Daten"],input[value~="Skript"],input[value~="Hist."],input[value="Hochladen"],input[value="Beenden"],input[value="Fortsetzen"],input[value="Nachschlagen"],input[value~="Cache"],input[value="Installation"],input[value="Start-Config"]{
+	background-position: center; 
+	border: 0px;  width: 150px; 
+	height: 30px; color: rgb(89, 89, 89); 
+	padding-bottom: 6px; 
+	font-size: 13px; font-weight: bold; 
+	background-color: transparent;
+}
+input[value~="Query"],input[value~="Abfrage"],input[value="Restore"],input[value="Clean up"],input[value="Bereinigen"],input[value="Sichern"],input[value~="SoftCam.Key"],input[value~="list_smargo"],input[value~="OSCam"],input[value~="Backup"],input[value~="External"],input[value="Archiv-Upload"],input[value~="uStor-Archiv"],input[value~="Swapfile"],input[value~="Fenster"],input[value~="System"],input[value="External-Tools"],input[value$='Auswahl']{
+	background-position: center; 
+	border: 0px;  width: 180px; 
+	height: 30px; color: rgb(89, 89, 89); 
+	padding-bottom: 6px; 
+	font-size: 13px; font-weight: bold;
+	background-color: transparent;
+}
+input[value$="Adjustments"],input[value~="Firmware"],input[value~="Archiv"],input[value~="Datei"],input[value~="Swap-Datei"],input[value~="SIP-Update"],input[value$='bersicht'],input[value~="Assistent"],input[value$="Einstellungen"],input[value$="setzen"],input[value$="wechseln"]{
+	background-position: center; 
+	border: 0px;  width: 200px; 
+	height: 30px; color: rgb(89, 89, 89); 
+	padding-bottom: 6px; 
+	font-size: 13px; font-weight: bold; 
+	background-color: transparent;
+}
+/*Buttons:active*/
+
+.daemons input[value="start"]:active, .daemons input[value="stop"]:active, .daemons input[value="restart"]:active{
+    color: white; 
+}
+.daemons input[value="restart"]:active {
+     padding-bottom: 4px;
+}
+.daemons input[value="start"]:active, .daemons input[value="stop"]:active {
+	padding-bottom: 6px;
+}	
+form.btn input[value="Ok"]:active,form.btn input.button[value="R"]:active,form.btn input.button[value="W"]:active,form.btn input[value="unmount"]:active {
+    color: white;
+}
+
+form.btn input[value="unmount"]:active {
+    padding-left: 4px;
+}
+input[type="submit"]:active {
+	padding-bottom: 4px;
+}
+button[type="button"]:active, button[type="submit"]:active{
+    background-color: #a6a7a7;
+    border-top: 3px solid #565758;
+    border-left: 3px solid #565758;
+    border-bottom: 3px solid #F8FAFB;
+    border-right: 3px solid #F8FAFB;
+}
+
+/*Buttons:hover*/
+
+input[type="button"]:hover{
+    color:  white;
+}
+form.btn input[value="unmount"]:hover{
+    color: white;
+}
+.daemons input[value="start"]:hover{
+	color: white;
+}
+.daemons input[value="stop"]:hover{
+	color: white;
+}
+ .daemons input[value="restart"]:hover{
+	color: white;
+}
+ 
+input[value="Apply"]:hover,input[value='Standard']:hover,input[value$='bernehmen']:hover,input[value="anlegen"]:hover,input[value="Reboot"]:hover,input[value="Reparatur"]:hover,input[value$='berspringen']:hover,input[value="Aktivieren"]:hover,input[value="Aktualisieren"]:hover,input[value="Start"]:hover, input[value^="Hinzuf"]:hover, input[value^="Zur"]:hover,input[value="Neustart"]:hover,input[value="Abbrechen"]:hover,input[value="Update"]:hover,input[value="Testanruf"]:hover,input[value^="Aufr"]:hover,input[value="Weiter"]:hover{
+	background-position: center; 
+	color: white; border: 0px;  
+	width: 120px; height: 30px; 
+}
+input[value="LOG-Datei leeren"]:hover,input[value~="Assistant"]:hover,input[value="Memory setup"]:hover,input[value="Speicher einrichten"]:hover,input[value~="TFFS"]:hover,input[value="Wiederherstellen"]:hover,input[value="anfordern"]:hover,input[value$='FILES']:hover,input[value~="E-mail"]:hover,input[value~="e-mail"]:hover,input[value="Konfiguration"]:hover,input[value="Deinstallation"]:hover,input[value="Formatierung"]:hover,input[value~="Log-Datei"]:hover,input[value~="Stick-Daten"]:hover,input[value="Beenden"]:hover,input[value~="Skript"]:hover,input[value~="Hist."]:hover,input[value="Hochladen"]:hover,input[value="Fortsetzen"]:hover,input[value="Nachschlagen"]:hover,input[value~="Cache"]:hover,input[value="Installation"]:hover,input[value="Start-Config"]:hover{
+	border: 0px;  width: 150px; 
+	height: 30px; color: white;  
+	background-color: transparent;
+}
+input[value~="Query"]:hover,input[value~="Abfrage"]:hover,input[value="Restore"]:hover,input[value="Clean up"]:hover,input[value~="SoftCam.Key"]:hover,input[value="Bereinigen"]:hover,input[value="Sichern"]:hover,input[value~="list_smargo"]:hover,input[value~="OSCam"]:hover,input[value~="Backup"]:hover,input[value~="External"]:hover,input[value~="uStor-Archiv"]:hover,input[value="External-Tools"]:hover,input[value~="System"]:hover,input[value~="Swapfile"]:hover,input[value~="Fenster"]:hover,input[value$='Auswahl']:hover{
+	background-position: center; 
+	border: 0px;  width: 180px; 
+	height: 30px; color: white;  
+	background-color: transparent;
+}
+input[value$="Adjustments"]:hover,input[value~="Firmware"]:hover,input[value~="Archiv"]:hover,input[value~="Datei"]:hover,input[value~="Swap-Datei"]:hover,input[value~="SIP-Update"]:hover,input[value$='bersicht']:hover,input[value~="Assistent"]:hover,input[value$="Einstellungen"]:hover,input[value$='setzen']:hover,input[value$='wechseln']:hover {
+	background-position: center; 
+	border: 0px;  width: 200px; 
+	height: 30px; color: white;  
+	background-color: transparent;
+}
+form.btn input[value="Ok"]:hover,form.btn input.button[value="R"]:hover{
+    ccolor: white;
+}
+form.btn input.button[value="W"]:hover{
+	color: silver;
+}
+button[type="button"]:hover,button[type="submit"]:hover,button#lw_assistant:hover{
+    color: white;
+    background-color: silver;
+}
+
+/*Buttons inaktiv*/
+
+
+/* input elements */
+
+input[type="text"], input[type="password"], textarea, select {
+    background-color: #c7c7c7;
+    border: solid 1px white;
+    color: black;
+}
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus,
+select:focus {
+    background-color: #c7c7c7;
+    border-color: black;
+}
+input[name="source"]{
+    background-color: #c7c7c7;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+}
+#uploadfile {
+    background-color: silver;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+}
+#id_new_fwdrule,#fw_file,#id_fwd_in_sport{
+    #background-color: #c7c7c7;
+    border: solid 1px white;
+    max-width: 450px;
+}
+div.textwrapper textarea {
+	margin-left: 20px;
+	width: 100%;
+	max-width: 580px;
+	border: 3px groove silver;
+	background: inherit;
+}
+p.warning {
+    background-image: url(/all_images/dialog-warning.png);
+}
+p.error {
+    background-image: url(/all_images/dialog-error.png);
+}
+p.info {
+	background-image: url(/all_images/dialog-information.png);
+}
+
+

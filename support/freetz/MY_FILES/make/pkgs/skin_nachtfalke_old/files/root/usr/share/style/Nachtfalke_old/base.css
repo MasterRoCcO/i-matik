@@ -1,0 +1,681 @@
+/* optimized_for */
+
+body {
+    background-image: url(/images/Nachtfalke_old/alu.gif);
+    background-position: center;
+    padding-top: 20px;
+        font-size: 16px;
+}
+a {
+    text-decoration: none;
+    border-style: none;
+}
+a:link,a:visited  {
+    color: #050C59;
+    font-weight: bold;
+    border-style: none;
+}
+a:hover {
+	color: black;
+    font-style: italic;
+    border-style: none;
+}
+p, ul, ol {
+	margin-left:7px;
+    margin-top: 10px;
+	margin-bottom: 15px;
+    padding: 0px;
+}
+form {
+    margin-left: 10px;
+	margin-top: 10px;
+}
+
+h1, legend {
+	margin-top: 5px;
+	margin-left:7px;
+	color: black;
+	font: bold 14px sans-serif;
+}
+h2 {
+	margin: 7px 7px 20px 20px;
+	padding: 0px;
+	color: black;
+	font: italic 14px sans-serif;
+}
+fieldset {
+	margin: 20px 10px;
+	padding: 10px;
+}
+div#no_translation { margin-left:20px; } 
+div#daemon_start { margin-left:5px; }
+small {
+	font-size: 8pt;
+}
+input {
+	padding: 2px;
+}
+form.btn {
+	margin: 0px;
+}
+div.btn {
+	float: left;
+	margin-bottom: 10px;
+	padding-right: 0px;
+}
+div, td  {
+    	margin-left: 2px;
+    	margin-top: 5px;
+}
+div#content {
+	padding-top:15px;
+    	width: inherit;
+    	max-width: 700px;
+	clear: left;
+}
+div.timeline {
+	margin-left:10px;
+}
+#tl_input {
+	border-radius: 1.0em;
+	padding-left:6px;
+	padding-right:6px;
+}
+.submenu {
+	margin-left:15px;
+	font-weight:bold;
+}
+a#extra_menu {
+	margin-left:25px;
+}
+.menu {
+	display: inline;
+	width: 160px;
+	height: inherit;
+	float: right;
+	border: 2px groove silver;
+ 	margin-top: inherit;
+    	margin: 10px 25px 0 5px;
+	padding: 5px;
+	padding-top: 10px;
+    	padding-bottom: 15px;
+	clear: right;
+}
+.menu ul, .menu li {
+	margin: 0;
+	padding: 0;
+}
+.menu li {
+	display: block;
+	font: bold 14px sans-serif;
+	margin-top: 2px;
+	padding: 0px;
+}
+.menu li li {
+	font-weight: normal;
+	margin: 0;
+}
+
+.menu a {
+	display: block;
+	padding: 1px 5px;
+}
+.menu ul a {
+	padding-left: 35px;
+	text-indent: -15px;
+}
+.menu a:link, .menu a:visited {
+    	color: black;
+}
+.menu a:hover {
+    	font-style: italic;
+    	font-weight: bold;
+    	font-size: 14px;
+    	color: white
+}
+.menu .active {
+    font-style: normal;
+    	font-weight: bold;
+    	color: white;
+	   background-color: #253a7d;
+}
+.menu.new ul {
+	display: none;
+}
+.menu.new > li.open ul {
+	display: block;
+}
+div.titlebar {
+	color: #4E4E4E;
+	font: bold 14px sans-serif;
+    margin-left: 5px;
+	margin-top: 10px;
+}
+div.titlebar a {
+    	color: white;
+    }
+span.title, span.describes {
+	font-style: italic;
+}
+span.tb_title {
+	font-style:normal;
+}
+span.describes {
+	font-weight: bold;
+}
+div.version {
+	color: #d7d8da;
+	font: italic bold 12px sans-serif;
+	margin-right: 130px;
+	margin-top:  12px;
+	float: right;
+}
+#footer {
+	color: gray;
+	font: italic 12px Verdana, sans-serif;
+	text-align: center;
+	margin-top: 8px;
+}
+div.su a {
+	padding-left: 20px;
+	padding-right: 5px;
+}
+div .config {
+	max-width: 680px;
+	margin-left: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
+	background-color: #c9cacb;
+	border: 4px groove silver;
+}
+div .config, div .usbman_monitor { background-color: #c9cacb;border: 4px groove silver; }
+div .usbman_monitor,.tbmodlog_failed,.tbmodlog_other,.tbmodlog_done { margin-left:10px; }
+.tbmod_overview, .usbman_db_overview, .usbman_overview, .usbman_dbshow {
+	padding: 10px;
+	background-color: #c9cacb;
+	border: 4px groove silver;
+	width: 540px;
+	margin-left:10px;
+}
+.tbmod_error,.tbmod_warning {
+	padding: 10px;
+	background-color: #c9cacb;
+	border: 4px groove silver;
+	width: 540px;
+	margin-left:10px;
+}
+.tbmod_warning, #warning_txt {
+	color:#B8860B;
+}
+.tbmod_error, #error_txt {
+	color:red;
+}
+.tablet { margin-left:-20px; }
+#info_txt,#error_txt,#warning-txt{ margin-left:20px; }
+#tbmodtxt_other { width:95%;padding:5px;background-color: #c9cacb;border: 4px groove silver; }
+.tbmodlog_other, .tbmod_text #tbmodtxt_failed, .tbmodlog_failed ,.tbmodlog_done { 
+font-weight:bold;
+padding:5px;
+border-top: 3px solid silver;
+border-left: 3px solid black;
+border-bottom: 3px solid black;
+border-right: 3px solid silver;
+background-color:#D3D3D3; 
+}
+#service_uninstall { margin-left:270px; }
+.tbmod_text #tbmodtxt_failed, .tbmodlog_failed { color:red;height:60px; }
+.tbmodlog_done { color:green;font-weight:bold; }
+span.webif_on {
+	color:green;
+}
+span.webif_off {
+	color:#800000;
+}
+span.webif_inactiv {
+	color:#808080;
+}
+#update_version {
+	margin-left:10px;
+}
+#edge {
+	table-layout: auto;
+	margin-left: auto;
+	margin-right: auto;
+	border-spacing: 0px;
+}
+#edge td {
+	padding-right: 0px;
+    padding-left: inherit;
+	margin: auto;
+}
+#edge-left {
+	background-color: #242d97;
+    border-left: 4px groove silver;
+}
+#edge-top {
+    background-position: center top;
+    background-repeat: repeat-x;
+	background-image: url(/images/Nachtfalke_old/edge_t.gif);
+    border-top: 4px groove silver;
+    height: 85px;
+    padding-bottom:2px;
+}
+#edge-right {
+	background-color: #242d97;
+    border-right: 4px groove silver;
+}
+#edge-bottom {
+	background-color: #242d97;
+    background-image: url(/images/Nachtfalke_old/edge_b.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-bottom: 4px groove silver;
+    height: 33px;
+}
+#edge-top-left {
+    background-color: #242d97;
+    -moz-border-radius-topleft: 10em;
+	border-top-left-radius: 10em;
+    border-left: 4px groove silver;
+    border-top: 4px groove silver;
+    width: auto;
+    height: auto;
+}
+#edge-top-right {
+    background-color: #242d97;
+    -moz-border-radius-topright: 10em;
+   border-top-right-radius: 10em;
+    border-right: 4px groove silver;
+    border-top: 4px groove silver;
+}
+#edge-bottom-left {
+    background-color: #242d97;
+    -moz-border-radius-bottomleft: 10em;
+	border-bottom-left-radius: 10em;
+    border-left: 4px groove silver;
+    border-bottom: 4px groove silver;
+    width: auto;
+    height: auto;
+}
+#edge-bottom-right {
+    background-color: #242d97;
+    -moz-border-radius-bottomright: 10em;
+	border-bottom-right-radius: 10em;
+    border-right: 4px groove silver;
+    border-bottom: 4px groove silver;
+}
+#container {
+	padding: 10px;
+}
+.menu + #content {
+    margin-left: 15px;
+	margin-right: 200px;
+}
+pre.log {
+	margin-left:15px;
+    background: inherit;
+    border: 2px groove silver;
+    padding: 1ex;
+    max-height: 350px;
+}
+pre {
+	overflow: auto;
+	width: inherit;
+	max-width: 550px;
+	border: 2px groove silver;
+}
+
+pre.log_full {
+	margin-left: -40px;
+	max-width: 550px;
+}
+
+pre.log .failure {
+	color: #ff0000;
+}
+pre.log .success {
+	color: #00c000;
+}
+pre.log .foreign {
+	color: #0000ff;
+}
+pre.log .disabled {
+	color: #ff9933;
+}
+.error {
+	color: #ff0000;
+	font-weight: bold;
+}
+.warning {
+	color: #ff0000;
+}
+.info {
+	font-style: italic;
+}
+
+table.bar, table.bar td {
+	border: 0px;
+	padding: 2px;
+	margin: 0px;
+}
+table.bar {
+	width: 100%;
+	table-layout: fixed;
+	margin: 0px 0px;
+	border-spacing: 0px;
+}
+table.bar td {
+	text-align: center;
+	font-size: 8pt;
+	padding: 2px;
+	overflow: hidden;
+}
+table {
+	empty-cells: show;
+	border-spacing: 0px;
+}
+td { padding:0; }
+div.tbmod_short { margin-left:-10px; }
+dl.info {
+	display: block;
+	font-style: normal;
+	margin: 0;
+	margin-top: 6px;
+}
+dl.info dl { display:block;margin:0; }
+dl.info dt {
+	font-weight: bold;
+	display: inline;
+	margin: 0;
+	margin-right: 0.25em;
+}
+dl.info dt:after { content: ":"; }
+dl.info dd {
+	font-weight: normal;
+	display: inline;
+	margin: 0;
+	margin-right: 1em;
+}
+
+/* input elements */
+button#konvert_resume { float:left;clear:left; }
+button#konvert_break { float:right;margin-top:-55px;clear:right; }
+#konvert_text{ width:465px;margin-left:90px;margin-top:20px; }
+input[type="text"], input[type="password"], textarea, select {
+    background-color: silver;
+    border: solid 1px white;
+    color: black;
+}
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus,
+select:focus {
+    background-color: silver;
+    border-color: black;
+}
+input[name="source"]{
+    background-color: silver;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+}
+#uploadfile {
+    background-color: silver;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+}
+#id_new_fwdrule,#fw_file,#id_fwd_in_sport{
+    background-color: silver;
+    border: solid 1px white;
+    max-width: 450px;
+}
+div.textwrapper textarea {
+	margin-left: 20px;
+	width: 100%;
+	max-width: 580px;
+	border: 3px groove silver;
+	background: inherit;
+}
+p.warning, p.error, p.info {
+    display: block;
+    background-color: inherit;
+    background-position: left center;
+    background-repeat: no-repeat;
+    min-height: 30px;
+    padding: 8px 0px 0px 30px;
+}
+p.warning { background-image: url(/images/Nachtfalke_old/dialog-warning.png); }
+p.error { background-image: url(/images/Nachtfalke_old/dialog-error.png); }
+p.info { background-image: url(/images/Nachtfalke_old/dialog-information.png); }
+
+table.daemons tr.running td.status, tr.daemons td.status[value="running"] {
+  background-image: url(/images/Nachtfalke_old/green.gif);
+    background-repeat: no-repeat;
+    background-position: 0px;
+    font-size: 0px;
+}
+table.daemons tr.stopped td.status, tr.daemons td.status[value="stopped"] {
+	background-image: url(/images/Nachtfalke_old/red.gif);
+    background-repeat: no-repeat;
+    background-position: 0px;
+    font-size: 0px;
+}
+table.daemons tr.none .status, tr.daemons td.status[value="none"]  {
+	background-image: url(/images/Nachtfalke_old/gray.gif);
+    background-repeat: no-repeat;
+    background-position: 0px;
+    font-size: 0px;
+}
+/*Buttons*/
+#smallbtn_save { margin-top:25px }
+#refresh_btn { margin-left:0px; }
+.daemons input[value="start"], .daemons input[value="stop"], .daemons input[value="restart"]{
+        color: silver;
+        font-size: 10px;
+        font-weight: bold;
+        width: 40px;
+        height: 40px;
+        background-image: url(/images/Nachtfalke_old/b_ru.gif);
+        background-color: transparent;
+        background-position: center;
+        border: 0px;
+        padding-bottom: 6px;
+}
+
+.daemons input[value="restart"]{
+    font-size: 8px;
+}
+button[type="button"],button[type="submit"],button#lw_assistant{
+    color: #0A075A;
+    font-size: 13px;
+        background-color: transparent;
+    background-position: center;
+    -moz-border-radius: 0.33em;
+    border-radius: 0.5em;
+        border-top: 3px groove silver;
+    border-left: 3px groove black;
+    border-bottom: 3px groove black;
+    border-right: 3px groove silver;
+}
+form.btn input.button[value="R"],form.btn input[value="Ok"],form.btn input.button[value="W"]{
+    background-image: url(/images/Nachtfalke_old/b_ru_30.gif);
+    background-color: transparent;
+    background-position: center;
+}
+form.btn input.button[value="R"],form.btn input.button[value="W"], form.btn input[value="Ok"]{
+	color: silver;
+    font-size: 12px;
+    font-weight: bold;
+    width: 30px;
+    height:30px;
+    border: 0px;
+    padding-bottom: 4px;
+}
+form.btn input[value="unmount"]{
+    color: silver;
+    font-size: 14px;
+    font-weight: bold;
+    background-image: url(/images/Nachtfalke_old/b_100.gif);
+    background-color: transparent;
+    background-position: center center;
+    width: 100px;
+    height: 30px;
+    border: 0px;
+    padding-bottom: 5px;
+}
+input[type="button"]{
+    	border-top: 4px solid white;
+    	border-bottom: 4px solid gray;
+    	border-left: 4px solid gray;
+    	border-right: 4px solid gray;
+		-moz-border-radius: 1.5em;
+    	border-radius: 1.5em;
+       
+}
+input[value="Apply"],input[value^='Zur'],input[value^="Hinzuf"],input[value="Reboot"],input[value="Start"],input[value="anlegen"],input[value="Aktivieren"],input[value="Aktualisieren"],input[value="Neustart"],input[value$='berspringen'],input[value="Abbrechen"],input[value="Update"],input[value="Standard"],input[value$='bernehmen'],input[value="Testanruf"],input[value^="Aufr"],input[value="Weiter"] {
+	background-position: center; 
+	border: 0px;  width: 120px; 
+	height: 30px; color: rgb(89, 89, 89); 
+	padding-bottom: 6px; 
+	font-size: 13px; font-weight: bold; 
+	background-image: url(/images/Nachtfalke_old/input_submit.png); 
+	background-color: transparent;
+}
+input[value="LOG-Datei leeren"],input[value~="Assistant"],input[value="Memory setup"],input[value="Speicher einrichten"],input[value~="TFFS"],input[value="anfordern"],input[value="Wiederherstellen"],input[value~="E-mail"],input[value~="e-mail"],input[value$='FILES'],input[value="Deinstallation"],input[value="Konfiguration"],input[value="Formatierung"],input[value~="Log-Datei"],input[value~="Stick-Daten"],input[value~="Skript"],input[value~="Hist."],input[value="Hochladen"],input[value="Beenden"],input[value="Fortsetzen"],input[value="Nachschlagen"],input[value~="Cache"],input[value="Installation"],input[value="Start-Config"]{
+	background-position: center; 
+	border: 0px;  width: 150px; 
+	height: 30px; color: rgb(89, 89, 89); 
+	padding-bottom: 6px; 
+	font-size: 13px; font-weight: bold;
+	background-image: url(/images/Nachtfalke_old/input_150.png); 
+	background-color: transparent;
+}
+input[value~="Query"],input[value~="Abfrage"],input[value="Restore"],input[value="Clean up"],input[value="Bereinigen"],input[value="Sichern"],input[value~="SoftCam.Key"],input[value~="list_smargo"],input[value~="OSCam"],input[value~="Backup"],input[value~="External"],input[value="Archiv-Upload"],input[value~="uStor-Archiv"],input[value~="Swapfile"],input[value~="Fenster"],input[value~="System"],input[value="External-Tools"],input[value$='Auswahl']{
+	background-position: center; 
+	border: 0px;  width: 180px; 
+	height: 30px; color: rgb(89, 89, 89); 
+	padding-bottom: 6px; 
+	font-size: 13px; font-weight: bold;
+	background-image: url(/images/Nachtfalke_old/input_180.png); 
+	background-color: transparent;
+}
+input[value$="Adjustments"],input[value~="Firmware"],input[value~="Archiv"],input[value~="Datei"],input[value~="Swap-Datei"],input[value~="SIP-Update"],input[value$='bersicht'],input[value~="Assistent"],input[value$="Einstellungen"],input[value$="setzen"],input[value$="wechseln"]{
+	background-position: center; 
+	border: 0px;  width: 200px; 
+	height: 30px; color: rgb(89, 89, 89); 
+	padding-bottom: 6px; 
+	font-size: 13px; font-weight: bold;
+	background-image: url(/images/Nachtfalke_old/input_200.png); 
+	background-color: transparent;
+}
+
+/*Buttons:active*/
+
+.daemons input[value="start"]:active, .daemons input[value="stop"]:active, .daemons input[value="restart"]:active{
+    color: white; 
+}
+.daemons input[value="restart"]:active {
+     padding-bottom: 4px;
+}
+.daemons input[value="start"]:active, .daemons input[value="stop"]:active {
+	padding-bottom: 6px;
+}	
+form.btn input[value="Ok"]:active,form.btn input.button[value="R"]:active,form.btn input.button[value="W"]:active,form.btn input[value="unmount"]:active {
+    color: white;
+}
+
+form.btn input[value="unmount"]:active {
+    padding-left: 4px;
+}
+input[type="submit"]:active {
+	padding-bottom: 4px;
+}
+button[type="button"]:active, button[type="submit"]:active,button#lw_assistant:active{
+    background-color: #a6a7a7;
+    border-top: 3px solid #565758;
+    border-left: 3px solid #565758;
+    border-bottom: 3px solid #F8FAFB;
+    border-right: 3px solid #F8FAFB;
+}
+
+/*Buttons:hover*/
+
+input[type="button"]:hover{
+    color:  white;
+}
+form.btn input[value="unmount"]:hover{
+    color: white;
+    background-image: url(/images/Nachtfalke_old/b_100_act.gif);
+}
+.daemons input[value="start"]:hover, .daemons input[value="stop"]:hover, .daemons input[value="restart"]:hover{
+	color: white;
+	 background-image: url(/images/Nachtfalke_old/b_ru_act.gif);
+}
+input[value="Apply"]:hover,input[value='Standard']:hover,input[value$='bernehmen']:hover,input[value="anlegen"]:hover,input[value="Reboot"]:hover,input[value="Reparatur"]:hover,input[value$='berspringen']:hover,input[value="Aktivieren"]:hover,input[value="Aktualisieren"]:hover,input[value="Start"]:hover, input[value^="Hinzuf"]:hover, input[value^="Zur"]:hover,input[value="Neustart"]:hover,input[value="Abbrechen"]:hover,input[value="Update"]:hover,input[value="Testanruf"]:hover,input[value^="Aufr"]:hover,input[value="Weiter"]:hover{
+	background-position: center; 
+	color: white; border: 0px;  
+	width: 120px; height: 30px; 
+	background-image: url(/images/Nachtfalke_old/input_submit_act.png);
+}
+input[value="LOG-Datei leeren"]:hover,input[value~="Assistant"]:hover,input[value="Memory setup"]:hover,input[value="Speicher einrichten"]:hover,input[value~="TFFS"]:hover,input[value="Wiederherstellen"]:hover,input[value="anfordern"]:hover,input[value$='FILES']:hover,input[value~="E-mail"]:hover,input[value~="e-mail"]:hover,input[value="Konfiguration"]:hover,input[value="Deinstallation"]:hover,input[value="Formatierung"]:hover,input[value~="Log-Datei"]:hover,input[value~="Stick-Daten"]:hover,input[value="Beenden"]:hover,input[value~="Skript"]:hover,input[value~="Hist."]:hover,input[value="Hochladen"]:hover,input[value="Fortsetzen"]:hover,input[value="Nachschlagen"]:hover,input[value~="Cache"]:hover,input[value="Installation"]:hover,input[value="Start-Config"]:hover{
+	background-position: center; 
+	border: 0px;  width: 150px; 
+	height: 30px; color: white; 
+	background-image: url(/images/Nachtfalke_old/input_150_act.png); 
+	background-color: transparent;
+}
+input[value~="Query"]:hover,input[value~="Abfrage"]:hover,input[value="Restore"]:hover,input[value="Clean up"]:hover,input[value~="SoftCam.Key"]:hover,input[value="Bereinigen"]:hover,input[value="Sichern"]:hover,input[value~="list_smargo"]:hover,input[value~="OSCam"]:hover,input[value~="Backup"]:hover,input[value~="External"]:hover,input[value~="uStor-Archiv"]:hover,input[value="External-Tools"]:hover,input[value~="System"]:hover,input[value~="Swapfile"]:hover,input[value~="Fenster"]:hover,input[value$='Auswahl']:hover{
+	background-position: center; 
+	border: 0px;  width: 180px; 
+	height: 30px; color: white; 
+	background-image: url(/images/Nachtfalke_old/input_180_act.png); 
+	background-color: transparent;
+}
+input[value$="Adjustments"]:hover,input[value~="Firmware"]:hover,input[value~="Archiv"]:hover,input[value~="Datei"]:hover,input[value~="Swap-Datei"]:hover,input[value~="SIP-Update"]:hover,input[value$='bersicht']:hover,input[value~="Assistent"]:hover,input[value$="Einstellungen"]:hover,input[value$='setzen']:hover,input[value$='wechseln']:hover {
+	background-position: center; 
+	border: 0px;  width: 200px; 
+	height: 30px; color: white; 
+	background-image: url(/images/Nachtfalke_old/input_200_act.png); 
+	background-color: transparent;
+}
+form.btn input[value="Ok"]:hover,form.btn input.button[value="R"]:hover{
+    color: white;
+    background-image: url(/images/Nachtfalke_old/b_ru_30_act.gif);
+}
+form.btn input.button[value="W"]:hover{
+	color: silver;
+}
+button[type="button"]:hover,button[type="submit"]:hover,button#lw_assistant:hover{
+    color: white;
+    background-color: silver;
+}
+
+/*Buttons inaktiv*/
+#config_store[disabled] { 
+	background-color:gray;
+	border-top: 3px solid #565758;
+   	border-left: 3px solid #565758;
+    border-bottom: 3px solid #F8FAFB;
+    border-right: 3px solid #F8FAFB;
+}
+.daemons input[value="start"][disabled],.daemons input[value="stop"][disabled],.daemons input[value="restart"][disabled]{
+   color: silver;
+    background-image: url(/images/Nachtfalke_old/b_ru_inact.gif);
+}
+.daemons input[value="start"][disabled],.daemons input[value="stop"][disabled],.daemons input[value="restart"][disabled]{
+        padding-bottom: 6px;
+}
+form.btn input.button[value="W"][disabled],form.btn input.button[value="R"][disabled]{
+    background-image: url(/images/Nachtfalke_old/b_ru_30_inact.gif);
+}
+form button[value="upload_dir"][disabled]{
+	 background-color: #a6a7a7;
+    border-top: 3px solid #565758;
+    border-left: 3px solid #565758;
+    border-bottom: 3px solid #F8FAFB;
+    border-right: 3px solid #F8FAFB;
+}
+div.btn input[value="Aktivieren"][disabled]{
+	background-image: url(/images/Nachtfalke_old/input_submit.png);
+	color:lightgray;
+	padding-bottom:4px;
+}
+
+

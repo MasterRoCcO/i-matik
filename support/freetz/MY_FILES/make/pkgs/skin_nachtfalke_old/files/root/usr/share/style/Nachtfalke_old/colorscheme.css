@@ -1,0 +1,87 @@
+table.bar.rw .part0 {
+    color: black;
+    font-weight: bold;
+    background-image: url(/images/Nachtfalke_old/status.gif);
+    background-color: #737EFD;
+    background-position: center;
+    border-top: 2px groove silver;
+    border-right: 2px groove silver;
+    border-bottom: 1px groove silver;
+}
+table.bar.br .part0 { 
+    color: black;
+    font-weight: bold;
+    background-image: url(/images/Nachtfalke_old/status.gif);
+    background-color: #3344FA;
+    background-position: right;
+    border-top: 2px groove silver;
+    border-bottom: 2px groove silver;
+    border-right: 2px groove silver;
+    border-left: 2px groove silver;
+}
+table.bar.rw .part1 {
+    color: white;
+    font-weight: bold;
+    background-color: #242d97; 
+    background-image: url(/images/Nachtfalke_old/status.gif);
+    background-color: #9EA6F7; 
+    background-position: left;
+    border-top: 2px groove silver;
+    border-left: 2px groove silver;
+    border-right: 2px groove silver;
+    border-bottom: 1px groove silver;
+}
+table.bar.br .part1 { 
+    color: black;
+    font-weight: bold;
+    background-color: #242d97;
+    background-image: url(/images/Nachtfalke_old/status.gif);
+    background-color: #9EA6F7;
+    background-position: center;
+    border-top: 2px groove silver;
+    border-left: 2px groove silver;
+    border-bottom: 2px groove silver;
+}
+table.bar.br .part2 { 
+    color: black;
+    font-weight: bold;
+    background-image: url(/images/Nachtfalke_old/status.gif);
+    background-color: #737EFB;
+    background-position: right;
+    border-top: 2px groove silver;
+    border-bottom: 2px groove silver;
+    border-left: 2px groove silver;
+}
+table.bar.ro .part0 { 
+    color: black;
+    font-weight: bold;
+    font-size: 11px;
+    background-color: #0894f6;
+    background-image: url(/images/Nachtfalke_old/status.gif); 
+    border-top: 2px groove silver;
+    border-left: 2px groove silver;
+    border-right: 2px groove silver;
+    border-bottom: 1px groove silver;
+    }
+table.bar.ro .part1 { 
+    background-color: #0894f6; 
+    color: #ffffff; 
+    font-weight: bold;
+    font-size: 11px;
+    background-image: url(/images/Nachtfalke_old/status.gif);
+    border-top: 2px groove silver;
+    border-left: 2px groove silver;
+    border-right: 2px groove silver;
+    border-bottom: 1px groove silver;
+    }
+
+.mounted .rw .path	{ 
+    color: black; 
+    font-weight: bold;
+    font-size: 16px;
+    }
+.mounted .ro .path	{ 
+    color: #000080; 
+    font-weight: bold;
+    font-size: 16px;
+    }

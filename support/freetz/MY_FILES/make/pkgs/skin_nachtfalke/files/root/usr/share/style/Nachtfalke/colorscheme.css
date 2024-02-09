@@ -1,0 +1,90 @@
+table.bar.rw .part0 {
+    color: white;
+    font-weight: bold;
+    background-image: url(/images/Nachtfalke/status.gif);
+    background-color: white;
+    background-position: center;
+    border-top: 2px groove white;
+    border-left: 2px groove white;
+    border-right: 2px groove white;
+    border-bottom: 2px groove white;
+}
+table.bar.br .part0 { 
+    color: white;
+    font-weight: bold;
+    background-image: url(/images/Nachtfalke/status.gif);
+    background-color: white;
+    background-position: right;
+    border-top: 2px groove white;
+    border-left: 2px groove white;
+    border-right: 2px groove white;
+    border-bottom: 2px groove white;
+}
+table.bar.rw .part1 {
+    color: white;
+    font-weight: bold;
+    background-color: white; 
+    background-image: url(/images/Nachtfalke/status.gif);
+    background-color: white; 
+    background-position: left;
+    border-top: 2px groove white;
+    border-left: 2px groove white;
+    border-right: 2px groove white;
+    border-bottom: 2px groove white;
+}
+table.bar.br .part1 { 
+    color: white;
+    font-weight: bold;
+    background-color: white;
+    background-image: url(/images/Nachtfalke/status.gif);
+    background-color: white;
+    background-position: center;
+    border-top: 2px groove white;
+    border-left: 2px groove white;
+    border-right: 2px groove white;
+    border-bottom: 2px groove white;
+}
+table.bar.br .part2 { 
+    color: white;
+    font-weight: bold;
+    background-image: url(/images/Nachtfalke/status.gif);
+    background-color: white;
+    background-position: right;
+    border-top: 2px groove white;
+    border-left: 2px groove white;
+    border-right: 2px groove white;
+    border-bottom: 2px groove white;
+}
+table.bar.ro .part0 { 
+    color: white;
+    font-weight: bold;
+    font-size: 11px;
+    background-color: white;
+    background-image: url(/images/Nachtfalke/status.gif); 
+    border-top: 2px groove white;
+    border-left: 2px groove white;
+    border-right: 2px groove white;
+    border-bottom: 2px groove white;
+    }
+table.bar.ro .part1 { 
+    background-color: white; 
+    color: white; 
+    font-weight: bold;
+    font-size: 11px;
+    background-image: url(/images/Nachtfalke/status.gif);
+    border-top: 2px groove white;
+    border-left: 2px groove white;
+    border-right: 2px groove white;
+    border-bottom: 2px groove white;
+    }
+
+.mounted .rw .path	{ 
+    color: white; 
+    font-weight: bold;
+    font-size: 16px;
+    }
+.mounted .ro .path	{ 
+    color: white; 
+    font-weight: bold;
+    font-size: 16px;
+    }
