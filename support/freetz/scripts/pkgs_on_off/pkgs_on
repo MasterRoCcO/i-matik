@@ -30,7 +30,6 @@ if [ -z $PARAM_VNSTAT ]; then
 	sleep 0
 else
 	source $PKGS_PATH_ON_OFF/vnstat_on
-	source $PKGS_PATH_ON_OFF/cifsmount_on
 fi
 	
 if [ -z $PARAM_WIREGUARD ]; then
@@ -49,6 +48,12 @@ if [ -z $PARAM_TELNET ]; then
 	sleep 0
 else
 	source $PKGS_PATH_ON_OFF/telnet_on
+fi
+
+if [ -z $PARAM_KEYPACK ]; then
+	sleep 0
+else
+	source $PKGS_PATH_ON_OFF/key_pack_on
 fi
 
 sed -i "s+FREETZ_TYPE_FIRMWARE_DETECT_LATEST=y+# FREETZ_TYPE_FIRMWARE_DETECT_LATEST is not set+g" $FREETZ_SSL_HOME_PATH/.config

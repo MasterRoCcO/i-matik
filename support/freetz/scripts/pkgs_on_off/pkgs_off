@@ -29,7 +29,6 @@ if [ -z $PARAM_VNSTAT ]; then
 	sleep 0
 else
 	source $PKGS_PATH_ON_OFF/vnstat_off
-	source $PKGS_PATH_ON_OFF/cifsmount_off
 fi
 
 if [ -z $PARAM_WIREGUARD ]; then
@@ -49,3 +48,10 @@ if [ -z $PARAM_TELNET ]; then
 else
 	source $PKGS_PATH_ON_OFF/telnet_off
 fi
+
+if [ -z $PARAM_KEYPACK ]; then
+	sleep 0
+else
+	source $PKGS_PATH_ON_OFF/key_pack_off
+fi
+

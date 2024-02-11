@@ -62,6 +62,8 @@ while [ $# -ne 0 ];do
 	    ;;
 	-tel|--telnet)			PARAM_TELNET=1
 	    ;;
+	-key|--key-pack)		PARAM_KEYPACK=1
+	    ;;
 	-*|--*)				PARAM_BAD=1
 	    ;;
 	*)				BOX_SSL+=( $1 )
