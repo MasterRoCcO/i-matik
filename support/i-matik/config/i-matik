@@ -76,7 +76,7 @@ DOWNGRADE_ON="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_o
 DOWNGRADE_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_off"
 
 #BINUTILS Version
-TBINUTILS="2_41"
+TBINUTILS="2_42"
 
 #libusb1 
 LIBUSB1_7530AX="7530_AX1"
