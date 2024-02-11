@@ -1,0 +1,2 @@
+#!/bin/bash
+source $FRIENDS_DOWNGRADE_ON 2>/dev/null
