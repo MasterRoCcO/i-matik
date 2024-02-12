@@ -17,6 +17,9 @@ SSL10_PUSH_REPEATER="$I_MATIK_PATH/support/freetz/scripts/push/ssl10_push_repeat
 SSL11_PUSH="$I_MATIK_PATH/support/freetz/scripts/push/ssl11_push"
 SSL11_PUSH_POWERLINE="$I_MATIK_PATH/support/freetz/scripts/push/ssl11_push_powerline"
 SSL11_PUSH_REPEATER="$I_MATIK_PATH/support/freetz/scripts/push/ssl11_push_repeater"
+SSL30_PUSH="$I_MATIK_PATH/support/freetz/scripts/push/ssl30_push"
+SSL30_PUSH_POWERLINE="$I_MATIK_PATH/support/freetz/scripts/push/ssl30_push_powerline"
+SSL30_PUSH_REPEATER="$I_MATIK_PATH/support/freetz/scripts/push/ssl30_push_repeater"
 
 CONFIG_FRITZBOX_PATH_SSL_10="$CONFIG_FRITZBOX_PATH/ssl_10"
 CONFIG_FRITZBOX_PATH_SSL_11="$CONFIG_FRITZBOX_PATH/ssl_11"

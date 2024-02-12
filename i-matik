@@ -9,7 +9,7 @@ I_MATIK_PATH=$(cd `dirname $0` && pwd)
 git pull 2>/dev/null
 source $I_MATIK_PATH/support/i-matik/config/i-matik
 source $INSTAL_CHECK
-VERSIONS_NR="0.86.7(f11.8)(i09.1)"
+VERSIONS_NR="0.86.8(f11.8)(i09.1)"
 ln -s $CREATE_BOXES $I_MATIK_PATH/my-boxes_please_edit_me 2>/dev/null
 source $I_MATIK_PATH/support/freetz/scripts/friends 2>/dev/null
 
@@ -112,7 +112,7 @@ source $NO_INMEMORY
 elif [[ $1 == '5590.multi' ]]; then
 source $SSL11
 elif [[ $1 == '5590' ]] && [[ $2 == '-push' ]]; then
-source $SSL11_PUSH
+source $SSL30_PUSH
 
 elif [[ $1 == '7510.11' ]]; then
 source $NO_INMEMORY
@@ -134,7 +134,7 @@ source $NO_INMEMORY
 elif [[ $1 == '7530AX.multi' ]]; then
 source $SSL11
 elif [[ $1 == '7530AX' ]] && [[ $2 == '-push' ]]; then
-source $SSL11_PUSH
+source $SSL30_PUSH
 
 #arm boxen no oscam
 elif [[ $1 == '1200.11' ]]; then
@@ -548,7 +548,7 @@ source $I_MATIK
 elif [[ $1 == '7590AX.multi' ]]; then
 source $SSL11
 elif [[ $1 == '7590AX' ]] && [[ $2 == '-push' ]]; then
-source $SSL11_PUSH
+source $SSL30_PUSH
 
 #mips boxen no oscam
 elif [[ $1 == '3370-Alien3490.11' ]]; then
@@ -841,7 +841,7 @@ source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '5530.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '5530' ]] && [[ $2 == '-push' ]]; then
-source $SSL11_PUSH
+source $SSL30_PUSH
 
 elif [[ $1 == '6810.10' ]]; then
 source $NO_INMEMORY_NO_OSCAM
