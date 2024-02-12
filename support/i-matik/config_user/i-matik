@@ -3,7 +3,7 @@
 FREETZ_PATH_SSL_10="$I_MATIK_PATH/freetz-ng"
 FREETZ_PATH_SSL_11="$I_MATIK_PATH/freetz-ng"
 FREETZ_PATH_SSL_30="$I_MATIK_PATH/freetz-ng"
-FREETZ_PATH_SSL_31="$I_MATIK_PATH/freetz-ng"
+FREETZ_PATH_SSL_32="$I_MATIK_PATH/freetz-ng"
 FREETZ_PATH_SSL_MULTI="$I_MATIK_PATH/reetz-ng"
 
 #define image home path
