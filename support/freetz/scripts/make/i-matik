@@ -225,6 +225,7 @@ for bs in "${BOX_SSL[@]}"; do
 		grep -v FREETZ_STYLE= $FREETZ_SSL_HOME_PATH/.config > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 
 
 		source $DOWNGRADE_ON 2>/dev/null
+		source $UPDATE_ON 2>/dev/null
 
 		sed -i "s+FREETZ_JLEVEL=20+FREETZ_JLEVEL=$MAX_CPUS+g" $FREETZ_SSL_HOME_PATH/.config
 		sed -i "s+# FREETZ_TARGET_BINUTILS_$TBINUTILS is not set+FREETZ_TARGET_BINUTILS_$TBINUTILS=y+g" $FREETZ_SSL_HOME_PATH/.config
@@ -410,6 +411,7 @@ for bs in "${BOX_SSL[@]}"; do
 		source $REPLACE_KERNEL 2>/dev/null
 		source $YES_WATCHDOG 2>/dev/null
 		source $DOWNGRADE_OFF 2>/dev/null
+		source $UPDATE_OFF 2>/dev/null
 		source $PKGS_PATH_ON_OFF/skins_off 2>/dev/null
 
 		#echo "mv .$configto to $config" && sleep 2 #echo command 2 seconds for progress

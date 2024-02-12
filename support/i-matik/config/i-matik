@@ -75,6 +75,10 @@ BAD_EXT3_TYP="7530_AX"
 DOWNGRADE_ON="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_on"
 DOWNGRADE_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_off"
 
+#update
+UPDATE_ON="$I_MATIK_PATH/support/freetz/scripts/patches/update/update_on"
+UPDATE_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/update/update_off"
+
 #BINUTILS Version
 TBINUTILS="2_42"
 
@@ -105,6 +109,9 @@ FRIENDS_PATCH_DL="$I_MATIK_PATH/support/freetz/scripts"
 
 FRIENDS_DOWNGRADE_ON="$ONLY_FRIENDS_PATCH/make/downgrade_on"
 FRIENDS_DOWNGRADE_OFF="$ONLY_FRIENDS_PATCH/make/downgrade_off"
+
+FRIENDS_UPDATE_ON="$ONLY_FRIENDS_PATCH/make/update_on"
+FRIENDS_UPDATE_OFF="$ONLY_FRIENDS_PATCH/make/update_off"
 
 #FRIENDS_PATCH_ON="$I_MATIK_PATH/support/freetz/scripts/patches/friends/friends_patches_on"
 #FRIENDS_PATCH_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/friends/friends_patches_off"
