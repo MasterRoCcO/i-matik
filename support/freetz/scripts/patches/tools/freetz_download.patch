@@ -2,7 +2,7 @@
 +++ tools/freetz_download	2023-11-03 23:14:45.212415535 +0100
 @@ -295,13 +296,14 @@
  #				sites[(( num_sites++ ))]=https://download.avm.de/fritzpowerline/$subpath
- #				sites[(( num_sites++ ))]=https://download.avm.de/fritzsmart/$subpath
+ #				sites[(( num_sites++ ))]=https://download.avm.de/fritzdect/$subpath
  				sites[(( num_sites++ ))]=https://avm.de/$subpath
 -#				sites[(( num_sites++ ))]=https://download.avm.de/labor/GoFiber23/$subpath
 +				sites[(( num_sites++ ))]=https://download.avm.de/labor/GoFiber23/$subpath
