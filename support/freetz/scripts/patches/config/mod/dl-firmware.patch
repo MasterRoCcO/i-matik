@@ -159,7 +159,7 @@
  	default "FRITZ.Box_7590_AX-07.80.image"                                                if FREETZ_TYPE_7599 &&                        FREETZ_TYPE_FIRMWARE_07_8X
  	#
  	default "FRITZ.Smart_Gateway-07.59-Release.image"                                      if FREETZ_TYPE_GATE &&                        FREETZ_TYPE_FIRMWARE_07_5X
-+	default "FRITZ.Smart_Gateway-07.59-110922-Inhaus.image"                                if FREETZ_TYPE_GATE &&                        FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
++	default "FRITZ.Smart_Gateway-07.59-111315-Inhaus.image"                                if FREETZ_TYPE_GATE &&                        FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
  	#
  	default "fw_Speedport_W501V_v_28.04.38.image"                                          if FREETZ_TYPE_W501V
  
