@@ -1,5 +1,5 @@
---- config/ui/firmware.in	2023-11-08 17:31:48.198710645 +0100
-+++ config/ui/firmware.in	2023-12-20 06:43:21.634785000 +0100
+--- config/ui/firmware.in	2024-02-18 13:18:49.239786894 +0100
++++ config/ui/firmware.in	2024-02-28 14:51:33.790183026 +0100
 @@ -729,6 +729,30 @@
  		bool "FRITZ!OS 07.50+"
  		select FREETZ_AVM_VERSION_07_5X
@@ -40,7 +40,7 @@
  		select FREETZ_AVM_VERSION_07_8X
  		depends on FREETZ_AVM_HAS_FIRMWARE_07_8X_LABOR && FREETZ_SHOW_EXPERT
  		help
-@@ -745,9 +769,9 @@
+@@ -745,12 +769,20 @@
  			For more details see <http://www.avm.de/Labor/>.
  
  	config FREETZ_TYPE_FIRMWARE_07_8X_INHAUS
@@ -52,7 +52,18 @@
  		depends on FREETZ_AVM_HAS_FIRMWARE_07_8X_INHAUS && FREETZ_SHOW_EXPERT
  		help
  			Enable this to use an AVM Inhaus firmware as base for modding.
-@@ -807,25 +831,41 @@
++ 
++	config FREETZ_TYPE_FIRMWARE_07_8X_PLUS
++		bool "FRITZ!OS 07.80+ LaborPlus - UNTESTED"
++ 		select FREETZ_AVM_VERSION_07_8X
++		depends on FREETZ_AVM_HAS_FIRMWARE_07_8X_PLUS && FREETZ_SHOW_EXPERT
++ 		help
++ 			Enable this to use an AVM Labor firmware as base for modding.
++ 			For more details see <https://service.avm.de/downloads/LaborPlus/>.
+ 
+ 
+ endchoice # "Firmware version" #
+@@ -807,25 +839,43 @@
  	default y
  	depends on \
  		!FREETZ_TYPE_FIRMWARE_LABOR && \
@@ -70,7 +81,8 @@
 +	bool
 +	default y
 +	depends on \
-+		FREETZ_AVM_HAS_FIRMWARE_07_5X_PLUS
++		FREETZ_AVM_HAS_FIRMWARE_07_5X_PLUS || \
++		FREETZ_AVM_HAS_FIRMWARE_07_8X_PLUS
 +
  config FREETZ_TYPE_FIRMWARE_INHAUS
  	bool
@@ -84,7 +96,8 @@
 +	bool
 +	default y
 +	depends on \
-+		FREETZ_TYPE_FIRMWARE_07_5X_PLUS
++		FREETZ_TYPE_FIRMWARE_07_5X_PLUS || \
++		FREETZ_TYPE_FIRMWARE_07_8X_PLUS
 +
  config FREETZ_TYPE_FIRMWARE_LABOR
  	bool
