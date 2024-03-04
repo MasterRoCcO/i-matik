@@ -73,7 +73,7 @@ fi
 			rm -rf $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
 			ln -s $FREETZ_SSL_HOME_PATH/toolchain/target $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
 
-			$OSCAM_PATH/./s3 fritz_${FB_ARCH}_${FB_OS} -p=$OSCAM_READER_EMU.profile
+			$OSCAM_PATH/./s3 fritz_${FB_ARCH}_${FB_OS} -p=$OSCAM_READER_EMU.profile USE_EXTRA
 			mv $OSCAM_PATH/support/binaries/ncam-Unofficial-${OSCAM_NCAM_VERSION_NEU:0:10}-${FB_ARCH}-linux-uclibcgnueabi-${OSCAM_READER_EMU}-upx $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/ncam-${OSCAM_NCAM_VERSION_NEU:0:10}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx
 
 		elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/ncam-${OSCAM_NCAM_VERSION_NEU:0:10}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx ]]; then
