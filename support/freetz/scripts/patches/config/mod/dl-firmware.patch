@@ -1,5 +1,5 @@
---- config/mod/dl-firmware.in	2024-03-06 16:51:13.751651071 +0100
-+++ config/mod/dl-firmware.in	2024-03-08 09:30:56.940282244 +0100
+--- config/mod/dl-firmware.in	2024-03-11 17:11:12.044514730 +0100
++++ config/mod/dl-firmware.in	2024-03-11 17:13:26.943147174 +0100
 @@ -31,7 +31,7 @@
  	#
  	default "@AVM/fritzwlan/fritzrepeater-1200/{other,deutschland}/fritz.os,@AVM/1200"                                 if FREETZ_TYPE_1200
@@ -42,8 +42,8 @@
 @@ -287,9 +287,11 @@
  	default "FRITZ.Repeater_1200-07.14.image"                                              if FREETZ_TYPE_1200 && FREETZ_TYPE_FIRMWARE_07_1X
  	default "FRITZ.Repeater_1200-07.29.image"                                              if FREETZ_TYPE_1200 && FREETZ_TYPE_FIRMWARE_07_2X
- 	default "FRITZ.Repeater_1200-07.57.image"                                              if FREETZ_TYPE_1200 && FREETZ_TYPE_FIRMWARE_07_5X
-+	default "FRITZ.Repeater_1200-07.57-111466-Inhaus.image"                                if FREETZ_TYPE_1200 && FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
+ 	default "FRITZ.Repeater_1200-07.58.image"                                              if FREETZ_TYPE_1200 && FREETZ_TYPE_FIRMWARE_07_5X
++#	default "FRITZ.Repeater_1200-07.57-111466-Inhaus.image"                                if FREETZ_TYPE_1200 && FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
  	#
  	default "FRITZ.Repeater_1200_AX-07.31.image"                                           if FREETZ_TYPE_1209 && FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Repeater_1200_AX-07.57.image"                                           if FREETZ_TYPE_1209 && FREETZ_TYPE_FIRMWARE_07_5X
@@ -54,16 +54,16 @@
 @@ -321,6 +323,7 @@
  	default "FRITZ.Repeater_2400-07.12.image"                                              if FREETZ_TYPE_2400 && FREETZ_TYPE_FIRMWARE_07_1X
  	default "FRITZ.Repeater_2400-07.29.image"                                              if FREETZ_TYPE_2400 && FREETZ_TYPE_FIRMWARE_07_2X
- 	default "FRITZ.Repeater_2400-07.57.image"                                              if FREETZ_TYPE_2400 && FREETZ_TYPE_FIRMWARE_07_5X
-+	default "FRITZ.Repeater_2400-07.57-111462-Inhaus.image"                                if FREETZ_TYPE_2400 && FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
+ 	default "FRITZ.Repeater_2400-07.58.image"                                              if FREETZ_TYPE_2400 && FREETZ_TYPE_FIRMWARE_07_5X
++#	default "FRITZ.Repeater_2400-07.57-111462-Inhaus.image"                                if FREETZ_TYPE_2400 && FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
  	#
  	default "fritz.box_sl_wlan.09.04.34.image"                                             if FREETZ_TYPE_3020
  	#
 @@ -328,9 +331,11 @@
  	default "FRITZ.Repeater_3000-07.14.image"                                              if FREETZ_TYPE_3000 && FREETZ_TYPE_FIRMWARE_07_1X
  	default "FRITZ.Repeater_3000-07.29.image"                                              if FREETZ_TYPE_3000 && FREETZ_TYPE_FIRMWARE_07_2X
- 	default "FRITZ.Repeater_3000-07.57.image"                                              if FREETZ_TYPE_3000 && FREETZ_TYPE_FIRMWARE_07_5X
-+	default "FRITZ.Repeater_3000-07.57-111469-Inhaus.image"                                if FREETZ_TYPE_3000 && FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
+ 	default "FRITZ.Repeater_3000-07.58.image"                                              if FREETZ_TYPE_3000 && FREETZ_TYPE_FIRMWARE_07_5X
++#	default "FRITZ.Repeater_3000-07.57-111469-Inhaus.image"                                if FREETZ_TYPE_3000 && FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
  	#
  	default "FRITZ.Repeater_3000_AX-07.42.image"                                           if FREETZ_TYPE_3009 && FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Repeater_3000_AX-07.57-V2.image/FRITZ.Repeater_3000_AX-07.57.image"     if FREETZ_TYPE_3009 && FREETZ_TYPE_FIRMWARE_07_5X
