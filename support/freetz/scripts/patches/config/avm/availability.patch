@@ -11,7 +11,7 @@
 +	depends on \
 +	 	( (FREETZ_TYPE_LANG_DE||FREETZ_TYPE_LANG_EN) && ( \
 +			FREETZ_TYPE_4060 || \
-+			FREETZ_TYPE_7490 || \			
++			FREETZ_TYPE_7490 || \	
 +			FREETZ_TYPE_7510 || \
 +			FREETZ_TYPE_7520 || \
 +			FREETZ_TYPE_7521 || \
