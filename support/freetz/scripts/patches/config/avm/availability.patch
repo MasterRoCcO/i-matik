@@ -1,5 +1,5 @@
---- config/avm/availability.in	2024-03-14 10:55:03.863438030 +0100
-+++ config/avm/availability.in	2024-03-14 11:30:49.948063584 +0100
+--- config/avm/availability.in	2024-03-11 19:12:06.216730948 +0100
++++ config/avm/availability.in	2024-03-14 11:55:22.881092162 +0100
 @@ -455,7 +455,44 @@
  			FREETZ_TYPE_6690 || \
  			FREETZ_TYPE_6820_V3 \
@@ -11,7 +11,7 @@
 +	depends on \
 +	 	( (FREETZ_TYPE_LANG_DE||FREETZ_TYPE_LANG_EN) && ( \
 +			FREETZ_TYPE_4060 || \
-+			FREETZ_TYPE_7490 || \	
++			FREETZ_TYPE_7490 || \
 +			FREETZ_TYPE_7510 || \
 +			FREETZ_TYPE_7520 || \
 +			FREETZ_TYPE_7521 || \
