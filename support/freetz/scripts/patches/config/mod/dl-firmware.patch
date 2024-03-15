@@ -1,5 +1,5 @@
---- config/mod/dl-firmware.in	2024-03-11 19:12:06.216730948 +0100
-+++ config/mod/dl-firmware.in	2024-03-15 18:46:26.789828512 +0100
+--- config/mod/dl-firmware.in	2024-03-11 18:32:23.542196880 +0100
++++ config/mod/dl-firmware.in	2024-03-15 23:40:35.175980372 +0100
 @@ -31,7 +31,7 @@
  	#
  	default "@AVM/fritzwlan/fritzrepeater-1200/{other,deutschland}/fritz.os,@AVM/1200"                                 if FREETZ_TYPE_1200
@@ -39,6 +39,15 @@
  	#
  	default "@AVM/{fritzbox-6810-lte/deutschland/fritz.os,fritzbox_6810_lte/firmware/deutsch}"                         if FREETZ_TYPE_6810 && FREETZ_TYPE_LANG_DE
  	default "@AVM/{fritzbox-6810-lte/other/fritz.os,fritzbox_6810_lte/firmware/english}"                               if FREETZ_TYPE_6810 && FREETZ_TYPE_LANG_EN
+@@ -242,7 +242,7 @@
+ 	#
+ 	default "@AVM/fritzbox-7583-vdsl/{deutschland,other}/fritz.os,@AVM/7583VDSL"                                       if FREETZ_TYPE_7584
+ 	#
+-	default "@AVM/{fritzbox-7590/deutschland/fritz.os,fritzbox.7590/firmware/deutsch},@1&1/7590"                       if FREETZ_TYPE_7590 && FREETZ_TYPE_LANG_DE
++	default "@AVM/{fritzbox-7590/deutschland/fritz.os,fritzbox.7590/firmware/deutsch},@1&1/7590,@AVM/7590"             if FREETZ_TYPE_7590 && FREETZ_TYPE_LANG_DE
+ 	default "@AVM/fritzbox-7590/{other,italy,belgium}/fritz.os"                                                        if FREETZ_TYPE_7590 && FREETZ_TYPE_LANG_EN
+ 	#
+ 	default "@AVM/fritzbox-7590-ax/{deutschland,other}/fritz.os,@AVM/7590AX"                                           if FREETZ_TYPE_7599
 @@ -287,9 +287,11 @@
  	default "FRITZ.Repeater_1200-07.14.image"                                              if FREETZ_TYPE_1200 && FREETZ_TYPE_FIRMWARE_07_1X
  	default "FRITZ.Repeater_1200-07.29.image"                                              if FREETZ_TYPE_1200 && FREETZ_TYPE_FIRMWARE_07_2X
