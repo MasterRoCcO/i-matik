@@ -18,9 +18,9 @@ source $TOOLS_PATCH_PATH/freetz_download
 
 # features
 source $CONFIG_PATCH_PATH/avm/features
+source $CONFIG_PATCH_PATH/avm/version
 source $I_MATIK_PATCH_PATH/ifree
 source $I_MATIK_PATCH_PATH/enable_gpon_serial
-source $I_MATIK_PATCH_PATH/cond/832-hide_dsl_overview-hint/832-hide_dsl_overview-hint_07_8X
 
 # fix
 source $I_MATIK_PATH/support/freetz/scripts/patches/host-tools/sed-host

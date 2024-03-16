@@ -1,0 +1,39 @@
+--- config/avm/version.in	2024-03-11 19:12:06.216730000 +0100
++++ config/avm/version.in	2024-03-15 19:38:34.790940724 +0100
+@@ -41,6 +41,9 @@
+ config FREETZ_AVM_VERSION_07_8X
+ 	bool
+ 
++config FREETZ_AVM_VERSION_08_0X
++	bool
++
+ ###
+ ### FREETZ_AVM_VERSION_xx_xx_MIN
+ ###
+@@ -133,7 +136,14 @@
+ 	bool
+ 	default y
+ 	depends on \
+-		FREETZ_AVM_VERSION_07_8X
++		FREETZ_AVM_VERSION_07_8X || \
++		FREETZ_AVM_VERSION_08_0X_MIN
++
++config FREETZ_AVM_VERSION_08_0X_MIN
++	bool
++	default y
++	depends on \
++		FREETZ_AVM_VERSION_08_0X
+ 
+ ###
+ ### FREETZ_AVM_VERSION_xx_xx_MAX
+@@ -229,3 +239,10 @@
+ 		FREETZ_AVM_VERSION_07_5X_MAX || \
+ 		FREETZ_AVM_VERSION_07_8X
+ 
++config FREETZ_AVM_VERSION_08_0X_MAX
++	bool
++	default y
++	depends on \
++		FREETZ_AVM_VERSION_07_8X_MAX || \
++		FREETZ_AVM_VERSION_08_0X
++

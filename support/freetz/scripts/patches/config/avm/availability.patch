@@ -1,5 +1,5 @@
 --- config/avm/availability.in	2024-03-11 19:12:06.216730948 +0100
-+++ config/avm/availability.in	2024-03-14 14:55:19.671439525 +0100
++++ config/avm/availability.in	2024-03-15 19:04:19.409482407 +0100
 @@ -455,7 +455,46 @@
  			FREETZ_TYPE_6690 || \
  			FREETZ_TYPE_6820_V3 \
@@ -47,11 +47,10 @@
  
  config FREETZ_AVM_HAS_FIRMWARE_07_8X
  	bool
-@@ -473,12 +512,36 @@
+@@ -473,12 +512,51 @@
  #	default y
  #	depends on \
  
--config FREETZ_AVM_HAS_FIRMWARE_07_8X_INHAUS
 +#config FREETZ_AVM_HAS_FIRMWARE_07_8X_LABOR
 +#	bool
 +#	default y
@@ -63,6 +62,17 @@
 +#			FREETZ_TYPE_7599 \
 +#		))
 +
+ config FREETZ_AVM_HAS_FIRMWARE_07_8X_INHAUS
+ 	bool
+ 	default y
+-	depends on !FREETZ_TYPE_CABLE
+-	depends on FREETZ_AVM_HAS_FIRMWARE_07_8X_LABOR
++	depends on \
++		( (FREETZ_TYPE_LANG_DE||FREETZ_TYPE_LANG_EN) && ( \
++			FREETZ_TYPE_5530 || \
++			FREETZ_TYPE_5590 \
++		))
+ 
 +config FREETZ_AVM_HAS_FIRMWARE_07_8X_PLUS
 + 	bool
 + 	default y
@@ -73,18 +83,21 @@
 +			FREETZ_TYPE_7539 || \
 +			FREETZ_TYPE_7599 \
 + 		))
-+ 		
-+config FREETZ_AVM_HAS_FIRMWARE_07_9X_INHAUS
- 	bool
- 	default y
--	depends on !FREETZ_TYPE_CABLE
--	depends on FREETZ_AVM_HAS_FIRMWARE_07_8X_LABOR
--
-+	depends on \
-+		( (FREETZ_TYPE_LANG_DE||FREETZ_TYPE_LANG_EN) && ( \
-+			FREETZ_TYPE_7539 || \
-+			FREETZ_TYPE_7599 \
-+		))
++
++#config FREETZ_AVM_HAS_FIRMWARE_08_0X
++#	bool
++#	default y
++#	depends on \
++
++#config FREETZ_AVM_HAS_FIRMWARE_08_0X_INHAUS
++#	bool
++#	default y
++#	depends on \
++#		( (FREETZ_TYPE_LANG_DE||FREETZ_TYPE_LANG_EN) && ( \
++#			FREETZ_TYPE_7539 || \
++#			FREETZ_TYPE_7590 || \
++#			FREETZ_TYPE_7599 \
++#		))
  
  ###
  ### Languages
