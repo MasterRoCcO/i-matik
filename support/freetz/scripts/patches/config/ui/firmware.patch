@@ -1,6 +1,6 @@
 --- config/ui/firmware.in	2024-03-11 19:12:06.216730948 +0100
 +++ config/ui/firmware.in	2024-03-15 19:21:10.754639630 +0100
-@@ -646,6 +646,7 @@
+@@ -651,6 +651,7 @@
  
  choice
  	prompt "Firmware version"
@@ -8,7 +8,7 @@
  	default FREETZ_TYPE_FIRMWARE_07_8X
  	default FREETZ_TYPE_FIRMWARE_07_5X
  	default FREETZ_TYPE_FIRMWARE_07_2X
-@@ -729,6 +730,30 @@
+@@ -734,6 +735,30 @@
  		bool "FRITZ!OS 07.50+"
  		select FREETZ_AVM_VERSION_07_5X
  		depends on FREETZ_AVM_HAS_FIRMWARE_07_5X
@@ -39,7 +39,7 @@
  
  
  	config FREETZ_TYPE_FIRMWARE_07_8X
-@@ -737,7 +762,7 @@
+@@ -742,7 +767,7 @@
  		depends on FREETZ_AVM_HAS_FIRMWARE_07_8X
  
  	config FREETZ_TYPE_FIRMWARE_07_8X_LABOR
@@ -48,7 +48,7 @@
  		select FREETZ_AVM_VERSION_07_8X
  		depends on FREETZ_AVM_HAS_FIRMWARE_07_8X_LABOR && FREETZ_SHOW_EXPERT
  		help
-@@ -745,12 +770,41 @@
+@@ -750,12 +775,41 @@
  			For more details see <http://www.avm.de/Labor/>.
  
  	config FREETZ_TYPE_FIRMWARE_07_8X_INHAUS
@@ -92,7 +92,7 @@
  
  
  endchoice # "Firmware version" #
-@@ -777,10 +831,11 @@
+@@ -782,10 +836,11 @@
  		( FREETZ_TYPE_FIRMWARE_06_8X && !FREETZ_AVM_HAS_FIRMWARE_06_9X && !FREETZ_AVM_HAS_FIRMWARE_07_0X && !FREETZ_AVM_HAS_FIRMWARE_07_1X) || \
  		( FREETZ_TYPE_FIRMWARE_06_9X && !FREETZ_AVM_HAS_FIRMWARE_07_0X && !FREETZ_AVM_HAS_FIRMWARE_07_1X && !FREETZ_AVM_HAS_FIRMWARE_07_2X) || \
  		( FREETZ_TYPE_FIRMWARE_07_0X && !FREETZ_AVM_HAS_FIRMWARE_07_1X && !FREETZ_AVM_HAS_FIRMWARE_07_2X && !FREETZ_AVM_HAS_FIRMWARE_07_5X) || \
@@ -108,7 +108,7 @@
  
  config FREETZ_TYPE_FIRMWARE_DETECT_LATEST
  	bool "Detect the latest firmware version"
-@@ -807,26 +862,46 @@
+@@ -812,26 +867,46 @@
  	default y
  	depends on \
  		!FREETZ_TYPE_FIRMWARE_LABOR && \
