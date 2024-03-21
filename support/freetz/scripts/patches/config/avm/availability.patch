@@ -89,15 +89,15 @@
 +#	default y
 +#	depends on \
 +
-+config FREETZ_AVM_HAS_FIRMWARE_08_0X_INHAUS
-+	bool
-+	default y
-+	depends on \
-+		( (FREETZ_TYPE_LANG_DE||FREETZ_TYPE_LANG_EN) && ( \
-+			FREETZ_TYPE_7539 || \
-+			FREETZ_TYPE_7590 || \
-+			FREETZ_TYPE_7599 \
-+		))
++#config FREETZ_AVM_HAS_FIRMWARE_08_0X_INHAUS
++#	bool
++#	default y
++#	depends on \
++#		( (FREETZ_TYPE_LANG_DE||FREETZ_TYPE_LANG_EN) && ( \
++#			FREETZ_TYPE_7539 || \
++#			FREETZ_TYPE_7590 || \
++#			FREETZ_TYPE_7599 \
++#		))
  
  ###
  ### Languages
