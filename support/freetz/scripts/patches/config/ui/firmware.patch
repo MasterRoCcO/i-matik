@@ -1,5 +1,5 @@
---- config/ui/firmware.in	2024-03-22 02:42:04.997085873 +0100
-+++ config/ui/firmware.in	2024-03-22 03:01:23.649809905 +0100
+--- config/ui/firmware.in	2024-03-22 03:17:00.730831078 +0100
++++ config/ui/firmware.in	2024-03-22 20:07:19.817779276 +0100
 @@ -651,6 +651,7 @@
  
  choice
@@ -77,7 +77,7 @@
  
  config FREETZ_TYPE_FIRMWARE_DETECT_LATEST
  	bool "Detect the latest firmware version"
-@@ -818,25 +859,38 @@
+@@ -818,25 +859,45 @@
  	default y
  	depends on \
  		!FREETZ_TYPE_FIRMWARE_LABOR && \
@@ -107,6 +107,13 @@
 +		FREETZ_TYPE_FIRMWARE_07_5X_INHAUS || \
 +		FREETZ_TYPE_FIRMWARE_07_8X_INHAUS || \
  		FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
++		
++config FREETZ_TYPE_FIRMWARE_PLUS
++	bool
++	default y
++	depends on \
++		FREETZ_TYPE_FIRMWARE_07_5X_PLUS || \
++		FREETZ_TYPE_FIRMWARE_07_8X_PLUS
  
  config FREETZ_TYPE_FIRMWARE_LABOR
  	bool
