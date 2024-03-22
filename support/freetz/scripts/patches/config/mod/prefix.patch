@@ -1,5 +1,5 @@
---- config/mod/prefix.in	2024-03-21 13:37:16.406888232 +0100
-+++ config/mod/prefix.in	2024-03-21 14:30:59.696186586 +0100
+--- config/mod/prefix.in	2024-03-22 02:42:04.997085873 +0100
++++ config/mod/prefix.in	2024-03-22 02:42:14.172922886 +0100
 @@ -109,6 +109,7 @@
  config FREETZ_TYPE_PREFIX_LABOR_FIRMWARE
  	string
@@ -8,11 +8,3 @@
  	default "_inhaus"           if FREETZ_TYPE_FIRMWARE_INHAUS
  
  config FREETZ_TYPE_PREFIX_SERIES_SUBDIR
-@@ -126,6 +127,7 @@
- 	default "07_2X"             if FREETZ_AVM_VERSION_07_2X
- 	default "07_5X"             if FREETZ_AVM_VERSION_07_5X
- 	default "07_8X"             if FREETZ_AVM_VERSION_07_8X
-+	default "08_0X"             if FREETZ_AVM_VERSION_08_0X
- 
- config FREETZ_TYPE_PREFIX_ALIEN_HARDWARE
- 	string

@@ -18,7 +18,6 @@ source $TOOLS_PATCH_PATH/freetz_download
 
 # features
 source $CONFIG_PATCH_PATH/avm/features
-source $CONFIG_PATCH_PATH/avm/version
 source $I_MATIK_PATCH_PATH/ifree
 source $I_MATIK_PATCH_PATH/enable_gpon_serial
 

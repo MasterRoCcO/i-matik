@@ -26,11 +26,6 @@ cp -ar $CONFIG_PATCH_PATH/avm/features.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/nul
 patch -p0 -b < features.patch
 rm -rf "$FREETZ_SSL_HOME_PATH/features.patch" 2>/dev/null
 
-echo -e ${GREEN}"Freetz files patch for NEW inhaus."${NC}
-cp -ar $CONFIG_PATCH_PATH/avm/version.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-patch -p0 -b < version.patch
-rm -rf "$FREETZ_SSL_HOME_PATH/version.patch" 2>/dev/null
-
 ### 07_8X
 echo -e ${GREEN}"Patch for add FW 07_5X PLUS and Inhaus"${NC}
 cp -ar $CONFIG_PATCH_PATH/avm/availability.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null

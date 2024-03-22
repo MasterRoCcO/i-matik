@@ -6,8 +6,16 @@ CORE_SUFFIX="$(grep '^FREETZ_SYSTEM_TYPE_CORE_SUFFIX=' .config | awk -F'"' '{pri
 cp -p $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}.imatik 2>/dev/null
 
 OS80_191="$(grep '^FREETZ_TYPE_PREFIX_SERIES_SUBDIR=' .config | awk -F'"' '{print $2}' | xargs)"
+FW6670_191="$(grep '^FREETZ_TYPE_PREFIX=' .config | awk -F'"' '{print $2}' | xargs)"
 
 if [ ${OS80_191} = 08_0X ]
+	then
+		cp -ar $PATCHES_PATCH_PATH_FRIENDS/191-add_responsive_webmenu.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+		patch -p0 -b < 191-add_responsive_webmenu.patch 2>/dev/null
+		rm -rf "$FREETZ_SSL_HOME_PATH/191-add_responsive_webmenu.patch" 2>/dev/null
+fi
+
+if [ ${FW6670_191} = 6670 ]
 	then
 		cp -ar $PATCHES_PATCH_PATH_FRIENDS/191-add_responsive_webmenu.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
 		patch -p0 -b < 191-add_responsive_webmenu.patch 2>/dev/null
