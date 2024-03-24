@@ -3,3 +3,5 @@ rm -f $FREETZ_SSL_HOME_PATH/config/ui/patches.in 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/config/ui/patches.in.orig $FREETZ_SSL_HOME_PATH/config/ui/patches.in 2>/dev/null
 rm -f $FREETZ_SSL_HOME_PATH/patches/scripts/823-show_internet_extender.sh.orig 2>/dev/null
 rm -f $FREETZ_SSL_HOME_PATH/patches/scripts/823-show_internet_extender.sh 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/patches/scripts/193-patch_webmenu_feedback.sh.orig 2>/dev/null
+rm -f $FREETZ_SSL_HOME_PATH/patches/scripts/193-patch_webmenu_feedback.sh 2>/dev/null
