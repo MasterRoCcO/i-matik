@@ -1,5 +1,5 @@
 --- config/ui/patches.in	2024-03-23 08:51:40.903774246 +0100
-+++ config/ui/patches.in	2024-03-24 16:58:25.803533915 +0100
++++ config/ui/patches.in	2024-03-25 12:04:43.141426334 +0100
 @@ -1270,6 +1270,38 @@
  		 812-show_update_config.sh
  		 821-show_network_repeater.sh
@@ -39,7 +39,24 @@
  
  config FREETZ_PATCH_SIGNED
  	bool "Patch web menu signed message"
-@@ -1347,8 +1379,13 @@
+@@ -1313,6 +1345,16 @@
+ 		help
+ 			noUpdateSearch does not trigger the message.
+ 
++	if FREETZ_PATCH_SECURE_nus
++
++		config FREETZ_PATCH_SECURE_au
++			bool "Caused by Autoupdate"
++			depends on FREETZ_AVM_VERSION_07_8X_MIN
++			default y
++			help
++				Hides Autoupdate does not trigger the message.
++	endif # FREETZ_PATCH_SECURE_nus
++
+ endif # FREETZ_PATCH_SECURE
+ 
+ config FREETZ_MODIFY_DSL_WARNING
+@@ -1347,8 +1389,13 @@
  
  config FREETZ_ENABLE_GPON_SERIAL
  	bool "Enable GPON serial textbox"
@@ -54,7 +71,7 @@
  	default n
  	help
  		Re-enables access to the GPON serial textbox on support page.
-@@ -1373,7 +1410,7 @@
+@@ -1373,7 +1420,7 @@
  
  menuconfig FREETZ_PATCH_MODFS_BOOT_MANAGER
  	bool "Add yf-bootmanager"
@@ -63,20 +80,8 @@
  	depends on FREETZ_AVM_VERSION_06_5X_MIN
  	depends on ( FREETZ_AVM_HAS_SEPARATE_FILESYSTEM_IMAGE && !FREETZ_AVM_HAS_FWLAYOUT_5 ) || \
  		                   ( FREETZ_AVM_HAS_FWLAYOUT_5 && (FREETZ_AVM_HAS_BLK_DEV_LOOP_BUILTIN || FREETZ_REPLACE_MODULE_AVAILABLE) )
---- patches/scripts/823-show_internet_extender.sh	(nonexistent)
-+++ patches/scripts/823-show_internet_extender.sh	(working copy)
-@@ -0,0 +1,9 @@
-+[ "$FREETZ_PATCH_EXTENDER_INTERNET" == "y" ] || return 0
-+[ "$FREETZ_TYPE_EXTENDER" == "y" ] || return 0
-+echo1 "enabling internet and certificate config for wifi extender"
-+
-+# patcht Internet > Freigaben
-+
-+modsed \
-+  's/\(.*\)\(\["meshSet"\] = {.*\)/\1\["remoteHttps"\] = config\.REMOTE_HTTPS and {\n\["show"\] = true,\n\["lua"\] = "internet\/remote_https\.lua",\n\["help"\] = \(forLuaOnly and "hilfe_internet_remote_https"\) or true\n} or nil,\n\2/' \
-+  "${MENU_DATA_LUA}"
 --- patches/scripts/193-patch_webmenu_feedback.sh	1970-01-01 01:00:00.000000000 +0100
-+++ patches/scripts/193-patch_webmenu_feedback.sh	2024-03-24 16:23:39.094297540 +0100
++++ patches/scripts/193-patch_webmenu_feedback.sh	2024-03-25 12:04:43.141426334 +0100
 @@ -0,0 +1,12 @@
 +[ "$FREETZ_PATCH_FEEDBACK" == "y" ] || return 0
 +echo1 "applying webmenu feedback patch"
@@ -90,3 +95,25 @@
 +	done
 +done
 +
+--- patches/scripts/194-patch_webmenu_secure.sh	2023-11-08 17:31:48.206710457 +0100
++++ patches/scripts/194-patch_webmenu_secure.sh	2024-03-25 11:56:03.767326000 +0100
+@@ -10,6 +10,7 @@
+ 		[ "$FREETZ_PATCH_SECURE_sip" == "y" ] && modsed 's/data[.]fritzos[.]ipphone_from_outside/false/g' ${FILESYSTEM_MOD_DIR}${file}
+ 		[ "$FREETZ_PATCH_SECURE_nau" == "y" ] && modsed 's/data[.]fritzos[.]noAutoupdate/false/g'         ${FILESYSTEM_MOD_DIR}${file}
+ 		[ "$FREETZ_PATCH_SECURE_nus" == "y" ] && modsed 's/data[.]fritzos[.]noUpdateSearch/false/g'       ${FILESYSTEM_MOD_DIR}${file}
++		[ "$FREETZ_PATCH_SECURE_au" == "y" ] && modsed 's/data[.]fritzos[.]Autoupdate/false/g'       ${FILESYSTEM_MOD_DIR}${file}
+ 	done
+ done
+ 
+--- patches/scripts/823-show_internet_extender.sh	1970-01-01 01:00:00.000000000 +0100
++++ patches/scripts/823-show_internet_extender.sh	2024-03-25 12:04:43.141426334 +0100
+@@ -0,0 +1,9 @@
++[ "$FREETZ_PATCH_EXTENDER_INTERNET" == "y" ] || return 0
++[ "$FREETZ_TYPE_EXTENDER" == "y" ] || return 0
++echo1 "enabling internet and certificate config for wifi extender"
++
++# patcht Internet > Freigaben
++
++modsed \
++  's/\(.*\)\(\["meshSet"\] = {.*\)/\1\["remoteHttps"\] = config\.REMOTE_HTTPS and {\n\["show"\] = true,\n\["lua"\] = "internet\/remote_https\.lua",\n\["help"\] = \(forLuaOnly and "hilfe_internet_remote_https"\) or true\n} or nil,\n\2/' \
++  "${MENU_DATA_LUA}"
