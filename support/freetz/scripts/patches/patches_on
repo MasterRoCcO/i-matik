@@ -79,4 +79,4 @@ patch -p0 -b < openssl.patch
 rm -rf "$FREETZ_SSL_HOME_PATH/openssl.patch" 2>/dev/null
 
 # patche for friends
-source $FRIENDS_PATCH_ON
+source $FRIENDS_PATCH_ON 2>/dev/null
