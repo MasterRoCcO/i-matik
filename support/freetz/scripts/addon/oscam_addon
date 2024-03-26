@@ -17,7 +17,7 @@
 #		echo -e ${GREEN}"rolu2 from the DEB forum is responsible for maintaining the oscam add-on. I have only developed one way that it is equally available to everyone in i-matik. Therefore, I will not give support for the Oscam add-on."${NC}
 		echo -e ${RED}"Please start again, because the oscam Add-on not under Add-on."${NC}
 		source $PATCH_OFF
-		source $FRIENDS_PATCH_OFF 2>/dev/null
+		source $FRIENDS_UPDATE_OFF 2>/dev/null
 		rm -f $FREETZ_SSL_HOME_PATH/.config
 		exit
 	fi
@@ -43,7 +43,7 @@
 #		echo -e ${GREEN}"rolu2 from the DEB forum is responsible for maintaining the oscam add-on. I have only developed one way that it is equally available to everyone in i-matik. Therefore, I will not give support for the Oscam add-on."${NC}
 		echo -e ${RED}"Please start again, because the oscam Add-on not under Add-on."${NC}
 		source $PATCH_OFF
-		source $FRIENDS_PATCH_OFF 2>/dev/null
+		source $FRIENDS_UPDATE_OFF 2>/dev/null
 		rm -f $FREETZ_SSL_HOME_PATH/.config
 		exit
 	fi
@@ -69,7 +69,7 @@
 #		echo -e ${GREEN}"rolu2 from the DEB forum is responsible for maintaining the oscam add-on. I have only developed one way that it is equally available to everyone in i-matik. Therefore, I will not give support for the Oscam add-on."${NC}
 		echo -e ${RED}"Please start again, because the oscam Add-on not under Add-on."${NC}
 		source $PATCH_OFF
-		source $FRIENDS_PATCH_OFF 2>/dev/null
+		source $FRIENDS_UPDATE_OFF 2>/dev/null
 		rm -f $FREETZ_SSL_HOME_PATH/.config
 		exit
 	fi
@@ -95,7 +95,7 @@
 #		echo -e ${GREEN}"rolu2 from the DEB forum is responsible for maintaining the oscam add-on. I have only developed one way that it is equally available to everyone in i-matik. Therefore, I will not give support for the Oscam add-on."${NC}
 		echo -e ${RED}"Please start again, because the oscam Add-on not under Add-on."${NC}
 		source $PATCH_OFF
-		source $FRIENDS_PATCH_OFF 2>/dev/null
+		source $FRIENDS_UPDATE_OFF 2>/dev/null
 		rm -f $FREETZ_SSL_HOME_PATH/.config
 		exit
 	fi
@@ -121,7 +121,7 @@
 #		echo -e ${GREEN}"rolu2 from the DEB forum is responsible for maintaining the oscam add-on. I have only developed one way that it is equally available to everyone in i-matik. Therefore, I will not give support for the Oscam add-on."${NC}
 		echo -e ${RED}"Please start again, because the oscam Add-on not under Add-on."${NC}
 		source $PATCH_OFF
-		source $FRIENDS_PATCH_OFF 2>/dev/null
+		source $FRIENDS_UPDATE_OFF 2>/dev/null
 		rm -f $FREETZ_SSL_HOME_PATH/.config
 		exit
 	fi
