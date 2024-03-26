@@ -116,6 +116,7 @@ FRIENDS_DOWNGRADE_OFF="$ONLY_FRIENDS_PATCH/make/downgrade_off"
 
 FRIENDS_UPDATE_ON="$ONLY_FRIENDS_PATCH/make/update_on"
 FRIENDS_UPDATE_OFF="$ONLY_FRIENDS_PATCH/make/update_off"
+FRIENDS_UPDATE_ADDON_OFF="$ONLY_FRIENDS_PATCH/make/update_addon_off"
 
 #FRIENDS_PATCH_ON="$I_MATIK_PATH/support/freetz/scripts/patches/friends/friends_patches_on"
 #FRIENDS_PATCH_OFF="$I_MATIK_PATH/support/freetz/scripts/patches/friends/friends_patches_off"
