@@ -138,7 +138,7 @@
 +	default "FRITZ.Box_6660_Cable-07.57-108563-LabPLUS.image"                              if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_07_5X_PLUS
 +	default "FRITZ.Box_6660_Cable-07.57-111098-Inhaus.image"                               if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
  	#
- 	default "FRITZ.Box_6670_Cable-07.61-110965-Release.image"                              if FREETZ_TYPE_6670 && FREETZ_TYPE_FIRMWARE_07_5X
+ 	default "FRITZ.Box_6670_Cable-07.61.image"                                             if FREETZ_TYPE_6670 && FREETZ_TYPE_FIRMWARE_07_5X
 +	default "FRITZ.Box_6670_Cable-07.61-112048-Inhaus.image"                               if FREETZ_TYPE_6670 && FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
  	#
  	default "FRITZ.Box_6690_Cable-07.29.image"                                             if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_07_2X
