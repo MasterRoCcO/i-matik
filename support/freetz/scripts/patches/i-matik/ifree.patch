@@ -31,7 +31,7 @@
 +		for other (untested) repeaters and firmwares.
 +
 +config FREETZ_PATCH_FEEDBACK
-+	bool "Patch web menu Feedback message"
++	bool "Patch web menu feedback message"
 +	depends on FREETZ_AVM_VERSION_07_5X_MIN && (FREETZ_TYPE_FIRMWARE_LABOR || FREETZ_TYPE_FIRMWARE_PLUS || FREETZ_TYPE_FIRMWARE_INHAUS)
 +	default n
 +	help
