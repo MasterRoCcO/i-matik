@@ -1,5 +1,5 @@
---- config/mod/dl-firmware.in	2024-03-23 22:32:30.689753920 +0100
-+++ config/mod/dl-firmware.in	2024-03-23 23:04:52.833208547 +0100
+--- config/mod/dl-firmware.in
++++ config/mod/dl-firmware.in
 @@ -31,7 +31,7 @@
  	#
  	default "@AVM/fritzwlan/fritzrepeater-1200/{other,deutschland}/fritz.os,@AVM/1200"                                 if FREETZ_TYPE_1200
@@ -210,7 +210,7 @@
 +	default "FRITZ.Box_7590_AX-07.90-112043-Inhaus.image"                                  if FREETZ_TYPE_7599 &&                        FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
  	default "FRITZ.Smart_Gateway-07.59-Release.image"                                      if FREETZ_TYPE_GATE &&                        FREETZ_TYPE_FIRMWARE_07_5X
-+	default "FRITZ.Smart_Gateway-07.59-111628-Inhaus.image"                                if FREETZ_TYPE_GATE &&                        FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
++	default "FRITZ.Smart_Gateway-07.59-112088-Inhaus.image"                                if FREETZ_TYPE_GATE &&                        FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
  	#
  	default "fw_Speedport_W501V_v_28.04.38.image"                                          if FREETZ_TYPE_W501V
  
