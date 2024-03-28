@@ -55,3 +55,8 @@ else
 	source $PKGS_PATH_ON_OFF/key_pack_off
 fi
 
+if [ -z $PARAM_IDM ]; then
+	sleep 0
+else
+	source $PKGS_PATH_ON_OFF/inadyn-mt_off
+fi

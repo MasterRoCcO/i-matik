@@ -9,7 +9,7 @@ I_MATIK_PATH=$(cd `dirname $0` && pwd)
 git pull 2>/dev/null
 source $I_MATIK_PATH/support/i-matik/config/i-matik
 source $INSTAL_CHECK
-VERSIONS_NR="0.89.1(f15.6)(i09.1)"
+VERSIONS_NR="0.89.2(f15.6)(i09.1)"
 ln -s $CREATE_BOXES $I_MATIK_PATH/my-boxes_please_edit_me 2>/dev/null
 source $I_MATIK_PATH/support/freetz/scripts/friends 2>/dev/null
 
@@ -962,7 +962,7 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf "  SSL_NUMBER\t\t\t10 - OpenSSL 1.0.x\n"
 	printf "  \t\t\t\t11 - OpenSSL 1.1.x\n"
 	printf "  \t\t\t\t30 - OpenSSL 3.0.x\n"
-	printf "  \t\t\t\t31 - OpenSSL 3.1.x\n"
+	printf "  \t\t\t\t31 - OpenSSL 3.2.x\n"
 	printf "  \t\t\t\tmulti - OpenSSL multiple Versions (inter Version)\n"
 	printf "  -c,--config\t\t\tshow not freetz-ng configuration dialog\n"
 	printf "  -s,--skip-image2memory\tdo not create inmemory image\n"
@@ -989,6 +989,8 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf "  -wg,--wireguard\t\tWIREGUARD\n"
 	printf "  -ov|--openvpn\t\tOpenvpn\n"
 	printf "  -tel|--telnet\t\tTelnet\n"
+	printf "  -key|--key-pack\t\tKey Pack\n"
+	printf "  -idm|--inadyn-mt\t\tInadyn-mt\n"
 	printf "  -push\t\t\t\tpush image to Fritz!Box or Fritz!Repeater or Fritz!Powerline\n"
 	printf "  -backup\t\t\tmake a backup of your freetz-signature and freetz-dl\n"
 	printf "  -us,--user-skins\t\tuser skins\n"
@@ -1003,8 +1005,8 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf ${GREEN}"List of currently OpenSSL 3.0.x supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST_SSL_3_0}\n"
 	printf ${BLUE}"To build an OpenSSL 3.0.x image for Fritz!Box 7490 use this command:${NC}\n"
 	printf "$0 7490.30\n\n"
-	printf ${GREEN}"List of currently OpenSSL 3.1.x supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST_SSL_3_1}\n"
-	printf ${BLUE}"To build an OpenSSL 3.1.x image for Fritz!Box 7490 use this command:${NC}\n"
+	printf ${GREEN}"List of currently OpenSSL 3.2.x supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST_SSL_3_2}\n"
+	printf ${BLUE}"To build an OpenSSL 3.2.x image for Fritz!Box 7490 use this command:${NC}\n"
 	printf "$0 7490.31\n\n"
 	printf ${GREEN}"List of currently OpenSSL MULTI supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST_SSL_MULTI}\n"
 	printf ${BLUE}"To build an OpenSSL MULTI image for Fritz!Box 7490 use this command:${NC}\n"
