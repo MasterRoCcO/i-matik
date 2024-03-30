@@ -40,7 +40,8 @@ elif [ ! -d "$OSCAM_PATH/oscam-svn" ]; then
 	exit 1
 fi
 
-	cd "$OSCAM_PATH" && git pull
+#	cd "$OSCAM_PATH" && git pull
+	cd "$OSCAM_PATH" && ./s3 update_me
 	cp -ar $MY_FILES_HOME_PATH_OSCAM/* "$OSCAM_PATH/" 2>/dev/null
 	
 	if [ -d "${PRIVAT_MY_FILES_HOME_PATH_OSCAM}" ];then 
