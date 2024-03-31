@@ -40,8 +40,6 @@ elif [ ! -d "$OSCAM_PATH/oscam-svn" ]; then
 	exit 1
 fi
 
-#	cd "$OSCAM_PATH" && git pull
-	cd "$OSCAM_PATH" && ./s3 update_me
 	cp -ar $MY_FILES_HOME_PATH_OSCAM/* "$OSCAM_PATH/" 2>/dev/null
 	
 	if [ -d "${PRIVAT_MY_FILES_HOME_PATH_OSCAM}" ];then 
@@ -74,7 +72,10 @@ fi
 			rm -rf $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
 			ln -s $FREETZ_SSL_HOME_PATH/toolchain/target $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
 
-			$OSCAM_PATH/./s3 fritz_${FB_ARCH}_${FB_OS} -p=$OSCAM_READER_EMU.profile USE_EXTRA
+#			cd "$OSCAM_PATH" && git pull
+			cd "$OSCAM_PATH" && ./s3 update_me
+	
+		$OSCAM_PATH/./s3 fritz_${FB_ARCH}_${FB_OS} -p=$OSCAM_READER_EMU.profile USE_EXTRA
 			mv $OSCAM_PATH/support/binaries/oscam-svn-fritz_${FB_ARCH}_${FB_OS}-${OSCAM_READER_EMU}798-upx $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx
 
 		elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx ]]; then
