@@ -4,34 +4,3 @@ SOURCE_ID="$(grep '^FREETZ_AVM_SOURCE_ID=' .config | awk -F'"' '{print $2}' | xa
 CORE_SUFFIX="$(grep '^FREETZ_SYSTEM_TYPE_CORE_SUFFIX=' .config | awk -F'"' '{print $2}' | xargs)"
 
 cp -p $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}.imatik 2>/dev/null
-
-#cp -p $KERNEL_PATCHES/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
-#patch -p0 -b < config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}.patch
-#rm -rf "$FREETZ_SSL_HOME_PATH/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}.patch" 2>/dev/null
-
-#WIREGUARD_Y="y"
-#END=" || \\"
-#WIREGUARD_COMMENT="$(grep '^FREETZ_PACKAGE_WIREGUARD=' .config | awk -F'"' '{print $1}' | xargs)"
-#TYPE_PREFIX="$(grep '^FREETZ_TYPE_PREFIX=' .config | awk -F'"' '{print $2}' | xargs)"
-#REPLACE_KERNEL1="$(grep '^FREETZ_REPLACE_KERNEL=' .config | awk -F'=' '{print $2}' | xargs)"
-
-#if [ ${WIREGUARD_COMMENT:25:1} = $WIREGUARD_Y ] 2>/dev/null
-#then
-#ed ~/vanilla/wichtig/WIREGUARD <<EOF
-#/FREETZ_AVM_SOURCE_1200_07_14/a
-#${BOX_ARCH}			${TYPE_PREFIX} FREETZ_AVM_SOURCE_${SOURCE_ID:0:7}_${SOURCE_ID:8:2}$END # REPLACE_KERNEL=${REPLACE_KERNEL1} 
-#.
-#wq
-#EOF
-#fi
-
-#if [ ${WIREGUARD_COMMENT:25:1} = $WIREGUARD_Y ] 2>/dev/null
-#then
-#ed ~/vanilla/wichtig/WIREGUARD1 <<EOF
-#/FREETZ_AVM_SOURCE_1200_07_14/a
-#			${TYPE_PREFIX} FREETZ_AVM_SOURCE_${SOURCE_ID:0:7}_${SOURCE_ID:8:2}$END # REPLACE_KERNEL=${REPLACE_KERNEL1}
-#.
-#wq
-#EOF
-#echo ${TYPE_PREFIX} FREETZ_AVM_SOURCE_${SOURCE_ID:0:7}_${SOURCE_ID:8:2}$END # REPLACE_KERNEL=${REPLACE_KERNEL1}
-#sleep 30
