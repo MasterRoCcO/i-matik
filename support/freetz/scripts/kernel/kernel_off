@@ -8,15 +8,3 @@ else
 rm -f $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
 mv $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID}.imatik $FREETZ_SSL_HOME_PATH/make/kernel/configs/freetz/config-${SYSTEM_TYPE:34:40}${CORE_SUFFIX}-${SOURCE_ID} 2>/dev/null
 fi
-OS80_191="$(grep '^FREETZ_TYPE_PREFIX_SERIES_SUBDIR=' .config | awk -F'"' '{print $2}' | xargs)"
-FW6670_191="$(grep '^FREETZ_TYPE_PREFIX=' .config | awk -F'"' '{print $2}' | xargs)"
-
-if [ ${OS80_191} = 08_0X ]
-	then
-		source $PATCHES_PATCH_PATH_FRIENDS/191-add_responsive_webmenu
-fi
-
-if [ ${FW6670_191} = 6670 ]
-	then
-		source $PATCHES_PATCH_PATH_FRIENDS/191-add_responsive_webmenu
-fi
