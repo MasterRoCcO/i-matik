@@ -1,5 +1,5 @@
---- config/mod/dl-firmware.in
-+++ config/mod/dl-firmware.in
+--- config/mod/dl-firmware.in	2024-04-04 17:44:53.975879796 +0200
++++ config/mod/dl-firmware.in	2024-04-04 17:47:14.043634670 +0200
 @@ -31,7 +31,7 @@
  	#
  	default "@AVM/fritzwlan/fritzrepeater-1200/{other,deutschland}/fritz.os,@AVM/1200"                                 if FREETZ_TYPE_1200
@@ -193,7 +193,7 @@
  	#
  	default "FRITZ.Box_7583_VDSL-07.31.image"                                              if FREETZ_TYPE_7584                        && FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_7583_VDSL-07.57.image"                                              if FREETZ_TYPE_7584                        && FREETZ_TYPE_FIRMWARE_07_5X
-@@ -666,14 +695,18 @@
+@@ -666,12 +695,15 @@
  	default "FRITZ.Box_7590-07.12.image"                                                   if FREETZ_TYPE_7590 && FREETZ_TYPE_LANG_DE && FREETZ_TYPE_FIRMWARE_07_1X
  	default "FRITZ.Box_7590-07.29.image"                                                   if FREETZ_TYPE_7590 &&                        FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_7590-07.57.image"                                                   if FREETZ_TYPE_7590 &&                        FREETZ_TYPE_FIRMWARE_07_5X
@@ -209,12 +209,9 @@
 +	default "FRITZ.Box_7590_AX-07.80-111702-LabPLUS.image"                                 if FREETZ_TYPE_7599 &&                        FREETZ_TYPE_FIRMWARE_07_8X_PLUS
 +	default "FRITZ.Box_7590_AX-07.90-112131-Inhaus.image"                                  if FREETZ_TYPE_7599 &&                        FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
- 	default "FRITZ.Smart_Gateway-07.59-Release.image"                                      if FREETZ_TYPE_GATE &&                        FREETZ_TYPE_FIRMWARE_07_5X
-+	default "FRITZ.Smart_Gateway-07.59-112088-Inhaus.image"                                if FREETZ_TYPE_GATE &&                        FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
+ 	default "FRITZ.Smart_Gateway-07.60-Release.image"                                      if FREETZ_TYPE_GATE &&                        FREETZ_TYPE_FIRMWARE_07_5X
  	#
- 	default "fw_Speedport_W501V_v_28.04.38.image"                                          if FREETZ_TYPE_W501V
- 
-@@ -783,7 +816,7 @@
+@@ -783,7 +815,7 @@
  	string "AVM alien web interface firmware source"                                if FREETZ_DL_OVERRIDE
  	depends on FREETZ_DL_ALIEN
  	#
