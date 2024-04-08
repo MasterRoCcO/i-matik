@@ -24,19 +24,19 @@ elif [ ! -d "$OSCAM_PATH" ]; then
 	exit 1
 fi
 
-mv $OSCAM_PATH/oscam-svn $OSCAM_PATH/ohne-oscam-smod
-mv $OSCAM_PATH/oscam-smod $OSCAM_PATH/oscam-svn
+mv $OSCAM_PATH/oscam-git $OSCAM_PATH/ohne-oscam-smod
+mv $OSCAM_PATH/oscam-smod $OSCAM_PATH/oscam-git
 
-if [[ ! -e "$OSCAM_PATH/oscam-svn" ]]; then
-	git clone https://github.com/Schimmelreiter/oscam-smod.git $OSCAM_PATH/oscam-svn
-ed $OSCAM_PATH/oscam-svn/oscam.c <<EOF
+if [[ ! -e "$OSCAM_PATH/oscam-git" ]]; then
+	git clone https://github.com/Schimmelreiter/oscam-smod.git $OSCAM_PATH/oscam-git
+ed $OSCAM_PATH/oscam-git/oscam.c <<EOF
 /", CS_TARGET);/a
 	fprintf(fp, "Built by:       %s\n", "i-matik");
 .
 wq
 EOF
-elif [ ! -d "$OSCAM_PATH/oscam-svn" ]; then
-#	printf "${YELLOW}'$OSCAM_PATH/oscam-svn' already exists but is not a directory${NC}" 1>&2
+elif [ ! -d "$OSCAM_PATH/oscam-git" ]; then
+#	printf "${YELLOW}'$OSCAM_PATH/oscam-git' already exists but is not a directory${NC}" 1>&2
 	exit 1
 fi
 
@@ -54,12 +54,12 @@ if [[ ! -e $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS} ]]; then
 #elif [[ ! -d $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS} ]]; then
 #	echo "$OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS} existiert bereits, ist aber kein Verzeichnis " 1>&2
 fi
-	cd $OSCAM_PATH/oscam-svn && OSCAM_SMOD_VERSION_ALT="$(./config.sh -r)"
-	cd $OSCAM_PATH/oscam-svn && git pull && OSCAM_SMOD_VERSION_NEU="$(./config.sh -r)"
-	ICAM_VERSION="$(grep '"-ICAM-v' $OSCAM_PATH/oscam-svn/oscam.c  | awk -F'"' '{print $4}' | xargs)"
+	cd $OSCAM_PATH/oscam-git && OSCAM_SMOD_VERSION_ALT="$(./config.sh -r)"
+	cd $OSCAM_PATH/oscam-git && git pull && OSCAM_SMOD_VERSION_NEU="$(./config.sh -r)"
+	ICAM_VERSION="$(grep '"-ICAM-v' $OSCAM_PATH/oscam-git/oscam.c  | awk -F'"' '{print $4}' | xargs)"
 
 	if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx ]]; then
-			find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-svn${OSCAM_SMOD_VERSION_ALT:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAM_SMOD_VERSION_ALT:6:8}.upx" -type f -mmin +0 -delete
+			find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-git${OSCAM_SMOD_VERSION_ALT:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAM_SMOD_VERSION_ALT:6:8}.upx" -type f -mmin +0 -delete
 
 			rm -rf $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
 			ln -s $FREETZ_SSL_HOME_PATH/toolchain/target $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
@@ -75,15 +75,15 @@ fi
 			fi
 	
 		$OSCAM_PATH/./s3 fritz_${FB_ARCH}_${FB_OS} -p=$OSCAM_READER_EMU.profile USE_EXTRA
-			mv $OSCAM_PATH/support/binaries/oscam-svn-fritz_${FB_ARCH}_${FB_OS}-${OSCAM_READER_EMU}798-upx $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx
+			mv $OSCAM_PATH/support/binaries/oscam-git-fritz_${FB_ARCH}_${FB_OS}-${OSCAM_READER_EMU}798-upx $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx
 
 		elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx ]]; then
 			printf "${GREEN}$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-${OSCAM_SMOD_VERSION_NEU:17:8}+smod${OSCAM_SMOD_VERSION_NEU:4:4}-${OSCAM_SMOD_VERSION_NEU:9:7}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}798$ICAM_VERSION.upx already exists${NC}"
 		fi
 			rm -rf "$OSCAM_PATH/support/toolchains.cfg"
 			mv $OSCAM_PATH/support/toolchains.cfg.orig $OSCAM_PATH/support/toolchains.cfg
-			mv $OSCAM_PATH/oscam-svn $OSCAM_PATH/oscam-smod
-			mv $OSCAM_PATH/ohne-oscam-smod $OSCAM_PATH/oscam-svn
+			mv $OSCAM_PATH/oscam-git $OSCAM_PATH/oscam-smod
+			mv $OSCAM_PATH/ohne-oscam-smod $OSCAM_PATH/oscam-git
 
 #			rm -rf $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
 		
