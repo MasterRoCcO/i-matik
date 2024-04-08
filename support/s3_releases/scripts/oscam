@@ -52,10 +52,12 @@ if [[ ! -e $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS} ]]; then
 #	echo "$OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS} existiert bereits, ist aber kein Verzeichnis " 1>&2
 fi
 	cd $OSCAM_PATH/oscam-git && OSCAMVERSION_ALT="$(./config.sh -r)"
+	cd $OSCAM_PATH/oscam-git && SHA_ALT="$(./config.sh -c)"
 	cd $OSCAM_PATH/oscam-git && git pull && OSCAMVERSION_NEU="$(./config.sh -r)"
+	cd $OSCAM_PATH/oscam-git && SHA_NEU="$(./config.sh -r)"
 	
-if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-git$OSCAMVERSION_NEU-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx ]]; then
-	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-git$OSCAMVERSION_ALT-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx" -type f -mmin +0 -delete
+if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-git${OSCAMVERSION_NEU}@${SHA_NEU}-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx ]]; then
+	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-git${OSCAMVERSION_ALT}@${SHA_ALT}-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx" -type f -mmin +0 -delete
 
 		rm -rf $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
 		ln -s $FREETZ_SSL_HOME_PATH/toolchain/target $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
@@ -71,10 +73,8 @@ if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-git$OSCAMVERSION_N
 			fi
 
 		$OSCAM_PATH/./s3 fritz_${FB_ARCH}_${FB_OS} -p=$OSCAM_READER.profile USE_EXTRA
-		SHA="$(grep 'OSCam ver: 1.30 rev: ' lastbuild.log | awk -F' ' '{print $8}' | xargs)"
-#		mv $OSCAM_PATH/support/binaries/oscam-git$SHA-fritz_${FB_ARCH}_${FB_OS}-$OSCAM_READER-upx $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-git$OSCAMVERSION_NEU@$SHA-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx
-			elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-git$OSCAMVERSION_NEU@$SHA-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx ]]; then
-				printf "${GREEN}$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-git$OSCAMVERSION_NEU@$SHA-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx already exists${NC}"
+			elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-git${OSCAMVERSION_NEU}@${SHA_NEU}-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx ]]; then
+				printf "${GREEN}$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-git${OSCAMVERSION_NEU}@${SHA_NEU}-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx already exists${NC}"
 			fi
 				rm -rf "$OSCAM_PATH/support/toolchains.cfg"
 				mv $OSCAM_PATH/support/toolchains.cfg.orig $OSCAM_PATH/support/toolchains.cfg
