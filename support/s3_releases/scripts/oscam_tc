@@ -73,7 +73,7 @@ if [[ ! -e $OSCAM_PATH/support/toolchains/fritz${FB_TYPE}-freetz ]]; then
 fi
 
 	cd $OSCAM_PATH/oscam-git && OSCAMVERSION_ALT="$(./config.sh -r)"
-	cd $OSCAM_PATH/oscam-git && svn up && OSCAMVERSION_NEU="$(./config.sh -r)"
+	cd $OSCAM_PATH/oscam-git && git pull && OSCAMVERSION_NEU="$(./config.sh -r)"
 
 if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-git$OSCAMVERSION_NEU-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx ]]; then
 	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-git$OSCAMVERSION_ALT-fritz${FB_TYPE}-freetz-$OSCAM_READER.upx" -type f -mmin +0 -delete 

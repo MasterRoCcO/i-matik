@@ -57,7 +57,7 @@ fi
 		cd $OSCAM_PATH/oscam-git
 		patch -p0 < oscam-emu.patch
 		cd $OSCAM_PATH/oscam-git && OSCAMVERSION_ALT="$(./config.sh -r)"
-		cd $OSCAM_PATH/oscam-git && svn up && OSCAMVERSION_NEU="$(./config.sh -r)"
+		cd $OSCAM_PATH/oscam-git && git pull && OSCAMVERSION_NEU="$(./config.sh -r)"
 		
 if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-git${OSCAMVERSION_NEU:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_NEU:6:8}.upx ]]; then
 	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-git${OSCAMVERSION_ALT:0:5}-fritz${FB_TYPE}-freetz-${OSCAM_READER_EMU}${OSCAMVERSION_ALT:6:8}.upx" -type f -mmin +0 -delete
