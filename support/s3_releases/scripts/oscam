@@ -25,7 +25,7 @@ elif [ ! -d "$OSCAM_PATH" ]; then
 fi
 
 if [[ ! -e "$OSCAM_PATH/oscam-svn" ]]; then
-	svn checkout https://svn.streamboard.tv/oscam/trunk $OSCAM_PATH/oscam-svn
+	git clone https://git.streamboard.tv/common/oscam.git/ $OSCAM_PATH/oscam-svn
 ed $OSCAM_PATH/oscam-svn/oscam.c <<EOF
 /", CS_TARGET);/a
 	fprintf(fp, "Built by:       %s\n", "i-matik");
