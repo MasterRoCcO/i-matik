@@ -9,7 +9,7 @@ I_MATIK_PATH=$(cd `dirname $0` && pwd)
 git pull 2>/dev/null
 source $I_MATIK_PATH/support/i-matik/config/i-matik
 source $INSTAL_CHECK
-VERSIONS_NR="0.90.0(f16.3)(i09.1)"
+VERSIONS_NR="0.90.0(f16.3)(i09.2)"
 ln -s $CREATE_BOXES $I_MATIK_PATH/my-boxes_please_edit_me 2>/dev/null
 source $I_MATIK_PATH/support/freetz/scripts/friends 2>/dev/null
 
@@ -18,7 +18,7 @@ if [[ $1 == '68504g.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '68504g.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '68504g.32' ]]; then
+elif [[ $1 == '68504g.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '68504g.multi' ]]; then
 source $SSL11
@@ -29,7 +29,7 @@ elif [[ $1 == '68505g.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '68505g.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '68505g.32' ]]; then
+elif [[ $1 == '68505g.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '68505g.multi' ]]; then
 source $SSL11
@@ -40,7 +40,7 @@ elif [[ $1 == '7520.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '7520.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '7520.32' ]]; then
+elif [[ $1 == '7520.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '7520.multi' ]]; then
 source $SSL11
@@ -51,7 +51,7 @@ elif [[ $1 == '7520B.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '7520B.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '7520B.32' ]]; then
+elif [[ $1 == '7520B.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '7520B.multi' ]]; then
 source $SSL11
@@ -62,7 +62,7 @@ elif [[ $1 == '7520-Alien7530.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '7520-Alien7530.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '7520-Alien7530.32' ]]; then
+elif [[ $1 == '7520-Alien7530.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '7520-Alien7530.multi' ]]; then
 source $I_MATIK
@@ -73,7 +73,7 @@ elif [[ $1 == '7530.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '7530.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '7530.32' ]]; then
+elif [[ $1 == '7530.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '7530.multi' ]]; then
 source $SSL11
@@ -85,7 +85,7 @@ elif [[ $1 == '4040.11' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '4040.30' ]]; then
 source $NO_INMEMORY
-elif [[ $1 == '4040.32' ]]; then
+elif [[ $1 == '4040.33' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '4040.multi' ]]; then
 source $SSL11
@@ -96,7 +96,7 @@ elif [[ $1 == '4060.11' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '4060.30' ]]; then
 source $NO_INMEMORY
-elif [[ $1 == '4060.32' ]]; then
+elif [[ $1 == '4060.33' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '4060.multi' ]]; then
 source $SSL11
@@ -107,7 +107,7 @@ elif [[ $1 == '5590.11' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '5590.30' ]]; then
 source $NO_INMEMORY
-elif [[ $1 == '5590.32' ]]; then
+elif [[ $1 == '5590.33' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '5590.multi' ]]; then
 source $SSL11
@@ -118,7 +118,7 @@ elif [[ $1 == '7510.11' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '7510.30' ]]; then
 source $NO_INMEMORY
-elif [[ $1 == '7510.32' ]]; then
+elif [[ $1 == '7510.33' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '7510.multi' ]]; then
 source $SSL11
@@ -129,7 +129,7 @@ elif [[ $1 == '7530AX.11' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '7530AX.30' ]]; then
 source $NO_INMEMORY
-elif [[ $1 == '7530AX.32' ]]; then
+elif [[ $1 == '7530AX.33' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '7530AX.multi' ]]; then
 source $SSL11
@@ -141,7 +141,7 @@ elif [[ $1 == '1200.11' ]]; then
 source $NO_OSCAM
 elif [[ $1 == '1200.30' ]]; then
 source $NO_OSCAM
-elif [[ $1 == '1200.32' ]]; then
+elif [[ $1 == '1200.33' ]]; then
 source $NO_OSCAM
 elif [[ $1 == '1200.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -152,7 +152,7 @@ elif [[ $1 == '1260v2.11' ]]; then
 source $NO_OSCAM
 elif [[ $1 == '1260v2.30' ]]; then
 source $NO_OSCAM
-elif [[ $1 == '1260v2.32' ]]; then
+elif [[ $1 == '1260v2.33' ]]; then
 source $NO_OSCAM
 elif [[ $1 == '1260v2.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -163,7 +163,7 @@ elif [[ $1 == '3000.11' ]]; then
 source $NO_OSCAM
 elif [[ $1 == '3000.30' ]]; then
 source $NO_OSCAM
-elif [[ $1 == '3000.32' ]]; then
+elif [[ $1 == '3000.33' ]]; then
 source $NO_OSCAM
 elif [[ $1 == '3000.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -177,7 +177,7 @@ elif [[ $1 == '7581.11' ]]; then
 source $NO_KERNEL_FILES
 elif [[ $1 == '7581.30' ]]; then
 source $NO_KERNEL_FILES
-elif [[ $1 == '7581.32' ]]; then
+elif [[ $1 == '7581.33' ]]; then
 source $NO_KERNEL_FILES
 elif [[ $1 == '7581.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -191,7 +191,7 @@ elif [[ $1 == '7582.11' ]]; then
 source $NO_KERNEL_FILES
 elif [[ $1 == '7582.30' ]]; then
 source $NO_KERNEL_FILES
-elif [[ $1 == '7582.32' ]]; then
+elif [[ $1 == '7582.33' ]]; then
 source $NO_KERNEL_FILES
 elif [[ $1 == '7582.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -203,7 +203,7 @@ elif [[ $1 == '1200AX.11' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '1200AX.30' ]]; then
 source $NO_INMEMORY_NO_OSCAM
-elif [[ $1 == '1200AX.32' ]]; then
+elif [[ $1 == '1200AX.33' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '1200AX.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -214,7 +214,7 @@ elif [[ $1 == '1240AX.11' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '1240AX.30' ]]; then
 source $NO_INMEMORY_NO_OSCAM
-elif [[ $1 == '1240AX.32' ]]; then
+elif [[ $1 == '1240AX.33' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '1240AX.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -225,7 +225,7 @@ elif [[ $1 == '1260E.11' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '1260E.30' ]]; then
 source $NO_INMEMORY_NO_OSCAM
-elif [[ $1 == '1260E.32' ]]; then
+elif [[ $1 == '1260E.33' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '1260E.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -236,7 +236,7 @@ elif [[ $1 == '3000AX.11' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '3000AX.30' ]]; then
 source $NO_INMEMORY_NO_OSCAM
-elif [[ $1 == '3000AX.32' ]]; then
+elif [[ $1 == '3000AX.33' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '3000AX.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -247,7 +247,7 @@ elif [[ $1 == '6000.11' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '6000.30' ]]; then
 source $NO_INMEMORY_NO_OSCAM
-elif [[ $1 == '6000.32' ]]; then
+elif [[ $1 == '6000.33' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '6000.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -271,7 +271,7 @@ elif [[ $1 == '6430.11' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '6430.30' ]]; then
 source $NO_INMEMORY
-elif [[ $1 == '6430.32' ]]; then
+elif [[ $1 == '6430.33' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '6430.multi' ]]; then
 source $SSL10
@@ -285,7 +285,7 @@ elif [[ $1 == '6490.11' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '6490.30' ]]; then
 source $NO_INMEMORY
-elif [[ $1 == '6490.32' ]]; then
+elif [[ $1 == '6490.33' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '6490.multi' ]]; then
 source $SSL10
@@ -299,7 +299,7 @@ elif [[ $1 == '6590.11' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '6590.30' ]]; then
 source $NO_INMEMORY
-elif [[ $1 == '6590.32' ]]; then
+elif [[ $1 == '6590.33' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '6590.multi' ]]; then
 source $SSL10
@@ -310,7 +310,7 @@ elif [[ $1 == '6591.11' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '6591.30' ]]; then
 source $NO_INMEMORY
-elif [[ $1 == '6591.32' ]]; then
+elif [[ $1 == '6591.33' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '6591.multi' ]]; then
 source $SSL11
@@ -321,7 +321,7 @@ elif [[ $1 == '6660.11' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '6660.30' ]]; then
 source $NO_INMEMORY
-elif [[ $1 == '6660.32' ]]; then
+elif [[ $1 == '6660.33' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '6660.multi' ]]; then
 source $SSL11
@@ -330,7 +330,7 @@ source $SSL11_PUSH
 
 elif [[ $1 == '6670.30' ]]; then
 source $NO_INMEMORY
-elif [[ $1 == '6670.32' ]]; then
+elif [[ $1 == '6670.33' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '6670.multi' ]]; then
 source $SSL30
@@ -341,7 +341,7 @@ elif [[ $1 == '6690.11' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '6690.30' ]]; then
 source $NO_INMEMORY
-elif [[ $1 == '6690.32' ]]; then
+elif [[ $1 == '6690.33' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '6690.multi' ]]; then
 source $SSL11
@@ -355,7 +355,7 @@ elif [[ $1 == '3272.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '3272.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '3272.32' ]]; then
+elif [[ $1 == '3272.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '3272.multi' ]]; then
 source $SSL10
@@ -368,7 +368,7 @@ elif [[ $1 == '3370.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '3370.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '3370.32' ]]; then
+elif [[ $1 == '3370.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '3370.multi' ]]; then
 source $SSL10
@@ -381,7 +381,7 @@ elif [[ $1 == '3390.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '3390.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '3390.32' ]]; then
+elif [[ $1 == '3390.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '3390.multi' ]]; then
 source $SSL10
@@ -392,7 +392,7 @@ elif [[ $1 == '3490.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '3490.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '3490.32' ]]; then
+elif [[ $1 == '3490.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '3490.multi' ]]; then
 source $SSL11
@@ -403,7 +403,7 @@ elif [[ $1 == '5490.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '5490.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '5490.32' ]]; then
+elif [[ $1 == '5490.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '5490.multi' ]]; then
 source $SSL11
@@ -414,7 +414,7 @@ elif [[ $1 == '5491.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '5491.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '5491.32' ]]; then
+elif [[ $1 == '5491.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '5491.multi' ]]; then
 source $SSL11
@@ -427,7 +427,7 @@ elif [[ $1 == '6840.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '6840.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '6840.32' ]]; then
+elif [[ $1 == '6840.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '6840.multi' ]]; then
 source $SSL10
@@ -438,7 +438,7 @@ elif [[ $1 == '6890.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '6890.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '6890.32' ]]; then
+elif [[ $1 == '6890.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '6890.multi' ]]; then
 source $SSL11
@@ -451,7 +451,7 @@ elif [[ $1 == '7272.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '7272.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '7272.32' ]]; then
+elif [[ $1 == '7272.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '7272.multi' ]]; then
 source $SSL10
@@ -464,7 +464,7 @@ elif [[ $1 == '7362.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '7362.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '7362.32' ]]; then
+elif [[ $1 == '7362.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '7362.multi' ]]; then
 source $SSL10
@@ -475,7 +475,7 @@ elif [[ $1 == '7430.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '7430.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '7430.32' ]]; then
+elif [[ $1 == '7430.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '7430.multi' ]]; then
 source $SSL11
@@ -486,7 +486,7 @@ elif [[ $1 == '7490.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '7490.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '7490.32' ]]; then
+elif [[ $1 == '7490.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '7490.multi' ]]; then
 source $SSL11
@@ -497,7 +497,7 @@ elif [[ $1 == '7560.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '7560.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '7560.32' ]]; then
+elif [[ $1 == '7560.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '7560.multi' ]]; then
 source $SSL11
@@ -508,7 +508,7 @@ elif [[ $1 == '7580.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '7580.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '7580.32' ]]; then
+elif [[ $1 == '7580.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '7580.multi' ]]; then
 source $SSL11
@@ -519,7 +519,7 @@ elif [[ $1 == '7583.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '7583.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '7583.32' ]]; then
+elif [[ $1 == '7583.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '7583.multi' ]]; then
 source $SSL11
@@ -530,7 +530,7 @@ elif [[ $1 == '7583vdsl.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '7583vdsl.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '7583vdsl.32' ]]; then
+elif [[ $1 == '7583vdsl.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '7583vdsl.multi' ]]; then
 source $SSL11
@@ -541,7 +541,7 @@ elif [[ $1 == '7590.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '7590.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '7590.32' ]]; then
+elif [[ $1 == '7590.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '7590.multi' ]]; then
 source $SSL11
@@ -552,7 +552,7 @@ elif [[ $1 == '7590AX.11' ]]; then
 source $I_MATIK
 elif [[ $1 == '7590AX.30' ]]; then
 source $I_MATIK
-elif [[ $1 == '7590AX.32' ]]; then
+elif [[ $1 == '7590AX.33' ]]; then
 source $I_MATIK
 elif [[ $1 == '7590AX.multi' ]]; then
 source $SSL11
@@ -564,7 +564,7 @@ elif [[ $1 == '3370-Alien3490.11' ]]; then
 source $NO_OSCAM
 elif [[ $1 == '3370-Alien3490.30' ]]; then
 source $NO_OSCAM
-elif [[ $1 == '3370-Alien3490.32' ]]; then
+elif [[ $1 == '3370-Alien3490.33' ]]; then
 source $NO_OSCAM
 elif [[ $1 == '3370-Alien3490.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -575,7 +575,7 @@ elif [[ $1 == '3390-Alien3490.11' ]]; then
 source $NO_OSCAM
 elif [[ $1 == '3390-Alien3490.30' ]]; then
 source $NO_OSCAM
-elif [[ $1 == '3390-Alien3490.32' ]]; then
+elif [[ $1 == '3390-Alien3490.33' ]]; then
 source $NO_OSCAM
 elif [[ $1 == '3390-Alien3490.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -586,7 +586,7 @@ elif [[ $1 == '6820v1.11' ]]; then
 source $NO_OSCAM
 elif [[ $1 == '6820v1.30' ]]; then
 source $NO_OSCAM
-elif [[ $1 == '6820v1.32' ]]; then
+elif [[ $1 == '6820v1.33' ]]; then
 source $NO_OSCAM
 elif [[ $1 == '6820v1.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -597,7 +597,7 @@ elif [[ $1 == '6820v2.11' ]]; then
 source $NO_OSCAM
 elif [[ $1 == '6820v2.30' ]]; then
 source $NO_OSCAM
-elif [[ $1 == '6820v2.32' ]]; then
+elif [[ $1 == '6820v2.33' ]]; then
 source $NO_OSCAM
 elif [[ $1 == '6820v2.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -608,7 +608,7 @@ elif [[ $1 == '6820v3.11' ]]; then
 source $NO_OSCAM
 elif [[ $1 == '6820v3.30' ]]; then
 source $NO_OSCAM
-elif [[ $1 == '6820v3.32' ]]; then
+elif [[ $1 == '6820v3.33' ]]; then
 source $NO_OSCAM
 elif [[ $1 == '6820v3.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -621,7 +621,7 @@ elif [[ $1 == '7412.11' ]]; then
 source $NO_OSCAM
 elif [[ $1 == '7412.30' ]]; then
 source $NO_OSCAM
-elif [[ $1 == '7412.32' ]]; then
+elif [[ $1 == '7412.33' ]]; then
 source $NO_OSCAM
 elif [[ $1 == '7412.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -634,7 +634,7 @@ elif [[ $1 == '7412-Alien7430.11' ]]; then
 source $NO_OSCAM
 elif [[ $1 == '7412-Alien7430.30' ]]; then
 source $NO_OSCAM
-elif [[ $1 == '7412-Alien7430.32' ]]; then
+elif [[ $1 == '7412-Alien7430.33' ]]; then
 source $NO_OSCAM
 elif [[ $1 == '7412-Alien7430.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -648,7 +648,7 @@ elif [[ $1 == '4020.11' ]]; then
 source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '4020.30' ]]; then
 printf ${RED}"No supported\n"
-elif [[ $1 == '4020.32' ]]; then
+elif [[ $1 == '4020.33' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '4020.multi' ]]; then
 source $SSL10
@@ -664,7 +664,7 @@ elif [[ $1 == '7320-Alien7330.11' ]]; then
 source $EXTERNAL_NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '7320-Alien7330.30' ]]; then
 source $EXTERNAL_NO_INMEMORY_NO_OSCAM
-elif [[ $1 == '7320-Alien7330.32' ]]; then
+elif [[ $1 == '7320-Alien7330.33' ]]; then
 source $EXTERNAL_NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '7320-Alien7330.multi' ]]; then
 source $SSL10
@@ -677,7 +677,7 @@ elif [[ $1 == '7330.11' ]]; then
 source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '7330.30' ]]; then
 source $EXTERNAL_NO_INMEMORY
-elif [[ $1 == '7330.32' ]]; then
+elif [[ $1 == '7330.33' ]]; then
 source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '7330.multi' ]]; then
 source $SSL10
@@ -690,7 +690,7 @@ elif [[ $1 == '7330SL.11' ]]; then
 source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '7330SL.30' ]]; then
 source $EXTERNAL_NO_INMEMORY
-elif [[ $1 == '7330SL.32' ]]; then
+elif [[ $1 == '7330SL.33' ]]; then
 source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '7330SL.multi' ]]; then
 source $SSL10
@@ -709,7 +709,7 @@ elif [[ $1 == '7390.11' ]]; then
 source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '7390.30' ]]; then
 source $EXTERNAL_NO_INMEMORY
-elif [[ $1 == '7390.32' ]]; then
+elif [[ $1 == '7390.33' ]]; then
 source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '7390.multi' ]]; then
 source $SSL10
@@ -723,7 +723,7 @@ elif [[ $1 == '7360v2.11' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '7360v2.30' ]]; then
 source $NO_INMEMORY
-elif [[ $1 == '7360v2.32' ]]; then
+elif [[ $1 == '7360v2.33' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '7360v2.multi' ]]; then
 source $SSL10
@@ -740,7 +740,7 @@ elif [[ $1 == 'DVB-C.11' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == 'DVB-C.30' ]]; then
 source $NO_INMEMORY_NO_OSCAM
-elif [[ $1 == 'DVB-C.32' ]]; then
+elif [[ $1 == 'DVB-C.33' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == 'DVB-c.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -762,7 +762,7 @@ elif [[ $1 == '300E.11' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '300E.30' ]]; then
 source $NO_INMEMORY_NO_OSCAM
-elif [[ $1 == '300E.32' ]]; then
+elif [[ $1 == '300E.33' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '300E.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -775,7 +775,7 @@ elif [[ $1 == '450E.11' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '450E.30' ]]; then
 source $NO_INMEMORY_NO_OSCAM
-elif [[ $1 == '450E.32' ]]; then
+elif [[ $1 == '450E.33' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '450E.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -788,7 +788,7 @@ elif [[ $1 == '540E.11' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '540E.30' ]]; then
 source $NO_INMEMORY_NO_OSCAM
-elif [[ $1 == '540E.32' ]]; then
+elif [[ $1 == '540E.33' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '540E.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -801,7 +801,7 @@ elif [[ $1 == '546E.11' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '546E.30' ]]; then
 source $NO_INMEMORY_NO_OSCAM
-elif [[ $1 == '546E.32' ]]; then
+elif [[ $1 == '546E.33' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '546E.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -814,7 +814,7 @@ elif [[ $1 == '1240E.11' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '1240E.30' ]]; then
 source $NO_INMEMORY_NO_OSCAM
-elif [[ $1 == '1240E.32' ]]; then
+elif [[ $1 == '1240E.33' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '1240E.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -834,7 +834,7 @@ elif [[ $1 == '2400.11' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '2400.30' ]]; then
 source $NO_INMEMORY_NO_OSCAM
-elif [[ $1 == '2400.32' ]]; then
+elif [[ $1 == '2400.33' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '2400.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -845,7 +845,7 @@ elif [[ $1 == '5530.11' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '5530.30' ]]; then
 source $NO_INMEMORY_NO_OSCAM
-elif [[ $1 == '5530.32' ]]; then
+elif [[ $1 == '5530.33' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '5530.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -861,7 +861,7 @@ elif [[ $1 == '7312.11' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '7312.30' ]]; then
 source $NO_INMEMORY
-elif [[ $1 == '7312.32' ]]; then
+elif [[ $1 == '7312.33' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '7312.multi' ]]; then
 printf ${RED}"No supported\n"
@@ -1005,8 +1005,8 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf ${GREEN}"List of currently OpenSSL 3.0.x supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST_SSL_3_0}\n"
 	printf ${BLUE}"To build an OpenSSL 3.0.x image for Fritz!Box 7490 use this command:${NC}\n"
 	printf "$0 7490.30\n\n"
-	printf ${GREEN}"List of currently OpenSSL 3.2.x supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST_SSL_3_2}\n"
-	printf ${BLUE}"To build an OpenSSL 3.2.x image for Fritz!Box 7490 use this command:${NC}\n"
+	printf ${GREEN}"List of currently OpenSSL 3.3.x supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST_SSL_3_3}\n"
+	printf ${BLUE}"To build an OpenSSL 3.3.x image for Fritz!Box 7490 use this command:${NC}\n"
 	printf "$0 7490.31\n\n"
 	printf ${GREEN}"List of currently OpenSSL MULTI supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST_SSL_MULTI}\n"
 	printf ${BLUE}"To build an OpenSSL MULTI image for Fritz!Box 7490 use this command:${NC}\n"
