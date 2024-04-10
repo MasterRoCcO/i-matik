@@ -962,7 +962,7 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf "  SSL_NUMBER\t\t\t10 - OpenSSL 1.0.x\n"
 	printf "  \t\t\t\t11 - OpenSSL 1.1.x\n"
 	printf "  \t\t\t\t30 - OpenSSL 3.0.x\n"
-	printf "  \t\t\t\t31 - OpenSSL 3.2.x\n"
+	printf "  \t\t\t\t33 - OpenSSL 3.3.x\n"
 	printf "  \t\t\t\tmulti - OpenSSL multiple Versions (inter Version)\n"
 	printf "  -c,--config\t\t\tshow not freetz-ng configuration dialog\n"
 	printf "  -s,--skip-image2memory\tdo not create inmemory image\n"
