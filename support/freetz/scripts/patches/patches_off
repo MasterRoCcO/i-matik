@@ -13,6 +13,7 @@ source $CONFIG_PATCH_PATH/mod/dl-firmware
 source $CONFIG_PATCH_PATH/mod/prefix
 source $CONFIG_PATCH_PATH/ui/firmware
 source $CONFIG_PATCH_PATH/ui/freetz
+source $PATCHES_PATCH_PATH/scripts/850-patch_fiber_fit-image_5590_fos_8
 source $CONFIG_PATCH_PATH/ui/toolchain
 source $TOOLS_PATCH_PATH/freetz_download
 
