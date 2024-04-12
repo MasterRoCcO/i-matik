@@ -1,6 +1,6 @@
---- config/mod/prefix.in	2024-03-22 02:42:04.997085873 +0100
-+++ config/mod/prefix.in	2024-03-22 02:42:14.172922886 +0100
-@@ -109,6 +109,7 @@
+--- config/mod/prefix.in	2024-04-12 13:22:05.399438415 +0200
++++ config/mod/prefix.in	2024-04-12 19:40:18.726142027 +0200
+@@ -112,6 +112,7 @@
  config FREETZ_TYPE_PREFIX_LABOR_FIRMWARE
  	string
  	default "_labor"            if FREETZ_TYPE_FIRMWARE_LABOR
