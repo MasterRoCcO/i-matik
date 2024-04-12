@@ -925,13 +925,13 @@ SUPPORTED_SSL_NUMBER_LIST_SSL_3_0="$(find "$CONFIG_FRITZBOX_PATH_SSL_30" -name "
 SUPPORTED_SSL_NUMBER_LIST_SSL_3_0="$(echo $SUPPORTED_SSL_NUMBER_LIST_SSL_3_0 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
 # Generate list of supported devices
-SUPPORTED_BOX_TYPE_LIST_SSL_3_2="$(find "$CONFIG_FRITZBOX_PATH_SSL_32" -name "config_fritz*ssl_3_2*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
-SUPPORTED_BOX_TYPE_LIST_SSL_3_2="${SUPPORTED_BOX_TYPE_LIST_SSL_3_2//"fritz"/""}"
-SUPPORTED_BOX_TYPE_LIST_SSL_3_2="$(echo $SUPPORTED_BOX_TYPE_LIST_SSL_3_2 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
+SUPPORTED_BOX_TYPE_LIST_SSL_3_3="$(find "$CONFIG_FRITZBOX_PATH_SSL_33" -name "config_fritz*ssl_3_2*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
+SUPPORTED_BOX_TYPE_LIST_SSL_3_3="${SUPPORTED_BOX_TYPE_LIST_SSL_3_3//"fritz"/""}"
+SUPPORTED_BOX_TYPE_LIST_SSL_3_3="$(echo $SUPPORTED_BOX_TYPE_LIST_SSL_3_2 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
 # Generate list of supported ssl versions
-SUPPORTED_SSL_NUMBER_LIST_SSL_3_2="$(find "$CONFIG_FRITZBOX_PATH_SSL_32" -name "ssl_3_2*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
-SUPPORTED_SSL_NUMBER_LIST_SSL_3_2="$(echo $SUPPORTED_SSL_NUMBER_LIST_SSL_3_2 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
+SUPPORTED_SSL_NUMBER_LIST_SSL_3_3="$(find "$CONFIG_FRITZBOX_PATH_SSL_33" -name "ssl_3_3*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
+SUPPORTED_SSL_NUMBER_LIST_SSL_3_3="$(echo $SUPPORTED_SSL_NUMBER_LIST_SSL_3_3 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
 # Generate list of supported devices
 SUPPORTED_BOX_TYPE_LIST_SSL_MULTI="$(find "$CONFIG_FRITZBOX_PATH_SSL_multi" -name "config_fritz*ssl_multi*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
