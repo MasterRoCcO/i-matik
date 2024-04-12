@@ -1,3 +1,0 @@
-#!/bin/bash
-rm -f $FREETZ_SSL_HOME_PATH/patches/scripts/850-patch_fiber_fit-image_5590_fos_8.sh 2>/dev/null
-rm -f $FREETZ_SSL_HOME_PATH/patches/scripts/850-patch_fiber_fit-image_5590_fos_8.sh.orig 2>/dev/null
