@@ -8,7 +8,7 @@
 + end
 + function gpon_serial.show()
 +-return config.GPON and (config.country ~= "049" or g_is_internal_or_inhaus_version)
-++return true
+++return true and isPon()
 + end
 + function gpon_serial.dosave()
 + local saveset = {}
