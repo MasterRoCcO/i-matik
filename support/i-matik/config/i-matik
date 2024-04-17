@@ -37,7 +37,7 @@ CONFIG_PRIVAT_PATH="$I_MATIK_PATH/support/i-matik/config/privat" 2>/dev/null
 FREETZ_SSL_VERSION_10="ssl_1_0_x"
 FREETZ_SSL_VERSION_11="ssl_1_1_x"
 FREETZ_SSL_VERSION_30="ssl_3_0_x"
-FREETZ_SSL_VERSION_32="ssl_3_3_x"
+FREETZ_SSL_VERSION_33="ssl_3_3_x"
 FREETZ_SSL_VERSION_MULTI="ssl_multi"
 
 #define my files home path for freetz-ng
