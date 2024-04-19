@@ -204,7 +204,7 @@
  	default "FRITZ.Box_7590-07.57.image"                                                   if FREETZ_TYPE_7590 &&                        FREETZ_TYPE_FIRMWARE_07_5X
 -	default "FRITZ.Box_7590-07.90-111682-Inhaus.image"                                     if FREETZ_TYPE_7590 &&                        FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
 +	default "FRITZ.Box_7590-07.57-111387-LabPLUS.image"                                    if FREETZ_TYPE_7590 &&                        FREETZ_TYPE_FIRMWARE_07_5X_PLUS
-+	default "FRITZ.Box_7590-07.90-112449-Inhaus.image"                                     if FREETZ_TYPE_7590 &&                        FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
++	default "FRITZ.Box_7590-07.90-112534-Inhaus.image"                                     if FREETZ_TYPE_7590 &&                        FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
  	default "FRITZ.Box_7590_AX-07.31.image"                                                if FREETZ_TYPE_7599 &&                        FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_7590_AX-07.57.image"                                                if FREETZ_TYPE_7599 &&                        FREETZ_TYPE_FIRMWARE_07_5X
@@ -212,7 +212,7 @@
  	default "FRITZ.Box_7590_AX-07.80.image"                                                if FREETZ_TYPE_7599 &&                        FREETZ_TYPE_FIRMWARE_07_8X
 -	default "FRITZ.Box_7590_AX-07.90-111684-Inhaus.image"                                  if FREETZ_TYPE_7599 &&                        FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
 +	default "FRITZ.Box_7590_AX-07.80-111702-LabPLUS.image"                                 if FREETZ_TYPE_7599 &&                        FREETZ_TYPE_FIRMWARE_07_8X_PLUS
-+	default "FRITZ.Box_7590_AX-07.90-112451-Inhaus.image"                                  if FREETZ_TYPE_7599 &&                        FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
++	default "FRITZ.Box_7590_AX-07.90-112535-Inhaus.image"                                  if FREETZ_TYPE_7599 &&                        FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
  	default "FRITZ.Box_7690-07.59-112138-Inhaus.image"                                     if FREETZ_TYPE_7690 &&                        FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
  	#
