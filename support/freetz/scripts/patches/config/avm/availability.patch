@@ -1,5 +1,5 @@
---- config/avm/availability.in	2024-04-24 08:13:04.133026193 +0200
-+++ config/avm/availability.in	2024-04-24 08:28:16.623568702 +0200
+--- config/avm/availability.in	2024-04-24 08:35:42.592167889 +0200
++++ config/avm/availability.in	2024-04-24 09:23:06.050196991 +0200
 @@ -466,7 +466,44 @@
  			FREETZ_TYPE_6690 || \
  			FREETZ_TYPE_6820_V3 \
@@ -70,14 +70,14 @@
  
  config FREETZ_AVM_HAS_FIRMWARE_08_0X_INHAUS
  	bool
-@@ -496,7 +551,9 @@
- 		)) \
- 		|| \
- 		( FREETZ_TYPE_LANG_DE && ( \
+@@ -493,10 +548,6 @@
+ 			FREETZ_TYPE_7539 || \
+ 			FREETZ_TYPE_7590 || \
+ 			FREETZ_TYPE_7599 \
+-		)) \
+-		|| \
+-		( FREETZ_TYPE_LANG_DE && ( \
 -			FREETZ_TYPE_6660 \
-+			FREETZ_TYPE_6591 || \
-+			FREETZ_TYPE_6660 || \
-+			FREETZ_TYPE_6690 \
  		))
  
  #config FREETZ_AVM_HAS_FIRMWARE_08_0X_LABOR
