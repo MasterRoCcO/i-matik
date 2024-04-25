@@ -1,5 +1,5 @@
 --- config/mod/dl-firmware.in	2024-04-24 15:13:37.043507779 +0200
-+++ config/mod/dl-firmware.in	2024-04-24 15:18:03.793749667 +0200
++++ config/mod/dl-firmware.in	2024-04-25 19:31:51.346016182 +0200
 @@ -31,7 +31,7 @@
  	#
  	default "@AVM/fritzwlan/fritzrepeater-1200/{other,deutschland}/fritz.os,@AVM/1200"                                 if FREETZ_TYPE_1200
@@ -115,21 +115,30 @@
  	#
  	default "FRITZ.Box_6430_Cable-07.12.image"                                             if FREETZ_TYPE_6430 && FREETZ_TYPE_FIRMWARE_07_1X
  	default "FRITZ.Box_6430_Cable-07.30.image"                                             if FREETZ_TYPE_6430 && FREETZ_TYPE_FIRMWARE_07_2X
-@@ -451,12 +466,14 @@
+@@ -446,18 +461,20 @@
+ 	default "FRITZ.Box_6591_Cable-07.13.image"                                             if FREETZ_TYPE_6591 && FREETZ_TYPE_FIRMWARE_07_1X
+ 	default "FRITZ.Box_6591_Cable-07.29.image"                                             if FREETZ_TYPE_6591 && FREETZ_TYPE_FIRMWARE_07_2X
+ 	default "FRITZ.Box_6591_Cable-07.57.image"                                             if FREETZ_TYPE_6591 && FREETZ_TYPE_FIRMWARE_07_5X
+-	default "FRITZ.Box_6591_Cable-07.90-112443-Inhaus.image"                               if FREETZ_TYPE_6591 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
++	default "FRITZ.Box_6591_Cable-07.90-112601-Inhaus.image"                               if FREETZ_TYPE_6591 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
+ 	#
  	default "FRITZ.Box_6660_Cable-07.15.image"                                             if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_07_1X
  	default "FRITZ.Box_6660_Cable-07.29.image"                                             if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_6660_Cable-07.57.image"                                             if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_07_5X
+-	default "FRITZ.Box_6660_Cable-07.90-112441-Inhaus.image"                               if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
 +	default "FRITZ.Box_6660_Cable-07.57-108563-LabPLUS.image"                              if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_07_5X_PLUS
- 	default "FRITZ.Box_6660_Cable-07.90-112441-Inhaus.image"                               if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
++	default "FRITZ.Box_6660_Cable-07.90-112599-Inhaus.image"                               if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
  	default "FRITZ.Box_6670_Cable-07.62.image"                                             if FREETZ_TYPE_6670 && FREETZ_TYPE_FIRMWARE_07_5X
  	#
  	default "FRITZ.Box_6690_Cable-07.29.image"                                             if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_6690_Cable-07.57-V2.image/FRITZ.Box_6690_Cable-07.57.image"         if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_07_5X
+-	default "FRITZ.Box_6690_Cable-07.90-112439-Inhaus.image"                               if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
 +	default "FRITZ.Box_6690_Cable-07.57-108550-LabPLUS.image"                              if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_07_5X_PLUS
- 	default "FRITZ.Box_6690_Cable-07.90-112439-Inhaus.image"                               if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
++	default "FRITZ.Box_6690_Cable-07.90-112597-Inhaus.image"                               if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
  	default "FRITZ.Box_6810_LTE.108.06.35.image"                                           if FREETZ_TYPE_6810 && FREETZ_TYPE_LANG_DE && FREETZ_TYPE_FIRMWARE_06_2X
+ 	default "FRITZ.Box_6810_LTE.en-de-es-it-fr.108.06.35.image"                            if FREETZ_TYPE_6810 && FREETZ_TYPE_LANG_EN && FREETZ_TYPE_FIRMWARE_06_2X
 @@ -618,16 +635,20 @@
  	default "FRITZ.Box_7490-07.12.image"                                                   if FREETZ_TYPE_7490 && FREETZ_TYPE_LANG_DE && FREETZ_TYPE_FIRMWARE_07_1X
  	default "FRITZ.Box_7490-07.29.image"                                                   if FREETZ_TYPE_7490 &&                        FREETZ_TYPE_FIRMWARE_07_2X
