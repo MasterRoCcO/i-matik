@@ -26,12 +26,16 @@ Options
   -nm,--no-masterbox		No master box image is created
   -kp,--kernel-precompiled      Make kernel-precompiled
   -kc,--kernel-clean            Make kernel-clean
+  -km,--kernel-menuconfig       Make kernel-menuconfig
   -ta,--toolchain-activate      Activate toolchain
   -td,--toolchain-disable       Disable toolchain
   -tm,--toolchain-make		Toolchain make
   -cm,--callmonitor		Callmonitor
   -rr,--rrdstats		RRDstats for RRDtool 1.2.30
   -rr18,--rrdstats18		RRDstats for RRDtool 1.8.0
+  -us,--user-skins		User Skin
+  -us,--user-skins1		User Skin1
+  -ua,--user-application	User Application
   -vs,--vnstat			VNSTAT
   -wg,--wireguard		WIREGUARD
   -ov,--openvpn			OpenVPN
