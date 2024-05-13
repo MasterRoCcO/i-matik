@@ -1,5 +1,5 @@
 #!/bin/bash
-if [[ $(lsb_release -rs) == "20.04" ]] || [[ $(lsb_release -rs) == "21.10" ]] || [[ $(lsb_release -rs) == "22.04" ]] || [[ $(lsb_release -rs) == "23.04" ]] || [[ $(lsb_release -rs) == "23.10" ]] || [[ $(lsb_release -rs) == "24.04" ]] || [[ $(lsb_release -rs) == "10" ]] || [[ $(lsb_release -rs) == "11" ]] || [[ $(lsb_release -rs) == "12" ]] || [[ $(lsb_release -rs) == "2023.1" ]] || [[ $(lsb_release -rs) == "2023.2" ]] || [[ $(lsb_release -rs) == "21.2" ]] || [[ $(lsb_release -rs) == "16" ]] || [[ $(lsb_release -rs) == "7.1" ]]; then # my os is 22.04 (ubuntu)
+if [[ $(lsb_release -rs) == "20.04" ]] || [[ $(lsb_release -rs) == "21.10" ]] || [[ $(lsb_release -rs) == "22.04" ]] || [[ $(lsb_release -rs) == "23.04" ]] || [[ $(lsb_release -rs) == "23.10" ]] || [[ $(lsb_release -rs) == "24.04" ]] || [[ $(lsb_release -rs) == "10" ]] || [[ $(lsb_release -rs) == "11" ]] || [[ $(lsb_release -rs) == "12" ]] || [[ $(lsb_release -rs) == "2023.4" ]] || [[ $(lsb_release -rs) == "2024.1" ]] || [[ $(lsb_release -rs) == "21.3" ]] || [[ $(lsb_release -rs) == "17" ]] || [[ $(lsb_release -rs) == "7.1" ]]; then # my os is 22.04 (ubuntu)
 
 PACKAGES="  autopoint bc binutils bison bsdmainutils bzip2 ccache cmake cpio curl ecj flex g++ gawk gcc"
 PACKAGES+=" gcc-multilib gettext git graphicsmagick imagemagick inkscape intltool java-wrappers kmod"
@@ -38,18 +38,18 @@ fi
 
 # LIST
 # 20.04  = Ubuntu
-# 21.10  = Ubuntu
+# 21.10  = Ubuntu (https://ubuntu.com/about/release-cycle End of Standard Support)
 # 22.04  = Ubuntu / KDE neon / POP-OS
-# 23.04  = Ubuntu
-# 23.10  = Ubuntu
+# 23.04  = Ubuntu (https://ubuntu.com/about/release-cycle End of Standard Support)
+# 23.10  = Ubuntu (https://ubuntu.com/about/release-cycle End of Standard Support)
 # 24.04  = Ubuntu
 # 10     = Debian
 # 11     = Debian
 # 12     = Debian
-# 16     = Zorin
-# 2023.1 = Rhino
-# 2023.2 = Kali
-# 21.2   = Mint
+# 17     = Zorin
+# 2023.4 = Rhino
+# 2024.1 = Kali
+# 21.3   = Mint
 # 7.1    = elementary
 
 # all OS tested
