@@ -1,5 +1,5 @@
---- config/mod/dl-firmware.in	2024-05-08 12:56:53.127937640 +0200
-+++ config/mod/dl-firmware.in	2024-05-08 13:03:29.199529884 +0200
+--- config/mod/dl-firmware.in	2024-05-12 21:57:29.950741162 +0200
++++ config/mod/dl-firmware.in	2024-05-13 10:48:30.620110200 +0200
 @@ -31,7 +31,7 @@
  	#
  	default "@AVM/fritzwlan/fritzrepeater-1200/{other,deutschland}/fritz.os,@AVM/1200"                                 if FREETZ_TYPE_1200
@@ -36,6 +36,15 @@
  	default "@AVM/{fritzbox-7490/{other,belgium}/fritz.os,fritzbox.7490/firmware/{english,belgium}}"                   if FREETZ_TYPE_7490 && FREETZ_TYPE_LANG_EN
  	#
  	default "@AVM/fritzbox-7510/{deutschland,other}/fritz.os,@AVM/7510"                                                if FREETZ_TYPE_7510
+@@ -226,7 +226,7 @@
+ 	#
+ 	default "@AVM/fritzbox-7520-B/deutschland/fritz.os,@1&1/7520B"                                                     if FREETZ_TYPE_7521
+ 	#
+-	default "@AVM/fritzbox-7530/deutschland/fritz.os,@1&1/7530"                                                        if (FREETZ_TYPE_7530 || FREETZ_TYPE_7520_7530) && FREETZ_TYPE_LANG_DE
++	default "@AVM/fritzbox-7530/deutschland/fritz.os,@1&1/7530,@AVM/7530"                                              if (FREETZ_TYPE_7530 || FREETZ_TYPE_7520_7530) && FREETZ_TYPE_LANG_DE
+ 	default "@AVM/fritzbox-7530/{other,belgium}/fritz.os"                                                              if (FREETZ_TYPE_7530 || FREETZ_TYPE_7520_7530) && FREETZ_TYPE_LANG_EN
+ 	#
+ 	default "@AVM/fritzbox-7530-ax/deutschland/fritz.os,@AVM/7530AX"                                                   if FREETZ_TYPE_7539
 @@ -248,7 +248,7 @@
  	#
  	default "@AVM/fritzbox-7583-vdsl/{deutschland,other}/fritz.os,@AVM/7583VDSL"                                       if FREETZ_TYPE_7584
@@ -172,11 +181,12 @@
  	#
  	default "FRITZ.Box_7530.en-de-es-it-fr-pl-nl.164.07.02.image"                          if (FREETZ_TYPE_7530 || FREETZ_TYPE_7520_7530) && FREETZ_TYPE_LANG_EN && FREETZ_TYPE_FIRMWARE_07_0X
  	default "FRITZ.Box_7530.07.13.int.image/FRITZ.Box_7530-07.13.image"                    if (FREETZ_TYPE_7530 || FREETZ_TYPE_7520_7530) && FREETZ_TYPE_LANG_EN && FREETZ_TYPE_FIRMWARE_07_1X
-@@ -635,11 +659,14 @@
+@@ -635,11 +659,15 @@
  	default "FRITZ.Box_7530-07.14.image"                                                   if (FREETZ_TYPE_7530 || FREETZ_TYPE_7520_7530) && FREETZ_TYPE_LANG_DE && FREETZ_TYPE_FIRMWARE_07_1X
  	default "FRITZ.Box_7530-07.29.image"                                                   if (FREETZ_TYPE_7530 || FREETZ_TYPE_7520_7530)                        && FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_7530-07.57.image"                                                   if (FREETZ_TYPE_7530 || FREETZ_TYPE_7520_7530)                        && FREETZ_TYPE_FIRMWARE_07_5X
 +	default "FRITZ.Box_7530-07.57-108189-LabPLUS.image"                                    if (FREETZ_TYPE_7530 || FREETZ_TYPE_7520_7530)                        && FREETZ_TYPE_FIRMWARE_07_5X_PLUS
++	default "FRITZ.Box_7530-07.57-112900-Inhaus.image"                                     if (FREETZ_TYPE_7530 || FREETZ_TYPE_7520_7530)                        && FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
  	#
  	default "FRITZ.Box_7530_AX-07.31.image"                                                if FREETZ_TYPE_7539 && FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_7530_AX-07.57-V2.image/FRITZ.Box_7530_AX-07.57.image"               if FREETZ_TYPE_7539 && FREETZ_TYPE_FIRMWARE_07_5X
@@ -188,7 +198,7 @@
  	#
  	default "FRITZ.Box_7560.en-de-es-it-fr-pl.149.06.83.image"                             if FREETZ_TYPE_7560 && FREETZ_TYPE_LANG_EN && FREETZ_TYPE_FIRMWARE_06_8X
  	default "FRITZ.Box_7560.en-de-es-it-fr-pl.149.07.01.image"                             if FREETZ_TYPE_7560 && FREETZ_TYPE_LANG_EN && FREETZ_TYPE_FIRMWARE_07_0X
-@@ -668,6 +695,7 @@
+@@ -668,6 +696,7 @@
  	default "FRITZ.Box_7583-07.12.image"                                                   if FREETZ_TYPE_7583 && FREETZ_TYPE_LANG_DE && FREETZ_TYPE_FIRMWARE_07_1X
  	default "FRITZ.Box_7583-07.31.image"                                                   if FREETZ_TYPE_7583                        && FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_7583-07.57.image"                                                   if FREETZ_TYPE_7583                        && FREETZ_TYPE_FIRMWARE_07_5X
@@ -196,7 +206,7 @@
  	#
  	default "FRITZ.Box_7583_VDSL-07.31.image"                                              if FREETZ_TYPE_7584                        && FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_7583_VDSL-07.57.image"                                              if FREETZ_TYPE_7584                        && FREETZ_TYPE_FIRMWARE_07_5X
-@@ -681,14 +709,18 @@
+@@ -681,14 +710,18 @@
  	default "FRITZ.Box_7590-07.12.image"                                                   if FREETZ_TYPE_7590 && FREETZ_TYPE_LANG_DE && FREETZ_TYPE_FIRMWARE_07_1X
  	default "FRITZ.Box_7590-07.29.image"                                                   if FREETZ_TYPE_7590 &&                        FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_7590-07.57.image"                                                   if FREETZ_TYPE_7590 &&                        FREETZ_TYPE_FIRMWARE_07_5X
@@ -218,7 +228,7 @@
  	#
  	default "FRITZ.Smart_Gateway-07.60-Release.image"                                      if FREETZ_TYPE_GATE &&                        FREETZ_TYPE_FIRMWARE_07_5X
  	#
-@@ -730,8 +762,8 @@
+@@ -730,8 +763,8 @@
  	string "Downloaded container file"                if FREETZ_DL_OVERRIDE
  	depends                                           on FREETZ_TYPE_FIRMWARE_LABOR && !FREETZ_TYPE_FIRMWARE_DETECT_LATEST
  	#
