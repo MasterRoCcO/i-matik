@@ -1,5 +1,5 @@
 --- config/mod/dl-firmware.in	2024-05-12 21:57:29.950741162 +0200
-+++ config/mod/dl-firmware.in	2024-05-16 21:16:10.654550751 +0200
++++ config/mod/dl-firmware.in	2024-05-16 22:06:15.575010124 +0200
 @@ -31,7 +31,7 @@
  	#
  	default "@AVM/fritzwlan/fritzrepeater-1200/{other,deutschland}/fritz.os,@AVM/1200"                                 if FREETZ_TYPE_1200
@@ -210,7 +210,7 @@
  	#
  	default "FRITZ.Box_7583_VDSL-07.31.image"                                              if FREETZ_TYPE_7584                        && FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_7583_VDSL-07.57.image"                                              if FREETZ_TYPE_7584                        && FREETZ_TYPE_FIRMWARE_07_5X
-@@ -681,14 +711,18 @@
+@@ -681,16 +711,21 @@
  	default "FRITZ.Box_7590-07.12.image"                                                   if FREETZ_TYPE_7590 && FREETZ_TYPE_LANG_DE && FREETZ_TYPE_FIRMWARE_07_1X
  	default "FRITZ.Box_7590-07.29.image"                                                   if FREETZ_TYPE_7590 &&                        FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_7590-07.57.image"                                                   if FREETZ_TYPE_7590 &&                        FREETZ_TYPE_FIRMWARE_07_5X
@@ -231,8 +231,11 @@
 +	default "FRITZ.Box_7690-07.60-112982-Inhaus.image"                                     if FREETZ_TYPE_7690 &&                        FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
  	#
  	default "FRITZ.Smart_Gateway-07.60-Release.image"                                      if FREETZ_TYPE_GATE &&                        FREETZ_TYPE_FIRMWARE_07_5X
++	default "FRITZ.Smart_Gateway-07.61-112952-Inhaus.image"                                if FREETZ_TYPE_GATE &&                        FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
  	#
-@@ -730,8 +764,8 @@
+ 	default "fw_Speedport_W501V_v_28.04.38.image"                                          if FREETZ_TYPE_W501V
+ 
+@@ -730,8 +765,8 @@
  	string "Downloaded container file"                if FREETZ_DL_OVERRIDE
  	depends                                           on FREETZ_TYPE_FIRMWARE_LABOR && !FREETZ_TYPE_FIRMWARE_DETECT_LATEST
  	#
