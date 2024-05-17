@@ -117,7 +117,7 @@
 +#	default "FRITZ.Box_5530_Fiber-07.70-110390-Inhaus.image"                               if FREETZ_TYPE_5530 && FREETZ_TYPE_FIRMWARE_07_8X_INHAUS
  	default "FRITZ.Box_5530_Fiber-07.80.image"                                             if FREETZ_TYPE_5530 && FREETZ_TYPE_FIRMWARE_07_8X
 +	default "FRITZ.Box_5530_Fiber-07.80-111699-LabPLUS.image"                              if FREETZ_TYPE_5530 && FREETZ_TYPE_FIRMWARE_07_8X_PLUS
-+	default "FRITZ.Box_5530_Fiber-07.80-112728-Inhaus.image"                               if FREETZ_TYPE_5530 && FREETZ_TYPE_FIRMWARE_07_8X_INHAUS
++	default "FRITZ.Box_5530_Fiber-07.80-112875-Inhaus.image"                               if FREETZ_TYPE_5530 && FREETZ_TYPE_FIRMWARE_07_8X_INHAUS
  	#
  	default "FRITZ.Box_5590-07.30.image"                                                   if FREETZ_TYPE_5590 && FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_5590_Fiber-07.58-V2.image/FRITZ.Box_5590_Fiber-07.58.image"         if FREETZ_TYPE_5590 && FREETZ_TYPE_FIRMWARE_07_5X
