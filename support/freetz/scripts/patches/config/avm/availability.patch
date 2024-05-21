@@ -53,7 +53,7 @@
  
  config FREETZ_AVM_HAS_FIRMWARE_07_8X
  	bool
-@@ -479,6 +510,25 @@
+@@ -479,6 +510,26 @@
  			FREETZ_TYPE_7599 \
  		))
  
@@ -63,6 +63,7 @@
 +	depends on \
 +		( (FREETZ_TYPE_LANG_DE||FREETZ_TYPE_LANG_EN) && ( \
 +			FREETZ_TYPE_5530 || \
++			FREETZ_TYPE_5590 || \
 +			FREETZ_TYPE_7539 \
 +		))
 +
