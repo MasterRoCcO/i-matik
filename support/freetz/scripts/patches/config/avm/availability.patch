@@ -88,19 +88,6 @@
 +			FREETZ_TYPE_7539 || \
 +			FREETZ_TYPE_7590 || \
 +			FREETZ_TYPE_7599 \
- 		)) \
- 		|| \
- 		( FREETZ_TYPE_LANG_DE && ( \
-@@ -505,6 +558,12 @@
- 		( (FREETZ_TYPE_LANG_DE||FREETZ_TYPE_LANG_EN) && ( \
- 			FREETZ_TYPE_7590 || \
- 			FREETZ_TYPE_7599 \
-+		)) \
-+		|| \
-+		( FREETZ_TYPE_LANG_DE && ( \
-+			FREETZ_TYPE_6591 || \
-+			FREETZ_TYPE_6660 || \
-+			FREETZ_TYPE_6690 \
  		))
  
- #config FREETZ_AVM_HAS_FIRMWARE_08_0X
+ config FREETZ_AVM_HAS_FIRMWARE_08_0X_LABOR
