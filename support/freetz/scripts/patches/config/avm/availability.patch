@@ -80,7 +80,7 @@
  
  config FREETZ_AVM_HAS_FIRMWARE_08_0X_INHAUS
  	bool
-@@ -489,7 +540,9 @@
+@@ -489,7 +540,15 @@
  			FREETZ_TYPE_5590 || \
  			FREETZ_TYPE_6850_4G || \
  			FREETZ_TYPE_6850_5G || \
@@ -88,6 +88,12 @@
 +			FREETZ_TYPE_7539 || \
 +			FREETZ_TYPE_7590 || \
 +			FREETZ_TYPE_7599 \
++		)) \
++		|| \
++		( FREETZ_TYPE_LANG_DE && ( \
++			FREETZ_TYPE_6591 || \
++			FREETZ_TYPE_6660 || \
++			FREETZ_TYPE_6690 \
  		))
  
  config FREETZ_AVM_HAS_FIRMWARE_08_0X_LABOR
