@@ -113,7 +113,7 @@
 -	default "FRITZ.Box_6660_Cable-07.90-113092-Labor.image"                                if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
 +	default "FRITZ.Box_6660_Cable-07.57-108563-LabPLUS.image"                              if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_07_5X_PLUS
 + 	default "FRITZ.Box_6660_Cable-07.90-113092-Labor.image"                                if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
-+	default "FRITZ.Box_6660_Cable-07.90-113161-Inhaus.image"                               if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
++	default "FRITZ.Box_6660_Cable-07.90-113267-Inhaus.image"                               if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
  	default "FRITZ.Box_6670_Cable-07.62.image"                                             if FREETZ_TYPE_6670 && FREETZ_TYPE_FIRMWARE_07_5X
 +	default "FRITZ.Box_6670_Cable-07.62-112813-Inhaus.image"                               if FREETZ_TYPE_6670 && FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
