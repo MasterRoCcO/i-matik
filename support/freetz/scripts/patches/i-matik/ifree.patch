@@ -79,7 +79,7 @@
  	bool "Extend DSL settings"
  	depends on FREETZ_TYPE_DSL && FREETZ_AVM_VERSION_06_5X_MIN && !FREETZ_REMOVE_DSLD && !FREETZ_REMOVE_MULTI_ANNEX_FIRMWARE_PRIME
 -	depends on !FREETZ_AVM_VERSION_08_0X_MIN
-+#	depends on !FREETZ_AVM_VERSION_08_0X_MIN
++	depends on !FREETZ_AVM_VERSION_08_0X_MIN
  	depends on !FREETZ_TYPE_7581 && !FREETZ_TYPE_7582
  	default n
  	help
@@ -88,7 +88,7 @@
  	bool "Extend online counter"
  	depends on !FREETZ_TYPE_EXTENDER && FREETZ_AVM_VERSION_06_5X_MIN && !FREETZ_REMOVE_DSLD
 -	depends on !FREETZ_AVM_VERSION_08_0X_MIN
-+#	depends on !FREETZ_AVM_VERSION_08_0X_MIN
++	depends on !FREETZ_AVM_VERSION_08_0X_MIN
  	default n
  	help
  		Converts counter hours to days and traffic MB to GB.
