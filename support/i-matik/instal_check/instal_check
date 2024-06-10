@@ -4,12 +4,12 @@ if [[ $(lsb_release -rs) == "20.04" ]] || [[ $(lsb_release -rs) == "21.10" ]] ||
 PACKAGES="  autopoint bc binutils bison bsdmainutils bzip2 ccache cmake cpio curl ecj flex g++ gawk gcc"
 PACKAGES+=" gcc-multilib gettext git graphicsmagick imagemagick inkscape intltool java-wrappers kmod"
 PACKAGES+=" lib32ncurses-dev lib32stdc++6 lib32z1-dev libacl1-dev libc6-dev-i386 libcap-dev libelf-dev"
-PACKAGES+=" libglib2.0-dev libgnutls28-dev libncurses-dev libreadline-dev libsqlite3-dev libssl-dev"
+PACKAGES+=" libglib2.0-dev libgnutls28-dev libncurses-dev libncurses5-dev libreadline-dev libsqlite3-dev libssl-dev"
 PACKAGES+=" libstring-crc32-perl libtool-bin libusb-dev libxml2-dev libzstd-dev make ncftp netcat-openbsd net-tools patch"
 PACKAGES+=" patchutils perl pkg-config pv rsync sharutils sqlite3 subversion sudo texinfo tofrodos unar unzip"
 PACKAGES+=" uuid-dev wget zip zlib1g-dev"
 PACKAGES+=" device-tree-compiler" # for FIT-Image
-PACKAGES+=" xz-utils python3-dev libtool diffutils libpcsclite-dev libc-dev-bin libacl1-dev libccid libstdc++6 dialog sshpass libusb-1.0-0-dev jq gperf help2man dos2unix libucl1 ruby" # for s3
+PACKAGES+=" xz-utils python3-dev libtool diffutils libpcsclite-dev libc-dev-bin libacl1-dev libccid libstdc++6 dialog sshpass libusb-1.0-0-dev jq gperf help2man dos2unix libucl1 ruby libucl-dev" # for s3
 PACKAGES+=" gnupg autoconf-archive" # for only friends
 #PACKAGES+=" execstack python-is-python3" #old
 #PACKAGES+=" gcc-12 gcc-12-locales gcc-12-multilib gcc-12-doc cpp-12 libasan8 libgcc-12-dev libtsan2" #test
