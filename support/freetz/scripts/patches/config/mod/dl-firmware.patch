@@ -1,5 +1,5 @@
 --- config/mod/dl-firmware.in
-+++ config/mod/dl-firmware.in	2024-06-11 10:54:35.375290031 +0200
++++ config/mod/dl-firmware.in	2024-06-11 16:59:10.208842273 +0200
 @@ -31,7 +31,7 @@
  	#
  	default "@AVM/fritzwlan/fritzrepeater-1200/{other,deutschland}/fritz.os,@AVM/1200"                                 if FREETZ_TYPE_1200
