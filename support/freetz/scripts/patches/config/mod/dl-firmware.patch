@@ -1,5 +1,5 @@
 --- config/mod/dl-firmware.in
-+++ config/mod/dl-firmware.in	2024-06-12 13:55:12.036492598 +0200
++++ config/mod/dl-firmware.in	2024-06-12 17:31:26.632697436 +0200
 @@ -31,7 +31,7 @@
  	#
  	default "@AVM/fritzwlan/fritzrepeater-1200/{other,deutschland}/fritz.os,@AVM/1200"                                 if FREETZ_TYPE_1200
@@ -143,15 +143,7 @@
  	#
  	default "FRITZ.Box_7560.en-de-es-it-fr-pl.149.06.83.image"                             if FREETZ_TYPE_7560 && FREETZ_TYPE_LANG_EN && FREETZ_TYPE_FIRMWARE_06_8X
  	default "FRITZ.Box_7560.en-de-es-it-fr-pl.149.07.01.image"                             if FREETZ_TYPE_7560 && FREETZ_TYPE_LANG_EN && FREETZ_TYPE_FIRMWARE_07_0X
-@@ -668,6 +684,7 @@
- 	default "FRITZ.Box_7583-07.12.image"                                                   if FREETZ_TYPE_7583 && FREETZ_TYPE_LANG_DE && FREETZ_TYPE_FIRMWARE_07_1X
- 	default "FRITZ.Box_7583-07.31.image"                                                   if FREETZ_TYPE_7583                        && FREETZ_TYPE_FIRMWARE_07_2X
- 	default "FRITZ.Box_7583-07.57.image"                                                   if FREETZ_TYPE_7583                        && FREETZ_TYPE_FIRMWARE_07_5X
-+	default "FRITZ.Box_7583-07.57-111664-LabPLUS.image"                                    if FREETZ_TYPE_7583                        && FREETZ_TYPE_FIRMWARE_07_5X_PLUS
- 	#
- 	default "FRITZ.Box_7583_VDSL-07.31.image"                                              if FREETZ_TYPE_7584                        && FREETZ_TYPE_FIRMWARE_07_2X
- 	default "FRITZ.Box_7583_VDSL-07.57.image"                                              if FREETZ_TYPE_7584                        && FREETZ_TYPE_FIRMWARE_07_5X
-@@ -681,16 +698,20 @@
+@@ -681,16 +697,20 @@
  	default "FRITZ.Box_7590-07.12.image"                                                   if FREETZ_TYPE_7590 && FREETZ_TYPE_LANG_DE && FREETZ_TYPE_FIRMWARE_07_1X
  	default "FRITZ.Box_7590-07.29.image"                                                   if FREETZ_TYPE_7590 &&                        FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_7590-07.59.image"                                                   if FREETZ_TYPE_7590 &&                        FREETZ_TYPE_FIRMWARE_07_5X
@@ -174,7 +166,7 @@
  	#
  	default "fw_Speedport_W501V_v_28.04.38.image"                                          if FREETZ_TYPE_W501V
  
-@@ -730,13 +751,13 @@
+@@ -730,13 +750,13 @@
  	string "Downloaded container file"                if FREETZ_DL_OVERRIDE
  	depends                                           on FREETZ_TYPE_FIRMWARE_LABOR && !FREETZ_TYPE_FIRMWARE_DETECT_LATEST
  	#
