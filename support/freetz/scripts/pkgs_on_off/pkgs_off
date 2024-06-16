@@ -60,3 +60,9 @@ if [ -z $PARAM_IDM ]; then
 else
 	source $PKGS_PATH_ON_OFF/inadyn-mt_off
 fi
+
+if [ -z $PARAM_L4L ]; then
+	sleep 0
+else
+	source $PKGS_PATH_ON_OFF/l4l_off
+fi

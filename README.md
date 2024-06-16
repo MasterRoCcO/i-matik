@@ -42,6 +42,7 @@ Options
   -tel,--telnet			telnet
   -key,--key-pack		Key Pack
   -idm,--inadyn-mt		Inadyn-mt
+  -l4l,--lcd4linux		LCD 4 LINUX
   -push				push image to Fritz!Box or Fritz!Repeater or Fritz!Powerline
   -backup			make a backup of your freetz-signature and freetz-dl
   -us,--user-skins		user skins

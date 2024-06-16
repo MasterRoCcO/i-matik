@@ -9,7 +9,7 @@ I_MATIK_PATH=$(cd `dirname $0` && pwd)
 git pull 2>/dev/null
 source $I_MATIK_PATH/support/i-matik/config/i-matik
 source $INSTAL_CHECK
-VERSIONS_NR="0.92.3(f19.4)(i09.2)"
+VERSIONS_NR="0.92.4(f19.4)(i09.2)"
 ln -s $CREATE_BOXES $I_MATIK_PATH/my-boxes_please_edit_me 2>/dev/null
 source $I_MATIK_PATH/support/freetz/scripts/friends 2>/dev/null
 
@@ -1024,6 +1024,7 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf "  -tel|--telnet\t\tTelnet\n"
 	printf "  -key|--key-pack\t\tKey Pack\n"
 	printf "  -idm|--inadyn-mt\t\tInadyn-mt\n"
+	printf "  -l4l|--lcd4linux\t\tInadyn-mt\n"
 	printf "  -push\t\t\t\tpush image to Fritz!Box or Fritz!Repeater or Fritz!Powerline\n"
 	printf "  -backup\t\t\tmake a backup of your freetz-signature and freetz-dl\n"
 	printf "  -us,--user-skins\t\tuser skins\n"
