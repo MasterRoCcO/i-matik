@@ -1041,7 +1041,7 @@ SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sor
 	printf "$0 7490.30\n\n"
 	printf ${GREEN}"List of currently OpenSSL 3.3.x supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST_SSL_3_3}\n"
 	printf ${BLUE}"To build an OpenSSL 3.3.x image for Fritz!Box 7490 use this command:${NC}\n"
-	printf "$0 7490.31\n\n"
+	printf "$0 7490.33\n\n"
 	printf ${GREEN}"List of currently OpenSSL MULTI supported devices (BOX_TYPE)${NC}: ${SUPPORTED_BOX_TYPE_LIST_SSL_MULTI}\n"
 	printf ${BLUE}"To build an OpenSSL MULTI image for Fritz!Box 7490 use this command:${NC}\n"
 	printf "$0 7490.multi\n\n"
