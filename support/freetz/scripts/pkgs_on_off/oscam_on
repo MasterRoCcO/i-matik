@@ -1,6 +1,6 @@
 #!/bin/bash
 FUD_COMMENT_RD="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
-sed -i "s+${FUD_COMMENT_RD}+with_readerdriver_${FUD_COMMENT_RD}+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+${FUD_COMMENT_RD}+oscam_${FUD_COMMENT_RD}+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 PUMA7_IMAGE="puma7"
 PUMA7_IMAGE_COMMENT="$(grep '^FREETZ_SYSTEM_TYPE=' .config | awk -F'"' '{print $2}' | xargs)"
 sed -i "s+# FREETZ_PACKAGE_OSCAM is not set+FREETZ_PACKAGE_OSCAM=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
