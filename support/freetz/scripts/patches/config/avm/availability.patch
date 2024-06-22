@@ -41,9 +41,9 @@
  		( (FREETZ_TYPE_LANG_DE||FREETZ_TYPE_LANG_EN) && ( \
 -			FREETZ_TYPE_4060 || \
 +			FREETZ_TYPE_3009 || \
-+			FREETZ_TYPE_4060 || \ || \
-+			FREETZ_TYPE_5530 || \ || \
-+			FREETZ_TYPE_5590 || \ || \
++			FREETZ_TYPE_4060 || \
++			FREETZ_TYPE_5530 || \
++			FREETZ_TYPE_5590 || \
  			FREETZ_TYPE_6850_4G || \
 -			FREETZ_TYPE_6850_5G \
 -		))
