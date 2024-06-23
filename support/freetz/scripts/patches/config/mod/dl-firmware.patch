@@ -1,5 +1,5 @@
---- /home/rocco/Ubuntu/tools/freetz-ng/test/config/mod/dl-firmware.in.orig	2024-06-23 07:19:12.864027303 +0200
-+++ /home/rocco/Ubuntu/tools/freetz-ng/test/config/mod/dl-firmware.in	2024-06-23 07:23:54.334861651 +0200
+--- config/mod/dl-firmware.in
++++ config/mod/dl-firmware.in	2024-06-23 07:23:54.334861651 +0200
 @@ -31,7 +31,7 @@
  	#
  	default "@AVM/fritzwlan/fritzrepeater-1200/{other,deutschland}/fritz.os,@AVM/1200"                                 if FREETZ_TYPE_1200
