@@ -1,0 +1,94 @@
+--- make/libs/libxml2/external.files	2024-06-24 06:30:08.889056027 +0200
++++ make/libs/libxml2/external.files	2024-06-24 07:37:46.007282000 +0200
+@@ -1 +1 @@
+-[ "$EXTERNAL_FREETZ_LIB_libxml2" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libxml2.so.2.13.1"
++[ "$EXTERNAL_FREETZ_LIB_libxml2" == "y" ] && EXTERNAL_FILES+=" ${FREETZ_LIBRARY_DIR}/libxml2.so.2.12.8"
+--- make/libs/libxml2/external.in	2024-06-24 06:30:08.889056027 +0200
++++ make/libs/libxml2/external.in	2024-06-24 07:37:55.375177000 +0200
+@@ -4,5 +4,5 @@
+ 	default n
+ 	help
+ 		externals the following file(s):
+-		 ${FREETZ_LIBRARY_DIR}/libxml2.so.2.13.1
++		 ${FREETZ_LIBRARY_DIR}/libxml2.so.2.12.8
+ 
+--- make/libs/libxml2/libxml2.mk	2024-06-24 06:30:08.889056027 +0200
++++ make/libs/libxml2/libxml2.mk	2024-06-24 07:35:52.872569000 +0200
+@@ -1,7 +1,7 @@
+-$(call PKG_INIT_LIB, 2.13.1)
++$(call PKG_INIT_LIB, 2.12.8)
+ $(PKG)_LIB_VERSION:=$($(PKG)_VERSION)
+ $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.xz
+-$(PKG)_HASH:=25239263dc37f5f55a5393eff27b35f0b7d9ea4b2a7653310598ea8299e3b741
++$(PKG)_HASH:=43ad877b018bc63deb2468d71f95219c2fac196876ef36d1bee51d226173ec93
+ $(PKG)_SITE:=https://download.gnome.org/sources/libxml2/$(call GET_MAJOR_VERSION,$($(PKG)_VERSION))
+ ### WEBSITE:=http://www.xmlsoft.org
+ ### MANPAGE:=https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home#html-documentation
+--- make/libs/libxml2/patches/100-no_docs_examples_tests.libxml2.patch	2024-06-24 06:30:08.889056027 +0200
++++ make/libs/libxml2/patches/100-no_docs_examples_tests.libxml2.patch	2024-01-09 15:46:12.000000000 +0100
+@@ -9,16 +9,16 @@
+  check_PROGRAMS = runsuite$(EXEEXT) runtest$(EXEEXT) \
+  	runxmlconf$(EXEEXT) testModule$(EXEEXT) testThreads$(EXEEXT) \
+  	testapi$(EXEEXT) testchar$(EXEEXT) testdict$(EXEEXT) \
+-@@ -388,7 +388,7 @@
++@@ -402,7 +402,7 @@
+      n|no|NO) false;; \
+      *) (install-info --version) >/dev/null 2>&1;; \
+    esac
+--DATA = $(cmake_DATA) $(dist_m4data_DATA) $(pkgconfig_DATA)
+-+DATA =                                   $(pkgconfig_DATA)
++-DATA = $(cmake_DATA) $(dist_m4data_DATA) $(examples_DATA) \
+++DATA =                                                    \
++ 	$(pkgconfig_DATA)
+  RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
+    distclean-recursive maintainer-clean-recursive
+- am__recursive_targets = \
+-@@ -667,7 +667,7 @@
++@@ -685,7 +685,7 @@
+  top_builddir = @top_builddir@
+  top_srcdir = @top_srcdir@
+  ACLOCAL_AMFLAGS = -I m4
+@@ -27,7 +27,7 @@
+  DIST_SUBDIRS = include . doc example fuzz python xstc
+  AM_CPPFLAGS = -I$(top_builddir)/include -I$(srcdir)/include -DSYSCONFDIR='"$(sysconfdir)"'
+  bin_SCRIPTS = xml2-config
+-@@ -1832,7 +1832,7 @@
++@@ -1925,7 +1925,7 @@
+  	$(MAKE) $(AM_MAKEFLAGS) $(check_PROGRAMS)
+  	$(MAKE) $(AM_MAKEFLAGS) check-local
+  check: check-recursive
+@@ -36,20 +36,21 @@
+  		config.h
+  install-binPROGRAMS: install-libLTLIBRARIES
+  
+-@@ -1957,14 +1957,14 @@
++@@ -2052,14 +2052,14 @@
+  
+  info-am:
+  
+ -install-data-am: install-cmakeDATA install-dist_m4dataDATA \
++-	install-examplesDATA install-pkgconfigDATA
+ +install-data-am: \
+- 	install-pkgconfigDATA
+++	install-pkgconfigDATA
+  
+  install-dvi: install-dvi-recursive
+  
+  install-dvi-am:
+  
+ -install-exec-am: install-binPROGRAMS install-binSCRIPTS \
+-+install-exec-am:                     install-binSCRIPTS \
+++install-exec-am: install-binSCRIPTS \
+  	install-libLTLIBRARIES
+  
+  install-html: install-html-recursive
+--- make/libs/libxml2/patches/110-pthread_fixes.libxml2.patch	2024-06-24 06:30:08.889056027 +0200
++++ make/libs/libxml2/patches/110-pthread_fixes.libxml2.patch	2024-01-22 16:38:39.000000000 +0100
+@@ -1,6 +1,6 @@
+ --- configure
+ +++ configure
+-@@ -15403,7 +15403,7 @@
++@@ -15636,7 +15636,7 @@
+          *linux*)
+              if test "${GCC}" = "yes" ; then
+                  BASE_THREAD_LIBS="$THREAD_LIBS"

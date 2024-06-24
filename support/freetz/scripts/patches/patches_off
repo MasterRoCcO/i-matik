@@ -1,4 +1,8 @@
 #!/bin/bash
+
+#downgrade
+source $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/make/libs/libxml2
+
 # i-matik
 source $I_MATIK_PATCH_PATH/10-box
 source $I_MATIK_PATCH_PATH/info.cgi

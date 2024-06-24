@@ -20,6 +20,12 @@ rm -rf "$FREETZ_SSL_HOME_PATH/motd.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/mod.patch" 2>/dev/null
 rm -rf "$FREETZ_SSL_HOME_PATH/000-remove_i-matik_orig_files.patch" 2>/dev/null
 
+# downgrade
+echo -e ${GREEN}"Freetz files for libxml2 downgrade."${NC}
+cp -ar $I_MATIK_PATH/support/freetz/scripts/patches/downgrade/make/libs/libxml2.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
+patch -p0 -b < libxml2.patch
+rm -rf "$FREETZ_SSL_HOME_PATH/libxml2.patch" 2>/dev/null
+
 # features
 echo -e ${GREEN}"Freetz files patch for Temperature Sensors."${NC}
 cp -ar $CONFIG_PATCH_PATH/avm/features.patch "$FREETZ_SSL_HOME_PATH/" 2>/dev/null
