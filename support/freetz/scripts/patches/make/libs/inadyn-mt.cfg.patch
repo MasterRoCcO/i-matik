@@ -1,0 +1,46 @@
+--- make/pkgs/inadyn-mt/files/root/etc/default.inadyn-mt/inadyn-mt.cfg
++++ make/pkgs/inadyn-mt/files/root/etc/default.inadyn-mt/inadyn-mt.cfg	2024-06-24 21:42:00.157958650 +0200
+@@ -6,7 +6,7 @@
+ export INADYN_MT_USER0=''
+ export INADYN_MT_PASS0=''
+ export INADYN_MT_ALIAS0=''
+-export INADYN_MT_OPTIONS0=''
++export INADYN_MT_OPTIONS0='forced_update_period 600'
+ export INADYN_MT_ACTIVE0='no'
+ export INADYN_MT_URL0=''
+ 
+@@ -14,7 +14,7 @@
+ export INADYN_MT_USER1=''
+ export INADYN_MT_PASS1=''
+ export INADYN_MT_ALIAS1=''
+-export INADYN_MT_OPTIONS1=''
++export INADYN_MT_OPTIONS1='forced_update_period 600'
+ export INADYN_MT_ACTIVE1='no'
+ export INADYN_MT_URL1=''
+ 
+@@ -22,7 +22,7 @@
+ export INADYN_MT_USER2=''
+ export INADYN_MT_PASS2=''
+ export INADYN_MT_ALIAS2=''
+-export INADYN_MT_OPTIONS2=''
++export INADYN_MT_OPTIONS2='forced_update_period 600'
+ export INADYN_MT_ACTIVE2='no'
+ export INADYN_MT_URL2=''
+ 
+@@ -30,7 +30,7 @@
+ export INADYN_MT_USER3=''
+ export INADYN_MT_PASS3=''
+ export INADYN_MT_ALIAS3=''
+-export INADYN_MT_OPTIONS3=''
++export INADYN_MT_OPTIONS3='forced_update_period 600'
+ export INADYN_MT_ACTIVE3='no'
+ export INADYN_MT_URL3=''
+ 
+@@ -38,6 +38,6 @@
+ export INADYN_MT_USER4=''
+ export INADYN_MT_PASS4=''
+ export INADYN_MT_ALIAS4=''
+-export INADYN_MT_OPTIONS4=''
++export INADYN_MT_OPTIONS4='forced_update_period 600'
+ export INADYN_MT_ACTIVE4='no'
+ export INADYN_MT_URL4=''
