@@ -1,0 +1,7 @@
+#!/bin/bash
+sed -i "s+FREETZ_PACKAGE_VSFTPD=y+# FREETZ_PACKAGE_VSFTPD is not set+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+FREETZ_PACKAGE_VSFTPD_WITH_SSL=y+# FREETZ_PACKAGE_VSFTPD_WITH_SSL is not set+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+FREETZ_LIB_libcrypto=y+# FREETZ_LIB_libcrypto is not set+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+FREETZ_LIB_libcrypto_WITH_EC=y+# FREETZ_LIB_libcrypto_WITH_EC is not set+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+FREETZ_LIB_libssl=y+# FREETZ_LIB_libssl is not set+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+tFREETZ_PACKAGE_VSFTPD_STATIC=y+# FREETZ_PACKAGE_VSFTPD_STATIC is not se+g" $FREETZ_SSL_HOME_PATH/.config

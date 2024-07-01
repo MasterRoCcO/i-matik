@@ -68,4 +68,12 @@ else
 	source $PKGS_PATH_ON_OFF/l4l_on
 fi
 
+
+if [ -z $PARAM_VFP ]; then
+	sleep 0
+else
+	source $PKGS_PATH_ON_OFF/vfp_on
+fi
+
+
 sed -i "s+FREETZ_TYPE_FIRMWARE_DETECT_LATEST=y+# FREETZ_TYPE_FIRMWARE_DETECT_LATEST is not set+g" $FREETZ_SSL_HOME_PATH/.config

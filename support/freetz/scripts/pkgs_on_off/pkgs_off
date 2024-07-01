@@ -66,3 +66,9 @@ if [ -z $PARAM_L4L ]; then
 else
 	source $PKGS_PATH_ON_OFF/l4l_off
 fi
+
+if [ -z $PARAM_VFP ]; then
+	sleep 0
+else
+	source $PKGS_PATH_ON_OFF/vfp_off
+fi
