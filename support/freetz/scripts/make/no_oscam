@@ -56,7 +56,7 @@ while [ $# -ne 0 ];do
 	    ;;
 	-idm|--inadyn-mt)		PARAM_IDM=1
 	    ;;
-	-vf|--vsftpd)			PARAM_VFP=1
+	-vfp|--vsftpd)			PARAM_VFP=1
 	    ;;
 	-*|--*)				PARAM_BAD=1
 	    ;;

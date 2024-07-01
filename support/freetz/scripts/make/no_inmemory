@@ -70,7 +70,7 @@ while [ $# -ne 0 ];do
 	    ;;
 	-l4l|--lcd4linux)		PARAM_L4L=1
 	    ;;
-	-vf|--vsftpd)			PARAM_VFP=1
+	-vfp|--vsftpd)			PARAM_VFP=1
 	    ;;
 	-*|--*)				PARAM_BAD=1
 	    ;;
