@@ -63,7 +63,7 @@
  	default "FRITZ.Box_4060-07.30.image"                                                   if FREETZ_TYPE_4060 && FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_4060-07.59.image"                                                   if FREETZ_TYPE_4060 && FREETZ_TYPE_FIRMWARE_07_5X
  	default "FRITZ.Box_4060-07.90-114223-LabBETA.image"                                    if FREETZ_TYPE_4060 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
-+	default "FRITZ.Box_4060-07.90-114082-Inhaus.image"                                     if FREETZ_TYPE_4060 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
++	default "FRITZ.Box_4060-07.90-114377-Inhaus.image"                                     if FREETZ_TYPE_4060 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
  	default "fritz.box_fon_5010.annexa.48.04.43.image"                                     if FREETZ_TYPE_5010
  	#
