@@ -141,7 +141,7 @@
  	default "FRITZ.Box_7530_AX-07.81.image"                                                if FREETZ_TYPE_7539 && FREETZ_TYPE_FIRMWARE_07_8X
 -	default "FRITZ.Box_7530_AX-07.90-114021-LabBETA.image"                                 if FREETZ_TYPE_7539 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
 + 	default "FRITZ.Box_7530_AX-07.90-114570-LabBETA.image"                                 if FREETZ_TYPE_7539                        && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
-+	default "FRITZ.Box_7530_AX-07.90-114406-Inhaus.image"                                  if FREETZ_TYPE_7539                        && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
++	default "FRITZ.Box_7530_AX-07.90-114680-Inhaus.image"                                  if FREETZ_TYPE_7539                        && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
  	default "FRITZ.Box_7560.en-de-es-it-fr-pl.149.06.83.image"                             if FREETZ_TYPE_7560 && FREETZ_TYPE_LANG_EN && FREETZ_TYPE_FIRMWARE_06_8X
  	default "FRITZ.Box_7560.en-de-es-it-fr-pl.149.07.01.image"                             if FREETZ_TYPE_7560 && FREETZ_TYPE_LANG_EN && FREETZ_TYPE_FIRMWARE_07_0X
