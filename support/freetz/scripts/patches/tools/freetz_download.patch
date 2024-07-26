@@ -1,6 +1,10 @@
 --- tools/freetz_download
 +++ tools/freetz_download
-@@ -304,7 +307,8 @@
+@@ -301,10 +304,12 @@
+ #				sites[(( num_sites++ ))]=https://download.avm.de/labor/MOVE21NL1/$subpath
+ #				sites[(( num_sites++ ))]=https://download.avm.de/labor/MOVE21/$subpath
+ 				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/Smart24P1/$subpath
++				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/Smart24P1FCS/$subpath
  				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/GoFiber23NL1/$subpath
  				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/GoFiber23/$subpath
  				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/FCS23/$subpath
