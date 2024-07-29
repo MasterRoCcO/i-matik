@@ -1,0 +1,13 @@
+--- patches/scripts/000-remove_i-matik_orig_files.sh	1970-01-01 01:00:00.000000000 +0100
++++ patches/scripts/000-remove_i-matik_orig_files.sh	2023-12-31 20:52:54.581353437 +0100
+@@ -0,0 +1,10 @@
++[ "$FREETZ_AVM_VERSION_06_5X_MIN" == "y" ] || return 0
++echo1 "removing i-matik .orig files"
++
++rm_files \
++  "${FILESYSTEM_MOD_DIR}/etc/default.mod/motd.orig" \
++  "${FILESYSTEM_MOD_DIR}/etc/default.mod/mod.cfg.orig" \
++  "${FILESYSTEM_MOD_DIR}/usr/lib/cgi-bin/mod/info.cgi.orig" \
++  "${FILESYSTEM_MOD_DIR}/usr/mww/cgi-bin/status.d/10-box.sh.orig" \
++  "${FILESYSTEM_MOD_DIR}/usr/lib/mww/cgi/menu-new.sh.orig"
++
