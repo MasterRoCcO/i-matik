@@ -4,7 +4,7 @@ if [[ $(lsb_release -rs) == "20.04" ]] || [[ $(lsb_release -rs) == "21.10" ]] ||
 PACKAGES="  autopoint bc binutils bison bsdmainutils bzip2 ccache cmake cpio curl ecj flex g++ gawk gcc"
 PACKAGES+=" gcc-multilib gettext git graphicsmagick imagemagick inkscape intltool java-wrappers kmod"
 PACKAGES+=" lib32ncurses-dev lib32stdc++6 lib32z1-dev libacl1-dev libc6-dev-i386 libcap-dev libelf-dev"
-PACKAGES+=" libglib2.0-dev libgnutls28-dev libncurses-dev libncurses5-dev libreadline-dev libsqlite3-dev libssl-dev"
+PACKAGES+=" libglib2.0-dev libgnutls28-dev libncurses-dev libreadline-dev libsqlite3-dev libssl-dev" #libncurses5-dev
 PACKAGES+=" libstring-crc32-perl libtool-bin libusb-dev libxml2-dev libzstd-dev make ncftp netcat-openbsd net-tools patch"
 PACKAGES+=" patchutils perl pkg-config pv rsync sharutils sqlite3 subversion sudo texinfo tofrodos unar unzip"
 PACKAGES+=" uuid-dev wget zip zlib1g-dev"
