@@ -1,24 +1,18 @@
 --- config/avm/availability.in
-+++ config/avm/availability.in	2024-08-01 07:25:40.688169923 +0200
-@@ -408,14 +408,23 @@
- 			FREETZ_TYPE_6820_V2 \
- 		))
- 
-+config FREETZ_AVM_HAS_FIRMWARE_07_5X_LAOBOR
-+	bool
-+	default y
-+	depends on \
-+		( (FREETZ_TYPE_LANG_DE||FREETZ_TYPE_LANG_EN) && ( \
-+			FREETZ_TYPE_GATE \
-+	))
- 
- config FREETZ_AVM_HAS_FIRMWARE_07_5X_INHAUS
- 	bool
++++ config/avm/availability.in	2024-08-07 14:12:16.117728239 +0200
+@@ -406,8 +406,18 @@
  	default y
  	depends on \
  		( (FREETZ_TYPE_LANG_DE||FREETZ_TYPE_LANG_EN) && ( \
 -			FREETZ_TYPE_5690 \
--		))
++			FREETZ_TYPE_GATE \
+ 		))
++ 
++config FREETZ_AVM_HAS_FIRMWARE_07_5X_INHAUS
++	bool
++	default y
++	depends on \
++		( (FREETZ_TYPE_LANG_DE||FREETZ_TYPE_LANG_EN) && ( \
 +			FREETZ_TYPE_5690 || \
 +			FREETZ_TYPE_7690 || \
 +			FREETZ_TYPE_GATE \
@@ -26,7 +20,7 @@
  
  config FREETZ_AVM_HAS_FIRMWARE_07_5X
  	bool
-@@ -466,6 +475,14 @@
+@@ -458,6 +468,15 @@
  			FREETZ_TYPE_6820_V3 \
  		))
  
@@ -35,13 +29,14 @@
 + 	default y
 +	depends on \
 +	 	( (FREETZ_TYPE_LANG_DE) && ( \
++			FREETZ_TYPE_5690 || \
 +			FREETZ_TYPE_6660 || \
 +			FREETZ_TYPE_6690 \
 + 		))
  
  config FREETZ_AVM_HAS_FIRMWARE_07_8X
  	bool
-@@ -484,11 +501,26 @@
+@@ -476,11 +495,26 @@
  	default y
  	depends on \
  		( (FREETZ_TYPE_LANG_DE||FREETZ_TYPE_LANG_EN) && ( \
