@@ -13,7 +13,6 @@ source $I_MATIK_PATCH_PATH/000-remove_i-matik_orig_files 2>/dev/null
 ### 07_8X
 source $CONFIG_PATCH_PATH/avm/availability 2>/dev/null
 source $CONFIG_PATCH_PATH/mod/dl-firmware 2>/dev/null
-source $CONFIG_PATCH_PATH/mod/prefix 2>/dev/null
 source $CONFIG_PATCH_PATH/ui/firmware 2>/dev/null
 source $CONFIG_PATCH_PATH/ui/freetz 2>/dev/null
 #source $PATCHES_PATCH_PATH/scripts/850-patch_fiber_fit-image_5590_fos_8 2>/dev/null
