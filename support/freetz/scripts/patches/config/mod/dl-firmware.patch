@@ -1,5 +1,5 @@
 --- config/mod/dl-firmware.in
-+++ config/mod/dl-firmware.in	2024-08-07 14:26:47.183676488 +0200
++++ config/mod/dl-firmware.in	2024-08-07 15:17:59.234209081 +0200
 @@ -29,7 +29,7 @@
  	#
  	default "@AVM/fritzwlan/fritzrepeater-1200/{other,deutschland}/fritz.os,@AVM/1200"                                 if FREETZ_TYPE_1200
@@ -78,8 +78,7 @@
 +	default "FRITZ.Box_5590_Fiber-07.90-114788-LabBETA.image"                              if FREETZ_TYPE_5590 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
 +	default "FRITZ.Box_5590_Fiber-07.90-114786-Inhaus.image"                               if FREETZ_TYPE_5590 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
--	default "FRITZ.Box_5690_Pro-07.61-114855-LabPLUS.image"                                if FREETZ_TYPE_5690 && FREETZ_TYPE_FIRMWARE_07_5X_LABOR
-+	default "FRITZ.Box_5690_Pro-07.61-114855-LabPLUS.image"                                if FREETZ_TYPE_5690 && FREETZ_TYPE_FIRMWARE_07_5X_PLUS
+ 	default "FRITZ.Box_5690_Pro-07.61-114855-LabPLUS.image"                                if FREETZ_TYPE_5690 && FREETZ_TYPE_FIRMWARE_07_5X_LABOR
 +	default "FRITZ.Box_5690_Pro-07.61-114853-Inhaus.image"                                 if FREETZ_TYPE_5690 && FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
  	#
  	default "FRITZ.Repeater_6000-07.31-V2.image/FRITZ.Repeater_6000-07.31.image"           if FREETZ_TYPE_6000 && FREETZ_TYPE_FIRMWARE_07_2X
@@ -94,7 +93,7 @@
  	default "FRITZ.Box_6660_Cable-07.29.image"                                             if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_6660_Cable-07.57.image"                                             if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_07_5X
 -	default "FRITZ.Box_6660_Cable-07.90-114782-Labor.image"                                if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
-+	default "FRITZ.Box_6660_Cable-07.57-108563-LabPLUS.image"                              if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_07_5X_PLUS
++	default "FRITZ.Box_6660_Cable-07.57-108563-LabPLUS.image"                              if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_07_5X_LABOR
 + 	default "FRITZ.Box_6660_Cable-07.90-114782-Labor.image"                                if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
 +	default "FRITZ.Box_6660_Cable-07.90-114930-Inhaus.image"                               if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
@@ -105,7 +104,7 @@
  	default "FRITZ.Box_6690_Cable-07.29.image"                                             if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_6690_Cable-07.57-V2.image/FRITZ.Box_6690_Cable-07.57.image"         if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_07_5X
 -	default "FRITZ.Box_6690_Cable-07.90-114779-Labor.image"                                if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
-+	default "FRITZ.Box_6690_Cable-07.57-108550-LabPLUS.image"                              if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_07_5X_PLUS
++	default "FRITZ.Box_6690_Cable-07.57-108550-LabPLUS.image"                              if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_07_5X_LABOR
 + 	default "FRITZ.Box_6690_Cable-07.90-114779-Labor.image"                                if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
 +	default "FRITZ.Box_6690_Cable-07.90-114941-Inhaus.image"                               if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
@@ -163,7 +162,7 @@
  	#
  	default "fw_Speedport_W501V_v_28.04.38.image"                                          if FREETZ_TYPE_W501V &&                       FREETZ_TYPE_FIRMWARE_04_XX
  
-@@ -733,8 +750,8 @@
+@@ -733,17 +750,20 @@
  	depends                                                                                on FREETZ_TYPE_FIRMWARE_LABOR && !FREETZ_TYPE_FIRMWARE_DETECT_LATEST
  	#
  	default "fritzbox-4060-labor-114590.zip"                                               if FREETZ_TYPE_4060
@@ -173,8 +172,11 @@
 +	default "fritzbox-5590-labor-114788.zip"                                               if FREETZ_TYPE_5590
  	default "FRITZ.Box_5690_Pro-07.61-114855-LabPLUS.zip"                                  if FREETZ_TYPE_5690
  	default "fritzbox-6591-labor-114785.zip"                                               if FREETZ_TYPE_6591
++	default "FRITZ.Box_6660_Cable-07.57-108563-LabPLUS.zip"                                if FREETZ_TYPE_6660
  	default "fritzbox-6660-labor-114782.zip"                                               if FREETZ_TYPE_6660
-@@ -743,7 +760,8 @@
+ 	default "fritzbox-6670-labor-114817.zip"                                               if FREETZ_TYPE_6670
++	default "FRITZ.Box_6690_Cable-07.57-108550-LabPLUS.zip"                                if FREETZ_TYPE_6690
+ 	default "fritzbox-6690-labor-114779.zip"                                               if FREETZ_TYPE_6690
  	default "fritzbox-7530-labor-114794.zip"                                               if FREETZ_TYPE_7530
  	default "fritzbox-7530 AX-labor-114682.zip"                                            if FREETZ_TYPE_7539
  	default "fritzbox-7590-labor-114800.zip"                                               if FREETZ_TYPE_7590
@@ -184,7 +186,7 @@
  #	default "xxxxxxxxxxxxxxxxxxxxxxxxx.zip"                                                if FREETZ_TYPE_xxxx
  	#
  	default ""
-@@ -840,7 +858,7 @@
+@@ -840,7 +860,7 @@
  	#
  	default "FRITZ.Box_7520-07.14.image"                                            if FREETZ_TYPE_7520_7530 && (FREETZ_TYPE_FIRMWARE_07_1X || FREETZ_TYPE_FIRMWARE_07_0X)
  	default "FRITZ.Box_7520-07.29.image"                                            if FREETZ_TYPE_7520_7530 &&  FREETZ_TYPE_FIRMWARE_07_2X
