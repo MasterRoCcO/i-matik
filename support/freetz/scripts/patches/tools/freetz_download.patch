@@ -1,6 +1,6 @@
 --- tools/freetz_download
 +++ tools/freetz_download
-@@ -305,7 +308,8 @@
+@@ -306,7 +309,8 @@
  				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/GoFiber23NL1/$subpath
  				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/GoFiber23/$subpath
  				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/FCS23/$subpath
