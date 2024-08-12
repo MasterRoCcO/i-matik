@@ -1,5 +1,5 @@
 #!/bin/bash
-NC='\033[0m' 		# RESET color
+NC='\033[0m'		 # RESET color
 RED='\033[0;31m'	# RED color
 GREEN='\033[0;32m'	# GREEN color
 BLUE='\033[0;34m'	# BLUE color
@@ -12,9 +12,9 @@ if [[ ! -e "$OSCAM_PATH" ]]; then
 	git clone https://github.com/gorgone/s3_releases.git "$OSCAM_PATH"
 	cp -ar $MY_FILES_HOME_PATH_OSCAM/* "$OSCAM_PATH/" 2>/dev/null
 	
-	if [ -d "${PRIVAT_MY_FILES_HOME_PATH_OSCAM}" ];then 
+	if [ -d "${PRIVAT_MY_FILES_HOME_PATH_OSCAM}" ];then
 		cp -ar $PRIVAT_MY_FILES_HOME_PATH_OSCAM/* "$OSCAM_PATH/" 2>/dev/null
-	else 
+	else
 		sleep 0
 	fi
 
@@ -28,7 +28,7 @@ if [[ ! -e "$OSCAM_PATH/oscam-git" ]]; then
 	git clone https://git.streamboard.tv/common/oscam.git/ $OSCAM_PATH/oscam-git
 ed $OSCAM_PATH/oscam-git/oscam.c <<EOF
 /", CS_TARGET);/a
-	fprintf(fp, "Built by:       %s\n", "i-matik");
+	fprintf(fp, "Built by:	   %s\n", "i-matik");
 .
 wq
 EOF
@@ -45,7 +45,7 @@ fi
 	DELETE_OSCAM_NAME="*$(echo ${!FREETZ_SSL_PATH} | awk -F'/' '{print $NF}')-extra.upx"	# construct image filname filter
 	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "${DELETE_OSCAM_NAME}" -type f -mmin +$DELETE_OSCAM -delete 2>/dev/null
 	find $OSCAM_PATH/support/logs -name "*.log" -type f -mmin +$DELETE_OSCAM_LOG -delete
- 	
+	
 if [[ ! -e $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS} ]]; then
 	$OSCAM_PATH/./s3 tcrepair fritz_${FB_ARCH}_${FB_OS}
 #elif [[ ! -d $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS} ]]; then
@@ -53,31 +53,31 @@ if [[ ! -e $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS} ]]; then
 fi
 	cd $OSCAM_PATH/oscam-git && OSCAMVERSION_ALT="$(./config.sh -r)"
 	cd $OSCAM_PATH/oscam-git && SHA_ALT="$(./config.sh -c)"
+		$OSCAM_PATH/./s3 enable_emu
 	cd $OSCAM_PATH/oscam-git && git pull && OSCAMVERSION_NEU="$(./config.sh -r)"
 	cd $OSCAM_PATH/oscam-git && SHA_NEU="$(./config.sh -c)"
 	
-if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-git${OSCAMVERSION_NEU}@${SHA_NEU}-fritz${FB_TYPE}-freetz-$OSCAM_READER-extra.upx ]]; then
-	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-git${OSCAMVERSION_ALT}@${SHA_ALT}-fritz${FB_TYPE}-freetz-$OSCAM_READER-extra.upx" -type f -mmin +0 -delete
+if [[ ! -e $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-git${OSCAMVERSION_NEU}@${SHA_NEU}-fritz${FB_TYPE}-freetz-$OSCAM_READER_EMU.upx ]]; then
+	find "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/" -name "oscam-git${OSCAMVERSION_ALT}@${SHA_ALT}-fritz${FB_TYPE}-freetz-$OSCAM_READER_EMU.upx" -type f -mmin +0 -delete
 
 		rm -rf $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
 		ln -s $FREETZ_SSL_HOME_PATH/toolchain/target $OSCAM_PATH/support/toolchains/fritz_${FB_ARCH}_${FB_OS}
 
 #		cd "$OSCAM_PATH" && git pull
-		cd "$OSCAM_PATH" && ./s3 update_me
+#		cd "$OSCAM_PATH" && ./s3 update_me
 		cp -ar $MY_FILES_HOME_PATH_OSCAM/* "$OSCAM_PATH/" 2>/dev/null
 	
-			if [ -d "${PRIVAT_MY_FILES_HOME_PATH_OSCAM}" ];then 
+			if [ -d "${PRIVAT_MY_FILES_HOME_PATH_OSCAM}" ];then
 				cp -ar $PRIVAT_MY_FILES_HOME_PATH_OSCAM/* "$OSCAM_PATH/" 2>/dev/null
-			else 
+			else
 				sleep 0
 			fi
-		$OSCAM_PATH/./s3 enable_emu
-		$OSCAM_PATH/./s3 fritz_${FB_ARCH}_${FB_OS} -p=$OSCAM_READER.profile
+		$OSCAM_PATH/./s3 fritz_${FB_ARCH}_${FB_OS} -p=$OSCAM_READER_EMU.profile USE_EXTRA
 		$OSCAM_PATH/./s3 disable_emu
-		mv $OSCAM_PATH/support/binaries/oscam-git${OSCAMVERSION_NEU}@${SHA_NEU}-fritz_${FB_ARCH}_${FB_OS}-$OSCAM_READER-extra-upx $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-git${OSCAMVERSION_NEU}@${SHA_NEU}-fritz${FB_TYPE}-freetz-$OSCAM_READER-extra.upx
+		mv $OSCAM_PATH/support/binaries/oscam-git${OSCAMVERSION_NEU}@${SHA_NEU}-fritz_${FB_ARCH}_${FB_OS}-$OSCAM_READER_EMU-extra-upx $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-git${OSCAMVERSION_NEU}@${SHA_NEU}-fritz${FB_TYPE}-freetz-$OSCAM_READER_EMU.upx
 
-			elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-git${OSCAMVERSION_NEU}@${SHA_NEU}-fritz${FB_TYPE}-freetz-$OSCAM_READER-extra.upx ]]; then
-				printf "${GREEN}$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-git${OSCAMVERSION_NEU}@${SHA_NEU}-fritz${FB_TYPE}-freetz-$OSCAM_READER-extra.upx already exists${NC}"
+			elif [[ ! -d $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-git${OSCAMVERSION_NEU}@${SHA_NEU}-fritz${FB_TYPE}-freetz-$OSCAM_READER_EMU.upx ]]; then
+				printf "${GREEN}$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-git${OSCAMVERSION_NEU}@${SHA_NEU}-fritz${FB_TYPE}-freetz-$OSCAM_READER_EMU.upx already exists${NC}"
 			fi
 				rm -rf "$OSCAM_PATH/support/toolchains.cfg"
 				mv $OSCAM_PATH/support/toolchains.cfg.orig $OSCAM_PATH/support/toolchains.cfg
