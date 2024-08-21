@@ -1,5 +1,5 @@
 --- config/mod/dl-firmware.in
-+++ config/mod/dl-firmware.in	2024-08-21 12:44:43.725494392 +0200
++++ config/mod/dl-firmware.in	2024-08-21 18:23:09.125427094 +0200
 @@ -29,7 +29,7 @@
  	#
  	default "@AVM/fritzwlan/fritzrepeater-1200/{other,deutschland}/fritz.os,@AVM/1200"                                 if FREETZ_TYPE_1200
@@ -53,7 +53,12 @@
  	#
  	default "fritz.box_wlan_3030.21.04.34.image"                                           if FREETZ_TYPE_3030 && FREETZ_TYPE_FIRMWARE_04_XX
  	#
-@@ -393,7 +394,8 @@
+@@ -389,11 +390,12 @@
+ 	default "FRITZ.Box_4040-07.59.image"                                                   if FREETZ_TYPE_4040 && FREETZ_TYPE_FIRMWARE_07_5X
+ 	default "FRITZ.Box_4040-07.90-114164-Inhaus.image"                                     if FREETZ_TYPE_4040 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
+ 	#
+-	default "FRITZ.Box_4050-07.90-114548-Inhaus.image"                                     if FREETZ_TYPE_4050 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
++	default "FRITZ.Box_4050-07.90-115196-Inhaus.image"                                     if FREETZ_TYPE_4050 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
  	default "FRITZ.Box_4060-07.30.image"                                                   if FREETZ_TYPE_4060 && FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_4060-07.59.image"                                                   if FREETZ_TYPE_4060 && FREETZ_TYPE_FIRMWARE_07_5X
