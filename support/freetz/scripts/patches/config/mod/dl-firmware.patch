@@ -1,5 +1,5 @@
 --- config/mod/dl-firmware.in
-+++ config/mod/dl-firmware.in	2024-08-27 20:45:13.540382931 +0200
++++ config/mod/dl-firmware.in	2024-08-30 09:19:53.613222330 +0200
 @@ -29,7 +29,7 @@
  	#
  	default "@AVM/fritzwlan/fritzrepeater-1200/{other,deutschland}/fritz.os,@AVM/1200"                                 if FREETZ_TYPE_1200
@@ -63,12 +63,12 @@
  	default "FRITZ.Box_4060-07.30.image"                                                   if FREETZ_TYPE_4060 && FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_4060-07.59.image"                                                   if FREETZ_TYPE_4060 && FREETZ_TYPE_FIRMWARE_07_5X
 -	default "FRITZ.Box_4060-07.90-114590-LabBETA.image"                                    if FREETZ_TYPE_4060 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
-+	default "FRITZ.Box_4060-07.90-115254-LabBETA.image"                                    if FREETZ_TYPE_4060 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
++	default "FRITZ.Box_4060-07.90-115355-LabBETA.image"                                    if FREETZ_TYPE_4060 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
 +	default "FRITZ.Box_4060-07.90-115353-Inhaus.image"                                     if FREETZ_TYPE_4060 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
  	default "fritz.box_fon_5010.annexa.48.04.43.image"                                     if FREETZ_TYPE_5010 && FREETZ_TYPE_FIRMWARE_04_XX
  	#
-@@ -415,14 +417,17 @@
+@@ -415,15 +417,18 @@
  	default "FRITZ.Box_5530-07.30.image"                                                   if FREETZ_TYPE_5530 && FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_5530_Fiber-07.58.image"                                             if FREETZ_TYPE_5530 && FREETZ_TYPE_FIRMWARE_07_5X
  	default "FRITZ.Box_5530_Fiber-07.81.image"                                             if FREETZ_TYPE_5530 && FREETZ_TYPE_FIRMWARE_07_8X
@@ -81,19 +81,21 @@
  	default "FRITZ.Box_5590_Fiber-07.81.image"                                             if FREETZ_TYPE_5590 && FREETZ_TYPE_FIRMWARE_07_8X
 -	default "FRITZ.Box_5590_Fiber-07.90-114673-LabBETA.image"                              if FREETZ_TYPE_5590 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
 +	default "FRITZ.Box_5590_Fiber-07.90-115257-LabBETA.image"                              if FREETZ_TYPE_5590 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
-+	default "FRITZ.Box_5590_Fiber-07.90-115237-Inhaus.image"                               if FREETZ_TYPE_5590 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
++	default "FRITZ.Box_5590_Fiber-07.90-115371-Inhaus.image"                               if FREETZ_TYPE_5590 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
  	default "FRITZ.Box_5690_Pro-07.62.image"                                               if FREETZ_TYPE_5690 && FREETZ_TYPE_FIRMWARE_07_5X
+-	default "FRITZ.Box_5690_Pro-07.90-114928-Inhaus.image"                                 if FREETZ_TYPE_5690 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
 +	default "FRITZ.Box_5690_Pro-07.61-114976-Inhaus.image"                                 if FREETZ_TYPE_5690 && FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
- 	default "FRITZ.Box_5690_Pro-07.90-114928-Inhaus.image"                                 if FREETZ_TYPE_5690 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
++	default "FRITZ.Box_5690_Pro-07.90-115400-Inhaus.image"                                 if FREETZ_TYPE_5690 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
  	default "FRITZ.Repeater_6000-07.31-V2.image/FRITZ.Repeater_6000-07.31.image"           if FREETZ_TYPE_6000 && FREETZ_TYPE_FIRMWARE_07_2X
+ 	default "FRITZ.Repeater_6000-07.58.image"                                              if FREETZ_TYPE_6000 && FREETZ_TYPE_FIRMWARE_07_5X
 @@ -447,19 +452,25 @@
  	default "FRITZ.Box_6591_Cable-07.13.image"                                             if FREETZ_TYPE_6591 && FREETZ_TYPE_FIRMWARE_07_1X
  	default "FRITZ.Box_6591_Cable-07.29.image"                                             if FREETZ_TYPE_6591 && FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_6591_Cable-07.57.image"                                             if FREETZ_TYPE_6591 && FREETZ_TYPE_FIRMWARE_07_5X
 -	default "FRITZ.Box_6591_Cable-07.90-114785-Labor.image"                                if FREETZ_TYPE_6591 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
-+	default "FRITZ.Box_6591_Cable-07.90-115250-Labor.image"                                if FREETZ_TYPE_6591 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
++	default "FRITZ.Box_6591_Cable-07.90-115370-Labor.image"                                if FREETZ_TYPE_6591 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
 +	default "FRITZ.Box_6591_Cable-07.90-115368-Inhaus.image"                               if FREETZ_TYPE_6591 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
  	default "FRITZ.Box_6660_Cable-07.15.image"                                             if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_07_1X
@@ -101,19 +103,19 @@
  	default "FRITZ.Box_6660_Cable-07.57.image"                                             if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_07_5X
 -	default "FRITZ.Box_6660_Cable-07.90-114782-Labor.image"                                if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
 +	default "FRITZ.Box_6660_Cable-07.57-108563-LabPLUS.image"                              if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_07_5X_LABOR
-+ 	default "FRITZ.Box_6660_Cable-07.90-115216-Labor.image"                                if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
++ 	default "FRITZ.Box_6660_Cable-07.90-115367-Labor.image"                                if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
 +	default "FRITZ.Box_6660_Cable-07.90-115365-Inhaus.image"                               if FREETZ_TYPE_6660 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
  	default "FRITZ.Box_6670_Cable-07.63.image"                                             if FREETZ_TYPE_6670 && FREETZ_TYPE_FIRMWARE_07_5X
 -	default "FRITZ.Box_6670_Cable-07.90-114817-Labor.image"                                if FREETZ_TYPE_6670 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
-+	default "FRITZ.Box_6670_Cable-07.90-115076-Labor.image"                                if FREETZ_TYPE_6670 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
++	default "FRITZ.Box_6670_Cable-07.90-115434-Labor.image"                                if FREETZ_TYPE_6670 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
 +	default "FRITZ.Box_6670_Cable-07.90-115402-Inhaus.image"                               if FREETZ_TYPE_6670 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
  	default "FRITZ.Box_6690_Cable-07.29.image"                                             if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_6690_Cable-07.57-V2.image/FRITZ.Box_6690_Cable-07.57.image"         if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_07_5X
 -	default "FRITZ.Box_6690_Cable-07.90-114779-Labor.image"                                if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
 +	default "FRITZ.Box_6690_Cable-07.57-108550-LabPLUS.image"                              if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_07_5X_LABOR
-+ 	default "FRITZ.Box_6690_Cable-07.90-115031-Labor.image"                                if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
++ 	default "FRITZ.Box_6690_Cable-07.90-115364-Labor.image"                                if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
 +	default "FRITZ.Box_6690_Cable-07.90-115362-Inhaus.image"                               if FREETZ_TYPE_6690 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
  	default "FRITZ.Box_6810_LTE.108.06.35.image"                                           if FREETZ_TYPE_6810 && FREETZ_TYPE_LANG_DE && FREETZ_TYPE_FIRMWARE_06_2X
@@ -139,14 +141,14 @@
  	default "FRITZ.Box_7530-07.29.image"                                                   if (FREETZ_TYPE_7530 || FREETZ_TYPE_7520_7530)                        && FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_7530-07.59.image"                                                   if (FREETZ_TYPE_7530 || FREETZ_TYPE_7520_7530)                        && FREETZ_TYPE_FIRMWARE_07_5X
 -	default "FRITZ.Box_7530-07.90-114794-Labor.image"                                      if (FREETZ_TYPE_7530 || FREETZ_TYPE_7520_7530)                        && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
-+	default "FRITZ.Box_7530-07.90-115251-Labor.image"                                      if (FREETZ_TYPE_7530 || FREETZ_TYPE_7520_7530)                        && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
++	default "FRITZ.Box_7530-07.90-115388-Labor.image"                                      if (FREETZ_TYPE_7530 || FREETZ_TYPE_7520_7530)                        && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
 +	default "FRITZ.Box_7530-07.90-115386-Inhaus.image"                                     if (FREETZ_TYPE_7530 || FREETZ_TYPE_7520_7530)                        && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
  	default "FRITZ.Box_7530_AX-07.31.image"                                                if FREETZ_TYPE_7539 && FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_7530_AX-07.57-V2.image/FRITZ.Box_7530_AX-07.57.image"               if FREETZ_TYPE_7539 && FREETZ_TYPE_FIRMWARE_07_5X
  	default "FRITZ.Box_7530_AX-07.81.image"                                                if FREETZ_TYPE_7539 && FREETZ_TYPE_FIRMWARE_07_8X
 -	default "FRITZ.Box_7530_AX-07.90-114682-Labor.image"                                   if FREETZ_TYPE_7539 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
-+ 	default "FRITZ.Box_7530_AX-07.90-114682-Labor.image"                                   if FREETZ_TYPE_7539 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
++ 	default "FRITZ.Box_7530_AX-07.90-115391-Labor.image"                                   if FREETZ_TYPE_7539 && FREETZ_TYPE_FIRMWARE_08_0X_LABOR
 +	default "FRITZ.Box_7530_AX-07.90-115389-Inhaus.image"                                  if FREETZ_TYPE_7539 && FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
  	default "FRITZ.Box_7560.en-de-es-it-fr-pl.149.06.83.image"                             if FREETZ_TYPE_7560 && FREETZ_TYPE_LANG_EN && FREETZ_TYPE_FIRMWARE_06_8X
@@ -156,18 +158,18 @@
  	default "FRITZ.Box_7590-07.29.image"                                                   if FREETZ_TYPE_7590 &&                        FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_7590-07.59.image"                                                   if FREETZ_TYPE_7590 &&                        FREETZ_TYPE_FIRMWARE_07_5X
 -	default "FRITZ.Box_7590-07.90-114800-Labor.image"                                      if FREETZ_TYPE_7590 &&                        FREETZ_TYPE_FIRMWARE_08_0X_LABOR
-+ 	default "FRITZ.Box_7590-07.90-115249-Labor.image"                                      if FREETZ_TYPE_7590 &&                        FREETZ_TYPE_FIRMWARE_08_0X_LABOR
++ 	default "FRITZ.Box_7590-07.90-115394-Labor.image"                                      if FREETZ_TYPE_7590 &&                        FREETZ_TYPE_FIRMWARE_08_0X_LABOR
 +	default "FRITZ.Box_7590-07.90-115392-Inhaus.image"                                     if FREETZ_TYPE_7590 &&                        FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
  	default "FRITZ.Box_7590_AX-07.31.image"                                                if FREETZ_TYPE_7599 &&                        FREETZ_TYPE_FIRMWARE_07_2X
  	default "FRITZ.Box_7590_AX-07.57.image"                                                if FREETZ_TYPE_7599 &&                        FREETZ_TYPE_FIRMWARE_07_5X
  	default "FRITZ.Box_7590_AX-07.81.image"                                                if FREETZ_TYPE_7599 &&                        FREETZ_TYPE_FIRMWARE_07_8X
 -	default "FRITZ.Box_7590_AX-07.90-114803-Labor.image"                                   if FREETZ_TYPE_7599 &&                        FREETZ_TYPE_FIRMWARE_08_0X_LABOR
-+ 	default "FRITZ.Box_7590_AX-07.90-115218-Labor.image"                                   if FREETZ_TYPE_7599 &&                        FREETZ_TYPE_FIRMWARE_08_0X_LABOR
++ 	default "FRITZ.Box_7590_AX-07.90-115397-Labor.image"                                   if FREETZ_TYPE_7599 &&                        FREETZ_TYPE_FIRMWARE_08_0X_LABOR
 +	default "FRITZ.Box_7590_AX-07.90-115395-Inhaus.image"                                  if FREETZ_TYPE_7599 &&                        FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
  	default "FRITZ.Box_7690-07.62.image"                                                   if FREETZ_TYPE_7690 &&                        FREETZ_TYPE_FIRMWARE_07_5X
-+#	default "FRITZ.Box_7690-07.61-115018-Inhaus.image"                                     if FREETZ_TYPE_7690 &&                        FREETZ_TYPE_FIRMWARE_07_5X_INHAUS
++	default "FRITZ.Box_7690-07.90-115404-Inhaus.image"                                     if FREETZ_TYPE_7690 &&                        FREETZ_TYPE_FIRMWARE_08_0X_INHAUS
  	#
  	default "FRITZ.Smart_Gateway-07.61-Release.image"                                      if FREETZ_TYPE_GATE &&                        FREETZ_TYPE_FIRMWARE_07_5X
 +	default "FRITZ.Smart_Gateway-07.62-114848-Labor.image"                                 if FREETZ_TYPE_GATE &&                        FREETZ_TYPE_FIRMWARE_07_5X_LABOR
@@ -187,23 +189,24 @@
 -	default "fritzbox-6670-labor-114817.zip"                                               if FREETZ_TYPE_6670
 -	default "fritzbox-6690-labor-114779.zip"                                               if FREETZ_TYPE_6690
 -	default "fritzbox-7530-labor-114794.zip"                                               if FREETZ_TYPE_7530
-+	default "fritzbox-4060-labor-115254.zip"                                               if FREETZ_TYPE_4060
-+	default "fritzbox-5530-labor-115267.zip"                                               if FREETZ_TYPE_5530
-+	default "fritzbox-5590-labor-115257.zip"                                               if FREETZ_TYPE_5590
-+	default "fritzbox-6591-labor-115250.zip"                                               if FREETZ_TYPE_6591
-+	default "FRITZ.Box_6660_Cable-07.57-108563-LabPLUS.zip"                                if FREETZ_TYPE_6660
-+	default "fritzbox-6660-labor-115216.zip"                                               if FREETZ_TYPE_6660
-+	default "fritzbox-6670-labor-115076.zip"                                               if FREETZ_TYPE_6670
-+	default "FRITZ.Box_6690_Cable-07.57-108550-LabPLUS.zip"                                if FREETZ_TYPE_6690
-+	default "fritzbox-6690-labor-115031.zip"                                               if FREETZ_TYPE_6690
-+	default "fritzbox-6850_lte-labor-114968.zip"                                           if FREETZ_TYPE_6850_4G
-+	default "fritzbox-6850_5g-labor-114965.zip"                                            if FREETZ_TYPE_6850_5G
-+	default "fritzbox-7530-labor-115251.zip"                                               if FREETZ_TYPE_7530
- 	default "fritzbox-7530 AX-labor-114682.zip"                                            if FREETZ_TYPE_7539
+-	default "fritzbox-7530 AX-labor-114682.zip"                                            if FREETZ_TYPE_7539
 -	default "fritzbox-7590-labor-114800.zip"                                               if FREETZ_TYPE_7590
 -	default "fritzbox-7590 AX-labor-114803.zip"                                            if FREETZ_TYPE_7599
-+	default "fritzbox-7590-labor-115052.zip"                                               if FREETZ_TYPE_7590
-+	default "fritzbox-7590_AX-labor-115218.zip"                                            if FREETZ_TYPE_7599
++	default "fritzbox-4060-labor-115355.zip"                                               if FREETZ_TYPE_4060
++	default "fritzbox-5530-labor-115267.zip"                                               if FREETZ_TYPE_5530
++	default "fritzbox-5590-labor-115257.zip"                                               if FREETZ_TYPE_5590
++	default "fritzbox-6591-labor-115370.zip"                                               if FREETZ_TYPE_6591
++	default "FRITZ.Box_6660_Cable-07.57-108563-LabPLUS.zip"                                if FREETZ_TYPE_6660
++	default "fritzbox-6660-labor-115367.zip"                                               if FREETZ_TYPE_6660
++	default "fritzbox-6670-labor-115434.zip"                                               if FREETZ_TYPE_6670
++	default "FRITZ.Box_6690_Cable-07.57-108550-LabPLUS.zip"                                if FREETZ_TYPE_6690
++	default "fritzbox-6690-labor-115364.zip"                                               if FREETZ_TYPE_6690
++	default "fritzbox-6850_lte-labor-114968.zip"                                           if FREETZ_TYPE_6850_4G
++	default "fritzbox-6850_5g-labor-114965.zip"                                            if FREETZ_TYPE_6850_5G
++	default "fritzbox-7530-labor-115388.zip"                                               if FREETZ_TYPE_7530
++	default "fritzbox-7530 AX-labor-115391.zip"                                            if FREETZ_TYPE_7539
++	default "fritzbox-7590-labor-115394.zip"                                               if FREETZ_TYPE_7590
++	default "fritzbox-7590_AX-labor-115397.zip"                                            if FREETZ_TYPE_7599
 +	default "Fritz.Smart_Gateway-Labor-115249.zip"                                         if FREETZ_TYPE_GATE
  #	default "xxxxxxxxxxxxxxxxxxxxxxxxx.zip"                                                if FREETZ_TYPE_xxxx
  	#
