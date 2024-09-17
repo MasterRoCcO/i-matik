@@ -91,7 +91,7 @@ FREETZ_SERIES_ALL=y
 # FREETZ_TYPE_5490 is not set
 # FREETZ_TYPE_5491 is not set
 # FREETZ_TYPE_5590 is not set
-# FREETZ_TYPE_5690 is not set
+# FREETZ_TYPE_5690_PRO is not set
 
 #
 # Cable
@@ -150,7 +150,7 @@ FREETZ_TYPE_6890=y
 # FREETZ_TYPE_7510 is not set
 # FREETZ_TYPE_7520 is not set
 # FREETZ_TYPE_7521 is not set
-# FREETZ_TYPE_7530 is not set
+# FREETZ_TYPE_7530_W5_W6_W5_W6 is not set
 # FREETZ_TYPE_7539 is not set
 # FREETZ_TYPE_7560 is not set
 # FREETZ_TYPE_7570 is not set
@@ -159,7 +159,7 @@ FREETZ_TYPE_6890=y
 # FREETZ_TYPE_7582 is not set
 # FREETZ_TYPE_7583 is not set
 # FREETZ_TYPE_7584 is not set
-# FREETZ_TYPE_7590 is not set
+# FREETZ_TYPE_7590_W6_W5_W6_W5 is not set
 # FREETZ_TYPE_7599 is not set
 # FREETZ_TYPE_7690 is not set
 
@@ -182,7 +182,7 @@ FREETZ_TYPE_6890=y
 # FREETZ_TYPE_1200 is not set
 # FREETZ_TYPE_1209 is not set
 # FREETZ_TYPE_1750 is not set
-# FREETZ_TYPE_2400 is not set
+# FREETZ_TYPE_2400_W6_W5_W6_W5 is not set
 # FREETZ_TYPE_3000 is not set
 # FREETZ_TYPE_3009 is not set
 # FREETZ_TYPE_6000 is not set

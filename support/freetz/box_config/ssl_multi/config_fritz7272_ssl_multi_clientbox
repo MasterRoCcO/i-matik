@@ -137,7 +137,7 @@ FREETZ_TYPE_7272=y
 # FREETZ_TYPE_7490 is not set
 # FREETZ_TYPE_7510 is not set
 # FREETZ_TYPE_7520 is not set
-# FREETZ_TYPE_7530 is not set
+# FREETZ_TYPE_7530_W5_W6_W5_W6 is not set
 # FREETZ_TYPE_7539 is not set
 # FREETZ_TYPE_7560 is not set
 # FREETZ_TYPE_7570 is not set
@@ -146,7 +146,7 @@ FREETZ_TYPE_7272=y
 # FREETZ_TYPE_7582 is not set
 # FREETZ_TYPE_7583 is not set
 # FREETZ_TYPE_7584 is not set
-# FREETZ_TYPE_7590 is not set
+# FREETZ_TYPE_7590_W6_W5_W6_W5 is not set
 # FREETZ_TYPE_7599 is not set
 
 #
@@ -167,7 +167,7 @@ FREETZ_TYPE_7272=y
 # FREETZ_TYPE_1200 is not set
 # FREETZ_TYPE_1209 is not set
 # FREETZ_TYPE_1750 is not set
-# FREETZ_TYPE_2400 is not set
+# FREETZ_TYPE_2400_W5_W5 is not set
 # FREETZ_TYPE_3000 is not set
 # FREETZ_TYPE_6000 is not set
 FREETZ_TYPE_LANG_DE=y
