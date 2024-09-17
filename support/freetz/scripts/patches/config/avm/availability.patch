@@ -1,5 +1,5 @@
 --- config/avm/availability.in
-+++ onfig/avm/availability.in	2024-09-17 16:15:04.320544291 +0200
++++ config/avm/availability.in	2024-09-17 17:51:31.134393357 +0200
 @@ -400,7 +400,6 @@
  			FREETZ_TYPE_6820_V2 \
  		))
@@ -63,6 +63,6 @@
  			FREETZ_TYPE_5590 || \
 +			FREETZ_TYPE_6850_4G || \
 +			FREETZ_TYPE_6850_5G || \
- 			FREETZ_TYPE_7530 || \
- 			FREETZ_TYPE_7539 || \
+ 			FREETZ_TYPE_7530_W5 || \
+ 			FREETZ_TYPE_7530_W6 || \
  			FREETZ_TYPE_7590 || \
