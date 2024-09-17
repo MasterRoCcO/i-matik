@@ -196,7 +196,7 @@
 -	default "fritzbox-7590-labor-114800.zip"                                               if FREETZ_TYPE_7590
 -	default "fritzbox-7590 AX-labor-114803.zip"                                            if FREETZ_TYPE_7599
 -#	default "xxxxxxxxxxxxxxxxxxxxxxxxx.zip"                                                if FREETZ_TYPE_xxxx
-+	default "fritzbox-4040-labor-115550.zip"                                               if FREETZ_TYPE_4040+	
++	default "fritzbox-4040-labor-115550.zip"                                               if FREETZ_TYPE_4040	
 +	default "fritzbox-4060-labor-115493.zip"                                               if FREETZ_TYPE_4060
 +	default "fritzbox-5530-labor-115267.zip"                                               if FREETZ_TYPE_5530
 +	default "fritzbox-5590-labor-115257.zip"                                               if FREETZ_TYPE_5590
