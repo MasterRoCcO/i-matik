@@ -82,7 +82,7 @@
  config FREETZ_ENABLE_GPON_SERIAL
  	bool "Enable GPON serial textbox"
 -	depends on FREETZ_TYPE_FIBER && FREETZ_AVM_VERSION_07_5X_MAX
-+	depends on FREETZ_AVM_VERSION_07_5X_MIN && !FREETZ_TYPE_FIRMWARE_INHAUS
++	depends on FREETZ_AVM_VERSION_07_5X_MIN
  	depends on !FREETZ_REMOVE_SUPPORT
 +	depends on \
 +		( FREETZ_AVM_VERSION_07_5X_MIN && ( \
