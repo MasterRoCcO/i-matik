@@ -134,8 +134,8 @@ FREETZ_TYPE_6840=y
 # FREETZ_TYPE_7510 is not set
 # FREETZ_TYPE_7520_V1 is not set
 # FREETZ_TYPE_7520_V2 is not set
-# FREETZ_TYPE_7530_W5_W6_W5_W6 is not set
-# FREETZ_TYPE_7539 is not set
+# FREETZ_TYPE_7530_W5 is not set
+# FREETZ_TYPE_7530_W6 is not set
 # FREETZ_TYPE_7560 is not set
 # FREETZ_TYPE_7570 is not set
 # FREETZ_TYPE_7580 is not set
@@ -143,8 +143,8 @@ FREETZ_TYPE_6840=y
 # FREETZ_TYPE_7582 is not set
 # FREETZ_TYPE_7583 is not set
 # FREETZ_TYPE_7584 is not set
-# FREETZ_TYPE_7590_W6_W5_W6_W5 is not set
-# FREETZ_TYPE_7599 is not set
+# FREETZ_TYPE_7590_W5 is not set
+# FREETZ_TYPE_7590_W6 is not set
 
 #
 # Powerline
