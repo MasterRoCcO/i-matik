@@ -132,8 +132,8 @@ FREETZ_SERIES_ALL=y
 # FREETZ_TYPE_7430 is not set
 # FREETZ_TYPE_7490 is not set
 # FREETZ_TYPE_7510 is not set
-# FREETZ_TYPE_7520 is not set
-# FREETZ_TYPE_7521 is not set
+# FREETZ_TYPE_7520_V1 is not set
+# FREETZ_TYPE_7520_V2 is not set
 # FREETZ_TYPE_7530_W5_W6_W5_W6 is not set
 # FREETZ_TYPE_7539 is not set
 FREETZ_TYPE_7560=y
