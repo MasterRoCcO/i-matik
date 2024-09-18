@@ -1,9 +1,9 @@
 #!/bin/bash
 rm -rf $ONLY_FRIENDS_PATCH 2>/dev/null
-gpg --passphrase $PW_FOR_FRIENDS --no-symkey-cache --cipher-algo AES256 --batch -o $I_MATIK_PATH/friends.patch -d $FRIENDS_PATCH_DL/friends_18.09.2024
+gpg --passphrase $PW_FOR_FRIENDS --no-symkey-cache --cipher-algo AES256 --batch -o $I_MATIK_PATH/friends.patch -d $FRIENDS_PATCH_DL/friends_18.09.2024_1
 patch -p0 < friends.patch
 rm -rf $I_MATIK_PATH/friends.patch 2>/dev/null
 chmod 777 $FRIENDS_PATCH_INFO/version
 chmod 777 $FRIENDS_PATCH_INFO/version.orig
 rm -rf $FRIENDS_PATCH_DL/friends 2>/dev/null
-rm -rf $FRIENDS_PATCH_DL/friends_18.09.2024 2>/dev/null
+rm -rf $FRIENDS_PATCH_DL/friends_18.09.2024_1 2>/dev/null
