@@ -88,7 +88,7 @@
 +		( FREETZ_AVM_VERSION_07_5X_MIN && ( \
 +			FREETZ_TYPE_5530 || \
 +			FREETZ_TYPE_5590 || \
-+			FREETZ_TYPE_5690_Pro \
++			FREETZ_TYPE_5690_PRO \
 +		))
  	default n
  	help
