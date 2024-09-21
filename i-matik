@@ -115,7 +115,7 @@ elif [[ $1 == '4060' ]] && [[ $2 == '-push' ]]; then
 source $SSL11_PUSH
 
 elif [[ $1 == '5590.11' ]]; then
-source $NO_INMEMORY
+printf ${RED}"No support, please use 30 for this\n"
 elif [[ $1 == '5590.30' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '5590.33' ]]; then
@@ -148,7 +148,7 @@ elif [[ $1 == '7510' ]] && [[ $2 == '-push' ]]; then
 source $SSL11_PUSH
 
 elif [[ $1 == '7530AX.11' ]]; then
-source $NO_INMEMORY
+printf ${RED}"No support, please use 30 for this\n"
 elif [[ $1 == '7530AX.30' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '7530AX.33' ]]; then
@@ -593,7 +593,7 @@ elif [[ $1 == '7590' ]] && [[ $2 == '-push' ]]; then
 source $SSL11_PUSH
 
 elif [[ $1 == '7590AX.11' ]]; then
-source $I_MATIK
+printf ${RED}"No support, please use 30 for this\n"
 elif [[ $1 == '7590AX.30' ]]; then
 source $I_MATIK
 elif [[ $1 == '7590AX.33' ]]; then
@@ -886,7 +886,7 @@ elif [[ $1 == '2400' ]] && [[ $2 == '-push' ]]; then
 source $SSL11_PUSH_REPEATER
 
 elif [[ $1 == '5530.11' ]]; then
-source $NO_INMEMORY_NO_OSCAM
+printf ${RED}"No support, please use 30 for this\n"
 elif [[ $1 == '5530.30' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '5530.33' ]]; then
