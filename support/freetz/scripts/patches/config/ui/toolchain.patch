@@ -1,6 +1,6 @@
 --- config/ui/toolchain.in
-+++ config/ui/toolchain.in	2024-08-12 16:28:07.137669230 +0200
-@@ -724,65 +724,65 @@
++++ config/ui/toolchain.in	2024-09-27 20:11:51.608339285 +0200
+@@ -736,65 +736,65 @@
  
  	config FREETZ_TARGET_GCC_4_6
  		bool "gcc-4.6.4"
