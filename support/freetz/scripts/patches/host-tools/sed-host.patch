@@ -7,5 +7,5 @@
 -$(PKG)_HASH:=6e226b732e1cd739464ad6862bd1a1aba42d7982922da7a53519631d24975181
 +$(PKG)_HASH:=f79b0cfea71b37a8eeec8490db6c5f7ae7719c35587f21edb0617f370eeff633
  $(PKG)_SITE:=@GNU/sed
- 
- $(PKG)_BINARY:=$($(PKG)_DIR)/sed/sed
+ ### WEBSITE:=https://www.gnu.org/software/sed/
+ ### MANPAGE:=https://sed.sourceforge.io/#docs
