@@ -9,7 +9,7 @@ I_MATIK_PATH=$(cd `dirname $0` && pwd)
 git pull 2>/dev/null
 source $I_MATIK_PATH/support/i-matik/config/i-matik
 source $INSTAL_CHECK
-VERSIONS_NR="0.93.6(f26.2)(i09.2)"
+VERSIONS_NR="0.93.7(f26.2)(i09.2)"
 ln -s $CREATE_BOXES $I_MATIK_PATH/my-boxes_please_edit_me 2>/dev/null
 source $I_MATIK_PATH/support/freetz/scripts/friends 2>/dev/null
 
@@ -70,7 +70,7 @@ elif [[ $1 == '7520-Alien7530' ]] && [[ $2 == '-push' ]]; then
 source $SSL11_PUSH
 
 elif [[ $1 == '7530.11' ]]; then
-source $I_MATIK
+printf ${RED}"No support, please use 30 for this\n"
 elif [[ $1 == '7530.30' ]]; then
 source $I_MATIK
 elif [[ $1 == '7530.33' ]]; then
