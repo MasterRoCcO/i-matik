@@ -1,2 +1,17 @@
 #!/bin/bash
-sed -i "s+# FREETZ_PACKAGE_ACME is not set+FREETZ_PACKAGE_ACME=y+g" $FREETZ_SSL_HOME_PATH/.config
+#!/bin/bash
+
+# Define the configurations to enable
+CONFIGS_TO_ENABLE=(
+	"FREETZ_PACKAGE_ACME"
+	"FREETZ_PACKAGE_CA_BUNDLE"
+	"FREETZ_PACKAGE_OPENSSL"
+)
+
+# File path
+CONFIG_FILE="$FREETZ_SSL_HOME_PATH/.config"
+
+# Enable specified configurations
+for CONFIG in "${CONFIGS_TO_ENABLE[@]}"; do
+	sed -i "s+# ${CONFIG} is not set+${CONFIG}=y+g" "$CONFIG_FILE"
+done
