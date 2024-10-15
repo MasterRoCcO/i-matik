@@ -1,3 +1,10 @@
 #!/bin/bash
-sed -i "s+FREETZ_ADD_TELNETD=y+# FREETZ_ADD_TELNETD is not set+g" $FREETZ_SSL_HOME_PATH/.config
-sed -i "s+FREETZ_RUN_TELEFON_IN_INHAUS_MODE=y+# FREETZ_RUN_TELEFON_IN_INHAUS_MODE is not set+g" $FREETZ_SSL_HOME_PATH/.config
+
+disable_feature() {
+	local feature=$1
+	sed -i "s+$feature=y+# $feature is not set+g" "$FREETZ_SSL_HOME_PATH/.config"
+}
+
+# Disable specific features
+disable_feature "FREETZ_ADD_TELNETD"
+disable_feature "FREETZ_RUN_TELEFON_IN_INHAUS_MODE"
