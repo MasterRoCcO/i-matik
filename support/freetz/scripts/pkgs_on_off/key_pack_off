@@ -1,2 +1,0 @@
-#!/bin/bash
-sed -i "s+FREETZ_PACKAGE_KEY_PACK_PRISRAK=y+# FREETZ_PACKAGE_KEY_PACK_PRISRAK is not set+g" $FREETZ_SSL_HOME_PATH/.config
