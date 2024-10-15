@@ -1,4 +1,10 @@
 #!/bin/bash
-sed -i "s+# FREETZ_PACKAGE_VNSTAT_CGI is not set+FREETZ_PACKAGE_VNSTAT_CGI=y+g" $FREETZ_SSL_HOME_PATH/.config
-FUD_COMMENT_VNSTAT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
-sed -i "s+${FUD_COMMENT_VNSTAT}+vnstat_${FUD_COMMENT_VNSTAT}+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+
+# Enable VNStat CGI package in the configuration
+sed -i "s+# FREETZ_PACKAGE_VNSTAT_CGI is not set+FREETZ_PACKAGE_VNSTAT_CGI=y+g" "$FREETZ_SSL_HOME_PATH/.config"
+
+# Extract the user-defined comment
+FUD_COMMENT_VNSTAT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' "$FREETZ_SSL_HOME_PATH/.config" | awk -F'"' '{print $2}' | xargs)"
+
+# Update the user-defined comment in the configuration
+sed -i "s+${FUD_COMMENT_VNSTAT}+vnstat_${FUD_COMMENT_VNSTAT}+g" "$FREETZ_SSL_HOME_PATH/.config" 2>/dev/null
