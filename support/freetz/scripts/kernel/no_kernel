@@ -1,22 +1,13 @@
 #!/bin/bash
+# Extract the kernel version
 KERNEL="$(grep '^FREETZ_KERNEL_VERSION=' .config | awk -F'"' '{print $2}' | xargs)"
 
-if [ $KERNEL = $BAD_KERNEL1 ]
-	then
-		source $OSCAM_OFF
-elif [ $KERNEL = $BAD_KERNEL2 ]
-	then
-		source $OSCAM_OFF
-elif [ $KERNEL = $BAD_KERNEL3 ]
-	then
-		source $OSCAM_OFF
-elif [ $KERNEL = $BAD_KERNEL4 ]
-	then
-		source $OSCAM_OFF
-elif [ $KERNEL = $BAD_KERNEL5 ]
-	then
-		source $OSCAM_OFF
-elif [ $KERNEL = $BAD_KERNEL6 ]
-	then
-		source $OSCAM_OFF
+# Check if the kernel version matches any of the BAD_KERNEL values
+if [[ "$KERNEL" == "$BAD_KERNEL1" || 
+	"$KERNEL" == "$BAD_KERNEL2" || 
+	"$KERNEL" == "$BAD_KERNEL3" || 
+	"$KERNEL" == "$BAD_KERNEL4" || 
+	"$KERNEL" == "$BAD_KERNEL5" || 
+	"$KERNEL" == "$BAD_KERNEL6" ]]; then
+	source "$OSCAM_OFF"
 fi
