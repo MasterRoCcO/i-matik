@@ -1,14 +1,29 @@
 #!/bin/bash
-#sudo ifconfig $NETZWERK 192.168.178.32 netmask 255.255.255.0
+# Uncomment to set the network configuration if needed
+# sudo ifconfig $NETZWERK 192.168.178.32 netmask 255.255.255.0
+
+# Extract user-defined comment from configuration
 FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' "$CONFIG_FRITZBOX_PATH/ssl_11/config_fritz$1_ssl_1_1_x_powerline" | awk -F'"' '{print $2}' | xargs)"
-#FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
+
+# Uncomment to extract box identifier from the comment if needed
+# FUD_COMMENT_BOX="$(echo "$FUD_COMMENT" | awk -F'_' '{print $NF}')"
 FUD_COMMENT_SSL="${FUD_COMMENT/"_${FUD_COMMENT_BOX}"/""}"
 
-BOX_ARCH="$(grep '^FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=' "${BOX_ARCH_PATH}/$1"| awk -F'"' '{print $2}' | xargs)" 2>/dev/null
-BOX_HOME="${BOX_ARCH}"	# set box home folder
+# Get the box architecture
+BOX_ARCH="$(grep '^FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=' "${BOX_ARCH_PATH}/$1" | awk -F'"' '{print $2}' | xargs 2>/dev/null)"
+BOX_HOME="$BOX_ARCH"  # Set box home folder
+
+# Set the Freetz SSL home path
 FREETZ_SSL_PATH="FREETZ_PATH_SSL_11"
 FREETZ_SSL_HOME_PATH="${!FREETZ_SSL_PATH}/$BOX_HOME"
 
-for PUSH_IMAGE_NAME in $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$1/${1}*${FUD_COMMENT_BOX}*${FUD_COMMENT_SSL}.image; do # Whitespace-safe but not recursive.
-$FREETZ_SSL_HOME_PATH/tools/./push_firmware $PUSH_IMAGE_NAME -cmd ftp
+# Push firmware images to the box
+for PUSH_IMAGE_NAME in "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$1/${1}*"*"$FUD_COMMENT_BOX"*"$FUD_COMMENT_SSL".image; do
+	# Check if the image file exists before attempting to push
+	if [[ -f "$PUSH_IMAGE_NAME" ]]; then
+		# Push the firmware image
+		"$FREETZ_SSL_HOME_PATH/tools/push_firmware" "$PUSH_IMAGE_NAME" -cmd ftp
+	else
+		echo "Image not found: $PUSH_IMAGE_NAME"
+	fi
 done
