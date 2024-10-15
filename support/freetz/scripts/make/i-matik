@@ -450,38 +450,27 @@ for bs in "${BOX_SSL[@]}"; do
 	timediff=$(($finish-$beginbs))	# build time
 	[[ $COUNT > 1 ]] && printf "\n${GREEN}${BOX_NAME} SSL ${SSL_VERSION}${NC} build finished in $(($timediff / 60)) minutes and $(($timediff % 60)) seconds. ${YELLOW}<- end time $(date +"%Y-%m-%d %H:%M:%S")${NC}\n"
 
-	# oscam
-	if [ -z $PARAM_DEL_OSCAM ]; then
-		sleep 0
-	else
-		rm $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-*
-	fi
-		source $EXIT_KERNEL 2>/dev/null
-
-	if [ -z $PARAM_OSCAM ]; then
-		sleep 0 #not oscam is created
-	else
-		source $OSCAM 2>/dev/null
+	# oscam management
+	if [ -n "$PARAM_DEL_OSCAM" ]; then
+		rm -f "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$BOX_NAME/oscam-*"
 	fi
 
-	if [ -z $PARAM_OSCAM_EMU ]; then
-		sleep 0 #not oscam is created
-	else
-		source $OSCAM_EMU 2>/dev/null
-	fi
+	source "$EXIT_KERNEL" 2>/dev/null
 
-	if [ -z $PARAM_OSCAM_SMOD ]; then
-		sleep 0 #not oscam is created
-	else
-		source $OSCAM_SMOD 2>/dev/null
-	fi
+	# Array of parameters and their corresponding sources
+	declare -A oscam_sources=(
+		[PARAM_OSCAM]="$OSCAM"
+		[PARAM_OSCAM_EMU]="$OSCAM_EMU"
+		[PARAM_OSCAM_SMOD]="$OSCAM_SMOD"
+		[PARAM_OSCAM_TOOL]="$OSCAM_TOOLCHAIN"
+	)
 
-	if [ -z $PARAM_OSCAM_TOOL ]; then
-		sleep 0 #not oscam is created
-	else
-		source $OSCAM_TOOLCHAIN 2>/dev/null
-	fi
-done
+	# Load oscam components if the corresponding parameter is set
+	for param in "${!oscam_sources[@]}"; do
+		if [ -n "${!param}" ]; then
+			source "${oscam_sources[$param]}" 2>/dev/null
+		fi
+	done
 
 	[ -f .config_backup ] && mv .config_backup .config	# rename backup config to original config
 
