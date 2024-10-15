@@ -1,7 +1,23 @@
 #!/bin/bash
-sed -i "s+FREETZ_PACKAGE_VSFTPD=y+# FREETZ_PACKAGE_VSFTPD is not set+g" $FREETZ_SSL_HOME_PATH/.config
-sed -i "s+FREETZ_LIB_libcrypto=y+# FREETZ_LIB_libcrypto is not set+g" $FREETZ_SSL_HOME_PATH/.config
-sed -i "s+FREETZ_LIB_libcrypto_WITH_EC=y+# FREETZ_LIB_libcrypto_WITH_EC is not set+g" $FREETZ_SSL_HOME_PATH/.config
-sed -i "s+FREETZ_LIB_libssl=y+# FREETZ_LIB_libssl is not set+g" $FREETZ_SSL_HOME_PATH/.config
-grep -v FREETZ_PACKAGE_VSFTPD_WITH_SSL $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
-grep -v FREETZ_PACKAGE_VSFTPD_STATIC $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+
+# Function to disable features in the .config file
+disable_feature() {
+	local feature=$1
+	sed -i "s+$feature=y+# $feature is not set+g" "$FREETZ_SSL_HOME_PATH/.config"
+}
+
+# Function to remove lines containing a specific feature
+remove_feature_line() {
+	local feature=$1
+	grep -v "$feature" "$FREETZ_SSL_HOME_PATH/.config" > "$FREETZ_SSL_HOME_PATH/tempdatei" && mv "$FREETZ_SSL_HOME_PATH/tempdatei" "$FREETZ_SSL_HOME_PATH/.config"
+}
+
+# Disable specified VSFTPD and library features
+disable_feature "FREETZ_PACKAGE_VSFTPD"
+disable_feature "FREETZ_LIB_libcrypto"
+disable_feature "FREETZ_LIB_libcrypto_WITH_EC"
+disable_feature "FREETZ_LIB_libssl"
+
+# Remove lines for specified VSFTPD features
+remove_feature_line "FREETZ_PACKAGE_VSFTPD_WITH_SSL"
+remove_feature_line "FREETZ_PACKAGE_VSFTPD_STATIC"
