@@ -1,7 +1,10 @@
 #!/bin/bash
-sed -i "s+FREETZ_PACKAGE_LCD4LINUX=y+# FREETZ_PACKAGE_LCD4LINUX is not set+g" $FREETZ_SSL_HOME_PATH/.config
-sed -i "s+FREETZ_LIB_libncurses=y+# FREETZ_LIB_libncurses is not set+g" $FREETZ_SSL_HOME_PATH/.config
-grep -v FREETZ_LIB_libncurses $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
-grep -v FREETZ_LIB_libform $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
-grep -v FREETZ_LIB_libmenu $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
-grep -v FREETZ_LIB_libpanel $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+
+# Disable the LCD4Linux package in the configuration
+sed -i "s+FREETZ_PACKAGE_LCD4LINUX=y+# FREETZ_PACKAGE_LCD4LINUX is not set+g" "$FREETZ_SSL_HOME_PATH/.config"
+sed -i "s+FREETZ_LIB_libncurses=y+# FREETZ_LIB_libncurses is not set+g" "$FREETZ_SSL_HOME_PATH/.config"
+
+# Remove specified lines from the configuration file
+for lib in libncurses libform libmenu libpanel; do
+    grep -v "FREETZ_LIB_$lib" "$FREETZ_SSL_HOME_PATH/.config" > "$FREETZ_SSL_HOME_PATH/tempdatei" && mv "$FREETZ_SSL_HOME_PATH/tempdatei" "$FREETZ_SSL_HOME_PATH/.config"
+done
