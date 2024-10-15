@@ -1,6 +1,17 @@
 #!/bin/bash
-sed -i "s+FREETZ_PACKAGE_TOR=y+# FREETZ_PACKAGE_TOR is not set+g" $FREETZ_SSL_HOME_PATH/.config
-sed -i "s+FREETZ_LIB_libcrypto_WITH_EC=y+# FREETZ_LIB_libcrypto_WITH_EC is not set+g" $FREETZ_SSL_HOME_PATH/.config
-sed -i "s+FREETZ_LIB_libevent=y+# FREETZ_LIB_libevent is not set+g" $FREETZ_SSL_HOME_PATH/.config
-sed -i "s+FREETZ_BUSYBOX___V136_SOFTLIMIT=y+# FREETZ_BUSYBOX___V136_SOFTLIMIT is not set+g" $FREETZ_SSL_HOME_PATH/.config
-grep -v FREETZ_BUSYBOX_SOFTLIMIT $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+
+# Function to disable features in the .config file
+disable_feature() {
+	local feature=$1
+	sed -i "s+$feature=y+# $feature is not set+g" "$FREETZ_SSL_HOME_PATH/.config"
+}
+
+# Disable specified features
+disable_feature "FREETZ_PACKAGE_TOR"
+disable_feature "FREETZ_LIB_libcrypto_WITH_EC"
+disable_feature "FREETZ_LIB_libevent"
+disable_feature "FREETZ_BUSYBOX___V136_SOFTLIMIT"
+
+# Remove FREETZ_BUSYBOX_SOFTLIMIT reference from the .config file
+grep -v FREETZ_BUSYBOX_SOFTLIMIT "$FREETZ_SSL_HOME_PATH/.config" > "$FREETZ_SSL_HOME_PATH/tempdatei"
+mv "$FREETZ_SSL_HOME_PATH/tempdatei" "$FREETZ_SSL_HOME_PATH/.config"
