@@ -1,79 +1,38 @@
 #!/bin/bash
-if [ -z $PARAM_CM ]; then
-	sleep 0
-else
-	source $PKGS_PATH_ON_OFF/callmonitor_on
-fi
 
-if [ -z $PARAM_RR ]; then
-	sleep 0
-else
-	source $PKGS_PATH_ON_OFF/rrdstats_on
-	source $PKGS_PATH_ON_OFF/cifsmount_on
-fi
-	
-if [ -z $PARAM_RR_1_8 ]; then
-	sleep 0
-else
-	source $PKGS_PATH_ON_OFF/rrdstats_1_8_on
-	source $PKGS_PATH_ON_OFF/cifsmount_on
-fi
+# Define an associative array for parameters and their corresponding scripts
+declare -A scripts=(
+	["PARAM_CM"]="$PKGS_PATH_ON_OFF/callmonitor_on"
+	["PARAM_RR"]="$PKGS_PATH_ON_OFF/rrdstats_on"
+	["PARAM_RR_CIFSMOUNT"]="$PKGS_PATH_ON_OFF/cifsmount_on"
+	["PARAM_RR_1_8"]="$PKGS_PATH_ON_OFF/rrdstats_1_8_on"
+	["PARAM_USER_SCRIPTS"]="$USER_APPLICATION_ON"
+	["PARAM_VNSTAT"]="$PKGS_PATH_ON_OFF/vnstat_on"
+	["PARAM_WIREGUARD"]="$PKGS_PATH_ON_OFF/wireguard_on"
+	["PARAM_OPENVPN"]="$PKGS_PATH_ON_OFF/openvpn_on"
+	["PARAM_TELNET"]="$PKGS_PATH_ON_OFF/telnet_on"
+	["PARAM_IDM"]="$PKGS_PATH_ON_OFF/inadyn-mt_on"
+	["PARAM_L4L"]="$PKGS_PATH_ON_OFF/l4l_on"
+	["PARAM_VFP"]="$PKGS_PATH_ON_OFF/vfp_on"
+)
 
-if [ -z $PARAM_USER_SCRIPTS ]; then
-	sleep 0
-else
-	ln -s $USER_APPLICATION_ON $I_MATIK_PATH/user-application_please_edit_me 2>/dev/null
-	source $USER_APPLICATION_ON
-fi
-	
-if [ -z $PARAM_VNSTAT ]; then
-	sleep 0
-else
-	source $PKGS_PATH_ON_OFF/vnstat_on
-fi
-	
-if [ -z $PARAM_WIREGUARD ]; then
-	sleep 0
-else
-	source $PKGS_PATH_ON_OFF/wireguard_on
-fi
+# Loop through the parameters and source the scripts if the parameter is set
+for param in "${!scripts[@]}"; do
+	if [ ! -z "${!param}" ]; then
+		# Handle special case for PARAM_USER_SCRIPTS
+		if [ "$param" == "PARAM_USER_SCRIPTS" ]; then
+			ln -s "$USER_APPLICATION_ON" "$I_MATIK_PATH/user-application_please_edit_me" 2>/dev/null
+		fi
+		
+		# Source the corresponding script
+		source "${scripts[$param]}"
+		
+		# Additional handling for PARAM_RR and PARAM_RR_1_8
+		if [ "$param" == "PARAM_RR" ] || [ "$param" == "PARAM_RR_1_8" ]; then
+			source "$PKGS_PATH_ON_OFF/cifsmount_on"
+		fi
+	fi
+done
 
-if [ -z $PARAM_OPENVPN ]; then
-	sleep 0
-else
-	source $PKGS_PATH_ON_OFF/openvpn_on
-fi
-
-if [ -z $PARAM_TELNET ]; then
-	sleep 0
-else
-	source $PKGS_PATH_ON_OFF/telnet_on
-fi
-
-if [ -z $PARAM_KEYPACK ]; then
-	sleep 0
-else
-	source $PKGS_PATH_ON_OFF/key_pack_on
-fi
-
-if [ -z $PARAM_IDM ]; then
-	sleep 0
-else
-	source $PKGS_PATH_ON_OFF/inadyn-mt_on
-fi
-
-if [ -z $PARAM_L4L ]; then
-	sleep 0
-else
-	source $PKGS_PATH_ON_OFF/l4l_on
-fi
-
-
-if [ -z $PARAM_VFP ]; then
-	sleep 0
-else
-	source $PKGS_PATH_ON_OFF/vfp_on
-fi
-
-
-sed -i "s+FREETZ_TYPE_FIRMWARE_DETECT_LATEST=y+# FREETZ_TYPE_FIRMWARE_DETECT_LATEST is not set+g" $FREETZ_SSL_HOME_PATH/.config
+# Modify the configuration file
+sed -i "s+FREETZ_TYPE_FIRMWARE_DETECT_LATEST=y+# FREETZ_TYPE_FIRMWARE_DETECT_LATEST is not set+g" "$FREETZ_SSL_HOME_PATH/.config"
