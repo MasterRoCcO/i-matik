@@ -1,58 +1,13 @@
 #!/bin/bash
-if [ $KERNEL = $BAD_KERNEL1 ]
-	then
-	
-	[ -f .config_backup ] && mv .config_backup .config	# rename backup config to original config
+if [[ "$KERNEL" == "$BAD_KERNEL1" || "$KERNEL" == "$BAD_KERNEL2" || "$KERNEL" == "$BAD_KERNEL3" || "$KERNEL" == "$BAD_KERNEL4" ]]; then
+	[ -f .config_backup ] && mv .config_backup .config  # Rename backup config to original config
 
-#end point this shows you how long it took him to create the images
-finish=$(date +"%s")	# script finished time
-timediff=$(($finish-$begin))	# script time
-avg=$(($timediff / $COUNT))		# average time for box
-printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} box(es). ->  $(($avg / 60))m $(($avg % 60))s per box\n"
-$VERSION	# show i-matik disclaimer
-sed -i "s+${VERSIONS_NR}+xxxxx+g" $VERSION
-exit
-
-elif [ $KERNEL = $BAD_KERNEL2 ]
-	then
-	
-	[ -f .config_backup ] && mv .config_backup .config	# rename backup config to original config
-
-#end point this shows you how long it took him to create the images
-finish=$(date +"%s")	# script finished time
-timediff=$(($finish-$begin))	# script time
-avg=$(($timediff / $COUNT))		# average time for box
-printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} box(es). ->  $(($avg / 60))m $(($avg % 60))s per box\n"
-$VERSION	# show i-matik disclaimer
-sed -i "s+${VERSIONS_NR}+xxxxx+g" $VERSION	# show i-matik disclaimer
-exit
-
-elif [ $KERNEL = $BAD_KERNEL3 ]
-	then
-	
-	[ -f .config_backup ] && mv .config_backup .config	# rename backup config to original config
-
-#end point this shows you how long it took him to create the images
-finish=$(date +"%s")	# script finished time
-timediff=$(($finish-$begin))	# script time
-avg=$(($timediff / $COUNT))		# average time for box
-printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} box(es). ->  $(($avg / 60))m $(($avg % 60))s per box\n"
-$VERSION	# show i-matik disclaimer
-sed -i "s+${VERSIONS_NR}+xxxxx+g" $VERSION
-exit
-
-elif [ $KERNEL = $BAD_KERNEL4 ]
-	then
-	
-	[ -f .config_backup ] && mv .config_backup .config	# rename backup config to original config
-
-#end point this shows you how long it took him to create the images
-finish=$(date +"%s")	# script finished time
-timediff=$(($finish-$begin))	# script time
-avg=$(($timediff / $COUNT))		# average time for box
-printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} box(es). ->  $(($avg / 60))m $(($avg % 60))s per box\n"
-$VERSION	# show i-matik disclaimer
-sed -i "s+${VERSIONS_NR}+xxxxx+g" $VERSION
-exit
-
-	fi
+	# End point: show how long it took to create the images
+	finish=$(date +"%s")	# Script finished time
+	timediff=$(($finish - $begin))  # Script time
+	avg=$(($timediff / $COUNT))	   # Average time per box
+	printf "\nBuild time was $(($timediff / 60)) minutes and $(($timediff % 60)) seconds for ${COUNT} box(es). -> $(($avg / 60))m $(($avg % 60))s per box\n"
+	$VERSION  # Show i-matik disclaimer
+	sed -i "s+${VERSIONS_NR}+xxxxx+g" $VERSION  # Update version number
+	exit
+fi
