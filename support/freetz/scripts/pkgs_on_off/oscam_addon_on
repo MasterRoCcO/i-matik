@@ -1,56 +1,19 @@
 #!/bin/bash
-source $OSCAM_ADDON_CONFIG
-if [ -z $PARAM_OSCAM ]; then
- 	sleep 0
-else
-ed $FREETZ_SSL_HOME_PATH/addon/static.pkg <<EOF
-/# Addons:/a
-${OSCAM_ADDON_VERSION}
-.
-wq
-EOF
-fi	
 
-if [ -z $PARAM_OSCAM_EMU ]; then
- 	sleep 0
-else
-ed $FREETZ_SSL_HOME_PATH/addon/static.pkg <<EOF
-/# Addons:/a
-${OSCAM_ADDON_VERSION}
-.
-wq
-EOF
-fi
-	
-if [ -z $PARAM_OSCAM_SMOD ]; then
- 	sleep 0
-else
-ed $FREETZ_SSL_HOME_PATH/addon/static.pkg <<EOF
-/# Addons:/a
-${OSCAM_ADDON_VERSION}
-.
-wq
-EOF
-fi
+# Source the OSCAM configuration
+source "$OSCAM_ADDON_CONFIG"
 
-if [ -z $PARAM_OSCAM_NCAM ]; then
- 	sleep 0
-else
-ed $FREETZ_SSL_HOME_PATH/addon/static.pkg <<EOF
+# Define an array of parameters to check
+PARAMETERS=("PARAM_OSCAM" "PARAM_OSCAM_EMU" "PARAM_OSCAM_SMOD" "PARAM_OSCAM_NCAM" "PARAM_OSCAM_TOOL")
+
+# Loop through each parameter and append OSCAM version if it's set
+for PARAM in "${PARAMETERS[@]}"; do
+	if [ -n "${!PARAM}" ]; then  # Check if the parameter is set
+		ed "$FREETZ_SSL_HOME_PATH/addon/static.pkg" <<EOF
 /# Addons:/a
 ${OSCAM_ADDON_VERSION}
 .
 wq
 EOF
-fi
-		
-if [ -z $PARAM_OSCAM_TOOL ]; then
-	sleep 0
-else
-ed $FREETZ_SSL_HOME_PATH/addon/static.pkg <<EOF
-/# Addons:/a
-${OSCAM_ADDON_VERSION}
-.
-wq
-EOF
-fi
+	fi
+done
