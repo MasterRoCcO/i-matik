@@ -9,7 +9,7 @@ I_MATIK_PATH=$(cd `dirname $0` && pwd)
 git pull 2>/dev/null
 source $I_MATIK_PATH/support/i-matik/config/i-matik
 source $INSTAL_CHECK
-VERSIONS_NR="0.93.9(f26.4)(i09.2)"
+VERSIONS_NR="0.93.8(f26.4)(i09.2)"
 ln -s $CREATE_BOXES $I_MATIK_PATH/my-boxes_please_edit_me 2>/dev/null
 source $I_MATIK_PATH/support/freetz/scripts/friends 2>/dev/null
 
@@ -82,7 +82,7 @@ source $SSL11_PUSH
 
 #arm boxen no inmemory
 elif [[ $1 == '4040.11' ]]; then
-source $NO_INMEMORY
+printf ${RED}"No support, please use 30 for this\n"
 elif [[ $1 == '4040.30' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '4040.33' ]]; then
@@ -113,6 +113,17 @@ elif [[ $1 == '4060.multi' ]]; then
 source $SSL11
 elif [[ $1 == '4060' ]] && [[ $2 == '-push' ]]; then
 source $SSL11_PUSH
+
+#elif [[ $1 == '4690.11' ]]; then
+#source $NO_INMEMORY
+elif [[ $1 == '4690.30' ]]; then
+source $NO_INMEMORY
+elif [[ $1 == '4690.33' ]]; then
+source $NO_INMEMORY
+elif [[ $1 == '4690.multi' ]]; then
+source $SSL30
+elif [[ $1 == '4690' ]] && [[ $2 == '-push' ]]; then
+source $SSL30_PUSH
 
 elif [[ $1 == '5590.11' ]]; then
 printf ${RED}"No support, please use 30 for this\n"
@@ -941,59 +952,40 @@ elif [[ $1 == 'oscam_tcupdate' ]]; then
 source $OSCAM_TCUPDATE
 
 else
-# Generate list of supported devices
-SUPPORTED_BOX_TYPE_LIST_SSL_1_0="$(find "$CONFIG_FRITZBOX_PATH_SSL_10" -name "config_fritz*ssl_1_0*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
-SUPPORTED_BOX_TYPE_LIST_SSL_1_0="${SUPPORTED_BOX_TYPE_LIST_SSL_1_0//"fritz"/""}"
-SUPPORTED_BOX_TYPE_LIST_SSL_1_0="$(echo $SUPPORTED_BOX_TYPE_LIST_SSL_1_0 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
-# Generate list of supported ssl versions
-SUPPORTED_SSL_NUMBER_LIST_SSL_1_0="$(find "$CONFIG_FRITZBOX_PATH_SSL_10" -name "ssl_1_0*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
-SUPPORTED_SSL_NUMBER_LIST_SSL_1_0="$(echo $SUPPORTED_SSL_NUMBER_LIST_SSL_1_0 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
+# Function to generate list of supported devices
+generate_device_list() {
+    local config_path=$1
+    local ssl_version=$2
+    local device_list_var="SUPPORTED_BOX_TYPE_LIST_SSL_$ssl_version"
+    local ssl_number_list_var="SUPPORTED_SSL_NUMBER_LIST_SSL_$ssl_version"
 
-# Generate list of supported devices
-SUPPORTED_BOX_TYPE_LIST_SSL_1_1="$(find "$CONFIG_FRITZBOX_PATH_SSL_11" -name "config_fritz*ssl_1_1*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
-SUPPORTED_BOX_TYPE_LIST_SSL_1_1="${SUPPORTED_BOX_TYPE_LIST_SSL_1_1//"fritz"/""}"
-SUPPORTED_BOX_TYPE_LIST_SSL_1_1="$(echo $SUPPORTED_BOX_TYPE_LIST_SSL_1_1 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
+    if [[ -d "$config_path" ]]; then
+        eval "$device_list_var=\"\$(find \"$config_path\" -name \"config_fritz*ssl_$ssl_version*\" -type f -exec basename {} \; | awk -F'_' '{print \$2}')\""
+        eval "$device_list_var=\"\${$device_list_var//\"fritz\"/\"\"}\""
+        eval "$device_list_var=\"\$(echo \$$device_list_var | tr ' ' '\n' | sort | uniq | tr '\n' ' ')\""
 
-# Generate list of supported ssl versions
-SUPPORTED_SSL_NUMBER_LIST_SSL_1_1="$(find "$CONFIG_FRITZBOX_PATH_SSL_11" -name "ssl_1_1*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
-SUPPORTED_SSL_NUMBER_LIST_SSL_1_1="$(echo $SUPPORTED_SSL_NUMBER_LIST_SSL_1_1 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
+        eval "$ssl_number_list_var=\"\$(find \"$config_path\" -name \"ssl_$ssl_version*\" -type d -exec basename {} \; | awk -F'_' '{print \$2}')\""
+        eval "$ssl_number_list_var=\"\$(echo \$$ssl_number_list_var | tr ' ' '\n' | sort | uniq | tr '\n' ' ')\""
+    else
+        echo "Warning: Directory $config_path does not exist."
+    fi
+}
 
-# Generate list of supported devices
-SUPPORTED_BOX_TYPE_LIST_SSL_3_0="$(find "$CONFIG_FRITZBOX_PATH_SSL_30" -name "config_fritz*ssl_3_0*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
-SUPPORTED_BOX_TYPE_LIST_SSL_3_0="${SUPPORTED_BOX_TYPE_LIST_SSL_3_0//"fritz"/""}"
-SUPPORTED_BOX_TYPE_LIST_SSL_3_0="$(echo $SUPPORTED_BOX_TYPE_LIST_SSL_3_0 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
+# Generate lists for different SSL versions
+generate_device_list "$CONFIG_FRITZBOX_PATH_SSL_10" "1_0"
+generate_device_list "$CONFIG_FRITZBOX_PATH_SSL_11" "1_1"
+generate_device_list "$CONFIG_FRITZBOX_PATH_SSL_30" "3_0"
+generate_device_list "$CONFIG_FRITZBOX_PATH_SSL_33" "3_3"
+generate_device_list "$CONFIG_FRITZBOX_PATH_SSL_multi" "multi"
 
-# Generate list of supported ssl versions
-SUPPORTED_SSL_NUMBER_LIST_SSL_3_0="$(find "$CONFIG_FRITZBOX_PATH_SSL_30" -name "ssl_3_0*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
-SUPPORTED_SSL_NUMBER_LIST_SSL_3_0="$(echo $SUPPORTED_SSL_NUMBER_LIST_SSL_3_0 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
-
-# Generate list of supported devices
-SUPPORTED_BOX_TYPE_LIST_SSL_3_3="$(find "$CONFIG_FRITZBOX_PATH_SSL_33" -name "config_fritz*ssl_3_3*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
-SUPPORTED_BOX_TYPE_LIST_SSL_3_3="${SUPPORTED_BOX_TYPE_LIST_SSL_3_3//"fritz"/""}"
-SUPPORTED_BOX_TYPE_LIST_SSL_3_3="$(echo $SUPPORTED_BOX_TYPE_LIST_SSL_3_3 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
-
-# Generate list of supported ssl versions
-SUPPORTED_SSL_NUMBER_LIST_SSL_3_3="$(find "$CONFIG_FRITZBOX_PATH_SSL_33" -name "ssl_3_3*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
-SUPPORTED_SSL_NUMBER_LIST_SSL_3_3="$(echo $SUPPORTED_SSL_NUMBER_LIST_SSL_3_3 | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
-
-# Generate list of supported devices
-SUPPORTED_BOX_TYPE_LIST_SSL_MULTI="$(find "$CONFIG_FRITZBOX_PATH_SSL_multi" -name "config_fritz*ssl_multi*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
-SUPPORTED_BOX_TYPE_LIST_SSL_MULTI="${SUPPORTED_BOX_TYPE_LIST_SSL_MULTI//"fritz"/""}"
-SUPPORTED_BOX_TYPE_LIST_SSL_MULTI="$(echo $SUPPORTED_BOX_TYPE_LIST_SSL_MULTI | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
-
-# Generate list of supported ssl versions
-SUPPORTED_SSL_NUMBER_LIST_SSL_MULTI="$(find "$CONFIG_FRITZBOX_PATH_SSL_multi" -name "ssl_multi*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
-SUPPORTED_SSL_NUMBER_LIST_SSL_MULTI="$(echo $SUPPORTED_SSL_NUMBER_LIST_SSL_MULTI | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
-
-# Generate list of supported devices
+# Generate list of supported devices for all versions
 SUPPORTED_BOX_TYPE_LIST="$(find "$I_MATIK_PATH/support/" -name "config_fritz*_*" -type f -exec basename {} \; | awk -F'_' '{print $2}')"
 SUPPORTED_BOX_TYPE_LIST="${SUPPORTED_BOX_TYPE_LIST//"fritz"/""}"
 SUPPORTED_BOX_TYPE_LIST="$(echo $SUPPORTED_BOX_TYPE_LIST | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
 
 # Generate list of supported ssl versions
-SUPPORTED_SSL_NUMBER_LIST="$(find "$I_MATIK_PATH/support/" -name "ssl_*" -type d -exec basename {} \;  | awk -F'_' '{print $2}')"
-SUPPORTED_SSL_NUMBER_LIST="$(echo $SUPPORTED_SSL_NUMBER_LIST | tr ' ' '\n' | sort | uniq | tr '\n' ' ')"
+SUPPORTED_SSL_NUMBER_LIST=$(find "$I_MATIK_PATH/support/" -name "ssl_*" -type d -exec basename {} \; | awk -F'_' '{print $2}' | sort -u | tr '\n' ' ')
 	printf "i-matik comes with ABSOLUTELY NO WARRANTY.  This is free software, and you\n"
 	printf "are welcome to redistribute it under certain conditions. See the GNU\n"
 	printf "General Public Licence for details.\n\n"
