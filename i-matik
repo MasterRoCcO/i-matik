@@ -37,7 +37,7 @@ elif [[ $1 == '68505g' ]] && [[ $2 == '-push' ]]; then
 source $SSL11_PUSH
 
 elif [[ $1 == '7520.11' ]]; then
-source $I_MATIK
+printf ${RED}"No support, please use 30 for this\n"
 elif [[ $1 == '7520.30' ]]; then
 source $I_MATIK
 elif [[ $1 == '7520.33' ]]; then
@@ -48,7 +48,7 @@ elif [[ $1 == '7520' ]] && [[ $2 == '-push' ]]; then
 source $SSL11_PUSH
 
 elif [[ $1 == '7520B.11' ]]; then
-source $I_MATIK
+printf ${RED}"No support, please use 30 for this\n"
 elif [[ $1 == '7520B.30' ]]; then
 source $I_MATIK
 elif [[ $1 == '7520B.33' ]]; then
