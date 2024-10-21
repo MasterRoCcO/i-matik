@@ -24,4 +24,4 @@ FREETZ_PACKAGE_RRDTOOL_VERSION_CURRENT=y
 wq
 EOF
 FUD_COMMENT_RRD="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
-sed -i "s+${FUD_COMMENT_RRD}+rrdtool_1_8_${FUD_COMMENT_RRD}+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+sed -i "s+${FUD_COMMENT_RRD}+rrdtool_1_9_${FUD_COMMENT_RRD}+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
