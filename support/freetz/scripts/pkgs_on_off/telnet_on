@@ -1,17 +1,7 @@
 #!/bin/bash
-
-# Enable features in the .config file
-enable_feature() {
-	local feature=$1
-	sed -i "s+# $feature is not set+$feature=y+g" "$FREETZ_SSL_HOME_PATH/.config"
-}
-
-# Call the function for each feature to enable
-enable_feature "FREETZ_ADD_TELNETD"
-enable_feature "FREETZ_RUN_TELEFON_IN_INHAUS_MODE"
-
-# Append configuration after enabling TELEFON_IN_INHAUS_MODE
-ed "$FREETZ_SSL_HOME_PATH/.config" <<EOF
+sed -i "s+# FREETZ_ADD_TELNETD is not set+FREETZ_ADD_TELNETD=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_RUN_TELEFON_IN_INHAUS_MODE is not set+FREETZ_RUN_TELEFON_IN_INHAUS_MODE=y+g" $FREETZ_SSL_HOME_PATH/.config
+ed $FREETZ_SSL_HOME_PATH/.config <<EOF
 /FREETZ_RUN_TELEFON_IN_INHAUS_MODE=y/a
 FREETZ_REPLACE_AR7LOGIN=y
 .

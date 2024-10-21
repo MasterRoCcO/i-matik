@@ -1,13 +1,9 @@
 #!/bin/bash
-
-# Enable VSFTPD and related libraries in the configuration
-sed -i "s+# FREETZ_PACKAGE_VSFTPD is not set+FREETZ_PACKAGE_VSFTPD=y+g" "$FREETZ_SSL_HOME_PATH/.config"
-sed -i "s+# FREETZ_LIB_libcrypto is not set+FREETZ_LIB_libcrypto=y+g" "$FREETZ_SSL_HOME_PATH/.config"
-sed -i "s+# FREETZ_LIB_libcrypto_WITH_EC is not set+FREETZ_LIB_libcrypto_WITH_EC=y+g" "$FREETZ_SSL_HOME_PATH/.config"
-sed -i "s+# FREETZ_LIB_libssl is not set+FREETZ_LIB_libssl=y+g" "$FREETZ_SSL_HOME_PATH/.config"
-
-# Append additional VSFTPD configurations
-ed "$FREETZ_SSL_HOME_PATH/.config" <<EOF
+sed -i "s+# FREETZ_PACKAGE_VSFTPD is not set+FREETZ_PACKAGE_VSFTPD=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_LIB_libcrypto is not set+FREETZ_LIB_libcrypto=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_LIB_libcrypto_WITH_EC is not set+FREETZ_LIB_libcrypto_WITH_EC=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_LIB_libssl is not set+FREETZ_LIB_libssl=y+g" $FREETZ_SSL_HOME_PATH/.config
+ed $FREETZ_SSL_HOME_PATH/.config <<EOF
 /FREETZ_PACKAGE_VSFTPD=y/a
 FREETZ_PACKAGE_VSFTPD_WITH_SSL=y
 FREETZ_PACKAGE_VSFTPD_STATIC=y

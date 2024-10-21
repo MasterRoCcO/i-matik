@@ -1,46 +1,27 @@
 #!/bin/bash
-
-# Function to modify a config line using sed
-modify_config() {
-	local search_pattern="$1"
-	local replacement="$2"
-	sed -i "s+$search_pattern+$replacement+g" "$FREETZ_SSL_HOME_PATH/.config"
-}
-
-# Function to append lines to the config file using ed
-append_lines() {
-	local pattern="$1"
-	shift
-	ed "$FREETZ_SSL_HOME_PATH/.config" <<EOF
-/$pattern/a
-$*
+sed -i "s+# FREETZ_PACKAGE_RRDSTATS is not set+FREETZ_PACKAGE_RRDSTATS=y+g" $FREETZ_SSL_HOME_PATH/.config
+#sed -i "s+# FREETZ_REMOVE_AVMCOUNTERD is not set+FREETZ_REMOVE_AVMCOUNTERD=y+g" $FREETZ_SSL_HOME_PATH/.config
+ed $FREETZ_SSL_HOME_PATH/.config <<EOF
+/FREETZ_PACKAGE_RRDSTATS=y/a
+# FREETZ_PACKAGE_RRDSTATS_CABLEMODEM is not set
+# FREETZ_PACKAGE_RRDSTATS_SEGMENTLOAD is not set
+FREETZ_PACKAGE_RRDSTATS_STORAGE=y
+FREETZ_PACKAGE_RRDSTATS_NETWORK=y
+FREETZ_PACKAGE_RRDSTATS_TEMPERATURE_SENSOR=y
+# FREETZ_PACKAGE_RRDSTATS_DIGITEMP is not set
+FREETZ_PACKAGE_RRDSTATS_SMARTHOME=y
 .
 wq
 EOF
-}
-
-# Enable RRDtool and set additional options
-modify_config "# FREETZ_PACKAGE_RRDSTATS is not set" "FREETZ_PACKAGE_RRDSTATS=y"
-append_lines "FREETZ_PACKAGE_RRDSTATS=y" \
-	"# FREETZ_PACKAGE_RRDSTATS_CABLEMODEM is not set" \
-	"# FREETZ_PACKAGE_RRDSTATS_SEGMENTLOAD is not set" \
-	"FREETZ_PACKAGE_RRDSTATS_STORAGE=y" \
-	"FREETZ_PACKAGE_RRDSTATS_NETWORK=y" \
-	"FREETZ_PACKAGE_RRDSTATS_TEMPERATURE_SENSOR=y" \
-	"# FREETZ_PACKAGE_RRDSTATS_DIGITEMP is not set" \
-	"FREETZ_PACKAGE_RRDSTATS_SMARTHOME=y"
-
-# Remove unwanted lines from the config
-for pattern in "FREETZ_PACKAGE_RRDTOOL_VERSION_ABANDON" "FREETZ_PACKAGE_RRDTOOL_VERSION_CURRENT"; do
-	grep -v "$pattern" "$FREETZ_SSL_HOME_PATH/.config" > "$FREETZ_SSL_HOME_PATH/tempdatei" && mv "$FREETZ_SSL_HOME_PATH/tempdatei" "$FREETZ_SSL_HOME_PATH/.config"
-done
-
-# Enable RRDtool and set the version
-modify_config "# FREETZ_PACKAGE_RRDTOOL is not set" "FREETZ_PACKAGE_RRDTOOL=y"
-append_lines "FREETZ_PACKAGE_RRDTOOL=y" \
-	"# FREETZ_PACKAGE_RRDTOOL_VERSION_ABANDON is not set" \
-	"FREETZ_PACKAGE_RRDTOOL_VERSION_CURRENT=y"
-
-# Update the user-defined comment
+grep -v FREETZ_PACKAGE_RRDTOOL_VERSION_ABANDON $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+grep -v FREETZ_PACKAGE_RRDTOOL_VERSION_CURRENT $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_PACKAGE_RRDTOOL is not set+FREETZ_PACKAGE_RRDTOOL=y+g" $FREETZ_SSL_HOME_PATH/.config
+ed $FREETZ_SSL_HOME_PATH/.config <<EOF
+/FREETZ_PACKAGE_RRDTOOL=y/a
+# FREETZ_PACKAGE_RRDTOOL_VERSION_ABANDON is not set
+FREETZ_PACKAGE_RRDTOOL_VERSION_CURRENT=y
+.
+wq
+EOF
 FUD_COMMENT_RRD="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
 sed -i "s+${FUD_COMMENT_RRD}+rrdtool_1_8_${FUD_COMMENT_RRD}+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null

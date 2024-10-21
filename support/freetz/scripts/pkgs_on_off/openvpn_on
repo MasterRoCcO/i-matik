@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Edit the configuration file to update OpenVPN settings
-ed "$FREETZ_SSL_HOME_PATH/.config" <<EOF
+ed $FREETZ_SSL_HOME_PATH/.config <<EOF
 /# FREETZ_PACKAGE_OPENVPN is not set/a
 # FREETZ_PACKAGE_OPENVPN_USE_V0_CGI is not set
 FREETZ_PACKAGE_OPENVPN_USE_V1_CGI=y
@@ -18,13 +17,8 @@ FREETZ_PACKAGE_OPENVPN_USE_IPROUTE=y
 .
 wq
 EOF
-
-# Enable the main OpenVPN package in the configuration
-sed -i "s+# FREETZ_PACKAGE_OPENVPN is not set+FREETZ_PACKAGE_OPENVPN=y+g" "$FREETZ_SSL_HOME_PATH/.config"
-
-# Uncomment if you want to modify user level settings or iptables configuration
-# sed -i "s+FREETZ_USER_LEVEL_EXPERT=y+# FREETZ_USER_LEVEL_EXPERT is not set+g" "$FREETZ_SSL_HOME_PATH/.config"
-# sed -i "s+# FREETZ_USER_LEVEL_DEVELOPER is not set+FREETZ_USER_LEVEL_DEVELOPER=y+g" "$FREETZ_SSL_HOME_PATH/.config"
-# sed -i '$a# FREETZ_PACKAGE_IPTABLES is not set' "$FREETZ_SSL_HOME_PATH/.config"
-# sed -i "s+# FREETZ_PACKAGE_IPTABLES is not set+FREETZ_PACKAGE_IPTABLES=y+g" "$FREETZ_SSL_HOME_PATH/.config"
-
+sed -i "s+# FREETZ_PACKAGE_OPENVPN is not set+FREETZ_PACKAGE_OPENVPN=y+g" $FREETZ_SSL_HOME_PATH/.config
+#sed -i "s+FREETZ_USER_LEVEL_EXPERT=y+# FREETZ_USER_LEVEL_EXPERT is not set+g" $FREETZ_SSL_HOME_PATH/.config
+#sed -i "s+# FREETZ_USER_LEVEL_DEVELOPER is not set+FREETZ_USER_LEVEL_DEVELOPER=y+g" $FREETZ_SSL_HOME_PATH/.config
+#sed -i '$a# FREETZ_PACKAGE_IPTABLES is not set' $FREETZ_SSL_HOME_PATH/.config
+#sed -i "s+# FREETZ_PACKAGE_IPTABLES is not set+FREETZ_PACKAGE_IPTABLES=y+g" $FREETZ_SSL_HOME_PATH/.config

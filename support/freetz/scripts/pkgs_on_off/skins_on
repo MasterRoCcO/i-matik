@@ -1,34 +1,24 @@
 #!/bin/bash
-
-enable_skins() {
-	local skins=(
-		"FREETZ_SKIN_newfreetz"
-		"FREETZ_SKIN_phoenix"
-		"FREETZ_SKIN_cuma"
-	)
-
-	local packages=(
-		"FREETZ_PACKAGE_SKIN_DIGITAL_ELITEBOARD"
-		"FREETZ_PACKAGE_SKIN_KEYWELT"
-		"FREETZ_PACKAGE_SKIN_NACHTFALKE"
-		"FREETZ_PACKAGE_SKIN_NACHTFALKE_OLD"
-		"FREETZ_PACKAGE_SKIN_PRISRAK"
-		"FREETZ_PACKAGE_SKIN_PRISRAK1"
-	)
-
-	for skin in "${skins[@]}"; do
-		sed -i "s+# $skin is not set+$skin=y+g" "$FREETZ_SSL_HOME_PATH/.config" 2>/dev/null
-	done
-
-	for package in "${packages[@]}"; do
-		sed -i "s+# $package is not set+$package=y+g" "$FREETZ_SSL_HOME_PATH/.config" 2>/dev/null
-	done
-}
-
-if [ -n "$PARAM_SKINS" ]; then
-	enable_skins
+if [ -z $PARAM_SKINS ]; then
+	sleep 0
+else
+	sed -i "s+# FREETZ_SKIN_newfreetz is not set+FREETZ_SKIN_newfreetz=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+# FREETZ_SKIN_phoenix is not set+FREETZ_SKIN_phoenix=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+# FREETZ_SKIN_cuma is not set+FREETZ_SKIN_cuma=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+# FREETZ_PACKAGE_SKIN_DIGITAL_ELITEBOARD is not set+FREETZ_PACKAGE_SKIN_DIGITAL_ELITEBOARD=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+# FREETZ_PACKAGE_SKIN_KEYWELT is not set+FREETZ_PACKAGE_SKIN_KEYWELT=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+# FREETZ_PACKAGE_SKIN_NACHTFALKE is not set+FREETZ_PACKAGE_SKIN_NACHTFALKE=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+# FREETZ_PACKAGE_SKIN_NACHTFALKE_OLD is not set+FREETZ_PACKAGE_SKIN_NACHTFALKE_OLD=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 fi
 
-if [ -n "$PARAM_SKINS1" ]; then
-	enable_skins
+if [ -z $PARAM_SKINS1 ]; then
+	sleep 0
+else
+	sed -i "s+# FREETZ_SKIN_newfreetz is not set+FREETZ_SKIN_newfreetz=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+# FREETZ_SKIN_phoenix is not set+FREETZ_SKIN_phoenix=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+# FREETZ_SKIN_cuma is not set+FREETZ_SKIN_cuma=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+# FREETZ_PACKAGE_SKIN_PRISRAK is not set+FREETZ_PACKAGE_SKIN_PRISRAK=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+# FREETZ_PACKAGE_SKIN_PRISRAK1 is not set+FREETZ_PACKAGE_SKIN_PRISRAK1=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#	sed -i "s+FREETZ_TAGGING_PIMPED=y+# FREETZ_TAGGING_PIMPED is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#	sed -i "s+# FREETZ_TAGGING_PRISRAK is not set+FREETZ_TAGGING_PRISRAK=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 fi

@@ -1,12 +1,3 @@
 #!/bin/bash
-
-# Define an array of package configurations to enable
-packages=(
-	"FREETZ_PACKAGE_RRDSTATS_CABLEMODEM"
-	"FREETZ_PACKAGE_RRDSTATS_SEGMENTLOAD"
-)
-
-# Iterate over the packages and enable them in the config file
-for package in "${packages[@]}"; do
-	sed -i "s+# ${package} is not set+${package}=y+g" "$FREETZ_SSL_HOME_PATH/.config"
-done
+sed -i "s+# FREETZ_PACKAGE_RRDSTATS_CABLEMODEM is not set+FREETZ_PACKAGE_RRDSTATS_CABLEMODEM=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_PACKAGE_RRDSTATS_SEGMENTLOAD is not set+FREETZ_PACKAGE_RRDSTATS_SEGMENTLOAD=y+g" $FREETZ_SSL_HOME_PATH/.config

@@ -1,10 +1,6 @@
 #!/bin/bash
-
-# Enable Freetz Package ImageMagick in the configuration
-sed -i "s+# FREETZ_PACKAGE_IMAGEMAGICK is not set+FREETZ_PACKAGE_IMAGEMAGICK=y+g" "$FREETZ_SSL_HOME_PATH/.config"
-
-# Add additional ImageMagick package configurations
-ed "$FREETZ_SSL_HOME_PATH/.config" <<EOF
+sed -i "s+# FREETZ_PACKAGE_IMAGEMAGICK is not set+FREETZ_PACKAGE_IMAGEMAGICK=y+g" $FREETZ_SSL_HOME_PATH/.config
+ed $FREETZ_SSL_HOME_PATH/.config <<EOF
 /FREETZ_PACKAGE_IMAGEMAGICK=y/a
 FREETZ_PACKAGE_IMAGEMAGICK_ghostscript_fonts=y
 FREETZ_PACKAGE_IMAGEMAGICK_freetype=y

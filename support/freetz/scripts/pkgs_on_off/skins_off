@@ -1,35 +1,42 @@
 #!/bin/bash
+if [ -z $PARAM_SKINS ]; then
+	sleep 0
+else
+	grep -v Digital_Eliteboard_Skin $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+	grep -v Keywelt_Skin $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+	grep -v Nachtfalke_old_Skin $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+	grep -v Nachtfalke_Skin $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+	sed -i "s+FREETZ_SKIN_newfreetz=y+# FREETZ_SKIN_newfreetz is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+FREETZ_SKIN_phoenix=y+# FREETZ_SKIN_phoenix is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+FREETZ_SKIN_cuma=y+# FREETZ_SKIN_cuma is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+FREETZ_STYLE_GREY=y+FREETZ_STYLE_COLORED=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+grey+colored+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+FREETZ_PACKAGE_SKIN_DIGITAL_ELITEBOARD=y+# FREETZ_PACKAGE_SKIN_DIGITAL_ELITEBOARD is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+FREETZ_PACKAGE_SKIN_KEYWELT=y+# FREETZ_PACKAGE_SKIN_KEYWELT is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+FREETZ_PACKAGE_SKIN_NACHTFALKE=y+# FREETZ_PACKAGE_SKIN_NACHTFALKE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+FREETZ_PACKAGE_SKIN_NACHTFALKE_OLD=y+# FREETZ_PACKAGE_SKIN_NACHTFALKE_OLD is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+FREETZ_PACKAGE_SKIN_PRISRAK=y+# FREETZ_PACKAGE_SKIN_PRISRAK is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+FREETZ_PACKAGE_SKIN_PRISRAK1=y+# FREETZ_PACKAGE_SKIN_PRISRAK1 is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+fi
 
-remove_skin() {
-	local skin_name="$1"
-	grep -v "$skin_name" "$FREETZ_SSL_HOME_PATH/addon/static.pkg" > "$FREETZ_SSL_HOME_PATH/addon/tempdatei" && mv "$FREETZ_SSL_HOME_PATH/addon/tempdatei" "$FREETZ_SSL_HOME_PATH/addon/static.pkg"
-}
-
-disable_skin_config() {
-	local skin_name="$1"
-	sed -i "s+FREETZ_PACKAGE_SKIN_${skin_name}=y+# FREETZ_PACKAGE_SKIN_${skin_name} is not set+g" "$FREETZ_SSL_HOME_PATH/.config" 2>/dev/null
-}
-
-disable_style_config() {
-	sed -i "s+FREETZ_SKIN_newfreetz=y+# FREETZ_SKIN_newfreetz is not set+g" "$FREETZ_SSL_HOME_PATH/.config" 2>/dev/null
-	sed -i "s+FREETZ_SKIN_phoenix=y+# FREETZ_SKIN_phoenix is not set+g" "$FREETZ_SSL_HOME_PATH/.config" 2>/dev/null
-	sed -i "s+FREETZ_SKIN_cuma=y+# FREETZ_SKIN_cuma is not set+g" "$FREETZ_SSL_HOME_PATH/.config" 2>/dev/null
-	sed -i "s+FREETZ_STYLE_GREY=y+FREETZ_STYLE_COLORED=y+g" "$FREETZ_SSL_HOME_PATH/.config" 2>/dev/null
-	sed -i "s+grey+colored+g" "$FREETZ_SSL_HOME_PATH/.config" 2>/dev/null
-}
-
-process_skins() {
-	if [ -n "$1" ]; then
-		for skin in Digital_Eliteboard_Skin Keywelt_Skin Nachtfalke_old_Skin Nachtfalke_Skin; do
-			remove_skin "$skin"
-		done
-		disable_style_config
-		for skin in DIGITAL_ELITEBOARD KEYWELT NACHTFALKE NACHTFALKE_OLD PRISRAK PRISRAK1; do
-			disable_skin_config "$skin"
-		done
-	fi
-}
-
-# Process both PARAM_SKINS and PARAM_SKINS1
-process_skins "$PARAM_SKINS"
-process_skins "$PARAM_SKINS1"
+if [ -z $PARAM_SKINS1 ]; then
+	sleep 0
+else
+	grep -v Digital_Eliteboard_Skin $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+	grep -v Keywelt_Skin $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+	grep -v Nachtfalke_old_Skin $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+	grep -v Nachtfalke_Skin $FREETZ_SSL_HOME_PATH/addon/static.pkg  > $FREETZ_SSL_HOME_PATH/addon/tempdatei && mv $FREETZ_SSL_HOME_PATH/addon/tempdatei $FREETZ_SSL_HOME_PATH/addon/static.pkg
+	sed -i "s+FREETZ_SKIN_newfreetz=y+# FREETZ_SKIN_newfreetz is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+FREETZ_SKIN_phoenix=y+# FREETZ_SKIN_phoenix is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+FREETZ_SKIN_cuma=y+# FREETZ_SKIN_cuma is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+FREETZ_STYLE_GREY=y+FREETZ_STYLE_COLORED=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+grey+colored+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+FREETZ_PACKAGE_SKIN_DIGITAL_ELITEBOARD=y+# FREETZ_PACKAGE_SKIN_DIGITAL_ELITEBOARD is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+FREETZ_PACKAGE_SKIN_KEYWELT=y+# FREETZ_PACKAGE_SKIN_KEYWELT is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+FREETZ_PACKAGE_SKIN_NACHTFALKE=y+# FREETZ_PACKAGE_SKIN_NACHTFALKE is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+FREETZ_PACKAGE_SKIN_NACHTFALKE_OLD=y+# FREETZ_PACKAGE_SKIN_NACHTFALKE_OLD is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+FREETZ_PACKAGE_SKIN_PRISRAK=y+# FREETZ_PACKAGE_SKIN_PRISRAK is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+	sed -i "s+FREETZ_PACKAGE_SKIN_PRISRAK1=y+# FREETZ_PACKAGE_SKIN_PRISRAK1 is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#	sed -i "s+# FREETZ_TAGGING_PIMPED is not set+FREETZ_TAGGING_PIMPED=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#	sed -i "s+FREETZ_TAGGING_PRISRAK=y+# FREETZ_TAGGING_PRISRAK is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+fi

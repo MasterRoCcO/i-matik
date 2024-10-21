@@ -1,10 +1,10 @@
 #!/bin/bash
 ed $FREETZ_SSL_HOME_PATH/addon/static.pkg <<EOF
 /# Addons:/a
-Digital_Eliteboard_Skin
-Keywelt_Skin
-Nachtfalke_old_Skin
-Nachtfalke_Skin
+#Digital_Eliteboard_Skin
+#Keywelt_Skin
+#Nachtfalke_old_Skin
+#Nachtfalke_Skin
 .
 wq
 EOF

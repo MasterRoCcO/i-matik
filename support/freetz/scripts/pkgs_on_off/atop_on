@@ -1,4 +1,2 @@
 #!/bin/bash
-
-# Enable the FREETZ_PACKAGE_ATOP package
-sed -i "s+# FREETZ_PACKAGE_ATOP is not set+FREETZ_PACKAGE_ATOP=y+g" "$FREETZ_SSL_HOME_PATH/.config"
+sed -i "s+# FREETZ_PACKAGE_ATOP is not set+FREETZ_PACKAGE_ATOP=y+g" $FREETZ_SSL_HOME_PATH/.config

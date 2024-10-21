@@ -1,16 +1,8 @@
 #!/bin/bash
-
-# Update the configuration to disable WireGuard and related options
-sed -i "s+FREETZ_PACKAGE_WIREGUARD=y+# FREETZ_PACKAGE_WIREGUARD is not set+g" "$FREETZ_SSL_HOME_PATH/.config"
-sed -i "s+FREETZ_REMOVE_AVM_WIREGUARD=y+# FREETZ_REMOVE_AVM_WIREGUARD is not set+g" "$FREETZ_SSL_HOME_PATH/.config"
-
-# Remove specific entries from the configuration
-grep -v FREETZ_PACKAGE_WIREGUARD_LINUX_COMPAT "$FREETZ_SSL_HOME_PATH/.config" > "$FREETZ_SSL_HOME_PATH/tempdatei" && mv "$FREETZ_SSL_HOME_PATH/tempdatei" "$FREETZ_SSL_HOME_PATH/.config"
-grep -v FREETZ_MODULE_wireguard "$FREETZ_SSL_HOME_PATH/.config" > "$FREETZ_SSL_HOME_PATH/tempdatei" && mv "$FREETZ_SSL_HOME_PATH/tempdatei" "$FREETZ_SSL_HOME_PATH/.config"
-
-# Disable iptables package
-sed -i "s+FREETZ_PACKAGE_IPTABLES=y+# FREETZ_PACKAGE_IPTABLES is not set+g" "$FREETZ_SSL_HOME_PATH/.config"
-
-# Set user level to expert
-sed -i "s+# FREETZ_USER_LEVEL_EXPERT is not set+FREETZ_USER_LEVEL_EXPERT=y+g" "$FREETZ_SSL_HOME_PATH/.config"
-sed -i "s+FREETZ_USER_LEVEL_DEVELOPER=y+# FREETZ_USER_LEVEL_DEVELOPER is not set+g" "$FREETZ_SSL_HOME_PATH/.config"
+sed -i "s+FREETZ_PACKAGE_WIREGUARD=y+# FREETZ_PACKAGE_WIREGUARD is not set+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+FREETZ_REMOVE_AVM_WIREGUARD=y+# FREETZ_REMOVE_AVM_WIREGUARD is not set+g" $FREETZ_SSL_HOME_PATH/.config
+grep -v FREETZ_PACKAGE_WIREGUARD_LINUX_COMPAT $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 
+grep -v FREETZ_MODULE_wireguard $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 
+sed -i "s+FREETZ_PACKAGE_IPTABLES=y+# FREETZ_PACKAGE_IPTABLES is not set+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_USER_LEVEL_EXPERT is not set+FREETZ_USER_LEVEL_EXPERT=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+FREETZ_USER_LEVEL_DEVELOPER=y+# FREETZ_USER_LEVEL_DEVELOPER is not set+g" $FREETZ_SSL_HOME_PATH/.config

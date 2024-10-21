@@ -1,14 +1,9 @@
 #!/bin/bash
-
-# Enable various Freetz options in the configuration file
-sed -i -e "s+# FREETZ_PACKAGE_CIFSMOUNT is not set+FREETZ_PACKAGE_CIFSMOUNT=y+g" \
-	-e "s+# FREETZ_MODULE_arc4 is not set+FREETZ_MODULE_arc4=y+g" \
-	-e "s+# FREETZ_MODULE_cifs is not set+FREETZ_MODULE_cifs=y+g" \
-	-e "s+# FREETZ_REPLACE_KERNEL is not set+FREETZ_REPLACE_KERNEL=y+g" \
-	"$FREETZ_SSL_HOME_PATH/.config"
-
-# Append additional module options after the FREETZ_MODULE_cifs setting
-ed "$FREETZ_SSL_HOME_PATH/.config" <<EOF
+sed -i "s+# FREETZ_PACKAGE_CIFSMOUNT is not set+FREETZ_PACKAGE_CIFSMOUNT=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_MODULE_arc4 is not set+FREETZ_MODULE_arc4=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_MODULE_cifs is not set+FREETZ_MODULE_cifs=y+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_REPLACE_KERNEL is not set+FREETZ_REPLACE_KERNEL=y+g" $FREETZ_SSL_HOME_PATH/.config
+ed $FREETZ_SSL_HOME_PATH/.config <<EOF
 /FREETZ_MODULE_cifs=y/a
 FREETZ_MODULE_cmac=y
 FREETZ_MODULE_ecb=y

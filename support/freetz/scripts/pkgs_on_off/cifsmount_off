@@ -1,24 +1,16 @@
 #!/bin/bash
-
-# Disable various Freetz options in the configuration file
-sed -i -e "s+FREETZ_PACKAGE_CIFSMOUNT=y+# FREETZ_PACKAGE_CIFSMOUNT is not set+g" \
-	-e "s+FREETZ_MODULE_arc4=y+# FREETZ_MODULE_arc4 is not set+g" \
-	-e "s+FREETZ_MODULE_cifs=y+# FREETZ_MODULE_cifs is not set+g" \
-	-e "s+FREETZ_REPLACE_KERNEL=y+# FREETZ_REPLACE_KERNEL is not set+g" \
-	-e "s+FREETZ_MODULE_sha256_generic=y+# FREETZ_MODULE_sha256_generic is not set+g" \
-	-e "s+FREETZ_MODULE_crypto_hash=y+# FREETZ_MODULE_crypto_hash is not set+g" \
-	-e "s+FREETZ_MODULE_autofs4=y+# FREETZ_MODULE_autofs4 is not set+g" \
-	-e "s+FREETZ_MODULE_fuse=y+# FREETZ_MODULE_fuse is not set+g" \
-	"$FREETZ_SSL_HOME_PATH/.config"
-
-# Remove specified options from the configuration file
-for option in FREETZ_MODULE_cmac \
-	FREETZ_MODULE_ecb \
-	FREETZ_MODULE_md4 \
-	FREETZ_PACKAGE_CIFSMOUNT_REMOVE_WEBIF \
-	FREETZ_MODULE_des_generic \
-	FREETZ_MODULE_hmac \
-	FREETZ_MODULE_md5; do
-	grep -v "$option" "$FREETZ_SSL_HOME_PATH/.config" > "$FREETZ_SSL_HOME_PATH/tempdatei" && \
-	mv "$FREETZ_SSL_HOME_PATH/tempdatei" "$FREETZ_SSL_HOME_PATH/.config"
-done
+sed -i "s+FREETZ_PACKAGE_CIFSMOUNT=y+# FREETZ_PACKAGE_CIFSMOUNT is not set+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+FREETZ_MODULE_arc4=y+# FREETZ_MODULE_arc4 is not set+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+FREETZ_MODULE_cifs=y+# FREETZ_MODULE_cifs is not set+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+FREETZ_REPLACE_KERNEL=y+# FREETZ_REPLACE_KERNEL is not set+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+FREETZ_MODULE_sha256_generic=y+# FREETZ_MODULE_sha256_generic=is not set+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+FREETZ_MODULE_crypto_hash=y+# FREETZ_MODULE_crypto_hash is not set+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+FREETZ_MODULE_autofs4=y+# FREETZ_MODULE_autofs4 is not set+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+FREETZ_MODULE_fuse=y+# FREETZ_MODULE_fuse is not set+g" $FREETZ_SSL_HOME_PATH/.config
+grep -v FREETZ_MODULE_cmac $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 
+grep -v FREETZ_MODULE_ecb $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 
+grep -v FREETZ_MODULE_md4 $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 
+grep -v FREETZ_PACKAGE_CIFSMOUNT_REMOVE_WEBIF $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 
+grep -v FREETZ_MODULE_des_generic $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 
+grep -v FREETZ_MODULE_hmac $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 
+grep -v FREETZ_MODULE_md5 $FREETZ_SSL_HOME_PATH/.config  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config

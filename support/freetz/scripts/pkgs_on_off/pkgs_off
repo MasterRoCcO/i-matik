@@ -1,25 +1,74 @@
 #!/bin/bash
+if [ -z $PARAM_CM ]; then
+	sleep 0
+else
+	source $PKGS_PATH_ON_OFF/callmonitor_off
+fi
 
-# Define an associative array for parameters and their corresponding scripts
-declare -A scripts=(
-	["PARAM_CM"]="$PKGS_PATH_ON_OFF/callmonitor_off"
-	["PARAM_RR"]="$PKGS_PATH_ON_OFF/rrdstats_off"
-	["PARAM_RR"]="$PKGS_PATH_ON_OFF/cifsmount_off"
-	["PARAM_RR_1_8"]="$PKGS_PATH_ON_OFF/rrdstats_off"
-	["PARAM_RR_1_8"]="$PKGS_PATH_ON_OFF/cifsmount_off"
-	["PARAM_USER_SCRIPTS"]="$USER_APPLICATION_OFF"
-	["PARAM_VNSTAT"]="$PKGS_PATH_ON_OFF/vnstat_off"
-	["PARAM_WIREGUARD"]="$PKGS_PATH_ON_OFF/wireguard_off"
-	["PARAM_OPENVPN"]="$PKGS_PATH_ON_OFF/openvpn_off"
-	["PARAM_TELNET"]="$PKGS_PATH_ON_OFF/telnet_off"
-	["PARAM_IDM"]="$PKGS_PATH_ON_OFF/inadyn-mt_off"
-	["PARAM_L4L"]="$PKGS_PATH_ON_OFF/l4l_off"
-	["PARAM_VFP"]="$PKGS_PATH_ON_OFF/vfp_off"
-)
+if [ -z $PARAM_RR ]; then
+	sleep 0
+else
+	source $PKGS_PATH_ON_OFF/rrdstats_off
+	source $PKGS_PATH_ON_OFF/cifsmount_off
+fi
 
-# Loop through the parameters and source the scripts if the parameter is set
-for param in "${!scripts[@]}"; do
-	if [ ! -z "${!param}" ]; then
-		source "${scripts[$param]}"
-	fi
-done
+if [ -z $PARAM_RR_1_8 ]; then
+	sleep 0
+else
+	source $PKGS_PATH_ON_OFF/rrdstats_off
+	source $PKGS_PATH_ON_OFF/cifsmount_off
+fi
+
+if [ -z $PARAM_USER_SCRIPTS ]; then
+	sleep 0
+else
+	source $USER_APPLICATION_OFF
+fi
+
+if [ -z $PARAM_VNSTAT ]; then
+	sleep 0
+else
+	source $PKGS_PATH_ON_OFF/vnstat_off
+fi
+
+if [ -z $PARAM_WIREGUARD ]; then
+	sleep 0
+else
+	source $PKGS_PATH_ON_OFF/wireguard_off
+fi
+
+if [ -z $PARAM_OPENVPN ]; then
+	sleep 0
+else
+	source $PKGS_PATH_ON_OFF/openvpn_off
+fi
+
+if [ -z $PARAM_TELNET ]; then
+	sleep 0
+else
+	source $PKGS_PATH_ON_OFF/telnet_off
+fi
+
+if [ -z $PARAM_KEYPACK ]; then
+	sleep 0
+else
+	source $PKGS_PATH_ON_OFF/key_pack_off
+fi
+
+if [ -z $PARAM_IDM ]; then
+	sleep 0
+else
+	source $PKGS_PATH_ON_OFF/inadyn-mt_off
+fi
+
+if [ -z $PARAM_L4L ]; then
+	sleep 0
+else
+	source $PKGS_PATH_ON_OFF/l4l_off
+fi
+
+if [ -z $PARAM_VFP ]; then
+	sleep 0
+else
+	source $PKGS_PATH_ON_OFF/vfp_off
+fi
