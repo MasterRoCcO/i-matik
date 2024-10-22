@@ -1,38 +1,47 @@
 #!/bin/bash
-if [[ $(lsb_release -rs) == "20.04" ]] || [[ $(lsb_release -rs) == "21.10" ]] || [[ $(lsb_release -rs) == "22.04" ]] || [[ $(lsb_release -rs) == "23.04" ]] || [[ $(lsb_release -rs) == "23.10" ]] || [[ $(lsb_release -rs) == "24.04" ]] || [[ $(lsb_release -rs) == "10" ]] || [[ $(lsb_release -rs) == "11" ]] || [[ $(lsb_release -rs) == "12" ]] || [[ $(lsb_release -rs) == "2023.4" ]] || [[ $(lsb_release -rs) == "2024.1" ]] || [[ $(lsb_release -rs) == "21.3" ]] || [[ $(lsb_release -rs) == "17" ]] || [[ $(lsb_release -rs) == "7.1" ]]; then # my os is 22.04 (ubuntu)
 
-PACKAGES="  autopoint bc binutils bison bsdmainutils bzip2 ccache cmake cpio curl ecj flex g++ gawk gcc"
-PACKAGES+=" gcc-multilib gettext git graphicsmagick imagemagick inkscape intltool java-wrappers kmod"
-PACKAGES+=" lib32ncurses-dev lib32stdc++6 lib32z1-dev libacl1-dev libc6-dev-i386 libcap-dev libelf-dev"
-PACKAGES+=" libglib2.0-dev libgnutls28-dev libncurses-dev libreadline-dev libsqlite3-dev libssl-dev" #libncurses5-dev
-PACKAGES+=" libstring-crc32-perl libtool-bin libusb-dev libxml2-dev libzstd-dev make ncftp netcat-openbsd net-tools patch"
-PACKAGES+=" patchutils perl pkg-config pv rsync sharutils sqlite3 subversion sudo texinfo tofrodos unar unzip"
-PACKAGES+=" uuid-dev wget zip zlib1g-dev"
-PACKAGES+=" device-tree-compiler" # for FIT-Image
-PACKAGES+=" xz-utils python3-dev libtool diffutils libpcsclite-dev libc-dev-bin libacl1-dev libccid libstdc++6 dialog sshpass libusb-1.0-0-dev jq gperf help2man dos2unix libucl1 ruby libucl-dev" # for s3
-PACKAGES+=" gnupg autoconf-archive" # for only friends
-#PACKAGES+=" execstack python-is-python3" #old
-#PACKAGES+=" gcc-12 gcc-12-locales gcc-12-multilib gcc-12-doc cpp-12 libasan8 libgcc-12-dev libtsan2" #test
-#PACKAGES+=" ninja-build" #test
-	
-if ! dpkg -s $PACKAGES >/dev/null 2>&1; then
-	printf "${YELLOW}Installing prerequisite packages...\n${NC}"
-#	sudo dpkg --add-architecture i386
-#	sudo add-apt-repository ppa:git-core/ppa
-	sudo apt-get install $PACKAGES -y
-	cd /tmp
-	wget http://mirrors.kernel.org/ubuntu/pool/universe/u/upx-ucl/upx-ucl_3.95-2build1_amd64.deb
-#	wget http://ftp.osuosl.org/pub/ubuntu/pool/universe/k/kmod/module-init-tools_24-1ubuntu3_all.deb
-	sudo dpkg -i /tmp/upx-ucl_3.95-2build1_amd64.deb
-#	sudo dpkg -i /$INSTAL_CHECK/upx-ucl_4.02-2build1_amd64.deb
-#	sudo dpkg -i /tmp/module-init-tools_24-1ubuntu3_all.deb
-	echo upx-ucl hold | sudo dpkg --set-selections
-	sudo apt-get update && sudo apt-get upgrade -y && sudo apt dist-upgrade -y && sudo apt autoclean -y && sudo apt autoremove -y
-fi
+# Define the OS version and supported versions
+OS_VERSION=$(lsb_release -rs)
+SUPPORTED_VERSIONS=("20.04" "21.10" "22.04" "23.04" "23.10" "24.04" "10" "11" "12" "2023.4" "2024.1" "21.3" "17" "7.1")
+
+# Check if the current OS version is supported
+if [[ " ${SUPPORTED_VERSIONS[@]} " =~ " ${OS_VERSION} " ]]; then
+	PACKAGES="autopoint bc binutils bison bsdmainutils bzip2 ccache cmake cpio curl ecj flex g++ gawk gcc"
+	PACKAGES+=" gcc-multilib gettext git graphicsmagick imagemagick inkscape intltool java-wrappers kmod"
+	PACKAGES+=" lib32ncurses-dev lib32stdc++6 lib32z1-dev libacl1-dev libc6-dev-i386 libcap-dev libelf-dev"
+	PACKAGES+=" libglib2.0-dev libgnutls28-dev libncurses-dev libreadline-dev libsqlite3-dev libssl-dev"
+	PACKAGES+=" libstring-crc32-perl libtool-bin libusb-dev libxml2-dev libzstd-dev make ncftp netcat-openbsd net-tools patch"
+	PACKAGES+=" patchutils perl pkg-config pv rsync sharutils sqlite3 subversion sudo texinfo tofrodos unar unzip"
+	PACKAGES+=" uuid-dev wget zip zlib1g-dev device-tree-compiler xz-utils python3-dev libtool diffutils"
+	PACKAGES+=" libpcsclite-dev libc-dev-bin libacl1-dev libccid libstdc++6 dialog sshpass libusb-1.0-0-dev jq gperf help2man dos2unix"
+	PACKAGES+=" libucl1 ruby libucl-dev gnupg autoconf-archive"
+
+	# Check if any of the packages are not installed
+	if ! dpkg -s $PACKAGES >/dev/null 2>&1; then
+		printf "${YELLOW}Installing prerequisite packages...\n${NC}"
+		
+		# Uncomment if you need to add architectures or PPAs
+		# sudo dpkg --add-architecture i386
+		# sudo add-apt-repository ppa:git-core/ppa
+		
+		# Update package lists and install packages
+		sudo apt-get update && sudo apt-get install $PACKAGES -y
+		
+		# Download and install additional .deb file
+		cd /tmp
+		wget http://mirrors.kernel.org/ubuntu/pool/universe/u/upx-ucl/upx-ucl_3.95-2build1_amd64.deb
+		sudo dpkg -i /tmp/upx-ucl_3.95-2build1_amd64.deb
+		echo "upx-ucl hold" | sudo dpkg --set-selections
+
+		# Optional: Perform system upgrades and clean-up
+		sudo apt-get upgrade -y && sudo apt dist-upgrade -y && sudo apt autoclean -y && sudo apt autoremove -y
+#	else
+#		echo "All prerequisite packages are already installed."
+	fi
 else
-       echo "Non-compatible version"
-       echo "read here https://freetz-ng.github.io/freetz-ng/PREREQUISITES"
-       exit
+	echo "Non-compatible version"
+	echo "Read here for prerequisites: https://freetz-ng.github.io/freetz-ng/PREREQUISITES"
+	exit
 fi
 
 
@@ -43,13 +52,13 @@ fi
 # 23.04  = Ubuntu (https://ubuntu.com/about/release-cycle End of Standard Support)
 # 23.10  = Ubuntu (https://ubuntu.com/about/release-cycle End of Standard Support)
 # 24.04  = Ubuntu
-# 10     = Debian
-# 11     = Debian
-# 12     = Debian
-# 17     = Zorin
+# 10	 = Debian
+# 11	 = Debian
+# 12	 = Debian
+# 17	 = Zorin
 # 2023.4 = Rhino
 # 2024.1 = Kali
 # 21.3   = Mint
-# 7.1    = elementary
+# 7.1	= elementary
 
 # all OS tested
