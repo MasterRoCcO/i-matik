@@ -1,5 +1,5 @@
---- config/ui/patches.in	2024-05-31 15:29:15.544931421 +0200
-+++ config/ui/patches.in	2024-07-02 13:33:03.817500090 +0200
+--- config/ui/patches.in
++++ config/ui/patches.in	2024-10-22 19:09:20.527294311 +0200
 @@ -1270,6 +1270,41 @@
  		 812-show_update_config.sh
  		 821-show_network_repeater.sh
@@ -93,17 +93,15 @@
  	default n
  	help
  		Re-enables access to the GPON serial textbox on support page.
-@@ -1373,8 +1424,8 @@
+@@ -1373,7 +1424,7 @@
  
  menuconfig FREETZ_PATCH_MODFS_BOOT_MANAGER
  	bool "Add yf-bootmanager"
 -	depends on FREETZ_AVM_VERSION_07_5X_MAX
--	depends on !FREETZ_ADD_INACTIVE_SYSTEM || (FREETZ_ADD_INACTIVE_SYSTEM && FREETZ_AVM_PROP_INNER_FILESYSTEM_TYPE_CPIO)
 +#	depends on FREETZ_AVM_VERSION_07_5X_MAX
-+	depends on !FREETZ_ADD_INACTIVE_SYSTEM || (FREETZ_ADD_INACTIVE_SYSTEM && FREETZ_AVM_PROP_INNER_FILESYSTEM_TYPE_CPIO || FREETZ_PACKAGE_DTC_fitdump)
+ 	depends on !FREETZ_ADD_INACTIVE_SYSTEM || (FREETZ_ADD_INACTIVE_SYSTEM && FREETZ_AVM_PROP_INNER_FILESYSTEM_TYPE_CPIO)
  	depends on FREETZ_AVM_VERSION_06_5X_MIN
  	depends on ( FREETZ_AVM_HAS_SEPARATE_FILESYSTEM_IMAGE && !FREETZ_AVM_HAS_FWLAYOUT_5 ) || \
- 		                   ( FREETZ_AVM_HAS_FWLAYOUT_5 && (FREETZ_AVM_HAS_BLK_DEV_LOOP_BUILTIN || FREETZ_REPLACE_MODULE_AVAILABLE) )
 --- patches/scripts/193-patch_webmenu_feedback.sh	1970-01-01 01:00:00.000000000 +0100
 +++ patches/scripts/193-patch_webmenu_feedback.sh	2024-07-02 13:33:03.817500090 +0200
 @@ -0,0 +1,12 @@
