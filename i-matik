@@ -148,7 +148,7 @@ elif [[ $1 == '5690Pro' ]] && [[ $2 == '-push' ]]; then
 source $SSL30_PUSH
 
 elif [[ $1 == '7510.11' ]]; then
-source $NO_INMEMORY
+printf ${RED}"No support, please use 30 for this\n"
 elif [[ $1 == '7510.30' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '7510.33' ]]; then
