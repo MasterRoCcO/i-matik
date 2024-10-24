@@ -23,10 +23,14 @@ cat << EOF | sed -r 's/(.+[^>])$/\1<br>/g'
     </ul>
 The installed version on this device is currently xxxx
 <br/>
-
-<h1>Donate Page</h1>
+<h1>Donate Page for i-matik</h1>
  <ul>
         <li><a class="active" href="https://www.spendenseite.de/i-matik/-67603/" target="_blank">https://www.spendenseite.de/i-matik/-67603/</a></li>
+    </ul>
+<br/>
+<h1>Donate Page for freetz-ng</h1>
+ <ul>
+        <li><a class="active" href="https://github.com/sponsors/fda77</a></li>
     </ul>
 <br/>
 <h1>Big thanks to</h1>
@@ -38,7 +42,6 @@ Loman
 MC Crap FIX
 nero033
 TickTack
-
 <h1>TESTER by Cable devices</h1>
 prisrak
 </p>
