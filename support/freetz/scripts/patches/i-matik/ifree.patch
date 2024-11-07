@@ -1,6 +1,6 @@
---- config/ui/patches.in	2024-05-31 15:29:15.544931421 +0200
-+++ config/ui/patches.in	2024-10-23 15:14:20.810545904 +0200
-@@ -1270,6 +1270,41 @@
+--- config/ui/patches.in
++++ config/ui/patches.in	2024-11-07 13:00:08.936682714 +0100
+@@ -1271,6 +1271,41 @@
  		 812-show_update_config.sh
  		 821-show_network_repeater.sh
  		 822-show_dvb_services.sh
@@ -42,7 +42,7 @@
  
  config FREETZ_PATCH_SIGNED
  	bool "Patch web menu signed message"
-@@ -1279,7 +1314,7 @@
+@@ -1280,7 +1315,7 @@
  
  config FREETZ_PATCH_SECURE
  	bool "Patch web menu secure message"
@@ -51,7 +51,7 @@
  	select FREETZ_PATCH_SECURE_2fa if !(FREETZ_PATCH_SECURE_sip || FREETZ_PATCH_SECURE_nau || FREETZ_PATCH_SECURE_nus)
  	default n
  	help
-@@ -1301,7 +1336,7 @@
+@@ -1302,7 +1337,7 @@
  
  	config FREETZ_PATCH_SECURE_nau
  		bool "Caused by noAutoupdate"
@@ -60,7 +60,7 @@
  		default y
  		help
  			noAutoupdate does not trigger the message.
-@@ -1313,6 +1348,16 @@
+@@ -1314,6 +1349,16 @@
  		help
  			noUpdateSearch does not trigger the message.
  
@@ -77,7 +77,7 @@
  endif # FREETZ_PATCH_SECURE
  
  
-@@ -1384,8 +1429,14 @@
+@@ -1385,8 +1430,14 @@
  
  config FREETZ_ENABLE_GPON_SERIAL
  	bool "Enable GPON serial textbox"
@@ -93,7 +93,7 @@
  	default n
  	help
  		Re-enables access to the GPON serial textbox on support page.
-@@ -1410,8 +1461,8 @@
+@@ -1411,8 +1462,8 @@
  
  menuconfig FREETZ_PATCH_MODFS_BOOT_MANAGER
  	bool "Add yf-bootmanager"
