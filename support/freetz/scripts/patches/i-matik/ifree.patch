@@ -77,7 +77,7 @@
  endif # FREETZ_PATCH_SECURE
  
  
-@@ -1363,8 +1408,14 @@
+@@ -1384,8 +1429,14 @@
  
  config FREETZ_ENABLE_GPON_SERIAL
  	bool "Enable GPON serial textbox"
@@ -93,7 +93,7 @@
  	default n
  	help
  		Re-enables access to the GPON serial textbox on support page.
-@@ -1389,8 +1440,8 @@
+@@ -1410,8 +1461,8 @@
  
  menuconfig FREETZ_PATCH_MODFS_BOOT_MANAGER
  	bool "Add yf-bootmanager"
