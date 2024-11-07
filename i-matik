@@ -9,7 +9,7 @@ I_MATIK_PATH=$(cd `dirname $0` && pwd)
 git pull 2>/dev/null
 source $I_MATIK_PATH/support/i-matik/config/i-matik
 source $INSTAL_CHECK
-VERSIONS_NR="0.93.9(f27.7)(i09.2)"
+VERSIONS_NR="0.94.1(f27.7)(i09.2)"
 ln -s $CREATE_BOXES $I_MATIK_PATH/my-boxes_please_edit_me 2>/dev/null
 source $I_MATIK_PATH/support/freetz/scripts/friends 2>/dev/null
 
@@ -311,8 +311,8 @@ source $SSL11_PUSH_REPEATER
 
 elif [[ $1 == 'Gateway.11' ]]; then
 source $NO_INMEMORY_NO_OSCAM
-#elif [[ $1 == 'Gateway.30' ]]; then
-#source $NO_INMEMORY_NO_OSCAM
+elif [[ $1 == 'Gateway.30' ]]; then
+source $NO_INMEMORY_NO_OSCAM
 #elif [[ $1 == 'Gateway.multi' ]]; then
 #printf ${RED}"No supported\n"
 #elif [[ $1 == 'Gateway' ]] && [[ $2 == '-push' ]]; then
@@ -452,6 +452,17 @@ source $I_MATIK
 elif [[ $1 == '3490.multi' ]]; then
 source $SSL11
 elif [[ $1 == '3490' ]] && [[ $2 == '-push' ]]; then
+source $SSL11_PUSH
+
+elif [[ $1 == '3490-Alien7490.11' ]]; then
+source $I_MATIK
+elif [[ $1 == '3490-Alien7490.30' ]]; then
+source $I_MATIK
+elif [[ $1 == '3490-Alien7490.33' ]]; then
+source $I_MATIK
+elif [[ $1 == '3490-Alien7490.multi' ]]; then
+source $SSL11
+elif [[ $1 == '3490-Alien7490' ]] && [[ $2 == '-push' ]]; then
 source $SSL11_PUSH
 
 elif [[ $1 == '5490.11' ]]; then
