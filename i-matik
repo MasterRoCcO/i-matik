@@ -9,7 +9,7 @@ I_MATIK_PATH=$(cd `dirname $0` && pwd)
 git pull 2>/dev/null
 source $I_MATIK_PATH/support/i-matik/config/i-matik
 source $INSTAL_CHECK
-VERSIONS_NR="0.94.1(f28.3)(i09.2)"
+VERSIONS_NR="0.94.2(f28.5)(i09.2)"
 ln -s $CREATE_BOXES $I_MATIK_PATH/my-boxes_please_edit_me 2>/dev/null
 source $I_MATIK_PATH/support/freetz/scripts/friends 2>/dev/null
 
@@ -679,6 +679,17 @@ source $NO_OSCAM
 elif [[ $1 == '6820v3.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '6820v3' ]] && [[ $2 == '-push' ]]; then
+source $SSL11_PUSH
+
+elif [[ $1 == '6820v4.11' ]]; then
+source $NO_OSCAM
+elif [[ $1 == '6820v4.30' ]]; then
+source $NO_OSCAM
+elif [[ $1 == '6820v4.33' ]]; then
+source $NO_OSCAM
+elif [[ $1 == '6820v4.multi' ]]; then
+printf ${RED}"No supported\n"
+elif [[ $1 == '6820v4' ]] && [[ $2 == '-push' ]]; then
 source $SSL11_PUSH
 
 elif [[ $1 == '7412.10' ]]; then
