@@ -9,7 +9,7 @@ I_MATIK_PATH=$(cd `dirname $0` && pwd)
 git pull 2>/dev/null
 source $I_MATIK_PATH/support/i-matik/config/i-matik
 source $INSTAL_CHECK
-VERSIONS_NR="0.94.2(f28.7)(i09.2)"
+VERSIONS_NR="0.94.3(f29.1)(i09.2)"
 ln -s $CREATE_BOXES $I_MATIK_PATH/my-boxes_please_edit_me 2>/dev/null
 source $I_MATIK_PATH/support/freetz/scripts/friends 2>/dev/null
 
@@ -178,6 +178,17 @@ source $NO_INMEMORY
 elif [[ $1 == '7530AXB.multi' ]]; then
 source $SSL30
 elif [[ $1 == '7530AXB' ]] && [[ $2 == '-push' ]]; then
+source $SSL30_PUSH
+
+#elif [[ $1 == '7682.11' ]]; then
+#source $NO_INMEMORY
+elif [[ $1 == '7682.30' ]]; then
+source $NO_INMEMORY
+elif [[ $1 == '7682.33' ]]; then
+source $NO_INMEMORY
+elif [[ $1 == '7682.multi' ]]; then
+source $SSL30
+elif [[ $1 == '7682' ]] && [[ $2 == '-push' ]]; then
 source $SSL30_PUSH
 
 #elif [[ $1 == '7690.11' ]]; then
