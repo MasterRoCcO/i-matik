@@ -1,26 +1,15 @@
 --- tools/freetz_download
-+++ tools/freetz_download	2024-12-01 12:09:45.366151812 +0100
-@@ -296,16 +299,20 @@
- #				sites[(( num_sites++ ))]=https://download.avm.de/fritzdect/$subpath
- 				sites[(( num_sites++ ))]=https://avm.de/$subpath
- 				sites[(( num_sites++ ))]=https://avm.de/fileadmin/user_upload/DE/Labor/Download
-+				sites[(( num_sites++ ))]=https://download.avm.de/labor/Smart24P1NL1/$subpath
-+				sites[(( num_sites++ ))]=https://download.avm.de/labor/Smart24P1FCS/$subpath
- #				sites[(( num_sites++ ))]=https://download.avm.de/labor/Smart24P1/$subpath
- #				sites[(( num_sites++ ))]=https://download.avm.de/labor/GoFiber23/$subpath
++++ tools/freetz_download	2024-12-22 18:41:18.725383595 +0100
+@@ -301,11 +304,13 @@
  #				sites[(( num_sites++ ))]=https://download.avm.de/labor/FCS23/$subpath
  #				sites[(( num_sites++ ))]=https://download.avm.de/labor/MOVE21NL1/$subpath
  #				sites[(( num_sites++ ))]=https://download.avm.de/labor/MOVE21/$subpath
 +				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/Smart24P1NL1/$subpath
  				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/Smart24P1FCS/$subpath
--				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/Smart24P1/$subpath
--				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/GoFiber23NL1/$subpath
--				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/GoFiber23/$subpath
--				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/FCS23/$subpath
-+#				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/Smart24P1/$subpath
-+#				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/GoFiber23NL1/$subpath
-+#				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/GoFiber23/$subpath
-+#				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/FCS23/$subpath
+ #				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/Smart24P1/$subpath
+ #				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/GoFiber23NL1/$subpath
+ #				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/GoFiber23/$subpath
+ #				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/FCS23/$subpath
 +				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/MOVE21NL2/$subpath
  #				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/MOVE21NL1/$subpath
  #				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/MOVE21/$subpath
