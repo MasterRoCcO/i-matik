@@ -1,9 +1,9 @@
 --- tools/freetz_download
-+++ tools/freetz_download	2024-12-22 18:41:18.725383595 +0100
-@@ -301,11 +304,13 @@
- #				sites[(( num_sites++ ))]=https://download.avm.de/labor/FCS23/$subpath
- #				sites[(( num_sites++ ))]=https://download.avm.de/labor/MOVE21NL1/$subpath
- #				sites[(( num_sites++ ))]=https://download.avm.de/labor/MOVE21/$subpath
++++ tools/freetz_download	2024-12-23 17:13:27.634093931 +0100
+@@ -296,11 +299,13 @@
+ #				sites[(( num_sites++ ))]=https://download.avm.de/fritzdect/$subpath
+ 				sites[(( num_sites++ ))]=https://avm.de/$subpath
+ 				sites[(( num_sites++ ))]=https://avm.de/fileadmin/user_upload/DE/Labor/Download
 +				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/Smart24P1NL1/$subpath
  				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/Smart24P1FCS/$subpath
  #				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/Smart24P1/$subpath
