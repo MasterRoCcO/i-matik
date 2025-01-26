@@ -44,9 +44,9 @@ if [ -z $PARAM_OSCAM ]; then
 		grep -v FREETZ_UDEVMOUNT_REISER_FS $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		grep -v FREETZ_PACKAGE_USBIDS_FORCE_DOWNLOAD $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		##### NANO
-		sed -i "s+FREETZ_SHARE_terminfo=y+# FREETZ_SHARE_terminfo is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_LIB_libncursesw=y+# FREETZ_LIB_libncursesw is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_PACKAGE_NANO=y+# FREETZ_PACKAGE_NANO is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_SHARE_terminfo=y+# FREETZ_SHARE_terminfo is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_LIB_libncursesw=y+# FREETZ_LIB_libncursesw is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_PACKAGE_NANO=y+# FREETZ_PACKAGE_NANO is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 # Get custom image file name part from .config
 FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
 #FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
@@ -99,9 +99,9 @@ if [ -z $PARAM_OSCAM_EMU ]; then
 		grep -v FREETZ_UDEVMOUNT_REISER_FS $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		grep -v FREETZ_PACKAGE_USBIDS_FORCE_DOWNLOAD $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		##### NANO
-		sed -i "s+FREETZ_SHARE_terminfo=y+# FREETZ_SHARE_terminfo is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_LIB_libncursesw=y+# FREETZ_LIB_libncursesw is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_PACKAGE_NANO=y+# FREETZ_PACKAGE_NANO is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_SHARE_terminfo=y+# FREETZ_SHARE_terminfo is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_LIB_libncursesw=y+# FREETZ_LIB_libncursesw is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_PACKAGE_NANO=y+# FREETZ_PACKAGE_NANO is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 # Get custom image file name part from .config
 FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
 #FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
@@ -154,9 +154,9 @@ if [ -z $PARAM_OSCAM_SMOD ]; then
 		grep -v FREETZ_UDEVMOUNT_REISER_FS $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		grep -v FREETZ_PACKAGE_USBIDS_FORCE_DOWNLOAD $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		##### NANO
-		sed -i "s+FREETZ_SHARE_terminfo=y+# FREETZ_SHARE_terminfo is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_LIB_libncursesw=y+# FREETZ_LIB_libncursesw is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_PACKAGE_NANO=y+# FREETZ_PACKAGE_NANO is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_SHARE_terminfo=y+# FREETZ_SHARE_terminfo is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_LIB_libncursesw=y+# FREETZ_LIB_libncursesw is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_PACKAGE_NANO=y+# FREETZ_PACKAGE_NANO is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 # Get custom image file name part from .config
 FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
 #FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
@@ -209,9 +209,9 @@ if [ -z $PARAM_OSCAM_NCAM ]; then
 		grep -v FREETZ_UDEVMOUNT_REISER_FS $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		grep -v FREETZ_PACKAGE_USBIDS_FORCE_DOWNLOAD $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		##### NANO
-		sed -i "s+FREETZ_SHARE_terminfo=y+# FREETZ_SHARE_terminfo is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_LIB_libncursesw=y+# FREETZ_LIB_libncursesw is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_PACKAGE_NANO=y+# FREETZ_PACKAGE_NANO is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_SHARE_terminfo=y+# FREETZ_SHARE_terminfo is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_LIB_libncursesw=y+# FREETZ_LIB_libncursesw is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_PACKAGE_NANO=y+# FREETZ_PACKAGE_NANO is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 # Get custom image file name part from .config
 FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
 #FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"
@@ -264,9 +264,9 @@ if [ -z $PARAM_OSCAM_TOOL ]; then
 		grep -v FREETZ_UDEVMOUNT_REISER_FS $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		grep -v FREETZ_PACKAGE_USBIDS_FORCE_DOWNLOAD $FREETZ_SSL_HOME_PATH/.config 2>/dev/null  > $FREETZ_SSL_HOME_PATH/tempdatei && mv $FREETZ_SSL_HOME_PATH/tempdatei $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 		##### NANO
-		sed -i "s+FREETZ_SHARE_terminfo=y+# FREETZ_SHARE_terminfo is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_LIB_libncursesw=y+# FREETZ_LIB_libncursesw is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-		sed -i "s+FREETZ_PACKAGE_NANO=y+# FREETZ_PACKAGE_NANO is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_SHARE_terminfo=y+# FREETZ_SHARE_terminfo is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_LIB_libncursesw=y+# FREETZ_LIB_libncursesw is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#		sed -i "s+FREETZ_PACKAGE_NANO=y+# FREETZ_PACKAGE_NANO is not set+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 # Get custom image file name part from .config
 FUD_COMMENT="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
 #FUD_COMMENT_BOX="$(echo $FUD_COMMENT | awk -F'_' '{print $NF}')"

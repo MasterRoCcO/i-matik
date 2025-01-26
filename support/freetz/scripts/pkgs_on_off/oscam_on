@@ -27,7 +27,7 @@ sed -i "s+# FREETZ_PACKAGE_AVM_FORWARDING is not set+FREETZ_PACKAGE_AVM_FORWARDI
 sed -i "s+# FREETZ_PACKAGE_STRACE is not set+FREETZ_PACKAGE_STRACE=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 sed -i "s+# FREETZ_REPLACE_KERNEL is not set+FREETZ_REPLACE_KERNEL=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 sed -i "s+# FREETZ_LIB_libssl is not set+FREETZ_LIB_libssl=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
-sed -i "s+# FREETZ_PACKAGE_NANO is not set+FREETZ_PACKAGE_NANO=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+#sed -i "s+# FREETZ_PACKAGE_NANO is not set+FREETZ_PACKAGE_NANO=y+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 #sed -i "s+$MASTERBOX_NEU+with_readerdriver_$MASTERBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 #sed -i "s+$CLIENTBOX_NEU+with_readerdriver_$CLIENTBOX_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
 #sed -i "s+$WUNSCHIMAGE_NEU+with_readerdriver_$WUNSCHIMAGE_NEU+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
