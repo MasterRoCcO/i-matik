@@ -45,7 +45,7 @@ source $I_MATIK
 elif [[ $1 == '7520.multi' ]]; then
 source $SSL11
 elif [[ $1 == '7520' ]] && [[ $2 == '-push' ]]; then
-source $SSL11_PUSH
+source $SSL30_PUSH
 
 elif [[ $1 == '7520B.11' ]]; then
 printf ${RED}"No support, please use 30 for this\n"
@@ -56,7 +56,7 @@ source $I_MATIK
 elif [[ $1 == '7520B.multi' ]]; then
 source $SSL11
 elif [[ $1 == '7520B' ]] && [[ $2 == '-push' ]]; then
-source $SSL11_PUSH
+source $SSL30_PUSH
 
 elif [[ $1 == '7520-Alien7530.11' ]]; then
 printf ${RED}"No support, please use 30 for this\n"
@@ -67,7 +67,7 @@ source $I_MATIK
 elif [[ $1 == '7520-Alien7530.multi' ]]; then
 source $I_MATIK
 elif [[ $1 == '7520-Alien7530' ]] && [[ $2 == '-push' ]]; then
-source $SSL11_PUSH
+source $SSL30_PUSH
 
 elif [[ $1 == '7530.11' ]]; then
 printf ${RED}"No support, please use 30 for this\n"
@@ -78,7 +78,7 @@ source $I_MATIK
 elif [[ $1 == '7530.multi' ]]; then
 source $SSL11
 elif [[ $1 == '7530' ]] && [[ $2 == '-push' ]]; then
-source $SSL11_PUSH
+source $SSL30_PUSH
 
 #arm boxen no inmemory
 elif [[ $1 == '4040.11' ]]; then
@@ -90,7 +90,7 @@ source $NO_INMEMORY
 elif [[ $1 == '4040.multi' ]]; then
 source $SSL11
 elif [[ $1 == '4040' ]] && [[ $2 == '-push' ]]; then
-source $SSL11_PUSH
+source $SSL30_PUSH
 
 #elif [[ $1 == '4050.11' ]]; then
 #source $NO_INMEMORY
@@ -100,8 +100,8 @@ elif [[ $1 == '4050.33' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '4050.multi' ]]; then
 source $SSL30
-#elif [[ $1 == '4050' ]] && [[ $2 == '-push' ]]; then
-#source $SSL30_PUSH
+elif [[ $1 == '4050' ]] && [[ $2 == '-push' ]]; then
+source $SSL30_PUSH
 
 elif [[ $1 == '4060.11' ]]; then
 source $NO_INMEMORY
@@ -112,10 +112,10 @@ source $NO_INMEMORY
 elif [[ $1 == '4060.multi' ]]; then
 source $SSL11
 elif [[ $1 == '4060' ]] && [[ $2 == '-push' ]]; then
-source $SSL11_PUSH
+source $SSL30_PUSH
 
-#elif [[ $1 == '4690.11' ]]; then
-#source $NO_INMEMORY
+elif [[ $1 == '4690.11' ]]; then
+printf ${RED}"No support, please use 30 for this\n"
 elif [[ $1 == '4690.30' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '4690.33' ]]; then
@@ -136,8 +136,8 @@ source $SSL11
 elif [[ $1 == '5590' ]] && [[ $2 == '-push' ]]; then
 source $SSL30_PUSH
 
-#elif [[ $1 == '5690Pro.11' ]]; then
-#source $NO_INMEMORY
+elif [[ $1 == '5690Pro.11' ]]; then
+printf ${RED}"No support, please use 30 for this\n"
 elif [[ $1 == '5690Pro.30' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '5690Pro.33' ]]; then
@@ -156,7 +156,7 @@ source $NO_INMEMORY
 elif [[ $1 == '7510.multi' ]]; then
 source $SSL11
 elif [[ $1 == '7510' ]] && [[ $2 == '-push' ]]; then
-source $SSL11_PUSH
+source $SSL30_PUSH
 
 elif [[ $1 == '7530AX.11' ]]; then
 printf ${RED}"No support, please use 30 for this\n"
@@ -169,8 +169,8 @@ source $SSL11
 elif [[ $1 == '7530AX' ]] && [[ $2 == '-push' ]]; then
 source $SSL30_PUSH
 
-#elif [[ $1 == '7530AX_B.11' ]]; then
-#source $NO_INMEMORY
+elif [[ $1 == '7530AX_B.11' ]]; then
+printf ${RED}"No support, please use 30 for this\n"
 elif [[ $1 == '7530AXB.30' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '7530AXB.33' ]]; then
@@ -180,8 +180,8 @@ source $SSL30
 elif [[ $1 == '7530AXB' ]] && [[ $2 == '-push' ]]; then
 source $SSL30_PUSH
 
-#elif [[ $1 == '7682.11' ]]; then
-#source $NO_INMEMORY
+elif [[ $1 == '7682.11' ]]; then
+printf ${RED}"No support, please use 30 for this\n"
 elif [[ $1 == '7682.30' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '7682.33' ]]; then
@@ -191,8 +191,8 @@ source $SSL30
 elif [[ $1 == '7682' ]] && [[ $2 == '-push' ]]; then
 source $SSL30_PUSH
 
-#elif [[ $1 == '7690.11' ]]; then
-#source $NO_INMEMORY
+elif [[ $1 == '7690.11' ]]; then
+printf ${RED}"No support, please use 30 for this\n"
 elif [[ $1 == '7690.30' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '7690.33' ]]; then
@@ -392,10 +392,10 @@ source $NO_INMEMORY
 elif [[ $1 == '6660.multi' ]]; then
 source $SSL11
 elif [[ $1 == '6660' ]] && [[ $2 == '-push' ]]; then
-source $SSL11_PUSH
+source $SSL30_PUSH
 
 elif [[ $1 == '6670.30' ]]; then
-source $NO_INMEMORY
+printf ${RED}"No support, please use 30 for this\n"
 elif [[ $1 == '6670.33' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '6670.multi' ]]; then
@@ -404,7 +404,7 @@ source $SSL30
 #source $SSL30_PUSH
 
 elif [[ $1 == '6690.11' ]]; then
-source $NO_INMEMORY
+printf ${RED}"No support, please use 30 for this\n"
 elif [[ $1 == '6690.30' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '6690.33' ]]; then
@@ -412,7 +412,7 @@ source $NO_INMEMORY
 elif [[ $1 == '6690.multi' ]]; then
 source $SSL11
 elif [[ $1 == '6690' ]] && [[ $2 == '-push' ]]; then
-source $SSL11_PUSH
+source $SSL30_PUSH
 
 #mips boxen
 elif [[ $1 == '3272.10' ]]; then
