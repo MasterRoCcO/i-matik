@@ -30,7 +30,7 @@ The installed version on this device is currently xxxx
 <br/>
 <h1>Donate Page for freetz-ng</h1>
  <ul>
-        <li><a class="active" href="https://github.com/sponsors/fda77</a></li>
+        <li><a class="active" href="https://github.com/sponsors/fda77/" target="_blank">https://github.com/sponsors/fda77/</a></li>
     </ul>
 <br/>
 <h1>Big thanks to</h1>
@@ -38,9 +38,11 @@ bbszx
 berndy2001
 hermann72pb
 Humpty Dumpty
+Hookdr
 Loman
 MC Crap FIX
 nero033
+sestarus
 TickTack
 <h1>TESTER by Cable devices</h1>
 prisrak
