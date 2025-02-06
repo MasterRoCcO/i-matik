@@ -18,10 +18,13 @@ cat << EOF | sed -r 's/(.+[^>])$/\1<br>/g'
 <br/>
 	<a class="active" href="https://www.ip-phone-forum.de/threads/vorstellung-meines-scripts-namens-i-matik.312640/" target="_blank">IP Phone Forum Side</a>
 <br/>
+<br/>
 The installed version on this device is currently xxxx
 <br/>
 <h1>Donate Page for i-matik</h1>
+<br/>
 	<a class="active" href="https://www.spendenseite.de/i-matik/-67603" target="_blank">Spenden Side</a>
+<br/>
 <br/>
 <h1>Donate Page for freetz-ng</h1>
 	<a class="active" href="https://github.com/sponsors/fda77" target="_blank"> <img src="https://img.shields.io/static/v1?label=GitHub&message=fda77&logo=GitHub&color=%230e8e86" alt="GitHub Side"></a>
@@ -29,6 +32,7 @@ The installed version on this device is currently xxxx
 	or
 	<a class="active" href="https://camo.githubusercontent.com/1bbcdb4d5113e485a0fee48c81e68b3e1900189377a5d75b7beea9922a09a51e/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f6c6162656c3d426974636f696e266d6573736167653d6664613737266c6f676f3d426974636f696e26636f6c6f723d253233306538653836" target="_blank">
     <img src="https://img.shields.io/static/v1?label=Bitcoin&message=fda77&logo=Bitcoin&color=%230e8e86" alt="Bitcoin Side"></a>	
+<br/>
 <br/>
 <h1>Big thanks to</h1>
 bbszx
