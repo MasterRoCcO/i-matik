@@ -35,7 +35,7 @@ The installed version on this device is currently xxxx
 <br/>
 <br/>
 <h1>Big thanks to</h1>
-bbszx
+bbszx (Tested on 4060 and 7530AX)
 berndy2001
 hermann72pb
 Humpty Dumpty
