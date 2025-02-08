@@ -1,8 +1,10 @@
 --- tools/freetz_download
-+++ tools/freetz_download	2024-12-24 22:23:15.599923694 +0100
-@@ -297,11 +300,12 @@
++++ tools/freetz_download	2025-02-08 12:58:18.781234220 +0100
+@@ -296,12 +299,14 @@
+ #				sites[(( num_sites++ ))]=https://download.avm.de/fritzdect/$subpath
  				sites[(( num_sites++ ))]=https://avm.de/$subpath
  				sites[(( num_sites++ ))]=https://avm.de/fileadmin/user_upload/DE/Labor/Download
++				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/Smart24P2/$subpath
  				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/Smart24P1FCS/$subpath
 -#				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/Smart24P1NL1/$subpath
 +				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/Smart24P1NL1/$subpath
