@@ -36,15 +36,6 @@ source $SSL11
 elif [[ $1 == '68505g' ]] && [[ $2 == '-push' ]]; then
 source $SSL11_PUSH
 
-elif [[ $1 == '68605g.30' ]]; then
-source $I_MATIK
-elif [[ $1 == '68605g.33' ]]; then
-source $I_MATIK
-elif [[ $1 == '68605g.multi' ]]; then
-source $SSL11
-elif [[ $1 == '68605g' ]] && [[ $2 == '-push' ]]; then
-source $SSL30_PUSH
-
 elif [[ $1 == '7520.11' ]]; then
 printf ${RED}"No support, please use 30 for this\n"
 elif [[ $1 == '7520.30' ]]; then
@@ -244,6 +235,15 @@ elif [[ $1 == '3000.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '3000' ]] && [[ $2 == '-push' ]]; then
 source $SSL11_PUSH_REPEATER
+
+elif [[ $1 == '68605g.30' ]]; then
+source $NO_OSCAM
+elif [[ $1 == '68605g.33' ]]; then
+source $NO_OSCAM
+elif [[ $1 == '68605g.multi' ]]; then
+source $SSL30
+elif [[ $1 == '68605g' ]] && [[ $2 == '-push' ]]; then
+source $SSL30_PUSH
 
 elif [[ $1 == '7581.10' ]]; then
 source $NO_KERNEL_FILES
