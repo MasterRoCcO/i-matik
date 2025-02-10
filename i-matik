@@ -236,13 +236,13 @@ printf ${RED}"No supported\n"
 elif [[ $1 == '3000' ]] && [[ $2 == '-push' ]]; then
 source $SSL11_PUSH_REPEATER
 
-elif [[ $1 == '68605g.30' ]]; then
+elif [[ $1 == '6860.30' ]]; then
 source $NO_OSCAM
-elif [[ $1 == '68605g.33' ]]; then
+elif [[ $1 == '6860.33' ]]; then
 source $NO_OSCAM
-elif [[ $1 == '68605g.multi' ]]; then
+elif [[ $1 == '6860.multi' ]]; then
 source $SSL30
-elif [[ $1 == '68605g' ]] && [[ $2 == '-push' ]]; then
+elif [[ $1 == '6860' ]] && [[ $2 == '-push' ]]; then
 source $SSL30_PUSH
 
 elif [[ $1 == '7581.10' ]]; then
