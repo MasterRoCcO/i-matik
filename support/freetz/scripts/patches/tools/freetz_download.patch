@@ -1,6 +1,6 @@
 --- tools/freetz_download
-+++ tools/freetz_download	2025-02-08 12:58:18.781234220 +0100
-@@ -296,12 +299,14 @@
++++ tools/freetz_download	2025-02-15 16:25:00.287756564 +0100
+@@ -311,12 +311,14 @@
  #				sites[(( num_sites++ ))]=https://download.avm.de/fritzdect/$subpath
  				sites[(( num_sites++ ))]=https://avm.de/$subpath
  				sites[(( num_sites++ ))]=https://avm.de/fileadmin/user_upload/DE/Labor/Download
