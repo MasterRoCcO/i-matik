@@ -75,7 +75,7 @@ FIX_CHECK_OFF="$I_MATIK_PATH/support/freetz/scripts/fix_check/fix_check_off"
 BAD_EXT3_OS_75="07_5X"
 BAD_EXT3_OS_78="07_8X"
 BAD_EXT3_OS_80="08_0X"
-BAD_EXT3_TYP="7530_AX"
+#BAD_EXT3_TYP="7530_AX"
 
 #downgrade
 DOWNGRADE_ON="$I_MATIK_PATH/support/freetz/scripts/patches/downgrade/downgrade_on"
