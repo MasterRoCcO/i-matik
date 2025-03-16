@@ -46,6 +46,8 @@ while [ $# -ne 0 ];do
 	    ;;
 	-cm|--callmonitor)		PARAM_CM=1
 	    ;;
+	-sa|--samba)			PARAM_SAMBA=1
+	    ;;
 	-rr|--rrdstats)			PARAM_RR=1
 	    ;;
 	-rr18|--rrdstats18)		PARAM_RR_1_8=1

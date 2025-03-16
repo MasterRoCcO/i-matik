@@ -1,0 +1,4 @@
+#!/bin/bash
+sed -i "s+FREETZ_PACKAGE_SAMBA=y+# FREETZ_PACKAGE_SAMBA is not set+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+FREETZ_LIB_libpopt=y+# FREETZ_LIB_libpopt is not set+g" $FREETZ_SSL_HOME_PATH/.config
+

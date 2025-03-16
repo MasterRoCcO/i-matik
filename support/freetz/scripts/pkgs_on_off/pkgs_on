@@ -68,11 +68,16 @@ else
 	source $PKGS_PATH_ON_OFF/l4l_on
 fi
 
-
 if [ -z $PARAM_VFP ]; then
 	sleep 0
 else
 	source $PKGS_PATH_ON_OFF/vfp_on
+fi
+
+if [ -z $PARAM_SAMBA ]; then
+	sleep 0
+else
+	source $PKGS_PATH_ON_OFF/samba_on
 fi
 
 

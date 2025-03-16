@@ -72,3 +72,9 @@ if [ -z $PARAM_VFP ]; then
 else
 	source $PKGS_PATH_ON_OFF/vfp_off
 fi
+
+if [ -z $PARAM_SAMBA ]; then
+	sleep 0
+else
+	source $PKGS_PATH_ON_OFF/samba_off
+fi
