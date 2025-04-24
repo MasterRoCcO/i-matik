@@ -366,7 +366,9 @@ EOF
 		FUD_COMMENT_SSL="${FUD_COMMENT/"${FUD_COMMENT_BOX}"/""}"
 		FB_OS_COMMENT="$(grep '^FREETZ_TYPE_PREFIX_SERIES_SUBDIR=' .config | awk -F'"' '{print $2}' | xargs)"
 		FB_OS="os${FB_OS_COMMENT:1:1}${FB_OS_COMMENT:3:1}"
-		FB_SSL="ssl_${BOX_SSL:0:1}_${BOX_SSL:1:1}_x"
+		SSL_COMMENT="$(grep '^FREETZ_OPENSSL_SHORT_VERSION=' .config | awk -F'"' '{print $2}' | xargs | sed 's/\./_/g')"
+		FB_SSL="ssl_${SSL_COMMENT}_x"
+#		FB_SSL="ssl_${BOX_SSL:0:1}_${BOX_SSL:1:1}_x"
 		FB_ARCH="$(grep '^FREETZ_TARGET_ARCH_ENDIANNESS_DEPENDENT=' .config | awk -F'"' '{print $2}' | xargs)"
 		FB_TYPE="${BOX_NAME}_${FB_OS}_${FB_SSL}_${FB_ARCH}"
 

@@ -330,7 +330,9 @@ for bs in "${BOX_SSL[@]}"; do
 		#FUD_COMMENT_SSL="${FUD_COMMENT/"_${FUD_COMMENT_BOX}"/""}"
 		FUD_COMMENT_BOX="$(echo $FUD_COMMENT)"
 		FUD_COMMENT_SSL="${FUD_COMMENT/"${FUD_COMMENT_BOX}"/""}"
-		FB_SSL="ssl_${BOX_SSL:0:1}_${BOX_SSL:1:1}_x"
+		SSL_COMMENT="$(grep '^FREETZ_OPENSSL_SHORT_VERSION=' .config | awk -F'"' '{print $2}' | xargs | sed 's/\./_/g')"
+		FB_SSL="ssl_${SSL_COMMENT}_x"
+#		FB_SSL="ssl_${BOX_SSL:0:1}_${BOX_SSL:1:1}_x"
 
 		# Remove older image files
 		DELETE_IMAGE_NAME="*$(echo ${FB_SSL}_${FUD_COMMENT}).image"	# construct image filname filter
