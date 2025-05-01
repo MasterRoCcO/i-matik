@@ -32,7 +32,7 @@ Options
   -tm,--toolchain-make		Toolchain make
   -cm,--callmonitor		Callmonitor
   -rr,--rrdstats		RRDstats for RRDtool 1.2.30
-  -rr18,--rrdstats18		RRDstats for RRDtool 1.8.0
+  -rr18,--rrdstats18		RRDstats for RRDtool 1.9.0
   -us,--user-skins		User Skin
   -us,--user-skins1		User Skin1
   -ua,--user-application	User Application
