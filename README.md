@@ -11,7 +11,7 @@ Options
   SSL_NUMBER			10 - OpenSSL 1.0.x
   				11 - OpenSSL 1.1.x
   				30 - OpenSSL 3.0.x
-  				35 - OpenSSL 3.3.x (only intern)
+  				35 - OpenSSL 3.5.x (only intern)
   				multi - OpenSSL multiple Versions (only intern)
   -c,--config			show not freetz-ng configuration dialog
   -s,--skip-image2memory	do not create inmemory image
@@ -94,4 +94,4 @@ Set umask 0022 before you clone this repository
 umask 0022
 git clone https://github.com/MasterRoCcO/i-matik.git
 ```
-24.04.2025
+01.05.2025
