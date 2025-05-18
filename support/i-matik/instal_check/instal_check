@@ -2,7 +2,7 @@
 
 # Define the OS version and supported versions
 OS_VERSION=$(lsb_release -rs)
-SUPPORTED_VERSIONS=("20.04" "21.10" "22.04" "23.04" "23.10" "24.04" "10" "11" "12" "2023.4" "2024.1" "2024.3" "21.3" "22" "22.1" "17" "7.1")
+SUPPORTED_VERSIONS=("20.04" "21.10" "22.04" "23.04" "23.10" "24.04" "25.04" "10" "11" "12" "2023.4" "2024.1" "2024.3" "21.3" "22" "22.1" "17" "7.1")
 
 # Check if the current OS version is supported
 if [[ " ${SUPPORTED_VERSIONS[@]} " =~ " ${OS_VERSION} " ]]; then
@@ -48,10 +48,12 @@ fi
 # LIST
 # 20.04  = Ubuntu
 # 21.10  = Ubuntu (https://ubuntu.com/about/release-cycle End of Standard Support)
-# 22.04  = Ubuntu / KDE neon / POP-OS
+# 22.04  = Ubuntu / KDE neon / POP-OS Apr 2027 (https://ubuntu.com/about/release-cycle End of Standard Support)
 # 23.04  = Ubuntu (https://ubuntu.com/about/release-cycle End of Standard Support)
 # 23.10  = Ubuntu (https://ubuntu.com/about/release-cycle End of Standard Support)
-# 24.04  = Ubuntu
+# 24.04  = Ubuntu Apr 2029 (https://ubuntu.com/about/release-cycle End of Standard Support)
+# 24.10  = Ubuntu Jul 2025 (https://ubuntu.com/about/release-cycle End of Standard Support)
+# 25.04  = Ubuntu Jan 2026 (https://ubuntu.com/about/release-cycle End of Standard Support)
 # 10	 = Debian
 # 11	 = Debian
 # 12	 = Debian
