@@ -1,6 +1,6 @@
---- make/pkgs/mod/files/root/etc/default.mod/mod.cfg	2023-10-19 05:18:48.591301000 +0200
-+++ make/pkgs/mod/files/root/etc/default.mod/mod.cfg	2023-12-27 06:57:02.328957346 +0100
-@@ -36,7 +36,7 @@
+--- make/pkgs/mod/files/root/etc/default.mod/mod.cfg
++++ make/pkgs/mod/files/root/etc/default.mod/mod.cfg	2025-05-23 06:44:05.825844284 +0200
+@@ -37,7 +37,7 @@
  export MOD_SHUTDOWN_LAST='cifsmount davfs2 autofs'
  export MOD_PATH_WTMP='/var/log/'
  export MOD_GET_IP_METHOD='--all'
