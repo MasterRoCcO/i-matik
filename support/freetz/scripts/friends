@@ -1,9 +1,15 @@
 #!/bin/bash
-rm -rf $ONLY_FRIENDS_PATCH 2>/dev/null
-gpg --passphrase $PW_FOR_FRIENDS --no-symkey-cache --cipher-algo AES256 --batch -o $I_MATIK_PATH/friends.patch -d $FRIENDS_PATCH_DL/friends_09.06.2025
-patch -p0 < friends.patch
-rm -rf $I_MATIK_PATH/friends.patch 2>/dev/null
-chmod 777 $FRIENDS_PATCH_INFO/version
-chmod 777 $FRIENDS_PATCH_INFO/version.orig
-rm -rf $FRIENDS_PATCH_DL/friends 2>/dev/null
-rm -rf $FRIENDS_PATCH_DL/friends_09.06.2025 2>/dev/null
+# Variablen für Dateien
+FRIENDS_PATCH="$I_MATIK_PATH/friends.patch"
+PATCH_FILE="$FRIENDS_PATCH_DL/friends_12.06.2025"
+
+# Aufräumen vorheriger Dateien
+rm -rf "$ONLY_FRIENDS_PATCH" "$FRIENDS_PATCH_DL/friends" "$PATCH_FILE" 2>/dev/null
+
+# Entschlüsseln und patchen
+gpg --passphrase "$PW_FOR_FRIENDS" --no-symkey-cache --cipher-algo AES256 --batch -o "$FRIENDS_PATCH" -d "$PATCH_FILE"
+patch -p0 < "$FRIENDS_PATCH"
+
+# Aufräumen und Berechtigungen setzen
+rm -rf "$FRIENDS_PATCH" 2>/dev/null
+chmod 777 "$FRIENDS_PATCH_INFO/version" "$FRIENDS_PATCH_INFO/version.orig"
