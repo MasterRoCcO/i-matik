@@ -1,49 +1,81 @@
 #!/bin/bash
 
-# Define the OS version and supported versions
-OS_VERSION=$(lsb_release -rs)
-SUPPORTED_VERSIONS=("20.04" "21.10" "22.04" "23.04" "23.10" "24.04" "25.04" "10" "11" "12" "2023.4" "2024.1" "2024.3" "21.3" "22" "22.1" "17" "7.1")
-
-# Check if the current OS version is supported
-if [[ " ${SUPPORTED_VERSIONS[@]} " =~ " ${OS_VERSION} " ]]; then
-	PACKAGES="autopoint bc binutils bison bsdmainutils bzip2 ccache cmake cpio curl ecj flex g++ gawk gcc"
-	PACKAGES+=" gcc-multilib gettext git graphicsmagick imagemagick inkscape intltool java-wrappers kmod"
-	PACKAGES+=" lib32ncurses-dev lib32stdc++6 lib32z1-dev libacl1-dev libc6-dev-i386 libcap-dev libelf-dev"
-	PACKAGES+=" libglib2.0-dev libgnutls28-dev libncurses-dev libreadline-dev libsqlite3-dev libssl-dev"
-	PACKAGES+=" libstring-crc32-perl libtool-bin libusb-dev libxml2-dev libzstd-dev make ncftp netcat-openbsd net-tools patch"
-	PACKAGES+=" patchutils perl pkg-config pv rsync sharutils sqlite3 subversion sudo texinfo tofrodos unar unzip"
-	PACKAGES+=" uuid-dev wget zip zlib1g-dev device-tree-compiler xz-utils python3-dev libtool diffutils"
-	PACKAGES+=" libpcsclite-dev libc-dev-bin libacl1-dev libccid libstdc++6 dialog sshpass libusb-1.0-0-dev jq gperf help2man dos2unix"
-	PACKAGES+=" libucl1 ruby libucl-dev gnupg autoconf-archive"
-
-	# Check if any of the packages are not installed
-	if ! dpkg -s $PACKAGES >/dev/null 2>&1; then
-		printf "${YELLOW}Installing prerequisite packages...\n${NC}"
-		
-		# Uncomment if you need to add architectures or PPAs
-		# sudo dpkg --add-architecture i386
-		# sudo add-apt-repository ppa:git-core/ppa
-		
-		# Update package lists and install packages
-		sudo apt-get update && sudo apt-get install $PACKAGES -y
-		
-		# Download and install additional .deb file
-		cd /tmp
-		wget http://mirrors.kernel.org/ubuntu/pool/universe/u/upx-ucl/upx-ucl_3.95-2build1_amd64.deb
-		sudo dpkg -i /tmp/upx-ucl_3.95-2build1_amd64.deb
-		echo "upx-ucl hold" | sudo dpkg --set-selections
-
-		# Optional: Perform system upgrades and clean-up
-		sudo apt-get upgrade -y && sudo apt dist-upgrade -y && sudo apt autoclean -y && sudo apt autoremove -y
-#	else
-#		echo "All prerequisite packages are already installed."
-	fi
+# Farben für Ausgaben
+RED='\033[0;31m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+	
+# Aktuelle OS-Version abrufen (mit Fallback)
+if command -v lsb_release &>/dev/null; then
+	OS_VERSION=$(lsb_release -rs)
+elif [ -f /etc/os-release ]; then
+	. /etc/os-release
+	OS_VERSION="${VERSION_ID}"
 else
-	echo "Non-compatible version"
-	echo "Read here for prerequisites: https://freetz-ng.github.io/freetz-ng/PREREQUISITES"
-	exit
+	echo -e "${RED}Konnte OS-Version nicht ermitteln.${NC}"
+	exit 1
 fi
 
+# Unterstützte Versionen
+SUPPORTED_VERSIONS=("20.04" "21.10" "22.04" "23.04" "23.10" "24.04" "25.04" "10" "11" "12" "2023.4" "2024.1" "2024.3" "21.3" "22" "22.1" "17" "7.1")
+
+# Prüfen, ob die Version unterstützt wird
+IS_SUPPORTED=false
+for v in "${SUPPORTED_VERSIONS[@]}"; do
+	if [[ "$OS_VERSION" == "$v" ]]; then
+		IS_SUPPORTED=true
+		break
+	fi
+done
+
+if [[ "$IS_SUPPORTED" != "true" ]]; then
+	echo -e "${RED}Nicht unterstützte OS-Version: $OS_VERSION${NC}"
+	echo "Siehe Voraussetzungen hier: https://freetz-ng.github.io/freetz-ng/PREREQUISITES"
+	exit 1
+fi
+
+# Paketliste
+PACKAGES="autopoint bc binutils bison bsdmainutils bzip2 ccache cmake cpio curl ecj flex g++ gawk gcc"
+PACKAGES+=" gcc-multilib gettext git graphicsmagick imagemagick inkscape intltool java-wrappers kmod"
+PACKAGES+=" lib32ncurses-dev lib32stdc++6 lib32z1-dev libacl1-dev libc6-dev-i386 libcap-dev libelf-dev"
+PACKAGES+=" libglib2.0-dev libgnutls28-dev libncurses-dev libreadline-dev libsqlite3-dev libssl-dev"
+PACKAGES+=" libstring-crc32-perl libtool-bin libusb-dev libxml2-dev libzstd-dev make ncftp netcat-openbsd net-tools patch"
+PACKAGES+=" patchutils perl pkg-config pv rsync sharutils sqlite3 subversion sudo texinfo tofrodos unar unzip"
+PACKAGES+=" uuid-dev wget zip zlib1g-dev device-tree-compiler xz-utils python3-dev libtool diffutils"
+PACKAGES+=" libpcsclite-dev libc-dev-bin libacl1-dev libccid libstdc++6 dialog sshpass libusb-1.0-0-dev jq gperf help2man dos2unix"
+PACKAGES+=" libucl1 ruby libucl-dev gnupg autoconf-archive"
+
+# Fehlende Pakete ermitteln
+MISSING_PACKAGES=""
+for pkg in $PACKAGES; do
+	if ! dpkg -s "$pkg" &>/dev/null; then
+		MISSING_PACKAGES+="$pkg "
+	fi
+done
+
+# Fehlende Pakete installieren
+if [ -n "$MISSING_PACKAGES" ]; then
+	echo -e "${YELLOW}Installiere fehlende Pakete:\n$MISSING_PACKAGES${NC}"
+	sudo apt-get update
+	sudo apt-get install -y $MISSING_PACKAGES
+
+	# upx-ucl installieren, falls nicht vorhanden
+	if ! command -v upx >/dev/null; then
+		echo "Installing upx-ucl..."
+		cd /tmp
+		wget -q http://mirrors.kernel.org/ubuntu/pool/universe/u/upx-ucl/upx-ucl_3.95-2build1_amd64.deb
+		sudo dpkg -i upx-ucl_3.95-2build1_amd64.deb
+		echo "upx-ucl hold" | sudo dpkg --set-selections
+	fi
+
+	# Optionale Systempflege
+	sudo apt-get upgrade -y
+	sudo apt-get dist-upgrade -y
+	sudo apt-get autoclean -y
+	sudo apt-get autoremove -y
+else
+	echo -e "${YELLOW}Alle benötigten Pakete sind bereits installiert.${NC}"
+fi
 
 # LIST
 # 20.04  = Ubuntu
@@ -62,7 +94,7 @@ fi
 # 2024.1 = Kali
 # 2024.3 = Kali
 # 21.3   = Mint
-# 22     = Mint
+# 22	 = Mint
 # 22.1   = Mint
 # 7.1	= elementary
 
