@@ -1,6 +1,6 @@
 --- config/ui/toolchain.in
 +++ config/ui/toolchain.in	2025-04-04 04:51:00.320873185 +0200
-@@ -750,65 +750,65 @@
+@@ -751,65 +751,65 @@
  
  	config FREETZ_TARGET_GCC_4_6
  		bool "gcc-4.6.4"
@@ -76,4 +76,4 @@
 +#		depends on !FREETZ_SEPARATE_AVM_UCLIBC
  		depends on FREETZ_AVM_GCC_9_4
  
- 	config FREETZ_TARGET_GCC_13_3
+ 	config FREETZ_TARGET_GCC_13_4
