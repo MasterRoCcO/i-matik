@@ -1,12 +1,15 @@
 --- tools/freetz_download
-+++ tools/freetz_download	2025-04-06 20:01:12.276128536 +0200
-@@ -311,7 +314,8 @@
- #				sites[(( num_sites++ ))]=https://download.avm.de/fritzdect/$subpath
- 				sites[(( num_sites++ ))]=https://avm.de/$subpath
- 				sites[(( num_sites++ ))]=https://avm.de/fileadmin/user_upload/DE/Labor/Download
--#				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/Smart24P2/$subpath
-+				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/Smart24P2/$subpath
-+#				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/Smart24P22Box/$subpath
- #				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/Smart24P1FCS/$subpath
- #				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/Smart24P1NL1/$subpath
- #				sites[(( num_sites++ ))]=https://download.avm.de/inhaus/Smart24P1/$subpath
++++ tools/freetz_download	2025-10-21 05:55:12.149242860 +0200
+@@ -309,9 +309,9 @@
+ #				sites[${#sites[@]}]=https://download.avm.de/fritzdect/$subpath
+ 				sites[${#sites[@]}]=https://fritz.com/$subpath
+ 				sites[${#sites[@]}]=https://fritz.com/fileadmin/user_upload/DE/Labor/Download
+-#				sites[${#sites[@]}]=https://download.avm.de/inhaus/Smart24P2NL1/$subpath
+-#				sites[${#sites[@]}]=https://download.avm.de/inhaus/Smart24P2/$subpath
+-#				sites[${#sites[@]}]=https://download.avm.de/inhaus/Smart24P1FCS/$subpath
++				sites[${#sites[@]}]=https://download.avm.de/inhaus/Smart24P2NL1/$subpath
++				sites[${#sites[@]}]=https://download.avm.de/inhaus/Smart24P2/$subpath
++				sites[${#sites[@]}]=https://download.avm.de/inhaus/Smart24P1FCS/$subpath
+ #				sites[${#sites[@]}]=https://download.avm.de/inhaus/Smart24P1NL1/$subpath
+ #				sites[${#sites[@]}]=https://download.avm.de/inhaus/Smart24P1/$subpath
+ #				sites[${#sites[@]}]=https://download.avm.de/inhaus/GoFiber23NL1/$subpath
