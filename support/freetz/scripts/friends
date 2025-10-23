@@ -1,7 +1,7 @@
 #!/bin/bash
 # Variablen für Dateien
 FRIENDS_PATCH="$I_MATIK_PATH/friends.patch"
-PATCH_FILE="$FRIENDS_PATCH_DL/friends_22.10.2025"
+PATCH_FILE="$FRIENDS_PATCH_DL/friends_23.10.2025"
 
 # Aufräumen vorheriger Dateien
 rm -rf "$ONLY_FRIENDS_PATCH" "$FRIENDS_PATCH_DL/friends" "$PATCH_FILE" 2>/dev/null
