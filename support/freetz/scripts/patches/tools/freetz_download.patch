@@ -1,15 +1,11 @@
 --- tools/freetz_download
-+++ tools/freetz_download	2025-10-21 05:55:12.149242860 +0200
-@@ -309,9 +309,9 @@
- #				sites[${#sites[@]}]=https://download.avm.de/fritzdect/$subpath
- 				sites[${#sites[@]}]=https://fritz.com/$subpath
- 				sites[${#sites[@]}]=https://fritz.com/fileadmin/user_upload/DE/Labor/Download
--#				sites[${#sites[@]}]=https://download.avm.de/inhaus/Smart24P2NL1/$subpath
--#				sites[${#sites[@]}]=https://download.avm.de/inhaus/Smart24P2/$subpath
--#				sites[${#sites[@]}]=https://download.avm.de/inhaus/Smart24P1FCS/$subpath
-+				sites[${#sites[@]}]=https://download.avm.de/inhaus/Smart24P2NL1/$subpath
-+				sites[${#sites[@]}]=https://download.avm.de/inhaus/Smart24P2/$subpath
-+				sites[${#sites[@]}]=https://download.avm.de/inhaus/Smart24P1FCS/$subpath
- #				sites[${#sites[@]}]=https://download.avm.de/inhaus/Smart24P1NL1/$subpath
- #				sites[${#sites[@]}]=https://download.avm.de/inhaus/Smart24P1/$subpath
- #				sites[${#sites[@]}]=https://download.avm.de/inhaus/GoFiber23NL1/$subpath
++++ tools/freetz_download	2025-08-05 06:54:05.821564420 +0200
+@@ -302,6 +303,8 @@
+ 				done
+ 			elif [ ${url:0:4} == "@AVM" ]; then
+ 				subpath=${url/@AVM\//}
++				sites[${#sites[@]}]=http://192.168.178.9/fritzbox/download.avm.de/fritzbox/$subpath
++				sites[${#sites[@]}]=http://192.168.178.9/fritzbox/download.avm.de/$subpath
+ 				sites[${#sites[@]}]=https://download.avm.de/fritzbox/$subpath
+ 				sites[${#sites[@]}]=https://download.avm.de/$subpath
+ #				sites[${#sites[@]}]=https://download.avm.de/fritzwlan/$subpath
