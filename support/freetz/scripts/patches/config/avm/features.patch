@@ -1,6 +1,6 @@
 --- config/avm/features.in
-+++ config/avm/features.in	2025-10-21 06:06:55.099934936 +0200
-@@ -103,7 +103,7 @@
++++ config/avm/features.in	2025-11-15 10:00:50.103704985 +0100
+@@ -104,7 +104,7 @@
  	default y
  	depends on \
  		(FREETZ_AVM_VERSION_05_2X_MIN && FREETZ_AVM_VERSION_05_5X_MAX) || \
