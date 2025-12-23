@@ -1,5 +1,5 @@
 #!/bin/bash
-DATE="11.12.2025"
+DATE="23.12.2025"
 # Variablen für Dateien
 rm -rf $ONLY_FRIENDS_PATCH 2>/dev/null
 gpg --passphrase $PW_FOR_FRIENDS --no-symkey-cache --cipher-algo AES256 --batch -o $I_MATIK_PATH/friends.patch -d $FRIENDS_PATCH_DL/friends_$DATE
