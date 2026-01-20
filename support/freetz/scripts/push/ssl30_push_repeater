@@ -18,12 +18,6 @@ FREETZ_SSL_PATH="FREETZ_PATH_SSL_30"
 FREETZ_SSL_HOME_PATH="${!FREETZ_SSL_PATH}/$BOX_HOME"
 
 # Push firmware images to the box
-for PUSH_IMAGE_NAME in "$FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$1/${1}*"*"$FUD_COMMENT_BOX"*"$FUD_COMMENT_SSL".image; do
-	# Check if the image file exists before attempting to push
-	if [[ -f "$PUSH_IMAGE_NAME" ]]; then
-		# Push the firmware image
-		"$FREETZ_SSL_HOME_PATH/tools/push_firmware" "$PUSH_IMAGE_NAME" -prg ftp
-	else
-		echo "Image not found: $PUSH_IMAGE_NAME"
-	fi
+for PUSH_IMAGE_NAME in $FREETZ_IMAGE_PATH/$END_IMAGE_PATH/$1/${1}*${FUD_COMMENT_BOX}*${FUD_COMMENT_SSL}.image; do
+	"$FREETZ_SSL_HOME_PATH/tools/push_firmware" "$PUSH_IMAGE_NAME" -prg ftp
 done
