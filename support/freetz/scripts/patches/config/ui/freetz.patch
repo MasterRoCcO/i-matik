@@ -1,5 +1,5 @@
---- config/ui/freetz.in	2024-02-01 23:05:38.000000000 +0100
-+++ config/ui/freetz.in	2024-02-03 18:07:34.264453976 +0100
+--- config/ui/freetz.in
++++ config/ui/freetz.in	2026-02-11 15:43:19.978081218 +0100
 @@ -179,9 +179,15 @@
  
  		config FREETZ_TAGGING_NG
