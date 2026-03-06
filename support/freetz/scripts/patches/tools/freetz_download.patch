@@ -1,11 +1,11 @@
 --- tools/freetz_download
-+++ tools/freetz_download	2025-08-05 06:54:05.821564420 +0200
-@@ -337,6 +338,8 @@
++++ tools/freetz_download	2026-03-06 02:33:06.917924894 +0100
+@@ -338,6 +339,8 @@
+ 					sites[${#sites[@]}]=https://downloads.sourceforge.net/$subpath
  				done
  			elif [ ${url:0:4} == "@AVM" ]; then
- 				subpath=${url/@AVM\//}
 +				sites[${#sites[@]}]=http://192.168.178.9/fritzbox/download.avm.de/fritzbox/$subpath
 +				sites[${#sites[@]}]=http://192.168.178.9/fritzbox/download.avm.de/$subpath
- 				sites[${#sites[@]}]=DLTOKEN
  				sites[${#sites[@]}]=https://download.avm.de/fritzbox/$subpath
  				sites[${#sites[@]}]=https://download.avm.de/$subpath
+ #				sites[${#sites[@]}]=https://download.avm.de/fritzwlan/$subpath
