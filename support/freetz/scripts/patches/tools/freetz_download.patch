@@ -1,9 +1,9 @@
 --- tools/freetz_download
-+++ tools/freetz_download	2026-03-07 16:19:42.686943920 +0100
++++ tools/freetz_download	2026-03-09 03:33:12.233173289 +0100
 @@ -339,6 +340,8 @@
  				done
  			elif [ ${url:0:4} == "@AVM" ]; then
- 				sites[${#sites[@]}]=@DLTOKEN/https://api.github.com/repos/Freetz-NG/internal/releases/tags/firmware
+ 				sites[${#sites[@]}]=@DLTOKEN/https://api.github.com/repos/Freetz-NG/internal/releases/tags/firmwares
 +				sites[${#sites[@]}]=http://192.168.178.9/fritzbox/download.avm.de/fritzbox/$subpath
 +				sites[${#sites[@]}]=http://192.168.178.9/fritzbox/download.avm.de/$subpath
  				sites[${#sites[@]}]=https://download.avm.de/fritzbox/$subpath
