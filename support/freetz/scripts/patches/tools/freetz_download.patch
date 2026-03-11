@@ -1,6 +1,6 @@
 --- tools/freetz_download
-+++ tools/freetz_download	2026-03-09 03:33:12.233173289 +0100
-@@ -339,6 +340,8 @@
++++ tools/freetz_download	2026-03-11 10:53:34.495651562 +0100
+@@ -344,6 +345,8 @@
  				done
  			elif [ ${url:0:4} == "@AVM" ]; then
  				sites[${#sites[@]}]=@DLTOKEN/https://api.github.com/repos/Freetz-NG/internal/releases/tags/firmwares
