@@ -113,7 +113,7 @@ FREETZ_SERIES_ALL=y
 # FREETZ_TYPE_6590 is not set
 # FREETZ_TYPE_6591 is not set
 # FREETZ_TYPE_6660 is not set
-# FREETZ_TYPE_6690 is not set
+# FREETZ_TYPE_6690_NIX is not set
 
 #
 # LTE
