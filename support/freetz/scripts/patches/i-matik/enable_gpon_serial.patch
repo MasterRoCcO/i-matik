@@ -47,9 +47,9 @@
  echo1 "re-adding GPON serial textbox"
 +if [ "$FREETZ_AVM_VERSION_08_4X_MIN" == "y" ] ; then
 +	PVER="08_4X"
-+elif [ "$FREETZ_AVM_VERSION_08_0X_MAX" == "y" ] ; then
++elif [ "$FREETZ_AVM_VERSION_08_0X_MIN" == "y" ] ; then
 +	PVER="08_0X"
-+elif [ "$FREETZ_AVM_VERSION_07_5X_MAX" == "y" ] ; then
++elif [ "$FREETZ_AVM_VERSION_07_5X_MIN" == "y" ] ; then
 +	PVER="07_5X"
 +fi
  
