@@ -26,21 +26,36 @@
 +   end
 +   function gpon_serial.dosave()
 +       local saveset = {}
+--- patches/cond/531-enable_gpon_serial/531-enable_gpon_serial_08_4X.patch	1970-01-01 01:00:00.000000000 +0100
++++ patches/cond/531-enable_gpon_serial/531-enable_gpon_serial_08_4X.patch	2024-04-10 12:54:33.891979924 +0200
+@@ -0,0 +1,11 @@
++--- usr/www/all/support.lua
+++++ usr/www/all/support.lua
++@@ -715,7 +715,7 @@
++     --end
++   end
++   function gpon_serial.show()
++-      return config.isFIBER and (config.country ~= "049" or g_is_internal_or_inhaus_version) and isPon()
+++      return true
++   end
++   function gpon_serial.dosave()
++       local saveset = {}
 --- patches/scripts/531-enable_gpon_serial.sh	2023-11-04 13:42:27.000000000 +0100
-+++ patches/scripts/531-enable_gpon_serial.sh	2024-04-10 12:53:22.305239115 +0200
-@@ -1,8 +1,11 @@
++++ patches/scripts/531-enable_gpon_serial.sh	2026-05-13 16:42:25.536734815 +0200
+@@ -1,8 +1,12 @@
  [ "$FREETZ_ENABLE_GPON_SERIAL" == "y" ] || return 0
  echo1 "re-adding GPON serial textbox"
++if [ "$FREETZ_AVM_VERSION_08_4X_MIN" == "y" ] ; then
++	PVER="08_4X"
++elif [ "$FREETZ_AVM_VERSION_08_0X_MAX" == "y" ] ; then
++	PVER="08_0X"
++elif [ "$FREETZ_AVM_VERSION_07_5X_MAX" == "y" ] ; then
++	PVER="07_5X"
++fi
  
 -replace_lua_function \
 -  $HTML_LANG_MOD_DIR/support.lua \
 -  "gpon_serial.show" \
 -  "config.GPON"
-+if [ "$FREETZ_AVM_VERSION_08_0X_MIN" == "y" ] ; then
-+	PVER="08_0X"
-+elif [ "$FREETZ_AVM_VERSION_07_5X_MIN" == "y" ] ; then
-+	PVER="07_5X"
-+fi
-+
 +modpatch "$FILESYSTEM_MOD_DIR" "${PATCHES_COND_DIR}/531-enable_gpon_serial/531-enable_gpon_serial_${PVER}.patch"
  
