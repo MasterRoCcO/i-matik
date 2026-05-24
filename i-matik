@@ -9,7 +9,7 @@ I_MATIK_PATH=$(cd `dirname $0` && pwd)
 git pull 2>/dev/null
 source $I_MATIK_PATH/support/i-matik/config/i-matik
 source $INSTAL_CHECK
-VERSIONS_NR="0.95.1(f37.3)(i09.3)"
+VERSIONS_NR="0.95.2(f37.3)(i09.3)"
 ln -s $CREATE_BOXES $I_MATIK_PATH/my-boxes_please_edit_me 2>/dev/null
 source $I_MATIK_PATH/support/freetz/scripts/friends 2>/dev/null
 
@@ -464,7 +464,7 @@ source $I_MATIK
 elif [[ $1 == '3272.30' ]]; then
 source $I_MATIK
 elif [[ $1 == '3272.35' ]]; then
-source $I_MATIK
+printf ${RED}"No supported\n"
 elif [[ $1 == '3272.multi' ]]; then
 source $SSL10
 elif [[ $1 == '3272' ]] && [[ $2 == '-push' ]]; then
@@ -477,7 +477,7 @@ source $I_MATIK
 elif [[ $1 == '3370.30' ]]; then
 source $I_MATIK
 elif [[ $1 == '3370.35' ]]; then
-source $I_MATIK
+printf ${RED}"No supported\n"
 elif [[ $1 == '3370.multi' ]]; then
 source $SSL10
 elif [[ $1 == '3370' ]] && [[ $2 == '-push' ]]; then
@@ -893,7 +893,7 @@ source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '300E.30' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '300E.35' ]]; then
-source $NO_INMEMORY_NO_OSCAM
+printf ${RED}"No supported\n"
 elif [[ $1 == '300E.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '300E' ]] && [[ $2 == '-push' ]]; then
@@ -945,7 +945,7 @@ source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '1240E.30' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == '1240E.35' ]]; then
-source $NO_INMEMORY_NO_OSCAM
+printf ${RED}"No supported\n"
 elif [[ $1 == '1240E.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == '1240E' ]] && [[ $2 == '-push' ]]; then
@@ -1073,7 +1073,7 @@ SUPPORTED_SSL_NUMBER_LIST=$(find "$I_MATIK_PATH/support/" -name "ssl_*" -type d 
 	printf "  SSL_NUMBER\t\t\t10 - OpenSSL 1.0.x\n"
 	printf "  \t\t\t\t11 - OpenSSL 1.1.x\n"
 	printf "  \t\t\t\t30 - OpenSSL 3.0.x\n"
-	printf "  \t\t\t\t35 - OpenSSL 3.5.x (only intern)\n"
+	printf "  \t\t\t\t35 - OpenSSL 3.5.x\n"
 	printf "  \t\t\t\tmulti - OpenSSL multiple Versions (only intern)\n"
 	printf "  -c,--config\t\t\tshow not freetz-ng configuration dialog\n"
 	printf "  -s,--skip-image2memory\tdo not create inmemory image\n"
