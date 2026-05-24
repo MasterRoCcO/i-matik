@@ -26,8 +26,8 @@
 +   end
 +   function gpon_serial.dosave()
 +       local saveset = {}
---- patches/cond/531-enable_gpon_serial/531-enable_gpon_serial_08_4X.patch	1970-01-01 01:00:00.000000000 +0100
-+++ patches/cond/531-enable_gpon_serial/531-enable_gpon_serial_08_4X.patch	2024-04-10 12:54:33.891979924 +0200
+--- patches/cond/531-enable_gpon_serial/531-enable_gpon_serial_08_5X.patch	1970-01-01 01:00:00.000000000 +0100
++++ patches/cond/531-enable_gpon_serial/531-enable_gpon_serial_08_5X.patch	2024-04-10 12:54:33.891979924 +0200
 @@ -0,0 +1,11 @@
 +--- usr/www/all/support.lua
 ++++ usr/www/all/support.lua
@@ -45,8 +45,8 @@
 @@ -1,8 +1,12 @@
  [ "$FREETZ_ENABLE_GPON_SERIAL" == "y" ] || return 0
  echo1 "re-adding GPON serial textbox"
-+if [ "$FREETZ_AVM_VERSION_08_4X_MIN" == "y" ] ; then
-+	PVER="08_4X"
++if [ "$FREETZ_AVM_VERSION_08_5X_MIN" == "y" ] ; then
++	PVER="08_5X"
 +elif [ "$FREETZ_AVM_VERSION_08_0X_MIN" == "y" ] ; then
 +	PVER="08_0X"
 +elif [ "$FREETZ_AVM_VERSION_07_5X_MIN" == "y" ] ; then
