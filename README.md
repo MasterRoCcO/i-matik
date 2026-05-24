@@ -94,4 +94,4 @@ Set umask 0022 before you clone this repository
 umask 0022
 git clone https://github.com/MasterRoCcO/i-matik.git
 ```
-01.05.2025
+24.05.2026
