@@ -7,49 +7,48 @@ Usage: i-matik [OPTION]... [BOX_TYPE.SSL_NUMBER]...
   or   i-matik [BOX_TYPE.SSL_NUMBER]... [OPTION]... 
 
 Options
-  BOX_TYPE		            	any currently supported devices
-  SSL_NUMBER		          	10 - OpenSSL 1.0.x
-  				                  11 - OpenSSL 1.1.x
-  	        		          	30 - OpenSSL 3.0.x
-  		        		          35 - OpenSSL 3.5.x
-  			                  	multi - OpenSSL multiple Versions
-  -c,--config			          show not freetz-ng configuration dialog
-  -s,--skip-image2memory  	do not create inmemory image
-  -int,--international		  International Version
-  -yo,--yes-oscam		        The image is with oscam add-on and an oscam is created
-  -yoe,--yes-oscam	      	The image is with oscam_emu add-on and an oscam is created
-  -ysmod,--yes-oscam-smod	  The image is with oscam_smod add-on and an oscam is created
-  -to,--tool-oscam          oscam ToolChain
-  -do,--del-oscam		        delete the old oscam and build a new one
-  -deloscam			            delete all oscams
-  -nc,--no-clientbox	     	No client box image is created
-  -nm,--no-masterbox	  	  No master box image is created
-  -kp,--kernel-precompiled  Make kernel-precompiled
-  -kc,--kernel-clean        Make kernel-clean
-  -km,--kernel-menuconfig   Make kernel-menuconfig
-  -ta,--toolchain-activate  Activate toolchain
-  -td,--toolchain-disable   Disable toolchain
-  -tm,--toolchain-make	  	Toolchain make
-  -cm,--callmonitor	        Callmonitor
-  -rr,--rrdstats	        	RRDstats for RRDtool 1.2.30
-  -rr18,--rrdstats18		    RRDstats for RRDtool 1.9.0
-  -us,--user-skins		      User Skin
-  -us,--user-skins1		      User Skin1
-  -ua,--user-application	  User Application
-  -vs,--vnstat			        VNSTAT
-  -wg,--wireguard		        WIREGUARD
-  -ov,--openvpn			        OpenVPN
-  -tel,--telnet			        telnet
-  -key,--key-pack		        Key Pack
-  -idm,--inadyn-mt		      Inadyn-mt
-  -l4l,--lcd4linux	      	LCD 4 LINUX
-  -vfp,--vsftpd			        secure FTP server
-  -push				              push image to Fritz!Box or Fritz!Repeater or Fritz!Powerline
-  -backup		              	make a backup of your freetz-signature and freetz-dl
-  -us,--user-skins		      user skins
-  -us1,--user-skins1	    	user skins1
-  -ua,--user-application	  user application
-  -sa,--samba		          	samba
+  BOX_TYPE                      any currently supported devices
+  SSL_NUMBER                    10 - OpenSSL 1.0.x
+                                11 - OpenSSL 1.1.x
+                                30 - OpenSSL 3.0.x
+                                35 - OpenSSL 3.5.x
+                                multi - OpenSSL multiple Versions
+  -c,--config                   show not freetz-ng configuration dialog
+  -s,--skip-image2memory        do not create inmemory image
+  -int,--international          International Version
+  -yo,--yes-oscam               The image is with oscam add-on and an oscam is created
+  -yoe,--yes-oscam              The image is with oscam_emu add-on and an oscam is created
+  -ysmod,--yes-oscam-smod       The image is with oscam_smod add-on and an oscam is created
+  -to,--tool-oscam              oscam ToolChain
+  -do,--del-oscam               delete the old oscam and build a new one
+  -deloscam	                    delete all oscams
+  -nc,--no-clientbox            No client box image is created
+  -nm,--no-masterbox            No master box image is created
+  -kp,--kernel-precompiled      Make kernel-precompiled
+  -kc,--kernel-clean            Make kernel-clean
+  -km,--kernel-menuconfig       Make kernel-menuconfig
+  -ta,--toolchain-activate      Activate toolchain
+  -td,--toolchain-disable       Disable toolchain
+  -tm,--toolchain-make          Toolchain make
+  -cm,--callmonitor             Callmonitor
+  -rr,--rrdstats                RRDstats for RRDtool 1.2.30
+  -rr18,--rrdstats18            RRDstats for RRDtool 1.9.0
+  -us,--user-skins              User Skin
+  -us,--user-skins1             User Skin1
+  -ua,--user-application        User Application
+  -vs,--vnstat                  VNSTAT
+  -wg,--wireguard               WIREGUARD
+  -ov,--openvpn                 OpenVPN
+  -tel,--telnet                 telnet
+  -idm,--inadyn-mt              Inadyn-mt
+  -l4l,--lcd4linux              LCD 4 LINUX
+  -vfp,--vsftpd                 secure FTP server
+  -push                         push image to Fritz!Box or Fritz!Repeater or Fritz!Powerline
+  -backup                       make a backup of your freetz-signature and freetz-dl
+  -us,--user-skins              user skins
+  -us1,--user-skins1            user skins1
+  -ua,--user-application        user application
+  -sa,--samba                   samba
 
 ```
 List of currently OpenSSL 1.0.x supported devices (BOX_TYPE): 1240E 300E 3272 3370 3390 4020 450E 540E 546E 6430 6490 6590 6810 6840 7240 7270v2 7270v3 7272 7312 7320 7320-Alien7330 7330 7330SL 7340 7360v1 7360v2 7362 7369 7390 7412 7581 7582 DVB-C
