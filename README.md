@@ -9,10 +9,10 @@ Usage: i-matik [OPTION]... [BOX_TYPE.SSL_NUMBER]...
 Options
   BOX_TYPE			any currently supported devices
   SSL_NUMBER			10 - OpenSSL 1.0.x
-  				11 - OpenSSL 1.1.x
-  				30 - OpenSSL 3.0.x
-  				35 - OpenSSL 3.5.x
-  				multi - OpenSSL multiple Versions
+  				        11 - OpenSSL 1.1.x
+  	        			30 - OpenSSL 3.0.x
+  		        		35 - OpenSSL 3.5.x
+  			        	multi - OpenSSL multiple Versions
   -c,--config			show not freetz-ng configuration dialog
   -s,--skip-image2memory	do not create inmemory image
   -int,--international		International Version
