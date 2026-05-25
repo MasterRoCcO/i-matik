@@ -366,6 +366,8 @@ elif [[ $1 == 'Gateway.11' ]]; then
 printf ${RED}"No support, please use 30 for this\n"
 elif [[ $1 == 'Gateway.30' ]]; then
 source $NO_INMEMORY_NO_OSCAM
+elif [[ $1 == 'Gateway.35' ]]; then
+source $NO_INMEMORY_NO_OSCAM
 #elif [[ $1 == 'Gateway.multi' ]]; then
 #printf ${RED}"No supported\n"
 elif [[ $1 == 'Gateway' ]] && [[ $2 == '-push' ]]; then
@@ -547,7 +549,7 @@ source $I_MATIK
 elif [[ $1 == '6840.30' ]]; then
 source $I_MATIK
 elif [[ $1 == '6840.35' ]]; then
-source $I_MATIK
+printf ${RED}"No supported\n"
 elif [[ $1 == '6840.multi' ]]; then
 source $SSL10
 elif [[ $1 == '6840' ]] && [[ $2 == '-push' ]]; then
@@ -571,7 +573,7 @@ source $I_MATIK
 elif [[ $1 == '7272.30' ]]; then
 source $I_MATIK
 elif [[ $1 == '7272.35' ]]; then
-source $I_MATIK
+printf ${RED}"No supported\n"
 elif [[ $1 == '7272.multi' ]]; then
 source $SSL10
 elif [[ $1 == '7272' ]] && [[ $2 == '-push' ]]; then
@@ -584,7 +586,7 @@ source $I_MATIK
 elif [[ $1 == '7362.30' ]]; then
 source $I_MATIK
 elif [[ $1 == '7362.35' ]]; then
-source $I_MATIK
+printf ${RED}"No supported\n"
 elif [[ $1 == '7362.multi' ]]; then
 source $SSL10
 elif [[ $1 == '7362' ]] && [[ $2 == '-push' ]]; then
@@ -808,7 +810,7 @@ source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '7330.30' ]]; then
 source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '7330.35' ]]; then
-source $EXTERNAL_NO_INMEMORY
+printf ${RED}"No supported\n"
 elif [[ $1 == '7330.multi' ]]; then
 source $SSL10
 elif [[ $1 == '7330' ]] && [[ $2 == '-push' ]]; then
@@ -820,7 +822,7 @@ elif [[ $1 == '7330SL.11' ]]; then
 source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '7330SL.30' ]]; then
 source $EXTERNAL_NO_INMEMORY
-elif [[ $1 == '7330SL.35' ]]; then
+printf ${RED}"No supported\n"
 source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '7330SL.multi' ]]; then
 source $SSL10
@@ -840,7 +842,7 @@ source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '7390.30' ]]; then
 source $EXTERNAL_NO_INMEMORY
 elif [[ $1 == '7390.35' ]]; then
-source $EXTERNAL_NO_INMEMORY
+printf ${RED}"No supported\n"
 elif [[ $1 == '7390.multi' ]]; then
 source $SSL10
 elif [[ $1 == '7390' ]] && [[ $2 == '-push' ]]; then
@@ -854,7 +856,7 @@ source $NO_INMEMORY
 elif [[ $1 == '7360v2.30' ]]; then
 source $NO_INMEMORY
 elif [[ $1 == '7360v2.35' ]]; then
-source $NO_INMEMORY
+printf ${RED}"No supported\n"
 elif [[ $1 == '7360v2.multi' ]]; then
 source $SSL10
 elif [[ $1 == '7360v2' ]] && [[ $2 == '-push' ]]; then
@@ -871,7 +873,7 @@ source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == 'DVB-C.30' ]]; then
 source $NO_INMEMORY_NO_OSCAM
 elif [[ $1 == 'DVB-C.35' ]]; then
-source $NO_INMEMORY_NO_OSCAM
+printf ${RED}"No supported\n"
 elif [[ $1 == 'DVB-c.multi' ]]; then
 printf ${RED}"No supported\n"
 elif [[ $1 == 'DVB-C' ]] && [[ $2 == '-push' ]]; then
