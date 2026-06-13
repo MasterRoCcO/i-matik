@@ -9,7 +9,7 @@ I_MATIK_PATH=$(cd `dirname $0` && pwd)
 git pull 2>/dev/null
 source $I_MATIK_PATH/support/i-matik/config/i-matik
 source $INSTAL_CHECK
-VERSIONS_NR="0.95.2(f37.8)(i09.3)"
+VERSIONS_NR="0.95.3(f37.8)(i09.3)"
 ln -s $CREATE_BOXES $I_MATIK_PATH/my-boxes_please_edit_me 2>/dev/null
 source $I_MATIK_PATH/support/freetz/scripts/friends 2>/dev/null
 
@@ -1097,7 +1097,7 @@ SUPPORTED_SSL_NUMBER_LIST=$(find "$I_MATIK_PATH/support/" -name "ssl_*" -type d 
 	printf "  -tm,--toolchain-make\t\tMake toolchain\n"
 	printf "  -cm,--callmonitor\t\tCallmonitor\n"
 	printf "  -rr,--rrdstats\t\tRRDstats for RRDtool 1.2.30\n"
-	printf "  -rr18,--rrdstats18\t\tRRDstats for RRDtool 1.8.0\n"
+	printf "  -rr18,--rrdstats18\t\tRRDstats for RRDtool 1.10.3\n"
 	printf "  -vs,--vnstat\t\t\tVNSTAT\n"
 	printf "  -wg,--wireguard\t\tWIREGUARD\n"
 	printf "  -ov|--openvpn\t\t\tOpenvpn\n"

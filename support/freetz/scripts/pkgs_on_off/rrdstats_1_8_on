@@ -25,3 +25,6 @@ wq
 EOF
 FUD_COMMENT_RRD="$(grep '^FREETZ_USER_DEFINED_COMMENT=' .config | awk -F'"' '{print $2}' | xargs)"
 sed -i "s+${FUD_COMMENT_RRD}+rrdtool_1_9_${FUD_COMMENT_RRD}+g" $FREETZ_SSL_HOME_PATH/.config 2>/dev/null
+
+sed -i "s+FREETZ_LIB_librrd_WITH_VERSION_ABANDON=y+# FREETZ_LIB_librrd_WITH_VERSION_ABANDON is not set+g" $FREETZ_SSL_HOME_PATH/.config
+sed -i "s+# FREETZ_LIB_librrd_WITH_VERSION_CURRENT is not set+FREETZ_LIB_librrd_WITH_VERSION_CURRENT=y+g" $FREETZ_SSL_HOME_PATH/.config
