@@ -17,7 +17,7 @@ else
 fi
 
 # Unterstützte Versionen
-SUPPORTED_VERSIONS=("20.04" "21.10" "22.04" "23.04" "23.10" "24.04" "25.04" "10" "11" "12" "2023.4" "2024.1" "2024.3" "21.3" "22" "22.1" "17" "7.1")
+SUPPORTED_VERSIONS=("20.04" "21.10" "22.04" "23.04" "23.10" "24.04" "25.04" "26.04" "10" "11" "12" "2023.4" "2024.1" "2024.3" "21.3" "22" "22.1" "17" "7.1")
 
 # Prüfen, ob die Version unterstützt wird
 IS_SUPPORTED=false
@@ -69,10 +69,7 @@ if [ -n "$MISSING_PACKAGES" ]; then
 	fi
 
 	# Optionale Systempflege
-	sudo apt-get upgrade -y
-	sudo apt-get dist-upgrade -y
-	sudo apt-get autoclean -y
-	sudo apt-get autoremove -y
+	sudo apt-get update && sudo apt-get -y upgrade && sudo apt dist-upgrade && sudo apt autoclean && sudo apt autoremove
 else
 	echo -e "${YELLOW}Alle benötigten Pakete sind bereits installiert.${NC}"
 fi
@@ -86,6 +83,7 @@ fi
 # 24.04  = Ubuntu Apr 2029 (https://ubuntu.com/about/release-cycle End of Standard Support)
 # 24.10  = Ubuntu Jul 2025 (https://ubuntu.com/about/release-cycle End of Standard Support)
 # 25.04  = Ubuntu Jan 2026 (https://ubuntu.com/about/release-cycle End of Standard Support)
+# 26.04  = Ubuntu Jan 2026 (https://ubuntu.com/about/release-cycle End of Standard Support)
 # 10	 = Debian
 # 11	 = Debian
 # 12	 = Debian
