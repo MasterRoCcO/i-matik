@@ -44,6 +44,7 @@ PACKAGES+=" patchutils perl pkg-config pv rsync sharutils sqlite3 subversion sud
 PACKAGES+=" uuid-dev wget zip zlib1g-dev device-tree-compiler xz-utils python3-dev libtool diffutils"
 PACKAGES+=" libpcsclite-dev libc-dev-bin libacl1-dev libccid libstdc++6 dialog sshpass libusb-1.0-0-dev jq gperf help2man dos2unix"
 PACKAGES+=" libucl1 ruby libucl-dev gnupg autoconf-archive"
+PACKAGES+=" libcrypt-dev"
 
 # Fehlende Pakete ermitteln
 MISSING_PACKAGES=""
