@@ -130,6 +130,7 @@ FRIENDS_UPDATE_ADDON_OFF="$ONLY_FRIENDS_PATCH/make/update_addon_off"
 #If you don't need the make menuconfig, just put a # in front of MENUC and MENUC1
 MENUC="menuconfig"
 NOMENUC="olddefconfig"
+NOMENUC_MULTI="multi"
 
 #image2inmemory tool
 IMAGE2MEMORY="./image2inmemory"
