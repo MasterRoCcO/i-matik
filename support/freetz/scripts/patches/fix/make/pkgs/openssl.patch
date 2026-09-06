@@ -1,6 +1,6 @@
 --- make/pkgs/openssl/Config.in.libs
-+++ make/pkgs/openssl/Config.in.libs	2025-04-18 00:19:47.274294136 +0200
-@@ -67,7 +67,7 @@
++++ make/pkgs/openssl/Config.in.libs	2026-09-06 18:56:04.497431020 +0200
+@@ -68,7 +68,7 @@
  
  	config FREETZ_OPENSSL_VERSION_10
  		bool "1.0.2 - DEPRECATED"
