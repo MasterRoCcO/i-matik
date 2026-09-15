@@ -9,7 +9,7 @@ FREETZ_HAVE_DOT_CONFIG=y
 #
 
 #
-#  freetz-ng 25899M-db3f98ed03 master 2025-04-21
+#  freetz-ng 29865MSI-a118678b65 master 2026-09-14
 #
 
 #
@@ -43,7 +43,7 @@ FREETZ_SERIES_ALL=y
 # end of Hardware series
 
 #
-# T-Com hardware
+# T-Com
 #
 # FREETZ_TYPE_300IP is not set
 # FREETZ_TYPE_W501V is not set
@@ -75,6 +75,7 @@ FREETZ_SERIES_ALL=y
 # FREETZ_TYPE_4040 is not set
 # FREETZ_TYPE_4050 is not set
 # FREETZ_TYPE_4060 is not set
+# FREETZ_TYPE_4630 is not set
 # FREETZ_TYPE_4690 is not set
 
 #
@@ -93,12 +94,18 @@ FREETZ_SERIES_ALL=y
 # FREETZ_TYPE_5491 is not set
 # FREETZ_TYPE_5530 is not set
 # FREETZ_TYPE_5590 is not set
+# FREETZ_TYPE_5630_NIX is not set
+# FREETZ_TYPE_5630_XGS is not set
 # FREETZ_TYPE_5690_NIX is not set
 # FREETZ_TYPE_5690_PRO is not set
+# FREETZ_TYPE_5690_XGS is not set
 
 #
 # Cable
 #
+# FREETZ_TYPE_6320_V1 is not set
+# FREETZ_TYPE_6320_V2 is not set
+# FREETZ_TYPE_6360 is not set
 # FREETZ_TYPE_6430 is not set
 # FREETZ_TYPE_6490 is not set
 # FREETZ_TYPE_6590 is not set
@@ -106,20 +113,25 @@ FREETZ_SERIES_ALL=y
 # FREETZ_TYPE_6660 is not set
 # FREETZ_TYPE_6670 is not set
 # FREETZ_TYPE_6690_NIX is not set
+# FREETZ_TYPE_6690_PRO is not set
 
 #
-# LTE
+# LTE/4G/5G
 #
 # FREETZ_TYPE_6810 is not set
 # FREETZ_TYPE_6820_V1 is not set
 # FREETZ_TYPE_6820_V2 is not set
 # FREETZ_TYPE_6820_V3 is not set
 # FREETZ_TYPE_6820_V4 is not set
+# FREETZ_TYPE_6825 is not set
 # FREETZ_TYPE_6840 is not set
 # FREETZ_TYPE_6842 is not set
-# FREETZ_TYPE_6850_4G is not set
+# FREETZ_TYPE_6850_4G_V1 is not set
+# FREETZ_TYPE_6850_4G_V2 is not set
 # FREETZ_TYPE_6850_5G_V1 is not set
-# FREETZ_TYPE_6860 is not set
+# FREETZ_TYPE_6850_5G_V2 is not set
+# FREETZ_TYPE_6860_V1 is not set
+# FREETZ_TYPE_6860_V2 is not set
 # FREETZ_TYPE_6890 is not set
 
 #
@@ -167,6 +179,9 @@ FREETZ_TYPE_7270_V3=y
 # FREETZ_TYPE_7583_V2 is not set
 # FREETZ_TYPE_7590_W5 is not set
 # FREETZ_TYPE_7590_W6 is not set
+# FREETZ_TYPE_7620 is not set
+# FREETZ_TYPE_7630 is not set
+# FREETZ_TYPE_7632 is not set
 # FREETZ_TYPE_7682 is not set
 # FREETZ_TYPE_7690 is not set
 
@@ -188,11 +203,16 @@ FREETZ_TYPE_7270_V3=y
 # FREETZ_TYPE_0450 is not set
 # FREETZ_TYPE_1200_W5 is not set
 # FREETZ_TYPE_1200_W6_V1 is not set
+# FREETZ_TYPE_1200_W6_V2 is not set
+# FREETZ_TYPE_1610 is not set
+# FREETZ_TYPE_1700 is not set
 # FREETZ_TYPE_1750 is not set
 # FREETZ_TYPE_2400_W5 is not set
+# FREETZ_TYPE_2700 is not set
 # FREETZ_TYPE_3000_W5 is not set
 # FREETZ_TYPE_3000_W6 is not set
 # FREETZ_TYPE_6000 is not set
+# FREETZ_TYPE_6700 is not set
 
 #
 # Smart
@@ -262,6 +282,7 @@ FREETZ_REMOVE_DTRACE=y
 # FREETZ_REMOVE_JFFS2 is not set
 # FREETZ_REMOVE_RAMZSWAP is not set
 # FREETZ_REMOVE_LSOF is not set
+# FREETZ_REMOVE_HD_IDLE is not set
 # FREETZ_REMOVE_NTFS is not set
 # FREETZ_REMOVE_USBHOST is not set
 # FREETZ_REMOVE_PRINTSERV is not set
@@ -308,6 +329,10 @@ FREETZ_MODIFY_UMTSD=y
 #
 # Replacement patches --------------------------------------
 #
+
+#
+# Replace OpenSSL libraries (not available, requires openssl-0.9.8)
+#
 # FREETZ_REPLACE_DTRACE is not set
 FREETZ_REPLACE_ONLINECHANGED=y
 
@@ -348,7 +373,6 @@ FREETZ_AVMDAEMON_DISABLE_TR069=y
 #
 # FREETZ_PACKAGE_ACME is not set
 # FREETZ_PACKAGE_APACHE2 is not set
-# FREETZ_PACKAGE_ATOP is not set
 # FREETZ_PACKAGE_AUTOFS is not set
 # FREETZ_PACKAGE_AUTOSSH is not set
 # FREETZ_PACKAGE_AVAHI is not set
@@ -367,6 +391,7 @@ FREETZ_AVMDAEMON_DISABLE_TR069=y
 # FREETZ_PACKAGE_BLUEZ_UTILS is not set
 # FREETZ_PACKAGE_BRIDGE_UTILS is not set
 # FREETZ_PACKAGE_BVI is not set
+# FREETZ_PACKAGE_BZIP2 is not set
 # end of B
 
 #
@@ -374,13 +399,13 @@ FREETZ_AVMDAEMON_DISABLE_TR069=y
 #
 # FREETZ_PACKAGE_CA_BUNDLE is not set
 # FREETZ_PACKAGE_CALLMONITOR is not set
-# FREETZ_PACKAGE_CCID is not set
 # FREETZ_PACKAGE_CHECKMAILD is not set
 # FREETZ_PACKAGE_CHOPARP is not set
 # FREETZ_PACKAGE_CIFSMOUNT is not set
 # FREETZ_PACKAGE_CLASSPATH is not set
 # FREETZ_PACKAGE_CNTLM is not set
 # FREETZ_PACKAGE_COMGT is not set
+# FREETZ_PACKAGE_CPULIMIT is not set
 # FREETZ_PACKAGE_CRYPTSETUP is not set
 # FREETZ_PACKAGE_CTORRENT is not set
 # FREETZ_PACKAGE_CURL is not set
@@ -403,6 +428,7 @@ FREETZ_AVMDAEMON_DISABLE_TR069=y
 # FREETZ_PACKAGE_DNSMASQ is not set
 # FREETZ_PACKAGE_DOSFSTOOLS is not set
 FREETZ_PACKAGE_DROPBEAR=y
+# FREETZ_PACKAGE_DROPBEAR_FRITZ_MENU is not set
 # FREETZ_PACKAGE_DROPBEAR_SFTP_SERVER is not set
 # FREETZ_PACKAGE_DROPBEAR_SERVER_ONLY is not set
 # FREETZ_PACKAGE_DROPBEAR_WITH_ZLIB is not set
@@ -446,7 +472,6 @@ FREETZ_PACKAGE_DROPBEAR_AUTHORIZED_KEYS=y
 # FREETZ_PACKAGE_GHOSTSCRIPT_FONTS is not set
 # FREETZ_PACKAGE_GIT is not set
 # FREETZ_PACKAGE_GNTPSEND is not set
-# FREETZ_PACKAGE_GNU_MAKE is not set
 # FREETZ_PACKAGE_GNUTLS is not set
 # FREETZ_PACKAGE_GOCR is not set
 # FREETZ_PACKAGE_GW6 is not set
@@ -455,7 +480,6 @@ FREETZ_PACKAGE_DROPBEAR_AUTHORIZED_KEYS=y
 #
 # H
 #
-# FREETZ_PACKAGE_HAPROXY is not set
 FREETZ_PACKAGE_HASERL=y
 # FREETZ_PACKAGE_HASERL_WITH_LUA is not set
 # FREETZ_PACKAGE_HD_IDLE is not set
@@ -479,6 +503,7 @@ FREETZ_PACKAGE_HASERL=y
 # FREETZ_PACKAGE_INADYN_OPENDNS is not set
 FREETZ_PACKAGE_INETD=y
 # FREETZ_PACKAGE_INETD_TIME is not set
+# FREETZ_PACKAGE_INFOZIP is not set
 # FREETZ_PACKAGE_IODINE is not set
 # FREETZ_PACKAGE_IPERF is not set
 # FREETZ_PACKAGE_IPSEC_TOOLS is not set
@@ -494,7 +519,9 @@ FREETZ_PACKAGE_INETD=y
 # FREETZ_PACKAGE_JAMVM is not set
 # FREETZ_PACKAGE_JQ is not set
 # FREETZ_PACKAGE_JS is not set
+# FREETZ_PACKAGE_JUIS_BEARER is not set
 FREETZ_PACKAGE_JUIS_CHECK=y
+# FREETZ_PACKAGE_JUIS_CHECK_WITH_SSL is not set
 # end of J
 
 #
@@ -516,10 +543,10 @@ FREETZ_PACKAGE_JUIS_CHECK=y
 #
 # M
 #
+# FREETZ_PACKAGE_GNU_MAKE is not set
 # FREETZ_PACKAGE_MADPLAY is not set
 # FREETZ_PACKAGE_MC is not set
 # FREETZ_PACKAGE_MCABBER is not set
-# FREETZ_PACKAGE_MEDIATOMB is not set
 # FREETZ_PACKAGE_MICROPERL is not set
 # FREETZ_PACKAGE_MINI_SNMPD is not set
 # FREETZ_PACKAGE_MINICOM is not set
@@ -563,7 +590,7 @@ FREETZ_PACKAGE_MODCGI=y
 # FREETZ_PACKAGE_OPENSSH is not set
 # FREETZ_PACKAGE_OPENSSL is not set
 # FREETZ_PACKAGE_OPENVPN is not set
-# FREETZ_PACKAGE_OWFS is not set
+# FREETZ_PACKAGE_OSCAM is not set
 # end of O
 
 #
@@ -573,6 +600,7 @@ FREETZ_PACKAGE_MODCGI=y
 # FREETZ_PACKAGE_PCP is not set
 # FREETZ_PACKAGE_PCSC_LITE is not set
 # FREETZ_PACKAGE_PHONEBOOK_TOOLS is not set
+# FREETZ_PACKAGE_PHP is not set
 # FREETZ_PACKAGE_PINGTUNNEL is not set
 # FREETZ_PACKAGE_POLIPO is not set
 # FREETZ_PACKAGE_PORTMAP is not set
@@ -614,6 +642,12 @@ FREETZ_BOX_CERTIFICATE_SUPPORT_AVAILABLE=y
 # FREETZ_PACKAGE_SHELLINABOX is not set
 # FREETZ_PACKAGE_SIPROXD is not set
 # FREETZ_PACKAGE_SISPMCTL is not set
+# FREETZ_PACKAGE_SKIN_DIGITAL_ELITEBOARD is not set
+# FREETZ_PACKAGE_SKIN_KEYWELT is not set
+# FREETZ_PACKAGE_SKIN_NACHTFALKE is not set
+# FREETZ_PACKAGE_SKIN_NACHTFALKE_OLD is not set
+# FREETZ_PACKAGE_SKIN_PRISRAK is not set
+# FREETZ_PACKAGE_SKIN_PRISRAK1 is not set
 # FREETZ_PACKAGE_SLANG is not set
 # FREETZ_PACKAGE_SLURM is not set
 # FREETZ_PACKAGE_SMARTMONTOOLS is not set
@@ -648,7 +682,6 @@ FREETZ_BOX_CERTIFICATE_SUPPORT_AVAILABLE=y
 # FREETZ_PACKAGE_TESSERACT is not set
 # FREETZ_PACKAGE_TICHKSUM is not set
 # FREETZ_PACKAGE_TIFF is not set
-# FREETZ_PACKAGE_TINC is not set
 # FREETZ_PACKAGE_TINYPROXY is not set
 # FREETZ_PACKAGE_TMUX is not set
 # FREETZ_PACKAGE_TOR is not set
@@ -672,6 +705,7 @@ FREETZ_BOX_CERTIFICATE_SUPPORT_AVAILABLE=y
 # V
 #
 # FREETZ_PACKAGE_VIM is not set
+# FREETZ_PACKAGE_VIRTUALIP_NG is not set
 # FREETZ_PACKAGE_VLMCSD is not set
 # FREETZ_PACKAGE_VNSTAT is not set
 # FREETZ_PACKAGE_VPNC is not set
@@ -710,6 +744,8 @@ FREETZ_WGET=y
 #
 # Debug helpers
 #
+# FREETZ_PACKAGE_BINUTILS_TOOLS is not set
+# FREETZ_PACKAGE_FILE is not set
 # FREETZ_PACKAGE_GDB is not set
 # FREETZ_PACKAGE_INOTIFY_TOOLS is not set
 # FREETZ_PACKAGE_LDD is not set
@@ -734,7 +770,7 @@ FREETZ_PACKAGE_IPTABLES_STATE_AVAILABLE=y
 # FREETZ_PACKAGE_IPTABLES is not set
 # FREETZ_PACKAGE_MINI_FO is not set
 # FREETZ_PACKAGE_MYSQL is not set
-# FREETZ_PACKAGE_PHP is not set
+# FREETZ_PACKAGE_OWFS is not set
 # FREETZ_PACKAGE_SANE_BACKENDS is not set
 # FREETZ_PACKAGE_SCANBUTTOND is not set
 # FREETZ_PACKAGE_SQUID is not set
@@ -743,18 +779,6 @@ FREETZ_PACKAGE_IPTABLES_STATE_AVAILABLE=y
 # FREETZ_PACKAGE_VIRTUALIP_CGI is not set
 # FREETZ_PACKAGE_ZABBIX is not set
 # end of Unstable
-
-#
-# User interfaces
-#
-# FREETZ_PACKAGE_OSCAM is not set
-# FREETZ_PACKAGE_SKIN_DIGITAL_ELITEBOARD is not set
-# FREETZ_PACKAGE_SKIN_KEYWELT is not set
-# FREETZ_PACKAGE_SKIN_NACHTFALKE is not set
-# FREETZ_PACKAGE_SKIN_NACHTFALKE_OLD is not set
-# FREETZ_PACKAGE_SKIN_PRISRAK is not set
-# FREETZ_PACKAGE_SKIN_PRISRAK1 is not set
-# end of User interfaces
 
 #
 # Web interfaces
@@ -775,6 +799,7 @@ FREETZ_PACKAGE_ONLINECHANGED_CGI=y
 # FREETZ_PACKAGE_RRDSTATS is not set
 # FREETZ_PACKAGE_SPINDOWN_CGI is not set
 FREETZ_PACKAGE_SYSLOGD_CGI=y
+# FREETZ_PACKAGE_SYSLOGD_CGI_FRITZ_MENU is not set
 # FREETZ_PACKAGE_VNSTAT_CGI is not set
 # FREETZ_PACKAGE_WOL_CGI is not set
 # end of Web interfaces
@@ -785,25 +810,49 @@ FREETZ_PACKAGE_SYSLOGD_CGI=y
 #
 
 #
-# Apache Portable Runtime libs
+# Apache Portable Runtime
+#
+
+#
+# Apache Portable Runtime ----------------
 #
 # FREETZ_LIB_libapr is not set
 # FREETZ_LIB_libaprutil is not set
-# end of Apache Portable Runtime libs
+# end of Apache Portable Runtime
 
 #
-# Avahi libraries
+# Arithmetic
+#
+
+#
+# Arithmetic -----------------------------
+#
+# FREETZ_LIB_libgmp is not set
+# FREETZ_LIB_libmpc is not set
+# FREETZ_LIB_libmpfr is not set
+# end of Arithmetic
+
+#
+# Avahi
+#
+
+#
+# Avahi ----------------------------------
 #
 # FREETZ_LIB_libavahi_common is not set
 # FREETZ_LIB_libavahi_core is not set
 # FREETZ_LIB_libavahi_client is not set
-# end of Avahi libraries
+# end of Avahi
 
 #
 # Charsets & Internationalization
 #
-# FREETZ_LIB_libintl is not set
+
+#
+# Charsets & Internationalization --------
+#
 # FREETZ_LIB_libfribidi is not set
+# FREETZ_LIB_libintl is not set
 # FREETZ_LIB_libutf8proc is not set
 # end of Charsets & Internationalization
 
@@ -814,8 +863,8 @@ FREETZ_PACKAGE_SYSLOGD_CGI=y
 #
 # GnuPG ----------------------------------
 #
-# FREETZ_LIB_libgpg_error is not set
 # FREETZ_LIB_libgcrypt is not set
+# FREETZ_LIB_libgpg_error is not set
 
 #
 # GnuTLS ---------------------------------
@@ -829,7 +878,12 @@ FREETZ_PACKAGE_SYSLOGD_CGI=y
 # FREETZ_LIB_libmbedcrypto is not set
 # FREETZ_LIB_libmbedtls is not set
 # FREETZ_LIB_libmbedx509 is not set
-FREETZ_MBEDTLS_VERSION_ABANDON=y
+FREETZ_MBEDTLS_VERSION_207=y
+FREETZ_MBEDTLS_SHORT_VERSION="2.7"
+FREETZ_MBEDTLS_VERSION_207_MIN=y
+FREETZ_MBEDTLS_VERSION_207_MAX=y
+FREETZ_MBEDTLS_VERSION_228_MAX=y
+FREETZ_MBEDTLS_VERSION_306_MAX=y
 
 #
 # Nettle ---------------------------------
@@ -842,15 +896,16 @@ FREETZ_MBEDTLS_VERSION_ABANDON=y
 #
 # FREETZ_LIB_libcrypto is not set
 # FREETZ_LIB_libssl is not set
+# FREETZ_OPENSSL_VERSION_09 is not set
 FREETZ_OPENSSL_VERSION_10=y
 # FREETZ_OPENSSL_VERSION_11 is not set
 
 #
 # OpenSSL configuration
 #
-FREETZ_OPENSSL_SHORT_VERSION="1.1"
-FREETZ_OPENSSL_SHLIB_VERSION="1.1"
-FREETZ_OPENSSL_LIBCRYPTO_EXTRA_LIBS="-ldl -pthread"
+FREETZ_OPENSSL_SHORT_VERSION="1.0"
+FREETZ_OPENSSL_SHLIB_VERSION="1.0.0"
+FREETZ_OPENSSL_LIBCRYPTO_EXTRA_LIBS="-ldl"
 # FREETZ_LIB_libcrypto_WITH_EC is not set
 # FREETZ_LIB_libcrypto_WITH_RC4 is not set
 # FREETZ_LIB_libcrypto_WITH_ZLIB is not set
@@ -859,7 +914,7 @@ FREETZ_OPENSSL_CONFIG_DIR="/mod/etc/ssl"
 # end of OpenSSL configuration
 
 FREETZ_OPENSSL_VERSION_10_MIN=y
-FREETZ_OPENSSL_VERSION_11_MIN=y
+FREETZ_OPENSSL_VERSION_10_MAX=y
 FREETZ_OPENSSL_VERSION_11_MAX=y
 FREETZ_OPENSSL_VERSION_30_MAX=y
 FREETZ_OPENSSL_VERSION_35_MAX=y
@@ -871,7 +926,7 @@ FREETZ_OPENSSL_VERSION_35_MAX=y
 # FREETZ_LIB_libpolarssl13 is not set
 
 #
-# Misc -----------------------------------
+# Crypto & SSL ---------------------------
 #
 # FREETZ_LIB_libgsasl is not set
 # FREETZ_LIB_libssh2 is not set
@@ -880,7 +935,12 @@ FREETZ_OPENSSL_VERSION_35_MAX=y
 #
 # Data compression
 #
-# FREETZ_LIB_libdeflate is not set
+
+#
+# Data compression -----------------------
+#
+# FREETZ_LIB_libbz2 is not set
+# FREETZ_LIB_libzip is not set
 # FREETZ_LIB_liblz4 is not set
 # FREETZ_LIB_liblzo2 is not set
 # FREETZ_LIB_liblzma is not set
@@ -888,19 +948,31 @@ FREETZ_OPENSSL_VERSION_35_MAX=y
 # end of Data compression
 
 #
-# Database
+# Databases
+#
+
+#
+# rrdtool --------------------------------
+#
+FREETZ_LIB_librrd_WITH_VERSION_ABANDON=y
+# FREETZ_LIB_librrd is not set
+# FREETZ_LIB_librrd_th is not set
+
+#
+# Databases ------------------------------
 #
 # FREETZ_LIB_libdb is not set
 # FREETZ_LIB_libmaxminddb is not set
 # FREETZ_LIB_libsqlite3 is not set
-# end of Database
+FREETZ_LIB_libsqlite3_WITH_VERSION_CURRENT=y
+# end of Databases
 
 #
 # File systems
 #
 
 #
-# E2fsprogs libraries
+# E2fsprogs ------------------------------
 #
 # FREETZ_LIB_libblkid is not set
 # FREETZ_LIB_libcom_err is not set
@@ -908,14 +980,20 @@ FREETZ_OPENSSL_VERSION_35_MAX=y
 # FREETZ_LIB_libext2fs is not set
 # FREETZ_LIB_libss is not set
 # FREETZ_LIB_libuuid is not set
-# end of E2fsprogs libraries
 
+#
+# File systems ---------------------------
+#
 # FREETZ_LIB_libfuse is not set
 # FREETZ_LIB_libntfs is not set
 # end of File systems
 
 #
 # Freetz
+#
+
+#
+# Freetz ---------------------------------
 #
 FREETZ_LIB_libctlmgr=y
 FREETZ_LIB_libctlmgr_WITH_RENAME=y
@@ -926,71 +1004,86 @@ FREETZ_LIB_libmultid_WITH_ANYIP=y
 #
 # GCC
 #
-FREETZ_LIB_libgcc_s=y
-# FREETZ_LIB_libstdc__ is not set
-# end of GCC
 
 #
-# GLib
+# GCC ------------------------------------
 #
-FREETZ_LIB_libglib_2=y
-FREETZ_LIB_libglib_2_VERSION_ABANDON=y
-# FREETZ_LIB_libgio_2 is not set
-# FREETZ_LIB_libgobject_2 is not set
-# FREETZ_LIB_libgmodule_2 is not set
-# FREETZ_LIB_libgthread_2 is not set
-# end of GLib
+FREETZ_LIB_libgcc_s=y
+# FREETZ_LIB_libstdcxx is not set
+# end of GCC
 
 #
 # Graphics & fonts
 #
-# FREETZ_LIB_libcairo is not set
+
+#
+# Graphics & fonts -----------------------
+#
 # FREETZ_LIB_libfontconfig is not set
 # FREETZ_LIB_libfreetype is not set
-# FREETZ_LIB_libart_lgpl_2 is not set
-# FREETZ_LIB_libexif is not set
 # FREETZ_LIB_libjpeg is not set
 # FREETZ_LIB_libleptonica is not set
-# FREETZ_LIB_libpng16 is not set
+# FREETZ_LIB_libart_lgpl_2 is not set
+# FREETZ_LIB_libexif is not set
 # FREETZ_LIB_libgd is not set
-# FREETZ_LIB_libopenjpeg is not set
+# FREETZ_LIB_libpng16 is not set
+# FREETZ_LIB_libnetpbm is not set
 # FREETZ_LIB_libopenjp2 is not set
+# FREETZ_LIB_libopenjpeg is not set
 # FREETZ_LIB_libpixman_1 is not set
-# FREETZ_LIB_libtesseract is not set
 # FREETZ_LIB_libtiff is not set
 # FREETZ_LIB_libtiffxx is not set
-# FREETZ_LIB_libnetpbm is not set
 # end of Graphics & fonts
 
 #
-# Multi precision arithmetic libs
+# libc
 #
-# FREETZ_LIB_libgmp is not set
-# FREETZ_LIB_libmpfr is not set
-# FREETZ_LIB_libmpc is not set
-# end of Multi precision arithmetic libs
+
+#
+# GLib2 ----------------------------------
+#
+FREETZ_LIB_libglib_2=y
+# FREETZ_LIB_libgio_2 is not set
+# FREETZ_LIB_libgobject_2 is not set
+# FREETZ_LIB_libgmodule_2 is not set
+# FREETZ_LIB_libgthread_2 is not set
+FREETZ_LIB_libglib_2_WITH_VERSION_ABANDON=y
+
+#
+# uClibc ---------------------------------
+#
+FREETZ_LIB_ld_uClibc=y
+FREETZ_LIB_libcrypt=y
+FREETZ_LIB_libdl=y
+FREETZ_LIB_libm=y
+FREETZ_LIB_libpthread=y
+FREETZ_LIB_librt=y
+# FREETZ_LIB_libthread_db is not set
+FREETZ_LIB_libuClibc=y
+FREETZ_LIB_libutil=y
+FREETZ_LIB_ld_uClibc_WITH_VERSION_0_9_32=y
+
+#
+# uClibc++ -------------------------------
+#
+# FREETZ_LIB_libuClibcxx is not set
+# end of libc
 
 #
 # Multimedia
 #
-# FREETZ_LIB_libdvbcsa is not set
 
 #
-# Audio and video codecs
-#
-
-#
-# Audio codecs
+# Audio ----------------------------------
 #
 # FREETZ_LIB_libFLAC is not set
 # FREETZ_LIB_libmad is not set
 # FREETZ_LIB_libogg is not set
 # FREETZ_LIB_libopus is not set
 # FREETZ_LIB_libspeex is not set
-# end of Audio codecs
 
 #
-# FFmpeg libraries
+# FFmpeg ---------------------------------
 #
 # FREETZ_LIB_libavcodec is not set
 # FREETZ_LIB_libavdevice is not set
@@ -1000,31 +1093,120 @@ FREETZ_LIB_libglib_2_VERSION_ABANDON=y
 # FREETZ_LIB_libpostproc is not set
 # FREETZ_LIB_libswresample is not set
 # FREETZ_LIB_libswscale is not set
-# end of FFmpeg libraries
 
 #
-# Video codecs
+# ID3 tag --------------------------------
 #
+# FREETZ_LIB_libid3tag is not set
+# FREETZ_LIB_libtag is not set
 
 #
-# Vorbis video codec ---------------------
+# Video ----------------------------------
 #
 # FREETZ_LIB_libvorbis is not set
 # FREETZ_LIB_libvorbisenc is not set
 # FREETZ_LIB_libvorbisfile is not set
-# end of Video codecs
-# end of Audio and video codecs
 
 #
-# ID3 tag reading libs
+# Multimedia -----------------------------
 #
-# FREETZ_LIB_libid3tag is not set
-# FREETZ_LIB_libtag is not set
-# end of ID3 tag reading libs
+# FREETZ_LIB_libdvbcsa is not set
 # end of Multimedia
 
 #
-# ncurses
+# Networking
+#
+
+#
+# ATM ------------------------------------
+#
+# FREETZ_LIB_libatm is not set
+
+#
+# Bluetooth ------------------------------
+#
+# FREETZ_LIB_libbluetooth is not set
+# FREETZ_LIB_libopenobex is not set
+
+#
+# ISDN -----------------------------------
+#
+# FREETZ_LIB_libcapi20 is not set
+
+#
+# Networking -----------------------------
+#
+# FREETZ_LIB_libiksemel is not set
+# FREETZ_LIB_libldns is not set
+# FREETZ_LIB_libdnet is not set
+# FREETZ_LIB_libgsm is not set
+# FREETZ_LIB_libmnl is not set
+# FREETZ_LIB_libnet is not set
+# FREETZ_LIB_liboping is not set
+# FREETZ_LIB_libosip2 is not set
+# FREETZ_LIB_libosipparser2 is not set
+# FREETZ_LIB_libpcap is not set
+FREETZ_LIB_libpcap_WITH_VERSION_ABANDON=y
+# FREETZ_LIB_libspandsp is not set
+# FREETZ_LIB_libsrtp is not set
+# FREETZ_LIB_libudns is not set
+# end of Networking
+
+#
+# PJ Project
+#
+
+#
+# PJ Project -----------------------------
+#
+# FREETZ_LIB_libpj is not set
+# FREETZ_LIB_libpjlib_util is not set
+# FREETZ_LIB_libpjmedia is not set
+# FREETZ_LIB_libpjmedia_audiodev is not set
+# FREETZ_LIB_libpjmedia_codec is not set
+# FREETZ_LIB_libpjmedia_videodev is not set
+# FREETZ_LIB_libpjnath is not set
+# FREETZ_LIB_libpjsip is not set
+# FREETZ_LIB_libpjsip_simple is not set
+# FREETZ_LIB_libpjsip_ua is not set
+# FREETZ_LIB_libpjsua is not set
+
+#
+# 3rdparty libraries
+#
+# FREETZ_LIB_libg7221codec is not set
+# FREETZ_LIB_libilbccodec is not set
+# FREETZ_LIB_libmilenage is not set
+# end of PJ Project
+
+#
+# Regular expressions
+#
+
+#
+# PCRE -----------------------------------
+#
+FREETZ_LIB_libpcre=y
+# FREETZ_LIB_libpcreposix is not set
+
+#
+# PCRE2 ----------------------------------
+#
+# FREETZ_LIB_libpcre2 is not set
+# FREETZ_LIB_libpcre2_posix is not set
+
+#
+# Regular expressions --------------------
+#
+# FREETZ_LIB_libonig is not set
+# end of Regular expressions
+
+#
+# Terminal
+#
+
+#
+# ncurses --------------------------------
 #
 FREETZ_SHARE_terminfo=y
 FREETZ_SHARE_terminfo_ansi=y
@@ -1053,127 +1235,62 @@ FREETZ_LIB_libncursesw=y
 # FREETZ_LIB_libformw is not set
 # FREETZ_LIB_libmenuw is not set
 # FREETZ_LIB_libpanelw is not set
-# end of ncurses
 
 #
-# Networking
-#
-
-#
-# ATM ------------------------------------
-#
-# FREETZ_LIB_libatm is not set
-
-#
-# Bluetooth ------------------------------
-#
-# FREETZ_LIB_libbluetooth is not set
-# FREETZ_LIB_libopenobex is not set
-
-#
-# ISDN & CAPI ----------------------------
-#
-# FREETZ_LIB_libcapi20 is not set
-
-#
-# Misc networking ------------------------
-#
-# FREETZ_LIB_libdnet is not set
-# FREETZ_LIB_libgsm is not set
-# FREETZ_LIB_libiksemel is not set
-# FREETZ_LIB_libldns is not set
-# FREETZ_LIB_libmnl is not set
-# FREETZ_LIB_libnet is not set
-# FREETZ_LIB_liboping is not set
-# FREETZ_LIB_libosip2 is not set
-# FREETZ_LIB_libosipparser2 is not set
-# FREETZ_LIB_libpcap is not set
-# FREETZ_LIB_libspandsp is not set
-# FREETZ_LIB_libsrtp is not set
-# FREETZ_LIB_libudns is not set
-# end of Networking
-
-#
-# PJ Project
-#
-# FREETZ_LIB_libpj is not set
-# FREETZ_LIB_libpjlib_util is not set
-# FREETZ_LIB_libpjmedia is not set
-# FREETZ_LIB_libpjmedia_audiodev is not set
-# FREETZ_LIB_libpjmedia_codec is not set
-# FREETZ_LIB_libpjmedia_videodev is not set
-# FREETZ_LIB_libpjnath is not set
-# FREETZ_LIB_libpjsip is not set
-# FREETZ_LIB_libpjsip_simple is not set
-# FREETZ_LIB_libpjsip_ua is not set
-# FREETZ_LIB_libpjsua is not set
-
-#
-# 3rdparty libraries
-#
-# FREETZ_LIB_libg7221codec is not set
-# FREETZ_LIB_libilbccodec is not set
-# FREETZ_LIB_libmilenage is not set
-# end of PJ Project
-
-#
-# Readline
+# Readline -------------------------------
 #
 # FREETZ_LIB_libreadline is not set
 # FREETZ_LIB_libhistory is not set
-# end of Readline
-
-#
-# Regular expressions
-#
-# FREETZ_LIB_libonig is not set
-FREETZ_LIB_libpcre=y
-# FREETZ_LIB_libpcreposix is not set
-# FREETZ_LIB_libpcre2 is not set
-# FREETZ_LIB_libpcre2_posix is not set
-# end of Regular expressions
-
-#
-# uClibc
-#
-FREETZ_LIB_ld_uClibc=y
-FREETZ_LIB_libcrypt=y
-FREETZ_LIB_libdl=y
-FREETZ_LIB_libm=y
-FREETZ_LIB_libpthread=y
-FREETZ_LIB_librt=y
-# FREETZ_LIB_libthread_db is not set
-FREETZ_LIB_libuClibc=y
-FREETZ_LIB_libutil=y
-# FREETZ_LIB_libuClibc__ is not set
-# end of uClibc
+FREETZ_LIB_libreadline_WITH_VERSION_ABANDON=y
+# end of Terminal
 
 #
 # USB & related
 #
-# FREETZ_LIB_libftdi is not set
+
+#
+# USB & related --------------------------
+#
 # FREETZ_LIB_libftdi1 is not set
+# FREETZ_LIB_libftdi is not set
+# FREETZ_LIB_libusb0 is not set
+# FREETZ_LIB_libusb0_WITH_VERSION_ABANDON is not set
+FREETZ_LIB_libusb0_WITH_VERSION_CURRENT=y
+# FREETZ_LIB_libusb1 is not set
+FREETZ_LIB_libusb1_WITH_VERSION_ABANDON=y
 # FREETZ_LIB_libpcsclite is not set
-# FREETZ_LIB_libusb_0 is not set
-# FREETZ_LIB_libusb_1 is not set
+FREETZ_LIB_libpcsclite_WITH_VERSION_ABANDON=y
 # end of USB & related
 
 #
-# Web and WebDAV
+# Web & WebDAV
+#
+
+#
+# Web & WebDAV ---------------------------
 #
 # FREETZ_LIB_libcurl is not set
-# FREETZ_LIB_libidn is not set
+FREETZ_LIB_libcurl_WITH_VERSION_ABANDON=y
 # FREETZ_LIB_libjansson is not set
 # FREETZ_LIB_libjs is not set
+# FREETZ_LIB_libidn is not set
+# FREETZ_LIB_liblua is not set
+FREETZ_LIB_liblua_WITH_VERSION_ABANDON=y
 # FREETZ_LIB_libneon is not set
+FREETZ_LIB_libneon_WITH_VERSION_ABANDON=y
 # FREETZ_LIB_libpsl is not set
 # FREETZ_LIB_libserf is not set
-# end of Web and WebDAV
+# end of Web & WebDAV
 
 #
 # XML & XSLT
 #
+
+#
+# XML & XSLT -----------------------------
+#
 # FREETZ_LIB_libexpat is not set
+FREETZ_LIB_libexpat_WITH_VERSION_ABANDON=y
 # FREETZ_LIB_libxml2 is not set
 # FREETZ_LIB_libxslt is not set
 # FREETZ_LIB_libexslt is not set
@@ -1186,28 +1303,35 @@ FREETZ_LIB_libutil=y
 #
 # Other
 #
+
+#
+# liburcu --------------------------------
+#
+
+#
+# Misc -----------------------------------
+#
 # FREETZ_LIB_libattr is not set
+# FREETZ_LIB_libdbus is not set
+# FREETZ_LIB_libdevmapper is not set
 # FREETZ_LIB_libcap is not set
-# FREETZ_LIB_libcap_ng is not set
+# FREETZ_LIB_libcjson is not set
 # FREETZ_LIB_libconfig is not set
 # FREETZ_LIB_libconfuse is not set
 # FREETZ_LIB_libdaemon is not set
-# FREETZ_LIB_libdbus is not set
-# FREETZ_LIB_libdevmapper is not set
 # FREETZ_LIB_libelf is not set
 # FREETZ_LIB_libev is not set
 # FREETZ_LIB_libevent is not set
 # FREETZ_LIB_libffi is not set
-# FREETZ_LIB_liblua is not set
 # FREETZ_LIB_libnfsidmap is not set
+# FREETZ_LIB_libsynce is not set
+# FREETZ_LIB_libtalloc is not set
+# FREETZ_LIB_libltdl is not set
 # FREETZ_LIB_libpopt is not set
 # FREETZ_LIB_libprivatekeypassword is not set
 # FREETZ_LIB_libprotobuf_c is not set
-# FREETZ_LIB_librrd is not set
 # FREETZ_LIB_libslang is not set
-# FREETZ_LIB_libsynce is not set
 # FREETZ_LIB_libsysfs is not set
-# FREETZ_LIB_libltdl is not set
 # FREETZ_LIB_libyaml is not set
 # end of Other
 # end of Shared libraries
@@ -1260,6 +1384,13 @@ FREETZ_MODULES_OWN=""
 # FREETZ_MODULE_usbip is not set
 # FREETZ_MODULE_usblp is not set
 # FREETZ_MODULE_usbmon is not set
+
+#
+#  input
+#
+# FREETZ_MODULE_input_core is not set
+# FREETZ_MODULE_hid is not set
+# FREETZ_MODULE_usbhid is not set
 
 #
 #  ppp
@@ -2707,6 +2838,7 @@ FREETZ_ADD_JUIS_CHECK=y
 # FREETZ_ADD_JUIS_CHECK__SSL is not set
 FREETZ_ADD_UIMODS=y
 # FREETZ_REMOVE_BOX_INFO is not set
+# FREETZ_REMOVE_FLASH_INFO is not set
 # FREETZ_REMOVE_FREETZ_INFO is not set
 FREETZ_USER_DEFINED_COMMENT="masterbox"
 FREETZ_IMAGE_NAME_CUSTOM=y
@@ -2737,10 +2869,9 @@ FREETZ_DOT_CONFIG_STRIPPED=y
 FREETZ_BUILD_TOOLCHAIN=y
 # FREETZ_TOOLCHAIN_CCACHE is not set
 FREETZ_TOOLCHAIN_MINIMIZE_REQUIRED_GLIBC_VERSION=y
-# FREETZ_REAL_DEVELOPER_ONLY__DLTCS is not set
-FREETZ_REAL_DEVELOPER_ONLY__DLKTC=""
-FREETZ_REAL_DEVELOPER_ONLY__DLTTC=""
-FREETZ_REAL_DEVELOPER_ONLY__DLURL=""
+FREETZ_REAL_DEVELOPER_ONLY__TCDLK=""
+FREETZ_REAL_DEVELOPER_ONLY__TCDLT=""
+FREETZ_REAL_DEVELOPER_ONLY__TCURL=""
 
 #
 # Kernel toolchain options ----------------------------------------
@@ -2752,14 +2883,14 @@ FREETZ_KERNEL_BINUTILS_2_22_DEFAULT=y
 FREETZ_KERNEL_BINUTILS_2_24=y
 FREETZ_KERNEL_GCC_4_6=y
 FREETZ_KERNEL_GCC_4=y
+FREETZ_KERNEL_GCC_3_MIN=y
 FREETZ_KERNEL_GCC_4_MIN=y
-FREETZ_KERNEL_GCC_4_6_MIN=y
 FREETZ_KERNEL_GCC_4_MAX=y
 FREETZ_KERNEL_GCC_5_MAX=y
-FREETZ_KERNEL_GCC_8_3_MAX=y
-FREETZ_KERNEL_GCC_8_4_MAX=y
 FREETZ_KERNEL_GCC_8_MAX=y
 FREETZ_KERNEL_GCC_9_MAX=y
+FREETZ_KERNEL_GCC_10_MAX=y
+FREETZ_KERNEL_GCC_13_MAX=y
 FREETZ_KERNEL_BINUTILS_VERSION="2.24"
 FREETZ_KERNEL_GCC_VERSION="4.6.4"
 
@@ -2787,14 +2918,16 @@ FREETZ_TARGET_GCC_8_3_MAX=y
 FREETZ_TARGET_GCC_8_4_MAX=y
 FREETZ_TARGET_GCC_9_3_MAX=y
 FREETZ_TARGET_GCC_9_4_MAX=y
-FREETZ_TARGET_GCC_13_3_MAX=y
-FREETZ_TARGET_GCC_14_2_MAX=y
+FREETZ_TARGET_GCC_13_4_MAX=y
+FREETZ_TARGET_GCC_14_3_MAX=y
+FREETZ_TARGET_GCC_15_2_MAX=y
 FREETZ_TARGET_GCC_4_MAX=y
 FREETZ_TARGET_GCC_5_MAX=y
 FREETZ_TARGET_GCC_8_MAX=y
 FREETZ_TARGET_GCC_9_MAX=y
 FREETZ_TARGET_GCC_13_MAX=y
 FREETZ_TARGET_GCC_14_MAX=y
+FREETZ_TARGET_GCC_15_MAX=y
 FREETZ_TARGET_GCC_DEFAULT_AS_NEEDED=y
 # FREETZ_STDCXXLIB_FORCE_GNULIBSTDCXX is not set
 FREETZ_STDCXXLIB_USE_UCLIBCXX=y
@@ -2816,12 +2949,12 @@ FREETZ_TARGET_UCLIBC_REDUCED_LOCALE_SET=y
 #
 # Host-tools options ----------------------------------
 #
-# FREETZ_HOSTTOOLS_DOWNLOAD is not set
 FREETZ_HOSTTOOLS_BUILD=y
 # FREETZ_ROOTEMU_FAKEROOT is not set
 FREETZ_ROOTEMU_PSEUDO=y
-FREETZ_TOOLS_KCONFIG_OLDSCHOOL=y
+FREETZ_TOOLS_FAKEROOT_VERSION_CURRENT=y
 FREETZ_TOOLS_PATCHELF_VERSION_CURRENT=y
+FREETZ_TOOLS_KCONFIG_OLDSCHOOL=y
 # end of Toolchain options
 
 #
@@ -2868,6 +3001,7 @@ FREETZ_SQUASHFS_BLOCKSIZE=65536
 #
 # Strip options
 #
+FREETZ_STRIP_UCLIBC=y
 FREETZ_STRIP_BINARIES=y
 # FREETZ_STRIP_LIBRARIES is not set
 # FREETZ_STRIP_MODULES_NONE is not set
@@ -2880,21 +3014,25 @@ FREETZ_STRIP_MODULES_FREETZ=y
 # Download options
 #
 FREETZ_DL_SITE_USER=""
+# FREETZ_DL_IMAGE_AT_LAST is not set
 FREETZ_DL_VCS_REPO_FIRST=y
 FREETZ_DL_VCS_FROM_MIRRORS=y
-FREETZ_DL_TOOLCHAIN_SITE=""
-FREETZ_DL_KERNEL_TOOLCHAIN_VERSION="r25876"
-FREETZ_DL_KERNEL_TOOLCHAIN_HASH="41e41fcd21429f280c580b1808ddbfc312e172969d4eb67fcd1a9ea1977970d2"
-FREETZ_DL_TARGET_TOOLCHAIN_VERSION="r25876"
-FREETZ_DL_TARGET_TOOLCHAIN_HASH="ee693c057b3da814b66b92b918123fb2bec0efd1004934b460e6074249041688"
-FREETZ_DL_TOOLCHAIN_SUFFIX="shared-glibc"
+FREETZ_DL_KERNEL_TOOLCHAIN_SITE="@DLTOKEN/https://api.github.com/repos/Freetz-NG/internal/releases/tags/toolchains"
+FREETZ_DL_KERNEL_TOOLCHAIN_VERSION="r28925"
+FREETZ_DL_KERNEL_TOOLCHAIN_HASH="0589fcc88fb25caa6fa2cf0217c9b570f685d2121f151d21e5772b312ed68ee2"
+FREETZ_DL_TARGET_TOOLCHAIN_SITE="@DLTOKEN/https://api.github.com/repos/Freetz-NG/internal/releases/tags/toolchains"
+FREETZ_DL_TARGET_TOOLCHAIN_VERSION="r28925"
+FREETZ_DL_TARGET_TOOLCHAIN_HASH="fca3ebc2ee423478fb600dd87d2281713d01520cab3b626521bd520ce53c0af4"
 # FREETZ_DL_KERNEL_OVERRIDE is not set
 FREETZ_DL_KERNEL_SOURCE_ID="7270_06.05"
 FREETZ_DL_KERNEL_VANILLA_SOURCE="linux-${FREETZ_KERNEL_VANILLA_VERSION}.tar.xz"
 FREETZ_DL_KERNEL_VANILLA_HASH="96c20c370ed440db61624d93f34721a09a69b12bb81b1b03bb735041983fb1bd"
-FREETZ_DL_KERNEL_AVMDIFF_VERSION="ADv1"
-FREETZ_DL_KERNEL_AVMDIFF_SOURCE="kernel_${FREETZ_KERNEL_VERSION}-${FREETZ_DL_KERNEL_SOURCE_ID}${FREETZ_SYSTEM_TYPE_CORE_SUFFIX}-${FREETZ_DL_KERNEL_AVMDIFF_VERSION}.patch.xz"
-FREETZ_DL_KERNEL_AVMDIFF_HASH="14faac576bc6a55c7779fecba23c33f8a2d13a4c3619bc6cde5211d23658614b"
+FREETZ_DL_KERNEL_AVMDIFF_VERSION="ADv2"
+FREETZ_DL_KERNEL_AVMDIFF_SOURCE="avmdiff_${FREETZ_KERNEL_VERSION}-${FREETZ_DL_KERNEL_SOURCE_ID}${FREETZ_SYSTEM_TYPE_CORE_SUFFIX}-${FREETZ_DL_KERNEL_AVMDIFF_VERSION}.patch.lzma"
+FREETZ_DL_KERNEL_AVMDIFF_HASH="7141cae9acf03a9862a765e9a0fe3b61490c8e2867f62756e90c7d0b1f5b3b9f"
+FREETZ_DL_KERNEL_SYMREFS_VERSION="SRv1"
+FREETZ_DL_KERNEL_SYMREFS_SOURCE="symrefs-${FREETZ_KERNEL_VERSION}-${FREETZ_DL_KERNEL_SOURCE_ID}${FREETZ_SYSTEM_TYPE_CORE_SUFFIX}-${FREETZ_DL_KERNEL_SYMREFS_VERSION}.tar.lzma"
+FREETZ_DL_KERNEL_SYMREFS_HASH="X"
 # FREETZ_DL_OVERRIDE is not set
 FREETZ_DL_SITE="@AVM/fritzbox.fon_wlan_7270_v3/firmware/deutsch,@1&1/7270v3"
 FREETZ_DL_SOURCE="FRITZ.Box_Fon_WLAN_7270_v3.74.06.06.image"
@@ -2923,45 +3061,49 @@ FREETZ_AVM_SQUASHFS_ENDIANNESS="le"
 FREETZ_AVM_SQUASHFS_COMPRESSION="lzma"
 FREETZ_AVM_IMAGES_SUBDIR="var/tmp"
 FREETZ_AVM_SIGNATURE_KEY="010001x00f08188899fd2ef64c982801ed315dbec44a6243447ca804a5fe7d74b5754744ff06cccbb56a8c355c830e04d91a193b394c698eb2e67a36f5646719e7bde5240a08b7b40b0a80c81c9cc5b3f2838f5635de4af3e459298bb21a245b6651c3770ca481805b27f07ebd6cd003c397e0fc4f440bcb9e78832fa72a830be11a067ff"
-FREETZ_AVM_HAS_BRANDING_avm=y
-FREETZ_AVM_HAS_LEDPAGE=y
-FREETZ_AVM_HAS_CTLMGR_CTL=y
-FREETZ_AVM_HAS_DMESG_FILE=y
-FREETZ_AVM_HAS_FWLAYOUT_1=y
-FREETZ_AVM_HAS_INETD=y
-FREETZ_AVM_HAS_OPENSSL=y
-FREETZ_AVM_HAS_SHOWDSLDSTAT=y
+FREETZ_AVM_PROP_NAME="FRITZ!Box Fon WLAN 7270 v3"
+FREETZ_AVM_PROP_MAJOR="74"
+FREETZ_AVM_PROP_HWREV="145"
 FREETZ_AVM_HAS_SIGNATURE=y
+FREETZ_AVM_PROP_PRODUKT="Fritz_Box_7270plus"
+FREETZ_AVM_HAS_BRANDING_avm=y
+FREETZ_AVM_SERIAL_CONSOLE_DEVICE="/dev/ttyS0"
+FREETZ_AVM_HAS_WLAN=y
+FREETZ_AVM_HAS_INETD=y
 FREETZ_AVM_HAS_TR064=y
 FREETZ_AVM_HAS_TR069=y
 FREETZ_AVM_HAS_TR069_FWUPDATE=y
+FREETZ_AVM_HAS_LEDPAGE=y
+FREETZ_AVM_HAS_DMESG_FILE=y
 FREETZ_AVM_HAS_UDEV=y
-FREETZ_AVM_HAS_WLAN=y
-FREETZ_AVM_PROP_ARCH_MIPS=y
-FREETZ_AVM_PROP_HWREV="145"
-FREETZ_AVM_PROP_LIBC_UCLIBC=y
-FREETZ_AVM_PROP_MAJOR="74"
-FREETZ_AVM_PROP_NAME="FRITZ!Box Fon WLAN 7270 v3"
-FREETZ_AVM_PROP_SQUASHFS_COMPRESSION_LZMA=y
+FREETZ_AVM_HAS_CTLMGR_CTL=y
+FREETZ_AVM_HAS_SHOWDSLDSTAT=y
+FREETZ_AVM_HAS_HOSTAPD=y
+FREETZ_AVM_HAS_RUN_CLOCK=y
+FREETZ_AVM_HAS_OPENSSL=y
 FREETZ_AVM_PROP_SQUASHFS_VERSION_3=y
-FREETZ_AVM_SERIAL_CONSOLE_DEVICE="/dev/ttyS0"
-FREETZ_AVM_HAS_RAMZSWAP_MODULE=y
-FREETZ_AVM_HAS_TC=y
+FREETZ_AVM_PROP_SQUASHFS_COMPRESSION_LZMA=y
+FREETZ_AVM_HAS_FWLAYOUT_1=y
+FREETZ_AVM_PROP_ARCH_MIPS=y
+FREETZ_AVM_PROP_LIBC_UCLIBC=y
 FREETZ_AVM_HAS_MULTIPLE_BRANDINGS=y
+FREETZ_AVM_HAS_TC=y
+FREETZ_AVM_HAS_RAMZSWAP_MODULE=y
 FREETZ_AVM_HAS_AHA=y
-FREETZ_AVM_PROP_ARCH_LE=y
 FREETZ_AVM_PROP_SQUASHFS_ENDIANN_LE=y
-FREETZ_AVM_HAS_AURA_USB=y
-FREETZ_AVM_HAS_USB_HOST=y
-FREETZ_AVM_HAS_SAMBA_SMBD=y
-FREETZ_AVM_HAS_DSLD=y
-FREETZ_AVM_HAS_VPN=y
-FREETZ_AVM_HAS_PRINTSERV=y
-FREETZ_AVM_HAS_MEDIASRV=y
-FREETZ_AVM_HAS_KIDS=y
+FREETZ_AVM_PROP_ARCH_LE=y
 FREETZ_AVM_HAS_MYFRITZ=y
 FREETZ_AVM_HAS_CHRONYD=y
 FREETZ_AVM_HAS_DDNSD=y
+FREETZ_AVM_HAS_DSLD=y
+FREETZ_AVM_HAS_VPN=y
+FREETZ_AVM_HAS_KIDS=y
+FREETZ_AVM_HAS_AURA_USB=y
+FREETZ_AVM_HAS_USB_HOST=y
+FREETZ_AVM_HAS_SAMBA_SMBD=y
+FREETZ_AVM_HAS_PRINTSERV=y
+FREETZ_AVM_HAS_MEDIASRV=y
+FREETZ_AVM_HAS_OPENSSL_VERSION_09=y
 FREETZ_AVM_HAS_BRANDING_1und1=y
 FREETZ_AVM_HAS_TELNETD=y
 FREETZ_AVM_HAS_ANNEX_SELECTION=y
@@ -2971,7 +3113,9 @@ FREETZ_AVM_HAS_WEBDAV=y
 FREETZ_AVM_HAS_TAM=y
 FREETZ_AVM_HAS_PHONE=y
 FREETZ_AVM_HAS_UMTS=y
+FREETZ_AVM_HAS_HD_IDLE=y
 FREETZ_AVM_HAS_LSOF=y
+FREETZ_AVM_HAS_HOSTAPD_VERSION_0_5_9=y
 FREETZ_AVM_HAS_DTRACE=y
 FREETZ_AVM_HAS_E2FSPROGS=y
 FREETZ_AVM_HAS_JFFS2_MODULE=y
@@ -2983,20 +3127,20 @@ FREETZ_AVM_HAS_BRANDING_otwo=y
 FREETZ_AVM_PROP_KERNEL_2_6_32_60=y
 FREETZ_AVM_HAS_CRYPTO_AES_BUILTIN=y
 FREETZ_AVM_HAS_CRYPTO_ALGAPI_BUILTIN=y
+FREETZ_AVM_HAS_EXT2_FS_BUILTIN=y
 FREETZ_AVM_HAS_EXT3_FS_BUILTIN=y
 FREETZ_AVM_HAS_FAT_FS_BUILTIN=y
 FREETZ_AVM_HAS_FS_MBCACHE_BUILTIN=y
-FREETZ_AVM_HAS_FUSE_FS_BUILTIN=y
-FREETZ_AVM_HAS_MSDOS_FS_BUILTIN=y
 FREETZ_AVM_HAS_NLS_CODEPAGE_437_BUILTIN=y
 FREETZ_AVM_HAS_NLS_ISO8859_1_BUILTIN=y
 FREETZ_AVM_HAS_NLS_UTF8_BUILTIN=y
+FREETZ_AVM_HAS_SWAP_BUILTIN=y
+FREETZ_AVM_HAS_VFAT_FS_BUILTIN=y
+FREETZ_AVM_HAS_FUSE_FS_BUILTIN=y
+FREETZ_AVM_HAS_MSDOS_FS_BUILTIN=y
 FREETZ_AVM_HAS_TUN_BUILTIN=y
 FREETZ_AVM_HAS_USB_BUILTIN=y
-FREETZ_AVM_HAS_VFAT_FS_BUILTIN=y
-FREETZ_AVM_HAS_EXT2_FS_BUILTIN=y
 FREETZ_AVM_HAS_JBD_BUILTIN=y
-FREETZ_AVM_HAS_SWAP_BUILTIN=y
 FREETZ_AVM_HAS_BLK_DEV_SD_BUILTIN=y
 FREETZ_AVM_HAS_CHR_DEV_SG_BUILTIN=y
 FREETZ_AVM_HAS_CRYPTO_PCOMP_BUILTIN=y
@@ -3019,10 +3163,13 @@ FREETZ_AVM_VERSION_07_2X_MAX=y
 FREETZ_AVM_VERSION_07_5X_MAX=y
 FREETZ_AVM_VERSION_08_0X_MAX=y
 FREETZ_AVM_VERSION_08_2X_MAX=y
+FREETZ_AVM_VERSION_08_5X_MAX=y
 FREETZ_SYSTEM_TYPE_UR8=y
 FREETZ_SYSTEM_TYPE="ur8"
 FREETZ_CPU_MODEL_MIPS_4KEc=y
 FREETZ_TARGET_ARCH_LE=y
+FREETZ_TARGET_BITS_32=y
+FREETZ_TARGET_BITS="32"
 FREETZ_TARGET_ARCH_MIPS=y
 FREETZ_KERNEL_ARCH="mips"
 FREETZ_TARGET_ARCH="mips"
@@ -3050,11 +3197,13 @@ FREETZ_AVM_GCC_8_3_MAX=y
 FREETZ_AVM_GCC_8_4_MAX=y
 FREETZ_AVM_GCC_9_3_MAX=y
 FREETZ_AVM_GCC_9_4_MAX=y
+FREETZ_AVM_GCC_10_5_MAX=y
 FREETZ_AVM_GCC_13_3_MAX=y
 FREETZ_AVM_GCC_4_MAX=y
 FREETZ_AVM_GCC_5_MAX=y
 FREETZ_AVM_GCC_8_MAX=y
 FREETZ_AVM_GCC_9_MAX=y
+FREETZ_AVM_GCC_10_MAX=y
 FREETZ_AVM_GCC_13_MAX=y
 FREETZ_GCC_ABI="32"
 FREETZ_GCC_ARCH="mips32"
@@ -3097,5 +3246,6 @@ FREETZ_TYPE_PREFIX_SERIES_SUBDIR="06_0X"
 FREETZ_TARGET_MESON_FAMILY="mips"
 FREETZ_TARGET_MESON_CPU="mipsel"
 FREETZ_TARGET_MESON_ENDIAN="little"
+FREETZ_TARGET_MESON_ENDIAN_UPPER="LE"
 FREETZ_INSTALL_BASE=y
 FREETZ_REPLACE_BUSYBOX=y
