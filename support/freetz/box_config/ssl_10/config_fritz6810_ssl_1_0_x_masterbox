@@ -9,7 +9,7 @@ FREETZ_HAVE_DOT_CONFIG=y
 #
 
 #
-#  freetz-ng 29865MSI-a118678b65 master 2026-09-14
+#  freetz-ng 29959M-f1eb488898 master 2026-09-22
 #
 
 #
@@ -124,6 +124,7 @@ FREETZ_TYPE_6810=y
 # FREETZ_TYPE_6820_V3 is not set
 # FREETZ_TYPE_6820_V4 is not set
 # FREETZ_TYPE_6825 is not set
+# FREETZ_TYPE_6835 is not set
 # FREETZ_TYPE_6840 is not set
 # FREETZ_TYPE_6842 is not set
 # FREETZ_TYPE_6850_4G_V1 is not set
@@ -223,7 +224,6 @@ FREETZ_TYPE_LANG_DE=y
 FREETZ_TYPE_LANGUAGE="de"
 FREETZ_TYPE_FIRMWARE_06_2X=y
 FREETZ_AVM_VERSION_LATEST_MAJOR=y
-# FREETZ_TYPE_FIRMWARE_DETECT_LATEST is not set
 FREETZ_TYPE_FIRMWARE_FINAL=y
 
 #
@@ -352,7 +352,10 @@ FREETZ_AVMDAEMON_DISABLE_TR069=y
 #
 # FREETZ_PACKAGE_ACME is not set
 # FREETZ_PACKAGE_APACHE2 is not set
-# FREETZ_PACKAGE_AUTOFS is not set
+
+#
+# AutoFS (not available, no kernel sources from AVM)
+#
 # FREETZ_PACKAGE_AUTOSSH is not set
 # FREETZ_PACKAGE_AVAHI is not set
 # end of A
@@ -362,12 +365,10 @@ FREETZ_AVMDAEMON_DISABLE_TR069=y
 #
 # FREETZ_PACKAGE_BASH is not set
 # FREETZ_PACKAGE_BFTPD is not set
-# FREETZ_PACKAGE_BFUSB is not set
 # FREETZ_PACKAGE_BIND is not set
 # FREETZ_PACKAGE_BIP is not set
 # FREETZ_PACKAGE_BIRD is not set
 # FREETZ_PACKAGE_BITTWIST is not set
-# FREETZ_PACKAGE_BLUEZ_UTILS is not set
 # FREETZ_PACKAGE_BRIDGE_UTILS is not set
 # FREETZ_PACKAGE_BVI is not set
 # FREETZ_PACKAGE_BZIP2 is not set
@@ -380,22 +381,26 @@ FREETZ_AVMDAEMON_DISABLE_TR069=y
 # FREETZ_PACKAGE_CALLMONITOR is not set
 # FREETZ_PACKAGE_CHECKMAILD is not set
 # FREETZ_PACKAGE_CHOPARP is not set
-# FREETZ_PACKAGE_CIFSMOUNT is not set
+
+#
+# Cifsmount (not available, needs kernel modules)
+#
 # FREETZ_PACKAGE_CLASSPATH is not set
 # FREETZ_PACKAGE_CNTLM is not set
 # FREETZ_PACKAGE_COMGT is not set
 # FREETZ_PACKAGE_CPULIMIT is not set
-# FREETZ_PACKAGE_CRYPTSETUP is not set
+
+#
+# cryptsetup (not available, needs kernel modules)
+#
 # FREETZ_PACKAGE_CTORRENT is not set
 # FREETZ_PACKAGE_CURL is not set
-# FREETZ_PACKAGE_CURLFTPFS is not set
 # end of C
 
 #
 # D
 #
 # FREETZ_PACKAGE_DANTE is not set
-# FREETZ_PACKAGE_DAVFS2 is not set
 # FREETZ_PACKAGE_DBUS is not set
 # FREETZ_PACKAGE_DEBOOTSTRAP is not set
 # FREETZ_PACKAGE_DECO is not set
@@ -407,7 +412,6 @@ FREETZ_AVMDAEMON_DISABLE_TR069=y
 # FREETZ_PACKAGE_DNSMASQ is not set
 # FREETZ_PACKAGE_DOSFSTOOLS is not set
 FREETZ_PACKAGE_DROPBEAR=y
-# FREETZ_PACKAGE_DROPBEAR_FRITZ_MENU is not set
 # FREETZ_PACKAGE_DROPBEAR_SFTP_SERVER is not set
 # FREETZ_PACKAGE_DROPBEAR_SERVER_ONLY is not set
 # FREETZ_PACKAGE_DROPBEAR_WITH_ZLIB is not set
@@ -441,7 +445,10 @@ FREETZ_PACKAGE_DROPBEAR_AUTHORIZED_KEYS=y
 # FREETZ_PACKAGE_FORTUNE is not set
 # FREETZ_PACKAGE_FOWSR is not set
 # FREETZ_PACKAGE_FTDI1 is not set
-# FREETZ_PACKAGE_FUSE is not set
+
+#
+# FUSE (not available, needs kernel modules)
+#
 # end of F
 
 #
@@ -543,12 +550,14 @@ FREETZ_PACKAGE_MODCGI=y
 # FREETZ_PACKAGE_NANO is not set
 # FREETZ_PACKAGE_NC6 is not set
 # FREETZ_PACKAGE_NCFTP is not set
-# FREETZ_PACKAGE_NDAS is not set
 # FREETZ_PACKAGE_NETATALK is not set
 # FREETZ_PACKAGE_NETCAT is not set
 # FREETZ_PACKAGE_NETPBM is not set
 # FREETZ_PACKAGE_NETSNMP is not set
-# FREETZ_PACKAGE_NFS_UTILS is not set
+
+#
+# nfs-utils (not available, needs kernel modules)
+#
 
 #
 # NFS-root (not available, needs replace kernel)
@@ -556,7 +565,6 @@ FREETZ_PACKAGE_MODCGI=y
 # FREETZ_PACKAGE_NGIRCD is not set
 # FREETZ_PACKAGE_NMAP is not set
 # FREETZ_PACKAGE_NOIP is not set
-# FREETZ_PACKAGE_NTFS is not set
 # FREETZ_PACKAGE_NZBGET is not set
 # end of N
 
@@ -622,12 +630,6 @@ FREETZ_BOX_CERTIFICATE_SUPPORT_AVAILABLE=y
 # FREETZ_PACKAGE_SHELLINABOX is not set
 # FREETZ_PACKAGE_SIPROXD is not set
 # FREETZ_PACKAGE_SISPMCTL is not set
-# FREETZ_PACKAGE_SKIN_DIGITAL_ELITEBOARD is not set
-# FREETZ_PACKAGE_SKIN_KEYWELT is not set
-# FREETZ_PACKAGE_SKIN_NACHTFALKE is not set
-# FREETZ_PACKAGE_SKIN_NACHTFALKE_OLD is not set
-# FREETZ_PACKAGE_SKIN_PRISRAK is not set
-# FREETZ_PACKAGE_SKIN_PRISRAK1 is not set
 # FREETZ_PACKAGE_SLANG is not set
 # FREETZ_PACKAGE_SLURM is not set
 # FREETZ_PACKAGE_SMARTMONTOOLS is not set
@@ -639,7 +641,10 @@ FREETZ_BOX_CERTIFICATE_SUPPORT_AVAILABLE=y
 # FREETZ_PACKAGE_SQUASHFS3 is not set
 # FREETZ_PACKAGE_SQUASHFS4_BE is not set
 # FREETZ_PACKAGE_SQUASHFS4_LE is not set
-# FREETZ_PACKAGE_SSHFS_FUSE is not set
+
+#
+# sshfs-fuse (not available, needs kernel modules)
+#
 # FREETZ_PACKAGE_SSLH is not set
 # FREETZ_PACKAGE_STREAMRIPPER is not set
 # FREETZ_PACKAGE_STUNNEL is not set
@@ -746,16 +751,19 @@ FREETZ_WGET=y
 # FREETZ_PACKAGE_GPTFDISK is not set
 # FREETZ_PACKAGE_HP_UTILS is not set
 # FREETZ_PACKAGE_HPLIP is not set
-FREETZ_PACKAGE_IPTABLES_IS_SELECTABLE=y
 FREETZ_PACKAGE_IPTABLES_STATE_AVAILABLE=y
-# FREETZ_PACKAGE_IPTABLES is not set
-# FREETZ_PACKAGE_MINI_FO is not set
+
+#
+# Iptables (not available, needs kernel modules)
+#
 # FREETZ_PACKAGE_MYSQL is not set
-# FREETZ_PACKAGE_OWFS is not set
+
+#
+# owfs (not available, needs kernel modules)
+#
 # FREETZ_PACKAGE_SANE_BACKENDS is not set
 # FREETZ_PACKAGE_SCANBUTTOND is not set
 # FREETZ_PACKAGE_SQUID is not set
-# FREETZ_PACKAGE_USBIP is not set
 # FREETZ_PACKAGE_VIRTUALIP_CGI is not set
 # FREETZ_PACKAGE_ZABBIX is not set
 # end of Unstable
@@ -771,14 +779,19 @@ FREETZ_PACKAGE_AUTHORIZED_KEYS=y
 # FREETZ_PACKAGE_AVM_FORWARDING is not set
 # FREETZ_PACKAGE_DNSD_CGI is not set
 # FREETZ_PACKAGE_DOWNLOADER is not set
-# FREETZ_PACKAGE_NFSD_CGI is not set
+
+#
+# NFSD CGI (not available, needs kernel modules)
+#
 FREETZ_PACKAGE_ONLINECHANGED_CGI=y
 # FREETZ_PACKAGE_PHPXMAIL is not set
-# FREETZ_PACKAGE_PPP is not set
+
+#
+# Point-to-Point (not available, needs kernel modules)
+#
 # FREETZ_PACKAGE_RRDSTATS is not set
 # FREETZ_PACKAGE_SPINDOWN_CGI is not set
 FREETZ_PACKAGE_SYSLOGD_CGI=y
-# FREETZ_PACKAGE_SYSLOGD_CGI_FRITZ_MENU is not set
 # FREETZ_PACKAGE_VNSTAT_CGI is not set
 # FREETZ_PACKAGE_WOL_CGI is not set
 # end of Web interfaces
@@ -999,9 +1012,10 @@ FREETZ_LIB_libgcc_s=y
 #
 # FREETZ_LIB_libcairo is not set
 # FREETZ_LIB_libfontconfig is not set
+FREETZ_LIB_libfontconfig_WITH_VERSION_ABANDON=y
 # FREETZ_LIB_libfreetype is not set
 # FREETZ_LIB_libjpeg is not set
-# FREETZ_LIB_libleptonica is not set
+# FREETZ_LIB_liblept is not set
 # FREETZ_LIB_libart_lgpl_2 is not set
 # FREETZ_LIB_libexif is not set
 # FREETZ_LIB_libgd is not set
@@ -1010,6 +1024,7 @@ FREETZ_LIB_libgcc_s=y
 # FREETZ_LIB_libopenjp2 is not set
 # FREETZ_LIB_libopenjpeg is not set
 # FREETZ_LIB_libpixman_1 is not set
+# FREETZ_LIB_libtesseract is not set
 # FREETZ_LIB_libtiff is not set
 # FREETZ_LIB_libtiffxx is not set
 # end of Graphics & fonts
@@ -1061,6 +1076,7 @@ FREETZ_LIB_ld_uClibc_WITH_VERSION_0_9_33=y
 # FREETZ_LIB_libogg is not set
 # FREETZ_LIB_libopus is not set
 # FREETZ_LIB_libspeex is not set
+# FREETZ_LIB_libspeexdsp is not set
 
 #
 # FFmpeg ---------------------------------
@@ -1313,7 +1329,6 @@ FREETZ_LIB_libexpat_WITH_VERSION_ABANDON=y
 # FREETZ_LIB_libffi is not set
 # FREETZ_LIB_libnfsidmap is not set
 # FREETZ_LIB_libsynce is not set
-# FREETZ_LIB_libtalloc is not set
 # FREETZ_LIB_libltdl is not set
 # FREETZ_LIB_libpopt is not set
 # FREETZ_LIB_libprivatekeypassword is not set
@@ -1325,134 +1340,8 @@ FREETZ_LIB_libexpat_WITH_VERSION_ABANDON=y
 # end of Shared libraries
 
 #
-# Kernel modules
+#  Kernel modules (not available, this device is UNTESTED)
 #
-FREETZ_MODULES_KOON=y
-FREETZ_MODULES_OWN=""
-
-#
-# crypto
-#
-# FREETZ_MODULE_aead is not set
-# FREETZ_MODULE_arc4 is not set
-# end of crypto
-
-#
-# drivers
-#
-# FREETZ_MODULE_bfusb is not set
-# FREETZ_MODULE_btusb is not set
-# FREETZ_MODULE_capiconn is not set
-# FREETZ_MODULE_cdrom is not set
-# FREETZ_MODULE_dummy is not set
-# FREETZ_MODULE_dm_mod is not set
-# FREETZ_MODULE_dm_crypt is not set
-# FREETZ_MODULE_firmware_class is not set
-# FREETZ_MODULE_loop is not set
-# FREETZ_MODULE_musb_hdrc is not set
-# FREETZ_MODULE_nand is not set
-# FREETZ_MODULE_nbd is not set
-# FREETZ_MODULE_scsi_mod is not set
-# FREETZ_MODULE_slhc is not set
-# FREETZ_MODULE_sr_mod is not set
-# FREETZ_MODULE_usb_storage is not set
-# FREETZ_MODULE_usbip is not set
-# FREETZ_MODULE_usblp is not set
-# FREETZ_MODULE_usbmon is not set
-
-#
-#  input
-#
-# FREETZ_MODULE_input_core is not set
-# FREETZ_MODULE_hid is not set
-# FREETZ_MODULE_usbhid is not set
-
-#
-#  ppp
-#
-# FREETZ_MODULE_ppp_async is not set
-# FREETZ_MODULE_ppp_deflate is not set
-# FREETZ_MODULE_ppp_generic is not set
-# FREETZ_MODULE_ppp_mppe_mppc is not set
-# FREETZ_MODULE_pppoe is not set
-
-#
-#  serial
-#
-# FREETZ_MODULE_ch341 is not set
-# FREETZ_MODULE_cp2101 is not set
-# FREETZ_MODULE_cp210x is not set
-# FREETZ_MODULE_ftdi_sio is not set
-# FREETZ_MODULE_ipaq is not set
-# FREETZ_MODULE_option is not set
-# FREETZ_MODULE_pl2303 is not set
-# FREETZ_MODULE_usbserial is not set
-# end of drivers
-
-#
-# fs
-#
-# FREETZ_MODULE_ext4 is not set
-# FREETZ_MODULE_hfs is not set
-# FREETZ_MODULE_hfsplus is not set
-# FREETZ_MODULE_iso9660 is not set
-FREETZ_MODULE_jffs2=y
-# FREETZ_MODULE_mini_fo is not set
-# FREETZ_MODULE_minix is not set
-# FREETZ_MODULE_reiserfs is not set
-# FREETZ_MODULE_udf is not set
-# FREETZ_MODULE_unionfs is not set
-
-#
-#  net
-#
-# FREETZ_MODULE_autofs4 is not set
-# FREETZ_MODULE_cifs is not set
-# FREETZ_MODULE_coda is not set
-
-#
-#  nfs
-#
-# FREETZ_MODULE_nfs is not set
-# FREETZ_MODULE_nfsd is not set
-
-#
-#  nls
-#
-# FREETZ_MODULE_nls_cp850 is not set
-# end of fs
-
-#
-# lib
-#
-# FREETZ_MODULE_crc_ccitt is not set
-# FREETZ_MODULE_lzo_compress is not set
-# FREETZ_MODULE_lzo_decompress is not set
-# end of lib
-
-#
-# net
-#
-
-#
-#  bt
-#
-# FREETZ_MODULE_bluetooth is not set
-# FREETZ_MODULE_bnep is not set
-# FREETZ_MODULE_l2cap is not set
-# FREETZ_MODULE_rfcomm is not set
-
-#
-#  qos
-#
-# FREETZ_MODULE_cls_u32 is not set
-# FREETZ_MODULE_sch_cbq is not set
-# FREETZ_MODULE_sch_htb is not set
-# FREETZ_MODULE_sch_llq is not set
-# FREETZ_MODULE_sch_sfq is not set
-# FREETZ_MODULE_sch_tbf is not set
-# end of net
-# end of Kernel modules
 
 #
 # Busybox applets
@@ -2795,9 +2684,7 @@ FREETZ_FAVICON_STRING="none"
 # FREETZ_TAGGING_NONE is not set
 # FREETZ_TAGGING_CUMA is not set
 # FREETZ_TAGGING_NG is not set
-# FREETZ_TAGGING_PIMPED_YELLOW is not set
 FREETZ_TAGGING_PIMPED=y
-# FREETZ_TAGGING_PRISRAK is not set
 FREETZ_TAGGING_ENABLED=y
 FREETZ_TAGGING_STRING="pimped"
 # end of Web Interface
@@ -3204,7 +3091,6 @@ FREETZ_AVM_SOURCE_6810_06_21=y
 FREETZ_AVM_SOURCE_ID="6810_06.21"
 FREETZ_AVM_SOURCE_FOR_SYSTEM_TYPE_AR934x=y
 FREETZ_REPLACE_KERNEL_DISABLED=y
-FREETZ_REPLACE_MODULE_AVAILABLE=y
 FREETZ_KERNEL_AVMDIFF_AVAILABLE=y
 FREETZ_TYPE_PREFIX="6810"
 FREETZ_TYPE_PREFIX_SERIES_SUBDIR="06_2X"

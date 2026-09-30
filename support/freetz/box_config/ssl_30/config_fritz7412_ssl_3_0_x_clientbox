@@ -9,7 +9,7 @@ FREETZ_HAVE_DOT_CONFIG=y
 #
 
 #
-#  freetz-ng 29865MSI-a118678b65 master 2026-09-14
+#  freetz-ng 29959M-f1eb488898 master 2026-09-22
 #
 
 #
@@ -124,6 +124,7 @@ FREETZ_SERIES_ALL=y
 # FREETZ_TYPE_6820_V3 is not set
 # FREETZ_TYPE_6820_V4 is not set
 # FREETZ_TYPE_6825 is not set
+# FREETZ_TYPE_6835 is not set
 # FREETZ_TYPE_6840 is not set
 # FREETZ_TYPE_6842 is not set
 # FREETZ_TYPE_6850_4G_V1 is not set
@@ -224,7 +225,6 @@ FREETZ_TYPE_LANGUAGE="de"
 # FREETZ_TYPE_FIRMWARE_06_5X is not set
 FREETZ_TYPE_FIRMWARE_06_8X=y
 FREETZ_AVM_VERSION_LATEST_MAJOR=y
-# FREETZ_TYPE_FIRMWARE_DETECT_LATEST is not set
 FREETZ_TYPE_FIRMWARE_FINAL=y
 
 #
@@ -406,7 +406,6 @@ FREETZ_AVMDAEMON_DISABLE_TR069=y
 # FREETZ_PACKAGE_DNSMASQ is not set
 # FREETZ_PACKAGE_DOSFSTOOLS is not set
 FREETZ_PACKAGE_DROPBEAR=y
-# FREETZ_PACKAGE_DROPBEAR_FRITZ_MENU is not set
 # FREETZ_PACKAGE_DROPBEAR_SFTP_SERVER is not set
 # FREETZ_PACKAGE_DROPBEAR_SERVER_ONLY is not set
 # FREETZ_PACKAGE_DROPBEAR_WITH_ZLIB is not set
@@ -616,12 +615,6 @@ FREETZ_BOX_CERTIFICATE_SUPPORT_AVAILABLE=y
 # FREETZ_PACKAGE_SHELLINABOX is not set
 # FREETZ_PACKAGE_SIPROXD is not set
 # FREETZ_PACKAGE_SISPMCTL is not set
-# FREETZ_PACKAGE_SKIN_DIGITAL_ELITEBOARD is not set
-# FREETZ_PACKAGE_SKIN_KEYWELT is not set
-# FREETZ_PACKAGE_SKIN_NACHTFALKE is not set
-# FREETZ_PACKAGE_SKIN_NACHTFALKE_OLD is not set
-# FREETZ_PACKAGE_SKIN_PRISRAK is not set
-# FREETZ_PACKAGE_SKIN_PRISRAK1 is not set
 # FREETZ_PACKAGE_SLANG is not set
 # FREETZ_PACKAGE_SLURM is not set
 # FREETZ_PACKAGE_SMARTMONTOOLS is not set
@@ -766,7 +759,6 @@ FREETZ_PACKAGE_ONLINECHANGED_CGI=y
 # FREETZ_PACKAGE_RRDSTATS is not set
 # FREETZ_PACKAGE_SPINDOWN_CGI is not set
 FREETZ_PACKAGE_SYSLOGD_CGI=y
-# FREETZ_PACKAGE_SYSLOGD_CGI_FRITZ_MENU is not set
 # FREETZ_PACKAGE_VNSTAT_CGI is not set
 # FREETZ_PACKAGE_WOL_CGI is not set
 # end of Web interfaces
@@ -987,9 +979,10 @@ FREETZ_LIB_libgcc_s=y
 #
 # FREETZ_LIB_libcairo is not set
 # FREETZ_LIB_libfontconfig is not set
+FREETZ_LIB_libfontconfig_WITH_VERSION_ABANDON=y
 # FREETZ_LIB_libfreetype is not set
 # FREETZ_LIB_libjpeg is not set
-# FREETZ_LIB_libleptonica is not set
+# FREETZ_LIB_liblept is not set
 # FREETZ_LIB_libart_lgpl_2 is not set
 # FREETZ_LIB_libexif is not set
 # FREETZ_LIB_libgd is not set
@@ -998,6 +991,7 @@ FREETZ_LIB_libgcc_s=y
 # FREETZ_LIB_libopenjp2 is not set
 # FREETZ_LIB_libopenjpeg is not set
 # FREETZ_LIB_libpixman_1 is not set
+# FREETZ_LIB_libtesseract is not set
 # FREETZ_LIB_libtiff is not set
 # FREETZ_LIB_libtiffxx is not set
 # end of Graphics & fonts
@@ -1049,6 +1043,7 @@ FREETZ_LIB_ld_uClibc_WITH_VERSION_0_9_33=y
 # FREETZ_LIB_libogg is not set
 # FREETZ_LIB_libopus is not set
 # FREETZ_LIB_libspeex is not set
+# FREETZ_LIB_libspeexdsp is not set
 
 #
 # FFmpeg ---------------------------------
@@ -1302,7 +1297,6 @@ FREETZ_LIB_libexpat_WITH_VERSION_ABANDON=y
 # FREETZ_LIB_libffi is not set
 # FREETZ_LIB_libnfsidmap is not set
 # FREETZ_LIB_libsynce is not set
-# FREETZ_LIB_libtalloc is not set
 # FREETZ_LIB_libltdl is not set
 # FREETZ_LIB_libpopt is not set
 # FREETZ_LIB_libprivatekeypassword is not set
@@ -2871,9 +2865,7 @@ FREETZ_FAVICON_STRING="none"
 # FREETZ_TAGGING_NONE is not set
 # FREETZ_TAGGING_CUMA is not set
 # FREETZ_TAGGING_NG is not set
-# FREETZ_TAGGING_PIMPED_YELLOW is not set
 FREETZ_TAGGING_PIMPED=y
-# FREETZ_TAGGING_PRISRAK is not set
 FREETZ_TAGGING_ENABLED=y
 FREETZ_TAGGING_STRING="pimped"
 FREETZ_WEBIF_LINK=y
