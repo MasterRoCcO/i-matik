@@ -20,7 +20,7 @@ source $CONFIG_PATCH_PATH/ui/toolchain 2>/dev/null
 source $TOOLS_PATCH_PATH/freetz_download 2>/dev/null
 
 # features
-source $CONFIG_PATCH_PATH/avm/features 2>/dev/null
+#source $CONFIG_PATCH_PATH/avm/features 2>/dev/null
 source $I_MATIK_PATCH_PATH/ifree 2>/dev/null
 source $I_MATIK_PATCH_PATH/enable_gpon_serial 2>/dev/null
 #source $I_MATIK_PATCH_PATH/cond/832-hide_dsl_overview-hint/832-hide_dsl_overview-hint_07_8X 2>/dev/null
