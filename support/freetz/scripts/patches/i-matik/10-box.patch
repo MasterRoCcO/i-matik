@@ -5,7 +5,7 @@
  <td align="right">Uptime: $(uptime | sed -r 's/.* up (.*), *load .*/\1/')</td>
  </tr>
 +<tr>
-+<td>i-matik: 0.95.3(f38.0)(i09.3)</td>
+++<td>i-matik: xxx</td>
 +</tr>
  
  </table>
