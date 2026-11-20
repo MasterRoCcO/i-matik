@@ -1,11 +1,11 @@
 --- make/pkgs/mod/files/root/usr/mww/cgi-bin/status.d/10-box.sh	2022-10-18 11:58:52.698851000 +0200
 +++ make/pkgs/mod/files/root/usr/mww/cgi-bin/status.d/10-box.sh	2026-11-13 14:58:06.368682793 +0100
-@@ -56,6 +56,9 @@
+@@ -57,6 +57,9 @@
  <td>Freetz-NG: $(cat /etc/.freetz-version | sed 's/freetz-//;s/^ng-//')</td>
  <td align="right">Uptime: $(uptime | sed -r 's/.* up (.*), *load .*/\1/')</td>
  </tr>
 +<tr>
-++<td>i-matik: xxx</td>
++<td>i-matik: xxx</td>
 +</tr>
  
  </table>
